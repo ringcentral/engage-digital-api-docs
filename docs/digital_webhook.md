@@ -131,7 +131,7 @@ Below are some diagrams describing specific workflows for sending webhook events
 
 ### Task life cycle
 
-[![](digital_webhook/dimelo_webhook_register_800x.png)](digital_webhook/dimelo_webhook_register.png)
+[![](digital_webhook/dimelo_webhook_task-life-cycle_800x.png)](digital_webhook/dimelo_webhook_task-life-cycle_full.png)
 
 You can download webhook workflow diagram during task life cycle here:
 [https://engage-api-docs.readthedocs.io/en/latest/digital_webhook/dimelo_webhook_task-life-cycle_full.png](https://engage-api-docs.readthedocs.io/en/latest/digital_webhook/dimelo_webhook_task-life-cycle_full.png)
