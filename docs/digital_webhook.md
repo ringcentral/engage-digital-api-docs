@@ -79,7 +79,7 @@ When submitting your settings, if the required fields are not filled out, it wil
 
 When submitting your settings, if the required fields are not filled out, it will display an error message, or if it’s valid it will save the data and a subscription validation will be triggered. In case the subscription failed, ​**your settings will be updated and this endpoint will be disabled​**, you will have to go back on the API administration page to re-enable your endpoint.
 
-![![](digital_webhook/dimelo_webhook_tokens_800x.png)](digital_webhook/dimelo_webhook_tokens.png)
+[![](digital_webhook/dimelo_webhook_tokens_800x.png)](digital_webhook/dimelo_webhook_tokens.png)
 
 ## Subscribing to events
 
