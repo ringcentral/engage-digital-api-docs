@@ -4,8 +4,8 @@ no_breadcrumb: true
 
 Developer Documentation:
 
-* [Webhook Developer Guide](dimelo_webhook)
-* [Chatbot Developer Guide](dimelo_chatbot)
+* [Webhook Developer Guide](digital_webhook/)
+* [Chatbot Developer Guide](digital_chatbot/)
 
 SDKs:
 

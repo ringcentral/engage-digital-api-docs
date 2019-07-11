@@ -15,5 +15,5 @@ theme:
 #extra_javascript: [fonts.js]
 pages:
 - 'Overview': index.md
-- 'Digital - Webhooks': digital_webhook.md
-- 'Digital - Chatbots': digital_chatbot.md
+- 'Engage Digital Webhooks': digital_webhook.md
+- 'Engage Digital Chatbots': digital_chatbot.md
