@@ -223,12 +223,12 @@ Type | Description
 `intervention.canceled` | When an agent cancels an intervention
 `intervention.closed` | When an agent marks the intervention as closed
 `intervention.deferred` | When an intervention is deferred for a period of time (the `intervention will be reactivated later)
-`intervention.opened | When an intervention is started by engaging a customer
-`intervention.reopened | When an intervention is reopened (by receiving a new message from the identity or manually by an agent, api ...)
-`intervention.custom_fields_updated | When custom fields of an intervention are updated
-`intervention.user_updated | When the agent of an intervention is changed (re-assigned)
-`intervention.reactivated | When an intervention deferred time is finished
-`intervention.recategorized | When categories on an intervention are changed
+`intervention.opened` | When an intervention is started by engaging a customer
+`intervention.reopened` | When an intervention is reopened (by receiving a new message from the identity or manually by an agent, api ...)
+`intervention.custom_fields_updated` | When custom fields of an intervention are updated
+`intervention.user_updated` | When the agent of an intervention is changed (re-assigned)
+`intervention.reactivated` | When an intervention deferred time is finished
+`intervention.recategorized` | When categories on an intervention are changed
 
 ##### About tasks
 
