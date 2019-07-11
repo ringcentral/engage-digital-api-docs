@@ -35,7 +35,7 @@ This API is a “PUSH” / “REALTIME” / “OUTBOUND” API that will send JS
 
 In order to register an endpoint to the Webhook API, you MUST create a new endpoint in Dimelo Digital admin. Each endpoint MUST define the following items:
 
-![](digital_webhook/dimelo_webhook_register.png)
+![](digital_webhook/dimelo_webhook_register.png){: style="width:732px"}
 
 In details:
 
