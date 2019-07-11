@@ -372,8 +372,7 @@ Property | Value | Description
 Property | Value | Description
 ---------|-------|------------
 `new_identity_group_id` | String | ID of the new Identity Group attached to the identity after the merge/unmerge.
-`old_identity_group_id` | String | ID of the Identity Group which was previously
-attached to the identity before the merge/unmerge.
+`old_identity_group_id` | String | ID of the Identity Group which was previously attached to the identity before the merge/unmerge.
 
 ##### About surveys
 
