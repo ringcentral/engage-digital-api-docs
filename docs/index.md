@@ -1,5 +1,7 @@
 no_breadcrumb: true
 
+![](ringcentral-engage.svg)
+
 # RingCentral Engage Digital / Dimelo
 
 Developer Documentation:
