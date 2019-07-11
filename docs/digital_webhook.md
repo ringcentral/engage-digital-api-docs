@@ -97,9 +97,9 @@ event.
 
 This Webhook API implementation tries to deliver the event notification request reasonably fast. We may buffer notification for efficiency reason.
 
-We cannot guarantee the delivery of the events (see ​Unavailability of the endpoint)​ but we will retry the delivery during 24h until we know that the endpoint received them correctly.
+We cannot guarantee the delivery of the events (see ​[Unavailability of the endpoint](#unavailability-of-the-endpoint))​ but we will retry the delivery during 24h until we know that the endpoint received them correctly.
 
-We cannot guarantee the order in which the events arrived because of the internet HTTP protocol and the potential unavailability of the network or the target endpoint (see ​Unavailability of the endpoint)​ . We provide a timestamp in every event for the implementor to reorder them if needed.
+We cannot guarantee the order in which the events arrived because of the internet HTTP protocol and the potential unavailability of the network or the target endpoint (see ​[Unavailability of the endpoint](#unavailability-of-the-endpoint))​ . We provide a timestamp in every event for the implementor to reorder them if needed.
 
 We cannot guarantee that the events will be sent only once because of the nature of the HTTP protocol see ​Implementation considerations​. Nevertheless we provide a unique identifier per event so that events can be deduplicated at the endpoint level if unicity is a constraint.
 
