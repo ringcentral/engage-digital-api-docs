@@ -35,12 +35,11 @@ This API is a “PUSH” / “REALTIME” / “OUTBOUND” API that will send JS
 
 In order to register an endpoint to the Webhook API, you MUST create a new endpoint in Dimelo Digital admin. Each endpoint MUST define the following items:
 
-<IMG>
+![](digital_webhook/dimelo_webhook_register.png)
 
 In details:
 
-
-<IMG>
+![](digital_webhook/dimelo_webhook_register-details.png)
 
 * An ​**API access token** is mandatory to create a webhook. You can only use API access token belonging to your user unless you have manage API access token permission you can use anyone.
 * An endpoint, can be ​**active** or not. It allows you to add endpoint and to activate later or in case your endpoint encounters errors and is automatically disabled, you can re-activate it here.
@@ -80,7 +79,7 @@ When submitting your settings, if the required fields are not filled out, it wil
 
 When submitting your settings, if the required fields are not filled out, it will display an error message, or if it’s valid it will save the data and a subscription validation will be triggered. In case the subscription failed, ​**your settings will be updated and this endpoint will be disabled​**, you will have to go back on the API administration page to re-enable your endpoint.
 
-<IMG>
+![](digital_webhook/dimelo_webhook_tokens.png)
 
 ## Subscribing to events
 
@@ -132,7 +131,7 @@ Below are some diagrams describing specific workflows for sending webhook events
 
 ### Task life cycle
 
-<IMG>
+![](digital_webhook/dimelo_webhook_task-life-cycle.png)
 
 You can download webhook workflow diagram during task life cycle here:
 [https://bit.ly/webhook-task-event-workflow-color](https://bit.ly/webhook-task-event-workflow-color)
