@@ -79,7 +79,7 @@ When submitting your settings, if the required fields are not filled out, it wil
 
 When submitting your settings, if the required fields are not filled out, it will display an error message, or if it’s valid it will save the data and a subscription validation will be triggered. In case the subscription failed, ​**your settings will be updated and this endpoint will be disabled​**, you will have to go back on the API administration page to re-enable your endpoint.
 
-![](digital_webhook/dimelo_webhook_tokens_800x.png)
+![![](digital_webhook/dimelo_webhook_tokens_800x.png)](digital_webhook/dimelo_webhook_tokens.png)
 
 ## Subscribing to events
 
@@ -131,7 +131,7 @@ Below are some diagrams describing specific workflows for sending webhook events
 
 ### Task life cycle
 
-![](digital_webhook/dimelo_webhook_task-life-cycle_800x.png)
+![![](digital_webhook/dimelo_webhook_task-life-cycle_800x.png)](digital_webhook/dimelo_webhook_task-life-cycle_full.png)
 
 You can download webhook workflow diagram during task life cycle here:
 [https://engage-api-docs.readthedocs.io/en/latest/digital_webhook/dimelo_webhook_task-life-cycle_full.png](https://engage-api-docs.readthedocs.io/en/latest/digital_webhook/dimelo_webhook_task-life-cycle_full.png)
