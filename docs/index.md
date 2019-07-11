@@ -14,9 +14,9 @@ SDKs:
 * [JavaScript Chatbot Framework](https://github.com/ringcentral/engage-digital-chatbot-js)
 * [JavaScript REST API SDK](https://github.com/ringcentral/engage-digital-client-js)
 * [JavaScript Source SDK Demo App](https://github.com/dimelo/demo-source-sdk-implementation)
-* [PHP SMCC SDK](https://github.com/dimelo/sdk)
+* [PHP SDK](https://github.com/dimelo/sdk)
 * [Ruby SDK for Engage Communities](https://github.com/dimelo/dimelo_ccp_api)
-* [Wordpress Plugin for SMCC SDK](https://github.com/dimelo/wordpress-smcc-sdk)
+* [Wordpress Plugin](https://github.com/dimelo/wordpress-smcc-sdk)
 
 Websites:
 
