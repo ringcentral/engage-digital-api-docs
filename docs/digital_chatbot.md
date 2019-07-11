@@ -669,5 +669,3 @@ Parameters to transfer:
 * `thread_category_ids[]`:​ IDs of the categories setup on the conversation thread
 
 For more information concerning the functioning of Dimelo Digital’s REST API and the entirety of the endpoints available, please refer to our documentation dedicated to Dimelo Digital’s REST API.
-
-[END]
