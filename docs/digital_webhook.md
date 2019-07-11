@@ -131,7 +131,7 @@ Below are some diagrams describing specific workflows for sending webhook events
 
 ### Task life cycle
 
-![](digital_webhook/dimelo_webhook_task-life-cycle.png)
+![](digital_webhook/dimelo_webhook_task-life-cycle_800x.png)
 
 You can download webhook workflow diagram during task life cycle here:
 [https://bit.ly/webhook-task-event-workflow-color](https://bit.ly/webhook-task-event-workflow-color)
