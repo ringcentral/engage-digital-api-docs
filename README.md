@@ -1,3 +1,5 @@
 # Engage API Docs
 
-Copyright &copy; 2016-2019 RingCentral.
+Visit at: https://engage-api-docs.rtfd.org
+
+Copyright &copy; 2019 RingCentral, Inc.
