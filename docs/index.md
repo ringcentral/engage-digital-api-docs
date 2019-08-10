@@ -5,7 +5,7 @@ no_breadcrumb: true
 Developer Documentation:
 
 * [API Reference](https://grokify.github.io/go-ringcentral-engage/)
-* [OpenAPI 3.0 Specification](https://raw.githubusercontent.com/grokify/go-ringcentral-engage/master/codegen/openapi-spec_v3.0.0.json) - [Currently 26% API coverage](https://github.com/grokify/go-ringcentral-engage#coverage)
+* [OpenAPI 3.0 Specification](https://raw.githubusercontent.com/grokify/go-ringcentral-engage/master/codegen/openapi-spec_v3.0.0.json) - [Currently 96% API coverage](https://github.com/grokify/go-ringcentral-engage#coverage)
 * [Webhook Developer Guide](digital_webhook/)
 * [Chatbot Developer Guide](digital_chatbot/)
 
