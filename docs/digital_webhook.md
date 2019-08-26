@@ -37,11 +37,11 @@ This API is a “PUSH” / “REALTIME” / “OUTBOUND” API that will send JS
 
 In order to register an endpoint to the Webhook API, you MUST create a new endpoint in Dimelo Digital admin. Each endpoint MUST define the following items:
 
-[![](digital_webhook/dimelo_webhook_register_800x.png)](digital_webhook/dimelo_webhook_register.png)
+<img class="img-fluid" src="./dimelo_webhook_register_800x.png">
 
 In details:
 
-![](digital_webhook/dimelo_webhook_register-details.png)
+<img class="img-fluid" src="./dimelo_webhook_register-details.png">
 
 * An ​**API access token** is mandatory to create a webhook. You can only use API access token belonging to your user unless you have manage API access token permission you can use anyone.
 * An endpoint, can be ​**active** or not. It allows you to add endpoint and to activate later or in case your endpoint encounters errors and is automatically disabled, you can re-activate it here.
