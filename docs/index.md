@@ -11,12 +11,6 @@ no_breadcrumb: true
 
 ## SDKs, Frameworks and Example Apps
 
-### Client SDKs
-
-* [Go Client SDK](https://github.com/grokify/go-ringcentral-engage) - [sample code](https://github.com/grokify/go-ringcentral-engage/tree/master/examples)
-* [JavaScript Client SDK](https://github.com/ringcentral/engage-digital-client-js)
-* [Python Client SDK](https://github.com/ringcentral/engage-digital-client-python)
-
 ### Messaging SDKs
 
 * [Android Messaging SDK](https://github.com/ringcentral/engage-digital-messaging-android) - [sample app](https://github.com/dimelo/Dimelo-Android-SampleApp)
@@ -26,6 +20,12 @@ no_breadcrumb: true
 
 * [JavaScript Source SDK Demo App](https://github.com/ringcentral-tutorials/engage-digital-source-sdk-demo)
 * [PHP Source SDK](https://github.com/ringcentral/engage-digital-source-sdk)
+
+### Client SDKs
+
+* [Go Client SDK](https://github.com/grokify/go-ringcentral-engage) - [sample code](https://github.com/grokify/go-ringcentral-engage/tree/master/examples)
+* [JavaScript Client SDK](https://github.com/ringcentral/engage-digital-client-js)
+* [Python Client SDK](https://github.com/ringcentral/engage-digital-client-python)
 
 ### Communities SDK
 
