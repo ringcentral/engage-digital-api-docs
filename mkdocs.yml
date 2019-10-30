@@ -16,5 +16,6 @@ theme:
 pages:
 - 'Primary':
   - 'Overview': index.md
+  - 'Engage Digital API Overview': digital_api.md
   - 'Engage Digital Webhooks': digital_webhook.md
   - 'Engage Digital Chatbots': digital_chatbot.md
