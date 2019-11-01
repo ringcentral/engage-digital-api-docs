@@ -1,4 +1,4 @@
-site_name: RingCentral Engage Developer Docs
+site_name: RingCentral Engage Developer Guide
 site_url: https://engage-api-docs.rtfd.org
 site_favicon: favicon.ico
 repo_url: https://github.com/ringcentral/engage-api-docs
@@ -11,11 +11,30 @@ theme:
   shortcuts:
     - foo
 
+plugins:
+#  - git-committers:
+#      repository: ringcentral/ringcentral-api-docs
+#      branch: master
+  - bootstrap-tables
+
+markdown_extensions:
+  - markdown.extensions.admonition
+  - pymdownx.details
+  - pymdownx.keys
+  - pymdownx.superfences
+  - codehilite:
+      linenums: "None"
+
 #extra_css: [extra.css]
 #extra_javascript: [fonts.js]
 pages:
 - 'Primary':
   - 'Overview': index.md
-  - 'Engage Digital API Overview': digital_api.md
-  - 'Engage Digital Webhooks': digital_webhook.md
-  - 'Engage Digital Chatbots': digital_chatbot.md
+  - 'API Overview': digital_api.md
+  - 'Webhooks':
+    - 'Overview': webhooks/overview.md
+    - 'Creating Webhooks': webhooks/create.md
+    - 'Receiving Events': webhooks/receive.md
+    - 'Event Types': webhooks/events.md
+  - 'Chatbots': digital_chatbot.md
+  - 'SDKs': sdks.md

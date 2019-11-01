@@ -1,44 +1,24 @@
 no_breadcrumb: true
 
-# RingCentral Developers: Engage Digital
+# RingCentral Engage Developer Guide
 
-## Documentation
+Welcome RingCentral Engage Developer! Here you have access to all the resources necessary to build an app successfully on the RingCentral Engage Platform. Here are some specific resources and guides to help you get started.
 
-* [API Reference](https://grokify.github.io/go-ringcentral-engage/)
-* [OpenAPI 3.0 Specification](https://raw.githubusercontent.com/grokify/go-ringcentral-engage/master/codegen/openapi-spec_v3.0.0.json)
-* [Webhook Developer Guide](digital_webhook/)
-* [Chatbot Developer Guide](digital_chatbot/)
+## Chat Bots
 
-## SDKs, Frameworks and Example Apps
+One of the most popular ways of extending RingCentral Engage's functionality is with intelligent agents such as Chat Bots. Chat bots provide a natural and conversational way to interface with third-party systems, as well as to assist in workflow automation.
 
-### Messaging SDKs
+<a class="btn btn-primary" href="./chatbots/">Learn more about Engage Chatbots &raquo;</a>
 
-* [Mobile Messaging SDK Homepage](http://mobile-messaging.dimelo.com/)
-* [Android Messaging SDK](https://github.com/ringcentral/engage-digital-messaging-android) - [sample app](https://github.com/dimelo/Dimelo-Android-SampleApp)
-* [iOS Messaging SDK](https://github.com/ringcentral/engage-digital-messaging-ios) - [sample app](https://github.com/dimelo/Dimelo-iOS-SampleApp)
+## Webhooks
 
-### Source SDKs
+Webhook are a popular way to receive notifications of events that are triggered within your account. 
 
-* [JavaScript Source SDK Demo App](https://github.com/ringcentral-tutorials/engage-digital-source-sdk-demo)
-* [PHP Source SDK](https://github.com/ringcentral/engage-digital-source-sdk)
+<a class="btn btn-primary" href="./chatbots/">Learn more about Engage Webhooks &raquo;</a>
 
-### Client SDKs
+## API Reference
 
-* [Go Client SDK](https://github.com/grokify/go-ringcentral-engage) - [sample code](https://github.com/grokify/go-ringcentral-engage/tree/master/examples)
-* [JavaScript Client SDK](https://github.com/ringcentral/engage-digital-client-js)
-* [Python Client SDK](https://github.com/ringcentral/engage-digital-client-python)
-
-### Communities SDK
-
-* [Ruby Communities SDK](https://github.com/ringcentral/engage-digital-communities-ruby)
-
-### Chatbot Framework
-
-* [JavaScript Chatbot Framework](https://github.com/ringcentral/engage-digital-chatbot-js)
-
-### WordPress Plugin
-
-* [Wordpress Plugin](https://github.com/dimelo/wordpress-smcc-sdk)
+<a class="btn btn-primary" href="https://developers.ringcentral.com/engage/api-reference/">Open API Reference &raquo;</a>
 
 ## More Info
 
