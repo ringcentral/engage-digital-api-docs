@@ -1,9 +1,6 @@
 # Introduction to Engage Webhooks
 
-!!! note "Dimelo is Engage"
-    This guide is for RingCentral Engage Digital, formerly known as Dimelo. The product names in the documentation have not been updated yet.
-
-Dimelo's Digital Platform provides a Webhook API to be notified when events occur. This API is almost realtime and provides an alternative to polling the REST API. The purpose is to be able to trigger event-based behavior as soon as an event occurs (intervention assigned, deferred, canceled...). This way you will be able to build gamification mechanism, live dashboard, synchronizing contents ...
+The Engage Digital Platform provides a Webhook API to be notified when events occur. This API is almost realtime and provides an alternative to polling the REST API. The purpose is to be able to trigger event-based behavior as soon as an event occurs (intervention assigned, deferred, canceled...). This way you will be able to build gamification mechanism, live dashboard, synchronizing contents ...
 
 The overall mechanism is based on ​[Pubsubhubbub protocol 0.3​](https://pubsubhubbub.github.io/PubSubHubbub/pubsubhubbub-core-0.3.html), and rely on HTTP request containing event payload being sent to a consumer Endpoint URL.
 

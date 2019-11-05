@@ -170,8 +170,8 @@ Type | Description
 -----|------------
 `content.approved` | When a content has been approved for publication. **This does not mean that the content has been published yet. Notifications about exports are done with content.exported.**
 `content.discussion_initiated` | When a discussion has been started. **This does not mean that the content has been published yet. Notifications about exports are done with content.exported.**
-`content.exported` | When a new content has been exported from Dimelo to the source. **This does not mean that the export succeeded. The synchronization_status field needs to be checked.**
-`content.imported` | When a new content has been imported from the source to Dimelo.
+`content.exported` | When a new content has been exported from Engage to the source. **This does not mean that the export succeeded. The synchronization_status field needs to be checked.**
+`content.imported` | When a new content has been imported from the source to Engage.
 `content.replied` | When someone replied to another content. **This does not mean that the content has been published yet. Notifications about exports are done with content.exported.**
 `content.update_exported` | When a content has been update_exported (and the update has been propagated to the external source).
 
@@ -186,7 +186,7 @@ Type | Description
     
     It can be useful to understand the basic workflow of contents:
     
-    1. A new content is created from Dimelo Digital: it can trigger `content.discussion_initiated` if a new thread has been initiated by an agent (outgoing content). Otherwise, regular replies to contents triggers content.replied.​ Those content may not be exported yet depending on approval settings.
+    1. A new content is created from Engage Digital: it can trigger `content.discussion_initiated` if a new thread has been initiated by an agent (outgoing content). Otherwise, regular replies to contents triggers content.replied.​ Those content may not be exported yet depending on approval settings.
     2. If the content requires to be approved (​`approval_required` attribute is ​`true​`), it has to wait for an approbation. Once the approbation is received, content.approved​ is triggered.
     3. The content can now be exported to the external source. Successful and Unsuccessful export operations trigger the ​`content.exported` event for new contents, and ​`content.update_exported` event for existing events that have been edited.
 
