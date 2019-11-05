@@ -25,7 +25,7 @@ Engage Bots work primarily through what we call a "proxy," or an intermediary se
     
 You can see the relationship between these components clearly in the diagram below. 
 
-<img src="../dimelo_chatbot_overview.png" class="img-fluid">
+<img src="./dimelo_chatbot_overview.png" class="img-fluid">
 
 ## Bot Interaction Flow
 
@@ -43,7 +43,7 @@ In an ideal interaction within this architecture, the following steps will be fo
 
 The diagram belows shows this interaction sequence as well.
 
-<img src="../dimelo_chatbot_success.png" class="img-fluid">
+<img src="./dimelo_chatbot_success.png" class="img-fluid">
 
 ### Interventions
 
@@ -66,7 +66,7 @@ The failure scenario corresponds to the process during which the AI is not able 
 
 The diagram below describes this process as well. 
 
-<img src="../dimelo_chatbot_failure.png" class="img-fluid">
+<img src="./dimelo_chatbot_failure.png" class="img-fluid">
 
 ## Best Practices
 
