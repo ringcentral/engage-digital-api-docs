@@ -26,7 +26,7 @@ Only users that can reply or initiate a discussion on given source can call this
 
 **Sample Request**
 
-`curl -X POST -d "source_id=58ff349313047d2cf6f&in_reply_to_id=58ff349313047d2cf6f&&body=test de contenu" "https://xxxxxxxxx.api.engagement.dimelo.com/1.0/contents?access_token=yyyyyyyyyyy"`
+`curl -X POST -d "source_id=58ff349313047d2cf6f&in_reply_to_id=58ff349313047d2cf6f&&body=test de contenu" "https://[DOMAIN].api.engagement.dimelo.com/1.0/contents?access_token=yyyyyyyyyyy"`
 
 **Sample Response**
 

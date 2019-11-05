@@ -38,11 +38,11 @@ In order to be compliant with OAuth 2.0 standards access token can also be speci
 
 ### Example
 
-We suppose you have an Engage Digital instance accessible from https://test.engagement.dimelo.com and an access token with value abc42.
+We suppose you have an Engage Digital instance accessible from https://[DOMAIN].engagement.dimelo.com and an access token with value abc42.
 
 #### With access token as parameter
 
-To get all interventions on the source accessible by the token’s users, URL will looks like: https://test.api.engagement.dimelo.com/1.0/interventions?access_token=abc42
+To get all interventions on the source accessible by the token’s users, URL will looks like: https://[DOMAIN].api.engagement.dimelo.com/1.0/interventions?access_token=abc42
 
 #### With access token as request header
 
@@ -50,7 +50,7 @@ To get all interventions on the source accessible by the token’s users, you’
 
 ```
 GET /1.0/interventions HTTP/1.1
-Host: t est.api.engagement.dimelo.com
+Host: test.api.engagement.dimelo.com
 Authorization: Bearer abc42
 ```
 ### Multiple parameters
@@ -72,7 +72,7 @@ In order to upload a file to our API you need to pass the file parameter as mult
 
 You can upload file via Curl by using the -F option with the path to your file, here’s an example:
 
-`curl -X POST https://DOMAIN.api.engagement.local.dimelo.info/1.0/attachments?access_token=ACCESS_TOKEN -F 'file=@path/to/your/file'`
+`curl -X POST https://[DOMAIN].api.engagement.local.dimelo.info/1.0/attachments?access_token=ACCESS_TOKEN -F 'file=@path/to/your/file'`
 
 #### Using Postman
 
@@ -117,10 +117,6 @@ All errors rendered respects following format:
 }
 ```
 
-Here is some errors responses example that may occurs:
-
-////\\\
-
 ## Throttling
 
 The number of queries is limited, the maximum is set to 500 queries per minute, otherwise you will hit the limit.
@@ -147,11 +143,11 @@ Example:
 
 You have an access token with value `60576643bec4b6bd903232416ce5efad` associated to user « John Doe ». If you create an new intervention comment, it will be created as « John Doe » author.
 
-`POST https://[domain].api.engagement.dimelo.com/1.0/intervention_comments?body=test&intervention_i d=c157a79031e1c40f85931829bc5fc552`
+`POST https://[DOMAIN].api.engagement.dimelo.com/1.0/intervention_comments?body=test&intervention_i d=c157a79031e1c40f85931829bc5fc552`
 
 Then, if you want to create intervention comment as « Bill Murray », with id d3b07384d113edec49eaa6238ad5ff00, you just have to add impersonated_user_id parameter:
 
-`POST https://[domain].api.engagement.dimelo.com/1.0/intervention_comments?body=test&intervention_id=c157a79031e1c40f85931829bc5fc552&impersonated_user_id=d3b07384d113edec49eaa6238ad5ff00`
+`POST https://[DOMAIN].api.engagement.dimelo.com/1.0/intervention_comments?body=test&intervention_id=c157a79031e1c40f85931829bc5fc552&impersonated_user_id=d3b07384d113edec49eaa6238ad5ff00`
 
 ## Pagination
 

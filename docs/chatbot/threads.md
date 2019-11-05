@@ -13,7 +13,7 @@ To close a thread, a developer will perform an HTTP PUT against the close resour
 
 **Sample Request**
 
-`curl -X PUT "https://xxxxxxxxx.api.engagement.dimelo.com/1.0/content_threads/9c9903dc3d559a6801ec544 1/close?access_token=yyyyyyyyyyy"`
+`curl -X PUT "https://[DOMAIN].api.engagement.dimelo.com/1.0/content_threads/9c9903dc3d559a6801ec544 1/close?access_token=yyyyyyyyyyy"`
 
 **Sample Response**
 

@@ -18,7 +18,7 @@ Before one transfers a conversation to a human agent, it is important that the B
 
 **Sample Request**
 
-`curl "https://xxxxxxxxx.api.engagement.dimelo.com/1.0/status?access_token=yyyyyyyyyyy"`
+`curl "https://[DOMAIN].api.engagement.dimelo.com/1.0/status?access_token=yyyyyyyyyyy"`
 
 **Sample Response**
 
@@ -97,7 +97,7 @@ After you have confirmed that an agent is available to respond to the request, y
 
 **Sample Request**
 
-`curl -X PUT -d "thread_category_ids[]=58ff349313047d2c&thread_category_ids[]=4d0fb475b242228a32cbd" "https://xxxxxxxxx.api.engagement.dimelo.com/1.0/content_threads/9c9903dc3d559a6801ec544 1/update_categories?access_token=yyyyyyyyyyy"`
+`curl -X PUT -d "thread_category_ids[]=58ff349313047d2c&thread_category_ids[]=4d0fb475b242228a32cbd" "https://[DOMAIN].api.engagement.dimelo.com/1.0/content_threads/9c9903dc3d559a6801ec544 1/update_categories?access_token=yyyyyyyyyyy"`
 
 **Sample Response**
 

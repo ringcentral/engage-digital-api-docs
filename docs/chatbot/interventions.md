@@ -23,7 +23,7 @@ This method creates a new intervention or reopens an existing one. When successf
 
 **Sample Request**
 
-`curl -X POST "https://xxxxxxxxx.api.engagement.dimelo.com/1.0/interventions?access_token=yyyyyyyyyyy&content_id=c93e3586250ff60181b6c2f0"`
+`curl -X POST "https://[DOMAIN].api.engagement.dimelo.com/1.0/interventions?access_token=yyyyyyyyyyy&content_id=c93e3586250ff60181b6c2f0"`
 
 **Sample Response**
 
@@ -79,7 +79,7 @@ In the case where you would have opened a bot intervention via the API, you can 
 
 **Sample Request**
 
-`curl -X PUT "https://xxxxxxxxx.api.engagement.dimelo.com/1.0/interventions/3f55c8330da4144afd1c6728/close?access_token=yyyyyyyyyyy"`
+`curl -X PUT "https://[DOMAIN].api.engagement.dimelo.com/1.0/interventions/3f55c8330da4144afd1c6728/close?access_token=yyyyyyyyyyy"`
 
 **Sample Response**
 
