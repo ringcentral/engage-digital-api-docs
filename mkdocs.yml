@@ -29,12 +29,18 @@ markdown_extensions:
 #extra_javascript: [fonts.js]
 pages:
 - 'Primary':
-  - 'Overview': index.md
-  - 'API Overview': digital_api.md
   - 'Webhooks':
     - 'Overview': webhooks/overview.md
     - 'Creating Webhooks': webhooks/create.md
     - 'Receiving Events': webhooks/receive.md
     - 'Event Types': webhooks/events.md
-  - 'Chatbots': digital_chatbot.md
+  - 'Chatbots':
+    - 'Oveview': chatbot/overview.md
+    - 'Implementation': chatbot/implementation.md
+    - 'Replying to Messages': chatbot/replies.md
+    - 'Creating Interventions': chatbot/interventions.md
+    - 'Transferring to an Agent': chatbot/transfers.md
+    - 'Closing Threads': chatbot/threads.md
+- 'Secondary':
+  - 'API Basics': basics.md
   - 'SDKs': sdks.md

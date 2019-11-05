@@ -260,7 +260,7 @@ Property | Value | Description
 `user_id` | String | ID of the user related to this survey
 `context_data` | Hash | Context_data is present only if the content has context_data associated. The context_data hash keys are the custom fields keys.
 
-## Custom field Object
+### Custom Fields
 
 Property | Value | Description
 ---------|-------|------------
