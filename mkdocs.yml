@@ -12,9 +12,9 @@ theme:
     - foo
 
 plugins:
-#  - git-committers:
-#      repository: ringcentral/ringcentral-api-docs
-#      branch: master
+  - git-committers:
+      repository: ringcentral/engage-api-docs
+      branch: master
   - bootstrap-tables
 
 markdown_extensions:
