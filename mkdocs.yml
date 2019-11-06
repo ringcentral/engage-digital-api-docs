@@ -29,11 +29,7 @@ markdown_extensions:
 #extra_javascript: [fonts.js]
 pages:
 - 'Primary':
-  - 'Webhooks':
-    - 'Overview': webhooks/overview.md
-    - 'Creating Webhooks': webhooks/create.md
-    - 'Receiving Events': webhooks/receive.md
-    - 'Event Types': webhooks/events.md
+  - 'Using the API': basics.md
   - 'Chatbots':
     - 'Oveview': chatbot/overview.md
     - 'Implementation': chatbot/implementation.md
@@ -41,6 +37,9 @@ pages:
     - 'Creating Interventions': chatbot/interventions.md
     - 'Transferring to an Agent': chatbot/transfers.md
     - 'Closing Threads': chatbot/threads.md
-- 'Secondary':
-  - 'API Basics': basics.md
+  - 'Webhooks':
+    - 'Overview': webhooks/overview.md
+    - 'Creating Webhooks': webhooks/create.md
+    - 'Receiving Events': webhooks/receive.md
+    - 'Event Types': webhooks/events.md
   - 'SDKs': sdks.md
