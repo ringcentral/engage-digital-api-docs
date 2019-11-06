@@ -8,7 +8,10 @@ Note that API can easily be tested from any web browser or command line terminal
 
 ### Scheme and hostname
 
-Request must be done with https scheme. Hostname is determined from your application name. If your application name is example, then the API hostname will be: example.api.engagement.dimelo.com.
+Request must be done with https scheme. Hostname is determined from your application name. If your application name is "example," then the API hostname will be: example.api.engagement.dimelo.com.
+
+!!! tip "Using this Guide"
+    Throughout this Developer Guide you will see sample endpoint URLs. These URLs all contain a placeholder string of `[YOUR DOMAIN]`. When developing, be sure to replace this string with your assigned domain.
 
 ### HTTP method
 
@@ -38,11 +41,11 @@ In order to be compliant with OAuth 2.0 standards access token can also be speci
 
 ### Example
 
-We suppose you have an Engage Digital instance accessible from https://[DOMAIN].engagement.dimelo.com and an access token with value abc42.
+We suppose you have an Engage Digital instance accessible from https://[YOUR DOMAIN].engagement.dimelo.com and an access token with value abc42.
 
 #### With access token as parameter
 
-To get all interventions on the source accessible by the token’s users, URL will looks like: https://[DOMAIN].api.engagement.dimelo.com/1.0/interventions?access_token=abc42
+To get all interventions on the source accessible by the token’s users, URL will looks like: https://[YOUR DOMAIN].api.engagement.dimelo.com/1.0/interventions?access_token=abc42
 
 #### With access token as request header
 
@@ -72,7 +75,7 @@ In order to upload a file to our API you need to pass the file parameter as mult
 
 You can upload file via Curl by using the -F option with the path to your file, here’s an example:
 
-`curl -X POST https://[DOMAIN].api.engagement.local.dimelo.info/1.0/attachments?access_token=ACCESS_TOKEN -F 'file=@path/to/your/file'`
+`curl -X POST https://[YOUR DOMAIN].api.engagement.local.dimelo.info/1.0/attachments?access_token=ACCESS_TOKEN -F 'file=@path/to/your/file'`
 
 #### Using Postman
 
@@ -143,11 +146,11 @@ Example:
 
 You have an access token with value `60576643bec4b6bd903232416ce5efad` associated to user « John Doe ». If you create an new intervention comment, it will be created as « John Doe » author.
 
-`POST https://[DOMAIN].api.engagement.dimelo.com/1.0/intervention_comments?body=test&intervention_i d=c157a79031e1c40f85931829bc5fc552`
+`POST https://[YOUR DOMAIN].api.engagement.dimelo.com/1.0/intervention_comments?body=test&intervention_i d=c157a79031e1c40f85931829bc5fc552`
 
 Then, if you want to create intervention comment as « Bill Murray », with id d3b07384d113edec49eaa6238ad5ff00, you just have to add impersonated_user_id parameter:
 
-`POST https://[DOMAIN].api.engagement.dimelo.com/1.0/intervention_comments?body=test&intervention_id=c157a79031e1c40f85931829bc5fc552&impersonated_user_id=d3b07384d113edec49eaa6238ad5ff00`
+`POST https://[YOUR DOMAIN].api.engagement.dimelo.com/1.0/intervention_comments?body=test&intervention_id=c157a79031e1c40f85931829bc5fc552&impersonated_user_id=d3b07384d113edec49eaa6238ad5ff00`
 
 ## Pagination
 
