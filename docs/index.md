@@ -8,13 +8,13 @@ Welcome RingCentral Engage Developer! Here you have access to all the resources 
 
 One of the most popular ways of extending RingCentral Engage's functionality is with intelligent agents such as Chat Bots. Chat bots provide a natural and conversational way to interface with third-party systems, as well as to assist in workflow automation.
 
-<a class="btn btn-primary" href="./chatbots/">Learn more about Engage Chatbots &raquo;</a>
+<a class="btn btn-primary" href="./chatbot/overview/">Learn more about Engage Chatbots &raquo;</a>
 
 ## Webhooks
 
 Webhook are a popular way to receive notifications of events that are triggered within your account. 
 
-<a class="btn btn-primary" href="./chatbots/">Learn more about Engage Webhooks &raquo;</a>
+<a class="btn btn-primary" href="./webhooks/overview/">Learn more about Engage Webhooks &raquo;</a>
 
 ## API Reference
 
