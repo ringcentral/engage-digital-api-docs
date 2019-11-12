@@ -3,7 +3,7 @@
 ### Messaging SDKs
 
 * [Mobile Messaging SDK Homepage](http://mobile-messaging.dimelo.com/)
-* [Android Messaging SDK](https://github.com/ringcentral-tutorials/engage-digital-messaging-android-demod) - [sample app](https://github.com/dimelo/Dimelo-Android-SampleApp)
+* [Android Messaging SDK](https://github.com/ringcentral-tutorials/engage-digital-messaging-android-demod) - [sample app](https://github.com/ringcentral-tutorials/engage-digital-messaging-android-demo)
 * [iOS Messaging SDK](https://github.com/ringcentral-tutorials/engage-digital-messaging-ios) - [sample app](https://github.com/dimelo/Dimelo-iOS-SampleApp)
 
 ### Source SDKs
