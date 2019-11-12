@@ -31,7 +31,7 @@ pages:
 - 'Primary':
   - 'Using the API': basics.md
   - 'Chatbots':
-    - 'Oveview': chatbot/overview.md
+    - 'Overview': chatbot/overview.md
     - 'Implementation': chatbot/implementation.md
     - 'Replying to Messages': chatbot/replies.md
     - 'Creating Interventions': chatbot/interventions.md
