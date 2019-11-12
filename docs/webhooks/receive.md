@@ -46,4 +46,4 @@ Below are some diagrams describing specific workflows for sending webhook events
 
 ## Task Life-cycle
 
-[![](../dimelo_webhook_task-life-cycle_800x.png)](../dimelo_webhook_task-life-cycle_full.png)
+<img class="img-fluid" src="../dimelo_webhook_task-life-cycle_full.png">
