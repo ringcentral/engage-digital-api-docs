@@ -29,15 +29,34 @@ markdown_extensions:
 #extra_javascript: [fonts.js]
 pages:
 - 'Primary':
-  - 'Using the API': basics.md
-  - 'Chatbots':
-    - 'Overview': chatbot/overview.md
-    - 'Implementation': chatbot/implementation.md
-    - 'Replying to Messages': chatbot/replies.md
-    - 'Creating Interventions': chatbot/interventions.md
-    - 'Transferring to an Agent': chatbot/transfers.md
-    - 'Closing Threads': chatbot/threads.md
-  - 'Webhooks':
+  - 'Interactions':
+    - 'Overview': interactions/index.md
+    - 'Getting Started':
+      - 'Javascript': interactions/quick-start/javascript.md
+      - 'PHP': interactions/quick-start/php.md
+      - 'Python': interactions/quick-start/python.md
+    - 'Chatbots':
+      - 'Overview': interactions/chatbots/overview.md
+      - 'Implementation': interactions/chatbots/implementation.md
+      - 'Replying to Messages': interactions/chatbots/replies.md
+      - 'Creating Interventions': interactions/chatbots/interventions.md
+      - 'Transferring to an Agent': interactions/chatbots/transfers.md
+      - 'Closing Threads': interactions/chatbots/threads.md
+  - 'Routing':
+    - 'Overview': routing/index.md
+    - 'Getting Started':
+      - 'Javascript': routing/quick-start/javascript.md
+      - 'PHP': routing/quick-start/php.md
+      - 'Python': routing/quick-start/python.md
+- 'Secondary':
+  - 'Using the API':
+    - 'Requests': basics/requests.md
+    - 'Responses and Errors': basics/responses.md
+    - 'Authentication': basics/auth.md
+    - 'Uploading Files': basics/uploads.md
+    - 'Filters and Pagination': basics/pagination.md
+    - 'User Impersonation': basics/impersonation.md
+  - 'Events and Notifications':
     - 'Overview': webhooks/overview.md
     - 'Creating Webhooks': webhooks/create.md
     - 'Receiving Events': webhooks/receive.md
