@@ -58,7 +58,7 @@ pages:
     - 'Filters and Pagination': basics/pagination.md
     - 'User Impersonation': basics/impersonation.md
   - 'Events and Notifications':
-    - 'Overview': webhooks/overview.md
+    - 'Overview': webhooks/index.md
     - 'Creating Webhooks': webhooks/create.md
     - 'Receiving Events': webhooks/receive.md
     - 'Event Types': webhooks/events.md
