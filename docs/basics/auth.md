@@ -1,15 +1,13 @@
 # Authenticating to the Engage API
 
+## Access Tokens
+
 Every request must provide an access token to authenticate properly.
 
-!!! warning "Keep access token secure"
-    Do not publish your access token publicly. The access token is **unencrypted**, and possession of it by a third-party will give them access to your account. 
+<a class="btn btn-primary" href="../access-token/">Obtain an Access Token</a>
 
-## Obtaining an Access Token
-
-Contact your project manager to have an access token provisioned to you. Each access token is associated to an existing agent -- all contents, interventions you make will be published as associated agent.
-
-Note that some API methods requires authorization. It depends from the token’s user permissions. Authorization is described on all API methods below.
+!!! note "Access Token Permissions"
+    Different API endpoints require different permissions. The permissions assocated with an access token are inherited from the associated user. Read about [creating an access token](../access-token/) to learn how to associate an access token with a user. 
 
 ## Transmitting an Access Token
 
@@ -38,5 +36,9 @@ GET /1.0/interventions HTTP/1.1
 Host: test.api.engagement.dimelo.com
 Authorization: Bearer abc42
 ```
+
+!!! warning "Keep access token secure"
+    Do not publish your access token publicly. The access token is **unencrypted**, and possession of it by a third-party will give them access to your account. 
+
 
 

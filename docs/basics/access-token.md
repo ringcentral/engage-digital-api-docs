@@ -4,7 +4,9 @@ Welcome to the Engage Developer Platform where you can create amazing, automated
 
 ## What is an Access Token used for?
 
-An Engage Access Token is used to access the Engage REST API. Developers transmit their access token with every request as a means of authentication. 
+An Engage Access Token is used to access the Engage REST API. Developers transmit their access token with every request as a means of authentication.
+
+The permissions bound to an access token are inherited from the associated user.
 
 ## How to obtain an Engage Access Token?
 
