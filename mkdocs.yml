@@ -50,6 +50,7 @@ pages:
       - 'Python': routing/quick-start/python.md
 - 'Secondary':
   - 'Using the API':
+    - 'Obtain an Access Token': basics/access-token.md
     - 'Requests': basics/requests.md
     - 'Responses and Errors': basics/responses.md
     - 'Authentication': basics/auth.md
