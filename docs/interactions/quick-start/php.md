@@ -1,6 +1,6 @@
 no_breadcrumb:true
 
-# Interaction JavaScript Quick Start
+# Interaction PHP Quick Start
 
 Welcome to the Engage Platform.
 
@@ -24,36 +24,48 @@ The first thing you need to do is obtain an API Access Token if you do not alrea
 
 Make note of the access token generated as you will need it later.
 
-## Create and Edit threads.js
+## Create and Edit threads.php
 
-Create a file called `threads.js`. Be sure to edit the variables in <ALL CAPS> with your app's credentials.
+Create a file called `threads.php`. Be sure to edit the variables in <ALL CAPS> with your app's credentials.
 
-```javascript
-var https = require('https')
+``` PHP
+<?php
+$SERVER = "https://<YOUR-DOMAIN>.api.engagement.dimelo.com";
+$ACCESS_TOKEN = '<API-ACCESS-TOKEN>';
+$THREADS_ENDPOINT = "/1.0/content_threads";
 
-const URL = '<YOUR-DOMAIN>.api.engagement.dimelo.com'
-const ACCESS_TOKEN = '<API-ACCESS-TOKEN>'
-const THREADS_ENDPOINT = "/1.0/content_threads"
+try {
+    $url = $SERVER . $THREADS_ENDPOINT;
+    $headers = array (
+          'Authorization: Bearer ' . $ACCESS_TOKEN
+        );
+    try {
+        $ch = curl_init($url);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+        curl_setopt($ch, CURLOPT_HTTPGET, TRUE);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 600);
 
-var headers = {
-        'Authorization': "Bearer " + ACCESS_TOKEN
+        $strResponse = curl_exec($ch);
+        $curlErrno = curl_errno($ch);
+        if ($curlErrno) {
+            throw new Exception($ecurlError);
+        } else {
+            $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+            curl_close($ch);
+            if ($httpCode == 200) {
+              print_r($strResponse."\n");
+            }else{
+              print_r($httpCode."\n");
+            }
+        }
+    } catch (Exception $e) {
+        throw $e;
     }
-
-var options = {host: URL, path: THREADS_ENDPOINT, method: 'GET', headers: headers};
-
-var get_req = https.get(options, function(res) {
-      var response = ""
-      res.on('data', function (chunk) {
-          response += chunk
-        }).on("end", function(){
-          if (res.statusCode == 200)
-            console.log(response)
-          else
-            console.log(res.statusCode)
-        });
-    }).on('error', function(e) {
-          console.log(e.message)
-    });
+}catch (Exception $e) {
+    throw $e;
+}
 ```
 
 ### Run Your Code
@@ -61,7 +73,7 @@ var get_req = https.get(options, function(res) {
 You are almost done. Now run your script.
 
 ```bash
-$ node threads.js
+$ php threads.php
 ```
 
 ## Need Help?

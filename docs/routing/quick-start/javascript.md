@@ -1,10 +1,10 @@
 no_breadcrumb:true
 
-# Interaction JavaScript Quick Start
+# Tasks JavaScript Quick Start
 
 Welcome to the Engage Platform.
 
-In this Quick Start, we are going to help you generate a list of threads that agents can engage customers through in just a few minutes. Let's get started.
+In this Quick Start, we are going to help you get a list of tasks that agents can engage customers through in just a few minutes. Let's get started.
 
 ## Obtain Access Key
 
@@ -24,16 +24,16 @@ The first thing you need to do is obtain an API Access Token if you do not alrea
 
 Make note of the access token generated as you will need it later.
 
-## Create and Edit threads.js
+## Create and Edit tasks.js
 
-Create a file called `threads.js`. Be sure to edit the variables in <ALL CAPS> with your app's credentials.
+Create a file called `tasks.js`. Be sure to edit the variables in <ALL CAPS> with your app's credentials.
 
 ```javascript
 var https = require('https')
 
 const URL = '<YOUR-DOMAIN>.api.engagement.dimelo.com'
 const ACCESS_TOKEN = '<API-ACCESS-TOKEN>'
-const THREADS_ENDPOINT = "/1.0/content_threads"
+const THREADS_ENDPOINT = "/1.0/tasks"
 
 var headers = {
         'Authorization': "Bearer " + ACCESS_TOKEN

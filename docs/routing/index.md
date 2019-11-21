@@ -7,6 +7,7 @@
   <a href="quick-start/node/" class="btn btn-light qs-link">Javascript &raquo;</a>
   <a href="quick-start/php/" class="btn btn-light qs-link">PHP &raquo;</a>
   <a href="quick-start/python/" class="btn btn-light qs-link">Python &raquo;</a>
+  <a href="quick-start/ruby/" class="btn btn-light qs-link">Ruby &raquo;</a>
 </div>
 
 ## Routing Paradigms
@@ -19,7 +20,7 @@ Agents can manage their list of outstandings interactions and interventions thro
 
 Administrators can used these folders to monitor the set of interactions for an entire team, or manage interactions that exceed a certain age, or a set of interactions that meet other criteria.
 
-Individual agents can use folders to keep track of the active interactions currently assigned to them, to monitor interactions with specific customers to respond to them more quickly, etc. 
+Individual agents can use folders to keep track of the active interactions currently assigned to them, to monitor interactions with specific customers to respond to them more quickly, etc.
 
 ### Tasks
 
@@ -30,4 +31,4 @@ Tasks allow agents to engage with customer much like they would interface with a
 Tasks are created automatically by the system when interventions are created and assigned to an agent.
 
 !!! info "What is a "task" in Engage?"
-    Today tasks refer exclusively to interventions that require a reply from the assigned agent. In the future, Engage may allow for tasks associated with other actions (e.g. "open a bug," or "issue a refund," etc.) to be created. 
+    Today tasks refer exclusively to interventions that require a reply from the assigned agent. In the future, Engage may allow for tasks associated with other actions (e.g. "open a bug," or "issue a refund," etc.) to be created.

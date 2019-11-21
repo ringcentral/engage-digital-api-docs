@@ -35,6 +35,7 @@ pages:
       - 'Javascript': interactions/quick-start/javascript.md
       - 'PHP': interactions/quick-start/php.md
       - 'Python': interactions/quick-start/python.md
+      - 'Ruby': interactions/quick-start/ruby.md
     - 'Chatbots':
       - 'Overview': interactions/chatbots/overview.md
       - 'Implementation': interactions/chatbots/implementation.md
@@ -48,6 +49,7 @@ pages:
       - 'Javascript': routing/quick-start/javascript.md
       - 'PHP': routing/quick-start/php.md
       - 'Python': routing/quick-start/python.md
+      - 'Ruby': routing/quick-start/ruby.md
 - 'Secondary':
   - 'Using the API':
     - 'Requests': basics/requests.md

@@ -1,10 +1,10 @@
 no_breadcrumb:true
 
-# Interaction JavaScript Quick Start
+# Tasks Ruby Quick Start
 
 Welcome to the Engage Platform.
 
-In this Quick Start, we are going to help you generate a list of threads that agents can engage customers through in just a few minutes. Let's get started.
+In this Quick Start, we are going to help you get a list of tasks that agents can engage customers through in just a few minutes. Let's get started.
 
 ## Obtain Access Key
 
@@ -24,36 +24,23 @@ The first thing you need to do is obtain an API Access Token if you do not alrea
 
 Make note of the access token generated as you will need it later.
 
-## Create and Edit threads.js
+## Create and Edit tasks.rb
 
-Create a file called `threads.js`. Be sure to edit the variables in <ALL CAPS> with your app's credentials.
+Create a file called `tasks.rb`. Be sure to edit the variables in <ALL CAPS> with your app's credentials.
 
-```javascript
-var https = require('https')
+```ruby
+require 'faraday'
 
-const URL = '<YOUR-DOMAIN>.api.engagement.dimelo.com'
-const ACCESS_TOKEN = '<API-ACCESS-TOKEN>'
-const THREADS_ENDPOINT = "/1.0/content_threads"
+SERVER = "https://<YOUR-DOMAIN>.api.engagement.dimelo.com/"
+ACCESS_TOKEN = '<API-ACCESS-TOKEN>'
+THREADS_ENDPOINT = "/1.0/tasks"
 
-var headers = {
-        'Authorization': "Bearer " + ACCESS_TOKEN
-    }
+headers = {
+  headers: { 'Authorization' => 'Bearer ' + ACCESS_TOKEN }
+}
+res = Faraday.new(SERVER + THREADS_ENDPOINT, headers).get
 
-var options = {host: URL, path: THREADS_ENDPOINT, method: 'GET', headers: headers};
-
-var get_req = https.get(options, function(res) {
-      var response = ""
-      res.on('data', function (chunk) {
-          response += chunk
-        }).on("end", function(){
-          if (res.statusCode == 200)
-            console.log(response)
-          else
-            console.log(res.statusCode)
-        });
-    }).on('error', function(e) {
-          console.log(e.message)
-    });
+puts res.body
 ```
 
 ### Run Your Code
@@ -61,7 +48,7 @@ var get_req = https.get(options, function(res) {
 You are almost done. Now run your script.
 
 ```bash
-$ node threads.js
+$ ruby threads.rb
 ```
 
 ## Need Help?

@@ -7,6 +7,7 @@
   <a href="quick-start/node/" class="btn btn-light qs-link">Javascript &raquo;</a>
   <a href="quick-start/php/" class="btn btn-light qs-link">PHP &raquo;</a>
   <a href="quick-start/python/" class="btn btn-light qs-link">Python &raquo;</a>
+  <a href="quick-start/ruby/" class="btn btn-light qs-link">Ruby &raquo;</a>
 </div>
 
 The Engage Interactions API encompasses the functionality necessary to manage the communication between agents and customers.
@@ -15,11 +16,11 @@ The Engage Interactions API encompasses the functionality necessary to manage th
 
 ### Sources
 
-A "source" refers to the origination of a customer interaction. Sources are handles to third-party services, external to Engage. Source represent on which platform a given interaction is taking place. Example sources include: Twitter, Facebook, YouTube, etc. 
+A "source" refers to the origination of a customer interaction. Sources are handles to third-party services, external to Engage. Source represent on which platform a given interaction is taking place. Example sources include: Twitter, Facebook, YouTube, etc.
 
 ### Threads
 
-When a customer initiates a conversation via a source, this results in the creation of a thread. Associated with each node within a thread is some **content** and an **identity** to identify what was said/shared and who posted it. 
+When a customer initiates a conversation via a source, this results in the creation of a thread. Associated with each node within a thread is some **content** and an **identity** to identify what was said/shared and who posted it.
 
 ### Interventions
 
@@ -31,8 +32,8 @@ An Engage Bot is a specific kind of Engage integration that help developers buil
 
 1. Bot is notified via a webhook of a new thread.
 2. Bot fetches content associated with the interaction.
-3. Bot creates an intervention. 
-4. Bot posts messages to the customer associated with the intervention. 
+3. Bot creates an intervention.
+4. Bot posts messages to the customer associated with the intervention.
 
 Chatbots can be used to perform any of the following functions:
 
