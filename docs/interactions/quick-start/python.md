@@ -26,19 +26,18 @@ Make note of the access token generated as you will need it later.
 
 ## Create and Edit threads.py
 
-Create a file called `threads.py`. Be sure to edit the variables in <ALL CAPS> with your app's credentials.
+Create a file called `threads.py`. Be sure to edit the variables in &lt;ALL CAPS&gt; with your app's credentials.
 
 ```python
 import requests
 
 SERVER = "https://<YOUR-DOMAIN>.api.engagement.dimelo.com"
 ACCESS_TOKEN = '<API-ACCESS-TOKEN>'
-THREADS_ENDPOINT = "/1.0/content_threads"
+API = "/1.0/content_threads"
 
 try:
-    url = SERVER + THREADS_ENDPOINT
+    url = SERVER + API
     headers = {
-            'Content-Type': 'application/json',
             'Authorization': 'Bearer ' + ACCESS_TOKEN
             }
     try:

@@ -32,7 +32,7 @@ pages:
   - 'Interactions':
     - 'Overview': interactions/index.md
     - 'Getting Started':
-      - 'Javascript': interactions/quick-start/javascript.md
+      - 'Node JS': interactions/quick-start/node.md
       - 'PHP': interactions/quick-start/php.md
       - 'Python': interactions/quick-start/python.md
       - 'Ruby': interactions/quick-start/ruby.md
@@ -46,7 +46,7 @@ pages:
   - 'Routing':
     - 'Overview': routing/index.md
     - 'Getting Started':
-      - 'Javascript': routing/quick-start/javascript.md
+      - 'Node JS': routing/quick-start/node.md
       - 'PHP': routing/quick-start/php.md
       - 'Python': routing/quick-start/python.md
       - 'Ruby': routing/quick-start/ruby.md

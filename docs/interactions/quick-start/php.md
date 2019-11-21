@@ -26,16 +26,16 @@ Make note of the access token generated as you will need it later.
 
 ## Create and Edit threads.php
 
-Create a file called `threads.php`. Be sure to edit the variables in <ALL CAPS> with your app's credentials.
+Create a file called `threads.php`. Be sure to edit the variables in &lt;ALL CAPS&gt; with your app's credentials.
 
 ``` PHP
 <?php
 $SERVER = "https://<YOUR-DOMAIN>.api.engagement.dimelo.com";
 $ACCESS_TOKEN = '<API-ACCESS-TOKEN>';
-$THREADS_ENDPOINT = "/1.0/content_threads";
+$API = "/1.0/content_threads";
 
 try {
-    $url = $SERVER . $THREADS_ENDPOINT;
+    $url = $SERVER . $API;
     $headers = array (
           'Authorization: Bearer ' . $ACCESS_TOKEN
         );

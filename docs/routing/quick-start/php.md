@@ -26,16 +26,16 @@ Make note of the access token generated as you will need it later.
 
 ## Create and Edit tasks.php
 
-Create a file called `tasks.php`. Be sure to edit the variables in <ALL CAPS> with your app's credentials.
+Create a file called `tasks.php`. Be sure to edit the variables in &lt;ALL CAPS&gt; with your app's credentials.
 
 ``` PHP
 <?php
 $SERVER = "https://<YOUR-DOMAIN>.api.engagement.dimelo.com";
 $ACCESS_TOKEN = '<API-ACCESS-TOKEN>';
-$THREADS_ENDPOINT = "/1.0/tasks";
+$API = "/1.0/tasks";
 
 try {
-    $url = $SERVER . $THREADS_ENDPOINT;
+    $url = $SERVER . $API;
     $headers = array (
           'Authorization: Bearer ' . $ACCESS_TOKEN
         );
@@ -73,7 +73,7 @@ try {
 You are almost done. Now run your script.
 
 ```bash
-$ php threads.php
+$ php tasks.php
 ```
 
 ## Need Help?

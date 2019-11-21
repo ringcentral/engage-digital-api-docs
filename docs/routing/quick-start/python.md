@@ -1,10 +1,10 @@
 no_breadcrumb:true
 
-# Routing Python Quick Start
+# Tasks Python Quick Start
 
 Welcome to the Engage Platform.
 
-In this Quick Start, we are going to help you generate a list of threads that agents can engage customers through in just a few minutes. Let's get started.
+In this Quick Start, we are going to help you get a list of tasks that agents can engage customers through in just a few minutes. Let's get started.
 
 ## Obtain Access Key
 
@@ -26,17 +26,17 @@ Make note of the access token generated as you will need it later.
 
 ## Create and Edit tasks.py
 
-Create a file called `tasks.py`. Be sure to edit the variables in <ALL CAPS> with your app's credentials.
+Create a file called `tasks.py`. Be sure to edit the variables in &lt;ALL CAPS&gt; with your app's credentials.
 
 ```python
 import requests
 
 SERVER = "https://<YOUR-DOMAIN>.api.engagement.dimelo.com"
 ACCESS_TOKEN = '<API-ACCESS-TOKEN>'
-THREADS_ENDPOINT = "/1.0/tasks"
+API = "/1.0/tasks"
 
 try:
-    url = SERVER + THREADS_ENDPOINT
+    url = SERVER + API
     headers = {
             'Authorization': 'Bearer ' + ACCESS_TOKEN
           }
@@ -57,7 +57,7 @@ except Exception as e:
 You are almost done. Now run your script.
 
 ```bash
-$ python threads.py
+$ python tasks.py
 ```
 
 ## Need Help?

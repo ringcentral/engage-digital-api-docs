@@ -26,19 +26,19 @@ Make note of the access token generated as you will need it later.
 
 ## Create and Edit tasks.rb
 
-Create a file called `tasks.rb`. Be sure to edit the variables in <ALL CAPS> with your app's credentials.
+Create a file called `tasks.rb`. Be sure to edit the variables in &lt;ALL CAPS&gt; with your app's credentials.
 
 ```ruby
 require 'faraday'
 
 SERVER = "https://<YOUR-DOMAIN>.api.engagement.dimelo.com/"
 ACCESS_TOKEN = '<API-ACCESS-TOKEN>'
-THREADS_ENDPOINT = "/1.0/tasks"
+API = "/1.0/tasks"
 
 headers = {
   headers: { 'Authorization' => 'Bearer ' + ACCESS_TOKEN }
 }
-res = Faraday.new(SERVER + THREADS_ENDPOINT, headers).get
+res = Faraday.new(SERVER + API, headers).get
 
 puts res.body
 ```
@@ -48,7 +48,7 @@ puts res.body
 You are almost done. Now run your script.
 
 ```bash
-$ ruby threads.rb
+$ ruby tasks.rb
 ```
 
 ## Need Help?
