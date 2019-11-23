@@ -30,9 +30,7 @@ One of the most popular ways of extending RingCentral Engage's functionality is 
 
 Webhooks are essential in creating apps that respond to customers and assist agents in real-time. Webhooks are the means by which applications are notified of events happening across an Engage account. 
 
-<a class="btn btn-primary" href="./webhooks/overview/">Learn more about Engage Webhooks &raquo;</a>
-
-## Routing
+<a class="btn btn-primary" href="./webhooks/">Learn more about Engage Webhooks &raquo;</a>
 
 ## Additional Resources
 
