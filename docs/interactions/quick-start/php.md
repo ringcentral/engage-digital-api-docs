@@ -2,9 +2,7 @@ no_breadcrumb:true
 
 # Interaction PHP Quick Start
 
-Welcome to the Engage Platform.
-
-In this Quick Start, we are going to help you generate a list of threads that agents can engage customers through in just a few minutes. Let's get started.
+Welcome to the Engage Platform. In this Quick Start, we are going to help you generate a list of threads that agents can engage customers via. Obtaining a reference to a thread is the first step in taking action on an interaction with a customer, including creating an intervention. The Quick Start will have you up and running in minutes. Let's get started.
 
 ## Obtain Access Key
 
