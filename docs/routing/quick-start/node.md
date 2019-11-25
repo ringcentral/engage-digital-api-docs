@@ -2,9 +2,7 @@ no_breadcrumb:true
 
 # Tasks JavaScript Quick Start
 
-Welcome to the Engage Platform.
-
-In this Quick Start, we are going to help you get a list of tasks that agents can engage customers through in just a few minutes. Let's get started.
+Welcome to the Engage Platform. In this Quick Start, we are going to help you get a list of tasks that can be assigned to agents within your account. Obtaining a reference to a task by its ID is an important first step in managing the workflow of that task. This Quick Start will have you up and running in minutes.
 
 ## Obtain Access Key
 
