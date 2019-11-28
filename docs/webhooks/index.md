@@ -18,6 +18,6 @@ We strongly advise developers consuming this API to respect the following guidel
 
 The following resources will help you navigate how to setup and begin utilizing webhooks in your code.
 
-* [Create a Webhook](../create/)
-* [Receiving Webhooks](../receive/)
-* [Event Reference](../events/)
+* [Create a Webhook](./create/)
+* [Receiving Webhooks](./receive/)
+* [Event Reference](./events/)

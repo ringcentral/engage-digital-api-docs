@@ -15,7 +15,7 @@ Let's explore each of these steps in greater detail.
 
 ## Receive a new message notification
 
-Engage Digital will send an event notifying you of a new message posted by a customer to a URL via a "webhook." The process of creating and validating a webhook endpoint is discussed in greater detail within [Creating Webhooks](../../webhooks/create/).
+Engage Digital will send an event notifying you of a new message posted by a customer to a URL via a "webhook." The process of creating and validating a webhook endpoint is discussed in greater detail within [Creating Webhooks](../../../webhooks/create/).
 
 Once the Webhook has been created and validated, Engage will begin transmitting via HTTP POST event messages corresponding to the channels associated with the corresponding webhook and endpoint URL of your choice. 
 
