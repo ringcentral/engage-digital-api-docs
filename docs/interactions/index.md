@@ -43,4 +43,4 @@ Chatbots can be used to perform any of the following functions:
 * Resolve the associated intervention.
 * Transfer the intervention to a human agent for resolution.
 
-<a class="btn btn-primary" href="../chatbot/overview/">Build an Engage Chatbot &raquo;</a>
+<a class="btn btn-primary" href="./chatbots/overview/">Build an Engage Chatbot &raquo;</a>
