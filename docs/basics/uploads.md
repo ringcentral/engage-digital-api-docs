@@ -10,7 +10,14 @@ You can upload file via Curl by using the -F option with the path to your file, 
 
 ## Using Postman
 
-Postman also allows you to upload files by doing adding a form-data parameter named file, and choose the file you want to upload:
+Postman also allows you to upload files by adding a form-data parameter named `file`, and by choosing the file you want to upload as shown in screenshot below.
 
-<<POSTMAN_IMAGE>>
+1. Select POST method
+2. Select Body tab
+3. Select 'form-data' option
+4. Add key called "file"
+5. Choose file off of file-system
+6. Click "Send"
+
+<img class="img img-fluid" src="../postman.png">
 
