@@ -12,8 +12,8 @@ Engage Digital Messaging SDKs are libraries that allow integration of rich in-ap
 
 Source SDKs and Frameworks allow connection of Engage Digital to other messaging systems easily. Some built-in sources include Apple Business Chat, Facebook Messenger, WeChat, etc.
 
+* [Javascript Source SDK Framework](https://github.com/ringcentral/engage-digital-source-sdk-js)
 * [JavaScript Source SDK Demo App](https://github.com/ringcentral-tutorials/engage-digital-source-sdk-demo)
-* [Javascript Source SDK framework](https://github.com/ringcentral/engage-digital-source-sdk-js)
 * [PHP Source SDK](https://github.com/ringcentral/engage-digital-source-sdk)
 
 ### Client SDKs
