@@ -24,11 +24,9 @@ Client SDKs provide native language interface to Engage Digital REST APIs.
 * [JavaScript Client SDK](https://github.com/ringcentral/engage-digital-client-js)
 * [Python Client SDK](https://github.com/ringcentral/engage-digital-client-python)
 
-### Communities SDK
-
-* [Ruby Communities SDK](https://github.com/ringcentral/engage-digital-communities-ruby)
-
 ### Chatbot Framework
+
+Chatbots allow organizations to provide automated customer communications with in the chat stream for automated customer interaction.
 
 * [JavaScript Chatbot Framework](https://github.com/ringcentral/engage-digital-chatbot-js)
 
