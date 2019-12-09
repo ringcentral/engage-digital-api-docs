@@ -10,6 +10,7 @@
 
 * [JavaScript Source SDK Demo App](https://github.com/ringcentral-tutorials/engage-digital-source-sdk-demo)
 * [PHP Source SDK](https://github.com/ringcentral/engage-digital-source-sdk)
+* [Javascript Source SDK framework](https://github.com/ringcentral/engage-digital-source-sdk-js)
 
 ### Client SDKs
 
