@@ -1,6 +1,6 @@
 # Using Postman to Test Engage Digital APIs
 
-For easy testing using [Postman](https://www.getpostman.com/), RingCentral provides a Postman 2.0 Collection for Engage Digital. It is based on the RingCentral Engage Digital OpenAPI 3.0 Specificaion. While Postman can import an OpenAPI 3.0 Specification directly, RingCentral recommends using the Collection as it provides better management of access credentials using Postman variables and environments as recommended by Postman.
+For easy testing using [Postman](https://www.getpostman.com/), RingCentral provides a Postman 2.0 Collection for Engage Digital. It is based on the RingCentral Engage Digital OpenAPI 3.0 Specificaion. While Postman can import an OpenAPI 3.0 Specification directly, RingCentral recommends using the Collection as it provides better authorization handling using Postman variables and environments as recommended by Postman.
 
 The files are available here:
 
@@ -15,17 +15,19 @@ Before you can use Postman, it is important to note the URL for your account and
 
 ### Your API URL
 
-Engager Digital accounts use a customer subdomain that is important to note when accessing both the web application and API. In the following URL, note `mycompany` in the web URL when you access your account. 
+Engage Digital accounts use a customer subdomain that is important to note when accessing both the web application and API. In the following URL, replace the `{mycompany}` variable in the web URL with your own subdomain when accessing your account. 
 
-`https://mycompany.engagement.dimelo.com`
+`https://{mycompany}.engagement.dimelo.com`
 
-Use your customer subdomain to create the following API URL for your company:
+Use your customer subdomain to create the following API base URL for your company:
 
-`https://mycompany.api.engagement.dimelo.com`
+`https://{mycompany}.api.engagement.dimelo.com`
 
 ### Creating an Access Token
 
 See the following instructions for how to create an access token in the Engage Digital administration web console.
+
+* [Obtain an Access Token](https://developers.ringcentral.com/engage/guide/basics/access-token)
 
 ## Using Postman
 
@@ -39,11 +41,11 @@ Using Postman once you have your pre-requisites consists of a few steps:
 
 Use the following steps to configure your Postman environment:
 
-1. In Postman, create an environment by clicking the Gear icon for "Management Environments". This will bring up a list of existing environments.
+1. In Postman, create an environment by clicking the Gear icon for "Management Environments" in the upper right corner. This will bring up a list of existing environments.
 2. Click "Add" to create a new environment.
 3. Choose a name of your choice.
-4. Enter your server URL with Variable: `RINGCENTRAL_ENGAGE_SERVER_URL` and Initial Value" set to your API URL, for example: `https://mycompany.api.engagement.dimelo.com`
-4. Enter your static access token with the following Variable name `RINGCENTRAL_ENGAGE_ACCESS_TOKEN` and access token value. This will set the proper request header.
+4. Enter your server URL with "Variable": `RINGCENTRAL_ENGAGE_SERVER_URL` and "Initial Value" set to your API URL. This would be: `https://{mycompany}.api.engagement.dimelo.com` uising your company's subdomain replacing `{mycompany}`.
+4. Enter your static access token with "Variable" set to `RINGCENTRAL_ENGAGE_ACCESS_TOKEN` and "Initial Value" set to your access token. This will set the proper request header.
 5. Click the "Add" button to finish adding this environment.
 
 ### Importing the Postman collection
@@ -57,9 +59,13 @@ Use the following steps to import the Engage Digital Postman collection.
 
 ### Making an API call
 
-To test the Postman collection, we will call the "Get All Users" API.
+To test the Postman collection, let's call the "Get All Users" API.
 
 1. In the Environments pick list in the upper right corner, select the environment you just created.
-1. In the left hand nav, select "Users" > "Getting all users"
+1. In the left hand navigation menu, select "Users" > "Getting all users"
 1. Ensure all the optional query string parameters are unselected
-1. Click the "Send" button.
+1. Click the "Send" button
+
+## Feedback
+
+If you have any feedback on using the Postman collection, please post to our GitHub repo [here](https://github.com/ringcentral/engage-api-docs).
