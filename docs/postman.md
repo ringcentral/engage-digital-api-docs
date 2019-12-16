@@ -40,12 +40,11 @@ Using Postman once you have your pre-requisites consists of a few steps:
 Use the following steps to configure your Postman environment:
 
 1. In Postman, create an environment by clicking the Gear icon for "Management Environments". This will bring up a list of existing environments.
-2. lick "Add" to create a new environment.
+2. Click "Add" to create a new environment.
 3. Choose a name of your choice.
 4. Enter your server URL with Variable: `RINGCENTRAL_ENGAGE_SERVER_URL` and Initial Value" set to your API URL, for example: `https://mycompany.api.engagement.dimelo.com`
 4. Enter your static access token with the following Variable name `RINGCENTRAL_ENGAGE_ACCESS_TOKEN` and access token value. This will set the proper request header.
-
-specs_engage_engage-digital.postman2.json
+5. Click the "Add" button to finish adding this environment.
 
 ### Importing the Postman collection
 
@@ -53,7 +52,7 @@ Use the following steps to import the Engage Digital Postman collection.
 
 1. In the upper left corner of the Postman application click the "Import" button.
 2. Click the "Import from Link" tab.
-3. Paste in the following URL where it says "Enter a URL and press import": `http://ringcentral.github.io/api-specs/specs_engage_engage-digital_postman-2.0.json`
+3. Paste in the following URL where it says "Enter a URL and press import": [`http://ringcentral.github.io/api-specs/specs_engage_engage-digital_postman-2.0.json`](http://ringcentral.github.io/api-specs/specs_engage_engage-digital_postman-2.0.json)
 4. Click the "Import" button
 
 ### Making an API call
