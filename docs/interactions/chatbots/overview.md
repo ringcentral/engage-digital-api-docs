@@ -11,9 +11,9 @@ Engage Digital allows developers to create automated agents, or bots, to assist 
     
     Below is a list of documentation that we recommend you read carefully beforehand:
     
-    * [Engage Webhook API](https://bit.ly/dimelo_webhook_api) - Functionality that allows automatic events concerning the message’s life-cycle from Engage Digital Platform to be sent to a predefined url
+    * [Engage Webhook API](https://developers.ringcentral.com/engage/guide/webhooks) - Functionality that allows automatic events concerning the message’s life-cycle from Engage Digital Platform to be sent to a predefined url
     
-    * [Engage REST API](https://bit.ly/dimelo_REST_API) -  Engage Digital’s API which allows to retrieve data stored in it.
+    * [Engage REST API](https://developers.ringcentral.com/engage/guide/basics) -  Engage Digital’s API which allows to retrieve data stored in it.
 
 ## Bot Architecture
 
