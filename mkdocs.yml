@@ -65,3 +65,4 @@ pages:
     - 'Receiving Events': webhooks/receive.md
     - 'Event Types': webhooks/events.md
   - 'SDKs': sdks.md
+  - 'Postman': postman.md
