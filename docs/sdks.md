@@ -26,7 +26,7 @@ Client SDKs provide native language interface to Engage Digital REST APIs.
 
 ### Chatbot Framework
 
-Chatbots allow organizations to provide automated customer communications with in the chat stream for automated customer interaction.
+Chatbots allow organizations to provide automated customer communications with in the chat stream for automated customer interaction. In addition to the pre-built framework below, see our [Chatbot Developer Guide] on how to build chatbots from scratch using the APIs.
 
 * [JavaScript Chatbot Framework](https://github.com/ringcentral/engage-digital-chatbot-js)
 
