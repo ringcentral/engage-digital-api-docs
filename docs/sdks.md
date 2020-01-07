@@ -20,7 +20,7 @@ Source SDKs and Frameworks allow connection of Engage Digital to other messaging
 
 Client SDKs provide native language interface to Engage Digital REST APIs. 
 
-* [Go Client SDK](https://github.com/grokify/go-ringcentral-engage) - [sample code](https://github.com/grokify/go-ringcentral-engage/tree/master/examples)
+* [Go Client SDK](https://github.com/grokify/go-ringcentral/tree/master/engagedigital/v1) - [sample code](https://github.com/grokify/go-ringcentral/tree/master/engagedigital/v1/examples)
 * [JavaScript Client SDK](https://github.com/ringcentral/engage-digital-client-js)
 * [Python Client SDK](https://github.com/ringcentral/engage-digital-client-python)
 
