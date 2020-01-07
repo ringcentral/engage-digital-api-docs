@@ -28,6 +28,7 @@ Source SDKs and Frameworks allow connection of Engage Digital to other messaging
 
 * [Source SDK documentation](https://github.com/ringcentral/engage-digital-source-sdk/wiki)
 * [Javascript Source SDK Framework](https://github.com/ringcentral/engage-digital-source-sdk-js)
+* [Glip Source SDK Demo app](https://github.com/ringcentral/engage-digital-sdk-source-glip)
 * [JavaScript Source SDK Demo App](https://github.com/ringcentral-tutorials/engage-digital-source-sdk-demo)
 * [PHP Source SDK](https://github.com/ringcentral/engage-digital-source-sdk)
 * [Wordpress Plugin for Source SDK](https://github.com/ringcentral-tutorials/engage-digital-source-sdk-wordpress-plugin)
