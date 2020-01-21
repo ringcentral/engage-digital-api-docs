@@ -33,3 +33,16 @@ Source SDKs and Frameworks allow connection of Engage Digital to other messaging
 * [JavaScript Source SDK Demo App](https://github.com/ringcentral-tutorials/engage-digital-source-sdk-demo)
 * [PHP Source SDK](https://github.com/ringcentral/engage-digital-source-sdk)
 * [Wordpress Plugin for Source SDK](https://github.com/ringcentral-tutorials/engage-digital-source-sdk-wordpress-plugin)
+
+## Community SDKs and Sample Apps
+
+In addition to the official RingCentral SDKs there are a number of unofficial libraries, plugins and sample apps for a range of languages built by amazing communities of active developers. The list below includes libraries and apps for the RingCentral Engage Digital APIs.
+
+If you’ve built your own RingCentral Engage Digital library, plugin, or open source app, please [get in touch](mailto:devsupport@ringcentral.com) and we’ll add it to this list.
+
+Some of these integrations may be incomplete. Feedback and bugs should be directed to their representative authors.
+
+### C&#35;
+
+* Client SDKs [Nuget package](https://www.nuget.org/packages/RingCentral.EngageDigital/) [Sources](https://github.com/joalmeid/engage-digital-client-csharp)
+* Source SDK Framework [Nuget package](https://www.nuget.org/packages/RingCentral.EngageDigital.SourceSdk/) [Sources](https://github.com/joalmeid/engage-digital-source-sdk-csharp)
