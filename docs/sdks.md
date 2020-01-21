@@ -44,5 +44,5 @@ Some of these integrations may be incomplete. Feedback and bugs should be direct
 
 ### C&#35;
 
-* Client SDKs [Nuget package](https://www.nuget.org/packages/RingCentral.EngageDigital/) [Sources](https://github.com/joalmeid/engage-digital-client-csharp)
-* Source SDK Framework [Nuget package](https://www.nuget.org/packages/RingCentral.EngageDigital.SourceSdk/) [Sources](https://github.com/joalmeid/engage-digital-source-sdk-csharp)
+* [Client SDKs](https://github.com/joalmeid/engage-digital-client-csharp) - [Nuget package](https://www.nuget.org/packages/RingCentral.EngageDigital/)
+* [Source SDK Framework](https://github.com/joalmeid/engage-digital-source-sdk-csharp) - [Nuget package](https://www.nuget.org/packages/RingCentral.EngageDigital.SourceSdk/)
