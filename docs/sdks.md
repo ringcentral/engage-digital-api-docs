@@ -4,7 +4,6 @@
 
 Client SDKs provide native language interface to Engage Digital REST APIs. 
 
-* [Go Client SDK](https://github.com/grokify/go-ringcentral/tree/master/engagedigital/v1) - [sample code](https://github.com/grokify/go-ringcentral/tree/master/engagedigital/v1/examples)
 * [JavaScript Client SDK](https://github.com/ringcentral/engage-digital-client-js)
 * [Python Client SDK](https://github.com/ringcentral/engage-digital-client-python)
 
@@ -46,3 +45,7 @@ Some of these integrations may be incomplete. Feedback and bugs should be direct
 
 * [Client SDKs](https://github.com/joalmeid/engage-digital-client-csharp) - [Nuget package](https://www.nuget.org/packages/RingCentral.EngageDigital/)
 * [Source SDK Framework](https://github.com/joalmeid/engage-digital-source-sdk-csharp) - [Nuget package](https://www.nuget.org/packages/RingCentral.EngageDigital.SourceSdk/)
+
+### Go
+
+* [Go Client SDK](https://github.com/grokify/go-ringcentral/tree/master/engagedigital/v1) - [sample code](https://github.com/grokify/go-ringcentral/tree/master/engagedigital/v1/examples)
