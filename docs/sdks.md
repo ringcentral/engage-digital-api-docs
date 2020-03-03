@@ -48,4 +48,4 @@ Some of these integrations may be incomplete. Feedback and bugs should be direct
 
 ### Go
 
-* [Go Client SDK](https://github.com/grokify/go-ringcentral/tree/master/engagedigital/v1) - [sample code](https://github.com/grokify/go-ringcentral/tree/master/engagedigital/v1/examples)
+* [Go Client SDK](https://github.com/grokify/go-ringcentral/tree/master/engagedigital/v1) - [Sample Code](https://github.com/grokify/go-ringcentral/tree/master/engagedigital/v1/examples)
