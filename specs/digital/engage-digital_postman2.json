@@ -830,7 +830,7 @@
               "query": [
                 {
                   "key": "q",
-                  "value": "\u003cinteger.int32\u003e",
+                  "value": "\u003cstring\u003e",
                   "description": "A search query to filter threads. Please refer to ​Search \u0026 filtering parameters​ for more details.",
                   "disabled": true
                 },
