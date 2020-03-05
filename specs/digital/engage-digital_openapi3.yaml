@@ -1020,15 +1020,14 @@ paths:
         - Contents
     post:
       description: >-
-        This method allows you to create an new content. It can be a reply to
-        another content or a content that initiate discussion. It use token’s
-        user as content user if he is authorized. Content will be created in
-        Dimelo Digital and pushed asynchronously to the source.
-
+        This method allows you to create new content for use in discussions. 
+        It can be a reply to another piece of content or be used to initiate
+        discussion. If authorized, the token’s user will be used as the
+        content author. Content will be created in Engage Digital and pushed
+        asynchronously to the source.
 
         Replying to a customer content is usually possible (unless the
         source/conversation is read only).
-
 
         Composing a content on the contrary depend on the source itself:
 
@@ -1156,7 +1155,7 @@ paths:
           description: Success
         '422':
           description: Unprocessable Entity
-      summary: Creating a content
+      summary: Creating content
       tags:
         - Contents
   '/contents/{contentId}':
