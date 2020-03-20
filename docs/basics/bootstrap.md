@@ -50,7 +50,7 @@ In your Engage Digital console, perform the following steps:
 1. Click the "+" in the upper right corner and then select "Email" to bring up the "Create a source" page.
 1. Under "GENERAL SETTINGS" > "Name", enter a name for this source. A common approach is to use the email address you select in "POSTMARK SETTINGS" > "Email Address" mentioned below.
 1. Under "GENERAL SETTINGS" > "Community", select the desired community, which will be the one you created in thee previous section.
-1. Under "POSTMARK SETTINGS" > "Email Address". You can use the default email address. For quick setup, either use the default email address or just use the SMTP username and use the existing SMTP hostname. For example, you can use an email like the following: "mycompany@email.us1.digital.ringcentral.com". It is possible to use a custom email domain but that is outside the scope of this tutorial. See the Engage Digital documentation for more.
+1. Under "POSTMARK SETTINGS" > "Email Address". You can use the default email address. For quick setup, either use the default email address or just use the SMTP username and use the existing SMTP hostname. For example, you can use an email like the following: `mycompany@email.us1.digital.ringcentral.com`. It is possible to use a custom email domain but that is outside the scope of this tutorial. See the Engage Digital documentation for more.
 1. Click "Save" at the bottom of the page.
 
 To verify the settings, click on the source name in the esource list and verify that the "GENERAL SETTINGS" > "Active" checkbox is clicked, and that the "POSTMARK SETTINGS" > "Enable" checkbox is clicked.
