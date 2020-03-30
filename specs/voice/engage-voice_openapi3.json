@@ -3840,6 +3840,534 @@
   },
   "openapi": "3.0.0",
   "paths": {
+    "/api/v1/admin/accounts/{accountId}/activeCalls/createManualAgentCall": {
+      "post": {
+        "description": "Permissions: READ on Account (Permission Override)",
+        "operationId": "createManualAgentCall",
+        "parameters": [
+          {
+            "description": "accountId",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "username",
+            "in": "query",
+            "name": "username",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "destination",
+            "in": "query",
+            "name": "destination",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "ringDuration",
+            "in": "query",
+            "name": "ringDuration",
+            "required": true,
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "callerId",
+            "in": "query",
+            "name": "callerId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Creates a manual agent call",
+        "tags": [
+          "Active Call"
+        ]
+      }
+    },
+    "/api/v1/admin/accounts/{accountId}/activeCalls/list": {
+      "get": {
+        "description": "Permissions: READ on Account",
+        "operationId": "getProductActiveCallsListRequest",
+        "parameters": [
+          {
+            "description": "accountId",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "product",
+            "in": "query",
+            "name": "product",
+            "required": true,
+            "schema": {
+              "enum": [
+                "ACCOUNT",
+                "ACD",
+                "AGENT",
+                "CHAT_QUEUE",
+                "OUTBOUND",
+                "VISUAL_IVR",
+                "CLOUD_PROFILE",
+                "CLOUD_DESTINATION",
+                "TRAC_NUMBER",
+                "HTTP_SERVICES",
+                "SCRIPTING",
+                "TN_MANAGER",
+                "SURVEY",
+                "DNIS",
+                "TEAMS",
+                "KNOWLEDGE_BASE",
+                "UTILITIES"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "description": "productId",
+            "in": "query",
+            "name": "productId",
+            "required": true,
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "page",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "maxRows",
+            "in": "query",
+            "name": "maxRows",
+            "required": false,
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/ActiveCallListResponse"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Returns a listing of current active calls for a given product on an account",
+        "tags": [
+          "Active Call"
+        ]
+      }
+    },
+    "/api/v1/admin/accounts/{accountId}/activeCalls/{uii}/addSessionToCall": {
+      "post": {
+        "description": "Permissions: READ on Agent (Permission Override)",
+        "operationId": "addSessionToCall",
+        "parameters": [
+          {
+            "description": "accountId",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "uii",
+            "in": "path",
+            "name": "uii",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "destination",
+            "in": "query",
+            "name": "destination",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "sessionType",
+            "in": "query",
+            "name": "sessionType",
+            "required": true,
+            "schema": {
+              "enum": [
+                "MONITOR",
+                "BARGEIN",
+                "COACHING"
+              ],
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Provides support for adding sessions to an active call.",
+        "tags": [
+          "Active Call"
+        ]
+      }
+    },
+    "/api/v1/admin/accounts/{accountId}/activeCalls/{uii}/dispositionCall": {
+      "post": {
+        "description": "Permissions: READ on Account (Permission Override)",
+        "operationId": "dispositionCall",
+        "parameters": [
+          {
+            "description": "accountId",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "uii",
+            "in": "path",
+            "name": "uii",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "disposition",
+            "in": "query",
+            "name": "disposition",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "callback",
+            "in": "query",
+            "name": "callback",
+            "required": true,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "description": "callBackDTS",
+            "in": "query",
+            "name": "callBackDTS",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "notes",
+            "in": "query",
+            "name": "notes",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Sets the call disposition for either INBOUND or OUTBOUND calls and releases the agent from PD state",
+        "tags": [
+          "Active Call"
+        ]
+      }
+    },
+    "/api/v1/admin/accounts/{accountId}/activeCalls/{uii}/hangupCall": {
+      "post": {
+        "description": "Permissions: READ on Account (Permission Override)",
+        "operationId": "hangupCall",
+        "parameters": [
+          {
+            "description": "accountId",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "uii",
+            "in": "path",
+            "name": "uii",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Terminates an active call",
+        "tags": [
+          "Active Call"
+        ]
+      }
+    },
+    "/api/v1/admin/accounts/{accountId}/activeCalls/{uii}/hangupSession": {
+      "post": {
+        "description": "Permissions: READ on Account (Permission Override)",
+        "operationId": "hangupSession",
+        "parameters": [
+          {
+            "description": "accountId",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "uii",
+            "in": "path",
+            "name": "uii",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "phone",
+            "in": "query",
+            "name": "phone",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Terminates an active session",
+        "tags": [
+          "Active Call"
+        ]
+      }
+    },
+    "/api/v1/admin/accounts/{accountId}/activeCalls/{uii}/toggleCallRecording": {
+      "post": {
+        "description": "Permissions: READ on Account (Permission Override)",
+        "operationId": "toggleCallRecording",
+        "parameters": [
+          {
+            "description": "accountId",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "uii",
+            "in": "path",
+            "name": "uii",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "record",
+            "in": "query",
+            "name": "record",
+            "required": true,
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Provides support for toggling call recording on/off for an active call",
+        "tags": [
+          "Active Call"
+        ]
+      }
+    },
     "/api/v1/admin/accounts/{accountId}/agentGroups": {
       "get": {
         "description": "Permissions: READ on Account, Post Filtered Results",
@@ -5553,534 +6081,6 @@
         ]
       }
     },
-    "/api/v1/admin/s/accounts/{accountId}/activeCalls/createManualAgentCall": {
-      "post": {
-        "description": "Permissions: READ on Account (Permission Override)",
-        "operationId": "createManualAgentCall",
-        "parameters": [
-          {
-            "description": "accountId",
-            "in": "path",
-            "name": "accountId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "description": "username",
-            "in": "query",
-            "name": "username",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "description": "destination",
-            "in": "query",
-            "name": "destination",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "description": "ringDuration",
-            "in": "query",
-            "name": "ringDuration",
-            "required": true,
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "callerId",
-            "in": "query",
-            "name": "callerId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "201": {
-            "description": "Created"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "404": {
-            "description": "Not Found"
-          }
-        },
-        "security": [
-          {
-            "ApiKeyAuth": []
-          }
-        ],
-        "summary": "Creates a manual agent call",
-        "tags": [
-          "Active Call"
-        ]
-      }
-    },
-    "/api/v1/admin/s/accounts/{accountId}/activeCalls/list": {
-      "get": {
-        "description": "Permissions: READ on Account",
-        "operationId": "getProductActiveCallsListRequest",
-        "parameters": [
-          {
-            "description": "accountId",
-            "in": "path",
-            "name": "accountId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "description": "product",
-            "in": "query",
-            "name": "product",
-            "required": true,
-            "schema": {
-              "enum": [
-                "ACCOUNT",
-                "ACD",
-                "AGENT",
-                "CHAT_QUEUE",
-                "OUTBOUND",
-                "VISUAL_IVR",
-                "CLOUD_PROFILE",
-                "CLOUD_DESTINATION",
-                "TRAC_NUMBER",
-                "HTTP_SERVICES",
-                "SCRIPTING",
-                "TN_MANAGER",
-                "SURVEY",
-                "DNIS",
-                "TEAMS",
-                "KNOWLEDGE_BASE",
-                "UTILITIES"
-              ],
-              "type": "string"
-            }
-          },
-          {
-            "description": "productId",
-            "in": "query",
-            "name": "productId",
-            "required": true,
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "page",
-            "in": "query",
-            "name": "page",
-            "required": false,
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "maxRows",
-            "in": "query",
-            "name": "maxRows",
-            "required": false,
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "items": {
-                    "$ref": "#/components/schemas/ActiveCallListResponse"
-                  },
-                  "type": "array"
-                }
-              }
-            },
-            "description": "OK"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "404": {
-            "description": "Not Found"
-          }
-        },
-        "security": [
-          {
-            "ApiKeyAuth": []
-          }
-        ],
-        "summary": "Returns a listing of current active calls for a given product on an account",
-        "tags": [
-          "Active Call"
-        ]
-      }
-    },
-    "/api/v1/admin/s/accounts/{accountId}/activeCalls/{uii}/addSessionToCall": {
-      "post": {
-        "description": "Permissions: READ on Agent (Permission Override)",
-        "operationId": "addSessionToCall",
-        "parameters": [
-          {
-            "description": "accountId",
-            "in": "path",
-            "name": "accountId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "description": "uii",
-            "in": "path",
-            "name": "uii",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "description": "destination",
-            "in": "query",
-            "name": "destination",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "description": "sessionType",
-            "in": "query",
-            "name": "sessionType",
-            "required": true,
-            "schema": {
-              "enum": [
-                "MONITOR",
-                "BARGEIN",
-                "COACHING"
-              ],
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "201": {
-            "description": "Created"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "404": {
-            "description": "Not Found"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        },
-        "security": [
-          {
-            "ApiKeyAuth": []
-          }
-        ],
-        "summary": "Provides support for adding sessions to an active call.",
-        "tags": [
-          "Active Call"
-        ]
-      }
-    },
-    "/api/v1/admin/s/accounts/{accountId}/activeCalls/{uii}/dispositionCall": {
-      "post": {
-        "description": "Permissions: READ on Account (Permission Override)",
-        "operationId": "dispositionCall",
-        "parameters": [
-          {
-            "description": "accountId",
-            "in": "path",
-            "name": "accountId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "description": "uii",
-            "in": "path",
-            "name": "uii",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "description": "disposition",
-            "in": "query",
-            "name": "disposition",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "description": "callback",
-            "in": "query",
-            "name": "callback",
-            "required": true,
-            "schema": {
-              "type": "boolean"
-            }
-          },
-          {
-            "description": "callBackDTS",
-            "in": "query",
-            "name": "callBackDTS",
-            "required": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "description": "notes",
-            "in": "query",
-            "name": "notes",
-            "required": false,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "201": {
-            "description": "Created"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "404": {
-            "description": "Not Found"
-          }
-        },
-        "security": [
-          {
-            "ApiKeyAuth": []
-          }
-        ],
-        "summary": "Sets the call disposition for either INBOUND or OUTBOUND calls and releases the agent from PD state",
-        "tags": [
-          "Active Call"
-        ]
-      }
-    },
-    "/api/v1/admin/s/accounts/{accountId}/activeCalls/{uii}/hangupCall": {
-      "post": {
-        "description": "Permissions: READ on Account (Permission Override)",
-        "operationId": "hangupCall",
-        "parameters": [
-          {
-            "description": "accountId",
-            "in": "path",
-            "name": "accountId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "description": "uii",
-            "in": "path",
-            "name": "uii",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "201": {
-            "description": "Created"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "404": {
-            "description": "Not Found"
-          }
-        },
-        "security": [
-          {
-            "ApiKeyAuth": []
-          }
-        ],
-        "summary": "Terminates an active call",
-        "tags": [
-          "Active Call"
-        ]
-      }
-    },
-    "/api/v1/admin/s/accounts/{accountId}/activeCalls/{uii}/hangupSession": {
-      "post": {
-        "description": "Permissions: READ on Account (Permission Override)",
-        "operationId": "hangupSession",
-        "parameters": [
-          {
-            "description": "accountId",
-            "in": "path",
-            "name": "accountId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "description": "uii",
-            "in": "path",
-            "name": "uii",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "description": "phone",
-            "in": "query",
-            "name": "phone",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "201": {
-            "description": "Created"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "404": {
-            "description": "Not Found"
-          }
-        },
-        "security": [
-          {
-            "ApiKeyAuth": []
-          }
-        ],
-        "summary": "Terminates an active session",
-        "tags": [
-          "Active Call"
-        ]
-      }
-    },
-    "/api/v1/admin/s/accounts/{accountId}/activeCalls/{uii}/toggleCallRecording": {
-      "post": {
-        "description": "Permissions: READ on Account (Permission Override)",
-        "operationId": "toggleCallRecording",
-        "parameters": [
-          {
-            "description": "accountId",
-            "in": "path",
-            "name": "accountId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "description": "uii",
-            "in": "path",
-            "name": "uii",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "description": "record",
-            "in": "query",
-            "name": "record",
-            "required": true,
-            "schema": {
-              "type": "boolean"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "201": {
-            "description": "Created"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "404": {
-            "description": "Not Found"
-          }
-        },
-        "security": [
-          {
-            "ApiKeyAuth": []
-          }
-        ],
-        "summary": "Provides support for toggling call recording on/off for an active call",
-        "tags": [
-          "Active Call"
-        ]
-      }
-    },
     "/api/v1/admin/token": {
       "get": {
         "description": "Permissions: Authenticated User",
@@ -6112,7 +6112,7 @@
         "security": [],
         "summary": "Retrieves all Api Tokens for AuthenticatedUser",
         "tags": [
-          "Authentication"
+          "Token"
         ]
       },
       "post": {
@@ -6145,7 +6145,7 @@
         "security": [],
         "summary": "Creates a new 'Api Token' based AuthenticatedUser that does not expire",
         "tags": [
-          "Authentication"
+          "Token"
         ]
       }
     },
@@ -6181,7 +6181,7 @@
         "security": [],
         "summary": "Removes an api token",
         "tags": [
-          "Authentication"
+          "Token"
         ]
       }
     },
