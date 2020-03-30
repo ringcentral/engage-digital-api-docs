@@ -3840,1616 +3840,7 @@
   },
   "openapi": "3.0.0",
   "paths": {
-    "/api/v1/admin/accounts/{accountId}/agentGroups": {
-      "get": {
-        "description": "Permissions: READ on Account, Post Filtered Results",
-        "operationId": "getAgentGroupList",
-        "parameters": [
-          {
-            "description": "accountId",
-            "in": "path",
-            "name": "accountId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "description": "page",
-            "in": "query",
-            "name": "page",
-            "required": false,
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "maxRows",
-            "in": "query",
-            "name": "maxRows",
-            "required": false,
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "includePermissions",
-            "in": "query",
-            "name": "includePermissions",
-            "required": false,
-            "schema": {
-              "default": false,
-              "type": "boolean"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "items": {
-                    "$ref": "#/components/schemas/AgentGroup"
-                  },
-                  "type": "array"
-                }
-              }
-            },
-            "description": "OK"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "404": {
-            "description": "Not Found"
-          }
-        },
-        "security": [],
-        "summary": "Returns a listing of agent groups for an account",
-        "tags": [
-          "Agent"
-        ]
-      },
-      "post": {
-        "description": "Permissions: CREATE on Account",
-        "operationId": "createAgentGroup",
-        "parameters": [
-          {
-            "description": "accountId",
-            "in": "path",
-            "name": "accountId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/AgentGroup"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "201": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AgentGroup"
-                }
-              }
-            },
-            "description": "Created"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "404": {
-            "description": "Not Found"
-          }
-        },
-        "security": [],
-        "summary": "Creates a single new agent group for an account",
-        "tags": [
-          "Agent"
-        ]
-      }
-    },
-    "/api/v1/admin/accounts/{accountId}/agentGroups/{agentGroupId}": {
-      "delete": {
-        "description": "Permissions: DELETE on Agent Group",
-        "operationId": "deleteAgentGroup",
-        "parameters": [
-          {
-            "description": "accountId",
-            "in": "path",
-            "name": "accountId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "description": "agentGroupId",
-            "in": "path",
-            "name": "agentGroupId",
-            "required": true,
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "204": {
-            "description": "No Content"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          }
-        },
-        "security": [],
-        "summary": "Deletes an agent group for an account",
-        "tags": [
-          "Agent"
-        ]
-      },
-      "get": {
-        "description": "Permissions: READ on Gate Group",
-        "operationId": "getAgentGroup",
-        "parameters": [
-          {
-            "description": "accountId",
-            "in": "path",
-            "name": "accountId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "description": "agentGroupId",
-            "in": "path",
-            "name": "agentGroupId",
-            "required": true,
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "includePermissions",
-            "in": "query",
-            "name": "includePermissions",
-            "required": false,
-            "schema": {
-              "default": false,
-              "type": "boolean"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AgentGroup"
-                }
-              }
-            },
-            "description": "OK"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "404": {
-            "description": "Not Found"
-          }
-        },
-        "security": [],
-        "summary": "Returns a listing of agent groups for an account",
-        "tags": [
-          "Agent"
-        ]
-      },
-      "put": {
-        "description": "Permissions: UPDATE on Agent Group",
-        "operationId": "updateAgentGroup",
-        "parameters": [
-          {
-            "description": "accountId",
-            "in": "path",
-            "name": "accountId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "description": "agentGroupId",
-            "in": "path",
-            "name": "agentGroupId",
-            "required": true,
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/AgentGroup"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AgentGroup"
-                }
-              }
-            },
-            "description": "OK"
-          },
-          "201": {
-            "description": "Created"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "404": {
-            "description": "Not Found"
-          }
-        },
-        "security": [],
-        "summary": "Updates an agent group for an account",
-        "tags": [
-          "Agent"
-        ]
-      }
-    },
-    "/api/v1/admin/accounts/{accountId}/agentGroups/{agentGroupId}/agents": {
-      "get": {
-        "description": "Permissions: READ on Agent Group, Post Filtered Results",
-        "operationId": "getList",
-        "parameters": [
-          {
-            "description": "accountId",
-            "in": "path",
-            "name": "accountId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "description": "agentGroupId",
-            "in": "path",
-            "name": "agentGroupId",
-            "required": true,
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "items": {
-                    "$ref": "#/components/schemas/AgentGroup"
-                  },
-                  "type": "array"
-                }
-              }
-            },
-            "description": "OK"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "404": {
-            "description": "Not Found"
-          }
-        },
-        "security": [],
-        "summary": "Returns a listing of agents for an agent group",
-        "tags": [
-          "Agent"
-        ]
-      },
-      "post": {
-        "description": "Permissions: CREATE on Agent Group",
-        "operationId": "createAgent",
-        "parameters": [
-          {
-            "description": "accountId",
-            "in": "path",
-            "name": "accountId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "description": "agentGroupId",
-            "in": "path",
-            "name": "agentGroupId",
-            "required": true,
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Agent"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "201": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "items": {
-                    "$ref": "#/components/schemas/Agent"
-                  },
-                  "type": "array"
-                }
-              }
-            },
-            "description": "Created"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "404": {
-            "description": "Not Found"
-          }
-        },
-        "security": [],
-        "summary": "Creates a single agent for an agent group",
-        "tags": [
-          "Agent"
-        ]
-      },
-      "put": {
-        "description": "Permissions: UPDATE on Agent Group",
-        "operationId": "updateAgents",
-        "parameters": [
-          {
-            "description": "accountId",
-            "in": "path",
-            "name": "accountId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "description": "agentGroupId",
-            "in": "path",
-            "name": "agentGroupId",
-            "required": true,
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Agent"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "items": {
-                    "$ref": "#/components/schemas/Agent"
-                  },
-                  "type": "array"
-                }
-              }
-            },
-            "description": "OK"
-          },
-          "201": {
-            "description": "Created"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "404": {
-            "description": "Not Found"
-          }
-        },
-        "security": [],
-        "summary": "Updates a listing of agents for an agent group",
-        "tags": [
-          "Agent"
-        ]
-      }
-    },
-    "/api/v1/admin/accounts/{accountId}/agentGroups/{agentGroupId}/agents/{agentId}": {
-      "delete": {
-        "description": "Permissions: DELETE on Agent",
-        "operationId": "deleteAgent",
-        "parameters": [
-          {
-            "description": "accountId",
-            "in": "path",
-            "name": "accountId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "description": "agentGroupId",
-            "in": "path",
-            "name": "agentGroupId",
-            "required": true,
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "agentId",
-            "in": "path",
-            "name": "agentId",
-            "required": true,
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "204": {
-            "description": "No Content"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          }
-        },
-        "security": [],
-        "summary": "Deletes an agent for an agent group",
-        "tags": [
-          "Agent"
-        ]
-      },
-      "get": {
-        "description": "Permissions: READ on Agent",
-        "operationId": "getDetail",
-        "parameters": [
-          {
-            "description": "accountId",
-            "in": "path",
-            "name": "accountId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "description": "agentGroupId",
-            "in": "path",
-            "name": "agentGroupId",
-            "required": true,
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "agentId",
-            "in": "path",
-            "name": "agentId",
-            "required": true,
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "items": {
-                    "$ref": "#/components/schemas/Agent"
-                  },
-                  "type": "array"
-                }
-              }
-            },
-            "description": "OK"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "404": {
-            "description": "Not Found"
-          }
-        },
-        "security": [],
-        "summary": "Returns a single agent for an agent group",
-        "tags": [
-          "Agent"
-        ]
-      },
-      "put": {
-        "description": "Permissions: UPDATE on Agent",
-        "operationId": "updateAgent",
-        "parameters": [
-          {
-            "description": "accountId",
-            "in": "path",
-            "name": "accountId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "description": "agentGroupId",
-            "in": "path",
-            "name": "agentGroupId",
-            "required": true,
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "agentId",
-            "in": "path",
-            "name": "agentId",
-            "required": true,
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Agent"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "items": {
-                    "$ref": "#/components/schemas/Agent"
-                  },
-                  "type": "array"
-                }
-              }
-            },
-            "description": "OK"
-          },
-          "201": {
-            "description": "Created"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "404": {
-            "description": "Not Found"
-          }
-        },
-        "security": [],
-        "summary": "Updates a single agent for an agent group",
-        "tags": [
-          "Agent"
-        ]
-      }
-    },
-    "/api/v1/admin/accounts/{accountId}/dialGroups": {
-      "get": {
-        "description": "Permissions: READ on Account, Post Filtered Results",
-        "operationId": "getDialGroupListByAccount",
-        "parameters": [
-          {
-            "description": "accountId",
-            "in": "path",
-            "name": "accountId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "description": "page",
-            "in": "query",
-            "name": "page",
-            "required": false,
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "maxRows",
-            "in": "query",
-            "name": "maxRows",
-            "required": false,
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "items": {
-                    "$ref": "#/components/schemas/DialGroup"
-                  },
-                  "type": "array"
-                }
-              }
-            },
-            "description": "OK"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "404": {
-            "description": "Not Found"
-          }
-        },
-        "security": [],
-        "summary": "Returns a listing of dial groups for an account",
-        "tags": [
-          "Outbound"
-        ]
-      },
-      "post": {
-        "description": "Permissions: CREATE on Account",
-        "operationId": "createDialGroup",
-        "parameters": [
-          {
-            "description": "accountId",
-            "in": "path",
-            "name": "accountId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/DialGroup"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "201": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/DialGroup"
-                }
-              }
-            },
-            "description": "CREATED"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "404": {
-            "description": "Not Found"
-          }
-        },
-        "security": [],
-        "summary": "Creates a dial group for an account",
-        "tags": [
-          "Outbound"
-        ]
-      }
-    },
-    "/api/v1/admin/accounts/{accountId}/dialGroups/withChildren": {
-      "get": {
-        "description": "Permissions: READ on Account, Post Filtered Results for Dial Groups and Campaigns",
-        "operationId": "getDialGroupListWithChildren",
-        "parameters": [
-          {
-            "description": "accountId",
-            "in": "path",
-            "name": "accountId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "description": "includePermissions",
-            "in": "query",
-            "name": "includePermissions",
-            "required": false,
-            "schema": {
-              "default": "false",
-              "type": "boolean"
-            }
-          },
-          {
-            "description": "page",
-            "in": "query",
-            "name": "page",
-            "required": false,
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "maxRows",
-            "in": "query",
-            "name": "maxRows",
-            "required": false,
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "items": {
-                    "$ref": "#/components/schemas/DialGroup"
-                  },
-                  "type": "array"
-                }
-              }
-            },
-            "description": "OK"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "404": {
-            "description": "Not Found"
-          }
-        },
-        "security": [],
-        "summary": "Returns a listing of dial groups with associated campaigns for an account",
-        "tags": [
-          "Outbound"
-        ]
-      }
-    },
-    "/api/v1/admin/accounts/{accountId}/dialGroups/{dialGroupId}": {
-      "delete": {
-        "description": "Permissions: DELETE on Account",
-        "operationId": "deleteDialGroup",
-        "parameters": [
-          {
-            "description": "accountId",
-            "in": "path",
-            "name": "accountId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "description": "dialGroupId",
-            "in": "path",
-            "name": "dialGroupId",
-            "required": true,
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "204": {
-            "description": "No Content"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          }
-        },
-        "security": [],
-        "summary": "Deletes a dial group for an account",
-        "tags": [
-          "Outbound"
-        ]
-      },
-      "get": {
-        "description": "Permissions: READ on Dial Group",
-        "operationId": "getDialGroup",
-        "parameters": [
-          {
-            "description": "dialGroupId",
-            "in": "path",
-            "name": "dialGroupId",
-            "required": true,
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "accountId",
-            "in": "path",
-            "name": "accountId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/DialGroup"
-                }
-              }
-            },
-            "description": "OK"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "404": {
-            "description": "Not Found"
-          }
-        },
-        "security": [],
-        "summary": "Returns a dial group for an account",
-        "tags": [
-          "Outbound"
-        ]
-      },
-      "put": {
-        "description": "Permissions: UPDATE on Dial Group",
-        "operationId": "updateDialGroup",
-        "parameters": [
-          {
-            "description": "accountId",
-            "in": "path",
-            "name": "accountId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "description": "dialGroupId",
-            "in": "path",
-            "name": "dialGroupId",
-            "required": true,
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/DialGroup"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/DialGroup"
-                }
-              }
-            },
-            "description": "OK"
-          },
-          "201": {
-            "description": "Created"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "404": {
-            "description": "Not Found"
-          }
-        },
-        "security": [],
-        "summary": "Updates a dial group for an account",
-        "tags": [
-          "Outbound"
-        ]
-      }
-    },
-    "/api/v1/admin/accounts/{accountId}/dialGroups/{dialGroupId}/assignAgents": {
-      "put": {
-        "description": "Permissions: UPDATE on Dial Group and READ on Agent",
-        "operationId": "assignAgentsToDialGroups",
-        "parameters": [
-          {
-            "description": "accountId",
-            "in": "path",
-            "name": "accountId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "description": "dialGroupId",
-            "in": "path",
-            "name": "dialGroupId",
-            "required": true,
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/DialGroup"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Agent"
-                }
-              }
-            },
-            "description": "OK"
-          },
-          "201": {
-            "description": "Created"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "404": {
-            "description": "Not Found"
-          }
-        },
-        "security": [],
-        "summary": "Assigns a listing of agents to a dial group",
-        "tags": [
-          "Outbound"
-        ]
-      }
-    },
-    "/api/v1/admin/accounts/{accountId}/dialGroups/{dialGroupId}/assignedAgents": {
-      "get": {
-        "description": "Permissions: READ on Dial Group",
-        "operationId": "getAgentsFromDialGroup",
-        "parameters": [
-          {
-            "description": "accountId",
-            "in": "path",
-            "name": "accountId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "description": "dialGroupId",
-            "in": "path",
-            "name": "dialGroupId",
-            "required": true,
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "page",
-            "in": "query",
-            "name": "page",
-            "required": false,
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "maxRows",
-            "in": "query",
-            "name": "maxRows",
-            "required": false,
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "items": {
-                    "$ref": "#/components/schemas/Agent"
-                  },
-                  "type": "array"
-                }
-              }
-            },
-            "description": "OK"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "404": {
-            "description": "Not Found"
-          }
-        },
-        "security": [],
-        "summary": "Returns a listing of all agents assigned to a dial group",
-        "tags": [
-          "Outbound"
-        ]
-      }
-    },
-    "/api/v1/admin/accounts/{accountId}/dialGroups/{dialGroupId}/campaigns": {
-      "get": {
-        "description": "Permissions: READ on Dial Group, Post Filtered Results",
-        "operationId": "getCampaignList",
-        "parameters": [
-          {
-            "description": "accountId",
-            "in": "path",
-            "name": "accountId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "description": "dialGroupId",
-            "in": "path",
-            "name": "dialGroupId",
-            "required": true,
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "page",
-            "in": "query",
-            "name": "page",
-            "required": false,
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "maxRows",
-            "in": "query",
-            "name": "maxRows",
-            "required": false,
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "items": {
-                    "$ref": "#/components/schemas/Campaign"
-                  },
-                  "type": "array"
-                }
-              }
-            },
-            "description": "OK"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "404": {
-            "description": "Not Found"
-          }
-        },
-        "security": [],
-        "summary": "Returns a listing of campaigns for a dial group",
-        "tags": [
-          "Outbound"
-        ]
-      },
-      "post": {
-        "description": "Permissions: UPDATE on Dial Group (Permission Override)",
-        "operationId": "createCampaign",
-        "parameters": [
-          {
-            "description": "accountId",
-            "in": "path",
-            "name": "accountId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "description": "dialGroupId",
-            "in": "path",
-            "name": "dialGroupId",
-            "required": true,
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Campaign"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "201": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Campaign"
-                }
-              }
-            },
-            "description": "CREATED"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "404": {
-            "description": "Not Found"
-          }
-        },
-        "security": [],
-        "summary": "Returns a campaign for a dial group",
-        "tags": [
-          "Outbound"
-        ]
-      }
-    },
-    "/api/v1/admin/accounts/{accountId}/dialGroups/{dialGroupId}/campaigns/{campaignId}": {
-      "delete": {
-        "description": "Permissions: DELETE on Campaign",
-        "operationId": "deleteCampaign",
-        "parameters": [
-          {
-            "description": "accountId",
-            "in": "path",
-            "name": "accountId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "description": "dialGroupId",
-            "in": "path",
-            "name": "dialGroupId",
-            "required": true,
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "campaignId",
-            "in": "path",
-            "name": "campaignId",
-            "required": true,
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "204": {
-            "description": "No Content"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          }
-        },
-        "security": [],
-        "summary": "Deletes a campaign for a dial group",
-        "tags": [
-          "Outbound"
-        ]
-      },
-      "get": {
-        "description": "Permissions: READ on Campaign",
-        "operationId": "getCampaign",
-        "parameters": [
-          {
-            "description": "accountId",
-            "in": "path",
-            "name": "accountId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "description": "dialGroupId",
-            "in": "path",
-            "name": "dialGroupId",
-            "required": true,
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "campaignId",
-            "in": "path",
-            "name": "campaignId",
-            "required": true,
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Campaign"
-                }
-              }
-            },
-            "description": "OK"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "404": {
-            "description": "Not Found"
-          }
-        },
-        "security": [],
-        "summary": "Returns a campaign for a dial group",
-        "tags": [
-          "Outbound"
-        ]
-      },
-      "put": {
-        "description": "Permissions: UPDATE on Campaign",
-        "operationId": "updateCampaign",
-        "parameters": [
-          {
-            "description": "accountId",
-            "in": "path",
-            "name": "accountId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "description": "dialGroupId",
-            "in": "path",
-            "name": "dialGroupId",
-            "required": true,
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "campaignId",
-            "in": "path",
-            "name": "campaignId",
-            "required": true,
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Campaign"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Campaign"
-                }
-              }
-            },
-            "description": "OK"
-          },
-          "201": {
-            "description": "Created"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "404": {
-            "description": "Not Found"
-          }
-        },
-        "security": [],
-        "summary": "Updates a campaign for a dial group",
-        "tags": [
-          "Outbound"
-        ]
-      }
-    },
-    "/api/v1/admin/accounts/{accountId}/reportsStreaming": {
-      "post": {
-        "description": "Permissions: READ on Account",
-        "operationId": "streamFile",
-        "parameters": [
-          {
-            "description": "accountId",
-            "in": "path",
-            "name": "accountId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ReportParams"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "201": {
-            "description": "Created"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "404": {
-            "description": "Not Found"
-          }
-        },
-        "security": [],
-        "summary": "Streams back an excel or csv file",
-        "tags": [
-          "Reporting"
-        ]
-      }
-    },
-    "/api/v1/admin/reports/{reportType}": {
-      "get": {
-        "description": "Permissions: Authenticated User",
-        "operationId": "getReportCriteriaTemplate",
-        "parameters": [
-          {
-            "description": "reportType",
-            "in": "path",
-            "name": "reportType",
-            "required": true,
-            "schema": {
-              "enum": [
-                "DIALER_RESULT_DOWNLOAD",
-                "GLOBAL_CALL_TYPE_EXCEL",
-                "GLOBAL_CALL_TYPE_DELIMITED",
-                "ALL_CALLS",
-                "IVR_DETAIL",
-                "TFN_DID_MANAGER_SUPERUSER_EXCEL",
-                "TFN_DID_MANAGER_EXCEL",
-                "TFN_DID_MANAGER_DELIMITED",
-                "CASPER_REPORT"
-              ],
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ReportCriteria"
-                }
-              }
-            },
-            "description": "OK"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "404": {
-            "description": "Not Found"
-          }
-        },
-        "security": [],
-        "summary": "Returns a report critera definition for a report type",
-        "tags": [
-          "Reporting"
-        ]
-      }
-    },
-    "/api/v1/admin/s/accounts/{accountId}/activeCalls/createManualAgentCall": {
+    "/api/v1/admin/accounts/{accountId}/activeCalls/createManualAgentCall": {
       "post": {
         "description": "Permissions: READ on Account (Permission Override)",
         "operationId": "createManualAgentCall",
@@ -5518,14 +3909,18 @@
             "description": "Not Found"
           }
         },
-        "security": [],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
         "summary": "Creates a manual agent call",
         "tags": [
           "Active Call"
         ]
       }
     },
-    "/api/v1/admin/s/accounts/{accountId}/activeCalls/list": {
+    "/api/v1/admin/accounts/{accountId}/activeCalls/list": {
       "get": {
         "description": "Permissions: READ on Account",
         "operationId": "getProductActiveCallsListRequest",
@@ -5622,14 +4017,18 @@
             "description": "Not Found"
           }
         },
-        "security": [],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
         "summary": "Returns a listing of current active calls for a given product on an account",
         "tags": [
           "Active Call"
         ]
       }
     },
-    "/api/v1/admin/s/accounts/{accountId}/activeCalls/{uii}/addSessionToCall": {
+    "/api/v1/admin/accounts/{accountId}/activeCalls/{uii}/addSessionToCall": {
       "post": {
         "description": "Permissions: READ on Agent (Permission Override)",
         "operationId": "addSessionToCall",
@@ -5696,14 +4095,18 @@
             "description": "Internal Server Error"
           }
         },
-        "security": [],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
         "summary": "Provides support for adding sessions to an active call.",
         "tags": [
           "Active Call"
         ]
       }
     },
-    "/api/v1/admin/s/accounts/{accountId}/activeCalls/{uii}/dispositionCall": {
+    "/api/v1/admin/accounts/{accountId}/activeCalls/{uii}/dispositionCall": {
       "post": {
         "description": "Permissions: READ on Account (Permission Override)",
         "operationId": "dispositionCall",
@@ -5780,14 +4183,18 @@
             "description": "Not Found"
           }
         },
-        "security": [],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
         "summary": "Sets the call disposition for either INBOUND or OUTBOUND calls and releases the agent from PD state",
         "tags": [
           "Active Call"
         ]
       }
     },
-    "/api/v1/admin/s/accounts/{accountId}/activeCalls/{uii}/hangupCall": {
+    "/api/v1/admin/accounts/{accountId}/activeCalls/{uii}/hangupCall": {
       "post": {
         "description": "Permissions: READ on Account (Permission Override)",
         "operationId": "hangupCall",
@@ -5828,14 +4235,18 @@
             "description": "Not Found"
           }
         },
-        "security": [],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
         "summary": "Terminates an active call",
         "tags": [
           "Active Call"
         ]
       }
     },
-    "/api/v1/admin/s/accounts/{accountId}/activeCalls/{uii}/hangupSession": {
+    "/api/v1/admin/accounts/{accountId}/activeCalls/{uii}/hangupSession": {
       "post": {
         "description": "Permissions: READ on Account (Permission Override)",
         "operationId": "hangupSession",
@@ -5885,14 +4296,18 @@
             "description": "Not Found"
           }
         },
-        "security": [],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
         "summary": "Terminates an active session",
         "tags": [
           "Active Call"
         ]
       }
     },
-    "/api/v1/admin/s/accounts/{accountId}/activeCalls/{uii}/toggleCallRecording": {
+    "/api/v1/admin/accounts/{accountId}/activeCalls/{uii}/toggleCallRecording": {
       "post": {
         "description": "Permissions: READ on Account (Permission Override)",
         "operationId": "toggleCallRecording",
@@ -5942,10 +4357,1727 @@
             "description": "Not Found"
           }
         },
-        "security": [],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
         "summary": "Provides support for toggling call recording on/off for an active call",
         "tags": [
           "Active Call"
+        ]
+      }
+    },
+    "/api/v1/admin/accounts/{accountId}/agentGroups": {
+      "get": {
+        "description": "Permissions: READ on Account, Post Filtered Results",
+        "operationId": "getAgentGroupList",
+        "parameters": [
+          {
+            "description": "accountId",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "page",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "maxRows",
+            "in": "query",
+            "name": "maxRows",
+            "required": false,
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "includePermissions",
+            "in": "query",
+            "name": "includePermissions",
+            "required": false,
+            "schema": {
+              "default": false,
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/AgentGroup"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Returns a listing of agent groups for an account",
+        "tags": [
+          "Agent"
+        ]
+      },
+      "post": {
+        "description": "Permissions: CREATE on Account",
+        "operationId": "createAgentGroup",
+        "parameters": [
+          {
+            "description": "accountId",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AgentGroup"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AgentGroup"
+                }
+              }
+            },
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Creates a single new agent group for an account",
+        "tags": [
+          "Agent"
+        ]
+      }
+    },
+    "/api/v1/admin/accounts/{accountId}/agentGroups/{agentGroupId}": {
+      "delete": {
+        "description": "Permissions: DELETE on Agent Group",
+        "operationId": "deleteAgentGroup",
+        "parameters": [
+          {
+            "description": "accountId",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "agentGroupId",
+            "in": "path",
+            "name": "agentGroupId",
+            "required": true,
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Deletes an agent group for an account",
+        "tags": [
+          "Agent"
+        ]
+      },
+      "get": {
+        "description": "Permissions: READ on Gate Group",
+        "operationId": "getAgentGroup",
+        "parameters": [
+          {
+            "description": "accountId",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "agentGroupId",
+            "in": "path",
+            "name": "agentGroupId",
+            "required": true,
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "includePermissions",
+            "in": "query",
+            "name": "includePermissions",
+            "required": false,
+            "schema": {
+              "default": false,
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AgentGroup"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Returns a listing of agent groups for an account",
+        "tags": [
+          "Agent"
+        ]
+      },
+      "put": {
+        "description": "Permissions: UPDATE on Agent Group",
+        "operationId": "updateAgentGroup",
+        "parameters": [
+          {
+            "description": "accountId",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "agentGroupId",
+            "in": "path",
+            "name": "agentGroupId",
+            "required": true,
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AgentGroup"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AgentGroup"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Updates an agent group for an account",
+        "tags": [
+          "Agent"
+        ]
+      }
+    },
+    "/api/v1/admin/accounts/{accountId}/agentGroups/{agentGroupId}/agents": {
+      "get": {
+        "description": "Permissions: READ on Agent Group, Post Filtered Results",
+        "operationId": "getList",
+        "parameters": [
+          {
+            "description": "accountId",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "agentGroupId",
+            "in": "path",
+            "name": "agentGroupId",
+            "required": true,
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/AgentGroup"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Returns a listing of agents for an agent group",
+        "tags": [
+          "Agent"
+        ]
+      },
+      "post": {
+        "description": "Permissions: CREATE on Agent Group",
+        "operationId": "createAgent",
+        "parameters": [
+          {
+            "description": "accountId",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "agentGroupId",
+            "in": "path",
+            "name": "agentGroupId",
+            "required": true,
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Agent"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/Agent"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Creates a single agent for an agent group",
+        "tags": [
+          "Agent"
+        ]
+      },
+      "put": {
+        "description": "Permissions: UPDATE on Agent Group",
+        "operationId": "updateAgents",
+        "parameters": [
+          {
+            "description": "accountId",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "agentGroupId",
+            "in": "path",
+            "name": "agentGroupId",
+            "required": true,
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Agent"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/Agent"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Updates a listing of agents for an agent group",
+        "tags": [
+          "Agent"
+        ]
+      }
+    },
+    "/api/v1/admin/accounts/{accountId}/agentGroups/{agentGroupId}/agents/{agentId}": {
+      "delete": {
+        "description": "Permissions: DELETE on Agent",
+        "operationId": "deleteAgent",
+        "parameters": [
+          {
+            "description": "accountId",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "agentGroupId",
+            "in": "path",
+            "name": "agentGroupId",
+            "required": true,
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "agentId",
+            "in": "path",
+            "name": "agentId",
+            "required": true,
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Deletes an agent for an agent group",
+        "tags": [
+          "Agent"
+        ]
+      },
+      "get": {
+        "description": "Permissions: READ on Agent",
+        "operationId": "getDetail",
+        "parameters": [
+          {
+            "description": "accountId",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "agentGroupId",
+            "in": "path",
+            "name": "agentGroupId",
+            "required": true,
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "agentId",
+            "in": "path",
+            "name": "agentId",
+            "required": true,
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/Agent"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Returns a single agent for an agent group",
+        "tags": [
+          "Agent"
+        ]
+      },
+      "put": {
+        "description": "Permissions: UPDATE on Agent",
+        "operationId": "updateAgent",
+        "parameters": [
+          {
+            "description": "accountId",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "agentGroupId",
+            "in": "path",
+            "name": "agentGroupId",
+            "required": true,
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "agentId",
+            "in": "path",
+            "name": "agentId",
+            "required": true,
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Agent"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/Agent"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Updates a single agent for an agent group",
+        "tags": [
+          "Agent"
+        ]
+      }
+    },
+    "/api/v1/admin/accounts/{accountId}/dialGroups": {
+      "get": {
+        "description": "Permissions: READ on Account, Post Filtered Results",
+        "operationId": "getDialGroupListByAccount",
+        "parameters": [
+          {
+            "description": "accountId",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "page",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "maxRows",
+            "in": "query",
+            "name": "maxRows",
+            "required": false,
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/DialGroup"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Returns a listing of dial groups for an account",
+        "tags": [
+          "Outbound"
+        ]
+      },
+      "post": {
+        "description": "Permissions: CREATE on Account",
+        "operationId": "createDialGroup",
+        "parameters": [
+          {
+            "description": "accountId",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DialGroup"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DialGroup"
+                }
+              }
+            },
+            "description": "CREATED"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Creates a dial group for an account",
+        "tags": [
+          "Outbound"
+        ]
+      }
+    },
+    "/api/v1/admin/accounts/{accountId}/dialGroups/withChildren": {
+      "get": {
+        "description": "Permissions: READ on Account, Post Filtered Results for Dial Groups and Campaigns",
+        "operationId": "getDialGroupListWithChildren",
+        "parameters": [
+          {
+            "description": "accountId",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "includePermissions",
+            "in": "query",
+            "name": "includePermissions",
+            "required": false,
+            "schema": {
+              "default": "false",
+              "type": "boolean"
+            }
+          },
+          {
+            "description": "page",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "maxRows",
+            "in": "query",
+            "name": "maxRows",
+            "required": false,
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/DialGroup"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Returns a listing of dial groups with associated campaigns for an account",
+        "tags": [
+          "Outbound"
+        ]
+      }
+    },
+    "/api/v1/admin/accounts/{accountId}/dialGroups/{dialGroupId}": {
+      "delete": {
+        "description": "Permissions: DELETE on Account",
+        "operationId": "deleteDialGroup",
+        "parameters": [
+          {
+            "description": "accountId",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "dialGroupId",
+            "in": "path",
+            "name": "dialGroupId",
+            "required": true,
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Deletes a dial group for an account",
+        "tags": [
+          "Outbound"
+        ]
+      },
+      "get": {
+        "description": "Permissions: READ on Dial Group",
+        "operationId": "getDialGroup",
+        "parameters": [
+          {
+            "description": "dialGroupId",
+            "in": "path",
+            "name": "dialGroupId",
+            "required": true,
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "accountId",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DialGroup"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Returns a dial group for an account",
+        "tags": [
+          "Outbound"
+        ]
+      },
+      "put": {
+        "description": "Permissions: UPDATE on Dial Group",
+        "operationId": "updateDialGroup",
+        "parameters": [
+          {
+            "description": "accountId",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "dialGroupId",
+            "in": "path",
+            "name": "dialGroupId",
+            "required": true,
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DialGroup"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DialGroup"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Updates a dial group for an account",
+        "tags": [
+          "Outbound"
+        ]
+      }
+    },
+    "/api/v1/admin/accounts/{accountId}/dialGroups/{dialGroupId}/assignAgents": {
+      "put": {
+        "description": "Permissions: UPDATE on Dial Group and READ on Agent",
+        "operationId": "assignAgentsToDialGroups",
+        "parameters": [
+          {
+            "description": "accountId",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "dialGroupId",
+            "in": "path",
+            "name": "dialGroupId",
+            "required": true,
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DialGroup"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Agent"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Assigns a listing of agents to a dial group",
+        "tags": [
+          "Outbound"
+        ]
+      }
+    },
+    "/api/v1/admin/accounts/{accountId}/dialGroups/{dialGroupId}/assignedAgents": {
+      "get": {
+        "description": "Permissions: READ on Dial Group",
+        "operationId": "getAgentsFromDialGroup",
+        "parameters": [
+          {
+            "description": "accountId",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "dialGroupId",
+            "in": "path",
+            "name": "dialGroupId",
+            "required": true,
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "page",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "maxRows",
+            "in": "query",
+            "name": "maxRows",
+            "required": false,
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/Agent"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Returns a listing of all agents assigned to a dial group",
+        "tags": [
+          "Outbound"
+        ]
+      }
+    },
+    "/api/v1/admin/accounts/{accountId}/dialGroups/{dialGroupId}/campaigns": {
+      "get": {
+        "description": "Permissions: READ on Dial Group, Post Filtered Results",
+        "operationId": "getCampaignList",
+        "parameters": [
+          {
+            "description": "accountId",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "dialGroupId",
+            "in": "path",
+            "name": "dialGroupId",
+            "required": true,
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "page",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "maxRows",
+            "in": "query",
+            "name": "maxRows",
+            "required": false,
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/Campaign"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Returns a listing of campaigns for a dial group",
+        "tags": [
+          "Outbound"
+        ]
+      },
+      "post": {
+        "description": "Permissions: UPDATE on Dial Group (Permission Override)",
+        "operationId": "createCampaign",
+        "parameters": [
+          {
+            "description": "accountId",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "dialGroupId",
+            "in": "path",
+            "name": "dialGroupId",
+            "required": true,
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Campaign"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Campaign"
+                }
+              }
+            },
+            "description": "CREATED"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Returns a campaign for a dial group",
+        "tags": [
+          "Outbound"
+        ]
+      }
+    },
+    "/api/v1/admin/accounts/{accountId}/dialGroups/{dialGroupId}/campaigns/{campaignId}": {
+      "delete": {
+        "description": "Permissions: DELETE on Campaign",
+        "operationId": "deleteCampaign",
+        "parameters": [
+          {
+            "description": "accountId",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "dialGroupId",
+            "in": "path",
+            "name": "dialGroupId",
+            "required": true,
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "campaignId",
+            "in": "path",
+            "name": "campaignId",
+            "required": true,
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Deletes a campaign for a dial group",
+        "tags": [
+          "Outbound"
+        ]
+      },
+      "get": {
+        "description": "Permissions: READ on Campaign",
+        "operationId": "getCampaign",
+        "parameters": [
+          {
+            "description": "accountId",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "dialGroupId",
+            "in": "path",
+            "name": "dialGroupId",
+            "required": true,
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "campaignId",
+            "in": "path",
+            "name": "campaignId",
+            "required": true,
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Campaign"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Returns a campaign for a dial group",
+        "tags": [
+          "Outbound"
+        ]
+      },
+      "put": {
+        "description": "Permissions: UPDATE on Campaign",
+        "operationId": "updateCampaign",
+        "parameters": [
+          {
+            "description": "accountId",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "dialGroupId",
+            "in": "path",
+            "name": "dialGroupId",
+            "required": true,
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "campaignId",
+            "in": "path",
+            "name": "campaignId",
+            "required": true,
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Campaign"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Campaign"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Updates a campaign for a dial group",
+        "tags": [
+          "Outbound"
+        ]
+      }
+    },
+    "/api/v1/admin/accounts/{accountId}/reportsStreaming": {
+      "post": {
+        "description": "Permissions: READ on Account",
+        "operationId": "streamFile",
+        "parameters": [
+          {
+            "description": "accountId",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReportParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Streams back an excel or csv file",
+        "tags": [
+          "Reporting"
+        ]
+      }
+    },
+    "/api/v1/admin/reports/{reportType}": {
+      "get": {
+        "description": "Permissions: Authenticated User",
+        "operationId": "getReportCriteriaTemplate",
+        "parameters": [
+          {
+            "description": "reportType",
+            "in": "path",
+            "name": "reportType",
+            "required": true,
+            "schema": {
+              "enum": [
+                "DIALER_RESULT_DOWNLOAD",
+                "GLOBAL_CALL_TYPE_EXCEL",
+                "GLOBAL_CALL_TYPE_DELIMITED",
+                "ALL_CALLS",
+                "IVR_DETAIL",
+                "TFN_DID_MANAGER_SUPERUSER_EXCEL",
+                "TFN_DID_MANAGER_EXCEL",
+                "TFN_DID_MANAGER_DELIMITED",
+                "CASPER_REPORT"
+              ],
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReportCriteria"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Returns a report critera definition for a report type",
+        "tags": [
+          "Reporting"
         ]
       }
     },
@@ -5980,7 +6112,7 @@
         "security": [],
         "summary": "Retrieves all Api Tokens for AuthenticatedUser",
         "tags": [
-          "Authentication"
+          "Token"
         ]
       },
       "post": {
@@ -6013,7 +6145,7 @@
         "security": [],
         "summary": "Creates a new 'Api Token' based AuthenticatedUser that does not expire",
         "tags": [
-          "Authentication"
+          "Token"
         ]
       }
     },
@@ -6049,7 +6181,7 @@
         "security": [],
         "summary": "Removes an api token",
         "tags": [
-          "Authentication"
+          "Token"
         ]
       }
     },
@@ -6114,7 +6246,11 @@
             "description": "Not Found"
           }
         },
-        "security": [],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
         "summary": "Application login to authenticate and receive an X-Auth-Token",
         "tags": [
           "Security"
