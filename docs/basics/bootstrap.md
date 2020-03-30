@@ -65,3 +65,6 @@ Use any email client to send an email to the one you chose above. For example:
 
 ### Respond to the Inbound Email
 
+1. Navigate to "FOLDERS" > "New Messages" to view inbound messages. Select the message from the queue you wish to respond to and click "Engage".
+1. Click "Engage" to move the message to the "Global Inbox".
+1. Click the "Global Index" folder, select the message, and click "Reply" to bring up the Email Reply window. Type a reply and click "Send".
