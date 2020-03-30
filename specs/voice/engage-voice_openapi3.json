@@ -3909,7 +3909,11 @@
             "description": "Not Found"
           }
         },
-        "security": [],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
         "summary": "Returns a listing of agent groups for an account",
         "tags": [
           "Agent"
@@ -3960,7 +3964,11 @@
             "description": "Not Found"
           }
         },
-        "security": [],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
         "summary": "Creates a single new agent group for an account",
         "tags": [
           "Agent"
@@ -4006,7 +4014,11 @@
             "description": "Forbidden"
           }
         },
-        "security": [],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
         "summary": "Deletes an agent group for an account",
         "tags": [
           "Agent"
@@ -4067,7 +4079,11 @@
             "description": "Not Found"
           }
         },
-        "security": [],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
         "summary": "Returns a listing of agent groups for an account",
         "tags": [
           "Agent"
@@ -4131,7 +4147,11 @@
             "description": "Not Found"
           }
         },
-        "security": [],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
         "summary": "Updates an agent group for an account",
         "tags": [
           "Agent"
@@ -4187,7 +4207,11 @@
             "description": "Not Found"
           }
         },
-        "security": [],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
         "summary": "Returns a listing of agents for an agent group",
         "tags": [
           "Agent"
@@ -4251,7 +4275,11 @@
             "description": "Not Found"
           }
         },
-        "security": [],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
         "summary": "Creates a single agent for an agent group",
         "tags": [
           "Agent"
@@ -4318,7 +4346,11 @@
             "description": "Not Found"
           }
         },
-        "security": [],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
         "summary": "Updates a listing of agents for an agent group",
         "tags": [
           "Agent"
@@ -4374,7 +4406,11 @@
             "description": "Forbidden"
           }
         },
-        "security": [],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
         "summary": "Deletes an agent for an agent group",
         "tags": [
           "Agent"
@@ -4438,7 +4474,11 @@
             "description": "Not Found"
           }
         },
-        "security": [],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
         "summary": "Returns a single agent for an agent group",
         "tags": [
           "Agent"
@@ -4515,7 +4555,11 @@
             "description": "Not Found"
           }
         },
-        "security": [],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
         "summary": "Updates a single agent for an agent group",
         "tags": [
           "Agent"
@@ -4581,7 +4625,11 @@
             "description": "Not Found"
           }
         },
-        "security": [],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
         "summary": "Returns a listing of dial groups for an account",
         "tags": [
           "Outbound"
@@ -4632,7 +4680,11 @@
             "description": "Not Found"
           }
         },
-        "security": [],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
         "summary": "Creates a dial group for an account",
         "tags": [
           "Outbound"
@@ -4708,7 +4760,11 @@
             "description": "Not Found"
           }
         },
-        "security": [],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
         "summary": "Returns a listing of dial groups with associated campaigns for an account",
         "tags": [
           "Outbound"
@@ -4754,7 +4810,11 @@
             "description": "Forbidden"
           }
         },
-        "security": [],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
         "summary": "Deletes a dial group for an account",
         "tags": [
           "Outbound"
@@ -4805,7 +4865,11 @@
             "description": "Not Found"
           }
         },
-        "security": [],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
         "summary": "Returns a dial group for an account",
         "tags": [
           "Outbound"
@@ -4869,7 +4933,11 @@
             "description": "Not Found"
           }
         },
-        "security": [],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
         "summary": "Updates a dial group for an account",
         "tags": [
           "Outbound"
@@ -4935,7 +5003,11 @@
             "description": "Not Found"
           }
         },
-        "security": [],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
         "summary": "Assigns a listing of agents to a dial group",
         "tags": [
           "Outbound"
@@ -5011,7 +5083,11 @@
             "description": "Not Found"
           }
         },
-        "security": [],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
         "summary": "Returns a listing of all agents assigned to a dial group",
         "tags": [
           "Outbound"
@@ -5087,7 +5163,11 @@
             "description": "Not Found"
           }
         },
-        "security": [],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
         "summary": "Returns a listing of campaigns for a dial group",
         "tags": [
           "Outbound"
@@ -5148,7 +5228,11 @@
             "description": "Not Found"
           }
         },
-        "security": [],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
         "summary": "Returns a campaign for a dial group",
         "tags": [
           "Outbound"
@@ -5204,7 +5288,11 @@
             "description": "Forbidden"
           }
         },
-        "security": [],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
         "summary": "Deletes a campaign for a dial group",
         "tags": [
           "Outbound"
@@ -5265,7 +5353,11 @@
             "description": "Not Found"
           }
         },
-        "security": [],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
         "summary": "Returns a campaign for a dial group",
         "tags": [
           "Outbound"
@@ -5339,7 +5431,11 @@
             "description": "Not Found"
           }
         },
-        "security": [],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
         "summary": "Updates a campaign for a dial group",
         "tags": [
           "Outbound"
@@ -5388,7 +5484,11 @@
             "description": "Not Found"
           }
         },
-        "security": [],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
         "summary": "Streams back an excel or csv file",
         "tags": [
           "Reporting"
@@ -5442,7 +5542,11 @@
             "description": "Not Found"
           }
         },
-        "security": [],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
         "summary": "Returns a report critera definition for a report type",
         "tags": [
           "Reporting"
@@ -5518,7 +5622,11 @@
             "description": "Not Found"
           }
         },
-        "security": [],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
         "summary": "Creates a manual agent call",
         "tags": [
           "Active Call"
@@ -5622,7 +5730,11 @@
             "description": "Not Found"
           }
         },
-        "security": [],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
         "summary": "Returns a listing of current active calls for a given product on an account",
         "tags": [
           "Active Call"
@@ -5696,7 +5808,11 @@
             "description": "Internal Server Error"
           }
         },
-        "security": [],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
         "summary": "Provides support for adding sessions to an active call.",
         "tags": [
           "Active Call"
@@ -5780,7 +5896,11 @@
             "description": "Not Found"
           }
         },
-        "security": [],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
         "summary": "Sets the call disposition for either INBOUND or OUTBOUND calls and releases the agent from PD state",
         "tags": [
           "Active Call"
@@ -5828,7 +5948,11 @@
             "description": "Not Found"
           }
         },
-        "security": [],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
         "summary": "Terminates an active call",
         "tags": [
           "Active Call"
@@ -5885,7 +6009,11 @@
             "description": "Not Found"
           }
         },
-        "security": [],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
         "summary": "Terminates an active session",
         "tags": [
           "Active Call"
@@ -5942,7 +6070,11 @@
             "description": "Not Found"
           }
         },
-        "security": [],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
         "summary": "Provides support for toggling call recording on/off for an active call",
         "tags": [
           "Active Call"
@@ -6114,7 +6246,11 @@
             "description": "Not Found"
           }
         },
-        "security": [],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
         "summary": "Application login to authenticate and receive an X-Auth-Token",
         "tags": [
           "Security"
