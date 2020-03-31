@@ -7594,17 +7594,10 @@
             "description": "Not Found"
           }
         },
-        "security": [
-          {
-            "ApiKeyAuth": []
-          },
-          {
-            "ApiKeyAuth": []
-          }
-        ],
+        "security": [],
         "summary": "Application login to authenticate and receive an X-Auth-Token",
         "tags": [
-          "Security"
+          "Token"
         ]
       }
     },
@@ -8517,9 +8510,6 @@
     },
     {
       "name": "Reporting"
-    },
-    {
-      "name": "Security"
     },
     {
       "name": "User"
