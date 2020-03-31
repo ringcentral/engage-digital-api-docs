@@ -1720,6 +1720,441 @@
         },
         "type": "object"
       },
+      "CampaignLead": {
+        "properties": {
+          "address1": {
+            "type": "string"
+          },
+          "address2": {
+            "type": "string"
+          },
+          "agentDispostion": {
+            "type": "string"
+          },
+          "auxData1": {
+            "type": "string"
+          },
+          "auxData2": {
+            "type": "string"
+          },
+          "auxData3": {
+            "type": "string"
+          },
+          "auxData4": {
+            "type": "string"
+          },
+          "auxData5": {
+            "type": "string"
+          },
+          "auxExternalUrl": {
+            "type": "string"
+          },
+          "auxGreeting": {
+            "type": "string"
+          },
+          "auxPhone": {
+            "type": "string"
+          },
+          "callerId": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          },
+          "dupeKeyOverride": {
+            "format": "int64",
+            "type": "integer"
+          },
+          "email": {
+            "type": "string"
+          },
+          "externId": {
+            "type": "string"
+          },
+          "extraData": {
+            "type": "string"
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "gateKeeper": {
+            "type": "string"
+          },
+          "id": {
+            "format": "int64",
+            "type": "integer"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "lastPassDispo": {
+            "type": "string"
+          },
+          "leadId": {
+            "format": "int64",
+            "type": "integer"
+          },
+          "leadPasses": {
+            "type": "integer"
+          },
+          "leadPhone": {
+            "type": "string"
+          },
+          "leadState": {
+            "type": "string"
+          },
+          "leadTimezone": {
+            "type": "string"
+          },
+          "liveAnswerMessage": {
+            "type": "string"
+          },
+          "loadedDts": {
+            "description": "Date-time in Java format. Example: `2019-01-01T01:01:01.000+0000`. Note this is not compatible with RFC-3339 which is used by OpenAPI 3.0 Spec because it doesn't have a `:` between hours and minutes.",
+            "type": "string"
+          },
+          "machAnswerMessage": {
+            "type": "string"
+          },
+          "maxPasses": {
+            "type": "integer"
+          },
+          "midName": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "nextDialTime": {
+            "description": "Date-time in Java format. Example: `2019-01-01T01:01:01.000+0000`. Note this is not compatible with RFC-3339 which is used by OpenAPI 3.0 Spec because it doesn't have a `:` between hours and minutes.",
+            "type": "string"
+          },
+          "sortCol": {
+            "type": "string"
+          },
+          "speedToLeadAgentConn": {
+            "type": "integer"
+          },
+          "speedToLeadFirstPass": {
+            "type": "integer"
+          },
+          "state": {
+            "type": "string"
+          },
+          "suffix": {
+            "type": "string"
+          },
+          "suppressed": {
+            "type": "boolean"
+          },
+          "title": {
+            "type": "string"
+          },
+          "zip": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "CampaignLeadSearchCriteria": {
+        "properties": {
+          "address1": {
+            "type": "string"
+          },
+          "address2": {
+            "type": "string"
+          },
+          "agentDispositions": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "agentId": {
+            "type": "integer"
+          },
+          "auxData1": {
+            "type": "string"
+          },
+          "auxData2": {
+            "type": "string"
+          },
+          "auxData3": {
+            "type": "string"
+          },
+          "auxData4": {
+            "type": "string"
+          },
+          "auxData5": {
+            "type": "string"
+          },
+          "callerId": {
+            "type": "string"
+          },
+          "campaignIds": {
+            "items": {
+              "type": "integer"
+            },
+            "type": "array"
+          },
+          "city": {
+            "type": "string"
+          },
+          "emailAddress": {
+            "type": "string"
+          },
+          "externIds": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "lastPassTimeCriteria": {
+            "$ref": "#/components/schemas/DateTimeComparableSearchField"
+          },
+          "leadIds": {
+            "items": {
+              "type": "integer"
+            },
+            "type": "array"
+          },
+          "leadPassesCriteria": {
+            "$ref": "#/components/schemas/ComparableSearchField"
+          },
+          "leadPhoneNum": {
+            "type": "string"
+          },
+          "leadPhoneNumbers": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "leadTimezones": {
+            "$ref": "#/components/schemas/Timezone"
+          },
+          "listIds": {
+            "items": {
+              "type": "integer"
+            },
+            "type": "array"
+          },
+          "loadedDtsEnd": {
+            "description": "Date-time in Java format. Example: `2019-01-01T01:01:01.000+0000`. Note this is not compatible with RFC-3339 which is used by OpenAPI 3.0 Spec because it doesn't have a `:` between hours and minutes.",
+            "type": "string"
+          },
+          "loadedDtsStart": {
+            "description": "Date-time in Java format. Example: `2019-01-01T01:01:01.000+0000`. Note this is not compatible with RFC-3339 which is used by OpenAPI 3.0 Spec because it doesn't have a `:` between hours and minutes.",
+            "type": "string"
+          },
+          "nextDialTimeCriteria": {
+            "$ref": "#/components/schemas/DateTimeComparableSearchField"
+          },
+          "orphanedLeadsOnly": {
+            "type": "boolean"
+          },
+          "pendingAgentId": {
+            "type": "integer"
+          },
+          "physicalStates": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "zip": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "CampaignLeadSearchResultsView": {
+        "properties": {
+          "address1": {
+            "type": "string"
+          },
+          "address2": {
+            "type": "string"
+          },
+          "agentDispostion": {
+            "type": "string"
+          },
+          "auxData1": {
+            "type": "string"
+          },
+          "auxData2": {
+            "type": "string"
+          },
+          "auxData3": {
+            "type": "string"
+          },
+          "auxData4": {
+            "type": "string"
+          },
+          "auxData5": {
+            "type": "string"
+          },
+          "auxExternalUrl": {
+            "type": "string"
+          },
+          "auxGreeting": {
+            "type": "string"
+          },
+          "auxPhone": {
+            "type": "string"
+          },
+          "callerId": {
+            "type": "string"
+          },
+          "campaignId": {
+            "type": "integer"
+          },
+          "campaignLead": {
+            "$ref": "#/components/schemas/CampaignLead"
+          },
+          "campaignName": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          },
+          "dialGroupId": {
+            "type": "integer"
+          },
+          "dupeKeyOverride": {
+            "format": "int64",
+            "type": "integer"
+          },
+          "email": {
+            "type": "string"
+          },
+          "externId": {
+            "type": "string"
+          },
+          "extraData": {
+            "type": "string"
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "gateKeeper": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "lastPassAgentName": {
+            "type": "string"
+          },
+          "lastPassDate": {
+            "description": "Date-time in Java format. Example: `2019-01-01T01:01:01.000+0000`. Note this is not compatible with RFC-3339 which is used by OpenAPI 3.0 Spec because it doesn't have a `:` between hours and minutes.",
+            "type": "string"
+          },
+          "lastPassDispo": {
+            "type": "string"
+          },
+          "lastPassDisposition": {
+            "type": "string"
+          },
+          "lastPassDts": {
+            "description": "Date-time in Java format. Example: `2019-01-01T01:01:01.000+0000`. Note this is not compatible with RFC-3339 which is used by OpenAPI 3.0 Spec because it doesn't have a `:` between hours and minutes.",
+            "type": "string"
+          },
+          "leadId": {
+            "format": "int64",
+            "type": "integer"
+          },
+          "leadPasses": {
+            "type": "integer"
+          },
+          "leadPhone": {
+            "type": "string"
+          },
+          "leadState": {
+            "type": "string"
+          },
+          "leadTimezone": {
+            "type": "string"
+          },
+          "listDesc": {
+            "type": "string"
+          },
+          "listId": {
+            "type": "integer"
+          },
+          "liveAnswerMessage": {
+            "type": "string"
+          },
+          "loadedDts": {
+            "description": "Date-time in Java format. Example: `2019-01-01T01:01:01.000+0000`. Note this is not compatible with RFC-3339 which is used by OpenAPI 3.0 Spec because it doesn't have a `:` between hours and minutes.",
+            "type": "string"
+          },
+          "machAnswerMessage": {
+            "type": "string"
+          },
+          "maxPasses": {
+            "type": "integer"
+          },
+          "midName": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "nextDialTime": {
+            "description": "Date-time in Java format. Example: `2019-01-01T01:01:01.000+0000`. Note this is not compatible with RFC-3339 which is used by OpenAPI 3.0 Spec because it doesn't have a `:` between hours and minutes.",
+            "type": "string"
+          },
+          "pendingAgentName": {
+            "type": "string"
+          },
+          "sortCol": {
+            "type": "string"
+          },
+          "speedToLeadAgentConn": {
+            "type": "integer"
+          },
+          "speedToLeadFirstPass": {
+            "type": "integer"
+          },
+          "state": {
+            "type": "string"
+          },
+          "stateDts": {
+            "description": "Date-time in Java format. Example: `2019-01-01T01:01:01.000+0000`. Note this is not compatible with RFC-3339 which is used by OpenAPI 3.0 Spec because it doesn't have a `:` between hours and minutes.",
+            "type": "string"
+          },
+          "suffix": {
+            "type": "string"
+          },
+          "suppressed": {
+            "type": "boolean"
+          },
+          "title": {
+            "type": "string"
+          },
+          "uploadDate": {
+            "description": "Date-time in Java format. Example: `2019-01-01T01:01:01.000+0000`. Note this is not compatible with RFC-3339 which is used by OpenAPI 3.0 Spec because it doesn't have a `:` between hours and minutes.",
+            "type": "string"
+          },
+          "uploadedBy": {
+            "type": "string"
+          },
+          "zip": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
       "CampaignUnlimitedFieldGroup": {
         "properties": {
           "campaigns": {
@@ -2151,6 +2586,18 @@
       "CollectionAgent": {
         "type": "object"
       },
+      "ComparableSearchField": {
+        "properties": {
+          "operator": {
+            "description": "Values can be `\u003e`, `\u003c` and `=`",
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
       "Contact": {
         "properties": {
           "businessPhone": {
@@ -2182,6 +2629,40 @@
           }
         },
         "title": "Contact",
+        "type": "object"
+      },
+      "Country": {
+        "properties": {
+          "countryCode": {
+            "type": "string"
+          },
+          "countryId": {
+            "description": "Country code i ISO 3166-1 alpha-3 format",
+            "type": "string"
+          },
+          "countryName": {
+            "type": "string"
+          },
+          "maxAniLength": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "maxUtcOffset": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "minAniLength": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "minUtcOffset": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "countryCode"
+        ],
         "type": "object"
       },
       "CustomDialZone": {
@@ -2339,6 +2820,19 @@
           },
           "zone": {
             "$ref": "#/components/schemas/DateTimeZone"
+          }
+        },
+        "type": "object"
+      },
+      "DateTimeComparableSearchField": {
+        "properties": {
+          "operator": {
+            "description": "Values can be `\u003e`, `\u003c` and `=`",
+            "type": "string"
+          },
+          "value": {
+            "format": "date-time",
+            "type": "string"
           }
         },
         "type": "object"
@@ -2628,6 +3122,34 @@
           }
         },
         "title": "Environment",
+        "type": "object"
+      },
+      "Error": {
+        "properties": {
+          "details": {
+            "type": "string"
+          },
+          "generalMessage": {
+            "type": "string"
+          },
+          "requestUri": {
+            "type": "string"
+          },
+          "timestamp": {
+            "format": "int64",
+            "type": "integer"
+          }
+        }
+      },
+      "ExtendedLeadData": {
+        "properties": {
+          "important": {
+            "type": "string"
+          },
+          "interested": {
+            "type": "boolean"
+          }
+        },
         "type": "object"
       },
       "Gate": {
@@ -3011,7 +3533,91 @@
         },
         "type": "object"
       },
+      "Generic": {
+        "properties": {
+          "description": {
+            "type": "string"
+          },
+          "id": {
+            "format": "int64",
+            "type": "integer"
+          }
+        }
+      },
       "InputStream": {
+        "type": "object"
+      },
+      "Lead": {
+        "properties": {
+          "address1": {
+            "type": "string"
+          },
+          "address2": {
+            "type": "string"
+          },
+          "auxData1": {
+            "type": "string"
+          },
+          "auxData2": {
+            "type": "string"
+          },
+          "auxData3": {
+            "type": "string"
+          },
+          "auxData4": {
+            "type": "string"
+          },
+          "auxData5": {
+            "type": "string"
+          },
+          "auxPhone": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "extendedLeadData": {
+            "$ref": "#/components/schemas/ExtendedLeadData"
+          },
+          "externId": {
+            "format": "int64",
+            "type": "integer"
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "gateKeeper": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "leadPhone": {
+            "description": "multiple values can be submitted with a pipe delimiter between phone numbers",
+            "type": "string"
+          },
+          "midName": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "suffix": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "zip": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "externId"
+        ],
         "type": "object"
       },
       "LocalTime": {
@@ -3597,6 +4203,14 @@
         },
         "type": "object"
       },
+      "SuppressedType": {
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
       "Survey": {
         "properties": {
           "accountId": {
@@ -3712,6 +4326,149 @@
             "type": "integer"
           }
         },
+        "type": "object"
+      },
+      "Timezone": {
+        "properties": {
+          "description": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "UploadLeadsRequest": {
+        "properties": {
+          "description": {
+            "type": "string"
+          },
+          "dialPriority": {
+            "description": "Setting this to `IMMEDIATE` allows you to insert a lead to the top of the dialer cache for immediate dialing if you want a normal insert then do not add this parameter.",
+            "enum": [
+              "IMMEDIATE",
+              "NORMAL"
+            ],
+            "type": "string"
+          },
+          "duplicateHandling": {
+            "enum": [
+              "RETAIN_ALL",
+              "REMOVE_ALL_EXISTING",
+              "REMOVE_FROM_LIST"
+            ],
+            "type": "string"
+          },
+          "listState": {
+            "enum": [
+              "ACTIVE"
+            ],
+            "type": "string"
+          },
+          "timeZoneOption": {
+            "enum": [
+              "NPA_NXX",
+              "ZIPCODE",
+              "EXPLICIT"
+            ],
+            "type": "string"
+          },
+          "uploadLeads": {
+            "items": {
+              "$ref": "#/components/schemas/CampaignLead"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "UploadLeadsResponse": {
+        "properties": {
+          "deletedCount": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "dncReturnedCount": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "dncUploadCount": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "hasDeletedLeads": {
+            "type": "boolean"
+          },
+          "internalDncCount": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "leadsAccepted": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "leadsConverted": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "leadsInserted": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "leadsSupplied": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "listState": {
+            "type": "string"
+          },
+          "message": {
+            "description": "Values can be `Your uploaded lead list has successfully completed processing` or `Your uploaded lead list file processing has failed`",
+            "type": "string"
+          },
+          "processingResult": {
+            "description": "Values can be `OK` or `Failed`",
+            "type": "string"
+          },
+          "processingStatus": {
+            "description": "Values can be `DEFAULT_NOT_A_FAILURE` or `GENERAL_FAILURE`",
+            "type": "string"
+          },
+          "quotaCount": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "timeZoneOption": {
+            "type": "string"
+          },
+          "uploadFileName": {
+            "type": "string"
+          },
+          "whitelistCount": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "message",
+          "leadsSupplied",
+          "leadsConverted",
+          "leadsAccepted",
+          "leadsInserted",
+          "internalDncCount",
+          "dncUploadCount",
+          "dncReturnedCount",
+          "whitelistCount",
+          "uploadFileName",
+          "deletedCount",
+          "quotaCount",
+          "listState",
+          "timeZoneOption",
+          "hasDeletedLeads",
+          "processingResult",
+          "processingStatus"
+        ],
         "type": "object"
       },
       "User": {
@@ -3912,6 +4669,9 @@
         "security": [
           {
             "ApiKeyAuth": []
+          },
+          {
+            "ApiKeyAuth": []
           }
         ],
         "summary": "Creates a manual agent call",
@@ -4020,6 +4780,9 @@
         "security": [
           {
             "ApiKeyAuth": []
+          },
+          {
+            "ApiKeyAuth": []
           }
         ],
         "summary": "Returns a listing of current active calls for a given product on an account",
@@ -4096,6 +4859,9 @@
           }
         },
         "security": [
+          {
+            "ApiKeyAuth": []
+          },
           {
             "ApiKeyAuth": []
           }
@@ -4186,6 +4952,9 @@
         "security": [
           {
             "ApiKeyAuth": []
+          },
+          {
+            "ApiKeyAuth": []
           }
         ],
         "summary": "Sets the call disposition for either INBOUND or OUTBOUND calls and releases the agent from PD state",
@@ -4236,6 +5005,9 @@
           }
         },
         "security": [
+          {
+            "ApiKeyAuth": []
+          },
           {
             "ApiKeyAuth": []
           }
@@ -4299,6 +5071,9 @@
         "security": [
           {
             "ApiKeyAuth": []
+          },
+          {
+            "ApiKeyAuth": []
           }
         ],
         "summary": "Terminates an active session",
@@ -4358,6 +5133,9 @@
           }
         },
         "security": [
+          {
+            "ApiKeyAuth": []
+          },
           {
             "ApiKeyAuth": []
           }
@@ -4440,6 +5218,9 @@
         "security": [
           {
             "ApiKeyAuth": []
+          },
+          {
+            "ApiKeyAuth": []
           }
         ],
         "summary": "Returns a listing of agent groups for an account",
@@ -4495,6 +5276,9 @@
         "security": [
           {
             "ApiKeyAuth": []
+          },
+          {
+            "ApiKeyAuth": []
           }
         ],
         "summary": "Creates a single new agent group for an account",
@@ -4543,6 +5327,9 @@
           }
         },
         "security": [
+          {
+            "ApiKeyAuth": []
+          },
           {
             "ApiKeyAuth": []
           }
@@ -4608,6 +5395,9 @@
           }
         },
         "security": [
+          {
+            "ApiKeyAuth": []
+          },
           {
             "ApiKeyAuth": []
           }
@@ -4678,6 +5468,9 @@
         "security": [
           {
             "ApiKeyAuth": []
+          },
+          {
+            "ApiKeyAuth": []
           }
         ],
         "summary": "Updates an agent group for an account",
@@ -4736,6 +5529,9 @@
           }
         },
         "security": [
+          {
+            "ApiKeyAuth": []
+          },
           {
             "ApiKeyAuth": []
           }
@@ -4804,6 +5600,9 @@
           }
         },
         "security": [
+          {
+            "ApiKeyAuth": []
+          },
           {
             "ApiKeyAuth": []
           }
@@ -4877,6 +5676,9 @@
         "security": [
           {
             "ApiKeyAuth": []
+          },
+          {
+            "ApiKeyAuth": []
           }
         ],
         "summary": "Updates a listing of agents for an agent group",
@@ -4935,6 +5737,9 @@
           }
         },
         "security": [
+          {
+            "ApiKeyAuth": []
+          },
           {
             "ApiKeyAuth": []
           }
@@ -5003,6 +5808,9 @@
           }
         },
         "security": [
+          {
+            "ApiKeyAuth": []
+          },
           {
             "ApiKeyAuth": []
           }
@@ -5086,11 +5894,426 @@
         "security": [
           {
             "ApiKeyAuth": []
+          },
+          {
+            "ApiKeyAuth": []
           }
         ],
         "summary": "Updates a single agent for an agent group",
         "tags": [
           "Agent"
+        ]
+      }
+    },
+    "/api/v1/admin/accounts/{accountId}/campaignLeads/leadSearch": {
+      "post": {
+        "description": "Allows searching of campaign leads for a single campaign\n\nPermissions: READ on Account (Permission Override)",
+        "operationId": "searchLeads",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "count",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "maxRows",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CampaignLeadSearchCriteria"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/CampaignLeadSearchResultsView"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Success"
+          }
+        },
+        "summary": "Search Leads",
+        "tags": [
+          "Campaign Lead"
+        ]
+      }
+    },
+    "/api/v1/admin/accounts/{accountId}/campaignLeads/leadStates": {
+      "get": {
+        "description": "Returns a listing of all lead states for an account\n\nPermissions: READ on Account",
+        "operationId": "getLeadStates",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Success"
+          }
+        },
+        "summary": "Get Lead States",
+        "tags": [
+          "Campaign Lead"
+        ]
+      }
+    },
+    "/api/v1/admin/accounts/{accountId}/campaignLeads/systemDispositions": {
+      "get": {
+        "description": "Returns a listing of all system dispositions for an account\n\nPermissions: READ on Account",
+        "operationId": "getSystemDispositions",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Success"
+          }
+        },
+        "summary": "Get Systems Dispositions",
+        "tags": [
+          "Campaign Lead"
+        ]
+      }
+    },
+    "/api/v1/admin/accounts/{accountId}/campaignLeads/{leadId}": {
+      "patch": {
+        "description": "Allows updating of a campaign lead, only updating those fields passed in\n\nPermissions: READ on Account (Permission Override), UPDATE on Campaign",
+        "operationId": "patchCampaignLead",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "leadId",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "campaignId",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "listId",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "timezoneOption",
+            "required": false,
+            "schema": {
+              "enum": [
+                "NPA_NXX",
+                "ZIPCODE",
+                "EXPLICIT",
+                "NOT_APPLICABLE"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "description": "`RETAIN_ALL`: Retain all records, `REMOVE_ALL_EXISTING`: Remove duplicates from all existing lists, `REMOVE_FROM_LIST`: Remove duplicates from this list",
+            "in": "query",
+            "name": "duplicateHandling",
+            "required": false,
+            "schema": {
+              "default": "RETAIN_ALL",
+              "enum": [
+                "RETAIN_ALL",
+                "REMOVE_ALL_EXISTING",
+                "REMOVE_FROM_LIST"
+              ],
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CampaignLead"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CampaignLead"
+                }
+              }
+            },
+            "description": "Success"
+          }
+        },
+        "summary": "Patch Campaign Lead",
+        "tags": [
+          "Campaign"
+        ]
+      },
+      "put": {
+        "description": "Allows updating of a campaign lead, updating entire lead including fields not passed in.\n\nPermissions: READ on Account (Permission Override), UPDATE on Campaign",
+        "operationId": "updateCampaignLead",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "leadId",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "campaignId",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "listId",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "timezoneOption",
+            "required": false,
+            "schema": {
+              "enum": [
+                "NPA_NXX",
+                "ZIPCODE",
+                "EXPLICIT",
+                "NOT_APPLICABLE"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "description": "`RETAIN_ALL`: Retain all records, `REMOVE_ALL_EXISTING`: Remove duplicates from all existing lists, `REMOVE_FROM_LIST`: Remove duplicates from this list",
+            "in": "query",
+            "name": "duplicateHandling",
+            "required": false,
+            "schema": {
+              "default": "RETAIN_ALL",
+              "enum": [
+                "RETAIN_ALL",
+                "REMOVE_ALL_EXISTING",
+                "REMOVE_FROM_LIST"
+              ],
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CampaignLead"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CampaignLead"
+                }
+              }
+            },
+            "description": "Success"
+          }
+        },
+        "summary": "Update Campaign Lead",
+        "tags": [
+          "Campaign"
+        ]
+      }
+    },
+    "/api/v1/admin/accounts/{accountId}/campaigns/{campaignId}/leadLoader/direct": {
+      "post": {
+        "description": "Uploads a single lead or list of leads to a new or existing list",
+        "operationId": "uploadLeads",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "campaignId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UploadLeadsRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UploadLeadsResponse"
+                }
+              }
+            },
+            "description": "Success"
+          }
+        },
+        "summary": "Upload Leads",
+        "tags": [
+          "Campaign"
+        ]
+      }
+    },
+    "/api/v1/admin/accounts/{accountId}/countries/available": {
+      "get": {
+        "description": "Get a list of available countries",
+        "operationId": "getAvailableCountries",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/Country"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Success"
+          }
+        },
+        "summary": "Get Available Countries",
+        "tags": [
+          "Country"
         ]
       }
     },
@@ -5156,6 +6379,9 @@
         "security": [
           {
             "ApiKeyAuth": []
+          },
+          {
+            "ApiKeyAuth": []
           }
         ],
         "summary": "Returns a listing of dial groups for an account",
@@ -5209,6 +6435,9 @@
           }
         },
         "security": [
+          {
+            "ApiKeyAuth": []
+          },
           {
             "ApiKeyAuth": []
           }
@@ -5291,6 +6520,9 @@
         "security": [
           {
             "ApiKeyAuth": []
+          },
+          {
+            "ApiKeyAuth": []
           }
         ],
         "summary": "Returns a listing of dial groups with associated campaigns for an account",
@@ -5339,6 +6571,9 @@
           }
         },
         "security": [
+          {
+            "ApiKeyAuth": []
+          },
           {
             "ApiKeyAuth": []
           }
@@ -5394,6 +6629,9 @@
           }
         },
         "security": [
+          {
+            "ApiKeyAuth": []
+          },
           {
             "ApiKeyAuth": []
           }
@@ -5464,6 +6702,9 @@
         "security": [
           {
             "ApiKeyAuth": []
+          },
+          {
+            "ApiKeyAuth": []
           }
         ],
         "summary": "Updates a dial group for an account",
@@ -5532,6 +6773,9 @@
           }
         },
         "security": [
+          {
+            "ApiKeyAuth": []
+          },
           {
             "ApiKeyAuth": []
           }
@@ -5614,6 +6858,9 @@
         "security": [
           {
             "ApiKeyAuth": []
+          },
+          {
+            "ApiKeyAuth": []
           }
         ],
         "summary": "Returns a listing of all agents assigned to a dial group",
@@ -5694,6 +6941,9 @@
         "security": [
           {
             "ApiKeyAuth": []
+          },
+          {
+            "ApiKeyAuth": []
           }
         ],
         "summary": "Returns a listing of campaigns for a dial group",
@@ -5759,6 +7009,9 @@
         "security": [
           {
             "ApiKeyAuth": []
+          },
+          {
+            "ApiKeyAuth": []
           }
         ],
         "summary": "Returns a campaign for a dial group",
@@ -5817,6 +7070,9 @@
           }
         },
         "security": [
+          {
+            "ApiKeyAuth": []
+          },
           {
             "ApiKeyAuth": []
           }
@@ -5882,6 +7138,9 @@
           }
         },
         "security": [
+          {
+            "ApiKeyAuth": []
+          },
           {
             "ApiKeyAuth": []
           }
@@ -5962,11 +7221,69 @@
         "security": [
           {
             "ApiKeyAuth": []
+          },
+          {
+            "ApiKeyAuth": []
           }
         ],
         "summary": "Updates a campaign for a dial group",
         "tags": [
           "Outbound"
+        ]
+      }
+    },
+    "/api/v1/admin/accounts/{accountId}/dialGroups/{dialGroupId}/campaigns/{campaignId}/clearCache": {
+      "post": {
+        "description": "lears the cache for a campaign\n\nPermissions: READ on Campaign (Permission Override)",
+        "operationId": "clearCampaignCache",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            }
+          },
+          {
+            "in": "path",
+            "name": "dialGroupId",
+            "required": true,
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            }
+          },
+          {
+            "in": "path",
+            "name": "campaignId",
+            "required": true,
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          },
+          "description": "An `application/json` Content-Type header is required. Submit an empty body to trigger the header.",
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "summary": "Clear Campaign Cache",
+        "tags": [
+          "Dial Group"
         ]
       }
     },
@@ -6013,6 +7330,9 @@
           }
         },
         "security": [
+          {
+            "ApiKeyAuth": []
+          },
           {
             "ApiKeyAuth": []
           }
@@ -6071,6 +7391,9 @@
           }
         },
         "security": [
+          {
+            "ApiKeyAuth": []
+          },
           {
             "ApiKeyAuth": []
           }
@@ -6185,6 +7508,31 @@
         ]
       }
     },
+    "/api/v1/admin/users": {
+      "get": {
+        "description": "Returns a listing of all users that a user has access to",
+        "operationId": "getUsers",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/User"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Success"
+          }
+        },
+        "summary": "Get Users",
+        "tags": [
+          "User"
+        ]
+      }
+    },
     "/api/v1/auth/login": {
       "post": {
         "description": "Permissions: Anonymous User",
@@ -6247,6 +7595,9 @@
           }
         },
         "security": [
+          {
+            "ApiKeyAuth": []
+          },
           {
             "ApiKeyAuth": []
           }
@@ -7150,6 +8501,18 @@
       "name": "Agent"
     },
     {
+      "name": "Campaign"
+    },
+    {
+      "name": "Campaign Lead"
+    },
+    {
+      "name": "Country"
+    },
+    {
+      "name": "Dial Group"
+    },
+    {
       "name": "Outbound"
     },
     {
@@ -7157,6 +8520,9 @@
     },
     {
       "name": "Security"
+    },
+    {
+      "name": "User"
     }
   ]
 }
