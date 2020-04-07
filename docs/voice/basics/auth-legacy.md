@@ -4,9 +4,8 @@ To generate the API token, you would either use your own login, or create an "AP
 
 > Note: Engage Voice APIs for Office customers are rooted at either:
 > 
-> `https://portal.vacd.biz/api/`
-> 
-> `https://portal.virtualacd.biz/api/`
+> * `https://portal.vacd.biz/api/`
+> * `https://portal.virtualacd.biz/api/`
 
 ## Generating an Auth Token
 
