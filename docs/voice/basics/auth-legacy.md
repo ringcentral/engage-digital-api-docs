@@ -73,5 +73,5 @@ The following is an example Engage Voice API Call using a RingCentral Engage Acc
 
 ```
 GET https://portal.vacd.biz/api/v1/admin/users
-X-Auth-Token: <rcEngageAccessToken>
+X-Auth-Token: <rcEngageAPIToken>
 ```
