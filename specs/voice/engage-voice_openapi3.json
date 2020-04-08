@@ -5105,7 +5105,7 @@
   },
   "openapi": "3.0.0",
   "paths": {
-    "/api/api/auth/login": {
+    "/api/auth/login": {
       "get": {
         "deprecated": false,
         "operationId": "getAccessTokenUserDetails",
@@ -5148,7 +5148,7 @@
         ]
       }
     },
-    "/api/api/auth/login/admin": {
+    "/api/auth/login/admin": {
       "post": {
         "deprecated": false,
         "operationId": "loginAdmin",
@@ -5212,7 +5212,7 @@
         ]
       }
     },
-    "/api/api/auth/login/agent": {
+    "/api/auth/login/agent": {
       "post": {
         "deprecated": false,
         "operationId": "loginAgent",
@@ -5276,7 +5276,7 @@
         ]
       }
     },
-    "/api/api/auth/login/agent/hashcode": {
+    "/api/auth/login/agent/hashcode": {
       "post": {
         "deprecated": false,
         "operationId": "authenticateAgentLoginByHashcodeAndAgentId",
@@ -5349,7 +5349,7 @@
         ]
       }
     },
-    "/api/api/auth/login/code": {
+    "/api/auth/login/code": {
       "post": {
         "deprecated": false,
         "operationId": "loginWithEngageAuthCode",
@@ -5395,7 +5395,7 @@
         ]
       }
     },
-    "/api/api/auth/login/rc/accesstoken": {
+    "/api/auth/login/rc/accesstoken": {
       "post": {
         "deprecated": false,
         "operationId": "loginWithRcAccessToken",
@@ -5451,7 +5451,7 @@
         ]
       }
     },
-    "/api/api/auth/login/tenfold/accesstoken": {
+    "/api/auth/login/tenfold/accesstoken": {
       "post": {
         "deprecated": false,
         "operationId": "loginWithTenfoldAccessToken",
@@ -5497,7 +5497,7 @@
         ]
       }
     },
-    "/api/api/auth/logout/{refreshToken}": {
+    "/api/auth/logout/{refreshToken}": {
       "delete": {
         "deprecated": false,
         "operationId": "logoutEngageAuthUser",
@@ -5540,7 +5540,7 @@
         ]
       }
     },
-    "/api/api/auth/password/internal/requestreset": {
+    "/api/auth/password/internal/requestreset": {
       "post": {
         "deprecated": false,
         "operationId": "internalRequestPasswordReset",
@@ -5586,7 +5586,7 @@
         ]
       }
     },
-    "/api/api/auth/password/requestreset": {
+    "/api/auth/password/requestreset": {
       "post": {
         "deprecated": false,
         "operationId": "requestPasswordReset",
@@ -5641,7 +5641,7 @@
         ]
       }
     },
-    "/api/api/auth/token/claims": {
+    "/api/auth/token/claims": {
       "get": {
         "deprecated": false,
         "operationId": "getClaimsForAccessToken",
@@ -5684,7 +5684,7 @@
         ]
       }
     },
-    "/api/api/auth/token/digitaljwt": {
+    "/api/auth/token/digitaljwt": {
       "get": {
         "deprecated": false,
         "operationId": "getDigitalJwt",
@@ -5727,7 +5727,7 @@
         ]
       }
     },
-    "/api/api/auth/token/refresh": {
+    "/api/auth/token/refresh": {
       "post": {
         "deprecated": false,
         "operationId": "refreshAccessToken",
@@ -5782,7 +5782,7 @@
         ]
       }
     },
-    "/api/api/auth/token/validate": {
+    "/api/auth/token/validate": {
       "get": {
         "deprecated": false,
         "operationId": "verifyAccessToken",
@@ -5825,7 +5825,7 @@
         ]
       }
     },
-    "/api/oauthcallback": {
+    "/oauthcallback": {
       "get": {
         "deprecated": false,
         "operationId": "defaultOAuthCallback",
@@ -5877,7 +5877,7 @@
         ]
       }
     },
-    "/api/oauthredirect": {
+    "/oauthredirect": {
       "get": {
         "deprecated": false,
         "operationId": "loadSsoLogin",
@@ -5909,7 +5909,7 @@
         ]
       }
     },
-    "/api/password/reset/{platformId}/{passwordResetToken}": {
+    "/password/reset/{platformId}/{passwordResetToken}": {
       "get": {
         "deprecated": false,
         "operationId": "resetPasswordCallback",
