@@ -14,14 +14,23 @@ https://developers.ringcentral.com/guide/authentication
 
 ## Retrieve RingCentral Engage Access Token
 
-Once you have a RingCentral Access Token, call the following Engage API to receive an Engage Bearer access token:
+Once you have a RingCentral Access Token, call the following Engage API to receive an Engage Bearer access token.
 
 ```
 POST https://engage.ringcentral.com/api/auth/login/rc/accesstoken
 Content-Type: application/x-www-form-urlencoded
 
-rcAccessToken=<ringcentralAccessToken>&rcTokenType=Bearer
+rcAccessToken=<rcAccessToken>&rcTokenType=Bearer
 ```
+
+Here is an example cURL command:
+
+```
+$ curl -XPOST https://engage.ringcentral.com/api/auth/login/rc/accesstoken \
+-d 'rcAccessToken=<rcAccessToken>'  -d 'rcTokenType=Bearer'
+```
+
+### Response
 
 The response will contain the `accessToken` property that can be used in an API call. Take note of the `accountId` property as that will be used to make future API calls.
 
