@@ -17,7 +17,7 @@ https://developers.ringcentral.com/guide/authentication
 Once you have a RingCentral Access Token, call the following Engage API to receive an Engage Bearer access token:
 
 ```
-POST 'https://engage.ringcentral.com/api/auth/login/rc/accesstoken
+POST https://engage.ringcentral.com/api/auth/login/rc/accesstoken
 Content-Type: application/x-www-form-urlencoded
 
 rcAccessToken=<rcOfficeAccessToken>&rcTokenType=Bearer
