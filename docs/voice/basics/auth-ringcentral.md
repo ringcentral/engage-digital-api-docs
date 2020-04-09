@@ -20,7 +20,7 @@ Once you have a RingCentral Access Token, call the following Engage API to recei
 POST https://engage.ringcentral.com/api/auth/login/rc/accesstoken
 Content-Type: application/x-www-form-urlencoded
 
-rcAccessToken=<rcOfficeAccessToken>&rcTokenType=Bearer
+rcAccessToken=<ringcentralAccessToken>&rcTokenType=Bearer
 ```
 
 The response will contain the `accessToken` property that can be used in an API call. Take note of the `accountId` property as that will be used to make future API calls.
