@@ -1,4 +1,4 @@
-# Obtaining an Access Token using RingCentral Office
+# Obtaining an Engage Access Token
 
 To access Engage Voice APIs, you need to request an Engage Access Token. This is by first requesting a RingCentral Access Token and then using an Engage API to create an Engage Access Token. Then the Engage Access Token can be used to access Engage Voice APIs.
 
