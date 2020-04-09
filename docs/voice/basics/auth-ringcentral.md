@@ -6,15 +6,15 @@ To access Engage Voice APIs, you need to request an Engage Access Token. This is
 > 
 > `https://engage.ringcentral.com/voice/api/`
 
-## Retrieve RingCentral Office Access Token
+## Retrieve RingCentral Access Token
 
-First retrieve a RingCentral Office access token using the following instructions:
+First retrieve a RingCentral access token using the following instructions:
 
 https://developers.ringcentral.com/guide/authentication
 
 ## Retrieve RingCentral Engage Access Token
 
-Once you have a RingCentral Office Access Token, call the following Engage API to receive an Engage Bearer access token:
+Once you have a RingCentral Access Token, call the following Engage API to receive an Engage Bearer access token:
 
 ```
 POST 'https://engage.ringcentral.com/api/auth/login/rc/accesstoken
