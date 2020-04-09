@@ -1,6 +1,6 @@
 # Obtaining an Access Token using RingCentral Office
 
-For customers with RingCentral Office, the approach to access RingCentral Engage APIs is to request a RingCentral Office accesss token and then exchange it for an Engage token to be used with Engage APIs.
+To access Engage Voice APIs, you need to request an Engage Access Token. This is by first requesting a RingCentral Access Token and then using an Engage API to create an Engage Access Token. Then the Engage Access Token can be used to access Engage Voice APIs.
 
 > Note: Engage Voice APIs for Office customers are rooted at:
 > 
@@ -24,6 +24,8 @@ rcAccessToken=<rcOfficeAccessToken>&rcTokenType=Bearer
 ```
 
 The response will contain the `accessToken` property that can be used in an API call. Take note of the `accountId` property as that will be used to make future API calls.
+
+The following is an abbreviated reponse.
 
 ```json
 {
@@ -60,3 +62,4 @@ The following is an example Engage Voice API Call using a RingCentral Engage Acc
 ```
 GET https://engage.ringcentral.com/voice/api/v1/admin/users
 Authorization: Bearer <rcEngageAccessToken>
+```
