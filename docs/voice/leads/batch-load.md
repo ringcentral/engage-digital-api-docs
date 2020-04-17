@@ -75,4 +75,13 @@ Authorization: Bearer <yourAccessToken>
 
 ## Getting a lists of Campaigns
 
+Leads are uploaded per Campaign which requires a `campaignId`. The following two API calls will enable enumerating the account's campign list.
+
+1. Call the Get Dial Groups API to gete a list of dial groups. Each dial group will have a `dialGroupId` property.
+
+`GET /api/admin/accounts/{accountId}/dialGroups`
+
+2. For the Dial Group of interest, call the Get Dial Group Campaigns API:
+
+`GET /api/admin/accounts/{accountId}/dialGroups/{dialGroupId}/campaigns`
 
