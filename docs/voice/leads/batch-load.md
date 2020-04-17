@@ -19,13 +19,13 @@ The JSON body is referenced as `LeadListProcessingRequest` in the OpenAPI spec a
 Some key options for the request body include:
 
 * `dialPriority`: set this value to `IMMEDIATE` to add leads to the top of the dialer queue, `NORMAL` otherwise.
-* `duplicateHandling`: `REMOVE_ALL_EXISTING` means to remove the existing lead and insert the new lead. `REMOVE_FROM_LIST` means do not insert the new lead.
+* `duplicateHandling`: Duplicates are determined by the lead's `leadPhone` property `REMOVE_ALL_EXISTING` means to remove the existing lead and any prior leads in the existing batch in favor of the new lead. `REMOVE_FROM_LIST` means do not insert the new lead. `RETAIN_ALL` means to keep all duplicates.
 * `timeZoneOption`: this field tells the Engage how to set the timezone for the user. Use `NPA_NXX` to set the timezone via the lead's phone number. Use `ZIPCODE` to set the timezone via the lead's zipcode. Use `EXPLICIT` to set the timezone via the `CampaignLead` object's `leadTimezone` property. Finally, use `NOT_APPLICABLE` if there is no timezone desired.
 
 Each load in the `uploadLeads` array consists of a lead with the following notable options:
 
 * `externId`: this is a required string property. 
-* `leadPhone`: this can be a single phone number or a pipe-deliminted field of multiple phone numbers.
+* `leadPhone`: this can be a single phone number or a pipe-deliminted field of multiple phone numbers. For US numbers, this is a 10 digit format including area code.
 
 The following is a full example:
 
@@ -72,3 +72,7 @@ Authorization: Bearer <yourAccessToken>
    ]
 }
 ```
+
+## Getting a lists of Campaigns
+
+
