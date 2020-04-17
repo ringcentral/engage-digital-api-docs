@@ -75,7 +75,7 @@ Authorization: Bearer <yourAccessToken>
 }
 ```
 
-## Enumeratings Campaigns
+## Enumerating Campaigns
 
 Leads are uploaded per Campaign which requires a `campaignId`. The following two API calls will enable enumerating the account's campign list.
 
@@ -86,4 +86,3 @@ Leads are uploaded per Campaign which requires a `campaignId`. The following two
 2. For the Dial Group of interest, call the Get Dial Group Campaigns API:
 
 `GET /api/admin/accounts/{accountId}/dialGroups/{dialGroupId}/campaigns`
-
