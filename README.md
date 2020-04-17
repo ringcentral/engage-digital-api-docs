@@ -20,4 +20,4 @@ If you would like to contribute to the RingCentral documentation effort, fork th
 
 Then you should be able to load http://localhost:8000 to view the documentation.
 
-Copyright &copy; 2019 RingCentral, Inc.
+Copyright &copy; 2019-2020 RingCentral, Inc.
