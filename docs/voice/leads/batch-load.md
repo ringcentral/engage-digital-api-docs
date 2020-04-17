@@ -2,7 +2,7 @@
 
 The Engage Voice API allows you to load one or multiple leads at a time. You can also load loads for immediate dialing at the top of the dialer cache or in normal priority.
 
-Use the following endpoint:
+Use the following endpoint with the JSON body described below.
 
 `POST {baseURL}/api/admin/accounts/{accountId}/campaigns/{campaignId}/loader/direct`
 
@@ -14,7 +14,9 @@ The `baseURL` for your server is one of the following:
 
 See the [authentication pages](../basics/authentication) for the [current system API](../basics/auth-ringcentral) and [legacy system API](../basics/auth-legacy) for more.
 
-The JSON body is referenced as `LeadListProcessingRequest` in the OpenAPI spec and consists of a set of options along with an array of leads in the `uploadLeads` property
+> Note: to enumerate a list of Campaigns for the `campaignId` path property, section "Enumerating Campaigns" below.
+
+The JSON body consists of a set of options along with an array of leads in the `uploadLeads` property
 
 Some key options for the request body include:
 
@@ -73,7 +75,7 @@ Authorization: Bearer <yourAccessToken>
 }
 ```
 
-## Getting a lists of Campaigns
+## Enumeratings Campaigns
 
 Leads are uploaded per Campaign which requires a `campaignId`. The following two API calls will enable enumerating the account's campign list.
 
