@@ -21,3 +21,6 @@ If you would like to contribute to the RingCentral documentation effort, fork th
 Then you should be able to load http://localhost:8000 to view the documentation.
 
 Copyright &copy; 2019-2020 RingCentral, Inc.
+
+ [build-status-svg]: https://travis-ci.com/ringcentral/engage-api-docs.svg?branch=master
+ [build-status-link]: https://travis-ci.com/ringcentral/engage-api-docs
