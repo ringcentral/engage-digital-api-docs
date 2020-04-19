@@ -1,5 +1,7 @@
 # RingCentral Engage API Docs
 
+[![Build Status][build-status-svg]][build-status-link]
+
 This repository is the home of the RingCentral Engage Developer Guide: a collection of materials, and documentation to help educate developers on how to build on top of the RingCentral Engage platform.
 
 Visit at: https://engage-api-docs.rtfd.org
