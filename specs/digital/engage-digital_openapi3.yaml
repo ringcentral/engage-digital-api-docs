@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   description: ''
   termsOfService: 'https://developer.ringcentral.com'
-  title: Engage Digital API
+  title: RingCentral Engage Digital API
   version: '1.0'
 servers:
   - url: 'https://<yourdomain>.api.engagement.dimelo.com/1.0'
