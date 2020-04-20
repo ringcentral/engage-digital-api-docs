@@ -40,7 +40,5 @@ You can verify the specs localy with the following if you have [Go installed](ht
 
 If you wish to change the specs being tested edit the [specs_test.go](specs_test.go) file.
 
-Copyright &copy; 2019-2020 RingCentral, Inc.
-
  [build-status-svg]: https://travis-ci.com/ringcentral/engage-api-docs.svg?branch=master
  [build-status-link]: https://travis-ci.com/ringcentral/engage-api-docs
