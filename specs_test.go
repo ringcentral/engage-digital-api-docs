@@ -1,4 +1,4 @@
-package apispecs
+package engageapidocs
 
 import (
 	"fmt"
