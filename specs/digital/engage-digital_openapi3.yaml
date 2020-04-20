@@ -1146,11 +1146,6 @@ paths:
             items:
               type: string
             type: array
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/CreateContentRequest'
       responses:
         '200':
           content:
