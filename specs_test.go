@@ -1,7 +1,6 @@
 package engageapidocs
 
 import (
-	"fmt"
 	"testing"
 
 	"github.com/grokify/swaggman/openapi3"
@@ -24,7 +23,7 @@ func TestSpecs(t *testing.T) {
 		} else if tt.title != spec.Info.Title {
 			t.Errorf("openapi3.ReadAndValidateFile('%s') Want [%s] Got [%s]", tt.filepath, tt.title, spec.Info.Title)
 		} else {
-			fmt.Printf("SPEC_IS_VALID [%s] TITLE [%s]\n", tt.filepath, spec.Info.Title)
+			t.Logf("SPEC_IS_VALID [%s] TITLE [%s]\n", tt.filepath, spec.Info.Title)
 		}
 	}
 }
