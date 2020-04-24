@@ -16,18 +16,60 @@ https://developers.ringcentral.com/guide/authentication
 
 Once you have a RingCentral Access Token, call the following Engage API to receive an Engage Bearer access token.
 
-```
+```http tab="Request"
 POST https://engage.ringcentral.com/api/auth/login/rc/accesstoken
 Content-Type: application/x-www-form-urlencoded
 
 rcAccessToken=<rcAccessToken>&rcTokenType=Bearer
 ```
 
-Here is an example cURL command:
-
-```
+```bash tab="cURL"
 $ curl -XPOST https://engage.ringcentral.com/api/auth/login/rc/accesstoken \
 -d 'rcAccessToken=<rcAccessToken>'  -d 'rcTokenType=Bearer'
+```
+
+```go tab="Go"
+package main
+
+import(
+  "fmt"
+  "encoding/json"
+  "io/ioutil"
+  "net/url"
+
+)
+
+type EngageToken struct {
+	AccessToken string `json:"accessToken"`
+	TokenType   string `json:"tokenType"`
+}
+
+func RcToEvToken(rctoken string) (string, error) {
+	res, err := http.PostForm(
+		"https://engage.ringcentral.com/api/auth/login/rc/accesstoken",
+		url.Values{"rcAccessToken": {rctoken}, "rcTokenType": {"Bearer"}})
+	if err != nil {
+		return "", err
+	}
+	if res.StatusCode >= 300 {
+		return "", fmt.Errorf("Invalid Token Response [%v]", res.StatusCode)
+	}
+	engageToken := EngageToken{}
+	bytes, err := ioutil.ReadAll(res.Body)
+	if err != nil {
+		return "", err
+	}
+	err = json.Unmarshal(bytes, &engageToken)
+	return engageToken.AccessToken, err
+}
+
+func main() {
+	rctoken := "myRcToken"
+
+	evtoken, err := RcToEvToken(rctoken)
+	if err != nil {
+		log.Fatal(err)
+	}
 ```
 
 ### Response
