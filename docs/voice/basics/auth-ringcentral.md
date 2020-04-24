@@ -69,7 +69,9 @@ func main() {
 	evtoken, err := RcToEvToken(rctoken)
 	if err != nil {
 		log.Fatal(err)
-	}
+  }
+  fmt.Println(evtoken)
+}
 ```
 
 ### Response
