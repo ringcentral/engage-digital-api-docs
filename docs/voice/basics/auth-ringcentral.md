@@ -39,6 +39,8 @@ import(
 
 )
 
+// EngageToken is an example and does not cover all the
+// properties in the API response.
 type EngageToken struct {
 	AccessToken string `json:"accessToken"`
 	TokenType   string `json:"tokenType"`
