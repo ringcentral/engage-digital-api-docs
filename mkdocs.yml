@@ -1,7 +1,7 @@
 site_name: RingCentral Engage Developer Guide
 site_url: https://engage-api-docs.rtfd.org
 site_favicon: favicon.ico
-repo_url: https://github.com/ringcentral/engage-api-docs
+repo_url: https://github.com/ringcentral/engage-digital-api-docs
 docs_dir: docs
 theme:
   name: ringcentral
@@ -13,7 +13,7 @@ theme:
 
 plugins:
   - git-committers:
-      repository: ringcentral/engage-api-docs
+      repository: ringcentral/engage-digital-api-docs
       branch: master
   - bootstrap-tables
 
