@@ -30,39 +30,39 @@ markdown_extensions:
 pages:
 - 'Primary':
   - 'Interactions':
-    - 'Overview': digital/interactions/index.md
+    - 'Overview': interactions/index.md
     - 'Getting Started':
-      - 'Node JS': digital/interactions/quick-start/node.md
-      - 'PHP': digital/interactions/quick-start/php.md
-      - 'Python': digital/interactions/quick-start/python.md
-      - 'Ruby': digital/interactions/quick-start/ruby.md
+      - 'Node JS': interactions/quick-start/node.md
+      - 'PHP': interactions/quick-start/php.md
+      - 'Python': interactions/quick-start/python.md
+      - 'Ruby': interactions/quick-start/ruby.md
     - 'Chatbots':
-      - 'Overview': digital/interactions/chatbots/overview.md
-      - 'Implementation': digital/interactions/chatbots/implementation.md
-      - 'Replying to Messages': digital/interactions/chatbots/replies.md
-      - 'Creating Interventions': digital/interactions/chatbots/interventions.md
-      - 'Transferring to an Agent': digital/interactions/chatbots/transfers.md
-      - 'Closing Threads': digital/interactions/chatbots/threads.md
+      - 'Overview': interactions/chatbots/overview.md
+      - 'Implementation': interactions/chatbots/implementation.md
+      - 'Replying to Messages': interactions/chatbots/replies.md
+      - 'Creating Interventions': interactions/chatbots/interventions.md
+      - 'Transferring to an Agent': interactions/chatbots/transfers.md
+      - 'Closing Threads': interactions/chatbots/threads.md
   - 'Routing':
-    - 'Overview': digital/routing/index.md
+    - 'Overview': routing/index.md
     - 'Getting Started':
-      - 'Node JS': digital/routing/quick-start/node.md
-      - 'PHP': digital/routing/quick-start/php.md
-      - 'Python': digital/routing/quick-start/python.md
-      - 'Ruby': digital/routing/quick-start/ruby.md
+      - 'Node JS': routing/quick-start/node.md
+      - 'PHP': routing/quick-start/php.md
+      - 'Python': routing/quick-start/python.md
+      - 'Ruby': routing/quick-start/ruby.md
 - 'Secondary':
   - 'Using the API':
-    - 'Obtain an Access Token': digital/basics/access-token.md
-    - 'Requests': digital/basics/requests.md
-    - 'Responses and Errors': digital/basics/responses.md
-    - 'Authentication': digital/basics/auth.md
-    - 'Uploading Files': digital/basics/uploads.md
-    - 'Filters and Pagination': digital/basics/pagination.md
-    - 'User Impersonation': digital/basics/impersonation.md
+    - 'Obtain an Access Token': basics/access-token.md
+    - 'Requests': basics/requests.md
+    - 'Responses and Errors': basics/responses.md
+    - 'Authentication': basics/auth.md
+    - 'Uploading Files': basics/uploads.md
+    - 'Filters and Pagination': basics/pagination.md
+    - 'User Impersonation': basics/impersonation.md
   - 'Events and Notifications':
-    - 'Overview': digital/webhooks/index.md
-    - 'Creating Webhooks': digital/webhooks/create.md
-    - 'Receiving Events': digital/webhooks/receive.md
-    - 'Event Types': digital/webhooks/events.md
-  - 'SDKs': digital/sdks.md
-  - 'Postman': digital/postman.md
+    - 'Overview': webhooks/index.md
+    - 'Creating Webhooks': webhooks/create.md
+    - 'Receiving Events': webhooks/receive.md
+    - 'Event Types': webhooks/events.md
+  - 'SDKs': sdks.md
+  - 'Postman': postman.md
