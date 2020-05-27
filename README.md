@@ -1,6 +1,8 @@
 # RingCentral Engage API Docs
 
 [![Build Status][build-status-svg]][build-status-link]
+[![Docs Status][docs-status-svg]][docs-status-link]
+[![Docs][docs-svg]][docs-link]
 
 This repository is the home of the RingCentral Engage Developer Guide: a collection of materials, and documentation to help educate developers on how to build on top of the RingCentral Engage platform.
 
@@ -26,8 +28,7 @@ Then you should be able to load http://localhost:8000 to view the documentation.
 
 This repo holds OpenAPI specs for Engage Digital and Engage Voice. For each commit, tests are run on Travis CI to verify that the OpenAPI 3.0 specs validate.
 
-* Engage Digital Spec: [specs/digital/engage-digital_openapi3.yaml](specs/digital/engage-digital_openapi3.yaml)
-* Engage Voice Spec: [specs/voice/engage-voice_openapi3.json](specs/voice/engage-voice_openapi3.json)
+* Engage Digital Spec: [specs/digital/engage-digital_openapi3.yaml](specs/engage-digital_openapi3.yaml)
 * Tests: [specs_test.go](specs_test.go)
 
 You can verify the specs localy with the following if you have [Go installed](https://golang.org/).
@@ -40,5 +41,9 @@ You can verify the specs localy with the following if you have [Go installed](ht
 
 If you wish to change the specs being tested edit the [specs_test.go](specs_test.go) file.
 
- [build-status-svg]: https://travis-ci.com/ringcentral/engage-api-docs.svg?branch=master
- [build-status-link]: https://travis-ci.com/ringcentral/engage-api-docs
+ [build-status-svg]: https://api.travis-ci.com/ringcentral/engage-digital-api-docs.svg?branch=master
+ [build-status-link]: https://travis-ci.com/github/ringcentral/engage-digital-api-docs
+ [docs-status-svg]: https://readthedocs.org/projects/engage-api-docs/badge/?version=latest
+ [docs-status-link]: https://readthedocs.org/projects/engage-api-docs/builds/
+ [docs-svg]: https://img.shields.io/badge/docs-readthedocs-blue.svg
+ [docs-link]: https://engage-api-docs.readthedocs.io/
