@@ -24,6 +24,8 @@ markdown_extensions:
   - pymdownx.superfences
   - codehilite:
       linenums: "None"
+  - markdown_include.include:
+       base_path: docs
 
 #extra_css: [extra.css]
 #extra_javascript: [fonts.js]
