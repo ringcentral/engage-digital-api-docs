@@ -43,7 +43,7 @@ If you wish to change the specs being tested edit the [specs_test.go](specs_test
 
  [build-status-svg]: https://api.travis-ci.com/ringcentral/engage-digital-api-docs.svg?branch=master
  [build-status-link]: https://travis-ci.com/github/ringcentral/engage-digital-api-docs
- [docs-status-svg]: https://readthedocs.org/projects/engage-api-docs/badge/?version=latest
- [docs-status-link]: https://readthedocs.org/projects/engage-api-docs/builds/
+ [docs-status-svg]: https://readthedocs.org/projects/engage-digital-api-docs/badge/?version=latest
+ [docs-status-link]: https://readthedocs.org/projects/engage-digital-api-docs/builds/
  [docs-svg]: https://img.shields.io/badge/docs-readthedocs-blue.svg
  [docs-link]: https://engage-api-docs.readthedocs.io/
