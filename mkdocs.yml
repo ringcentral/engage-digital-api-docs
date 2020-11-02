@@ -66,5 +66,10 @@ pages:
     - 'Creating Webhooks': webhooks/create.md
     - 'Receiving Events': webhooks/receive.md
     - 'Event Types': webhooks/events.md
-  - 'SDKs': sdks.md
+  - 'SDKs':
+    - 'Engage Digital SDKs and Sample Apps': sdks.md
+    - 'Engage Digital App SDK':
+      - 'Overview': sdk/principle.md
+      - 'Configuration and Development': sdk/config.md
+      - 'Methods': sdk/methods.md
   - 'Postman': postman.md
