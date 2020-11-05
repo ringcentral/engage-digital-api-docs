@@ -69,7 +69,7 @@ pages:
   - 'SDKs':
     - 'Engage Digital SDKs and Sample Apps': sdks.md
     - 'Engage Digital App SDK':
-      - 'Overview': sdk/principle.md
-      - 'Configuration and Development': sdk/config.md
-      - 'Methods': sdk/methods.md
+      - 'Overview': app-sdk/index.md
+      - 'Configuration and Development': app-sdk/config.md
+      - 'Methods': app-sdk/methods.md
   - 'Postman': postman.md
