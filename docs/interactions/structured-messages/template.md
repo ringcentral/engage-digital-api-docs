@@ -1,0 +1,108 @@
+# About Template Structured Message
+
+This structured content provides some buttons associated with a message. See [Channel capabilities](../structured-messages/#channel-capabilities) to know on which channel you can use this structured message.
+
+```bash tab="Request"
+curl -X POST "https://[YOUR DOMAIN].api.engagement.dimelo.com/1.0/contents"
+```
+
+```json tab="JSON Body"
+{
+  "source_id": "<source_id>",
+  "in_reply_to_id": "<in_reply_to_id>",
+  "structured_content": {
+    "type": "template",
+    "attachment_id": "<attachment_id>",
+    "attachment_fallback_id": "<attachment_id>",
+    "title": "Ringcentral, Inc.",
+    "subtitle": "Cloud Business Communications.",
+    "url": "github://github.com/ringcentral",
+    "url_fallback": "https://github.com/ringcentral",
+    "url_text": "Github",
+    "items": [
+      { "title": "Go to website", "type": "url", "url": "github://github.com/ringcentral", "url_fallback": "https://github.com/ringcentral" },
+      { "title": "Ok", "type": "reply" },
+      { "title": "Give me more", "type": "reply", "payload": "more" }
+    ]
+  }
+}
+```
+
+### Primary Parameters
+
+| API Property | Type | Description |
+|-|-|-|
+| **`source_id`** | String | ID of the source. |
+| **`in_reply_to_id`** | String | ID of the message being replied to. |
+| **`structured_content`** | Object | Payload of the structured message. |
+| **Structured Content Settings** | | |
+| **`structured_content.type`** | String | Type of the structured message. Must be "template". |
+| **`structured_content.title`** | String | Title of the template. Limited to 350 characters. |
+| **`structured_content.subtitle`** | String | **Optional**. Subtitle of the template. Limited to 1000 characters. |
+| **`structured_content.url`** | String | **Optional**. Allows to redirect to this url when clicking on the image or message of the template. Limited to 2048 characters. Should only have http and https schemes. |
+| **`structured_content.url_fallback`** | String | **Optional**. Fallback in case the url is invalid. Limited to 2048 characters. Only http and https schemes. |
+| **`structured_content.url_text`** | String | **Optional**. Text that will be displayed instead of the hostname of the url. Automatically gets populated as the hostname of the url if blank. This field is only displayed if the url field is present. Limited to 80 characters. |
+| **`structured_content.attachment_id`** | String | **Optional**. Existing attachment id used to decorate the template with an image. Should be public. Should be jpg, jpeg or png. Should be less than 5MB. |
+| **`structured_content.attachment_fallback_id`** | String | **Optional**. Fallback in case the attachment related to the attachment_id doesn’t meet the source requirements. Must be public. Only jpg, jpeg, png formats. Maximum size of 5 MB. |
+| **`structured_content.items`** | Array | List of items representing the buttons presented to the customer. A maximum of 4 items is supported. |
+| **Item Settings** | | |
+| **`structured_content.items.type`** | String | The type of the button. Can be **url** or **reply**. |
+| **`structured_content.items.title`** | String | The title of the item. Limited to 80 characters. |
+| **`structured_content.items.payload`** | String | **Optional** when the type is "reply". **Ignored** when the type is "url". Payload that will be returned with the structured response. Limited to 1000 characters. |
+| **`structured_content.items.url`** | String | **Required** when the type is "url". **Ignored** when the type is "reply". Url to which the user will be redirected to when clicking on the item. Limited to 2048 characters. Should only have http and https schemes. |
+| **`structured_content.items.url_fallback`** | String | **Optional** Fallback in case the url is invalid. Limited to 2048 characters. Only http and https schemes. |
+
+## Example: Facebook Messenger
+
+<img class="img-fluid" width="466" src="../../../img/structured-messages-template-fb.png">
+
+If the template only has a title and items, it will be converted to a Button Template in Facebook Messenger.
+
+### Properties Unique to this Channel
+
+**Button Template**
+
+| API Property | Specificity |
+|-|-|
+| **`structured_content.title`** | Limited to 640 characters. |
+| **`structured_content.items`** | A maximum of 3 items is supported. |
+| **`structured_content.items.title`** | Truncated to 20 characters. |
+| **`structured_content.items.payload`** | Limited to 1000 characters. |
+
+Otherwise, it will be converted to a Generic Template in Facebook Messenger.
+
+**Generic Template**
+
+| API Property | Specificity |
+|-|-|
+| **`structured_content.attachment_id`** | Supports bmp, gif, jpg, jpeg, png formats. |
+| **`structured_content.url_text`** | **Ignored** property. |
+| **`structured_content.items`** | A maximum of 3 items is supported. |
+| **`structured_content.title`** | Truncated to 80 characters. |
+| **`structured_content.subtitle`** | Truncated to 80 characters. |
+| **`structured_content.items.title`** | Truncated to 20 characters. |
+
+## Example: Engage Messaging
+
+<img class="img-fluid" width="468" src="../../../img/structured-messages-template-engage.png">
+
+### Properties Unique to this Channel
+
+| API Property | Specificity |
+|-|-|
+| **`structured_content.attachment_id`** | Supports gif, jpg, jpeg, png formats. Supports private attachments.<br>On Engage Messaging Web, if the width of the image is bigger than the height, it will be displayed with a 5:3 ratio. Otherwise, a 1:1 ratio will be used.<br>Minimal recommended size with a 1:1 ratio: **258x258**<br>Minimal recommended size with a 5:3 ratio: **258x155** |
+| **`structured_content.url`** | Deep links are supported. |
+
+## Example: Google Business Messages (Rich Card)
+
+<img class="img-fluid" width="419" src="../../../img/structured-messages-template-google-biz.png">
+
+### Properties Unique to this Channel
+
+| API Property | Specificity |
+|-|-|
+| **`structured_content.title`** | Truncated to 200 characters. |
+| **`structured_content.url`** | Ignored property. |
+| **`structured_content.url_text`** | Ignored property. |
+| **`structured_content.items.title`** | Truncated to 25 characters. |
+| **`structured_content.items.payload`** | Automatically gets populated as a random hex if blank. |

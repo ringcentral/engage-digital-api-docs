@@ -45,6 +45,15 @@ pages:
       - 'Creating Interventions': interactions/chatbots/interventions.md
       - 'Transferring to an Agent': interactions/chatbots/transfers.md
       - 'Closing Threads': interactions/chatbots/threads.md
+    - 'Structured Messages':
+      - 'Overview': interactions/structured-messages/index.md
+      - 'Select': interactions/structured-messages/select.md
+      - 'Rich Link': interactions/structured-messages/rich-link.md
+      - 'Template': interactions/structured-messages/template.md
+      - 'Carousel': interactions/structured-messages/carousel.md
+      - 'Time Select': interactions/structured-messages/time-select.md
+      - 'Apple Pay': interactions/structured-messages/apple-pay.md
+      - 'Apple Authentcate': interactions/structured-messages/apple-auth.md
   - 'Routing':
     - 'Overview': routing/index.md
     - 'Getting Started':
