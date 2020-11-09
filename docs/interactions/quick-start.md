@@ -1,6 +1,6 @@
 no_breadcrumb:true
 
-# Interaction JavaScript Quick Start
+# Interaction Quick Start
 
 Welcome to the Engage Platform. In this Quick Start, we are going to help you generate a list of threads that agents can engage customers via. Obtaining a reference to a thread is the first step in taking action on an interaction with a customer, including creating an intervention. The Quick Start will have you up and running in minutes. Let's get started.
 
@@ -22,45 +22,70 @@ The first thing you need to do is obtain an API Access Token if you do not alrea
 
 Make note of the access token generated as you will need it later.
 
-## Create and Edit threads.js
+=== "Javascript"
 
-Create a file called `threads.js`. Be sure to edit the variables in &lt;ALL CAPS&gt; with your app's credentials.
+    Create a file called `threads.js`. Be sure to edit the variables in &lt;ALL CAPS&gt; with your app's credentials.
 
-```javascript
-var https = require('https')
+    ```javascript
+    {!> code-samples/interactions/threads.js !}
+    ```
 
-const SERVER = '<YOUR-DOMAIN>.api.engagement.dimelo.com'
-const ACCESS_TOKEN = '<API-ACCESS-TOKEN>'
-const API = "/1.0/content_threads"
+    ### Run Your Code
 
-var headers = {
-        'Authorization': "Bearer " + ACCESS_TOKEN
-    }
+    You are almost done. Now run your script.
 
-var options = {host: SERVER, path: API, method: 'GET', headers: headers};
+    ```bash
+    $ node threads.js
+    ```
 
-var get_req = https.get(options, function(res) {
-      var response = ""
-      res.on('data', function (chunk) {
-          response += chunk
-        }).on("end", function(){
-          if (res.statusCode == 200)
-            console.log(response)
-          else
-            console.log(res.statusCode)
-        });
-    }).on('error', function(e) {
-          console.log(e.message)
-    });
-```
+=== "Python"
 
-### Run Your Code
+    Create a file called `threads.py`. Be sure to edit the variables in &lt;ALL CAPS&gt; with your app's credentials.
 
-You are almost done. Now run your script.
+    ```python
+    {!> code-samples/interactions/threads.py !}
+    ```
 
-```bash
-$ node threads.js
-```
+    ### Run Your Code
+    
+    You are almost done. Now run your script.
+
+    ```bash
+    $ python threads.py
+    ```
+
+=== "PHP"
+
+    Create a file called `threads.php`. Be sure to edit the variables in &lt;ALL CAPS&gt; with your app's credentials.
+
+    ```php
+    {!> code-samples/interactions/threads.php !}
+    ```
+
+    ### Run Your Code
+
+    You are almost done. Now run your script.
+
+    ```bash
+    $ php threads.php
+    ```
+
+=== "Ruby"
+
+    Create a file called `threads.rb`. Be sure to edit the variables in &lt;ALL CAPS&gt; with your app's credentials.
+
+    ```ruby
+    {!> code-samples/interactions/threads.rb !}
+    ```
+
+    ### Run Your Code
+
+    You are almost done. Now run your script.
+
+    ```bash
+    $ ruby threads.rb
+    ```
+
 
 ## Need Help?
 

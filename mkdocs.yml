@@ -33,11 +33,7 @@ pages:
 - 'Primary':
   - 'Interactions':
     - 'Overview': interactions/index.md
-    - 'Getting Started':
-      - 'Node JS': interactions/quick-start/node.md
-      - 'PHP': interactions/quick-start/php.md
-      - 'Python': interactions/quick-start/python.md
-      - 'Ruby': interactions/quick-start/ruby.md
+    - 'Getting Started': interactions/quick-start.md
     - 'Chatbots':
       - 'Overview': interactions/chatbots/overview.md
       - 'Implementation': interactions/chatbots/implementation.md
