@@ -41,7 +41,8 @@ curl -X POST "https://[YOUR DOMAIN].api.engagement.dimelo.com/1.0/contents"
 
 The customer will receive a message including the body and a button that will open the OAuth login page. Once authenticated, the token will be sent back by Apple and will be accessible through the Engage Digital webhook of the imported message in the "authenticate” part. The token is sent back. See following page for an example of the webhook payload format.
 
-```json tab="Webhook Payload Format"
+#### Webhook Payload Format
+```json
 {
   "id":"0b44eb19f120e3230942572f",
   "domain_id":"48cc6703bdae1462ce06a555",

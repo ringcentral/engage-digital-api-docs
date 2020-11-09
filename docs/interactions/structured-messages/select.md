@@ -53,7 +53,9 @@ This list picker structured content has multiple specific fields. So here’s an
 
 <img class="img-fluid" width="300" src="../../../img/structured-messages-select-apple-biz.png">
 
-```json tab="JSON Body"
+### JSON Body
+
+```json
 {
   "source_id": "<source_id>",
   "in_reply_to_id": "<in_reply_to_id>",
@@ -124,7 +126,9 @@ The following example uses Facebook Messenger with quick replies.
 
 <img class="img-fluid" width="628" src="../../../img/structured-messages-select-fb.png">
 
-```json tab="JSON Body"
+### JSON Body
+
+```json
 {
   "source_id": "<source_id>",
   "in_reply_to_id": "<in_reply_to_id>",
@@ -166,7 +170,9 @@ The following example uses Engage Messaging with quick replies.
 
 The Engage Messaging quick replies support both the centering of items and the disabling of the text input:
 
-```json tab="JSON Body"
+### JSON Body
+
+```json
 {
   "source_id": "<source_id>",
   "in_reply_to_id": "<in_reply_to_id>",
