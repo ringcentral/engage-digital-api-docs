@@ -2,11 +2,13 @@
 
 This structured message allows to decorate a link with an image, title and subtitle. See [Channel capabilities](../structured-messages/#channel-capabilities) to know on which channel you can use this structured message.
 
-```bash tab="Request"
+## Request Example
+
+```bash
 curl -X POST "https://[YOUR DOMAIN].api.engagement.dimelo.com/1.0/contents"
 ```
 
-```json tab="JSON Body"
+```json
 {
   "source_id": "<source_id>",
   "in_reply_to_id": "<in_reply_to_id>",

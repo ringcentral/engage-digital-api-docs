@@ -7,11 +7,13 @@ This structured message provides a convenient way to ask for a payment from the 
 * A way to request a payment session payload from Apple.
 * A correctly configured business chat account.
 
-```bash tab="Request"
+## Request Example
+
+```bash
 curl -X POST "https://[YOUR DOMAIN].api.engagement.dimelo.com/1.0/contents"
 ```
 
-```json tab="JSON Body"
+```json
 {
   "source_id": "<source_id>",
   "in_reply_to_id": "<in_reply_to_id>",
