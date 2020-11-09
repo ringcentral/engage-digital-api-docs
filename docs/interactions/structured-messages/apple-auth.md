@@ -5,11 +5,13 @@ This structured message provides a way to send an OAuth2 authentication request 
 ## Prerequisites
 * Set up OAuth URL and Token URL in "End User Authentication” on your Business Chat Account.
 
-```bash tab="Request"
+## Request Example
+
+```bash
 curl -X POST "https://[YOUR DOMAIN].api.engagement.dimelo.com/1.0/contents"
 ```
 
-```json tab="JSON Body"
+```json
 {
   "source_id": "<source_id>",
   "in_reply_to_id": "<in_reply_to_id>",
