@@ -52,11 +52,7 @@ pages:
       - 'Apple Authentcate': interactions/structured-messages/apple-auth.md
   - 'Routing':
     - 'Overview': routing/index.md
-    - 'Getting Started':
-      - 'Node JS': routing/quick-start/node.md
-      - 'PHP': routing/quick-start/php.md
-      - 'Python': routing/quick-start/python.md
-      - 'Ruby': routing/quick-start/ruby.md
+    - 'Getting Started': routing/quick-start.md
 - 'Secondary':
   - 'Using the API':
     - 'Obtain an Access Token': basics/access-token.md

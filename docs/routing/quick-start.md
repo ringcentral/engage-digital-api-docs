@@ -1,6 +1,12 @@
 no_breadcrumb:true
 
-# Tasks Ruby Quick Start
+# Getting Started with Engage Routing
+
+Routing is a critical high-level concept with the Engage Platform, as it handles how teams can share the work load across their agents and ecosystem. There are two primary ways in which workflows and workloads are managed: through a task-based system, and via folders.
+
+All folders in Engage are "smart folders" whose contents are determined by rules defined by an administrator. This helps drive transparency across teams, and facilitates greater collaboration.
+
+Tasks provide a more directed way of designating a specific agent to be responsible for handling and resolving a customer interaction or intervention.
 
 Welcome to the Engage Platform. In this Quick Start, we are going to help you get a list of tasks that can be assigned to agents within your account. Obtaining a reference to a task by its ID is an important first step in managing the workflow of that task. This Quick Start will have you up and running in minutes.
 
@@ -22,32 +28,72 @@ The first thing you need to do is obtain an API Access Token if you do not alrea
 
 Make note of the access token generated as you will need it later.
 
-## Create and Edit tasks.rb
+##### Choose a Language to Get Started
 
-Create a file called `tasks.rb`. Be sure to edit the variables in &lt;ALL CAPS&gt; with your app's credentials.
+Send an SMS in less than five minutes:
 
-```ruby
-require 'faraday'
+=== "Javascript"
 
-SERVER = "https://<YOUR-DOMAIN>.api.engagement.dimelo.com/"
-ACCESS_TOKEN = '<API-ACCESS-TOKEN>'
-API = "/1.0/tasks"
+    Create a file called `tasks.js`. Be sure to edit the variables in &lt;ALL CAPS&gt; with your app's credentials.
 
-headers = {
-  headers: { 'Authorization' => 'Bearer ' + ACCESS_TOKEN }
-}
-res = Faraday.new(SERVER + API, headers).get
+    ```javascript
+    {!> code-samples/routing/tasks.js !}
+    ```
 
-puts res.body
-```
+    ### Run Your Code
 
-### Run Your Code
+    You are almost done. Now run your script.
 
-You are almost done. Now run your script.
+    ```bash
+    $ node tasks.js
+    ```
 
-```bash
-$ ruby tasks.rb
-```
+=== "Python"
+
+    Create a file called `tasks.py`. Be sure to edit the variables in &lt;ALL CAPS&gt; with your app's credentials.
+
+    ```python
+    {!> code-samples/routing/tasks.py !}
+    ```
+
+    ### Run Your Code
+
+    You are almost done. Now run your script.
+
+    ```bash
+    $ python tasks.py
+    ```
+
+=== "PHP"
+
+    Create a file called `tasks.php`. Be sure to edit the variables in &lt;ALL CAPS&gt; with your app's credentials.
+
+    ```php
+    {!> code-samples/routing/tasks.php !}
+    ```
+
+    ### Run Your Code
+
+    You are almost done. Now run your script.
+
+    ```bash
+    $ php tasks.php
+    ```
+
+=== "Ruby"
+
+    Create a file called `tasks.rb`. Be sure to edit the variables in &lt;ALL CAPS&gt; with your app's credentials.
+
+    ```ruby
+    {!> code-samples/routing/tasks.rb !}
+    ```
+    ### Run Your Code
+
+    You are almost done. Now run your script.
+
+    ```bash
+    $ ruby tasks.rb
+    ```
 
 ## Need Help?
 
