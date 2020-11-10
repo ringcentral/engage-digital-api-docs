@@ -73,7 +73,7 @@ This section describes the generic compatibility logic of the API. Check the fol
 ### Engage Messaging
 
 * [Quick Replies](../structured-messages/select/#example-engage-messaging-quick-replies)
-* [Rich Link](../structured-messages/rich-link/#example-facebook-messenger)
+* [Rich Link](../structured-messages/rich-link/#example-engage-messaging)
 * [Template](../structured-messages/template/#example-engage-messaging)
 * [Carousel](../structured-messages/carousel/#example-engage-messaging)
 
@@ -85,4 +85,4 @@ This section describes the generic compatibility logic of the API. Check the fol
 
 ## Source SDK
 
-Source SDK supports only public attachments. Before sending a payload to third-party endpoint attachment_id is replaced by “attachment_url”. All other capabilities are inherited from the base validation described in this document. 
+Source SDK supports only public attachments. Before sending a payload to third-party endpoint attachment_id is replaced by “attachment_url”. All other capabilities are inherited from the base validation described in this document.
