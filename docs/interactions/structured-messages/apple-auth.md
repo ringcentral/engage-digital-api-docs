@@ -1,6 +1,6 @@
 # About Apple Authenticate Structured Messages
 
-This structured message provides a way to send an OAuth2 authentication request to the customer. See [Channel capabilities](../structured-messages/#channel-capabilities) to know on which channel you can use this structured message.
+This structured message provides a way to send an OAuth2 authentication request to the customer. See [Channel capabilities](../#channel-capabilities) to know on which channel you can use this structured message.
 
 ## Prerequisites
 * Set up OAuth URL and Token URL in "End User Authentication” on your Business Chat Account.
