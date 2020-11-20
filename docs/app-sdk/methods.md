@@ -279,7 +279,7 @@ SMCC.Content.onArchive(function() {
     iframeURL: ' http://example.com ?content_id' + this.id(),
     title: 'This is a test'
   });
-} );
+});
 ```
 
 ### SMCC.Content.onCreate(callback())
@@ -578,7 +578,7 @@ provided options.
 
 | Name | Description |
 |-|-|
-| `options` | An option hash that can contain following options: <ul><li>`target`: The target type. Can be set to *iframe*, *popup* (opens the link in a popup), or *window* (opens the link in a new tab or a new window). If missing, a click on the tab will open the url in an iframe.</li><li>`iframeId`: Used for target: iframe in combination with `SMCC.Window.sendPostMessage`.<ul><li>Only alphanumeric case insensitive and -_ are allowed : *^[A-Za-z0-9-_]+$*. Also “parent” is a reserved keyword to send to the parent window.</li><li>If iframeId is invalid, a new window will still open without the iframe ID set.</li></ul></li><li>`url`: The complete url of the target. If missing the tab will show a loader until you call *setUrl*.</li><li>`icon`: The name of the IcoMoon icon. To get a full list of icons, visit the [IcoMoon Page](http://domain-test.engagement.dimelo.com/icons/v2/demo.html) (remove the prefix “icon-” part)</li><li>`label`: The label’s text rendered on tab control.</li><li>`title`: The title’s text (tooltip) rendered on tab control.</li><li>`width`: If popup is chosen for the target option, the width option will be used. If missing, the popup width will be half of the window width.</li><li>`height`: If popup is chosen for the target option, the height option will be used. If missing, the popup height will be half of the window height.</li><li>`default`: Passing true will focus the tab, last inserted tab has priority </li></ul>Note if label and image/icon options aren’t specified a default image is used. |
+| `options` | An option hash that can contain following options: <ul><li>`target`: The target type. Can be set to *iframe*, *popup* (opens the link in a popup), or *window* (opens the link in a new tab or a new window). If missing, a click on the tab will open the url in an iframe.</li><li>`iframeId`: Used for target: iframe in combination with `SMCC.Window.sendPostMessage`.<ul><li>Only alphanumeric case insensitive and -_ are allowed : *^[A-Za-z0-9-_]+$*. Also “parent” is a reserved keyword to send to the parent window.</li><li>If iframeId is invalid, a new window will still open without the iframe ID set.</li></ul></li><li>`url`: The complete url of the target using **https**. If missing the tab will show a loader until you call *setUrl*.</li><li>`icon`: The name of the IcoMoon icon. To get a full list of icons, visit the [IcoMoon Page](http://domain-test.engagement.dimelo.com/icons/v2/demo.html) (remove the prefix “icon-” part)</li><li>`label`: The label’s text rendered on tab control.</li><li>`title`: The title’s text (tooltip) rendered on tab control.</li><li>`width`: If popup is chosen for the target option, the width option will be used. If missing, the popup width will be half of the window width.</li><li>`height`: If popup is chosen for the target option, the height option will be used. If missing, the popup height will be half of the window height.</li><li>`default`: Passing true will focus the tab, last inserted tab has priority </li></ul>Note if label and image/icon options aren’t specified a default image is used. |
 
 #### Returns
 
@@ -1123,7 +1123,7 @@ Opens the advanced search modal box.
 
 | Name | Description |
 |-|-|
-| `options` | A hash containing some options:<ul><li>`search`: The initial search when the modal box is open. The format of the search input has to be used as “text: <some text> source: <sourceId>”.</li></ul> |
+| `options` | A hash containing some options:<ul><li>`search`: The initial search when the modal box is open. The format of the search input has to be used as “text: &lt;some text&gt; source: &lt;sourceId&gt;”.</li></ul> |
 
 #### Returns
 
@@ -1249,7 +1249,7 @@ Opens a new window with provided options.
 
 | Name | Description |
 |-|-|
-| `options` | An hash that can contain following options:<ul><li>`target`: The target type. Can be set to *iframe*, *popup*(opens the link in a popup), or *window*(opens the link in a new tab or a new window). If missing, a click on the button will open the url in an iframe.</li><li>`iframeId`: Used for *target: iframe* in combination with `SMCC.Window.sendPostMessage`.<ul><li>Only alphanumeric case insensitive and -_ are allowed : `^[A-Za-z0-9-_]+$`. Also “parent” is a reserved keyword to send to the parent window.</li><li>If iframeId is invalid, a new window will still open without the iframe ID set.</li></ul></li><li>`url`: The complete url of the target. If missing the window will be empty.</li><li>`title`: The title of the window.</li><li>`width`: If *popup* or *iframe* is chosen for the target option, the width option will be used.</li><li>`height`: If *popup* or *iframe* is chosen for the target option, the height option will be used.</li><li>`modal`: If set to false, the popup can be opened with other popup. Default to true.</li></ul> |
+| `options` | An hash that can contain following options:<ul><li>`target`: The target type. Can be set to *iframe*, *popup*(opens the link in a popup), or *window*(opens the link in a new tab or a new window). If missing, a click on the button will open the url in an iframe.</li><li>`iframeId`: Used for *target: iframe* in combination with `SMCC.Window.sendPostMessage`.<ul><li>Only alphanumeric case insensitive and -_ are allowed : `^[A-Za-z0-9-_]+$`. Also “parent” is a reserved keyword to send to the parent window.</li><li>If iframeId is invalid, a new window will still open without the iframe ID set.</li></ul></li><li>`url`: The complete url of the target using **https**. If missing the window will be empty.</li><li>`title`: The title of the window.</li><li>`width`: If *popup* or *iframe* is chosen for the target option, the width option will be used.</li><li>`height`: If *popup* or *iframe* is chosen for the target option, the height option will be used.</li><li>`modal`: If set to false, the popup can be opened with other popup. Default to true.</li></ul> |
 
 #### Returns
 

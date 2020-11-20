@@ -22,7 +22,7 @@ An application is defined by the following attributes:
 | `Developers` |​ The list of agents that are able to develop this application. 5 developers can be added at maximum. |
 | `Callback URL​` | The callback used for OAuth authentication (more details in OAuth authentication section). |
 | `Configuration URL` | If present, this URL is used to configure each SDK installation. See installation section for more information. |
-| `Source code URL(s)` | The URL(s) of the JavaScript code you wrote that you have to host on a public server. The created code will be automatically imported in all SMCC application pages. |
+| `Source code URL(s)` | The URL(s) of the JavaScript code you wrote that you have to host on a public server. The created code will be automatically imported in all Engage Digital application pages. |
 
 Available application modes are:
 
@@ -75,13 +75,13 @@ Upon clicking the update permissions icon, you will need to confirm you are read
 
 ## IFrame Messaging
 
-The Engage Digital App SDK offers iframe rendering features. The main inconvenience with iframes is the communication with the parent window (the SMCC).
+The Engage Digital App SDK offers iframe rendering features. The main inconvenience with iframes is the communication with the parent window (Engage Digital).
 
-The Engage Digital App SDK offers via ​`window.postMessage​` method the feature to send messages from an iframe to the SMCC window. You will get more details on how `window.postMessage` works in this [technical review](h​ttps://developer.mozilla.org/en-US/docs/Web/API/Window.postMessage​).
+The Engage Digital App SDK offers via ​`window.postMessage​` method the feature to send messages from an iframe to the Engage Digital window. You will get more details on how `window.postMessage` works in this [technical review](h​ttps://developer.mozilla.org/en-US/docs/Web/API/Window.postMessage​).
 
-### Sending a Message to the SMCC Window
+### Sending a Message to the Engage Digital Window
 
-On the iframe side, here is an example of how to send a message to SMCC window:
+On the iframe side, here is an example of how to send a message to Engage Digital window:
 
 ``` javascript
     window.parent.postMessage({
@@ -93,10 +93,10 @@ As you see, the `postMessage` method takes two (mandatory) arguments:
 
 | Argument | Description|
 |-|-|
-| `object` | A javascript object that describes the message. This object contains the following properties: <ul><li>`name`:​ The name of the event (mandatory). This is a message identifier that describes the action performed on SMCC side. The name has to be prefixed by “smcc:”, like “smcc:baz”</li><li>`data​`: An optional hash of arguments that message can accept.</li></ul> |
-| `url` | The URL of the SMCC application. For example: `"​​http://foo.engagement.dimelo.com​"`​, where `f​oo​` is your SMCC domain’s name.
+| `object` | A javascript object that describes the message. This object contains the following properties: <ul><li>`name`:​ The name of the event (mandatory). This is a message identifier that describes the action performed on Engage Digital side. The name has to be prefixed by “smcc:”, like “smcc:baz”</li><li>`data​`: An optional hash of arguments that message can accept.</li></ul> |
+| `url` | The URL of the Engage Digital application. For example: `"​​http://foo.engagement.dimelo.com​"`​, where `f​oo​` is your Engage Digital domain’s name.
 
-To receive messages in SMCC, first you have to whitelist the iframe sender origin:
+To receive messages in Engage Digital, first you have to whitelist the iframe sender origin:
 
 ``` javascript
     SMCC.Window.acceptPostMessageOrigin("https://example.com");
@@ -109,7 +109,7 @@ To receive messages in SMCC, first you have to whitelist the iframe sender origi
 
 In previous versions of Internet Explorer (< 11.0), messages ​must​ be sent as a string: http://caniuse.com/x-doc-messaging.​
 
-Therefore, you should convert the first argument of `window.postMessage` to a JSON string. SMCC will decode this JSON string back:
+Therefore, you should convert the first argument of `window.postMessage` to a JSON string. Engage Digital will decode this JSON string back:
 
 ``` javascript
     window.parent.postMessage(JSON.stringify({
@@ -131,7 +131,7 @@ But the first example will work on older versions of Internet Explorer (>= 8.0).
 
 ## OAuth Authentication
 
-Engage Digital App SDK provides many ways to render iframes. But, most of the time those iframes must be authenticated. Engage Digital’s SMCC offers a standard [​OAuth 2.0](https://oauth.net/2/)​ provider to request access tokens and get SMCC's current user information.
+Engage Digital App SDK provides many ways to render iframes. But, most of the time those iframes must be authenticated. Engage Digital’s interface offers a standard [​OAuth 2.0](https://oauth.net/2/)​ provider to request access tokens and get Engage Digital's current user information.
 
 ### Prerequisites
 
@@ -147,14 +147,14 @@ You must also configure a callback URL for the application to a valid one. This 
 
 If you are not familiar with the OAuth 2.0 protocol, here is how authentication works:
 
-1. User agent is not authenticated on application, a redirection is made on SMCC OAuth provider with the application key and a redirect URL.
+1. User agent is not authenticated on application, a redirection is made on Engage Digital OAuth provider with the application key and a redirect URL.
 2. If the application key is valid, user agent is redirected to the provided redirect URL with authorization code as a parameter. Otherwise the user agent is redirected to the redirect URL with an error parameter.
 3. Then, the application must make a `POST` request with returned code and application secret to get an OAuth access token.
 4. with this access token, the iframe can get the current user infos via REST `/1.0/users/me​` API method.
 
 ### Request an OAuth Authorization Code
 
-An OAuth authorization code is required before trying to get an access token. User agent **must**​ be redirected to SMCC authorization URL to get it.
+An OAuth authorization code is required before trying to get an access token. User agent **must**​ be redirected to Engage Digital authorization URL to get it.
 
 #### URL
 
@@ -238,4 +238,4 @@ Otherwise, if one of the provided parameters is invalid or missing, a `400 HTTP`
 
 ### Getting Access Token User Information
 
-When getting an OAuth access token, you’ll be able to get information for this token. An access token is associated to an SMCC agent. To get the agent’s ID, a REST API request (`​/1.0/users/me`​) must be made by an application.​ P​lease refer to SMCC REST API documentation for more information.
+When getting an OAuth access token, you’ll be able to get information for this token. An access token is associated to an Engage Digital agent. To get the agent’s ID, a REST API request (`​/1.0/users/me`​) must be made by an application.​ P​lease refer to Engage Digital REST API documentation for more information.
