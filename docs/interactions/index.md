@@ -5,10 +5,10 @@
   <p class="lead">Within the Engage Platform, Interactions encompass the functionality relating to the exchange of information between agents and customers. It is through the Interaction API that developers can post messages back into 3rd-party sources.</p>
   <p>We invite all developers to try out our Interactions API by writing a simple app to list threads that agents can engage with in almost no time at all. Get started using a Quick Start in any of the following languages:</p>
   
-  <a href="quick-start/node/" class="btn btn-light qs-link">Node JS &raquo;</a>
-  <a href="quick-start/php/" class="btn btn-light qs-link">PHP &raquo;</a>
-  <a href="quick-start/python/" class="btn btn-light qs-link">Python &raquo;</a>
-  <a href="quick-start/ruby/" class="btn btn-light qs-link">Ruby &raquo;</a>
+  <a href="quick-start/#Javascript" class="btn btn-light qs-link">Node JS &raquo;</a>
+  <a href="quick-start/#PHP" class="btn btn-light qs-link">PHP &raquo;</a>
+  <a href="quick-start/#Python" class="btn btn-light qs-link">Python &raquo;</a>
+  <a href="quick-start/#Ruby" class="btn btn-light qs-link">Ruby &raquo;</a>
 </div>
 
 The Engage Interactions API encompasses the functionality necessary to manage the communication between agents and customers.

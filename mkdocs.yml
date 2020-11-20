@@ -27,7 +27,7 @@ markdown_extensions:
   - codehilite:
       linenums: "None"
 
-#extra_css: [extra.css]
+extra_css: [extra.css]
 #extra_javascript: [fonts.js]
 pages:
 - 'Primary':

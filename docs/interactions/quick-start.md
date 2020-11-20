@@ -1,3 +1,4 @@
+style: quick-start
 no_breadcrumb:true
 
 # Interaction Quick Start
