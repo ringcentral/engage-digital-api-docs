@@ -4,7 +4,7 @@ This structured message allows to group multiple templates in the same message. 
 
 ## Request Example
 ```bash
-curl -X POST "https://[YOUR DOMAIN].api.engagement.dimelo.com/1.0/contents"
+curl -X POST "https://[YOUR DOMAIN].api.digital.ringcentral.com/1.0/contents"
 ```
 
 ```json
@@ -69,7 +69,7 @@ curl -X POST "https://[YOUR DOMAIN].api.engagement.dimelo.com/1.0/contents"
 
 | API Property | Type | Description |
 |-|-|-|
-| **`source_id`** | String | ID of the source. |
+| **`source_id`** | String | ID of the channel. |
 | **`in_reply_to_id`** | String | ID of the message being replied to. |
 | **`structured_content`** | Object | Payload of the structured message. |
 | **Structured Content Settings** | | |
@@ -82,7 +82,7 @@ curl -X POST "https://[YOUR DOMAIN].api.engagement.dimelo.com/1.0/contents"
 | **`structured_content.items.url_fallback`** | String | **Optional**. Fallback in case the url is invalid. Limited to 2048 characters. Only http and https schemes. |
 | **`structured_content.items.url_text`** | String | **Optional**. Text that will be displayed instead of the hostname of the url. Automatically gets populated as the hostname of the url if blank. This field is only displayed if the url field is present. Limited to 80 characters. |
 | **`structured_content.items.attachment_id`** | String | **Every template must either have an attachment or none at all**. Existing attachment id used to decorate the template with an image. Should be public. Should be jpg, jpeg or png. Should be less than 5MB. |
-| **`structured_content.items.attachment_fallback_id`** | String | **Optional**. Fallback in case the attachment related to the attachment_id doesn’t meet the source requirements. Must be public. Only be jpg, jpeg or png. Maximum size of 5MB. |
+| **`structured_content.items.attachment_fallback_id`** | String | **Optional**. Fallback in case the attachment related to the attachment_id doesn’t meet the channel requirements. Must be public. Only be jpg, jpeg or png. Maximum size of 5MB. |
 | **`structured_content.items.items`** | Array | List of items representing the buttons presented to the customer. A maximum of 4 items is supported. |
 | **Items within Item Settings** | | |
 | **`structured_content.items.items.type`** | String | The type of the button. Can be **url** or **reply**. |
@@ -105,6 +105,8 @@ The same Template <**Generic Template**> specificities apply to every item of th
 
 ### Properties Unique to this Channel
 
+Primary parameters are used by default, however, some parameters are unique or overwritten by parameters specific to this example.
+
 | API Property | Specificity |
 |-|-|
 | **`structured_content.attachment_id`** | Supports gif, jpg, jpeg, png formats. Supports private attachments.<br>On Engage Messaging Web, if the width of the **first** image is bigger than the height, every image will be displayed with a 5:3 ratio. Otherwise, a 1:1 ratio will be used.<br>Minimal recommended size with a 1:1 ratio: **258x258**<br>Minimal recommended size with a 5:3 ratio: **258x155** |
@@ -115,6 +117,8 @@ The same Template <**Generic Template**> specificities apply to every item of th
 <img class="img-fluid" width="419" src="../../../img/structured-messages-carousel-google-biz.png">
 
 ### Properties Unique to this Channel
+
+Primary parameters are used by default, however, some parameters are unique or overwritten by parameters specific to this example.
 
 | API Property | Specificity |
 |-|-|

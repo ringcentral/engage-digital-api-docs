@@ -5,7 +5,7 @@ This structured content provides some buttons associated with a message. See [Ch
 ## Request Example
 
 ```bash
-curl -X POST "https://[YOUR DOMAIN].api.engagement.dimelo.com/1.0/contents"
+curl -X POST "https://[YOUR DOMAIN].api.digital.ringcentral.com/1.0/contents"
 ```
 
 ```json
@@ -58,9 +58,9 @@ curl -X POST "https://[YOUR DOMAIN].api.engagement.dimelo.com/1.0/contents"
 
 <img class="img-fluid" width="466" src="../../../img/structured-messages-template-fb.png">
 
-If the template only has a title and items, it will be converted to a Button Template in Facebook Messenger.
-
 ### Properties Unique to this Channel
+
+Primary parameters are used by default, however, some parameters are unique or overwritten by parameters specific to this example. If the template only has a title and items, it will be converted to a Button Template in Facebook Messenger.
 
 **Button Template**
 
@@ -90,6 +90,8 @@ Otherwise, it will be converted to a Generic Template in Facebook Messenger.
 
 ### Properties Unique to this Channel
 
+Primary parameters are used by default, however, some parameters are unique or overwritten by parameters specific to this example.
+
 | API Property | Specificity |
 |-|-|
 | **`structured_content.attachment_id`** | Supports gif, jpg, jpeg, png formats. Supports private attachments.<br>On Engage Messaging Web, if the width of the image is bigger than the height, it will be displayed with a 5:3 ratio. Otherwise, a 1:1 ratio will be used.<br>Minimal recommended size with a 1:1 ratio: **258x258**<br>Minimal recommended size with a 5:3 ratio: **258x155** |
@@ -100,6 +102,8 @@ Otherwise, it will be converted to a Generic Template in Facebook Messenger.
 <img class="img-fluid" width="419" src="../../../img/structured-messages-template-google-biz.png">
 
 ### Properties Unique to this Channel
+
+Primary parameters are used by default, however, some parameters are unique or overwritten by parameters specific to this example.
 
 | API Property | Specificity |
 |-|-|

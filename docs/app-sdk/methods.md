@@ -413,7 +413,7 @@ An object ID or null.
 
 The `SMCC.ContentForm` namespace contains methods to deal with the message reply form.
 
-<img class="img-fluid" width="100%" src="../../img/app-sdk-reply-form.png">
+<img class="img-fluid" width="645" src="../../img/app-sdk-reply-form.png">
 
 ### SMCC.ContentForm.insert(text)
 
@@ -514,7 +514,7 @@ Boolean
 The `SMCC.IdentityDetails` namespace represents the modal window when an identity is clicked on
 the UI. Here is an example:
 
-<img class="img-fluid" width="100%" src="../../img/app-sdk-identity-card.png">
+<img class="img-fluid" width="645" src="../../img/app-sdk-identity-card.png">
 
 ### SMCC.IdentityDetails.list()
 
@@ -1056,7 +1056,7 @@ none
 SMCC.UI.composeContent();
 ```
 
-<img class="img-fluid" width="400" src="../../img/app-sdk-compose-content-1.png">
+<img class="img-fluid" width="151" src="../../img/app-sdk-compose-content-1.png">
 
 ```javascript
 SMCC.UI.composeContent({
@@ -1067,7 +1067,7 @@ SMCC.UI.composeContent({
 });
 ```
 
-<img class="img-fluid" width="750" src="../../img/app-sdk-compose-content-2.png">
+<img class="img-fluid" width="600" src="../../img/app-sdk-compose-content-2.png">
 
 ### SMCC.UI.executeSearch(query)
 

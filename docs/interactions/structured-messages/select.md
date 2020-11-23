@@ -5,7 +5,7 @@ This structured message provides a list from which the customer can pick some el
 ## Request Example
 
 ```bash
-curl -X POST "https://[YOUR DOMAIN].api.engagement.dimelo.com/1.0/contents"
+curl -X POST "https://[YOUR DOMAIN].api.digital.ringcentral.com/1.0/contents"
 ```
 
 ```json
@@ -103,6 +103,8 @@ This list picker structured content has multiple specific fields. So here’s an
 
 ### Properties Unique to this Channel
 
+Primary parameters are used by default, however, some parameters are unique or overwritten by parameters specific to this example.
+
 | API Property | Type | Description |
 |-|-|-|
 | **Structured Content Settings** | | |
@@ -156,6 +158,8 @@ The following example uses Facebook Messenger with quick replies.
 
 ### Properties Unique to this Channel
 
+Primary parameters are used by default, however, some parameters are unique or overwritten by parameters specific to this example.
+
 | API Property | Type | Description |
 |-|-|-|
 | **`items.title`** | String | The title of the item. *Truncated to 20 characters.* |
@@ -197,6 +201,8 @@ The Engage Messaging quick replies support both the centering of items and the d
 
 ### Properties Unique to this Channel
 
+Primary parameters are used by default, however, some parameters are unique or overwritten by parameters specific to this example.
+
 | API Property | Type | Description |
 |-|-|-|
 | **`structured_content.center_items`** | Booelan | **Optional**. Allows to center the items. False by default. Centers the items when at “true”. Aligns the items on the right when at “false”. |
@@ -207,6 +213,8 @@ The Engage Messaging quick replies support both the centering of items and the d
 <img class="img-fluid" width="321" src="../../../img/structured-messages-select-google-biz.png">
 
 ### Properties Unique to this Channel
+
+Primary parameters are used by default, however, some parameters are unique or overwritten by parameters specific to this example.
 
 | API Property | Specificity |
 |-|-|

@@ -80,6 +80,7 @@ This section describes the generic compatibility logic of the API. Check the fol
 ### Google Business Messages
 
 * [Suggested Replies](../structured-messages/select/#example-google-business-messages)
+* [Rich Link](../structured-messages/rich-link/#example-google-business-messages)
 * [Rich Card](../structured-messages/template/#example-google-business-messages-rich-card)
 * [Rich Card Carousel](../structured-messages/carousel/#example-google-business-messages-rich-card-carousel)
 

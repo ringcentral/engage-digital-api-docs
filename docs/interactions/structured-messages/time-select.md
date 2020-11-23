@@ -5,7 +5,7 @@ This structured message provides a list of dates from which the customer can cho
 ## Request Example
 
 ```bash
-curl -X POST "https://[YOUR DOMAIN].api.engagement.dimelo.com/1.0/contents"
+curl -X POST "https://[YOUR DOMAIN].api.digital.ringcentral.com/1.0/contents"
 ```
 
 ```json

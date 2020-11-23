@@ -5,7 +5,7 @@ This structured message allows to decorate a link with an image, title and subti
 ## Request Example
 
 ```bash
-curl -X POST "https://[YOUR DOMAIN].api.engagement.dimelo.com/1.0/contents"
+curl -X POST "https://[YOUR DOMAIN].api.digital.ringcentral.com/1.0/contents"
 ```
 
 ```json
@@ -48,12 +48,14 @@ curl -X POST "https://[YOUR DOMAIN].api.engagement.dimelo.com/1.0/contents"
 
 ### Properties Unique to this Channel
 
+Primary parameters are used by default, however, some parameters are unique or overwritten by parameters specific to this example.
+
 | API Property | Type | Description |
 |-|-|-|
-| **`structured_content.attachment_id`** | String | Supports bmp, gif, jpg, jpeg, png formats. |
-| **`structured_content.url_text`** | String | Ignored property when converted to a Generic Template. Truncated to 20 characters when converted to a Button Template. |
-| **`structured_content.title`** | String | Truncated to 80 characters. |
-| **`structured_content.subtitle`** | String | Truncated to 80 characters. |
+| **`structured_content.title`** | String | Truncated to 200 characters. |
+| **`structured_content.attachment_id`** | String | Supports jpg, jpeg, png, and mp4 formats. Supports private attachments. Supports up to 300MB. |
+| **`structured_content.url_text`** | String | Ignored property. |
+| **`structured_content.subtitle`** | String | Ignored property. |
 
 ## Example: Facebook Messenger
 
@@ -67,18 +69,22 @@ Facebook Messenger does not *natively* support rich links. So a rich link can ei
 
 ### Properties Unique to this Channel
 
+Primary parameters are used by default, however, some parameters are unique or overwritten by parameters specific to this example.
+
 | API Property | Type | Description |
 |-|-|-|
-| **`structured_content.title`** | String | Truncated to 200 characters. |
-| **`structured_content.attachment_id`** | String | Supports jpg, jpeg, png, and mp4 formats. Supports private attachments. Supports up to 300MB. |
-| **`structured_content.url_text`** | String | Ignored property. |
-| **`structured_content.subtitle`** | String | Ignored property. |
+| **`structured_content.attachment_id`** | String | Supports bmp, gif, jpg, jpeg, png formats. |
+| **`structured_content.url_text`** | String | Ignored property when converted to a Generic Template. Truncated to 20 characters when converted to a Button Template. |
+| **`structured_content.title`** | String | Truncated to 80 characters. |
+| **`structured_content.subtitle`** | String | Truncated to 80 characters. |
 
 ## Example: Engage Messaging
 
 <img class="img-fluid" width="472" src="../../../img/structured-messages-rich-link-engage.png">
 
 ### Properties Unique to this Channel
+
+Primary parameters are used by default, however, some parameters are unique or overwritten by parameters specific to this example.
 
 | API Property | Specificity |
 |-|-|
@@ -92,6 +98,8 @@ Google Business Messages does not *natively* support rich links. That’s why th
 <img class="img-fluid" width="376" src="../../../img/structured-messages-rich-link-google-biz.png">
 
 ### Properties Unique to this Channel
+
+Primary parameters are used by default, however, some parameters are unique or overwritten by parameters specific to this example.
 
 | API Property | Specificity |
 |-|-|

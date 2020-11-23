@@ -8,7 +8,7 @@ This structured message provides a way to send an OAuth2 authentication request 
 ## Request Example
 
 ```bash
-curl -X POST "https://[YOUR DOMAIN].api.engagement.dimelo.com/1.0/contents"
+curl -X POST "https://[YOUR DOMAIN].api.digital.ringcentral.com/1.0/contents"
 ```
 
 ```json
