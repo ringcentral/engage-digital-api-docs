@@ -19,7 +19,7 @@ An application is defined by the following attributes:
 | `Name` | An unique name that describes the application. This name is mandatory. |
 | `Description`​ | A short description of what the application does. |
 | `Mode` | The application current mode (by default: development). See available modes below for more details. |
-| `Developers` |​ The list of agents that are able to develop this application. 5 developers can be added at maximum. |
+| `Developers` |​ The list of agents that are able to develop this application. 25 developers can be added at maximum. |
 | `Callback URL​` | The callback used for OAuth authentication (more details in OAuth authentication section). |
 | `Configuration URL` | If present, this URL is used to configure each SDK installation. See installation section for more information. |
 | `Source code URL(s)` | The URL(s) of the JavaScript code you wrote that you have to host on a public server. The created code will be automatically imported in all Engage Digital application pages. |
@@ -87,14 +87,14 @@ On the iframe side, here is an example of how to send a message to Engage Digita
     window.parent.postMessage({
       name: "smcc:foo",
       data: { identityId: "4f0aa52d656a3d75867f784b" }
-    }, "http://example.engagement.ringcentral.com");
+    }, "http://example.digital.ringcentral.com");
 ```
 As you see, the `postMessage` method takes two (mandatory) arguments:
 
 | Argument | Description|
 |-|-|
 | `object` | A javascript object that describes the message. This object contains the following properties: <ul><li>`name`:​ The name of the event (mandatory). This is a message identifier that describes the action performed on Engage Digital side. The name has to be prefixed by “smcc:”, like “smcc:baz”</li><li>`data​`: An optional hash of arguments that message can accept.</li></ul> |
-| `url` | The URL of the Engage Digital application. For example: `"​​http://foo.engagement.dimelo.com​"`​, where `f​oo​` is your Engage Digital domain’s name.
+| `url` | The URL of the Engage Digital application. For example: `"​​http://foo.digital.ringcentral.com​"`​, where `f​oo​` is your Engage Digital domain’s name.
 
 To receive messages in Engage Digital, first you have to whitelist the iframe sender origin:
 
@@ -104,30 +104,6 @@ To receive messages in Engage Digital, first you have to whitelist the iframe se
       console.log("New data:", data, "from:", origin);
     });
 ```
-
-## Internet Explorer <11 Support
-
-In previous versions of Internet Explorer (< 11.0), messages ​must​ be sent as a string: http://caniuse.com/x-doc-messaging.​
-
-Therefore, you should convert the first argument of `window.postMessage` to a JSON string. Engage Digital will decode this JSON string back:
-
-``` javascript
-    window.parent.postMessage(JSON.stringify({
-      name: "smcc:foo",
-      data: { identityId: "4f0aa52d656a3d75867f784b" }
-    }), "​http://example.engagement.ringcentral.com​");
-```
-
-This is strictly equivalent to:
-
-``` javascript
-    window.parent.postMessage({
-      name: "smcc:foo",
-      data: { identityId: "4f0aa52d656a3d75867f784b" }
-    }, "​http://example.engagement.ringcentral.co​m​"​);
-```
-
-But the first example will work on older versions of Internet Explorer (>= 8.0).
 
 ## OAuth Authentication
 
@@ -159,7 +135,7 @@ An OAuth authorization code is required before trying to get an access token. Us
 #### URL
 
 ``` http
-    https://<domain-name>.engagement.dimelo.com/oauth/authorize
+    https://<domain-name>.digital.ringcentral.com/oauth/authorize
 ```
 
 | Parameter | Required? | Description |
