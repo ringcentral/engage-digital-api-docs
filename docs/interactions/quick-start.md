@@ -48,7 +48,7 @@ Make note of the access token generated as you will need it later.
     ```
 
     ### Run Your Code
-    
+
     You are almost done. Now run your script.
 
     ```bash

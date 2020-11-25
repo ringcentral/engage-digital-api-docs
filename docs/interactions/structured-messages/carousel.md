@@ -69,20 +69,20 @@ curl -X POST "https://[YOUR DOMAIN].api.digital.ringcentral.com/1.0/contents"
 
 | API Property | Type | Description |
 |-|-|-|
-| **`source_id`** | String | ID of the channel. |
+| **`source_id`** | String | ID of the source. |
 | **`in_reply_to_id`** | String | ID of the message being replied to. |
 | **`structured_content`** | Object | Payload of the structured message. |
 | **Structured Content Settings** | | |
 | **`structured_content.type`** | String | Type of the structured message. Must be "carousel". |
 | **`structured_content.items`** | Array | List of items representing the templates presented to the customer. A maximum of 10 items is supported. |
 | **Item Settings** | | |
-| **`structured_content.items.title`** | String | The title of the template. Limited to 350 characters. |
+| **`structured_content.items.title`** | String | The title of the template. Limited to 350 characters. If the device does not support structured messages, this the first item's field in the list, will be sent as the message.|
 | **`structured_content.items.subtitle`** | String | **Optional**. The subtitle of the template. Limited to 1000 characters. |
 | **`structured_content.items.url`** | String | **Optional**. Allows to redirect to this url when clicking on the image or message of the template. Limited to 2048 characters. Should only have http and https schemes. |
 | **`structured_content.items.url_fallback`** | String | **Optional**. Fallback in case the url is invalid. Limited to 2048 characters. Only http and https schemes. |
 | **`structured_content.items.url_text`** | String | **Optional**. Text that will be displayed instead of the hostname of the url. Automatically gets populated as the hostname of the url if blank. This field is only displayed if the url field is present. Limited to 80 characters. |
 | **`structured_content.items.attachment_id`** | String | **Every template must either have an attachment or none at all**. Existing attachment id used to decorate the template with an image. Should be public. Should be jpg, jpeg or png. Should be less than 5MB. |
-| **`structured_content.items.attachment_fallback_id`** | String | **Optional**. Fallback in case the attachment related to the attachment_id doesn’t meet the channel requirements. Must be public. Only be jpg, jpeg or png. Maximum size of 5MB. |
+| **`structured_content.items.attachment_fallback_id`** | String | **Optional**. Fallback in case the attachment related to the attachment_id doesn’t meet the source requirements. Must be public. Only be jpg, jpeg or png. Maximum size of 5MB. |
 | **`structured_content.items.items`** | Array | List of items representing the buttons presented to the customer. A maximum of 4 items is supported. |
 | **Items within Item Settings** | | |
 | **`structured_content.items.items.type`** | String | The type of the button. Can be **url** or **reply**. |

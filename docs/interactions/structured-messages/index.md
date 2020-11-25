@@ -84,6 +84,6 @@ This section describes the generic compatibility logic of the API. Check the fol
 * [Rich Card](../structured-messages/template/#example-google-business-messages-rich-card)
 * [Rich Card Carousel](../structured-messages/carousel/#example-google-business-messages-rich-card-carousel)
 
-## Source SDK
+## Channel SDK
 
-Source SDK supports only public attachments. Before sending a payload to third-party endpoint attachment_id is replaced by “attachment_url”. All other capabilities are inherited from the base validation described in this document.
+Channel SDK supports only public attachments. Before sending a payload to third-party endpoint attachment_id is replaced by “attachment_url”. All other capabilities are inherited from the base validation described in this document.

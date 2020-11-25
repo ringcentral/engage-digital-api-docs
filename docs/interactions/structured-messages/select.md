@@ -38,7 +38,7 @@ curl -X POST "https://[YOUR DOMAIN].api.digital.ringcentral.com/1.0/contents"
 |-|-|-|
 | **`source_id`** | String | ID of the source. |
 | **`in_reply_to_id`** | String | ID of the message being replied to. |
-| **`body`** | String | The select structured message body. |
+| **`body`** | String | The select structured message body. If the device does not support structured messages, this field will be sent as the message. |
 | **`structured_content`** | Object | Payload of the structured message. |
 | **Structured Content Settings** | | |
 | **`structured_content.type`** | String | Type of the structured message. Must be "select". |
@@ -170,7 +170,7 @@ Primary parameters are used by default, however, some parameters are unique or o
 
 The following example uses Engage Messaging with quick replies.
 
-<img class="img-fluid" width="424" src="../../../img/structured-messages-select-engage.png">
+<img class="img-fluid" width="600" src="../../../img/structured-messages-select-engage.png">
 
 The Engage Messaging quick replies support both the centering of items and the disabling of the text input:
 

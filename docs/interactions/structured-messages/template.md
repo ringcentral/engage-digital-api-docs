@@ -39,7 +39,7 @@ curl -X POST "https://[YOUR DOMAIN].api.digital.ringcentral.com/1.0/contents"
 | **`structured_content`** | Object | Payload of the structured message. |
 | **Structured Content Settings** | | |
 | **`structured_content.type`** | String | Type of the structured message. Must be "template". |
-| **`structured_content.title`** | String | Title of the template. Limited to 350 characters. |
+| **`structured_content.title`** | String | Title of the template. Limited to 350 characters. If the device does not support structured messages, this field will be sent as the message. |
 | **`structured_content.subtitle`** | String | **Optional**. Subtitle of the template. Limited to 1000 characters. |
 | **`structured_content.url`** | String | **Optional**. Allows to redirect to this url when clicking on the image or message of the template. Limited to 2048 characters. Should only have http and https schemes. |
 | **`structured_content.url_fallback`** | String | **Optional**. Fallback in case the url is invalid. Limited to 2048 characters. Only http and https schemes. |
