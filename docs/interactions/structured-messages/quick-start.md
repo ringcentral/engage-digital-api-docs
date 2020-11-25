@@ -3,9 +3,25 @@ no_breadcrumb:true
 
 # Structured Message Quick Start
 
-Let's get started building a structured message. A structured message consists of elements that enhance the customer experience. In this Quick Start, we will walk you through creating a structured message within a matter of minutes. Let's get started.
+Let's build a structured message! A structured message consists of elements that enhance the customer experience. In this Quick Start, we will walk you through creating a structured message within a matter of minutes. Let's get started.
 
-## Configure an Engage Messaging Channel
+## Create an Engage Messaging Channel
+
+For this Quick Start, we need to create a channel and then assign an agent to that channel. There are several steps in this process starting with the community.
+
+### Configure a Community
+
+Communities are databases of identities associated with each source. There must be a community in order to create a source. You can create a community per type of source (Facebook, Twitter, Engage Messaging, etc.), which can then be used when creating several sources of the same type. Find the community page by navigating to "Channels" and then "Community Profiles". Create a community by clicking the "Add" button on the right. In this Quick Start, we'll create an Engage Messaging community profile.
+
+<img class="img-fluid" width="238" src="../../../img/structured-messages-community-add.png">
+
+Simply give this community a name and click "Save"
+
+<img class="img-fluid" width="467" src="../../../img/structured-messages-community-create.png">
+
+
+### Configure an Engage Messaging Channel
+
 In this quick start, we begin with the Engage Messaging channel. To create the Engage Messaging channel, login as and "Admin" to your Engage portal.
 
 <img class="img-fluid" width="540" src="../../../img/structured-messages-channel-tab.png">
@@ -14,23 +30,26 @@ On the top right, is a button to create a new channel. Click this and choose "En
 
 <img class="img-fluid" width="280" src="../../../img/structured-messages-new-channel-button.png">
 
-Give this channel a name. For our example here, we'll call it "Engage Messaging Example".  While here, let's enable web messaging by checking the "Enable Web Messaging" box.
+Give this channel a name. For our example here, we'll call it "Engage Messaging Example". Make sure to select the community you just created. While here, let's enable web messaging by checking the "Enable Web Messaging" box.
 
 <img class="img-fluid" width="800" src="../../../img/structured-messages-create-channel.png">
 
-## Set Agent Permissions to the Channel
+### Set Agent Permissions to the Channel
 
 For agents to interact with messages from a channel, make sure to set the proper permissions for that agent. In this instance, you are making sure your agent has read and reply permissions. Just check both boxes to make sure your agent can receive and respond to messages.
 
 <img class="img-fluid" width="730" src="../../../img/structured-messages-edit-permissions.png">
 
-## Configure Channel Mode
+### Configure Channel Mode
 
-There are two types of channel modes: asynchronus and realtime. For our testing purposes, we want realtime, but for some interactions, the channel mode could be asynchronus (when responding to email for example). Find the channel mode settings under Routing, and then select Channel Modes to configure.
+There are three types of channel modes: asynchronus, real time, and triage. For our testing purposes, we want real time, but for some interactions, the channel mode could be asynchronus (when responding to email for example). Find the channel mode settings under Routing, and then select Channel Modes to configure.
 
 <img class="img-fluid" width="540" src="../../../img/structured-messages-channel-mode.png">
 
-Now let's add our Engage Messaging Example to the realtime channel. First click the pencil icon to edit the realtime channel.
+Now let's add our Engage Messaging Example to the real time channel. First click the pencil icon to edit the real time channel.
+
+!!! Note
+    These channel modes can be renamed to a custom name and may not be the name used for the real time mode. For our Quick Start, we are using the default channel mode name.
 
 <img class="img-fluid" width="800" src="../../../img/structured-messages-channel-modes-edit.png">
 
@@ -65,15 +84,6 @@ We'll want to embed this code segment into an HTML page so we can start a Engage
         <meta charset="utf-8">
         <title>Engage Messaging</title>
 
-        <!–– add for styles ––>
-        <style>
-          #messaging-container {
-            width: 80%;
-            height: 500px;
-            margin: 20px auto;
-          }
-        </style>
-
         <script>
             //script from the source
             (function(d) {
@@ -83,12 +93,6 @@ We'll want to embed this code segment into an HTML page so we can start a Engage
             }(document));
         </script>
     </head>
-    <body>
-        <h1>Embedded Mode</h1>
-        <p>web page</p>
-        <!–– add container ––>
-        <div id="messaging-container"></div>
-    </body>
 </html>
 ```
 
@@ -105,7 +109,7 @@ With this web page, you'll find the chat window hidden in the bottom right of th
 Here's the point you've been building up to, sending a structured message using an API call. You'll need two things to send a structured message:
 
 * API Access Token
-* Reply to ID
+* In Reply To ID (or `in_reply_to_id`)
 
 ### Obtain Access Token
 
@@ -127,19 +131,57 @@ The first thing you need to do is obtain an API Access Token if you do not alrea
 
 Make note of the access token generated as you will need it later.
 
-### Find the Reply ID
+### Find the In Reply To ID
 
-To find the reply ID, you need to do a little inspect and execute some code. In this example we will inspect and open the console in Google Chrome. Paste the following code in the console window and hit "enter".
+To find the In Reply To ID, you need to create a webhook and with the specific event `content.imported` and look for the field `events[0].resource.id`.
 
-```javascript
-document.querySelectorAll(".content.chat-content")[0].getAttribute("data-id").split(":")[1]
+```json hl_lines="6 11"
+{
+    "id": "bda9269a261a4a489952c104",
+    "domain_id": "5dd2be0e103cc800092e184c",
+    "events": [
+        {
+            "type": "content.imported",
+            "id": "5fbeb3195eca7b0007f5e586",
+            "issued_at": "2020-11-25T19:40:09.196Z",
+            "resource": {
+                "type": "message",
+                "id": "5fbeb319535778000776a8da",
+                "metadata": {
+                    "approval_required": false,
+                    "author_id": "5fbd5affc9215d0007851a11",
+                    "body": "hi",
+                    "body_input_format": "text",
+                    "category_ids": [],
+                    "creator_id": null,
+                    "date": "2020-11-25",
+                    "first_in_thread": false,
+                    "foreign_categories": [],
+                    "foreign_id": "b80117cd-f928-43fb-a098-0629b1042e85",
+                    "has_attachment": false,
+                    "intervention_id": null,
+                    "in_reply_to_author_id": null,
+                    "in_reply_to_id": null,
+                    "language": "en",
+                    "source_id": "5fbd57d00b9c80000c35bd52",
+                    "status": "new",
+                    "thread_id": "5fbea72adbad580006ed3982",
+                    "thread_title": "hi",
+                    "created_from": "synchronizer",
+                    "private": true,
+                    "context_data": null,
+                    "structured_content_supported": true,
+                    "foreign_origin": "web"
+                }
+            }
+        }
+    ]
+}
 ```
-
-<img class="img-fluid" width="800" src="../../../img/agent-inspect-console.png">
 
 ### Post Structured Message
 
-Now post the following code to create the structured message reply.  Note that the {access_token} and {reply_id} are the two elements you just found.
+Now post the following code to create the structured message reply.  Note that the {access_token} and {in_reply_to_id} are the two elements you just found.
 
 ```bash
 curl -X POST "https://[YOUR DOMAIN].api.digital.ringcentral.com/1.0/contents" -H "Authorization: Bearer {access_token}"
@@ -147,7 +189,7 @@ curl -X POST "https://[YOUR DOMAIN].api.digital.ringcentral.com/1.0/contents" -H
 
 ```json
 {
-	"in_reply_to_id": {reply_id},
+	"in_reply_to_id": {in_reply_to_id},
 	"body": "Hi, what do you want to buy?",
 	"structured_content": {
 		"center_items": false,
@@ -172,6 +214,6 @@ Having difficulty? Feeling frustrated? Receiving an error you don't understand? 
 
 ## What's Next?
 
-When you have successfully made your first API call, it is time to take your next step towards building a more robust Engage application.
+When you have successfully made your first Structured Message API call, it is time to take your next step towards building a more robust Engage application.
 
 <a class="btn btn-success btn-lg" href="https://developers.ringcentral.com/engage/api-reference/">Explore the REST API &raquo;</a>

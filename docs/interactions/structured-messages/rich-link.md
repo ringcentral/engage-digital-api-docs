@@ -39,8 +39,8 @@ curl -X POST "https://[YOUR DOMAIN].api.digital.ringcentral.com/1.0/contents"
 | **`structured_content.url_text`** | String | **Optional**. Text that will be displayed instead of the hostname of the url. Automatically gets populated as the hostname of the url if blank. Limited to 80 characters. |
 | **`structured_content.title`** | String | Title of the rich link. Limited to 350 characters. |
 | **`structured_content.subtitle`** | String | **Optional**. Subtitle of the rich link. Limited to 1000 characters. |
-| **`structured_content.attachment_id`** | String | **Optional**. Existing attachment id used to decorate the rich link with an image. Should be public. Should be jpg, jpeg or png. Should be less than 5MB. |
-| **`structured_content.attachment_fallback_id`** | String | **Optional**. Fallback in case the attachment related to the attachment_id doesn’t meet the source requirements. Must be public. Only jpg, jpeg, png formats. Maximum size of 5 MB. |
+| **`structured_content.attachment_id`** | String | **Optional**. Existing attachment id used to decorate the rich link with an image. Should be public. Should be jpg, jpeg or png. Should be less than 5MB. [Upload attachments](../../../basics/uploads) for you own custom images. |
+| **`structured_content.attachment_fallback_id`** | String | **Optional**. Fallback in case the attachment related to the attachment_id doesn’t meet the source requirements. Must be public. Only jpg, jpeg, png formats. Maximum size of 5 MB. [Upload attachments](../../../basics/uploads) for you own custom images. |
 
 ## Example: Apple Business Chat
 
@@ -53,7 +53,7 @@ Primary parameters are used by default, however, some parameters are unique or o
 | API Property | Type | Description |
 |-|-|-|
 | **`structured_content.title`** | String | Truncated to 200 characters. |
-| **`structured_content.attachment_id`** | String | Supports jpg, jpeg, png, and mp4 formats. Supports private attachments. Supports up to 300MB. |
+| **`structured_content.attachment_id`** | String | Supports jpg, jpeg, png, and mp4 formats. Supports private attachments. Supports up to 300MB. [Upload attachments](../../../basics/uploads) for you own custom images. |
 | **`structured_content.url_text`** | String | Ignored property. |
 | **`structured_content.subtitle`** | String | Ignored property. |
 
@@ -73,7 +73,7 @@ Primary parameters are used by default, however, some parameters are unique or o
 
 | API Property | Type | Description |
 |-|-|-|
-| **`structured_content.attachment_id`** | String | Supports bmp, gif, jpg, jpeg, png formats. |
+| **`structured_content.attachment_id`** | String | Supports bmp, gif, jpg, jpeg, png formats. [Upload attachments](../../../basics/uploads) for you own custom images. |
 | **`structured_content.url_text`** | String | Ignored property when converted to a Generic Template. Truncated to 20 characters when converted to a Button Template. |
 | **`structured_content.title`** | String | Truncated to 80 characters. |
 | **`structured_content.subtitle`** | String | Truncated to 80 characters. |
@@ -88,7 +88,7 @@ Primary parameters are used by default, however, some parameters are unique or o
 
 | API Property | Specificity |
 |-|-|
-| **`structured_content.attachment_id`** | Supports bmp, gif, jpg, jpeg, png formats. Supports private attachments.<br>On Engage Messaging Web, if the width of the image is bigger than the height, it will be displayed with a 5:3 ratio. Otherwise, a 1:1 ratio will be used.<br>Minimal recommended size with a 1:1 ratio: **258x258**<br>Minimal recommended size with a 5:3 ratio: **258x155** |
+| **`structured_content.attachment_id`** | Supports bmp, gif, jpg, jpeg, png formats. Supports private attachments. [Upload attachments](../../../basics/uploads) for you own custom images.<br>On Engage Messaging Web, if the width of the image is bigger than the height, it will be displayed with a 5:3 ratio. Otherwise, a 1:1 ratio will be used.<br>Minimal recommended size with a 1:1 ratio: **258x258**<br>Minimal recommended size with a 5:3 ratio: **258x155** |
 | **`structured_content.url`** | Deep links are supported. |
 
 ## Example: Google Business Messages

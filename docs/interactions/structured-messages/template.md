@@ -44,8 +44,8 @@ curl -X POST "https://[YOUR DOMAIN].api.digital.ringcentral.com/1.0/contents"
 | **`structured_content.url`** | String | **Optional**. Allows to redirect to this url when clicking on the image or message of the template. Limited to 2048 characters. Should only have http and https schemes. |
 | **`structured_content.url_fallback`** | String | **Optional**. Fallback in case the url is invalid. Limited to 2048 characters. Only http and https schemes. |
 | **`structured_content.url_text`** | String | **Optional**. Text that will be displayed instead of the hostname of the url. Automatically gets populated as the hostname of the url if blank. This field is only displayed if the url field is present. Limited to 80 characters. |
-| **`structured_content.attachment_id`** | String | **Optional**. Existing attachment id used to decorate the template with an image. Should be public. Should be jpg, jpeg or png. Should be less than 5MB. |
-| **`structured_content.attachment_fallback_id`** | String | **Optional**. Fallback in case the attachment related to the attachment_id doesn’t meet the source requirements. Must be public. Only jpg, jpeg, png formats. Maximum size of 5 MB. |
+| **`structured_content.attachment_id`** | String | **Optional**. Existing attachment id used to decorate the template with an image. Should be public. Should be jpg, jpeg or png. Should be less than 5MB. [Upload attachments](../../../basics/uploads) for you own custom images. |
+| **`structured_content.attachment_fallback_id`** | String | **Optional**. Fallback in case the attachment related to the attachment_id doesn’t meet the source requirements. Must be public. Only jpg, jpeg, png formats. Maximum size of 5 MB. [Upload attachments](../../../basics/uploads) for you own custom images. |
 | **`structured_content.items`** | Array | List of items representing the buttons presented to the customer. A maximum of 4 items is supported. |
 | **Item Settings** | | |
 | **`structured_content.items.type`** | String | The type of the button. Can be **url** or **reply**. |
@@ -77,7 +77,7 @@ Otherwise, it will be converted to a Generic Template in Facebook Messenger.
 
 | API Property | Specificity |
 |-|-|
-| **`structured_content.attachment_id`** | Supports bmp, gif, jpg, jpeg, png formats. |
+| **`structured_content.attachment_id`** | Supports bmp, gif, jpg, jpeg, png formats. [Upload attachments](../../../basics/uploads) for you own custom images. |
 | **`structured_content.url_text`** | **Ignored** property. |
 | **`structured_content.items`** | A maximum of 3 items is supported. |
 | **`structured_content.title`** | Truncated to 80 characters. |
@@ -86,7 +86,7 @@ Otherwise, it will be converted to a Generic Template in Facebook Messenger.
 
 ## Example: Engage Messaging
 
-<img class="img-fluid" width="468" src="../../../img/structured-messages-template-engage.png">
+<img class="img-fluid" width="398" src="../../../img/structured-messages-template-engage.png">
 
 ### Properties Unique to this Channel
 
@@ -94,7 +94,7 @@ Primary parameters are used by default, however, some parameters are unique or o
 
 | API Property | Specificity |
 |-|-|
-| **`structured_content.attachment_id`** | Supports gif, jpg, jpeg, png formats. Supports private attachments.<br>On Engage Messaging Web, if the width of the image is bigger than the height, it will be displayed with a 5:3 ratio. Otherwise, a 1:1 ratio will be used.<br>Minimal recommended size with a 1:1 ratio: **258x258**<br>Minimal recommended size with a 5:3 ratio: **258x155** |
+| **`structured_content.attachment_id`** | Supports gif, jpg, jpeg, png formats. Supports private attachments. [Upload attachments](../../../basics/uploads) for you own custom images.<br>On Engage Messaging Web, if the width of the image is bigger than the height, it will be displayed with a 5:3 ratio. Otherwise, a 1:1 ratio will be used.<br>Minimal recommended size with a 1:1 ratio: **258x258**<br>Minimal recommended size with a 5:3 ratio: **258x155** |
 | **`structured_content.url`** | Deep links are supported. |
 
 ## Example: Google Business Messages (Rich Card)
