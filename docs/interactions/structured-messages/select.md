@@ -36,7 +36,7 @@ curl -X POST "https://[YOUR DOMAIN].api.digital.ringcentral.com/1.0/contents"
 
 | API Property | Type | Description |
 |-|-|-|
-| **`source_id`** | String | ID of the source. |
+| **`source_id`** | String | **Optional**. ID of the source. Most interactions are in reply to a message being sent to the agent. In these cases, the source ID is not required. |
 | **`in_reply_to_id`** | String | ID of the message being replied to. |
 | **`body`** | String | The select structured message body. If the device does not support structured messages, this field will be sent as the message. |
 | **`structured_content`** | Object | Payload of the structured message. |
