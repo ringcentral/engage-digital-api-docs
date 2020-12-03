@@ -10,7 +10,7 @@ var specTests = []struct {
 	filepath string
 	title    string
 }{
-	{"specs/engage-digital_openapi3.yaml", "RingCentral Engage Digital API"},
+	{"engage-digital_openapi3.yaml", "RingCentral Engage Digital API"},
 }
 
 // TestSpecs test reading specs.
@@ -23,7 +23,13 @@ func TestSpecs(t *testing.T) {
 			t.Errorf("openapi3.ReadAndValidateFile('%s') Want [%s] Got [%s]", tt.filepath, tt.title, spec.Info.Title)
 		} else {
 			specmore := openapi3.SpecMore{Spec: spec}
-			t.Logf("SPEC_IS_VALID [%s] TITLE [%s] OP_COUNT [%d]\n", tt.filepath, spec.Info.Title, specmore.OperationsCount())
+			_, opParamsWo, opParamsAll := specmore.OperationParametersDescriptionStatusCounts()
+			_, schPropsWo, schPropsAll := specmore.SchemaPropertiesDescriptionStatusCounts()
+			t.Logf("SPEC_IS_VALID [%s] TITLE [%s] OP_COUNT [%d] OP_PARAM_WO_DESC [%d/%d] SCH_PROP_WO_DESC [%d/%d]\n",
+				tt.filepath, spec.Info.Title, specmore.OperationsCount(),
+				opParamsWo, opParamsAll,
+				schPropsWo, schPropsAll,
+			)
 		}
 	}
 }
