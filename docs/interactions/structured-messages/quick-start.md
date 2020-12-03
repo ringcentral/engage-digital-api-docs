@@ -3,7 +3,9 @@ no_breadcrumb:true
 
 # Structured Message Quick Start
 
-Let's build a structured message! A structured message consists of elements that enhance the customer experience. In this Quick Start, we will walk you through creating a structured message within a matter of minutes. Let's get started.
+Let's build a structured message! A structured message consists of elements that enhance the customer experience. Want to try it out yourself? Follow this [structured message demo](https://github.com/embbnux/engage-digital-structured-messages-demo) to see how it is done.
+
+In this Quick Start, we will walk you through creating a structured message within a matter of minutes. Let's get started.
 
 ## Create an Engage Messaging Channel
 
@@ -11,24 +13,18 @@ For this Quick Start, we need to create a channel and then assign an agent to th
 
 ### Configure a Community
 
-Communities are databases of identities associated with each source. There must be a community in order to create a source. You can create a community per type of source (Facebook, Twitter, Engage Messaging, etc.), which can then be used when creating several sources of the same type. Find the community page by navigating to "Channels" and then "Community Profiles". Create a community by clicking the "Add" button on the right. In this Quick Start, we'll create an Engage Messaging community profile.
+Communities are databases of identities associated with each source. There must be a community in order to create a source. You can create a community per type of source (Facebook, Twitter, Engage Messaging, etc.), which can then be used when creating several sources of the same type. Follow the instructions to [create a community](https://support.ringcentral.com/engagedigital/admin/create-communities.html). In this Quick Start, we'll create an Engage Messaging community profile.
 
 <img class="img-fluid" width="238" src="../../../img/structured-messages-community-add.png">
 
-Simply give this community a name and click "Save"
+Simply give this community a name and click **Save**
 
 <img class="img-fluid" width="467" src="../../../img/structured-messages-community-create.png">
 
 
 ### Configure an Engage Messaging Channel
 
-In this quick start, we begin with the Engage Messaging channel. To create the Engage Messaging channel, login as and "Admin" to your Engage portal.
-
-<img class="img-fluid" width="540" src="../../../img/structured-messages-channel-tab.png">
-
-On the top right, is a button to create a new channel. Click this and choose "Engage Messaging" for our example.
-
-<img class="img-fluid" width="280" src="../../../img/structured-messages-new-channel-button.png">
+In this quick start, we begin with the Engage Messaging channel. Follow the instructions to navigate to and [create a channel](https://support.ringcentral.com/engagedigital/admin/configure-entry-points.html) for Engage Messaging.
 
 Give this channel a name. For our example here, we'll call it "Engage Messaging Example". Make sure to select the community you just created. While here, let's enable web messaging by checking the "Enable Web Messaging" box.
 
@@ -36,13 +32,13 @@ Give this channel a name. For our example here, we'll call it "Engage Messaging 
 
 ### Set Agent Permissions to the Channel
 
-For agents to interact with messages from a channel, make sure to set the proper permissions for that agent. In this instance, you are making sure your agent has read and reply permissions. Just check both boxes to make sure your agent can receive and respond to messages.
+For agents to interact with messages from a channel, make sure to [set the proper permissions](https://support.ringcentral.com/engagedigital/admin/manage-roles-permissions.html) for that agent. In this instance, you are making sure your agent has read and reply permissions. Just check both boxes to make sure your agent can receive and respond to messages.
 
 <img class="img-fluid" width="730" src="../../../img/structured-messages-edit-permissions.png">
 
 ### Configure Channel Mode
 
-There are three types of channel modes: asynchronus, real time, and triage. For our testing purposes, we want real time, but for some interactions, the channel mode could be asynchronus (when responding to email for example). Find the channel mode settings under Routing, and then select Channel Modes to configure.
+There are three types of channel modes: asynchronus, real time, and triage. For our testing purposes, we want real time, but for some interactions, the channel mode could be asynchronus (when responding to email for example). Find the channel mode settings under Routing, and then configure your [channel mode](https://support.ringcentral.com/engagedigital/agent/manage-channels-list.html).
 
 <img class="img-fluid" width="540" src="../../../img/structured-messages-channel-mode.png">
 
@@ -133,7 +129,7 @@ Make note of the access token generated as you will need it later.
 
 ### Find the In Reply To ID
 
-To find the In Reply To ID, you need to create a webhook and with the specific event `content.imported` and look for the field `events[0].resource.id`.
+To find the In Reply To ID, you need to [create a webhook](../../../webhooks/create) and with the specific event `content.imported` and look for the field `events[0].resource.id`.
 
 ```json hl_lines="6 11"
 {
