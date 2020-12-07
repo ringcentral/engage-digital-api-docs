@@ -77,7 +77,7 @@ Upon clicking the update permissions icon, you will need to confirm you are read
 
 The Engage Digital App SDK offers iframe rendering features. The main inconvenience with iframes is the communication with the parent window (Engage Digital).
 
-The Engage Digital App SDK offers via ​`window.postMessage​` method the feature to send messages from an iframe to the Engage Digital window. You will get more details on how `window.postMessage` works in this [technical review](h​ttps://developer.mozilla.org/en-US/docs/Web/API/Window.postMessage​).
+The Engage Digital App SDK offers via ​`window.postMessage​` method the feature to send messages from an iframe to the Engage Digital window. You will get more details on how `window.postMessage` works in this [technical review](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage).
 
 ### Sending a Message to the Engage Digital Window
 
@@ -111,7 +111,7 @@ Engage Digital App SDK provides many ways to render iframes. But, most of the ti
 
 ### Prerequisites
 
-First of all, you must get your application’s `k​ey` ​and `s​ecret`. Navigate to applications administration section to get them:
+First of all, you must get your application’s `k​ey` ​and `s​ecret`. Navigate to **Dev tools**, and then **Developed applications (SDK)** to get them:
 
 <img class="img-fluid" width="377" src="../../img/app-sdk-key-secret.png">
 
