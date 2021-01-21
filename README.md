@@ -26,7 +26,11 @@ Then you should be able to load http://localhost:8000 to view the documentation.
 
 ### Testing OpenAPI Specs
 
-This repo holds OpenAPI specs for Engage Digital and Engage Voice. For each commit, tests are run on Travis CI to verify that the OpenAPI 3.0 specs validate.
+This repo holds OpenAPI specs for Engage Digital. 
+
+You can preview the latest version of the swagger spec on the [swagger preview][swagger-preview]
+
+For each commit, tests are run on Travis CI to verify that the OpenAPI 3.0 specs validate.
 
 * Engage Digital Spec: [specs/digital/engage-digital_openapi3.yaml](specs/engage-digital_openapi3.yaml)
 * Tests: [specs_test.go](specs_test.go)
@@ -47,3 +51,4 @@ If you wish to change the specs being tested edit the [specs_test.go](specs_test
  [docs-status-link]: https://readthedocs.org/projects/engage-digital-api-docs/builds/
  [docs-svg]: https://img.shields.io/badge/docs-readthedocs-blue.svg
  [docs-link]: https://engage-digital-api-docs.readthedocs.io/en/latest/
+ [swagger-preview]: https://ringcentral.github.io/engage-digital-api-docs/digital/
