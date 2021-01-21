@@ -6,7 +6,7 @@
 
 This repository is the home of the RingCentral Engage Developer Guide: a collection of materials, and documentation to help educate developers on how to build on top of the RingCentral Engage platform.
 
-Visit at: https://engage-api-docs.rtfd.org
+Visit a [live preview][docs-link] of https://developers.ringcentral.com/engage/digital/guide
 
 ## Contributing
 
@@ -46,4 +46,4 @@ If you wish to change the specs being tested edit the [specs_test.go](specs_test
  [docs-status-svg]: https://readthedocs.org/projects/engage-digital-api-docs/badge/?version=latest
  [docs-status-link]: https://readthedocs.org/projects/engage-digital-api-docs/builds/
  [docs-svg]: https://img.shields.io/badge/docs-readthedocs-blue.svg
- [docs-link]: https://engage-api-docs.readthedocs.io/
+ [docs-link]: https://engage-digital-api-docs.readthedocs.io/en/latest/
