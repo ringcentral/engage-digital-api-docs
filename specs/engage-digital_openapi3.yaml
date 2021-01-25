@@ -5190,18 +5190,13 @@ paths:
           Authorization​: only users who can manage topology.
         operationId: createUserCapacity
         parameters:
-          - in: path
-            name: userCapacityId
-            required: true
-            schema:
-              type: string
           - description: User Capacity name.
             in: query
             name: name
-            required: false
+            required: true
             schema:
               type: string
-          - description: The channel id on which apply the capacity.
+          - description: The id of the channel on which the capacities applies.
             in: query
             name: channels[][channel_id]
             required: false
@@ -5293,10 +5288,10 @@ paths:
         - description: User Capacity name.
           in: query
           name: name
-          required: false
+          required: true
           schema:
             type: string
-        - description: The channel id on which apply the capacity.
+        - description: The id of the channel on which the capacities applies.
           in: query
           name: channels[][channel_id]
           required: false
