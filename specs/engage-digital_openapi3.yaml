@@ -7784,14 +7784,14 @@ components:
         name:
           type: string
         channels:
-          item:
+          items:
             properties:
               id:
                 type: string
               default_capacity:
-                type: int
+                type: integer
               max_capacity:
-                type: int
+                type: integer
             type: object
           type: array
     User:
