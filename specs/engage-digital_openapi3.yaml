@@ -5225,28 +5225,6 @@ paths:
         tags:
           - UserCapacity
   '/user_capacities/{userCapacityId}':
-    get:
-      description: >-
-        This method renders a user capacity from given id.
-
-        Authorization​: only users who can manage topology.
-      operationId: getUserCapacity
-      parameters:
-        - in: path
-          name: userCapacityId
-          required: true
-          schema:
-            type: string
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/UserCapacity'
-          description: Success
-      summary: Getting a user capacity from its id
-      tags:
-        - UserCapacity
     delete:
       description: >-
         This method destroys an existing user capacity. It renders the user capacity
@@ -5268,6 +5246,28 @@ paths:
                   $ref: '#/components/schemas/UserCapacity'
           description: Success
       summary: Deleting a user capacity
+      tags:
+        - UserCapacity
+    get:
+      description: >-
+        This method renders a user capacity from given id.
+
+        Authorization​: only users who can manage topology.
+      operationId: getUserCapacity
+      parameters:
+        - in: path
+          name: userCapacityId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserCapacity'
+          description: Success
+      summary: Getting a user capacity from its id
       tags:
         - UserCapacity
     put:
