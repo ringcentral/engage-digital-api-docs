@@ -79,7 +79,6 @@ tags:
   - name: Folders
   - name: Presence Status
 
-
 paths:
   /attachments:
     get:
@@ -5252,7 +5251,9 @@ paths:
         - User Capacities
     get:
       description: >-
-        This method renders the user capacity corresponding to the id given in parameter.
+        This method renders the user capacity corresponding to the id given in parameter. It
+        renders a 404 if id is invalid.
+
 
         Authorization​: only users who can manage topology.
       operationId: getUserCapacity
