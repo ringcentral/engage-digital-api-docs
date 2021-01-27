@@ -38,6 +38,7 @@ x-tag-groups:
       - Time Sheets
       - Timezones
       - Users
+      - User Capacities
   - name: Routing
     popular: true
     tags:
@@ -72,6 +73,7 @@ tags:
   - name: Time Sheets
   - name: Timezones
   - name: Users
+  - name: User Capacities
   - name: Agent Status
   - name: Channels
   - name: Folders
@@ -5179,11 +5181,11 @@ paths:
           description: Success
       summary: Getting all User Capacities
       tags:
-        - UserCapacity
+        - User Capacities
     post:
         description: >-
           This method creates a new user capacity. In case of success it renders the
-          updated record, otherwise, it renders an error (422 HTTP code).
+          created record, otherwise, it renders an error (422 HTTP code).
           Please note that the order of the parameters is important, as the default and
           max capacities will apply to the immediately above channel_id.
 
@@ -5202,13 +5204,13 @@ paths:
             required: false
             schema:
               type: string
-          - description: the default capacity to apply on the previous channel id.
+          - description: The default capacity to apply to the related channel.
             in: query
             name: channels[][default_capacity]
             required: false
             schema:
               type: integer
-          - description: the maximum capacity to apply on the previous channel id.
+          - description: The maximum capacity to apply to the related channel.
             in: query
             name: channels[][max_capacity]
             required: false
@@ -5223,7 +5225,7 @@ paths:
             description: Success
         summary: Creating a user capacity
         tags:
-          - UserCapacity
+          - User Capacities
   '/user_capacities/{userCapacityId}':
     delete:
       description: >-
@@ -5247,10 +5249,10 @@ paths:
           description: Success
       summary: Deleting a user capacity
       tags:
-        - UserCapacity
+        - User Capacities
     get:
       description: >-
-        This method renders a user capacity from given id.
+        This method renders the user capacity corresponding to the id given in parameter.
 
         Authorization​: only users who can manage topology.
       operationId: getUserCapacity
@@ -5269,7 +5271,7 @@ paths:
           description: Success
       summary: Getting a user capacity from its id
       tags:
-        - UserCapacity
+        - User Capacities
     put:
       description: >-
         This method updates an existing user capacity. In case of success it renders the
@@ -5288,7 +5290,7 @@ paths:
         - description: User Capacity name.
           in: query
           name: name
-          required: true
+          required: false
           schema:
             type: string
         - description: The id of the channel on which the capacities applies.
@@ -5297,13 +5299,13 @@ paths:
           required: false
           schema:
             type: string
-        - description: the default capacity to apply on the previous channel id.
+        - description: The default capacity to apply to the related channel.
           in: query
           name: channels[][default_capacity]
           required: false
           schema:
             type: integer
-        - description: the maximum capacity to apply on the previous channel id.
+        - description: The maximum capacity to apply to the related channel.
           in: query
           name: channels[][max_capacity]
           required: false
@@ -5318,7 +5320,7 @@ paths:
           description: Success
       summary: Updating a user capacity
       tags:
-        - UserCapacity
+        - User Capacities
   /users:
     get:
       description: >-
