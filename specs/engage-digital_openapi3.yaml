@@ -5152,6 +5152,7 @@ paths:
       description: >-
         This method renders all user capacities ordered by creation date (ascending).
 
+
         Authorization​: only users who can manage topology.
       operationId: getAllUserCapacities
       parameters:
@@ -5176,7 +5177,7 @@ paths:
           content:
             application/json:
               schema:
-               $ref: '#/components/schemas/GetAllUserCapacities'
+               $ref: '#/components/schemas/GetAllUserCapacitiesResponse'
           description: Success
       summary: Getting all User Capacities
       tags:
@@ -5185,8 +5186,11 @@ paths:
         description: >-
           This method creates a new user capacity. In case of success it renders the
           created record, otherwise, it renders an error (422 HTTP code).
-          Please note that the order of the parameters is important, as the default and
-          max capacities will apply to the immediately above channel_id.
+
+
+          Please note that the order of the parameters is important, as the `default_capacity` and
+          `max_capacity` will apply to the immediately above `channel_id`.
+
 
           Authorization​: only users who can manage topology.
         operationId: createUserCapacity
@@ -5197,7 +5201,7 @@ paths:
             required: true
             schema:
               type: string
-          - description: The id of the channel on which the capacities applies.
+          - description: The id of the channel on which the capacities apply.
             in: query
             name: channels[][channel_id]
             required: false
@@ -5230,6 +5234,7 @@ paths:
       description: >-
         This method destroys an existing user capacity. It renders the user capacity
         itself. It renders a 404 if id is invalid or already destroyed.
+
 
         Authorization​: only users who can manage topology.
       operationId: deleteUserCapacity
@@ -5275,12 +5280,15 @@ paths:
         - User Capacities
     put:
       description: >-
-        This method updates an existing user capacity. In case of success it renders the
-        updated record, otherwise, it renders an error (422 HTTP code).
-        Please note that the order of the parameters is important, as the default and
-        max capacities will apply to the immediately above channel_id.
+          This method creates a new user capacity. In case of success it renders the
+          created record, otherwise, it renders an error (422 HTTP code).
 
-        Authorization​: only users who can manage topology.
+
+          Please note that the order of the parameters is important, as the `default_capacity` and
+          `max_capacity` will apply to the immediately above `channel_id`.
+
+
+          Authorization​: only users who can manage topology.
       operationId: updateUserCapacity
       parameters:
         - in: path
@@ -5294,7 +5302,7 @@ paths:
           required: false
           schema:
             type: string
-        - description: The id of the channel on which the capacities applies.
+        - description: The id of the channel on which the capacities apply.
           in: query
           name: channels[][channel_id]
           required: false
@@ -6956,7 +6964,7 @@ components:
           items:
             $ref: '#/components/schemas/TimeSheet'
           type: array
-    GetAllUserCapacities:
+    GetAllUserCapacitiesResponse:
       properties:
         count:
           format: int32
@@ -7784,8 +7792,6 @@ components:
           format: integer
     UserCapacity:
       properties:
-        name:
-          type: string
         channels:
           items:
             properties:
@@ -7797,6 +7803,16 @@ components:
                 type: integer
             type: object
           type: array
+        created_at:
+          format: date-time
+          type: string
+        id:
+          type: string
+        name:
+          type: string
+        updated_at:
+          format: date-time
+          type: string
     User:
       properties:
         category_ids:
