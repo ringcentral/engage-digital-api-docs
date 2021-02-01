@@ -5183,52 +5183,52 @@ paths:
       tags:
         - User Capacities
     post:
-        description: >-
-          This method creates a new user capacity. In case of success it renders the
-          created record, otherwise, it renders an error (422 HTTP code).
+      description: >-
+        This method creates a new user capacity. In case of success it renders the
+        created record, otherwise, it renders an error (422 HTTP code).
 
 
-          Please note that the order of the parameters is important, as the `default_capacity` and
-          `max_capacity` will apply to the immediately above `channel_id`.
+        Please note that the order of the parameters is important, as the `default_capacity` and
+        `max_capacity` will apply to the immediately above `channel_id`.
 
 
-          Authorization​: only users who can manage topology.
-        operationId: createUserCapacity
-        parameters:
-          - description: User Capacity name.
-            in: query
-            name: name
-            required: true
-            schema:
-              type: string
-          - description: The id of the channel on which the capacities apply.
-            in: query
-            name: channels[][channel_id]
-            required: false
-            schema:
-              type: string
-          - description: The default capacity to apply to the related channel.
-            in: query
-            name: channels[][default_capacity]
-            required: false
-            schema:
-              type: integer
-          - description: The maximum capacity to apply to the related channel.
-            in: query
-            name: channels[][max_capacity]
-            required: false
-            schema:
-              type: integer
-        responses:
-          '200':
-            content:
-              application/json:
-                schema:
-                  $ref: '#/components/schemas/UserCapacity'
-            description: Success
-        summary: Creating a user capacity
-        tags:
-          - User Capacities
+        Authorization​: only users who can manage topology.
+      operationId: createUserCapacity
+      parameters:
+        - description: User Capacity name.
+          in: query
+          name: name
+          required: true
+          schema:
+            type: string
+        - description: The id of the channel on which the capacities apply.
+          in: query
+          name: channels[][channel_id]
+          required: false
+          schema:
+            type: string
+        - description: The default capacity to apply to the related channel.
+          in: query
+          name: channels[][default_capacity]
+          required: false
+          schema:
+            type: integer
+        - description: The maximum capacity to apply to the related channel.
+          in: query
+          name: channels[][max_capacity]
+          required: false
+          schema:
+            type: integer
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserCapacity'
+          description: Success
+      summary: Creating a user capacity
+      tags:
+        - User Capacities
   '/user_capacities/{userCapacityId}':
     delete:
       description: >-
@@ -5280,15 +5280,15 @@ paths:
         - User Capacities
     put:
       description: >-
-          This method creates a new user capacity. In case of success it renders the
-          created record, otherwise, it renders an error (422 HTTP code).
+        This method creates a new user capacity. In case of success it renders the
+        created record, otherwise, it renders an error (422 HTTP code).
 
 
-          Please note that the order of the parameters is important, as the `default_capacity` and
-          `max_capacity` will apply to the immediately above `channel_id`.
+        Please note that the order of the parameters is important, as the `default_capacity` and
+        `max_capacity` will apply to the immediately above `channel_id`.
 
 
-          Authorization​: only users who can manage topology.
+        Authorization​: only users who can manage topology.
       operationId: updateUserCapacity
       parameters:
         - in: path
