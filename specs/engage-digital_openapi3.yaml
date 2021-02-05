@@ -5177,7 +5177,7 @@ paths:
           content:
             application/json:
               schema:
-               $ref: '#/components/schemas/GetAllUserCapacitiesResponse'
+                $ref: '#/components/schemas/GetAllUserCapacitiesResponse'
           description: Success
       summary: Getting all User Capacities
       tags:
@@ -5249,7 +5249,7 @@ paths:
           content:
             application/json:
               schema:
-                  $ref: '#/components/schemas/UserCapacity'
+                $ref: '#/components/schemas/UserCapacity'
           description: Success
       summary: Deleting a user capacity
       tags:
