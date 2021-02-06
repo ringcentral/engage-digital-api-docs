@@ -1,12 +1,12 @@
 # RingCentral Engage API Docs
 
-[![Build Status][build-status-svg]][build-status-link]
-[![Docs Status][docs-status-svg]][docs-status-link]
-[![Docs][docs-svg]][docs-link]
+[![Build Status][specs-status-svg]][specs-status-url]
+[![Docs Status][docs-status-svg]][docs-status-url]
+[![Docs][docs-svg]][docs-url]
 
 This repository is the home of the RingCentral Engage Developer Guide: a collection of materials, and documentation to help educate developers on how to build on top of the RingCentral Engage platform.
 
-Visit a [live preview][docs-link] of https://developers.ringcentral.com/engage/digital/guide
+Visit a [live preview][docs-url] of https://developers.ringcentral.com/engage/digital/guide
 
 ## Contributing
 
@@ -45,10 +45,10 @@ You can verify the specs localy with the following if you have [Go installed](ht
 
 If you wish to change the specs being tested edit the [specs_test.go](specs_test.go) file.
 
- [build-status-svg]: https://api.travis-ci.com/ringcentral/engage-digital-api-docs.svg?branch=master
- [build-status-link]: https://travis-ci.com/github/ringcentral/engage-digital-api-docs
+ [specs-status-svg]: https://github.com/ringcentral/engage-digital-api-docs/workflows/build/badge.svg?branch=master
+ [specs-status-url]: https://github.com/ringcentral/engage-digital-api-docs/actions
  [docs-status-svg]: https://readthedocs.org/projects/engage-digital-api-docs/badge/?version=latest
- [docs-status-link]: https://readthedocs.org/projects/engage-digital-api-docs/builds/
+ [docs-status-url]: https://readthedocs.org/projects/engage-digital-api-docs/builds/
  [docs-svg]: https://img.shields.io/badge/docs-readthedocs-blue.svg
- [docs-link]: https://engage-digital-api-docs.readthedocs.io/en/latest/
+ [docs-url]: https://engage-digital-api-docs.readthedocs.io/en/latest/
  [swagger-preview]: https://ringcentral.github.io/engage-digital-api-docs/digital/
