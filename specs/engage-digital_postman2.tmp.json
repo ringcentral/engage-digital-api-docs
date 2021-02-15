@@ -1,7 +1,7 @@
 {
   "info": {
-    "name": "RingCentral Engage Digital REST API",
-    "description": "This is a collection of API requests associated with the Basic usage plan in RingCentral Connect Platform for Sandbox Testing.\n\nPlease use a Postman environment with the following variables: RC_SERVER_HOSTNAME, RC_APP_KEY, RC_APP_SECRET, RC_USERNAME, RC_EXTENSION, RC_PASSWORD\n\nTo use these resources, you must ALWAYS start by executing one of the OAuth \"Auth\" Requests first, then you can use any other requests (for the 60 minutes that the access_token you obtained is valid).",
+    "name": "RingCentral Engage Digital API",
+    "description": "This is a collection of APIs for RingCentral Engage Digital.\n\nPlease use a Postman environment with the following variables: ENGAGE_DIGITAL_SERVER_URL and ENGAGE_DIGITAL_ACCESS_TOKEN. ENGAGE_DIGITAL_SERVER_URL should use the following format: https://{account}.api.engagement.dimelo.com where '{account}' is replaced with your literal URL value. Your access token should resemble the following: bxtetcyuf8twydx2pubk77dh.",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "item": [
@@ -15,9 +15,9 @@
               "name": "Getting all events",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/events",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/events",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -48,7 +48,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -61,9 +61,9 @@
               "name": "Getting an event from its id",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/events/:eventId",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/events/:eventId",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -75,7 +75,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -93,9 +93,9 @@
               "name": "Getting all webhooks",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/webhooks",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/webhooks",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -126,7 +126,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -139,9 +139,9 @@
               "name": "Creating a webhook",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/webhooks",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/webhooks",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -202,7 +202,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -215,9 +215,9 @@
               "name": "Deleting a webhook",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/webhooks/:webhookId",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/webhooks/:webhookId",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -237,7 +237,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -250,9 +250,9 @@
               "name": "Getting a webhook from its id",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/webhooks/:webhookId",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/webhooks/:webhookId",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -272,7 +272,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -285,9 +285,9 @@
               "name": "Updating a webhook",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/webhooks/:webhookId",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/webhooks/:webhookId",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -349,7 +349,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -372,9 +372,9 @@
               "name": "Getting all attachments",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/attachments",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/attachments",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -399,7 +399,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -412,9 +412,9 @@
               "name": "Creating an attachment",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/attachments",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/attachments",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -425,7 +425,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -442,9 +442,9 @@
               "name": "Getting an attachment from its id",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/attachments/:attachmentId",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/attachments/:attachmentId",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -456,7 +456,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -474,9 +474,9 @@
               "name": "Getting all communities",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/communities",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/communities",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -501,7 +501,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -514,9 +514,9 @@
               "name": "Getting a community from its id",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/communities/:communityId",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/communities/:communityId",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -528,7 +528,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -546,9 +546,9 @@
               "name": "Contents",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/contents",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/contents",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -579,7 +579,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -592,9 +592,9 @@
               "name": "Creating content",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/contents",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/contents",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -667,7 +667,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -680,9 +680,9 @@
               "name": "Getting a content from its id",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/contents/:contentId",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/contents/:contentId",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -694,7 +694,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -707,9 +707,9 @@
               "name": "Ignoring a content",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/contents/:contentId/ignore",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/contents/:contentId/ignore",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -722,7 +722,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -735,9 +735,9 @@
               "name": "Categorizing a content",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/contents/:contentId/update_categories",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/contents/:contentId/update_categories",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -758,7 +758,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -776,9 +776,9 @@
               "name": "Getting all identities",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/identities",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/identities",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -839,7 +839,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -852,9 +852,9 @@
               "name": "Getting an identity from its id",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/identities/:identityId",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/identities/:identityId",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -866,7 +866,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -884,9 +884,9 @@
               "name": "Getting all identity groups",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/identity_groups",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/identity_groups",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -941,7 +941,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -954,9 +954,9 @@
               "name": "Getting an identity group from its id",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/identity_groups/:identityGroupId",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/identity_groups/:identityGroupId",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -968,7 +968,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -981,9 +981,9 @@
               "name": "Updating an identity group",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/identity_groups/:identityGroupId",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/identity_groups/:identityGroupId",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -1057,7 +1057,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -1075,9 +1075,9 @@
               "name": "Getting all intervention comments",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/intervention_comments",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/intervention_comments",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -1126,7 +1126,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -1139,9 +1139,9 @@
               "name": "Creating an intervention comment",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/intervention_comments",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/intervention_comments",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -1172,7 +1172,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -1185,9 +1185,9 @@
               "name": "Deleting an intervention comment",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/intervention_comments/:interventionCommentId",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/intervention_comments/:interventionCommentId",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -1199,7 +1199,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -1212,9 +1212,9 @@
               "name": "Getting an intervention comment from its id",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/intervention_comments/:interventionCommentId",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/intervention_comments/:interventionCommentId",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -1226,7 +1226,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -1244,9 +1244,9 @@
               "name": "Getting all interventions",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/interventions",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/interventions",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -1301,7 +1301,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -1314,9 +1314,9 @@
               "name": "Creating an intervention",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/interventions",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/interventions",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -1335,7 +1335,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -1348,9 +1348,9 @@
               "name": "Getting an intervention from its id",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/interventions/:interventionId",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/interventions/:interventionId",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -1362,7 +1362,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -1375,9 +1375,9 @@
               "name": "Cancelling an intervention",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/interventions/:interventionId/cancel",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/interventions/:interventionId/cancel",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -1390,7 +1390,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -1403,9 +1403,9 @@
               "name": "Closing an intervention",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/interventions/:interventionId/close",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/interventions/:interventionId/close",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -1418,7 +1418,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -1431,9 +1431,9 @@
               "name": "Reassigning an intervention",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/interventions/:interventionId/reassign",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/interventions/:interventionId/reassign",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -1453,7 +1453,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -1466,9 +1466,9 @@
               "name": "Categorizing an intervention",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/interventions/:interventionId/update_categories",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/interventions/:interventionId/update_categories",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -1488,7 +1488,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -1506,9 +1506,9 @@
               "name": "Getting all sources",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/content_sources",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/content_sources",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -1533,7 +1533,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -1546,9 +1546,9 @@
               "name": "Getting a source from its id",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/content_sources/:sourceId",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/content_sources/:sourceId",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -1560,7 +1560,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -1573,9 +1573,9 @@
               "name": "Updating a source",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/content_sources/:sourceId",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/content_sources/:sourceId",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -1679,7 +1679,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -1697,9 +1697,9 @@
               "name": "Getting all threads",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/content_threads",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/content_threads",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -1730,7 +1730,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -1743,9 +1743,9 @@
               "name": "Getting a thread from its id",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/content_threads/:threadId",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/content_threads/:threadId",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -1757,7 +1757,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -1770,9 +1770,9 @@
               "name": "Close a thread",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/content_threads/:threadId/close",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/content_threads/:threadId/close",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -1785,7 +1785,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -1798,9 +1798,9 @@
               "name": "Archiving a thread",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/content_threads/:threadId/ignore",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/content_threads/:threadId/ignore",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -1813,7 +1813,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -1826,9 +1826,9 @@
               "name": "Open a thread",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/content_threads/:threadId/open",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/content_threads/:threadId/open",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -1841,7 +1841,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -1854,9 +1854,9 @@
               "name": "Categorizing a thread",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/content_threads/:threadId/update_categories",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/content_threads/:threadId/update_categories",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -1877,7 +1877,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -1900,9 +1900,9 @@
               "name": "Getting all categories",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/categories",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/categories",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -1933,7 +1933,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -1946,9 +1946,9 @@
               "name": "Creating a category",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/categories",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/categories",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -2009,7 +2009,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -2022,9 +2022,9 @@
               "name": "Deleting a category",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/categories/:categoryId",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/categories/:categoryId",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -2044,7 +2044,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -2057,9 +2057,9 @@
               "name": "Getting a category from its id",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/categories/:categoryId",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/categories/:categoryId",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -2071,7 +2071,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -2084,9 +2084,9 @@
               "name": "Updating a category",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/categories/:categoryId",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/categories/:categoryId",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -2148,7 +2148,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -2166,9 +2166,9 @@
               "name": "Getting all custom fields",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/custom_fields",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/custom_fields",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -2193,7 +2193,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -2206,9 +2206,9 @@
               "name": "Creating a custom field",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/custom_fields",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/custom_fields",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -2263,7 +2263,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -2276,9 +2276,9 @@
               "name": "Deleting a custom field",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/custom_fields/:customFieldId",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/custom_fields/:customFieldId",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -2290,7 +2290,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -2303,9 +2303,9 @@
               "name": "Getting a custom field from its id",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/custom_fields/:customFieldId",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/custom_fields/:customFieldId",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -2317,7 +2317,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -2330,9 +2330,9 @@
               "name": "Updating a custom field",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/custom_fields/:customFieldId",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/custom_fields/:customFieldId",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -2363,7 +2363,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -2381,9 +2381,9 @@
               "name": "Getting all locales",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/locales",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/locales",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -2394,7 +2394,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -2412,9 +2412,9 @@
               "name": "Getting​ a​ll​ reply assistant e​ntries",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/reply_assistant/entries",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/reply_assistant/entries",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -2440,7 +2440,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -2453,9 +2453,9 @@
               "name": "Creating an entry",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/reply_assistant/entries",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/reply_assistant/entries",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -2475,7 +2475,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -2488,9 +2488,9 @@
               "name": "Deleting a reply assistant entry",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/reply_assistant/entries/:replyAssistantEntryId",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/reply_assistant/entries/:replyAssistantEntryId",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -2503,7 +2503,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -2516,9 +2516,9 @@
               "name": "Getting a reply assistant entry from its id",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/reply_assistant/entries/:replyAssistantEntryId",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/reply_assistant/entries/:replyAssistantEntryId",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -2531,7 +2531,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -2544,9 +2544,9 @@
               "name": "Updating a reply assistant entry",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/reply_assistant/entries/:replyAssistantEntryId",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/reply_assistant/entries/:replyAssistantEntryId",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -2597,7 +2597,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -2615,9 +2615,9 @@
               "name": "Getting​ a​ll​ reply assistant groups",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/reply_assistant/groups",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/reply_assistant/groups",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -2643,7 +2643,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -2656,9 +2656,9 @@
               "name": "Creating a reply assistant group",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/reply_assistant/groups",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/reply_assistant/groups",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -2696,7 +2696,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -2709,9 +2709,9 @@
               "name": "Deleting a reply assistant group",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/reply_assistant/groups/:replyAssistantGroupId",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/reply_assistant/groups/:replyAssistantGroupId",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -2724,7 +2724,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -2737,9 +2737,9 @@
               "name": "Getting a reply assistant group from its id",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/reply_assistant/groups/:replyAssistantGroupId",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/reply_assistant/groups/:replyAssistantGroupId",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -2752,7 +2752,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -2765,9 +2765,9 @@
               "name": "Updating a reply assistant group",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/reply_assistant/groups/:replyAssistantGroupId",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/reply_assistant/groups/:replyAssistantGroupId",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -2806,7 +2806,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -2824,9 +2824,9 @@
               "name": "Getting​ a​ll​ reply assistant versions",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/reply_assistant/versions",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/reply_assistant/versions",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -2852,7 +2852,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -2865,9 +2865,9 @@
               "name": "Creating a reply assistant version",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/reply_assistant/versions",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/reply_assistant/versions",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -2911,7 +2911,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -2924,9 +2924,9 @@
               "name": "Deleting a reply assistant version",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/reply_assistant/versions/:replyAssistantVersionId",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/reply_assistant/versions/:replyAssistantVersionId",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -2939,7 +2939,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -2952,9 +2952,9 @@
               "name": "Getting a reply assistant version from its id",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/reply_assistant/versions/:replyAssistantVersionId",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/reply_assistant/versions/:replyAssistantVersionId",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -2967,7 +2967,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -2980,9 +2980,9 @@
               "name": "Updating a reply assistant version",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/reply_assistant/versions/:replyAssistantVersionId",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/reply_assistant/versions/:replyAssistantVersionId",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -3027,7 +3027,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -3045,9 +3045,9 @@
               "name": "Getting all roles",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/roles",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/roles",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -3072,7 +3072,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -3085,9 +3085,9 @@
               "name": "Creating a role",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/roles",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/roles",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -3436,7 +3436,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -3449,9 +3449,9 @@
               "name": "Getting a role from its id",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/roles/:roleId",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/roles/:roleId",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -3463,7 +3463,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -3476,9 +3476,9 @@
               "name": "Updating a role",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/roles/:roleId",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/roles/:roleId",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -3823,7 +3823,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -3841,9 +3841,9 @@
               "name": "Getting all settings",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/settings",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/settings",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -3854,7 +3854,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -3867,9 +3867,9 @@
               "name": "Updating settings",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/settings",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/settings",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -4116,7 +4116,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -4134,9 +4134,9 @@
               "name": "Getting all tags",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/tags",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/tags",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -4161,7 +4161,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -4174,9 +4174,9 @@
               "name": "Creating a tag",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/tags",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/tags",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -4195,7 +4195,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -4208,9 +4208,9 @@
               "name": "Deleting a tag",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/tags/:tagId",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/tags/:tagId",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -4222,7 +4222,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -4235,9 +4235,9 @@
               "name": "Getting a tag from its id",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/tags/:tagId",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/tags/:tagId",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -4249,7 +4249,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -4262,9 +4262,9 @@
               "name": "Updating a tag",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/tags/:tagId",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/tags/:tagId",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -4284,7 +4284,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -4302,9 +4302,9 @@
               "name": "Getting all teams",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/teams",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/teams",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -4329,7 +4329,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -4342,9 +4342,9 @@
               "name": "Creating a team",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/teams",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/teams",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -4375,7 +4375,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -4388,9 +4388,9 @@
               "name": "Deleting a team",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/teams/:teamId",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/teams/:teamId",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -4410,7 +4410,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -4423,9 +4423,9 @@
               "name": "Getting a team from its id",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/teams/:teamId",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/teams/:teamId",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -4437,7 +4437,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -4450,9 +4450,9 @@
               "name": "Updating a team",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/teams/:teamId",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/teams/:teamId",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -4484,7 +4484,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -4502,9 +4502,9 @@
               "name": "Getting all time sheets",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/time_sheets",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/time_sheets",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -4529,7 +4529,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -4542,9 +4542,9 @@
               "name": "Creating a time sheet",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/time_sheets",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/time_sheets",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -4629,7 +4629,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -4642,9 +4642,9 @@
               "name": "Deleting a time sheet",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/time_sheets/:timeSheetId",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/time_sheets/:timeSheetId",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -4656,7 +4656,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -4669,9 +4669,9 @@
               "name": "Getting a time sheet from its id",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/time_sheets/:timeSheetId",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/time_sheets/:timeSheetId",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -4683,7 +4683,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -4696,9 +4696,9 @@
               "name": "Updating a time sheet",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/time_sheets/:timeSheetId",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/time_sheets/:timeSheetId",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -4778,7 +4778,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -4796,9 +4796,9 @@
               "name": "Getting all timezones",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/timezones",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/timezones",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -4809,7 +4809,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -4827,9 +4827,9 @@
               "name": "Getting all users",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/users",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/users",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -4890,7 +4890,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -4903,9 +4903,9 @@
               "name": "Creating a user",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/users",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/users",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -5008,7 +5008,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -5021,9 +5021,9 @@
               "name": "Inviting a user",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/users/invite",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/users/invite",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -5121,7 +5121,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -5134,9 +5134,9 @@
               "name": "Deleting a user",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/users/:userId",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/users/:userId",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -5148,7 +5148,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -5161,9 +5161,9 @@
               "name": "Getting a user from its id",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/users/:userId",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/users/:userId",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -5175,7 +5175,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -5188,9 +5188,9 @@
               "name": "Updating a user",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/users/:userId",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/users/:userId",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -5294,7 +5294,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -5312,9 +5312,9 @@
               "name": "Getting all User Capacities",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/user_capacities",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/user_capacities",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -5339,7 +5339,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -5352,9 +5352,9 @@
               "name": "Creating a user capacity",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/user_capacities",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/user_capacities",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -5391,7 +5391,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -5404,9 +5404,9 @@
               "name": "Deleting a user capacity",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/user_capacities/:userCapacityId",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/user_capacities/:userCapacityId",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -5418,7 +5418,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -5431,9 +5431,9 @@
               "name": "Getting a user capacity from its id",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/user_capacities/:userCapacityId",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/user_capacities/:userCapacityId",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -5445,7 +5445,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -5458,9 +5458,9 @@
               "name": "Updating a user capacity",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/user_capacities/:userCapacityId",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/user_capacities/:userCapacityId",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -5498,7 +5498,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -5521,9 +5521,9 @@
               "name": "Get all connected agents status",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/status",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/status",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -5534,7 +5534,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -5547,9 +5547,9 @@
               "name": "Get a connected agent status",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/status/:agentId",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/status/:agentId",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -5561,7 +5561,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -5574,9 +5574,9 @@
               "name": "Changing an agent's status",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/status/:agentId",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/status/:agentId",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -5602,7 +5602,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -5620,9 +5620,9 @@
               "name": "Getting all channels",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/channels",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/channels",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -5647,7 +5647,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -5660,9 +5660,9 @@
               "name": "Getting a channel from its id",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/channels/:channelId",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/channels/:channelId",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -5674,7 +5674,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -5687,9 +5687,9 @@
               "name": "Updating a channel",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/channels/:channelId",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/channels/:channelId",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -5733,7 +5733,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -5751,9 +5751,9 @@
               "name": "Getting all folders",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/folders",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/folders",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -5778,7 +5778,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -5791,9 +5791,9 @@
               "name": "Creating a folder",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/folders",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/folders",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -5848,7 +5848,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -5861,9 +5861,9 @@
               "name": "Deleting a folder",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/folders/:folderId",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/folders/:folderId",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -5875,7 +5875,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -5888,9 +5888,9 @@
               "name": "Getting a folder from its id",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/folders/:folderId",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/folders/:folderId",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -5902,7 +5902,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -5915,9 +5915,9 @@
               "name": "Updating a folder",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/folders/:folderId",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/folders/:folderId",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -5973,7 +5973,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -5991,9 +5991,9 @@
               "name": "Getting all presence statuses",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/presence_status",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/presence_status",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -6018,7 +6018,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -6031,9 +6031,9 @@
               "name": "Creating a presence status",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/presence_status",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/presence_status",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -6052,7 +6052,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -6065,9 +6065,9 @@
               "name": "Deleting a presence status",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/presence_status/:presenceStatusId",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/presence_status/:presenceStatusId",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -6079,7 +6079,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -6092,9 +6092,9 @@
               "name": "Getting a presence status from its id",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/presence_status/:presenceStatusId",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/presence_status/:presenceStatusId",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -6106,7 +6106,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -6119,9 +6119,9 @@
               "name": "Updating a presence status",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/presence_status/:presenceStatusId",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/presence_status/:presenceStatusId",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -6141,7 +6141,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -6159,9 +6159,9 @@
               "name": "Getting all tasks",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/tasks",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/tasks",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -6204,7 +6204,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -6217,9 +6217,9 @@
               "name": "Getting a task from its id",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/tasks/:taskId",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/tasks/:taskId",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -6231,7 +6231,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -6244,9 +6244,9 @@
               "name": "Move a task to another queue",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/tasks/:taskId/move",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/tasks/:taskId/move",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -6267,7 +6267,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
@@ -6280,9 +6280,9 @@
               "name": "Transferring a task",
               "request": {
                 "url": {
-                  "raw": "{{RINGCENTRAL_ENGAGE_SERVER_URL}}/1.0/tasks/:taskId/transfer",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/tasks/:taskId/transfer",
                   "host": [
-                    "{{RINGCENTRAL_ENGAGE_SERVER_URL}}"
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
@@ -6333,7 +6333,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{RINGCENTRAL_ENGAGE_ACCESS_TOKEN}}"
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
                     "key": "Accept",
