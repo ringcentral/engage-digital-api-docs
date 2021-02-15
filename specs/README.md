@@ -24,6 +24,8 @@ The following will install the `swaggman` executable in the `~/go/bin` directory
 $ go get github.com/grokify/swaggman
 ```
 
+This approach requires `go` be installed on your system. See more here: [https://golang.org/](https://golang.org/).
+
 ### Usage
 
 The following example writes the output to `engage-digital_postman2.tmp.json`. When you are satisfied with the out put, write to `engage-digital_postman2.json`.
@@ -36,8 +38,8 @@ In Postman, set the following environment variables:
 
 | Environment Variable | Example |
 |----------------------|---------|
-| `RINGCENTRAL_ENGAGE_SERVER_URL` | `https://{myaccount}.api.engagement.dimelo.com` |
-| `RINGCENTRAL_ENGAGE_ACCESS_TOKEN` | `deadbeef0123456789abcdef` |
+| `ENGAGE_DIGITAL_SERVER_URL` | `https://{myaccount}.api.engagement.dimelo.com` |
+| `ENGAGE_DIGITAL_ACCESS_TOKEN` | `deadbeef0123456789abcdef` |
 
 #### Testing
 
