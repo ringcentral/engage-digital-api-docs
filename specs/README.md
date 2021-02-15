@@ -27,7 +27,7 @@ $ swaggman -c engage-digital_postman2.config.json -b engage-digital_postman2.bas
 In Postman, set the following environment variables:
 
 | Environment Variable | Example |
-|----------------------|--------    -|
+|----------------------|---------|
 | `RINGCENTRAL_ENGAGE_SERVER_URL` | `https://{myaccount}.api.engagement.dimelo.com` |
 | `RINGCENTRAL_ENGAGE_ACCESS_TOKEN` | `deadbeef0123456789abcdef` |
 
