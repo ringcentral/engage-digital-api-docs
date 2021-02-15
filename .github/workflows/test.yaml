@@ -1,4 +1,4 @@
-name: "build"
+name: "spec build"
 on:
   push:
     branches:

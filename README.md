@@ -45,7 +45,7 @@ You can verify the specs localy with the following if you have [Go installed](ht
 
 If you wish to change the specs being tested edit the [specs_test.go](specs_test.go) file.
 
- [specs-status-svg]: https://github.com/ringcentral/engage-digital-api-docs/workflows/build/badge.svg?branch=master
+ [specs-status-svg]: https://github.com/ringcentral/engage-digital-api-docs/workflows/spec%20build/badge.svg?branch=master
  [specs-status-url]: https://github.com/ringcentral/engage-digital-api-docs/actions
  [docs-status-svg]: https://readthedocs.org/projects/engage-digital-api-docs/badge/?version=latest
  [docs-status-url]: https://readthedocs.org/projects/engage-digital-api-docs/builds/
