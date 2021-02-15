@@ -2,9 +2,10 @@
 
 This folder contains API specifications for Engage Digital.
 
-The reference document is the file `engage-digital_openapi3.yaml`.
+Use the following files:
 
-Other specifications are auto-generated from this file.
+* `engage-digital_openapi3.yaml`: this is the reference spec.
+* `engage-digital_postman2.json`: this spec is auto-generated from the OpenAPI 3 specification, along with `engage-digital_postman2.config.json` and `engage-digital_postman2.base.json` using [`swaggman`](https://github.com/grokify/swaggman).
 
 ## Postman Collection
 
