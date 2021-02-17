@@ -14,7 +14,7 @@ servers:
       platform_hostname:
         default: api.engagement.dimelo.com
         description: Depending on environment the base hostname is changing. In production it's api.digital.ringcentral.com for NA customers and api.engagement.dimelo.comfor historical customers. It's the same base hostname as in the url of engage digital service.
-       x-tag-groups:
+x-tag-groups:
   - name: Events & Notifications
     tags:
       - Events
