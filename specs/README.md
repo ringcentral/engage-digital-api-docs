@@ -31,7 +31,7 @@ This approach requires `go` be installed on your system. See more here: [https:/
 The following example writes the output to `engage-digital_postman2.tmp.json`. When you are satisfied with the out put, write to `engage-digital_postman2.json`.
 
 ```bash
-$ swaggman --config engage-digital_postman2.config.json --basePostmanFile engage-digital_postman2.base.json --openapiFile engage-digital_openapi3.yaml --postmanFile engage-digital_postman2.tmp.json
+$ swaggman --config engage-digital_postman2.config.json --basePostmanFile engage-digital_postman2.base.json --openapiFile engage-digital_openapi3.yaml --postmanFile engage-digital_postman2.json
 ```
 
 In Postman, set the following environment variables:
