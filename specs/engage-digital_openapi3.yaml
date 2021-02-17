@@ -78,6 +78,7 @@ tags:
   - name: Channels
   - name: Folders
   - name: Presence Status
+  - name: Signatures
 
 paths:
   /attachments:
@@ -5830,6 +5831,195 @@ paths:
       summary: Updating a user
       tags:
         - Users
+  /users/{userIds}/signatures:
+    get:
+      description: >-
+        This method renders user’s signatures ordered by creation date (descending).
+
+
+        Authorization​: only users that can view users. If the user affiliated
+        to the token has the manage_users_of_my_teams permission, only the signatures
+        of the users belonging to at least one of the teams he’s the leader of will be available.
+      operationId: getAllUserSignatures
+      parameters:
+        - in: path
+          name: userId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAllUserSignaturesResponse'
+          description: Success
+      summary: Getting all user's signatures
+      tags:
+        - Users
+        - Signatures
+    post:
+      description: >-
+        This method creates a new user’s signature. In case of success it renders
+        the created signature, otherwise, it renders an error (422 HTTP code).
+
+
+        Authorization​: only users that can update users. If the user
+        affiliated to the token has the manage_users_of_my_teams permission,
+        the owner of the deleting signature will need to belong to at least
+        one of the teams he’s the leader of.
+      operationId: createUserSignature
+      parameters:
+        - in: path
+          name: userId
+          required: true
+          schema:
+            type: string
+        - description: The signature text (mandatory).
+          in: query
+          name: body
+          required: true
+          schema:
+            type: string
+        - description: The signature list of source ids (multiple). Keep it empty if you don’t need to associate the signature with any sources.
+          in: query
+          name: 'source_ids[]'
+          required: false
+          schema:
+            items:
+              type: string
+            type: array
+        - description: The two-letter code of the signature language.
+          in: query
+          name: language
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserSignature'
+          description: Success
+      summary: Creating a user's signature
+      tags:
+        - Users
+        - Signatures
+  '/users/{userId}/signatures/{signatureId}':
+    delete:
+      description: >-
+        This method deletes the given signature. In case of success it renders
+        the deleted signature, otherwise, it renders an error (422 HTTP code).
+
+
+        Authorization​: only users that can update users. If the user
+        affiliated to the token has the manage_users_of_my_teams permission,
+        the owner of the deleting signature will need to belong to at least
+        one of the teams he’s the leader of.
+      operationId: deleteUserSignature
+      parameters:
+        - in: path
+          name: userId
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: signatureId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserSignature'
+          description: Success
+      summary: Deleting a user's signature
+      tags:
+        - Users
+        - Signatures
+    get:
+      description: This method renders a user’s signature from a given id.
+      operationId: getUserSignature
+      parameters:
+        - in: path
+          name: userId
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: signatureId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserSignature'
+          description: Success
+      summary: Getting a user's signature from its id
+      tags:
+        - Users
+        - Signatures
+    put:
+      description: >-
+        This method updates the user’s signature related to the provided id from given
+        attributes. In case of success it renders the updated signature, otherwise,
+        it renders an error (422 HTTP code).
+
+
+        Authorization​: only users that can update users. If the user affiliated
+        to the token has the `manage_users_of_my_teams` permission, the updated
+        user will need to belong to at least one of the teams he’s the leader
+        of. The teams the user affiliated to the token is the leader of will be
+        the only ones which can be added or removed.
+      operationId: updateUserSignature
+      parameters:
+        - in: path
+          name: userId
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: signatureId
+          required: true
+          schema:
+            type: string
+        - description: The signature text (not empty).
+          in: query
+          name: body
+          required: false
+          schema:
+            type: string
+        - description: The signature list of source ids (multiple). Keep it empty if you don’t need to associate the signature with any sources.
+          in: query
+          name: 'source_ids[]'
+          required: false
+          schema:
+            items:
+              type: string
+            type: array
+        - description: The two-letter code of the signature language.
+          in: query
+          name: language
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserSignature'
+          description: Success
+      summary: Updating a user's signature
+      tags:
+        - Users
+        - Signatures
   /webhooks:
     get:
       description: >-
@@ -6994,6 +7184,21 @@ components:
           items:
             $ref: '#/components/schemas/User'
           type: array
+    GetAllUserSignaturesResponse:
+      properties:
+        count:
+          format: int32
+          type: integer
+        limit:
+          format: int32
+          type: integer
+        offset:
+          format: int32
+          type: integer
+        records:
+          items:
+            $ref: '#/components/schemas/UserSignature'
+          type: array
     GetAllWebhooksResponse:
       properties:
         count:
@@ -7867,6 +8072,21 @@ components:
           type: string
       required:
         - id
+    UserSignature:
+      properties:
+        id:
+          type: string
+        body:
+          type: string
+        source_ids:
+          items:
+            type: string
+          type: array
+        language:
+          type: string
+      required:
+        - id
+        - body
     Webhook:
       properties:
         active:
