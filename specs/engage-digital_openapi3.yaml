@@ -10,7 +10,7 @@ servers:
     variables:
       account_name:
         default: domainname
-        description: your own account name used as subdomain, it's the same as in the url of the engage digital service.
+        description: Your own account name used as subdomain, it's the same as in the url of the engage digital service.
       platform_hostname:
         default: api.engagement.dimelo.com
         description: Depending on environment the base hostname is changing. In production it's api.digital.ringcentral.com for NA customers and api.engagement.dimelo.comfor historical customers. It's the same base hostname as in the url of engage digital service.
