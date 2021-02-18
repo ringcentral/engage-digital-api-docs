@@ -5,7 +5,7 @@ info:
   title: RingCentral Engage Digital API
   version: '1.0'
 servers:
-  - url: 'https://{account_name}.{platform_hostname}/1.0'
+  - url: 'https://{account_name}.api.{platform_hostname}/1.0'
     description: API server endpoint
     variables:
       account_name:
