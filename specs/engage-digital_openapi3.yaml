@@ -9,7 +9,7 @@ servers:
     description: API server endpoint
     variables:
       account_name:
-        default: domainname
+        default: domain-name
         description: Your own account name used as subdomain, it's the same as in the url of the engage digital service.
       platform_hostname:
         default: api.engagement.dimelo.com
