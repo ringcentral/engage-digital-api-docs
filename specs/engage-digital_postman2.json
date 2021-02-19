@@ -5131,82 +5131,6 @@
               }
             },
             {
-              "name": "Getting all user's signatures",
-              "request": {
-                "url": {
-                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/users/:userIds/signatures",
-                  "host": [
-                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
-                  ],
-                  "path": [
-                    "1.0",
-                    "users",
-                    ":userIds",
-                    "signatures"
-                  ]
-                },
-                "method": "GET",
-                "header": [
-                  {
-                    "key": "Authorization",
-                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ]
-              }
-            },
-            {
-              "name": "Creating a user's signature",
-              "request": {
-                "url": {
-                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/users/:userIds/signatures",
-                  "host": [
-                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
-                  ],
-                  "path": [
-                    "1.0",
-                    "users",
-                    ":userIds",
-                    "signatures"
-                  ],
-                  "query": [
-                    {
-                      "key": "body",
-                      "value": "\u003cstring\u003e",
-                      "description": "The signature text (mandatory).",
-                      "disabled": true
-                    },
-                    {
-                      "key": "source_ids[]",
-                      "value": "\u003carray.string.csv\u003e",
-                      "description": "The signature list of source ids (multiple). Keep it empty if you don’t need to associate the signature with any sources.",
-                      "disabled": true
-                    },
-                    {
-                      "key": "language",
-                      "value": "\u003cstring\u003e",
-                      "description": "The two-letter code of the signature language.",
-                      "disabled": true
-                    }
-                  ]
-                },
-                "method": "POST",
-                "header": [
-                  {
-                    "key": "Authorization",
-                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ]
-              }
-            },
-            {
               "name": "Deleting a user",
               "request": {
                 "url": {
@@ -5367,6 +5291,82 @@
                   ]
                 },
                 "method": "PUT",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Getting all user's signatures",
+              "request": {
+                "url": {
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/users/:userId/signatures",
+                  "host": [
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
+                  ],
+                  "path": [
+                    "1.0",
+                    "users",
+                    ":userId",
+                    "signatures"
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Creating a user's signature",
+              "request": {
+                "url": {
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/users/:userId/signatures",
+                  "host": [
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
+                  ],
+                  "path": [
+                    "1.0",
+                    "users",
+                    ":userId",
+                    "signatures"
+                  ],
+                  "query": [
+                    {
+                      "key": "body",
+                      "value": "\u003cstring\u003e",
+                      "description": "The signature text (mandatory).",
+                      "disabled": true
+                    },
+                    {
+                      "key": "source_ids[]",
+                      "value": "\u003carray.string.csv\u003e",
+                      "description": "The signature list of source ids (multiple). Keep it empty if you don’t need to associate the signature with any sources.",
+                      "disabled": true
+                    },
+                    {
+                      "key": "language",
+                      "value": "\u003cstring\u003e",
+                      "description": "The two-letter code of the signature language.",
+                      "disabled": true
+                    }
+                  ]
+                },
+                "method": "POST",
                 "header": [
                   {
                     "key": "Authorization",
@@ -6536,14 +6536,14 @@
           "name": "Getting all user's signatures",
           "request": {
             "url": {
-              "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/users/:userIds/signatures",
+              "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/users/:userId/signatures",
               "host": [
                 "{{ENGAGE_DIGITAL_SERVER_URL}}"
               ],
               "path": [
                 "1.0",
                 "users",
-                ":userIds",
+                ":userId",
                 "signatures"
               ]
             },
@@ -6564,14 +6564,14 @@
           "name": "Creating a user's signature",
           "request": {
             "url": {
-              "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/users/:userIds/signatures",
+              "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/users/:userId/signatures",
               "host": [
                 "{{ENGAGE_DIGITAL_SERVER_URL}}"
               ],
               "path": [
                 "1.0",
                 "users",
-                ":userIds",
+                ":userId",
                 "signatures"
               ],
               "query": [

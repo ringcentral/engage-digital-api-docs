@@ -5839,7 +5839,7 @@ paths:
       summary: Updating a user
       tags:
         - Users
-  /users/{userIds}/signatures:
+  /users/{userId}/signatures:
     get:
       description: >-
         This method renders user’s signatures ordered by creation date (descending).
