@@ -3,7 +3,7 @@ info:
   description: ''
   termsOfService: 'https://developer.ringcentral.com'
   title: RingCentral Engage Digital API
-  version: '1.01'
+  version: '1.0.1'
 servers:
   - url: 'https://{account_name}.api.{platform_hostname}/1.0'
     description: API server endpoint
