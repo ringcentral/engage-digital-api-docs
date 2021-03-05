@@ -11,7 +11,7 @@ Each event consists of three top-level elements. They are:
 Property | Value | Description
 ---------|-------|------------
 `id` | String | Unique request identifier. This can be used to detect duplicated request, for example in case of failure.
-`domain_id` | Integer | Unique domain identifier.
+`domain_id` | String | Unique domain identifier.
 `events` | Array of ​Event object | An array of generated events.
 
 You can see this structure in the following sample event notification triggered upon an assignation on an intervention:
@@ -19,7 +19,7 @@ You can see this structure in the following sample event notification triggered 
 ```JSON
 {
   "id":"bd13a9d9baa8c20cf93046cd",
-  "domain_id":1,
+  "domain_id":"48cc6703bdae1462ce06a555",
   "events":[
     {
       "type":"intervention.assigned",
@@ -141,6 +141,7 @@ Property | Value | Description
 `thread_id` | String | Unique identifier for the thread linked to the task
 `type` | String | task.taken only, specifies if the agent requested a task or took a ringing one. Can be “ring” or “request”
 `language` | String | Language of the task's content
+`segment_index` | Integer | Number starting at 1 and incremented each time a task is closed, defered or moved to another agent's workbin.
 
 ### Push Agents
 
