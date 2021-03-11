@@ -3280,6 +3280,12 @@ paths:
           required: false
           schema:
             type: boolean
+        - description: permission only available with the corresponding configuration
+          in: query
+          name: ask_an_expert
+          required: false
+          schema:
+            type: boolean
         - in: query
           name: assign_intervention
           required: false
@@ -3322,6 +3328,12 @@ paths:
             type: boolean
         - in: query
           name: delete_content_thread
+          required: false
+          schema:
+            type: boolean
+        - description: permission only available with the corresponding configuration
+          in: query
+          name: escalate_to_video
           required: false
           schema:
             type: boolean
@@ -3663,6 +3675,12 @@ paths:
           required: false
           schema:
             type: boolean
+        - description: permission only available with the corresponding configuration
+          in: query
+          name: ask_an_expert
+          required: false
+          schema:
+            type: boolean
         - in: query
           name: assign_intervention
           required: false
@@ -3705,6 +3723,12 @@ paths:
             type: boolean
         - in: query
           name: delete_content_thread
+          required: false
+          schema:
+            type: boolean
+        - description: permission only available with the corresponding configuration
+          in: query
+          name: escalate_to_video
           required: false
           schema:
             type: boolean
@@ -7526,6 +7550,8 @@ components:
           type: boolean
         approve_content:
           type: boolean
+        ask_an_expert:
+          type: boolean
         assign_intervention:
           type: boolean
         author_block_content:
@@ -7546,6 +7572,8 @@ components:
         delay_export_content:
           type: boolean
         delete_content_thread:
+          type: boolean
+        escalate_to_video:
           type: boolean
         export_identity:
           type: boolean
