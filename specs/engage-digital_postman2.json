@@ -3125,6 +3125,12 @@
                       "disabled": true
                     },
                     {
+                      "key": "ask_an_expert",
+                      "value": "\u003cboolean\u003e",
+                      "description": "permission only available with the corresponding configuration",
+                      "disabled": true
+                    },
+                    {
                       "key": "assign_intervention",
                       "value": "\u003cboolean\u003e",
                       "disabled": true
@@ -3167,6 +3173,12 @@
                     {
                       "key": "delete_content_thread",
                       "value": "\u003cboolean\u003e",
+                      "disabled": true
+                    },
+                    {
+                      "key": "escalate_to_video",
+                      "value": "\u003cboolean\u003e",
+                      "description": "permission only available with the corresponding configuration",
                       "disabled": true
                     },
                     {
@@ -3512,6 +3524,12 @@
                       "disabled": true
                     },
                     {
+                      "key": "ask_an_expert",
+                      "value": "\u003cboolean\u003e",
+                      "description": "permission only available with the corresponding configuration",
+                      "disabled": true
+                    },
+                    {
                       "key": "assign_intervention",
                       "value": "\u003cboolean\u003e",
                       "disabled": true
@@ -3554,6 +3572,12 @@
                     {
                       "key": "delete_content_thread",
                       "value": "\u003cboolean\u003e",
+                      "disabled": true
+                    },
+                    {
+                      "key": "escalate_to_video",
+                      "value": "\u003cboolean\u003e",
+                      "description": "permission only available with the corresponding configuration",
                       "disabled": true
                     },
                     {
