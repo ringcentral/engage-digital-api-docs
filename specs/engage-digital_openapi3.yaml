@@ -735,6 +735,24 @@ paths:
           required: false
           schema:
             type: integer
+        - description: Only on Engage Messaging sources that are not on livechat mode. Enable or disable the source on Android.
+          in: query
+          name: enable_android
+          required: false
+          schema:
+            type: boolean
+        - description: Only on Engage Messaging sources that are not on livechat mode. Enable or disable the source on iOS.
+          in: query
+          name: enable_ios
+          required: false
+          schema:
+            type: boolean
+        - description: Only on Engage Messaging sources that are not on livechat mode. Enable or disable the source on the web.
+          in: query
+          name: enable_web
+          required: false
+          schema:
+            type: boolean
       responses:
         '200':
           content:
@@ -7820,6 +7838,15 @@ components:
         default_content_language:
           description: Default content language
           type: string
+        enable_android:
+          description: Only on Engage Messaging sources. Boolean describing if the source is enabled on Android or not.
+          type: boolean
+        enable_ios:
+          description: Only on Engage Messaging sources. Boolean describing if the source is enabled on iOS or not.
+          type: boolean
+        enable_web:
+          description: Only on Engage Messaging sources. Boolean describing if the source is enabled on the web or not.
+          type: boolean
         error_message:
           type: string
         hidden_from_stats:
@@ -7831,6 +7858,9 @@ components:
           description: Priority boost of messages with intervention
           format: int32
           type: integer
+        live_chat:
+          description: Only on Engage Messaging sources. Boolean describing if the source is livechat or not.
+          type: boolean
         name:
           description: Source name
           type: string
