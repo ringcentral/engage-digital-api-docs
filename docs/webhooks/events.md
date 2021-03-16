@@ -1,6 +1,6 @@
 # Event Types
 
-This document outlines the specific events one can subscribe to via a webhook. 
+This document outlines the specific events one can subscribe to via a webhook.
 
 Events are usually are composed of two parts: the event resource, and the event action. The "event resource" represents the kind of object that generated the event, while the "event action" represents the event's trigger. For example, for the event type `intervention.assigned` the event type is `intervention` and the event action is `assigned`.
 
@@ -10,8 +10,8 @@ Each event consists of three top-level elements. They are:
 
 Property | Value | Description
 ---------|-------|------------
-`id` | UUID | Unique request identifier. This can be used to detect duplicated request, for example in case of failure.
-`domain_id` | Integer | Unique domain identifier.
+`id` | String | Unique request identifier. This can be used to detect duplicated request, for example in case of failure.
+`domain_id` | String | Unique domain identifier.
 `events` | Array of ​Event object | An array of generated events.
 
 You can see this structure in the following sample event notification triggered upon an assignation on an intervention:
@@ -19,7 +19,7 @@ You can see this structure in the following sample event notification triggered 
 ```JSON
 {
   "id":"bd13a9d9baa8c20cf93046cd",
-  "domain_id":1,
+  "domain_id":"48cc6703bdae1462ce06a555",
   "events":[
     {
       "type":"intervention.assigned",
@@ -55,10 +55,10 @@ Every webhook can contain multiple events. Each event then conforms to the follo
 Property | Value | Description
 ---------|-------|------------
 `type` | String | The type of the event. Events MUST define this property. See "Event definition" below.
-`id` | UUID | Unique event identifier. Events MUST define this property. This can be used to detect duplicate events in case of multiple send.
+`id` | String | Unique event identifier. Events MUST define this property. This can be used to detect duplicate events in case of multiple send.
 `resource` | Resource Object | It gives the resource of the event. Events MUST define this property.
 `issued_at` | RFC-3339 date-time | The date and time at which the event happened. Events MUST define this property. This can be used to order the events client-side.
-`user_id` | UUID | Unique user identifier. Will only appear for event triggered by an agent.
+`user_id` | String | Unique user identifier. Will only appear for event triggered by an agent.
 `action` | String | task.completed only, specifies the action leading to task completion, can be “deferred” or “closed”
 
 ### Resource object
@@ -117,6 +117,7 @@ Type | Description
 `task.destroyed` | When contents are ignored or interventions are deferred or closed in folders view, related tasks are destroyed.
 `task.expired_from_step` | When a task couldn't be delivered to any of the assigned agents for longer than the timeout defined for the topology step. It then continue to the next step.
 `task.expired_from_workbin` | When a task was abandoned by an agent in his workbin automatically taken back by the DD to be routed to other agents.
+`task.recategorized` | When a content is recategorized, the task associated to this content gets the same categories.
 `task.resume` | When an agent resumes handling of a task from his history or deferred tasks
 `task.supervisor_assigned` | When a task is assigned to an agent by a supervisor and the option “Bypass queue and assign to agent” has been checked
 `task.taken` | When an agent accepts a ringing task
@@ -127,15 +128,20 @@ Type | Description
 
 Property | Value | Description
 ---------|-------|------------
+`created_at` | date-time | The date and time at which the task was created
 `channel_id` | String | Unique identifier for the channel
+`source_id` | String | Unique identifier for the source associated to the task's content
 `priority` | Float | Priority of the task
 `content_id` | String | Unique identifier for the content linked to the task
 `intervention_id` | String | Unique identifier for the intervention linked to the task
 `agent_ids` | Array | Array of unique identifier of agents assigned to the task
+`identity_id` | String | Unique identifier of the content's author identity
 `action` | String | task.completed only, specifies the action leading to task completion, can be “deferred” or “closed”
 `queue` | String | Task’s current workbin
-`thread_id` | UUID | Unique identifier for the thread linked to the task
+`thread_id` | String | Unique identifier for the thread linked to the task
 `type` | String | task.taken only, specifies if the agent requested a task or took a ringing one. Can be “ring” or “request”
+`language` | String | Language of the task's content
+`segment_index` | Integer | Number starting at 1 and incremented each time a task is closed, defered or moved to another agent's workbin.
 
 ### Push Agents
 
@@ -177,15 +183,15 @@ Type | Description
 
 !!! warning "New content events"
     To be notified of new content from customers you should watch for content.imported but be careful as you will receive more than just customer contents.
-     
+
     In particular the ​`content.imported` event means imported from a DD point of view, it notifies all interactions coming directly from the synchronized source. For example you publish a post on a managed facebook page without using the DD, a content.imported webhook will be triggered. For the Chat automatic welcome message (initial message) of the conversation will also be imported. So it’s not only customer message, this is a bit more complicated and some filtering may be required. To ignore those messages you will filter based on the status field to segregate actionable contents from customer Vs source itself.
-    
+
     Similarly, to be notified when a content has been exported from the DD to the source, you should watch for ​`content.exported` (new content) which will also notify automatic messages like survey or auto response and ​`content.update_exported` for update on existing content.
-    
+
     Finally, if you need more granular or earlier notification about contents creation, you can subscribe to ​`content.discussion_initiated` (new discussion), ​content.replied (reply on a message) and `content.approved​` (content has been approved).
-    
+
     It can be useful to understand the basic workflow of contents:
-    
+
     1. A new content is created from Engage Digital: it can trigger `content.discussion_initiated` if a new thread has been initiated by an agent (outgoing content). Otherwise, regular replies to contents triggers content.replied.​ Those content may not be exported yet depending on approval settings.
     2. If the content requires to be approved (​`approval_required` attribute is ​`true​`), it has to wait for an approbation. Once the approbation is received, content.approved​ is triggered.
     3. The content can now be exported to the external source. Successful and Unsuccessful export operations trigger the ​`content.exported` event for new contents, and ​`content.update_exported` event for existing events that have been edited.

@@ -1,0 +1,5 @@
+{
+	"info": {
+		"description": "This is a collection of APIs for RingCentral Engage Digital.\n\nPlease use a Postman environment with the following variables: ENGAGE_DIGITAL_SERVER_URL and ENGAGE_DIGITAL_ACCESS_TOKEN. ENGAGE_DIGITAL_SERVER_URL should use the following format: https://{account}.api.engagement.dimelo.com where '{account}' is replaced with your literal URL value. Your access token should resemble the following: bxtetcyuf8twydx2pubk77dh."
+	}
+}

@@ -1,0 +1,11 @@
+{
+    "useXTagGroups": true , 
+    "postmanServerUrlApiBasePath": "1.0",
+    "postmanServerUrl": "{{ENGAGE_DIGITAL_SERVER_URL}}",
+    "postmanHeaders": [
+        {
+            "key":   "Authorization",
+            "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}" 
+        }
+    ]
+}

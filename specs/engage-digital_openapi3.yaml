@@ -3,9 +3,17 @@ info:
   description: ''
   termsOfService: 'https://developer.ringcentral.com'
   title: RingCentral Engage Digital API
-  version: '1.0'
+  version: '1.0.1'
 servers:
-  - url: 'https://<yourdomain>.api.engagement.dimelo.com/1.0'
+  - url: 'https://{account_name}.api.{platform_hostname}/1.0'
+    description: API server endpoint
+    variables:
+      account_name:
+        default: domain-name
+        description: Your own account name used as subdomain, it's the same as in the url of the engage digital service.
+      platform_hostname:
+        default: engagement.dimelo.com
+        description: Depending on environment the base hostname is changing. In production, it's digital.ringcentral.com for NA customers and engagement.dimelo.com for historical customers. It's the same base hostname as in the url of engage digital service.
 x-tag-groups:
   - name: Events & Notifications
     tags:
@@ -27,7 +35,7 @@ x-tag-groups:
     tags:
       - Categories
       - CustomFields
-      - Locales      
+      - Locales
       - Reply Assistant Entries
       - Reply Assistant Groups
       - Reply Assistant Versions
@@ -38,6 +46,7 @@ x-tag-groups:
       - Time Sheets
       - Timezones
       - Users
+      - User Capacities
   - name: Routing
     popular: true
     tags:
@@ -61,7 +70,7 @@ tags:
   - name: Threads
   - name: Categories
   - name: CustomFields
-  - name: Locales  
+  - name: Locales
   - name: Reply Assistant Entries
   - name: Reply Assistant Groups
   - name: Reply Assistant Versions
@@ -72,12 +81,13 @@ tags:
   - name: Time Sheets
   - name: Timezones
   - name: Users
+  - name: User Capacities
   - name: Agent Status
   - name: Channels
   - name: Folders
   - name: Presence Status
+  - name: Signatures
 
-  
 paths:
   /attachments:
     get:
@@ -725,6 +735,24 @@ paths:
           required: false
           schema:
             type: integer
+        - description: Only on Engage Messaging sources that are not on livechat mode. Enable or disable the source on Android.
+          in: query
+          name: enable_android
+          required: false
+          schema:
+            type: boolean
+        - description: Only on Engage Messaging sources that are not on livechat mode. Enable or disable the source on iOS.
+          in: query
+          name: enable_ios
+          required: false
+          schema:
+            type: boolean
+        - description: Only on Engage Messaging sources that are not on livechat mode. Enable or disable the source on the web.
+          in: query
+          name: enable_web
+          required: false
+          schema:
+            type: boolean
       responses:
         '200':
           content:
@@ -1020,7 +1048,7 @@ paths:
         - Contents
     post:
       description: >-
-        This method allows you to create new content for use in discussions. 
+        This method allows you to create new content for use in discussions.
         It can be a reply to another piece of content or be used to initiate
         discussion. If authorized, the token’s user will be used as the
         content author. Content will be created in Engage Digital and pushed
@@ -3270,6 +3298,12 @@ paths:
           required: false
           schema:
             type: boolean
+        - description: permission only available with the corresponding configuration
+          in: query
+          name: ask_an_expert
+          required: false
+          schema:
+            type: boolean
         - in: query
           name: assign_intervention
           required: false
@@ -3312,6 +3346,12 @@ paths:
             type: boolean
         - in: query
           name: delete_content_thread
+          required: false
+          schema:
+            type: boolean
+        - description: permission only available with the corresponding configuration
+          in: query
+          name: escalate_to_video
           required: false
           schema:
             type: boolean
@@ -3653,6 +3693,12 @@ paths:
           required: false
           schema:
             type: boolean
+        - description: permission only available with the corresponding configuration
+          in: query
+          name: ask_an_expert
+          required: false
+          schema:
+            type: boolean
         - in: query
           name: assign_intervention
           required: false
@@ -3695,6 +3741,12 @@ paths:
             type: boolean
         - in: query
           name: delete_content_thread
+          required: false
+          schema:
+            type: boolean
+        - description: permission only available with the corresponding configuration
+          in: query
+          name: escalate_to_video
           required: false
           schema:
             type: boolean
@@ -5146,6 +5198,189 @@ paths:
       summary: Getting all timezones
       tags:
         - Timezones
+  /user_capacities:
+    get:
+      description: >-
+        This method renders all user capacities ordered by creation date (ascending).
+
+
+        Authorization​: only users who can manage topology.
+      operationId: getAllUserCapacities
+      parameters:
+        - description: The record index to start. Default value is 0.
+          in: query
+          name: offset
+          required: false
+          schema:
+            format: int32
+            type: integer
+        - description: >-
+            The max number of records to return. Default value is 30, max value
+            is 150.
+          in: query
+          name: limit
+          required: false
+          schema:
+            format: int32
+            type: integer
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAllUserCapacitiesResponse'
+          description: Success
+      summary: Getting all User Capacities
+      tags:
+        - User Capacities
+    post:
+      description: >-
+        This method creates a new user capacity. In case of success it renders the
+        created record, otherwise, it renders an error (422 HTTP code).
+
+
+        Please note that the order of the parameters is important, as the `default_capacity` and
+        `max_capacity` will apply to the immediately above `channel_id`.
+
+
+        Authorization​: only users who can manage topology.
+      operationId: createUserCapacity
+      parameters:
+        - description: User Capacity name.
+          in: query
+          name: name
+          required: true
+          schema:
+            type: string
+        - description: The id of the channel on which the capacities apply.
+          in: query
+          name: channels[][channel_id]
+          required: false
+          schema:
+            type: string
+        - description: The default capacity to apply to the related channel.
+          in: query
+          name: channels[][default_capacity]
+          required: false
+          schema:
+            type: integer
+        - description: The maximum capacity to apply to the related channel.
+          in: query
+          name: channels[][max_capacity]
+          required: false
+          schema:
+            type: integer
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserCapacity'
+          description: Success
+      summary: Creating a user capacity
+      tags:
+        - User Capacities
+  '/user_capacities/{userCapacityId}':
+    delete:
+      description: >-
+        This method destroys an existing user capacity. It renders the user capacity
+        itself. It renders a 404 if id is invalid or already destroyed.
+
+
+        Authorization​: only users who can manage topology.
+      operationId: deleteUserCapacity
+      parameters:
+        - in: path
+          name: userCapacityId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserCapacity'
+          description: Success
+      summary: Deleting a user capacity
+      tags:
+        - User Capacities
+    get:
+      description: >-
+        This method renders the user capacity corresponding to the id given in parameter. It
+        renders a 404 if id is invalid.
+
+
+        Authorization​: only users who can manage topology.
+      operationId: getUserCapacity
+      parameters:
+        - in: path
+          name: userCapacityId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserCapacity'
+          description: Success
+      summary: Getting a user capacity from its id
+      tags:
+        - User Capacities
+    put:
+      description: >-
+        This method creates a new user capacity. In case of success it renders the
+        created record, otherwise, it renders an error (422 HTTP code).
+
+
+        Please note that the order of the parameters is important, as the `default_capacity` and
+        `max_capacity` will apply to the immediately above `channel_id`.
+
+
+        Authorization​: only users who can manage topology.
+      operationId: updateUserCapacity
+      parameters:
+        - in: path
+          name: userCapacityId
+          required: true
+          schema:
+            type: string
+        - description: User Capacity name.
+          in: query
+          name: name
+          required: false
+          schema:
+            type: string
+        - description: The id of the channel on which the capacities apply.
+          in: query
+          name: channels[][channel_id]
+          required: false
+          schema:
+            type: string
+        - description: The default capacity to apply to the related channel.
+          in: query
+          name: channels[][default_capacity]
+          required: false
+          schema:
+            type: integer
+        - description: The maximum capacity to apply to the related channel.
+          in: query
+          name: channels[][max_capacity]
+          required: false
+          schema:
+            type: integer
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserCapacity'
+          description: Success
+      summary: Updating a user capacity
+      tags:
+        - User Capacities
   /users:
     get:
       description: >-
@@ -5646,6 +5881,195 @@ paths:
       summary: Updating a user
       tags:
         - Users
+  /users/{userId}/signatures:
+    get:
+      description: >-
+        This method renders user’s signatures ordered by creation date (descending).
+
+
+        Authorization​: only users that can view users. If the user affiliated
+        to the token has the manage_users_of_my_teams permission, only the signatures
+        of the users belonging to at least one of the teams he’s the leader of will be available.
+      operationId: getAllUserSignatures
+      parameters:
+        - in: path
+          name: userId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAllUserSignaturesResponse'
+          description: Success
+      summary: Getting all user's signatures
+      tags:
+        - Users
+        - Signatures
+    post:
+      description: >-
+        This method creates a new user’s signature. In case of success it renders
+        the created signature, otherwise, it renders an error (422 HTTP code).
+
+
+        Authorization​: only users that can update users. If the user
+        affiliated to the token has the manage_users_of_my_teams permission,
+        the owner of the deleting signature will need to belong to at least
+        one of the teams he’s the leader of.
+      operationId: createUserSignature
+      parameters:
+        - in: path
+          name: userId
+          required: true
+          schema:
+            type: string
+        - description: The signature text (mandatory).
+          in: query
+          name: body
+          required: true
+          schema:
+            type: string
+        - description: The signature list of source ids (multiple). Keep it empty if you don’t need to associate the signature with any sources.
+          in: query
+          name: 'source_ids[]'
+          required: false
+          schema:
+            items:
+              type: string
+            type: array
+        - description: The two-letter code of the signature language.
+          in: query
+          name: language
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserSignature'
+          description: Success
+      summary: Creating a user's signature
+      tags:
+        - Users
+        - Signatures
+  '/users/{userId}/signatures/{signatureId}':
+    delete:
+      description: >-
+        This method deletes the given signature. In case of success it renders
+        the deleted signature, otherwise, it renders an error (422 HTTP code).
+
+
+        Authorization​: only users that can update users. If the user
+        affiliated to the token has the manage_users_of_my_teams permission,
+        the owner of the deleting signature will need to belong to at least
+        one of the teams he’s the leader of.
+      operationId: deleteUserSignature
+      parameters:
+        - in: path
+          name: userId
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: signatureId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserSignature'
+          description: Success
+      summary: Deleting a user's signature
+      tags:
+        - Users
+        - Signatures
+    get:
+      description: This method renders a user’s signature from a given id.
+      operationId: getUserSignature
+      parameters:
+        - in: path
+          name: userId
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: signatureId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserSignature'
+          description: Success
+      summary: Getting a user's signature from its id
+      tags:
+        - Users
+        - Signatures
+    put:
+      description: >-
+        This method updates the user’s signature related to the provided id from given
+        attributes. In case of success it renders the updated signature, otherwise,
+        it renders an error (422 HTTP code).
+
+
+        Authorization​: only users that can update users. If the user affiliated
+        to the token has the `manage_users_of_my_teams` permission, the updated
+        user will need to belong to at least one of the teams he’s the leader
+        of. The teams the user affiliated to the token is the leader of will be
+        the only ones which can be added or removed.
+      operationId: updateUserSignature
+      parameters:
+        - in: path
+          name: userId
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: signatureId
+          required: true
+          schema:
+            type: string
+        - description: The signature text (not empty).
+          in: query
+          name: body
+          required: false
+          schema:
+            type: string
+        - description: The signature list of source ids (multiple). Keep it empty if you don’t need to associate the signature with any sources.
+          in: query
+          name: 'source_ids[]'
+          required: false
+          schema:
+            items:
+              type: string
+            type: array
+        - description: The two-letter code of the signature language.
+          in: query
+          name: language
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserSignature'
+          description: Success
+      summary: Updating a user's signature
+      tags:
+        - Users
+        - Signatures
   /webhooks:
     get:
       description: >-
@@ -6780,6 +7204,21 @@ components:
           items:
             $ref: '#/components/schemas/TimeSheet'
           type: array
+    GetAllUserCapacitiesResponse:
+      properties:
+        count:
+          format: int32
+          type: integer
+        limit:
+          format: int32
+          type: integer
+        offset:
+          format: int32
+          type: integer
+        records:
+          items:
+            $ref: '#/components/schemas/UserCapacity'
+          type: array
     GetAllUsersResponse:
       properties:
         count:
@@ -6794,6 +7233,21 @@ components:
         records:
           items:
             $ref: '#/components/schemas/User'
+          type: array
+    GetAllUserSignaturesResponse:
+      properties:
+        count:
+          format: int32
+          type: integer
+        limit:
+          format: int32
+          type: integer
+        offset:
+          format: int32
+          type: integer
+        records:
+          items:
+            $ref: '#/components/schemas/UserSignature'
           type: array
     GetAllWebhooksResponse:
       properties:
@@ -7114,6 +7568,8 @@ components:
           type: boolean
         approve_content:
           type: boolean
+        ask_an_expert:
+          type: boolean
         assign_intervention:
           type: boolean
         author_block_content:
@@ -7134,6 +7590,8 @@ components:
         delay_export_content:
           type: boolean
         delete_content_thread:
+          type: boolean
+        escalate_to_video:
           type: boolean
         export_identity:
           type: boolean
@@ -7380,6 +7838,15 @@ components:
         default_content_language:
           description: Default content language
           type: string
+        enable_android:
+          description: Only on Engage Messaging sources. Boolean describing if the source is enabled on Android or not.
+          type: boolean
+        enable_ios:
+          description: Only on Engage Messaging sources. Boolean describing if the source is enabled on iOS or not.
+          type: boolean
+        enable_web:
+          description: Only on Engage Messaging sources. Boolean describing if the source is enabled on the web or not.
+          type: boolean
         error_message:
           type: string
         hidden_from_stats:
@@ -7391,6 +7858,9 @@ components:
           description: Priority boost of messages with intervention
           format: int32
           type: integer
+        live_chat:
+          description: Only on Engage Messaging sources. Boolean describing if the source is livechat or not.
+          type: boolean
         name:
           description: Source name
           type: string
@@ -7591,6 +8061,29 @@ components:
           format: string
         utc_offset:
           format: integer
+    UserCapacity:
+      properties:
+        channels:
+          items:
+            properties:
+              id:
+                type: string
+              default_capacity:
+                type: integer
+              max_capacity:
+                type: integer
+            type: object
+          type: array
+        created_at:
+          format: date-time
+          type: string
+        id:
+          type: string
+        name:
+          type: string
+        updated_at:
+          format: date-time
+          type: string
     User:
       properties:
         category_ids:
@@ -7641,8 +8134,25 @@ components:
         updated_at:
           format: date-time
           type: string
+        user_capacity_id:
+          type: string
       required:
         - id
+    UserSignature:
+      properties:
+        id:
+          type: string
+        body:
+          type: string
+        source_ids:
+          items:
+            type: string
+          type: array
+        language:
+          type: string
+      required:
+        - id
+        - body
     Webhook:
       properties:
         active:
