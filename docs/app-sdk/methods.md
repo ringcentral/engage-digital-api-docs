@@ -318,7 +318,7 @@ invoked with created content instance as `this` context. |
 
 Here is what are `extra actions`:
 
-<img class="img-fluid" width="175" src="../../img/app-sdk-extra-actions.png">
+<img class="img-fluid" width="147" src="../../img/app-sdk-extra-actions.png">
 
 ### SMCC.Content.onComposeContent(callback())
 
@@ -386,7 +386,7 @@ SMCC.Content.onExtraActionsShow(function() {
 
 Renders a new test button in the drop down:
 
-<img class="img-fluid" width="175" src="../../img/app-sdk-test-button.png">
+<img class="img-fluid" width="154" src="../../img/app-sdk-test-button.png">
 
 ### SMCC.Content#id()
 
@@ -606,7 +606,7 @@ SMCC.IdentityDetails.onLoad(function() {
 });
 ```
 
-<img class="img-fluid" width="100%" src="../../img/app-sdk-identity-card-test-tab.png">
+<img class="img-fluid" width="597" src="../../img/app-sdk-identity-card-test-tab.png">
 
 ### SMCC.IdentityDetails#identityGroupId()
 
@@ -1005,7 +1005,7 @@ Renders a message like standard javascript alert function.
 SMCC.UI.alert("This is an example");
 ```
 
-<img class="img-fluid" width="500" src="../../img/app-sdk-ui-alert.png">
+<img class="img-fluid" width="344" src="../../img/app-sdk-ui-alert.png">
 
 ### SMCC.UI.confirm(message[, options])
 
@@ -1034,7 +1034,7 @@ SMCC.UI.confirm("Do you confirm?", {
 })
 ```
 
-<img class="img-fluid" width="500" src="../../img/app-sdk-ui-confirm.png">
+<img class="img-fluid" width="347" src="../../img/app-sdk-ui-confirm.png">
 
 ### SMCC.UI.composeContent()
 
@@ -1165,13 +1165,17 @@ SMCC.UI.prompt('Please type your age', {
 })
 ```
 
-<img class="img-fluid" width="500" src="../../img/app-sdk-ui-prompt.png">
+<img class="img-fluid" width="347" src="../../img/app-sdk-ui-prompt.png">
+
+On invalid entry:
+
+<img class="img-fluid" width="347" src="../../img/app-sdk-ui-prompt-error.png">
 
 ## SMCC.Window
 
 The SMCC.Window namespace represents a modal window that can be rendered from any page, example:
 
-<img class="img-fluid" width="700" src="../../img/app-sdk-window.png">
+<img class="img-fluid" width="655" src="../../img/app-sdk-window.png">
 
 ### SMCC.Window.acceptPostMessageOrigin(origin)
 
