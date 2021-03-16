@@ -10,6 +10,9 @@
       "item": [
         {
           "name": "Events",
+          "description": {
+            "type": "text/plain"
+          },
           "item": [
             {
               "name": "Getting all events",
@@ -54,7 +57,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method renders events ordered by creation date (descending).\n\nAuthorization​: Only users whose role can search event permission."
               }
             },
             {
@@ -81,13 +85,17 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method renders an event from given id. If token’s user role does not have “search event” permission a 404 HTTP response will be returned.\n\nAuthorization​: Only users who’s role can search event permission."
               }
             }
           ]
         },
         {
           "name": "Webhooks",
+          "description": {
+            "type": "text/plain"
+          },
           "item": [
             {
               "name": "Getting all webhooks",
@@ -132,7 +140,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method renders webhooks ordered by active and staging_use (descending).\n\nAuthorization​: users having manage_api_access_tokens permission can see all webhooks / users don’t having the manage_api_access_tokens permission can see only the webhooks belonging to access token created by them."
               }
             },
             {
@@ -208,7 +217,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method creates a webhook. In case of success it renders the webhook, otherwise, it renders an error (422 HTTP code).\n\nAuthorization​: All users having the manage_api_access_tokens permission or all users having an api access token."
               }
             },
             {
@@ -243,7 +253,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method destroys an existing webhook. It renders webhook itself. It renders a 404 if id is invalid.\n\nAuthorization​: All users having the manage_api_access_tokens permission or all users having an api access token belonging to the webhook you’re deleting."
               }
             },
             {
@@ -278,7 +289,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method renders a webhook from given id.\n\nAuthorization​: users having manage_api_access_tokens permission can see any webhook / users don’t having the `manage_api_access_tokens` permission can see only the webhook in case the webhook is associated to an access token created by them."
               }
             },
             {
@@ -355,7 +367,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method updates an existing webhook from given attributes and renders it in case of success.\n\nAuthorization​: All users having the manage_api_access_tokens permission or all users having an api access token belonging to the webhook you’re updating."
               }
             }
           ]
@@ -367,6 +380,9 @@
       "item": [
         {
           "name": "Attachments",
+          "description": {
+            "type": "text/plain"
+          },
           "item": [
             {
               "name": "Getting all attachments",
@@ -405,7 +421,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method renders attachments ordered by creation date (descending)."
               }
             },
             {
@@ -435,7 +452,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method allows you to create an new attachment."
               }
             },
             {
@@ -462,13 +480,17 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method renders an attachment from given id."
               }
             }
           ]
         },
         {
           "name": "Communities",
+          "description": {
+            "type": "text/plain"
+          },
           "item": [
             {
               "name": "Getting all communities",
@@ -507,7 +529,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method renders communities ordered by creation date (ascending)."
               }
             },
             {
@@ -534,13 +557,17 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method renders a community from given id."
               }
             }
           ]
         },
         {
           "name": "Contents",
+          "description": {
+            "type": "text/plain"
+          },
           "item": [
             {
               "name": "Contents",
@@ -585,7 +612,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method renders contents ordered by creation date (descending). Only contents in sources where token’s user has “read” permission are returned.\n\nAuthorization​: no."
               }
             },
             {
@@ -673,7 +701,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method allows you to create new content for use in discussions. It can be a reply to another piece of content or be used to initiate discussion. If authorized, the token’s user will be used as the content author. Content will be created in Engage Digital and pushed asynchronously to the source.\nReplying to a customer content is usually possible (unless the source/conversation is read only).\nComposing a content on the contrary depend on the source itself:\n* The source may not support it (and be purely reactive like Instagram, Messenger ...)\n* Some sources (usually public account) like Twitter or Facebook page allows to publish content without targeting specific individuals.\n* Some sources (usually non public media) require specific targeting (phone number for SMS, email address for email, customer_id ...) to be able to create a content. This is source specific and detailed under the generic parameters.\n\nAuthorization​: only users that can reply or initiate discussion (= compose) on given source. it renders also an error if in_reply_to isn’t synchronized or if in_reply_to content is not under an ​open intervention."
               }
             },
             {
@@ -700,7 +729,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method renders a content from given id. If token’s user does not have “read” on content’s source a 404 HTTP response will be returned.\n\nAuthorization​: no."
               }
             },
             {
@@ -728,7 +758,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "Ignores a content. If token’s user does not have “read” on content’s source a 404 HTTP response will be returned.\n\nAuthorization​: no."
               }
             },
             {
@@ -764,13 +795,17 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method updates the categories of a content. If token’s user does not have “read” on this content’s source a 404 HTTP response will be returned.\n\nAuthorization​: no."
               }
             }
           ]
         },
         {
           "name": "Identities",
+          "description": {
+            "type": "text/plain"
+          },
           "item": [
             {
               "name": "Getting all identities",
@@ -845,7 +880,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method renders identities ordered by creation date (descending). Only identities in sources where token’s user has “read” permission are returned."
               }
             },
             {
@@ -872,13 +908,17 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method renders an identity from given id. If token’s user does not have “read” on identity’s source community a 404 HTTP response will be returned."
               }
             }
           ]
         },
         {
           "name": "Identity Groups",
+          "description": {
+            "type": "text/plain"
+          },
           "item": [
             {
               "name": "Getting all identity groups",
@@ -947,7 +987,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method renders identity groups ordered by creation date (descending). Note that identity_group are created in a lazily only when data are manually added to an identity OR a two identity are merged altogether. That means that some identity DON’T have identity_group, and identity_group do not cover all identities.\n\nAuthorization​: no."
               }
             },
             {
@@ -974,7 +1015,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method renders an identity group from given id."
               }
             },
             {
@@ -1063,13 +1105,17 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method updates an identity group from given attributes and renders it in case of success.\n\nAuthorization​: no."
               }
             }
           ]
         },
         {
           "name": "Intervention Comments",
+          "description": {
+            "type": "text/plain"
+          },
           "item": [
             {
               "name": "Getting all intervention comments",
@@ -1132,7 +1178,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method renders interventions comments ordered by creation date (descending). Only comments in sources where token’s user has “read” permission are returned.\n\nAuthorization​: no."
               }
             },
             {
@@ -1178,7 +1225,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method creates a new intervention comment. In case of success it renders the created comment, otherwise, it renders an error (422 HTTP code). It creates comment as token’s user. If token’s user does not have “read” on given intervention’s source a 404 HTTP response will be returned."
               }
             },
             {
@@ -1205,7 +1253,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method destroys an intervention comment. It renders comment itself. If token’s user does not have “read” on comment’s source a 404 HTTP response will be returned.\n\nAuthorization​: no."
               }
             },
             {
@@ -1232,13 +1281,17 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method renders an intervention comment from given id. If token’s user does not have “read” on comment’s source a 404 HTTP response will be returned."
               }
             }
           ]
         },
         {
           "name": "Interventions",
+          "description": {
+            "type": "text/plain"
+          },
           "item": [
             {
               "name": "Getting all interventions",
@@ -1307,7 +1360,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method renders interventions ordered by creation date (descending). Only interventions in sources where token’s user has “read” permission are returned.\n\nAuthorization​: no."
               }
             },
             {
@@ -1341,7 +1395,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method creates a new intervention or reopen it. In case of success it renders the intervention, otherwise, it renders an error (422 HTTP code). This method opens intervention as access token’s user.\n\nAuthorization​: no, but it renders an error if intervention can’t be created or reopened (already opened, etc.)."
               }
             },
             {
@@ -1368,7 +1423,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method renders an intervention from given id. If token’s user does not have “read” on intervention’s source a 404 HTTP response will be returned.\n\nAuthorization​: no."
               }
             },
             {
@@ -1396,7 +1452,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method cancels (destroys) an intervention. It renders intervention itself. If token’s user does not have “read” on intervention’s source a 404 HTTP response will be returned.\n\nCaveats:\n\n* If the intervention is already being canceled, it will return a 409 error.\n* To be able to close an intervention, it must meet the following criteria otherwise a 403 will be raised:\n  * Intervention MUST NOT already be closed\n * Intervention MUST NOT have agent replies\n  * Access-Token agent MUST have read access on the source\n\nAuthorization​: no, but it renders an error if intervention can’t be destroyed (see caveats)."
               }
             },
             {
@@ -1424,7 +1481,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method closes an intervention. Caveats:\n\n* If the intervention is already being closed, it will return a 409 error.\n* To be able to close an intervention, it must meet the following criteria otherwise a 403 will be raised:\n\n  * Intervention MUST NOT already be closed\n\n  * Intervention MUST have agent replies\n  * Access-Token agent MUST be the owner of the intervention or have the permission to edit permissions\n\n  * Access-Token agent MUST have read access on the source\n\nAuthorization​: no, but it renders an error if intervention can’t be closed (see caveats)"
               }
             },
             {
@@ -1459,7 +1517,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method updates the user in charge of the intervention\n\nAuthorization​: Only users who can update interventions."
               }
             },
             {
@@ -1494,13 +1553,17 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method updates the categories of an intervention. If token’s user does not have “read” on the intervention’s source a 404 HTTP response will be returned.\n\nAuthorization​: no."
               }
             }
           ]
         },
         {
           "name": "Sources",
+          "description": {
+            "type": "text/plain"
+          },
           "item": [
             {
               "name": "Getting all sources",
@@ -1539,7 +1602,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method renders sources ordered by creation date (ascending)."
               }
             },
             {
@@ -1566,7 +1630,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method renders a source from given id."
               }
             },
             {
@@ -1672,6 +1737,24 @@
                       "value": "\u003cinteger\u003e",
                       "description": "Archive contents older than (seconds)",
                       "disabled": true
+                    },
+                    {
+                      "key": "enable_android",
+                      "value": "\u003cboolean\u003e",
+                      "description": "Only on Engage Messaging sources that are not on livechat mode. Enable or disable the source on Android.",
+                      "disabled": true
+                    },
+                    {
+                      "key": "enable_ios",
+                      "value": "\u003cboolean\u003e",
+                      "description": "Only on Engage Messaging sources that are not on livechat mode. Enable or disable the source on iOS.",
+                      "disabled": true
+                    },
+                    {
+                      "key": "enable_web",
+                      "value": "\u003cboolean\u003e",
+                      "description": "Only on Engage Messaging sources that are not on livechat mode. Enable or disable the source on the web.",
+                      "disabled": true
                     }
                   ]
                 },
@@ -1685,13 +1768,17 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method updates an existing source from given attributes and renders it in case of success."
               }
             }
           ]
         },
         {
           "name": "Threads",
+          "description": {
+            "type": "text/plain"
+          },
           "item": [
             {
               "name": "Getting all threads",
@@ -1736,7 +1823,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method renders threads ordered by last content date (descending). Only threads in sources where token’s user has “read” permission are returned.\n\nAuthorization​: no."
               }
             },
             {
@@ -1763,7 +1851,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method renders a thread from given id. If token’s user does not have “read” on thread’s source a 404 HTTP response will be returned.\n\nAuthorization​: no."
               }
             },
             {
@@ -1791,7 +1880,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "Thread closure/opening is only available for the following sources:\n* Emails\n* Answers\n* Ideas\n* Facebook Messenger\n* Google+\n* Lithium\n* Mobile Messaging\n\nStarts a job to close a thread. It returns the thread but as the job is asynchronous, the state of the “close” attribute in the returned object do not is the one when the job started.\n\nIf token’s user does not have “read” on thread’s source a 404 HTTP response will be returned. Returns a 403 if the thread cannot be closed or if the user does not have the permission to close a thread.\n\nAuthorization​: no."
               }
             },
             {
@@ -1819,7 +1909,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "Archives the contents of a thread. If token’s user does not have “read” on thread’s source a 404 HTTP response will be returned.\n\nIf the thread is already being archived, a 409 HTTP response will be returned.\n\nAuthorization​: no."
               }
             },
             {
@@ -1847,7 +1938,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "Thread closure/opening is only available for the following sources:\n\n* Emails\n* Answers\n* Ideas\n* Facebook Messenger\n* Google+\n* Lithium\n* Mobile Messaging\n\nStarts a job to open a thread. It returns the thread but as the job is asynchronous, the state of the “close” attribute in the returned object is the one when the job started.\n\nIf token’s user does not have “read” on thread’s source a 404 HTTP response will be returned. Returns a 403 if the thread cannot be opened or if the user does not have the permission to open a thread.\n\nAuthorization​: no."
               }
             },
             {
@@ -1883,7 +1975,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method updates the categories of a thread. If token’s user does not have “read” on thread’s source a 404 HTTP response will be returned.\n\nIf the thread is already being categorized, a 409 HTTP response will be returned.\n\nAuthorization​: no."
               }
             }
           ]
@@ -1895,6 +1988,9 @@
       "item": [
         {
           "name": "Categories",
+          "description": {
+            "type": "text/plain"
+          },
           "item": [
             {
               "name": "Getting all categories",
@@ -1939,7 +2035,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method renders categories ordered by creation date (ascending)."
               }
             },
             {
@@ -2015,7 +2112,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method creates a new team. In case of success it renders the created tag, otherwise, it renders an error (422 HTTP code).\n\nNote: The fields ​`mandatory`,​ `​multiple`,​ ​`post_qualification​`, `s​ource_ids`​ and `u​nselectable​` are accounted for only if the Category has no parent.\n\nAuthorization​: only users that can manage teams."
               }
             },
             {
@@ -2050,7 +2148,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method destroys an existing category. It renders the category itself. It renders a 404 if id is invalid."
               }
             },
             {
@@ -2077,7 +2176,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method renders a category from given id."
               }
             },
             {
@@ -2154,13 +2254,17 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method creates a new team. In case of success it renders the created tag, otherwise, it renders an error (422 HTTP code).\n\nNote: The fields ​`mandatory`,​ ​`multiple`,​ ​`post_qualification​`, `s​ource_ids​` and `u​nselectable​` are accounted for only if the Category has no parent.\n\nAuthorization​: only users that can manage teams."
               }
             }
           ]
         },
         {
           "name": "CustomFields",
+          "description": {
+            "type": "text/plain"
+          },
           "item": [
             {
               "name": "Getting all custom fields",
@@ -2199,7 +2303,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method renders custom fields ordered by position (ascending).\n\nAuthorization​: only users that can see custom fields in administration section."
               }
             },
             {
@@ -2269,7 +2374,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method creates a custom field. In case of success it renders the custom field, otherwise, it renders an error (422 HTTP code).\n\nAuthorization​: only users that can create custom fields."
               }
             },
             {
@@ -2296,7 +2402,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method destroys an existing custom field. It renders custom field itself. It renders a 404 if id is invalid.\n\nAuthorization​: only users that are able to destroy custom fields.."
               }
             },
             {
@@ -2323,7 +2430,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method renders a custom field from given id.\n\nAuthorization​: only users that can see custom fields in administration section."
               }
             },
             {
@@ -2369,13 +2477,17 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method updates an existing custom field from given attributes and renders it in case of success.\n\nAuthorization​: only users that are able to update custom fields."
               }
             }
           ]
         },
         {
           "name": "Locales",
+          "description": {
+            "type": "text/plain"
+          },
           "item": [
             {
               "name": "Getting all locales",
@@ -2400,13 +2512,17 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method renders all available locales."
               }
             }
           ]
         },
         {
           "name": "Reply Assistant Entries",
+          "description": {
+            "type": "text/plain"
+          },
           "item": [
             {
               "name": "Getting​ a​ll​ reply assistant e​ntries",
@@ -2446,7 +2562,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method renders all entries ordered by creation date (ascending).\n\nAuthorization​: only users that have the right to manage reply assistant."
               }
             },
             {
@@ -2481,7 +2598,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method creates a reply assistant entry. In case of success it renders the entry, otherwise, it renders an error (422 HTTP code).\n\nAuthorization​: only users that have the right to manage reply assistant."
               }
             },
             {
@@ -2509,7 +2627,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method destroys an existing entry. It renders the entry itself. It renders a 404 if id is invalid.\n\nAuthorization​: only users that have the right to manage reply assistant."
               }
             },
             {
@@ -2537,7 +2656,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method renders an entry from given id.\n\nAuthorization​: only users that have the right to manage reply assistant."
               }
             },
             {
@@ -2603,13 +2723,17 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method updates an existing entry from given attributes and renders it in case of success.\n\nAuthorization​: only users that have the right to manage reply assistant."
               }
             }
           ]
         },
         {
           "name": "Reply Assistant Groups",
+          "description": {
+            "type": "text/plain"
+          },
           "item": [
             {
               "name": "Getting​ a​ll​ reply assistant groups",
@@ -2649,7 +2773,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method renders all groups ordered by creation date (ascending).\n\nAuthorization​: only users that have the right to manage reply assistant."
               }
             },
             {
@@ -2702,7 +2827,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method creates an entry group. In case of success it renders the group, otherwise, it renders an error (422 HTTP code).\n\nAuthorization​: only users that have the right to manage reply assistant."
               }
             },
             {
@@ -2730,7 +2856,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method destroys an existing group. It renders the group itself. It renders a 404 if id is invalid.\n\nAuthorization​: only users that have the right to manage reply assistant."
               }
             },
             {
@@ -2758,7 +2885,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method renders an entry group from given id.\n\nAuthorization​: only users that have the right to manage reply assistant."
               }
             },
             {
@@ -2812,13 +2940,17 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method updates an existing group from given attributes and renders it in case of success.\n\nAuthorization​: only users that have the right to manage reply assistant."
               }
             }
           ]
         },
         {
           "name": "Reply Assistant Versions",
+          "description": {
+            "type": "text/plain"
+          },
           "item": [
             {
               "name": "Getting​ a​ll​ reply assistant versions",
@@ -2858,7 +2990,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method renders all reply assistant versions ordered by creation date (ascending).\n\nAuthorization​: only users that have the right to manage reply assistant."
               }
             },
             {
@@ -2917,7 +3050,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method creates a reply assistant version. In case of success it renders the version, otherwise, it renders an error (422 HTTP code, 404 if the entry_id is invalid).\n\nAuthorization​: only users that have the right to manage reply assistant."
               }
             },
             {
@@ -2945,7 +3079,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method destroys an existing version. It renders the version itself. It renders a 404 if id is invalid.\n\nAuthorization​: only users that have the right to manage reply assistant."
               }
             },
             {
@@ -2973,7 +3108,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method renders a version from given id.\n\nAuthorization​: only users that have the right to manage reply assistant."
               }
             },
             {
@@ -3033,13 +3169,17 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method updates an existing version from given attributes and renders it in case of success.\n\nAuthorization​: only users that have the right to manage reply assistant."
               }
             }
           ]
         },
         {
           "name": "Roles",
+          "description": {
+            "type": "text/plain"
+          },
           "item": [
             {
               "name": "Getting all roles",
@@ -3078,7 +3218,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method renders roles ordered by creation date (ascending)."
               }
             },
             {
@@ -3454,7 +3595,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method creates a new role. In case of success it renders the created role, otherwise, it renders an error (422 HTTP code)."
               }
             },
             {
@@ -3481,7 +3623,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method renders a role from given id.\n\nAuthorization​: only users that can manage roles."
               }
             },
             {
@@ -3853,13 +3996,17 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method updates an existing role from given attributes and renders it in case of success.\n\nAuthorization​: A user can’t update roles with more permissions than himself and can’t give a role a permission he doesn’t have.\n\nAny permission updated with a user that does not have this permission will be ignored (The update is done, just not the unallowed permission)"
               }
             }
           ]
         },
         {
           "name": "Settings",
+          "description": {
+            "type": "text/plain"
+          },
           "item": [
             {
               "name": "Getting all settings",
@@ -3884,7 +4031,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method renders all settings of your domain.\n\nAuthorization​: only users that can update settings."
               }
             },
             {
@@ -4146,13 +4294,17 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method updates the current domain settings.\n\nAuthorization​: only users that can update settings."
               }
             }
           ]
         },
         {
           "name": "Tags",
+          "description": {
+            "type": "text/plain"
+          },
           "item": [
             {
               "name": "Getting all tags",
@@ -4191,7 +4343,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method renders tags ordered by name (ascending)."
               }
             },
             {
@@ -4225,7 +4378,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method creates a new tag. In case of success it renders the created tag, otherwise, it renders an error (422 HTTP code)."
               }
             },
             {
@@ -4252,7 +4406,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method destroys an existing tag. It renders tag itself. It renders a 404 if id is invalid.\n\nAuthorization​: only users that are able to destroy tags."
               }
             },
             {
@@ -4279,7 +4434,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method renders a tag from given id."
               }
             },
             {
@@ -4314,13 +4470,17 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method updates an existing tag from given attributes and renders it in case of success.\n\nAuthorization​: only users that are able to update tags."
               }
             }
           ]
         },
         {
           "name": "Teams",
+          "description": {
+            "type": "text/plain"
+          },
           "item": [
             {
               "name": "Getting all teams",
@@ -4359,7 +4519,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method renders teams ordered by creation date (ascending)."
               }
             },
             {
@@ -4405,7 +4566,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method creates a new team. In case of success it renders the created tag, otherwise, it renders an error (422 HTTP code)."
               }
             },
             {
@@ -4440,7 +4602,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method destroys an existing team. It renders the team itself. It renders a 404 if id is invalid."
               }
             },
             {
@@ -4467,7 +4630,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method renders a team from given id."
               }
             },
             {
@@ -4514,13 +4678,17 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method updates an existing team from given attributes and renders it in case of success."
               }
             }
           ]
         },
         {
           "name": "Time Sheets",
+          "description": {
+            "type": "text/plain"
+          },
           "item": [
             {
               "name": "Getting all time sheets",
@@ -4559,7 +4727,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method renders time sheets ordered by active and label."
               }
             },
             {
@@ -4659,7 +4828,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method creates a time sheet. In case of success it renders the time sheet, otherwise, it renders an error (422 HTTP code).\n\nAuthorization​: only users that can create time sheet."
               }
             },
             {
@@ -4686,7 +4856,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method destroys an existing time sheet. It renders time sheet itself. It renders a 404 if id is invalid."
               }
             },
             {
@@ -4713,7 +4884,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method renders a time sheet from given id.\n\nAuthorization​: only users that can see time sheets in administration section."
               }
             },
             {
@@ -4808,13 +4980,17 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method updates an existing team from given attributes and renders it in case of success."
               }
             }
           ]
         },
         {
           "name": "Timezones",
+          "description": {
+            "type": "text/plain"
+          },
           "item": [
             {
               "name": "Getting all timezones",
@@ -4839,13 +5015,17 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method renders all available timezones."
               }
             }
           ]
         },
         {
           "name": "Users",
+          "description": {
+            "type": "text/plain"
+          },
           "item": [
             {
               "name": "Getting all users",
@@ -4920,7 +5100,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method renders users ordered by creation date (descending).\n\nAuthorization​: only users that can view users. If the user affiliated to the token has the manage_users_of_my_teams permission, only the users belonging to at least one of the teams he’s the leader of will be returned."
               }
             },
             {
@@ -5038,7 +5219,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method creates a new user. In case of success it renders the created user, otherwise, it renders an error (422 HTTP code)."
               }
             },
             {
@@ -5151,7 +5333,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method invites a new user. In case of success it renders the created user, otherwise, it renders an error (422 HTTP code).\n\nAuthorization​: only users that can invite other users. If the user affiliated to the token has the manage_users_of_my_teams permission, the invited user will need to belong to at least one of the teams he’s the leader of. It will not be possible to assign the user to other teams."
               }
             },
             {
@@ -5178,7 +5361,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method deletes the given user. In case of success it renders the deleted user, otherwise, it renders an error (422 HTTP code).\n\nAuthorization​: only users that can update users. The user affiliated to the token must have at least all the permissions of the other user. If the user affiliated to the token has the manage_users_of_my_teams permission, the deleted user will need to belong to at least one of the teams he’s the leader of."
               }
             },
             {
@@ -5205,7 +5389,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method renders a user from given id."
               }
             },
             {
@@ -5324,7 +5509,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method updates users from given attributes and renders it in case of success.\n\nAuthorization​: only users that can update users. If the user affiliated to the token has the `manage_users_of_my_teams` permission, the updated user will need to belong to at least one of the teams he’s the leader of. The teams the user affiliated to the token is the leader of will be the only ones which can be added or removed."
               }
             },
             {
@@ -5352,7 +5538,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method renders user’s signatures ordered by creation date (descending).\n\nAuthorization​: only users that can view users. If the user affiliated to the token has the manage_users_of_my_teams permission, only the signatures of the users belonging to at least one of the teams he’s the leader of will be available."
               }
             },
             {
@@ -5400,7 +5587,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method creates a new user’s signature. In case of success it renders the created signature, otherwise, it renders an error (422 HTTP code).\n\nAuthorization​: only users that can update users. If the user affiliated to the token has the manage_users_of_my_teams permission, the owner of the deleting signature will need to belong to at least one of the teams he’s the leader of."
               }
             },
             {
@@ -5429,7 +5617,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method deletes the given signature. In case of success it renders the deleted signature, otherwise, it renders an error (422 HTTP code).\n\nAuthorization​: only users that can update users. If the user affiliated to the token has the manage_users_of_my_teams permission, the owner of the deleting signature will need to belong to at least one of the teams he’s the leader of."
               }
             },
             {
@@ -5458,7 +5647,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method renders a user’s signature from a given id."
               }
             },
             {
@@ -5507,13 +5697,17 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method updates the user’s signature related to the provided id from given attributes. In case of success it renders the updated signature, otherwise, it renders an error (422 HTTP code).\n\nAuthorization​: only users that can update users. If the user affiliated to the token has the `manage_users_of_my_teams` permission, the updated user will need to belong to at least one of the teams he’s the leader of. The teams the user affiliated to the token is the leader of will be the only ones which can be added or removed."
               }
             }
           ]
         },
         {
           "name": "User Capacities",
+          "description": {
+            "type": "text/plain"
+          },
           "item": [
             {
               "name": "Getting all User Capacities",
@@ -5552,7 +5746,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method renders all user capacities ordered by creation date (ascending).\n\nAuthorization​: only users who can manage topology."
               }
             },
             {
@@ -5604,7 +5799,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method creates a new user capacity. In case of success it renders the created record, otherwise, it renders an error (422 HTTP code).\n\nPlease note that the order of the parameters is important, as the `default_capacity` and `max_capacity` will apply to the immediately above `channel_id`.\n\nAuthorization​: only users who can manage topology."
               }
             },
             {
@@ -5631,7 +5827,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method destroys an existing user capacity. It renders the user capacity itself. It renders a 404 if id is invalid or already destroyed.\n\nAuthorization​: only users who can manage topology."
               }
             },
             {
@@ -5658,7 +5855,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method renders the user capacity corresponding to the id given in parameter. It renders a 404 if id is invalid.\n\nAuthorization​: only users who can manage topology."
               }
             },
             {
@@ -5711,7 +5909,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method creates a new user capacity. In case of success it renders the created record, otherwise, it renders an error (422 HTTP code).\n\nPlease note that the order of the parameters is important, as the `default_capacity` and `max_capacity` will apply to the immediately above `channel_id`.\n\nAuthorization​: only users who can manage topology."
               }
             }
           ]
@@ -5723,6 +5922,9 @@
       "item": [
         {
           "name": "Agent Status",
+          "description": {
+            "type": "text/plain"
+          },
           "item": [
             {
               "name": "Get all connected agents status",
@@ -5747,7 +5949,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method get all currently connected agents \u0026 their status.\n\nAuthorization​: only users that have the right to monitor the task view."
               }
             },
             {
@@ -5774,7 +5977,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method get the status of a connected agent. Returns a 404 if the user does not exist (not_found) or if he’s not connected (disconnected).\n\nAuthorization​: only users that have the right to monitor the task view."
               }
             },
             {
@@ -5815,13 +6019,17 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method updates an agent's availability. Can be used to set either channels statuses OR custom  status. If both parameters are provided, ignores custom status.The status parameter​ **MUST** b​e either “away” or “available”.\n\nAuthorization​: only users that have the right to monitor the task view."
               }
             }
           ]
         },
         {
           "name": "Channels",
+          "description": {
+            "type": "text/plain"
+          },
           "item": [
             {
               "name": "Getting all channels",
@@ -5860,7 +6068,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method renders all channels ordered by date of creation."
               }
             },
             {
@@ -5887,7 +6096,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method renders a channel from given id."
               }
             },
             {
@@ -5946,13 +6156,17 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method updates an existing channel from given attributes and renders it in case of success.\n\nAuthorization​: only users that are able to update channels."
               }
             }
           ]
         },
         {
           "name": "Folders",
+          "description": {
+            "type": "text/plain"
+          },
           "item": [
             {
               "name": "Getting all folders",
@@ -5991,7 +6205,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method renders folders."
               }
             },
             {
@@ -6061,7 +6276,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method creates a new folder. In case of success it renders the created folder, otherwise an error (422 HTTP code)."
               }
             },
             {
@@ -6088,7 +6304,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method destroys an existing folder. It renders the folder itself. It renders a 404 if id is invalid."
               }
             },
             {
@@ -6115,7 +6332,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method renders a folder from given id."
               }
             },
             {
@@ -6186,13 +6404,17 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method updates an existing folder from given attributes and renders it in case of success."
               }
             }
           ]
         },
         {
           "name": "Presence Status",
+          "description": {
+            "type": "text/plain"
+          },
           "item": [
             {
               "name": "Getting all presence statuses",
@@ -6231,7 +6453,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method renders all presence statuses ordered by name (in alphabetical order)."
               }
             },
             {
@@ -6265,7 +6488,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method creates a presence status. In case of success it renders the presence status, otherwise, it renders an error (422 HTTP code).\n\nAuthorization​: only users that have the right to monitor the task view."
               }
             },
             {
@@ -6292,7 +6516,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method destroys an existing presence status. It renders presence status itself. It renders a 404 if id is invalid.\n\nAuthorization​: only users that have the right to monitor the task view."
               }
             },
             {
@@ -6319,7 +6544,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method renders a presence status from given id.\n\nAuthorization​: only users that have the right to monitor the task view."
               }
             },
             {
@@ -6354,13 +6580,17 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method updates an existing presence status from given attributes and renders it in case of success.\n\nAuthorization​: only users that have the right to monitor the task view."
               }
             }
           ]
         },
         {
           "name": "Tasks",
+          "description": {
+            "type": "text/plain"
+          },
           "item": [
             {
               "name": "Getting all tasks",
@@ -6417,7 +6647,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method renders tasks ordered by priority (highest first) and then by creation date (latest first).\n\nAuthorization​: only users that can read tasks."
               }
             },
             {
@@ -6444,7 +6675,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method renders a task from given id."
               }
             },
             {
@@ -6480,7 +6712,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method changes a task queue and renders it in case of success. Only accepts “undelivered” and special queue defined in topology (e.g. triage).\n\nAuthorization​: only users that have the right to monitor the task view."
               }
             },
             {
@@ -6546,7 +6779,8 @@
                     "key": "Accept",
                     "value": "application/json"
                   }
-                ]
+                ],
+                "description": "This method transfers an existing task and renders it in case of success.\n\nAuthorization​: only users that have the right to monitor the task view."
               }
             }
           ]
@@ -6581,7 +6815,8 @@
                 "key": "Accept",
                 "value": "application/json"
               }
-            ]
+            ],
+            "description": "This method renders user’s signatures ordered by creation date (descending).\n\nAuthorization​: only users that can view users. If the user affiliated to the token has the manage_users_of_my_teams permission, only the signatures of the users belonging to at least one of the teams he’s the leader of will be available."
           }
         },
         {
@@ -6629,7 +6864,8 @@
                 "key": "Accept",
                 "value": "application/json"
               }
-            ]
+            ],
+            "description": "This method creates a new user’s signature. In case of success it renders the created signature, otherwise, it renders an error (422 HTTP code).\n\nAuthorization​: only users that can update users. If the user affiliated to the token has the manage_users_of_my_teams permission, the owner of the deleting signature will need to belong to at least one of the teams he’s the leader of."
           }
         },
         {
@@ -6658,7 +6894,8 @@
                 "key": "Accept",
                 "value": "application/json"
               }
-            ]
+            ],
+            "description": "This method deletes the given signature. In case of success it renders the deleted signature, otherwise, it renders an error (422 HTTP code).\n\nAuthorization​: only users that can update users. If the user affiliated to the token has the manage_users_of_my_teams permission, the owner of the deleting signature will need to belong to at least one of the teams he’s the leader of."
           }
         },
         {
@@ -6687,7 +6924,8 @@
                 "key": "Accept",
                 "value": "application/json"
               }
-            ]
+            ],
+            "description": "This method renders a user’s signature from a given id."
           }
         },
         {
@@ -6736,7 +6974,8 @@
                 "key": "Accept",
                 "value": "application/json"
               }
-            ]
+            ],
+            "description": "This method updates the user’s signature related to the provided id from given attributes. In case of success it renders the updated signature, otherwise, it renders an error (422 HTTP code).\n\nAuthorization​: only users that can update users. If the user affiliated to the token has the `manage_users_of_my_teams` permission, the updated user will need to belong to at least one of the teams he’s the leader of. The teams the user affiliated to the token is the leader of will be the only ones which can be added or removed."
           }
         }
       ]
