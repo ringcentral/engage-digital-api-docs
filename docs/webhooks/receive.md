@@ -10,9 +10,9 @@ Once subscribed to events, endpoints will receive updates in the following fashi
 
 This Webhook API implementation tries to deliver the event notification request reasonably fast. We may buffer notification for efficiency reasons.
 
-Engage cannot guarantee the delivery of every event (see [Endpoint Unavailability](#endpoint-unavailability)). However, Engage will retry delivery during the first 24 hours after the event was triggered. Engage will retry until the endpoint received them correctly by responding with an HTTP status code of 200. 
+Engage cannot guarantee the delivery of every event (see [Endpoint Unavailability](#endpoint-unavailability)). However, Engage will retry delivery during the first 24 hours after the event was triggered. Engage will retry until the endpoint received them correctly by responding with an HTTP status code of 200.
 
-Engage cannot guarantee the order in which the events arrive. Engage does however provide a timestamp in every event for the implementor to understand the exact point in time the event was triggered. 
+Engage cannot guarantee the order in which the events arrive. Engage does however provide a timestamp in every event for the implementor to understand the exact point in time the event was triggered.
 
 Engage cannot guarantee that events will be sent only once. A unique identifier for each event is provided so that events can be deduplicated by the implementor if unicity is a constraint.
 
@@ -22,12 +22,12 @@ When an event notification request to an endpoint is not responsed by an HTTP 20
 
 To give an order of magnitude of the waiting time before each retry (those data are for information only and are susceptible to change):
 
-| Request | Time interval | 
+| Request | Time interval |
 |-|-|
 | Try #1  | ~ 1 sec |
-| Try #2  | ~ 15 sec | 
+| Try #2  | ~ 15 sec |
 | Try #4  | ~ 5 min |
-| Try #5  | ~ 10 min | 
+| Try #5  | ~ 10 min |
 
 It means that when the first request fails the next retry is processed after 1 sec, then 15 seconds after the last retry... If it’s still failing this request will never be sent afterward.
 
@@ -46,4 +46,4 @@ Below are some diagrams describing specific workflows for sending webhook events
 
 ## Task Life-cycle
 
-<img class="img-fluid" src="../dimelo_webhook_task-life-cycle_full.png">
+<img class="img-fluid" src="../../img/webhook-task-workflow.png">
