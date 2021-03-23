@@ -7,7 +7,7 @@ This Engage Digital App SDK provides a way to add buttons, tabs, open iframes, e
 Only a subset of JavaScript is allowed for your applications. All JavaScript methods and global objects are disabled except: ​`console`​ and ​`JSON`​. Therefore, you will **​not**​ be able to access or modify the `dom` of the page, reach the window object or make any AJAX requests. The purpose is to provide a safe sandboxed environment for our customers and avoid complex dependency on our HTML structure and/or unsafe interaction with external sources.
 
 Please note that events are only issued by the browser, which means that events that occur on the server or elsewhere may not trigger the callbacks added through the SDK.
-RingCentral's Engage Digital App SDK provides a list of high level JavaScript methods that are available on top of the standard JavaScript language. An exhaustive list of [Engage Digital APP Methods](https://blank.md) can be found in the link. Those methods can be reached via the global S​MCC ​JavaScript object.
+RingCentral's Engage Digital App SDK provides a list of high level JavaScript methods that are available on top of the standard JavaScript language. An exhaustive list of [Engage Digital APP Methods](./methods.md) can be found in the link. Those methods can be reached via the global S​MCC ​JavaScript object.
 
 ## Example
 ```
