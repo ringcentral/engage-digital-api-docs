@@ -4304,6 +4304,39 @@ paths:
 
         Authorization​: only users that have the right to monitor the task view.
       operationId: getAllAgentStatus
+      parameters:
+        - description: To filter users on given source ids (based on reply permission).
+          in: query
+          name: source_ids
+          required: false
+          schema:
+            items:
+              type: string
+            type: array
+        - description: To filter users on given category ids.
+          in: query
+          name: category_ids
+          required: false
+          schema:
+            items:
+              type: string
+            type: array
+        - description: To filter users on given team ids.
+          in: query
+          name: team_ids
+          required: false
+          schema:
+            items:
+              type: string
+            type: array
+        - description: To filter users on given locales.
+          in: query
+          name: spoken_languages
+          required: false
+          schema:
+            items:
+              type: string
+            type: array
       responses:
         '200':
           content:
