@@ -5937,6 +5937,32 @@
                   "path": [
                     "1.0",
                     "status"
+                  ],
+                  "query": [
+                    {
+                      "key": "source_ids",
+                      "value": "\u003carray.string.csv\u003e",
+                      "description": "To filter users on given source ids (based on reply permission).",
+                      "disabled": true
+                    },
+                    {
+                      "key": "category_ids",
+                      "value": "\u003carray.string.csv\u003e",
+                      "description": "To filter users on given category ids.",
+                      "disabled": true
+                    },
+                    {
+                      "key": "team_ids",
+                      "value": "\u003carray.string.csv\u003e",
+                      "description": "To filter users on given team ids.",
+                      "disabled": true
+                    },
+                    {
+                      "key": "spoken_languages",
+                      "value": "\u003carray.string.csv\u003e",
+                      "description": "To filter users on given locales.",
+                      "disabled": true
+                    }
                   ]
                 },
                 "method": "GET",
