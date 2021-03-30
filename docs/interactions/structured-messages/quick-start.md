@@ -3,7 +3,7 @@ no_breadcrumb:true
 
 # Structured Message Quick Start
 
-Let's build a structured message! A structured message consists of elements that enhance the customer experience. Want to try it out yourself? Follow this [structured message demo](https://github.com/embbnux/engage-digital-structured-messages-demo) to see how it is done.
+Let's build a structured message! A structured message consists of elements that enhance the customer experience. Want to try it out yourself? Follow this [structured message demo](https://github.com/ringcentral-tutorials/engage-digital-structured-messages-demo) to see how it is done.
 
 In this Quick Start, we will walk you through creating a structured message within a matter of minutes. Let's get started.
 
