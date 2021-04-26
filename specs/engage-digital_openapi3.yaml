@@ -51,6 +51,7 @@ x-tag-groups:
       - Timezones
       - Users
       - User Capacities
+      - User Signatures
   - name: Routing
     popular: true
     tags:
@@ -86,11 +87,11 @@ tags:
   - name: Timezones
   - name: Users
   - name: User Capacities
+  - name: User Signatures
   - name: Agent Status
   - name: Channels
   - name: Folders
   - name: Presence Status
-  - name: Signatures
 
 paths:
   /attachments:
@@ -5943,8 +5944,7 @@ paths:
           description: Success
       summary: Getting all user's signatures
       tags:
-        - Users
-        - Signatures
+        - User Signatures
     post:
       description: >-
         This method creates a new user’s signature. In case of success it renders
@@ -5991,8 +5991,7 @@ paths:
           description: Success
       summary: Creating a user's signature
       tags:
-        - Users
-        - Signatures
+        - User Signatures
   '/users/{userId}/signatures/{signatureId}':
     delete:
       description: >-
@@ -6025,8 +6024,7 @@ paths:
           description: Success
       summary: Deleting a user's signature
       tags:
-        - Users
-        - Signatures
+        - User Signatures
     get:
       description: This method renders a user’s signature from a given id.
       operationId: getUserSignature
@@ -6050,8 +6048,7 @@ paths:
           description: Success
       summary: Getting a user's signature from its id
       tags:
-        - Users
-        - Signatures
+        - User Signatures
     put:
       description: >-
         This method updates the user’s signature related to the provided id from given
@@ -6105,8 +6102,7 @@ paths:
           description: Success
       summary: Updating a user's signature
       tags:
-        - Users
-        - Signatures
+        - User Signatures
   /webhooks:
     get:
       description: >-

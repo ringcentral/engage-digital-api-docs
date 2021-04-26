@@ -5512,194 +5512,6 @@
                 ],
                 "description": "This method updates users from given attributes and renders it in case of success.\n\nAuthorization​: only users that can update users. If the user affiliated to the token has the `manage_users_of_my_teams` permission, the updated user will need to belong to at least one of the teams he’s the leader of. The teams the user affiliated to the token is the leader of will be the only ones which can be added or removed."
               }
-            },
-            {
-              "name": "Getting all user's signatures",
-              "request": {
-                "url": {
-                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/users/:userId/signatures",
-                  "host": [
-                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
-                  ],
-                  "path": [
-                    "1.0",
-                    "users",
-                    ":userId",
-                    "signatures"
-                  ]
-                },
-                "method": "GET",
-                "header": [
-                  {
-                    "key": "Authorization",
-                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "description": "This method renders user’s signatures ordered by creation date (descending).\n\nAuthorization​: only users that can view users. If the user affiliated to the token has the manage_users_of_my_teams permission, only the signatures of the users belonging to at least one of the teams he’s the leader of will be available."
-              }
-            },
-            {
-              "name": "Creating a user's signature",
-              "request": {
-                "url": {
-                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/users/:userId/signatures",
-                  "host": [
-                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
-                  ],
-                  "path": [
-                    "1.0",
-                    "users",
-                    ":userId",
-                    "signatures"
-                  ],
-                  "query": [
-                    {
-                      "key": "body",
-                      "value": "\u003cstring\u003e",
-                      "description": "The signature text (mandatory).",
-                      "disabled": true
-                    },
-                    {
-                      "key": "source_ids[]",
-                      "value": "\u003carray.string.csv\u003e",
-                      "description": "The signature list of source ids (multiple). Keep it empty if you don’t need to associate the signature with any sources.",
-                      "disabled": true
-                    },
-                    {
-                      "key": "language",
-                      "value": "\u003cstring\u003e",
-                      "description": "The two-letter code of the signature language.",
-                      "disabled": true
-                    }
-                  ]
-                },
-                "method": "POST",
-                "header": [
-                  {
-                    "key": "Authorization",
-                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "description": "This method creates a new user’s signature. In case of success it renders the created signature, otherwise, it renders an error (422 HTTP code).\n\nAuthorization​: only users that can update users. If the user affiliated to the token has the manage_users_of_my_teams permission, the owner of the deleting signature will need to belong to at least one of the teams he’s the leader of."
-              }
-            },
-            {
-              "name": "Deleting a user's signature",
-              "request": {
-                "url": {
-                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/users/:userId/signatures/:signatureId",
-                  "host": [
-                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
-                  ],
-                  "path": [
-                    "1.0",
-                    "users",
-                    ":userId",
-                    "signatures",
-                    ":signatureId"
-                  ]
-                },
-                "method": "DELETE",
-                "header": [
-                  {
-                    "key": "Authorization",
-                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "description": "This method deletes the given signature. In case of success it renders the deleted signature, otherwise, it renders an error (422 HTTP code).\n\nAuthorization​: only users that can update users. If the user affiliated to the token has the manage_users_of_my_teams permission, the owner of the deleting signature will need to belong to at least one of the teams he’s the leader of."
-              }
-            },
-            {
-              "name": "Getting a user's signature from its id",
-              "request": {
-                "url": {
-                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/users/:userId/signatures/:signatureId",
-                  "host": [
-                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
-                  ],
-                  "path": [
-                    "1.0",
-                    "users",
-                    ":userId",
-                    "signatures",
-                    ":signatureId"
-                  ]
-                },
-                "method": "GET",
-                "header": [
-                  {
-                    "key": "Authorization",
-                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "description": "This method renders a user’s signature from a given id."
-              }
-            },
-            {
-              "name": "Updating a user's signature",
-              "request": {
-                "url": {
-                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/users/:userId/signatures/:signatureId",
-                  "host": [
-                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
-                  ],
-                  "path": [
-                    "1.0",
-                    "users",
-                    ":userId",
-                    "signatures",
-                    ":signatureId"
-                  ],
-                  "query": [
-                    {
-                      "key": "body",
-                      "value": "\u003cstring\u003e",
-                      "description": "The signature text (not empty).",
-                      "disabled": true
-                    },
-                    {
-                      "key": "source_ids[]",
-                      "value": "\u003carray.string.csv\u003e",
-                      "description": "The signature list of source ids (multiple). Keep it empty if you don’t need to associate the signature with any sources.",
-                      "disabled": true
-                    },
-                    {
-                      "key": "language",
-                      "value": "\u003cstring\u003e",
-                      "description": "The two-letter code of the signature language.",
-                      "disabled": true
-                    }
-                  ]
-                },
-                "method": "PUT",
-                "header": [
-                  {
-                    "key": "Authorization",
-                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "description": "This method updates the user’s signature related to the provided id from given attributes. In case of success it renders the updated signature, otherwise, it renders an error (422 HTTP code).\n\nAuthorization​: only users that can update users. If the user affiliated to the token has the `manage_users_of_my_teams` permission, the updated user will need to belong to at least one of the teams he’s the leader of. The teams the user affiliated to the token is the leader of will be the only ones which can be added or removed."
-              }
             }
           ]
         },
@@ -5911,6 +5723,202 @@
                   }
                 ],
                 "description": "This method creates a new user capacity. In case of success it renders the created record, otherwise, it renders an error (422 HTTP code).\n\nPlease note that the order of the parameters is important, as the `default_capacity` and `max_capacity` will apply to the immediately above `channel_id`.\n\nAuthorization​: only users who can manage topology."
+              }
+            }
+          ]
+        },
+        {
+          "name": "User Signatures",
+          "description": {
+            "type": "text/plain"
+          },
+          "item": [
+            {
+              "name": "Getting all user's signatures",
+              "request": {
+                "url": {
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/users/:userId/signatures",
+                  "host": [
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
+                  ],
+                  "path": [
+                    "1.0",
+                    "users",
+                    ":userId",
+                    "signatures"
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "description": "This method renders user’s signatures ordered by creation date (descending).\n\nAuthorization​: only users that can view users. If the user affiliated to the token has the manage_users_of_my_teams permission, only the signatures of the users belonging to at least one of the teams he’s the leader of will be available."
+              }
+            },
+            {
+              "name": "Creating a user's signature",
+              "request": {
+                "url": {
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/users/:userId/signatures",
+                  "host": [
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
+                  ],
+                  "path": [
+                    "1.0",
+                    "users",
+                    ":userId",
+                    "signatures"
+                  ],
+                  "query": [
+                    {
+                      "key": "body",
+                      "value": "\u003cstring\u003e",
+                      "description": "The signature text (mandatory).",
+                      "disabled": true
+                    },
+                    {
+                      "key": "source_ids[]",
+                      "value": "\u003carray.string.csv\u003e",
+                      "description": "The signature list of source ids (multiple). Keep it empty if you don’t need to associate the signature with any sources.",
+                      "disabled": true
+                    },
+                    {
+                      "key": "language",
+                      "value": "\u003cstring\u003e",
+                      "description": "The two-letter code of the signature language.",
+                      "disabled": true
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "description": "This method creates a new user’s signature. In case of success it renders the created signature, otherwise, it renders an error (422 HTTP code).\n\nAuthorization​: only users that can update users. If the user affiliated to the token has the manage_users_of_my_teams permission, the owner of the deleting signature will need to belong to at least one of the teams he’s the leader of."
+              }
+            },
+            {
+              "name": "Deleting a user's signature",
+              "request": {
+                "url": {
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/users/:userId/signatures/:signatureId",
+                  "host": [
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
+                  ],
+                  "path": [
+                    "1.0",
+                    "users",
+                    ":userId",
+                    "signatures",
+                    ":signatureId"
+                  ]
+                },
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "description": "This method deletes the given signature. In case of success it renders the deleted signature, otherwise, it renders an error (422 HTTP code).\n\nAuthorization​: only users that can update users. If the user affiliated to the token has the manage_users_of_my_teams permission, the owner of the deleting signature will need to belong to at least one of the teams he’s the leader of."
+              }
+            },
+            {
+              "name": "Getting a user's signature from its id",
+              "request": {
+                "url": {
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/users/:userId/signatures/:signatureId",
+                  "host": [
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
+                  ],
+                  "path": [
+                    "1.0",
+                    "users",
+                    ":userId",
+                    "signatures",
+                    ":signatureId"
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "description": "This method renders a user’s signature from a given id."
+              }
+            },
+            {
+              "name": "Updating a user's signature",
+              "request": {
+                "url": {
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/users/:userId/signatures/:signatureId",
+                  "host": [
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
+                  ],
+                  "path": [
+                    "1.0",
+                    "users",
+                    ":userId",
+                    "signatures",
+                    ":signatureId"
+                  ],
+                  "query": [
+                    {
+                      "key": "body",
+                      "value": "\u003cstring\u003e",
+                      "description": "The signature text (not empty).",
+                      "disabled": true
+                    },
+                    {
+                      "key": "source_ids[]",
+                      "value": "\u003carray.string.csv\u003e",
+                      "description": "The signature list of source ids (multiple). Keep it empty if you don’t need to associate the signature with any sources.",
+                      "disabled": true
+                    },
+                    {
+                      "key": "language",
+                      "value": "\u003cstring\u003e",
+                      "description": "The two-letter code of the signature language.",
+                      "disabled": true
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "description": "This method updates the user’s signature related to the provided id from given attributes. In case of success it renders the updated signature, otherwise, it renders an error (422 HTTP code).\n\nAuthorization​: only users that can update users. If the user affiliated to the token has the `manage_users_of_my_teams` permission, the updated user will need to belong to at least one of the teams he’s the leader of. The teams the user affiliated to the token is the leader of will be the only ones which can be added or removed."
               }
             }
           ]
@@ -6810,199 +6818,6 @@
               }
             }
           ]
-        }
-      ]
-    },
-    {
-      "name": "Signatures",
-      "item": [
-        {
-          "name": "Getting all user's signatures",
-          "request": {
-            "url": {
-              "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/users/:userId/signatures",
-              "host": [
-                "{{ENGAGE_DIGITAL_SERVER_URL}}"
-              ],
-              "path": [
-                "1.0",
-                "users",
-                ":userId",
-                "signatures"
-              ]
-            },
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
-              },
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "description": "This method renders user’s signatures ordered by creation date (descending).\n\nAuthorization​: only users that can view users. If the user affiliated to the token has the manage_users_of_my_teams permission, only the signatures of the users belonging to at least one of the teams he’s the leader of will be available."
-          }
-        },
-        {
-          "name": "Creating a user's signature",
-          "request": {
-            "url": {
-              "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/users/:userId/signatures",
-              "host": [
-                "{{ENGAGE_DIGITAL_SERVER_URL}}"
-              ],
-              "path": [
-                "1.0",
-                "users",
-                ":userId",
-                "signatures"
-              ],
-              "query": [
-                {
-                  "key": "body",
-                  "value": "\u003cstring\u003e",
-                  "description": "The signature text (mandatory).",
-                  "disabled": true
-                },
-                {
-                  "key": "source_ids[]",
-                  "value": "\u003carray.string.csv\u003e",
-                  "description": "The signature list of source ids (multiple). Keep it empty if you don’t need to associate the signature with any sources.",
-                  "disabled": true
-                },
-                {
-                  "key": "language",
-                  "value": "\u003cstring\u003e",
-                  "description": "The two-letter code of the signature language.",
-                  "disabled": true
-                }
-              ]
-            },
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
-              },
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "description": "This method creates a new user’s signature. In case of success it renders the created signature, otherwise, it renders an error (422 HTTP code).\n\nAuthorization​: only users that can update users. If the user affiliated to the token has the manage_users_of_my_teams permission, the owner of the deleting signature will need to belong to at least one of the teams he’s the leader of."
-          }
-        },
-        {
-          "name": "Deleting a user's signature",
-          "request": {
-            "url": {
-              "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/users/:userId/signatures/:signatureId",
-              "host": [
-                "{{ENGAGE_DIGITAL_SERVER_URL}}"
-              ],
-              "path": [
-                "1.0",
-                "users",
-                ":userId",
-                "signatures",
-                ":signatureId"
-              ]
-            },
-            "method": "DELETE",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
-              },
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "description": "This method deletes the given signature. In case of success it renders the deleted signature, otherwise, it renders an error (422 HTTP code).\n\nAuthorization​: only users that can update users. If the user affiliated to the token has the manage_users_of_my_teams permission, the owner of the deleting signature will need to belong to at least one of the teams he’s the leader of."
-          }
-        },
-        {
-          "name": "Getting a user's signature from its id",
-          "request": {
-            "url": {
-              "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/users/:userId/signatures/:signatureId",
-              "host": [
-                "{{ENGAGE_DIGITAL_SERVER_URL}}"
-              ],
-              "path": [
-                "1.0",
-                "users",
-                ":userId",
-                "signatures",
-                ":signatureId"
-              ]
-            },
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
-              },
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "description": "This method renders a user’s signature from a given id."
-          }
-        },
-        {
-          "name": "Updating a user's signature",
-          "request": {
-            "url": {
-              "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/users/:userId/signatures/:signatureId",
-              "host": [
-                "{{ENGAGE_DIGITAL_SERVER_URL}}"
-              ],
-              "path": [
-                "1.0",
-                "users",
-                ":userId",
-                "signatures",
-                ":signatureId"
-              ],
-              "query": [
-                {
-                  "key": "body",
-                  "value": "\u003cstring\u003e",
-                  "description": "The signature text (not empty).",
-                  "disabled": true
-                },
-                {
-                  "key": "source_ids[]",
-                  "value": "\u003carray.string.csv\u003e",
-                  "description": "The signature list of source ids (multiple). Keep it empty if you don’t need to associate the signature with any sources.",
-                  "disabled": true
-                },
-                {
-                  "key": "language",
-                  "value": "\u003cstring\u003e",
-                  "description": "The two-letter code of the signature language.",
-                  "disabled": true
-                }
-              ]
-            },
-            "method": "PUT",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
-              },
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "description": "This method updates the user’s signature related to the provided id from given attributes. In case of success it renders the updated signature, otherwise, it renders an error (422 HTTP code).\n\nAuthorization​: only users that can update users. If the user affiliated to the token has the `manage_users_of_my_teams` permission, the updated user will need to belong to at least one of the teams he’s the leader of. The teams the user affiliated to the token is the leader of will be the only ones which can be added or removed."
-          }
         }
       ]
     }
