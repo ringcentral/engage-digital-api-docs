@@ -1,6 +1,6 @@
 openapi: 3.0.0
 info:
-  description: ''
+  description: 'REST API for RingCentral Engage Digital'
   termsOfService: 'https://developer.ringcentral.com'
   title: RingCentral Engage Digital API
   version: '1.0.1'
