@@ -6747,32 +6747,6 @@ components:
           type: string
         text:
           type: string
-    ContentCreateRequest:
-      properties:
-        source_id:
-          type: string
-        in_reply_to_id:
-          type: string
-        structured_content:
-          $ref: '#/components/schemas/ContentStructuredContent'
-    ContentStructuredContent:
-      properties:
-        type:
-          type: string
-          description: must be set to "rich_link”
-          enum: [rich_link]
-        attachment_id:
-          type: string
-          description: optional field that must be an existing attachment id. Used to decorate the rich link with an image. Only jpeg, png and gif for best compatibility.
-        title:
-          type: string
-        subtitle:
-          type: string
-        url:
-          type: string
-        url_text:
-          type: string
-          description: field to be displayed instead of the hostname of the url
     CustomField:
       properties:
         associated_type_name:
@@ -6877,21 +6851,6 @@ components:
           type: string
       required:
         - id
-    GetAllAgentStatusResponse:
-      properties:
-        count:
-          format: int32
-          type: integer
-        limit:
-          format: int32
-          type: integer
-        offset:
-          format: int32
-          type: integer
-        records:
-          items:
-            $ref: '#/components/schemas/AgentStatus'
-          type: array
     GetAllAttachmentsResponse:
       properties:
         count:
