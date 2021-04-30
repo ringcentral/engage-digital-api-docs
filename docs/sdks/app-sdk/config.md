@@ -6,11 +6,11 @@ By default, App SDK application management is disabled. You’ll have to request
 
 In RingCentral's Engage Digital administration section, you’ll get the **« Dev tools »** menu section and **« Developed applications (SDK) »** menu item in the administration and be able to create new ones.
 
-<img class="img-fluid" width="100%" src="../../img/app-sdk-config.png">
+<img class="img-fluid" width="100%" src="../../../img/app-sdk-config.png">
 
 Click on the **Add** button to start adding your own application.
 
-<img class="img-fluid" width="593" src="../../img/app-sdk-add-new.png">
+<img class="img-fluid" width="593" src="../../../img/app-sdk-add-new.png">
 
 An application is defined by the following attributes:
 
@@ -38,13 +38,13 @@ The best practice is to develop the application in ​*development​* mode. Whe
 
 When created, the application **m​ust**​ be installed in order to make it available on the domain. Installed applications can be found under **« Applications »** in the **« Installed Apps »** menu section.
 
-<img class="img-fluid" width="1041" src="../../img/app-sdk-install.png">
+<img class="img-fluid" width="1041" src="../../../img/app-sdk-install.png">
 
 Click on the **Install** button, choose the application you want to install, and confirm your selection. By default, only *certified* and *local* applications are available in the list. Other applications could be installed if you get its *installation link*.
 
 Once installed, the application can be configured (if the configuration URL has been specified).  Look for the gear icon to configure your application.
 
-<img class="img-fluid" width="940" src="../../img/installed-app-config.png">
+<img class="img-fluid" width="940" src="../../../img/installed-app-config.png">
 
 If the configure button is clicked, an iframe overlay is rendered with the application’s configuration URL plus current domain name as parameter. Example if application configuration URL is http://example.org​ and current domain name is g​oogle, ​the iframe URL will be: http://example.org?domain=google.​
 
@@ -59,19 +59,19 @@ An App SDK application could be granted a set of permissions. API calls may requ
 
 By default all permissions are disabled. To enable one or many of them click on the **edit permissions** icon as shown.
 
-<img class="img-fluid" width="1007" src="../../img/app-sdk-edit-permission.png">
+<img class="img-fluid" width="1007" src="../../../img/app-sdk-edit-permission.png">
 
 This will bring a pop-up window where you can check the permissions you want your application to have.
 
-<img class="img-fluid" width="645" src="../../img/app-sdk-permissions.png">
+<img class="img-fluid" width="645" src="../../../img/app-sdk-permissions.png">
 
 If you change the application's permissions, installations are required to update their permission. Navigating to the installations administration section you will see the following message:
 
-<img class="img-fluid" width="1020" src="../../img/app-sdk-update-permissions.png">
+<img class="img-fluid" width="1020" src="../../../img/app-sdk-update-permissions.png">
 
 Upon clicking the update permissions icon, you will need to confirm you are ready to update the permission of the installed application.
 
-<img class="img-fluid" width="584" src="../../img/app-sdk-confirm-update-permissions.png">
+<img class="img-fluid" width="584" src="../../../img/app-sdk-confirm-update-permissions.png">
 
 ## IFrame Messaging
 
@@ -113,7 +113,7 @@ Engage Digital App SDK provides many ways to render iframes. But, most of the ti
 
 First of all, you must get your application’s `k​ey` ​and `s​ecret`. Navigate to **Dev tools**, and then **Developed applications (SDK)** to get them:
 
-<img class="img-fluid" width="377" src="../../img/app-sdk-key-secret.png">
+<img class="img-fluid" width="377" src="../../../img/app-sdk-key-secret.png">
 
 The ​`key` ​and ​`secret` ​are mandatory to make OAuth requests. In order to be secure, iframe authentication callbacks should be in HTTPS. Note that all OAuth requests **m​ust**​ be in HTTPS.
 

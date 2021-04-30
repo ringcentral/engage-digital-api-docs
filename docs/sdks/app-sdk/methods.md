@@ -247,13 +247,13 @@ SMCC.Content.mark({
 ```
 
 Here is how the message looks like when not marked (ie: when #mark method is not invoked):
-<img class="img-fluid" width="100%" src="../../img/app-sdk-message-not-marked.png">
+<img class="img-fluid" width="100%" src="../../../img/app-sdk-message-not-marked.png">
 
 Here is how the message looks like when marked:
-<img class="img-fluid" width="100%" src="../../img/app-sdk-message-marked.png">
+<img class="img-fluid" width="100%" src="../../../img/app-sdk-message-marked.png">
 
 When the customer id is clicked, the message is rendered on the console:
-<img class="img-fluid" width="700" src="../../img/app-sdk-message-rendered.png">
+<img class="img-fluid" width="700" src="../../../img/app-sdk-message-rendered.png">
 
 ### SMCC.Content.onArchive(callback())
 
@@ -318,7 +318,7 @@ invoked with created content instance as `this` context. |
 
 Here is what are `extra actions`:
 
-<img class="img-fluid" width="147" src="../../img/app-sdk-extra-actions.png">
+<img class="img-fluid" width="147" src="../../../img/app-sdk-extra-actions.png">
 
 ### SMCC.Content.onComposeContent(callback())
 
@@ -386,7 +386,7 @@ SMCC.Content.onExtraActionsShow(function() {
 
 Renders a new test button in the drop down:
 
-<img class="img-fluid" width="154" src="../../img/app-sdk-test-button.png">
+<img class="img-fluid" width="154" src="../../../img/app-sdk-test-button.png">
 
 ### SMCC.Content#id()
 
@@ -413,7 +413,7 @@ An object ID or null.
 
 The `SMCC.ContentForm` namespace contains methods to deal with the message reply form.
 
-<img class="img-fluid" width="645" src="../../img/app-sdk-reply-form.png">
+<img class="img-fluid" width="645" src="../../../img/app-sdk-reply-form.png">
 
 ### SMCC.ContentForm.insert(text)
 
@@ -514,7 +514,7 @@ Boolean
 The `SMCC.IdentityDetails` namespace represents the modal window when an identity is clicked on
 the UI. Here is an example:
 
-<img class="img-fluid" width="645" src="../../img/app-sdk-identity-card.png">
+<img class="img-fluid" width="645" src="../../../img/app-sdk-identity-card.png">
 
 ### SMCC.IdentityDetails.list()
 
@@ -606,7 +606,7 @@ SMCC.IdentityDetails.onLoad(function() {
 });
 ```
 
-<img class="img-fluid" width="597" src="../../img/app-sdk-identity-card-test-tab.png">
+<img class="img-fluid" width="597" src="../../../img/app-sdk-identity-card-test-tab.png">
 
 ### SMCC.IdentityDetails#identityGroupId()
 
@@ -1005,7 +1005,7 @@ Renders a message like standard javascript alert function.
 SMCC.UI.alert("This is an example");
 ```
 
-<img class="img-fluid" width="344" src="../../img/app-sdk-ui-alert.png">
+<img class="img-fluid" width="344" src="../../../img/app-sdk-ui-alert.png">
 
 ### SMCC.UI.confirm(message[, options])
 
@@ -1034,7 +1034,7 @@ SMCC.UI.confirm("Do you confirm?", {
 })
 ```
 
-<img class="img-fluid" width="347" src="../../img/app-sdk-ui-confirm.png">
+<img class="img-fluid" width="347" src="../../../img/app-sdk-ui-confirm.png">
 
 ### SMCC.UI.composeContent()
 
@@ -1056,7 +1056,7 @@ none
 SMCC.UI.composeContent();
 ```
 
-<img class="img-fluid" width="151" src="../../img/app-sdk-compose-content-1.png">
+<img class="img-fluid" width="151" src="../../../img/app-sdk-compose-content-1.png">
 
 ```javascript
 SMCC.UI.composeContent({
@@ -1067,7 +1067,7 @@ SMCC.UI.composeContent({
 });
 ```
 
-<img class="img-fluid" width="600" src="../../img/app-sdk-compose-content-2.png">
+<img class="img-fluid" width="600" src="../../../img/app-sdk-compose-content-2.png">
 
 ### SMCC.UI.executeSearch(query)
 
@@ -1165,17 +1165,17 @@ SMCC.UI.prompt('Please type your age', {
 })
 ```
 
-<img class="img-fluid" width="347" src="../../img/app-sdk-ui-prompt.png">
+<img class="img-fluid" width="347" src="../../../img/app-sdk-ui-prompt.png">
 
 On invalid entry:
 
-<img class="img-fluid" width="347" src="../../img/app-sdk-ui-prompt-error.png">
+<img class="img-fluid" width="347" src="../../../img/app-sdk-ui-prompt-error.png">
 
 ## SMCC.Window
 
 The SMCC.Window namespace represents a modal window that can be rendered from any page, example:
 
-<img class="img-fluid" width="655" src="../../img/app-sdk-window.png">
+<img class="img-fluid" width="655" src="../../../img/app-sdk-window.png">
 
 ### SMCC.Window.acceptPostMessageOrigin(origin)
 

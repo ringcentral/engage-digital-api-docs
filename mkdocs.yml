@@ -69,9 +69,22 @@ pages:
     - 'Receiving Events': webhooks/receive.md
     - 'Event Types': webhooks/events.md
   - 'SDKs':
-    - 'Engage Digital SDKs and Sample Apps': sdks.md
-    - 'Engage Digital App SDK':
-      - 'Overview': app-sdk/index.md
-      - 'Configuration and Development': app-sdk/config.md
-      - 'Methods': app-sdk/methods.md
+    - 'Engage Digital SDKs and Sample Apps': sdks/index.md
+    - 'App SDK':
+      - 'Overview': sdks/app-sdk/index.md
+      - 'Configuration and Development': sdks/app-sdk/config.md
+      - 'Methods': sdks/app-sdk/methods.md
+    - 'Source SDK':
+      - 'Overview': sdks/source-sdk/index.md
+      - 'Getting Started': sdks/source-sdk/quick-start.md
+      - 'Workflow': sdks/source-sdk/workflow.md
+      - 'Polling': sdks/source-sdk/polling.md
+      - 'Send API': sdks/source-sdk/send-api.md
+      - 'Request/Response': sdks/source-sdk/request-response.md
+      - 'Objects': sdks/source-sdk/objects.md
+      - 'Actions': sdks/source-sdk/actions.md
+      - 'Action Details': sdks/source-sdk/action-details.md
+      - 'Options': sdks/source-sdk/options.md
+      - 'Locales': sdks/source-sdk/locales.md
+      - 'Structured Messages': sdks/source-sdk/structured-messages.md
   - 'Postman': postman.md
