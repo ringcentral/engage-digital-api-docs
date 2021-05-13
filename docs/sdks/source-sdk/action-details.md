@@ -117,7 +117,7 @@ We'll always retry to send the message after a message level error. If you want 
 ```
 
 !!! alert "Please Note"
-   Right now we'll try to destroy a content 3 times, if anything goes wrong, before giving up.
+    Right now we'll try to destroy a content 3 times, if anything goes wrong, before giving up.
 
 ### list
 

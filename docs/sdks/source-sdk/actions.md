@@ -9,7 +9,7 @@ Available actions are supplied in 2 contexts:
 
 The reason for this is so that we know all implemented features for a specific collection, while being able to allow you to say when a particular action cannot be applied to a specific object instance. For example `unpublish` might be implemented for `messages`, but you only allow messages created by a certain category of users to be unpublished.
 
-For details about the parameters and response for each action please the [Actions details](../action-details.md) page. If you want to better understand how actions work it would be better to read this page first.
+For details about the parameters and response for each action please the [Actions details](../action-details) page. If you want to better understand how actions work it would be better to read this page first.
 
 ## Standard vs Custom
 

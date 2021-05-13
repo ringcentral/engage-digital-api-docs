@@ -178,7 +178,7 @@ In the case of real time integration, once polling has been implemented, it is n
 
 To create a message in real time from the third party:
 
-##### Reqeust from You
+##### Request from You
 ```json
 {
   "action": "messages.create", // or private_messages.create
@@ -276,7 +276,7 @@ For more informations regarding the Message / Private Message and User context d
 * [Private message](../objects/#privatemessages)
 * [User](../objects/#users)
 
-### User Management
+### User Management - Agents Replying to Source SDK Messages
 
 If you need to create agent messages directly via the Source SDK (import of already existing messages, bot directly connected to the Source SDK, ...), you can specify that the user linked to the message must be considered as an agent on the Engage Digital side. For this there is a **puppetizable field** that can be set in the User object, you have to set it to `true` for users that should be considered as agents and to `false` (default value) for customers. This will ensure that messages will be correctly recognized in the Engage Digital GUI.
 
@@ -286,3 +286,97 @@ For more informations regarding User **puppetizable field**, you can check the o
 
 !!! important
     You need to set the **puppetizable field** one time at the beginning of the project to create an identity used by all the agents to reply on the Source SDK channel. This is a requirement to enable agents to reply from the Engage Digital console.
+
+Enabling agents to respond to messages coming from the Source SDK integration will need a few things setup to operate the way you want it to.  First you need to initialize an agent with an initial request to create a user identity.  As stated above, you will need the **puppetizable field** set so you can create an identity that is controlled by your agents.  Let's start with the first message you send to Engage Digital.
+
+```json
+{
+    "action": "users.create",
+    "params": {
+      "id": "1234",
+      "firstname": "Elliot",
+      "lastname": "Alderson",
+      "screenname": "Mr. Robot",
+      "puppetizable": true,
+      "created_at": "06/11/2017"
+    }
+}
+```
+
+The initial request you send to Engage Digital is a request to identify the agent in the source. Use the above JSON body in your request to Engage Digital with some key notes:
+
+* The `id` is unique to this agent/bot. Make sure this is the ID you want the agent to pickup.
+* This user needs to be managed by the agent in Engage Digital. This mean you must set `puppetizable:true` for the next step.
+
+Once you send this request, a new user identity is created. You'll find user identities under "Digital"->"Identities".
+
+<img class="img-fluid" width="486" src="../../../img/source-sdk-identities-menu.png">
+
+Then you can select the user identity you just created.
+
+<img class="img-fluid" width="1518" src="../../../img/source-sdk-identity.png">
+
+Check the checkbox to make this a controlled user identity.
+
+<img class="img-fluid" width="652" src="../../../img/source-sdk-controlled-identity.png">
+
+And finallly assign this identity to your agent by going to "Agents" and selecting the agents you wish to assign this identity to so they can respond.
+
+<img class="img-fluid" width="1135" src="../../../img/source-sdk-select-agent.png">
+
+<img class="img-fluid" width="605" src="../../../img/source-sdk-edit-identity.png">
+
+You'll do this for each agent you want to respond to messages from this Source SDK. Now your agent(s) can reply to messages, but there's still a few more steps. By default, agents replying to messages through the Source SDK must click "Reply" and type their message in a pop-up window.
+
+<img class="img-fluid" width="613" src="../../../img/source-sdk-reply-msg.png">
+
+A modal dialog box will pop-up for the agent to respond.
+
+<img class="img-fluid" width="600" src="../../../img/source-sdk-reply-dialog.png">
+
+This is the default experience for agents. If you want have an inline experience with simple text responses, you need to make sure the response to the implementation.info specifies those options. The follow JSON response shows an example of using `view.messaging` to have a respond box appear at the bottom of the threaded conversation and `messages.text` simplifies the respond box to simple text.
+
+```json
+{
+    "objects":
+    {
+        "messages": ["create", "show", "list"],
+    },
+    "options": ["view.messaging", "messages.text"]
+}
+```
+
+Then your agents can respond with this familiar look and feel.
+
+<img class="img-fluid" width="600" src="../../../img/source-sdk-agent-reply.png">
+
+Now when an agent responds to a message, that message will be sent to your Base URI endpoint. When you receive this message, the message will be in JSON format like below.
+
+```json
+{
+  "action": "messages.create",
+  "params": {
+    "author_id": "1234",
+    "body": "Yes I can.",
+    "created_at": "2021-05-13T01:23:25Z",
+    "format": "text",
+    "in_reply_to_id": "132",
+    "sender_name": "Craig Chan",
+    "thread_id": "23456",
+    "title": null,
+    "updated_at": "2021-05-13T01:21:25Z"
+  },
+  "time": "2021-05-13T01:23:25Z"
+}
+```
+
+We need to confirm the message was received by a response from your Source SDK. Create a response with the following in the JSON body.
+
+```json
+{
+    "id": "132",
+    "body": "Yes I can."
+}
+```
+
+Notice the `id` is the `in_reply_to_id` sent to you and you are just mirroring back the message body.
