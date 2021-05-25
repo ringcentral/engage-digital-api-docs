@@ -1046,7 +1046,7 @@
                       "disabled": true
                     },
                     {
-                      "key": "emails",
+                      "key": "emails[]",
                       "value": "\u003carray.string.csv\u003e",
                       "description": "Identity emails (multiple).",
                       "disabled": true
@@ -1064,7 +1064,7 @@
                       "disabled": true
                     },
                     {
-                      "key": "home_phones",
+                      "key": "home_phones[]",
                       "value": "\u003carray.string.csv\u003e",
                       "description": "Identity home phones (mutiple).",
                       "disabled": true
@@ -1076,7 +1076,7 @@
                       "disabled": true
                     },
                     {
-                      "key": "mobile_phones",
+                      "key": "mobile_phones[]",
                       "value": "\u003carray.string.csv\u003e",
                       "description": "Identity mobile phones (multiple).",
                       "disabled": true
@@ -1088,7 +1088,7 @@
                       "disabled": true
                     },
                     {
-                      "key": "tag_ids",
+                      "key": "tag_ids[]",
                       "value": "\u003carray.string.csv\u003e",
                       "description": "Identity tag ids (multiple).",
                       "disabled": true
@@ -1326,8 +1326,8 @@
                     },
                     {
                       "key": "identity_id",
-                      "value": "\u003carray.string.csv\u003e",
-                      "description": "To filter interventions on given identity_id(s). Can be a single value or an array.",
+                      "value": "\u003cstring\u003e",
+                      "description": "To filter interventions on given identity_id(s). Can be a single value or an array of string.",
                       "disabled": true
                     },
                     {
@@ -2345,7 +2345,7 @@
                       "disabled": true
                     },
                     {
-                      "key": "choices",
+                      "key": "choices[]",
                       "value": "\u003carray.string.csv\u003e",
                       "description": "A list of choices to be for single_choice, or multiple_choice types. This must be given",
                       "disabled": true
@@ -2455,7 +2455,7 @@
                       "disabled": true
                     },
                     {
-                      "key": "choices",
+                      "key": "choices[]",
                       "value": "\u003carray.string.csv\u003e",
                       "disabled": true
                     },
@@ -3021,7 +3021,7 @@
                       "disabled": true
                     },
                     {
-                      "key": "source_ids",
+                      "key": "source_ids[]",
                       "value": "\u003carray.string.csv\u003e",
                       "description": "Source ids (array)",
                       "disabled": true
@@ -4757,7 +4757,7 @@
                       "disabled": true
                     },
                     {
-                      "key": "source_ids",
+                      "key": "source_ids[]",
                       "value": "\u003carray.string.csv\u003e",
                       "description": "An array containing id of each source using your time sheet.",
                       "disabled": true
@@ -5238,7 +5238,7 @@
                   ],
                   "query": [
                     {
-                      "key": "category_ids",
+                      "key": "category_ids[]",
                       "value": "\u003carray.string.csv\u003e",
                       "description": "User list of category ids (multiple).",
                       "disabled": true
@@ -5274,7 +5274,7 @@
                       "disabled": true
                     },
                     {
-                      "key": "identity_ids",
+                      "key": "identity_ids[]",
                       "value": "\u003carray.string.csv\u003e",
                       "description": "User list of identity ids (multiple).",
                       "disabled": true
@@ -5304,7 +5304,7 @@
                       "disabled": true
                     },
                     {
-                      "key": "team_ids",
+                      "key": "team_ids[]",
                       "value": "\u003carray.string.csv\u003e",
                       "description": "User list of team ids (multiple).",
                       "disabled": true
@@ -5316,7 +5316,7 @@
                       "disabled": true
                     },
                     {
-                      "key": "spoken_languages",
+                      "key": "spoken_languages[]",
                       "value": "\u003carray.string.csv\u003e",
                       "description": "List of locales corresponding to the languages spoken by the user (multiple).",
                       "disabled": true
@@ -5948,25 +5948,25 @@
                   ],
                   "query": [
                     {
-                      "key": "source_ids",
+                      "key": "source_ids[]",
                       "value": "\u003carray.string.csv\u003e",
                       "description": "To filter users on given source ids (based on reply permission).",
                       "disabled": true
                     },
                     {
-                      "key": "category_ids",
+                      "key": "category_ids[]",
                       "value": "\u003carray.string.csv\u003e",
                       "description": "To filter users on given category ids.",
                       "disabled": true
                     },
                     {
-                      "key": "team_ids",
+                      "key": "team_ids[]",
                       "value": "\u003carray.string.csv\u003e",
                       "description": "To filter users on given team ids.",
                       "disabled": true
                     },
                     {
-                      "key": "spoken_languages",
+                      "key": "spoken_languages[]",
                       "value": "\u003carray.string.csv\u003e",
                       "description": "To filter users on given locales.",
                       "disabled": true
@@ -6155,7 +6155,7 @@
                       "disabled": true
                     },
                     {
-                      "key": "source_ids",
+                      "key": "source_ids[]",
                       "value": "\u003carray.string.csv\u003e",
                       "description": "An array containing id of each source assigned to a channel (multiple).",
                       "disabled": true
@@ -6766,7 +6766,7 @@
                   ],
                   "query": [
                     {
-                      "key": "agent_ids",
+                      "key": "agent_ids[]",
                       "value": "\u003carray.string.csv\u003e",
                       "description": "List of agents to transfer the task to (multiple).",
                       "disabled": true
@@ -6778,7 +6778,7 @@
                       "disabled": true
                     },
                     {
-                      "key": "category_ids",
+                      "key": "category_ids[]",
                       "value": "\u003carray.string.csv\u003e",
                       "description": "Filter agents receiving the task depending on their categories.",
                       "disabled": true
@@ -6790,7 +6790,7 @@
                       "disabled": true
                     },
                     {
-                      "key": "team_ids",
+                      "key": "team_ids[]",
                       "value": "\u003carray.string.csv\u003e",
                       "description": "Filter agents receiving the task depending on their teams.",
                       "disabled": true
