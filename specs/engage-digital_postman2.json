@@ -4145,7 +4145,7 @@
                       "disabled": true
                     },
                     {
-                      "key": "intervention_rates",
+                      "key": "intervention_rates[]",
                       "value": "\u003carray.integer\u003e",
                       "description": "(Array of times in seconds)",
                       "disabled": true
