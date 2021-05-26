@@ -4148,7 +4148,7 @@ paths:
             type: integer
         - description: (Array of times in seconds)
           in: query
-          name: intervention_rates
+          name: 'intervention_rates[]'
           required: false
           schema:
             items:
