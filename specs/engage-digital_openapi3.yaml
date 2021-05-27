@@ -493,7 +493,7 @@ paths:
             An array containing id of each source assigned to a channel
             (multiple).
           in: query
-          name: source_ids
+          name: 'source_ids[]'
           required: false
           schema:
             items:
@@ -1369,7 +1369,7 @@ paths:
             This must be given
           explode: true
           in: query
-          name: choices
+          name: 'choices[]'
           required: false
           schema:
             items:
@@ -1473,7 +1473,7 @@ paths:
             type: string
         - explode: true
           in: query
-          name: choices
+          name: 'choices[]'
           required: false
           schema:
             items:
@@ -2011,7 +2011,7 @@ paths:
         - description: Identity emails (multiple).
           explode: true
           in: query
-          name: emails
+          name: 'emails[]'
           required: false
           schema:
             items:
@@ -2035,7 +2035,7 @@ paths:
         - description: Identity home phones (mutiple).
           explode: true
           in: query
-          name: home_phones
+          name: 'home_phones[]'
           required: false
           schema:
             items:
@@ -2050,7 +2050,7 @@ paths:
         - description: Identity mobile phones (multiple).
           explode: true
           in: query
-          name: mobile_phones
+          name: 'mobile_phones[]'
           required: false
           schema:
             items:
@@ -2065,7 +2065,7 @@ paths:
         - description: Identity tag ids (multiple).
           explode: true
           in: query
-          name: tag_ids
+          name: 'tag_ids[]'
           required: false
           schema:
             items:
@@ -2260,15 +2260,13 @@ paths:
             type: string
         - description: >-
             To filter interventions on given identity_id(s). Can be a single
-            value or an array.
+            value or an array of string.
           explode: true
           in: query
           name: identity_id
           required: false
           schema:
-            items:
-              type: string
-            type: array
+            type: string
         - description: >-
             To change the criteria chosen to sort the interventions. The value
             can be “created_at” or “updated_at”.
@@ -3093,7 +3091,7 @@ paths:
         - description: Source ids (array)
           explode: true
           in: query
-          name: source_ids
+          name: 'source_ids[]'
           required: false
           schema:
             items:
@@ -4150,7 +4148,7 @@ paths:
             type: integer
         - description: (Array of times in seconds)
           in: query
-          name: intervention_rates
+          name: 'intervention_rates[]'
           required: false
           schema:
             items:
@@ -4312,7 +4310,7 @@ paths:
       parameters:
         - description: To filter users on given source ids (based on reply permission).
           in: query
-          name: source_ids
+          name: 'source_ids[]'
           required: false
           schema:
             items:
@@ -4320,7 +4318,7 @@ paths:
             type: array
         - description: To filter users on given category ids.
           in: query
-          name: category_ids
+          name: 'category_ids[]'
           required: false
           schema:
             items:
@@ -4328,7 +4326,7 @@ paths:
             type: array
         - description: To filter users on given team ids.
           in: query
-          name: team_ids
+          name: 'team_ids[]'
           required: false
           schema:
             items:
@@ -4336,7 +4334,7 @@ paths:
             type: array
         - description: To filter users on given locales.
           in: query
-          name: spoken_languages
+          name: 'spoken_languages[]'
           required: false
           schema:
             items:
@@ -4675,7 +4673,7 @@ paths:
         - description: List of agents to transfer the task to (multiple).
           explode: true
           in: query
-          name: agent_ids
+          name: 'agent_ids[]'
           required: false
           schema:
             items:
@@ -4692,7 +4690,7 @@ paths:
         - description: Filter agents receiving the task depending on their categories.
           explode: true
           in: query
-          name: category_ids
+          name: 'category_ids[]'
           required: false
           schema:
             items:
@@ -4709,7 +4707,7 @@ paths:
         - description: Filter agents receiving the task depending on their teams.
           explode: true
           in: query
-          name: team_ids
+          name: 'team_ids[]'
           required: false
           schema:
             items:
@@ -4948,7 +4946,7 @@ paths:
             type: string
         - description: An array containing id of each source using your time sheet.
           in: query
-          name: source_ids
+          name: 'source_ids[]'
           required: false
           schema:
             items:
@@ -5629,7 +5627,7 @@ paths:
       parameters:
         - description: User list of category ids (multiple).
           in: query
-          name: category_ids
+          name: 'category_ids[]'
           required: false
           schema:
             items:
@@ -5670,7 +5668,7 @@ paths:
             type: string
         - description: User list of identity ids (multiple).
           in: query
-          name: identity_ids
+          name: 'identity_ids[]'
           required: false
           schema:
             items:
@@ -5702,7 +5700,7 @@ paths:
             type: string
         - description: User list of team ids (multiple).
           in: query
-          name: team_ids
+          name: 'team_ids[]'
           required: false
           schema:
             items:
@@ -5720,7 +5718,7 @@ paths:
             List of locales corresponding to the languages spoken by the user
             (multiple).
           in: query
-          name: spoken_languages
+          name: 'spoken_languages[]'
           required: false
           schema:
             items:
