@@ -2093,7 +2093,7 @@ paths:
                 items:
                   $ref: '#/components/schemas/UiLocale'
                 type: array
-          description: List of all locales
+          description: List of all UI locales
       summary: Getting all user interface locales
       tags:
         - Locales
@@ -2529,7 +2529,7 @@ paths:
                 items:
                   $ref: '#/components/schemas/Locale'
                 type: array
-          description: List of all locales
+          description: List of all content locales
       summary: Getting all content locales
       tags:
         - Locales
