@@ -2081,6 +2081,22 @@ paths:
       summary: Updating an identity group
       tags:
         - Identity Groups
+  /interface_locales:
+    get:
+      description: This method renders all available locales for user interface.
+      operationId: getAllUiLocales
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/UiLocale'
+                type: array
+          description: List of all UI locales
+      summary: Getting all user interface locales
+      tags:
+        - Locales
   /intervention_comments:
     get:
       description: >-
@@ -2503,7 +2519,7 @@ paths:
         - Interventions
   /locales:
     get:
-      description: This method renders all available locales.
+      description: This method renders all available locales for contents.
       operationId: getAllLocales
       responses:
         '200':
@@ -2513,8 +2529,8 @@ paths:
                 items:
                   $ref: '#/components/schemas/Locale'
                 type: array
-          description: List of all locales
-      summary: Getting all locales
+          description: List of all content locales
+      summary: Getting all content locales
       tags:
         - Locales
   /presence_status:
@@ -8051,6 +8067,12 @@ components:
           format: string
         utc_offset:
           format: integer
+    UiLocale:
+      properties:
+        code:
+          type: string
+        name:
+          type: string
     UserCapacity:
       properties:
         channels:
