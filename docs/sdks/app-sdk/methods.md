@@ -95,15 +95,15 @@ An instance of SMCC.API and then request could be performed.
 
 An ​SMCC.API​instance.
 
-### SMCC.API#[get,post,put,delete](path[, parameters)
+### SMCC.API.\[get,post,put,delete\](path, parameters)
 
-SMCC.API provides 4 instance methods to reach API: ​#get​, #​ post​, #​ put​& ​#delete.​All of them accept the same arguments. They respectively make a `GET`​, ​`POST`​, `PUT`​ and `DELETE`​request on REST API.
+SMCC.API provides 4 instance methods to reach API: ​#get​, #​post​, #​put ​& ​#delete. ​All of them accept the same arguments. They respectively make a `GET`​, ​`POST`​, `PUT`​ and `DELETE` ​request on REST API.
 
 #### Parameters
 
 | Name | Description |
 |-|-|
-| `path` | The path of the request (example: "​ contents"​). Note: the first `/`​ ​is not mandatory. |
+| `path` | The path of the request (example: "​contents"​). Note: the first `/`​ ​is not mandatory. |
 | `parameters` | The parameters of the request. |
 
 !!! info "Parameters Interpolation"
