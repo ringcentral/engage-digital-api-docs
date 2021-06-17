@@ -1771,6 +1771,61 @@
                 ],
                 "description": "This method updates an existing source from given attributes and renders it in case of success."
               }
+            },
+            {
+              "name": "Updating source credentials",
+              "request": {
+                "url": {
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/content_sources/:sourceId/email_credentials",
+                  "host": [
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
+                  ],
+                  "path": [
+                    "1.0",
+                    "content_sources",
+                    ":sourceId",
+                    "email_credentials"
+                  ],
+                  "query": [
+                    {
+                      "key": "imap[username]",
+                      "value": "\u003cstring\u003e",
+                      "description": "IMAP username",
+                      "disabled": true
+                    },
+                    {
+                      "key": "imap[password]",
+                      "value": "\u003cstring\u003e",
+                      "description": "IMAP password",
+                      "disabled": true
+                    },
+                    {
+                      "key": "smtp[username]",
+                      "value": "\u003cstring\u003e",
+                      "description": "SMTP username",
+                      "disabled": true
+                    },
+                    {
+                      "key": "smtp[password]",
+                      "value": "\u003cstring\u003e",
+                      "description": "SMTP password",
+                      "disabled": true
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "description": "This method updates credentials for IMAP and SMTP adapters of email sources. In case of success it renders the content source, otherwise, it renders an error (422 HTTP code)."
+              }
             }
           ]
         },
