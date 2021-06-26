@@ -7,7 +7,6 @@ info:
   contact:
     name: RingCentral
     url: https://developers.ringcentral.com/engage/api-products
-    email: devsupport@ringcentral.com
 servers:
   - url: 'https://{account_name}.api.{platform_hostname}/1.0'
     description: API server endpoint

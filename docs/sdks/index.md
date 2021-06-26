@@ -37,7 +37,7 @@ Source SDKs and Frameworks allow connection of Engage Digital to other messaging
 
 In addition to the official RingCentral SDKs there are a number of unofficial libraries, plugins and sample apps for a range of languages built by amazing communities of active developers. The list below includes libraries and apps for the RingCentral Engage Digital APIs.
 
-If you’ve built your own RingCentral Engage Digital library, plugin, or open source app, please [get in touch](mailto:devsupport@ringcentral.com) and we’ll add it to this list.
+If you’ve built your own RingCentral Engage Digital library, plugin, or open source app, please [file a help ticket with our support team](https://developers.ringcentral.com/support/create-case) and we'll evaluate it for this list.
 
 Some of these integrations may be incomplete. Feedback and bugs should be directed to their representative authors.
 
