@@ -27,6 +27,18 @@ When a customer initiates a conversation via a source, this results in the creat
 
 When an agent chooses to engage with a customer within a thread, they create an "intervention." An intervention is in many ways synonymous with a "ticket" or "case." An intervention remains in an open status until the agent has successfully resolved the issue and set the disposition accordingly.
 
+## Web Messaging
+
+RingCentral Engage offers a fully integrated three-in-one source called **Engage Messaging**:
+
+* Live Chat mode: This is a real time web chat channel.
+* Messaging mode: This is an asynchronous web chat channel.
+* Mobile mode: This is an asynchronous in-app mobile messaging solution.
+
+When the source is configured as messaging, the conversation histories are shared between the web and mobile channels. The 2 web chat channels also feature a proactive mode that allows a fine targeting of visitors being engaged.
+
+Learn more about creating a [web messaging channel]() so customers can interact with agents right from their browser.
+
 ## Engage Bots
 
 An Engage Bot is a specific kind of Engage integration that help developers build automated interactions. A bot follows this simple flow:
