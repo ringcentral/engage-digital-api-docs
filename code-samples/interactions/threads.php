@@ -1,5 +1,5 @@
 <?php
-$SERVER = "https://<YOUR-DOMAIN>.digital.ringcentral.com";
+$SERVER = "https://<YOUR-DOMAIN>.api.digital.ringcentral.com";
 $ACCESS_TOKEN = '<API-ACCESS-TOKEN>';
 $API = "/1.0/content_threads";
 
