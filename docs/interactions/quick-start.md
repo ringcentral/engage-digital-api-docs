@@ -25,7 +25,7 @@ Make note of the access token generated as you will need it later.
 
 === "Javascript"
 
-    Create a file called `threads.js`. Be sure to edit the variables in &lt;ALL CAPS&gt; with your app's credentials.
+    Create a file called `threads.js`. Be sure to edit the variables in &lt;ALL CAPS&gt; with your app's credentials. You can find information about **&lt;YOUR-DOMAIN&gt;** when you login into Engage Digital Admin portal. Copy the first part before the "." from the url which should look like : `https://xyz.digital.ringcentral.com`. So in this case the your domain is "xyz".
 
     ```javascript
     {!> code-samples/interactions/threads.js !}
@@ -41,7 +41,7 @@ Make note of the access token generated as you will need it later.
 
 === "Python"
 
-    Create a file called `threads.py`. Be sure to edit the variables in &lt;ALL CAPS&gt; with your app's credentials.
+    Create a file called `threads.py`. Be sure to edit the variables in &lt;ALL CAPS&gt; with your app's credentials. You can find information about **&lt;YOUR-DOMAIN&gt;** when you login into Engage Digital Admin portal. Copy the first part before the "." from the url which should look like : `https://xyz.digital.ringcentral.com`. So in this case the your domain is "xyz".
 
     ```python
     {!> code-samples/interactions/threads.py !}
@@ -57,7 +57,7 @@ Make note of the access token generated as you will need it later.
 
 === "PHP"
 
-    Create a file called `threads.php`. Be sure to edit the variables in &lt;ALL CAPS&gt; with your app's credentials.
+    Create a file called `threads.php`. Be sure to edit the variables in &lt;ALL CAPS&gt; with your app's credentials. You can find information about **&lt;YOUR-DOMAIN&gt;** when you login into Engage Digital Admin portal. Copy the first part before the "." from the url which should look like : `https://xyz.digital.ringcentral.com`. So in this case the your domain is "xyz".
 
     ```php
     {!> code-samples/interactions/threads.php !}
@@ -73,7 +73,7 @@ Make note of the access token generated as you will need it later.
 
 === "Ruby"
 
-    Create a file called `threads.rb`. Be sure to edit the variables in &lt;ALL CAPS&gt; with your app's credentials.
+    Create a file called `threads.rb`. Be sure to edit the variables in &lt;ALL CAPS&gt; with your app's credentials. You can find information about **&lt;YOUR-DOMAIN&gt;** when you login into Engage Digital Admin portal. Copy the first part before the "." from the url which should look like : `https://xyz.digital.ringcentral.com`. So in this case the your domain is "xyz".
 
     ```ruby
     {!> code-samples/interactions/threads.rb !}

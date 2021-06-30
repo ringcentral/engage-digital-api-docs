@@ -1,6 +1,6 @@
 require 'faraday'
 
-SERVER = "https://<YOUR-DOMAIN>.api.engagement.dimelo.com/"
+SERVER = "https://<YOUR-DOMAIN>.api.digital.ringcentral.com"
 ACCESS_TOKEN = '<API-ACCESS-TOKEN>'
 API = "/1.0/content_threads"
 
