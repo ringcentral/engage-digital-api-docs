@@ -77,7 +77,7 @@ Otherwise, it will be converted to a Generic Template in Facebook Messenger.
 
 | API Property | Specificity |
 |-|-|
-| **`structured_content.attachment_id`** | Supports bmp, gif, jpg, jpeg, png formats. [Upload attachments](../../../basics/uploads) for you own custom images. |
+| **`structured_content.attachment_id`** | Supports bmp, gif, jpg, jpeg, png formats. Supports private attachments. [Upload attachments](../../../basics/uploads) for you own custom images. |
 | **`structured_content.url_text`** | **Ignored** property. |
 | **`structured_content.items`** | A maximum of 3 items is supported. |
 | **`structured_content.title`** | Truncated to 80 characters. |
@@ -112,3 +112,4 @@ Primary parameters are used by default, however, some parameters are unique or o
 | **`structured_content.url_text`** | Ignored property. |
 | **`structured_content.items.title`** | Truncated to 25 characters. |
 | **`structured_content.items.payload`** | Automatically gets populated as a random hex if blank. |
+| **`structured_content.attachment_id`** | Supports private attachments. |
