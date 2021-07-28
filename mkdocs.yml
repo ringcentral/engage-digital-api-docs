@@ -51,6 +51,7 @@ pages:
       - 'Time Select': interactions/structured-messages/time-select.md
       - 'Apple Pay': interactions/structured-messages/apple-pay.md
       - 'Apple Authentcate': interactions/structured-messages/apple-auth.md
+      - 'Webview SDK': interactions/structured-messages/webview-sdk.md
   - 'Routing':
     - 'Overview': routing/index.md
     - 'Getting Started': routing/quick-start.md
