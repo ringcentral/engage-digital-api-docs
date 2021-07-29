@@ -34,9 +34,12 @@ window.rcedWebviewSdkLoaded = function(sdk) {
 
 ## Available methods
 
+The SDK instance responds to the following methods:
 ### supportFeature
 
-This method takes a string as a parameter and returns `true` if the channel that launched the webview supports it or `false` otherwise.
+This method takes a string corresponding to a feature name as a parameter and returns `true` if the channel that launched the webview supports it or `false` otherwise.
+
+Even if a feature is not supported, an empty method with its name is still available.
 
 Usage:
 ```javascript
@@ -50,6 +53,8 @@ function rcedWebviewSdkLoaded(sdk) {
 ### close
 
 This method will close the webview if the channel that launched the webview supports it or do nothing otherwise.
+
+This method doesn't return anything.
 
 Usage:
 ```javascript
