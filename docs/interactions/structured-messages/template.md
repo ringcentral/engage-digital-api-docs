@@ -19,10 +19,11 @@ curl -X POST "https://[YOUR DOMAIN].api.digital.ringcentral.com/1.0/contents"
     "title": "Ringcentral, Inc.",
     "subtitle": "Cloud Business Communications.",
     "url": "github://github.com/ringcentral",
+    "target": "open",
     "url_fallback": "https://github.com/ringcentral",
     "url_text": "Github",
     "items": [
-      { "title": "Go to website", "type": "url", "url": "github://github.com/ringcentral", "url_fallback": "https://github.com/ringcentral" },
+      { "title": "Go to website", "type": "url", "url": "github://github.com/ringcentral", "url_fallback": "https://github.com/ringcentral", "target": "webview" },
       { "title": "Ok", "type": "reply" },
       { "title": "Give me more", "type": "reply", "payload": "more" }
     ]
@@ -96,6 +97,8 @@ Primary parameters are used by default, however, some parameters are unique or o
 |-|-|
 | **`structured_content.attachment_id`** | Supports gif, jpg, jpeg, png formats. Supports private attachments. [Upload attachments](../../../basics/uploads) for you own custom images.<br>On Engage Messaging Web, if the width of the image is bigger than the height, it will be displayed with a 5:3 ratio. Otherwise, a 1:1 ratio will be used.<br>Minimal recommended size with a 1:1 ratio: **258x258**<br>Minimal recommended size with a 5:3 ratio: **258x155** |
 | **`structured_content.url`** | Deep links are supported. |
+| **`structured_content.target`** | String | **Optional**. **Ignored** when the **url** is empty. Behavior applied when clicking on the url. Can be **webview** to open url on a webview above the chat, **open** to open url in new tab, or  **current** to open url in current tab. Defaults to **open** when not specified.|
+| **`structured_content.items.target`** | String | **Optional** when the type is "url". **Ignored** when the type is "reply". Behavior applied when clicking on the item link. Can be **webview** to open on a webview above the chat, **open** to open in new tab, or  **current** to open in current tab. Defaults to **open** when not specified.|
 
 ## Example: Google Business Messages (Rich Card)
 
