@@ -109,7 +109,7 @@ Primary parameters are used by default, however, some parameters are unique or o
 |-|-|-|
 | **Structured Content Settings** | | |
 | **`structured_content.subtitle`** | String | **Optional**. The subtitle field.<br>Limited to 512 characters.  |
-| **`structured_content.attachment_id`** | String | **Optional**. Existing attachment id used to decorate the structured message with an image. [Upload attachments](../../../basics/uploads) for you own custom images. Supports private attachments.  |
+| **`structured_content.attachment_id`** | String | **Optional**. Existing attachment id used to decorate the structured message with an image. Supports private attachments. [Upload attachments](../../../basics/uploads) for you own custom images. |
 | **`structured_content.attachment_fallback_id`** | String | **Optional**. Fallback in case the attachment related to the attachment_id doesn’t meet the source requirements. Must be public. Only jpg, jpeg, png formats. Maximum size of 5 MB. [Upload attachments](../../../basics/uploads) for you own custom images. |
 | **`structured_content.sections`** | Array | **Optional**. An array of sections in which the items will be organized. If blank, every item will be part of the same section. |
 | **Section Settings** | | |
@@ -118,7 +118,7 @@ Primary parameters are used by default, however, some parameters are unique or o
 | **`structured_content.sections.identifier`** | String | Identifier of the section that will be used to organize items in the section. |
 | **Item Settings** | | |
 | **`structured_content.items.section_identifier`** | String | **Optional**. The identifier of the section where the item is. If the sections field is blank, the section_identifier field should be removed.  |
-| **`structured_content.items.attachment_id`** | String | **Optional**. Existing attachment id used to decorate the item with an image. [Upload attachments](../../../basics/uploads) for you own custom images. Supports private attachments. |
+| **`structured_content.items.attachment_id`** | String | **Optional**. Existing attachment id used to decorate the item with an image. Supports private attachments. [Upload attachments](../../../basics/uploads) for you own custom images. |
 | **`structured_content.items.attachment_fallback_id`** | String | **Optional**. Fallback in case the attachment related to the attachment_id doesn’t meet the source requirements. Must be public. Only jpg, jpeg, png formats. Maximum size of 5 MB. [Upload attachments](../../../basics/uploads) for you own custom images. |
 | **`structured_content.items.subtitle`** | String | **Optional**. The subtitle of the item. Limited to 512 characters. |
 
@@ -163,7 +163,7 @@ Primary parameters are used by default, however, some parameters are unique or o
 | API Property | Type | Description |
 |-|-|-|
 | **`items.title`** | String | The title of the item. *Truncated to 20 characters.* |
-| **`items.attachment_id`** | String | **Optional**. Existing attachment id used to decorate the item in the list. [Upload attachments](../../../basics/uploads) for you own custom images. |
+| **`items.attachment_id`** | String | **Optional**. Existing attachment id used to decorate the item in the list. Supports private attachments. [Upload attachments](../../../basics/uploads) for you own custom images. |
 | **`items.attachment_fallback_id`** | String | **Optional**. Fallback in case the attachment related to the attachment_id doesn’t meet the source requirements. Must be public. Only jpg, jpeg, png formats. Maximum size of 5 MB. [Upload attachments](../../../basics/uploads) for you own custom images. |
 
 ## Example: Engage Messaging (Quick Replies)
