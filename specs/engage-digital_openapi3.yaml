@@ -4089,10 +4089,7 @@ paths:
         - Roles
   /settings:
     get:
-      description: |-
-        This method renders all settings of your domain.
-
-        Authorization​: only users that can update settings.
+      description: This method renders all settings of your domain.
       operationId: getAllSettings
       responses:
         '200':
