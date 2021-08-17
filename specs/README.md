@@ -5,26 +5,26 @@ This folder contains API specifications for Engage Digital.
 Use the following files:
 
 * `engage-digital_openapi3.yaml`: this is the reference spec.
-* `engage-digital_postman2.json`: this spec is auto-generated from the OpenAPI 3 specification, along with `engage-digital_postman2.config.json` and `engage-digital_postman2.base.json` using [`swaggman`](https://github.com/grokify/swaggman).
+* `engage-digital_postman2.json`: this spec is auto-generated from the OpenAPI 3 specification, along with `engage-digital_postman2.config.json` and `engage-digital_postman2.base.json` using [`spectrum`](https://github.com/grokify/spectrum).
 
 The following files are used to generate the Postman collection and are not designed to be used on their own:
 
-* `engage-digital_postman2.config.json`: configuration file for Swaggman Postman Collection generator.
+* `engage-digital_postman2.config.json`: configuration file for Spectrum Postman Collection generator.
 * `engage-digital_postman2.base.json`: 
 
 ## Postman Collection
 
-Use `swaggman` to create the Postman 2.x collection from the OpenAPI 3 API Specification.
+Use `spectrum` to create the Postman 2.x collection from the OpenAPI 3 API Specification.
 
 ### Installation
 
-The following will install the `swaggman` executable in the `~/go/bin` directory.
+The following will install the `spectrum` executable in the `~/go/bin` directory.
 
 ```bash
 $ go get github.com/grokify/spectrum
 ```
 
-This approach requires `go` be installed on your system. See more here: [https://golang.org/](https://golang.org/).
+This approach requires `go` 1.16 minimum be installed on your system. See more here: [https://golang.org/](https://golang.org/).
 
 ### Usage
 

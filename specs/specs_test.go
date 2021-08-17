@@ -3,7 +3,7 @@ package engageapidocs
 import (
 	"testing"
 
-	"github.com/grokify/swaggman/openapi3"
+	"github.com/grokify/spectrum/openapi3"
 )
 
 var specTests = []struct {
