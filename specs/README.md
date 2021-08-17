@@ -21,7 +21,7 @@ Use `swaggman` to create the Postman 2.x collection from the OpenAPI 3 API Speci
 The following will install the `swaggman` executable in the `~/go/bin` directory.
 
 ```bash
-$ go get github.com/grokify/swaggman
+$ go get github.com/grokify/spectrum
 ```
 
 This approach requires `go` be installed on your system. See more here: [https://golang.org/](https://golang.org/).
@@ -31,7 +31,7 @@ This approach requires `go` be installed on your system. See more here: [https:/
 The following example writes the output to `engage-digital_postman2.json`.
 
 ```bash
-$ ~/go/bin/swaggman --config engage-digital_postman2.config.json --basePostmanFile engage-digital_postman2.base.json --openapiFile engage-digital_openapi3.yaml --postmanFile engage-digital_postman2.json
+$ ~/go/bin/spectrum --config engage-digital_postman2.config.json --basePostmanFile engage-digital_postman2.base.json --openapiFile engage-digital_openapi3.yaml --postmanFile engage-digital_postman2.json
 ```
 
 In Postman, set the following environment variables:
