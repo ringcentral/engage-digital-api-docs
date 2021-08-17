@@ -229,10 +229,6 @@ github.com/grokify/simplego v0.30.2 h1:aF53LTpUujx2Yv7nWlRxPG3d360EKNVeg/popSTwJ
 github.com/grokify/simplego v0.30.2/go.mod h1:UKobvO2/X3aFy5fwNUxaW6YFK8A3IKCoIRqtVNhsdZU=
 github.com/grokify/spectrum v1.10.3 h1:0AjAlxwi+tGcO0hM9aY29iSylAj6ZGlPmLWbSuGhDFM=
 github.com/grokify/spectrum v1.10.3/go.mod h1:ZUq/TmfWkRQY6G8XkmsviUJbL7bcSpKIVgWOflqAkTY=
-github.com/grokify/swaggman v1.2.0 h1:Ip0O8Nrdx37KuogGtK81XMq+diPmMJ+ceFpgMbUlpPk=
-github.com/grokify/swaggman v1.2.0/go.mod h1:IO8tKtXjvOkmw09pZG7j/z9yNTF76hqU2dgP+mQ58pE=
-github.com/grokify/swaggman v1.3.0 h1:GI59lD48172rLk2tSXbEeWbYDSH1Kk2J7XvHRMnKvCU=
-github.com/grokify/swaggman v1.3.0/go.mod h1:fRu2OsSj79m3YvgLjaQQ1N9fU2jel4zDSoua3xZZkfc=
 github.com/grpc-ecosystem/go-grpc-middleware v1.0.0/go.mod h1:FiyG127CGDf3tlThmgyCl78X/SZQqEOJBCDaAfeWzPs=
 github.com/grpc-ecosystem/go-grpc-prometheus v1.2.0/go.mod h1:8NvIoxWQoOIhqOTXgfV/d3M/q6VIi02HzZEHgUlZvzk=
 github.com/grpc-ecosystem/grpc-gateway v1.9.0/go.mod h1:vNeuVxBJEsws4ogUvrchl83t/GYV9WGTSLVdBhOQFDY=
