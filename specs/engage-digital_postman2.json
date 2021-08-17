@@ -170,9 +170,9 @@
                       "disabled": true
                     },
                     {
-                      "key": "name",
+                      "key": "label",
                       "value": "\u003cstring\u003e",
-                      "description": "The name of the webhook.",
+                      "description": "The label of the webhook.",
                       "disabled": true
                     },
                     {
@@ -320,9 +320,9 @@
                       "disabled": true
                     },
                     {
-                      "key": "name",
+                      "key": "label",
                       "value": "\u003cstring\u003e",
-                      "description": "The name of the webhook.",
+                      "description": "The label of the webhook.",
                       "disabled": true
                     },
                     {
