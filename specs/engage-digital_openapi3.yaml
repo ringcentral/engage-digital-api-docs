@@ -6231,10 +6231,10 @@ paths:
           required: false
           schema:
             type: boolean
-        - description: The label of the webhook.
+        - description: The name of the webhook.
           in: query
-          name: label
-          required: true
+          name: name
+          required: false
           schema:
             type: string
         - description: >-
@@ -6500,9 +6500,9 @@ paths:
           required: false
           schema:
             type: boolean
-        - description: The label of the webhook.
+        - description: The name of the webhook.
           in: query
-          name: label
+          name: name
           required: false
           schema:
             type: string
@@ -8219,6 +8219,8 @@ components:
         api_access_token:
           $ref: '#/components/schemas/WebhookAccessToken'
         id:
+          type: string
+        name:
           type: string
         registered_events:
           items:
