@@ -4114,7 +4114,7 @@
                     "value": "application/json"
                   }
                 ],
-                "description": "This method renders all settings of your domain.\n\nAuthorization​: only users that can update settings."
+                "description": "This method renders all settings of your domain."
               }
             },
             {
