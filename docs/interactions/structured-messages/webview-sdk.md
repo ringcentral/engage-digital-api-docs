@@ -1,10 +1,14 @@
 # About Webview SDK
 
-This SDK is meant to be used on pages linked to by items with a webview target.
+This SDK is meant to be used on pages linked to by messages/items with a "webview" target.
+
+This kind of target is useful to create specific interactions that are not provided by channels.
+
+The Webview SDK provides a generic way to interact with supported channels that can open your page in a webview which allows you to use the same target on different channels without having to write multiple integrations.
 
 ## Integration
 
-You can load the SDK by adding the folling `script` tag to the page.
+You can load the SDK by adding the following `script` tag to your target page.
 
 ```html
 <script>
@@ -24,11 +28,13 @@ You can load the SDK by adding the folling `script` tag to the page.
 </script>
 ```
 
-Once loaded the SDK will attempt to call the `rcedWebviewSdkLoaded` function if defined. It will be called with the SDK instance
+Once loaded the SDK will attempt to call the `rcedWebviewSdkLoaded` function, if defined. It will be called with the SDK instance as a parameter. You can also access the instance through `RCED.WebviewSDK.instance`
 
+Here's a basic `rcedWebviewSdkLoaded` example:
 ```javascript
 window.rcedWebviewSdkLoaded = function(sdk) {
-  // do something with sdk
+  console.log(sdk === RCED.WebviewSDK.instance) // true
+  // use sdk in your page
 };
 ```
 
@@ -37,15 +43,19 @@ window.rcedWebviewSdkLoaded = function(sdk) {
 The SDK instance responds to the following methods:
 ### supportFeature
 
+This method will tell you if a feature is supported by the opening channel.
+
 This method takes a string corresponding to a feature name as a parameter and returns `true` if the channel that launched the webview supports it or `false` otherwise.
 
 Even if a feature is not supported, an empty method with its name is still available.
 
-Usage:
+Here's a basic example:
 ```javascript
-function rcedWebviewSdkLoaded(sdk) {
+window.rcedWebviewSdkLoaded = function(sdk) {
   if (sdk.supportFeature('close')) {
     // logic that uses the feature
+  } else {
+    sdk.close(); // does not crash, here `close` definition is equivalent to `function() {}`
   }
 }
 ```
@@ -54,11 +64,11 @@ function rcedWebviewSdkLoaded(sdk) {
 
 This method will close the webview if the channel that launched the webview supports it or do nothing otherwise.
 
-This method doesn't return anything.
+This method doesn't take any parameter and doesn't return anything.
 
-Usage:
+Here's a basic example:
 ```javascript
-function rcedWebviewSdkLoaded(sdk) {
+window.rcedWebviewSdkLoaded = function(sdk) {
   sdk.close();
 }
 ```
