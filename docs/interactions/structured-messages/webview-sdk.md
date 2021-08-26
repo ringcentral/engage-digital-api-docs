@@ -72,3 +72,11 @@ window.rcedWebviewSdkLoaded = function(sdk) {
   sdk.close();
 }
 ```
+
+## Integrations specific behavior
+
+Some integrations have extra behavior specific to their related channel. Those are the following.
+
+### Engage Messaging Web
+
+When opening your webview page in Engage Messaging web chat, the title element's text will become the header's text, and any change to your page's title text will be reflected to the header automatically.
