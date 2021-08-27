@@ -9,6 +9,7 @@ The Webview SDK provides a generic way to interact with supported channels that 
 ## Integration
 
 You can load the SDK by adding the following `script` tag to your target page.
+You'll need to replace `<YOUR_DOMAIN>` with your ED domain's name.
 
 ```html
 <script>
@@ -73,10 +74,18 @@ window.rcedWebviewSdkLoaded = function(sdk) {
 }
 ```
 
+## Supported features by channels
+
+Since not every channel supports every feature, you'll find support info in the following table:
+
+|       | Engage Messaging Web | Engage Messaging iOS | Engage Messaging Android | Unsupported channels |
+|:------|:--------------------:|:--------------------:|:--------------------:|:--------------------:|
+| close | Yes                  | Not yet              | Not yet              | No                   |
+
 ## Integrations specific behavior
 
 Some integrations have extra behavior specific to their related channel. Those are the following.
 
 ### Engage Messaging Web
 
-When opening your webview page in Engage Messaging web chat, the title element's text will become the header's text, and any change to your page's title text will be reflected to the header automatically.
+When opening your webview page in Engage Messaging web chat, the title element's text will become the chat webview header's text, and when you change your page's title element's `textContent`, it will change the chat's webview header text.
