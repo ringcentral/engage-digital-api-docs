@@ -6701,6 +6701,8 @@ components:
           type: integer
         author_id:
           type: string
+        auto_submitted:
+          type: boolean
         body:
           type: string
         body_formatted:
@@ -6730,6 +6732,11 @@ components:
           type: string
         creator_id:
           type: string
+        foreign_categories:
+          description: is present only if the content has foreign_categories.
+          items:
+            type: string
+          type: array
         foreign_id:
           type: string
         id:
@@ -6746,6 +6753,9 @@ components:
           type: boolean
         published:
           type: boolean
+        rating:
+          description: is present only if the content supports rating and raiting is filled.
+          type: integer
         remotely_deleted:
           type: boolean
         source_id:
