@@ -6754,7 +6754,7 @@ components:
         published:
           type: boolean
         rating:
-          description: is present only if the content supports rating and raiting is filled.
+          description: is present only if the content supports rating and rating is filled.
           type: integer
         remotely_deleted:
           type: boolean
