@@ -17,8 +17,7 @@ If you would like to contribute to the RingCentral documentation effort, fork th
 ```
 % git clone https://github.com/ringcentral/engage-digital-api-docs.git
 % cd engage-digital-api-docs
-% pip install mkdocs
-% pip install mkdocs-ringcentral
+% pip install mkdocs mkdocs-ringcentral mdx_include
 % mkdocs serve
 ```
 

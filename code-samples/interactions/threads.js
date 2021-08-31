@@ -1,6 +1,6 @@
 var https = require('https')
 
-const SERVER = '<YOUR-DOMAIN>.api.engagement.dimelo.com'
+const SERVER = '<YOUR-DOMAIN>.api.digital.ringcentral.com'
 const ACCESS_TOKEN = '<API-ACCESS-TOKEN>'
 const API = "/1.0/content_threads"
 

@@ -34,6 +34,19 @@ pages:
   - 'Interactions':
     - 'Overview': interactions/index.md
     - 'Getting Started': interactions/quick-start.md
+    - 'Web Messaging':
+      - 'Overview': 'interactions/web-messaging/index.md'
+      - 'Configuring the Community': 'interactions/web-messaging/community.md'
+      - 'Configuring the Source': 'interactions/web-messaging/source.md'
+      - 'Creating Catalog Items': 'interactions/web-messaging/catalog.md'
+      - 'Chat Targeting': 'interactions/web-messaging/chat-targeting.md'
+      - 'Email Notifications': 'interactions/web-messaging/email-notifications.md'
+      - 'Integration to Target': 'interactions/web-messaging/integration.md'
+      - 'Debug & Troubleshooting': 'interactions/web-messaging/debug.md'
+      - 'Customization': 'interactions/web-messaging/customization.md'
+      - 'JavaScript API': 'interactions/web-messaging/javascript-api.md'
+      - 'Attachments': 'interactions/web-messaging/attachments.md'
+      - 'Surveys': 'interactions/web-messaging/surveys.md'
     - 'Chatbots':
       - 'Overview': interactions/chatbots/overview.md
       - 'Implementation': interactions/chatbots/implementation.md

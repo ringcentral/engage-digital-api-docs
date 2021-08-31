@@ -7,7 +7,6 @@ info:
   contact:
     name: RingCentral
     url: https://developers.ringcentral.com/engage/api-products
-    email: devsupport@ringcentral.com
 servers:
   - url: 'https://{account_name}.api.{platform_hostname}/1.0'
     description: API server endpoint
@@ -766,6 +765,54 @@ paths:
                 $ref: '#/components/schemas/Source'
           description: Success
       summary: Updating a source
+      tags:
+        - Sources
+  /content_sources/{sourceId}/email_credentials:
+    put:
+      description: >-
+        This method updates credentials for IMAP and SMTP adapters of email sources. In case of success
+        it renders the content source, otherwise, it renders an error (422 HTTP code).
+      operationId: updateSourceEmailCredentials
+      parameters:
+        - in: path
+          name: sourceId
+          required: true
+          schema:
+            type: string
+        - description: IMAP username
+          in: query
+          name: imap[username]
+          required: false
+          schema:
+            type: string
+        - description: IMAP password
+          in: query
+          name: imap[password]
+          required: false
+          schema:
+            type: string
+        - description: SMTP username
+          in: query
+          name: smtp[username]
+          required: false
+          schema:
+            type: string
+        - description: SMTP password
+          in: query
+          name: smtp[password]
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Source'
+          description: Success
+        '422':
+          description: Unprocessable Entity
+      summary: Updating source credentials
       tags:
         - Sources
   /content_threads:

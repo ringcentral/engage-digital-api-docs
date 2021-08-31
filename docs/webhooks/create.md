@@ -47,7 +47,7 @@ Webhook validation is an asynchronous process. To validate a webhook, Engage wil
 
 When the endpoint receives this request, it should do all of the following:
 
-1. Verify that the content-type set to text/html in the header.
+1. Verify that the content-type set to application/json in the header.
 2. Check the `hub.mode` is set to "subscribe." This confirms we are registering an endpoint URL.
 3. Check the `hub.verify_token`'s validity, to ensure the request comes from the Webhook API.
 4. Set the response body to only contain the value of `hub.challenge`.
