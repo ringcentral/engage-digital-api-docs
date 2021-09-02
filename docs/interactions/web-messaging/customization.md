@@ -173,8 +173,8 @@ Here is the full list of color related variables we use to generate the chat win
 |$message-self-text-color|$highlight-text-color|Text color of visitor messages|
 |$cobrowsing-status-color|#667080|Color of the cobrowsing status.|
 |$cobrowsing-status-button-bg-color|$gray100|Background color of the cobrowsing status|
-|$webview-background-color|$background-color| Background color of the webview and its header|
-|$webview-header-text-color|$text-color|Color of the webview header text|
+|$webview-header-background-color|$background-color| Background color of the webview header. The background of the loading page uses $background-color variable.|
+|$webview-header-text-color|$text-color|Color of the webview header text and close button|
 
 You only have to define the one you want to change.
 
