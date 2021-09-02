@@ -74,7 +74,7 @@ This list picker structured content has multiple specific fields. So here’s an
       {
         "title": "section 2",
         "multiple_selection": false,
-        "identifier": "2"  
+        "identifier": "2"
       }
     ],
     "items": [
@@ -220,3 +220,73 @@ Primary parameters are used by default, however, some parameters are unique or o
 |-|-|
 | **`structured_content.items.title`** | Truncated to 25 characters. |
 | **`structured_content.items.payload`** | Automatically gets populated as a random hex if blank. |
+
+## Example: WhatsApp (List Messages)
+
+The following example uses WhatsApp with list messages.
+
+<img class="img-fluid" width="600" src="../../../img/structured-messages-select-whatsapp-1.jpg">
+<img class="img-fluid" width="600" src="../../../img/structured-messages-select-whatsapp-2.jpg">
+
+### JSON Body
+
+```json
+{
+  "source_id": "<source_id>",
+  "in_reply_to_id": "<in_reply_to_id>",
+  "body": "What do you wish?",
+  "structured_content": {
+    "type": "select",
+    "button": "Choose an option",
+    "footer": "We're always happy to offer you the best options!",
+    "sections": [
+      {
+        "title": "section 1",
+        "identifier": "1"
+      },
+      {
+        "title": "section 2",
+        "identifier": "2"
+      }
+    ],
+    "items": [
+      {
+        "section_identifier": "1",
+        "title": "Option 1",
+        "payload": "first_option",
+        "description": "The first option"
+      },
+      {
+        "section_identifier": "2",
+        "title": "Option 2",
+        "payload": "second_option",
+        "description": "The second option"
+      },
+      {
+        "section_identifier": "2",
+        "title": "Option 3",
+        "payload": "third_option",
+        "description": "The third option"
+      }
+    ]
+  }
+}
+```
+
+### Properties Unique to this Channel
+
+Primary parameters are used by default, however, some parameters are unique or overwritten by parameters specific to this example.
+
+| API Property | Type | Description |
+|-|-|-|
+| **Structured Content Settings** | | |
+| **`structured_content.button`** | String | **Optional**. The button text field.<br>Limited to 20 characters. "See options" by default.  |
+| **`structured_content.footer`** | String | **Optional**. The footer text field.<br>Limited to 60 characters.  |
+|
+| **Section Settings** | | |
+| **`structured_content.sections.title`** | String | **Optional if there's only a single section**. The title of the section.  |
+| **`structured_content.sections.identifier`** | String | Identifier of the section that will be used to organize items in the section. |
+|
+| **Item Settings** | | |
+| **`structured_content.items.description`** | String | **Optional**. The item description text field.<br>Limited to 72 characters.  |
+| **`structured_content.items.section_identifier`** | String | **Optional if there's no sections**. The identifier of the section where the item is.<br>If there's no sections, the section_identifier field should be removed.<br>Each section must have at least 1 item.  |
