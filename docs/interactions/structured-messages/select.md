@@ -225,8 +225,8 @@ Primary parameters are used by default, however, some parameters are unique or o
 
 The following example uses WhatsApp with list messages.
 
-<img class="img-fluid" width="600" src="../../../img/structured-messages-select-whatsapp-1.jpg">
-<img class="img-fluid" width="600" src="../../../img/structured-messages-select-whatsapp-2.jpg">
+<img class="img-fluid" width="600" src="../../../img/structured-messages-select-whatsapp-1.png">
+<img class="img-fluid" width="600" src="../../../img/structured-messages-select-whatsapp-2.png">
 
 ### JSON Body
 
@@ -280,13 +280,18 @@ Primary parameters are used by default, however, some parameters are unique or o
 | API Property | Type | Description |
 |-|-|-|
 | **Structured Content Settings** | | |
-| **`structured_content.button`** | String | **Optional**. The button text field.<br>Limited to 20 characters. "See options" by default.  |
+| **`structured_content.items`** | Array | Truncated to 10 elements. |
+| **`structured_content.button`** | String | **Optional**. The button text field.<br>Limited to 20 characters. "See options" by default. |
+| **`structured_content.title`** | String | **Optional**. The title text field.<br>Limited to 60 characters.  |
 | **`structured_content.footer`** | String | **Optional**. The footer text field.<br>Limited to 60 characters.  |
 |
 | **Section Settings** | | |
-| **`structured_content.sections.title`** | String | **Optional if there's only a single section**. The title of the section.  |
-| **`structured_content.sections.identifier`** | String | Identifier of the section that will be used to organize items in the section. |
+| **`structured_content.sections`** | Array | **Optional**. Limited to 10 elements. |
+| **`structured_content.sections.title`** | String | **Optional if there's only a single section**. The title of the section.<br>Limited to 24 characters. |
+| **`structured_content.sections.identifier`** | String | Identifier of the section that will be used to organize items in the section.<br>Limited to 200 characters. |
 |
 | **Item Settings** | | |
-| **`structured_content.items.description`** | String | **Optional**. The item description text field.<br>Limited to 72 characters.  |
-| **`structured_content.items.section_identifier`** | String | **Optional if there's no sections**. The identifier of the section where the item is.<br>If there's no sections, the section_identifier field should be removed.<br>Each section must have at least 1 item.  |
+| **`structured_content.items.title`** | String | **Optional**. The item title field.<br>Truncated to 24 characters. |
+| **`structured_content.items.payload`** | String | **Optional**. The item payload field.<br>Limited to 200 characters. |
+| **`structured_content.items.description`** | String | **Optional**. The item description text field.<br>Limited to 72 characters. |
+| **`structured_content.items.section_identifier`** | String | **Optional if there's no sections**. The identifier of the section where the item is.<br>If there's no sections, the section_identifier field should be removed.<br>Each section must have at least 1 item.<br>Limited to 200 characters. |
