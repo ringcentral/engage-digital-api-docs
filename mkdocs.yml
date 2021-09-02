@@ -47,6 +47,7 @@ pages:
       - 'JavaScript API': 'interactions/web-messaging/javascript-api.md'
       - 'Attachments': 'interactions/web-messaging/attachments.md'
       - 'Surveys': 'interactions/web-messaging/surveys.md'
+      - 'Webview': 'interactions/web-messaging/webview.md'
     - 'Chatbots':
       - 'Overview': interactions/chatbots/overview.md
       - 'Implementation': interactions/chatbots/implementation.md
