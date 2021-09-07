@@ -139,4 +139,4 @@ Primary parameters are used by default, however, some parameters are unique or o
 | **`structured_content.items`** | Array | Truncated to 3 elements. |
 | **`structured_content.items.type`** | String | Only `reply` is supported |
 | **`structured_content.items.title`** | String | Truncated to 20 charactes. |
-| **`structured_content.items.payload`** | String | Limited to 256 characters. Automatically gets populated as a random hex if blank. |
+| **`structured_content.items.payload`** | String | Limited to 256 characters.<br>Automatically gets populated as a random hex if blank. |

@@ -89,6 +89,11 @@ This section describes the generic compatibility logic of the API. Check the fol
 * [Rich Card](../structured-messages/template/#example-google-business-messages-rich-card)
 * [Rich Card Carousel](../structured-messages/carousel/#example-google-business-messages-rich-card-carousel)
 
+### WhatsApp
+
+* [List Messages](../structured-messages/select/#example-whatsapp-list-messages)
+* [Reply Buttons](../structured-messages/template/#example-whatsapp-reply-buttons)
+
 ## Channel SDK
 
 Channel SDK supports only public attachments. Before sending a payload to third-party endpoint attachment_id is replaced by “attachment_url”. All other capabilities are inherited from the base validation described in this document.
