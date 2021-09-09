@@ -127,16 +127,18 @@ Primary parameters are used by default, however, some parameters are unique or o
 | **If subtitle is present** | | |
 | **`structured_content.title`** | String | Truncated to 60 characters. |
 | **`structured_content.subtitle`** | String | Truncated to 963 characters if an attachment is present. |
-|
 | **If subtitle is empty** | | |
 | **`structured_content.title`** | String | Limited to 1000 characters. Used as the message body. |
-|
 | **Structured Content Settings** | | |
 | **`structured_content.attachment_id`** | String | Supports jpg, jpeg, png, mp4 formats. Supports private attachments. [Upload attachments](../../../basics/uploads) for your own custom images or videos. Should be less than 64 MB. WhatsApp supports videos with only H.264 and AAC codecs and a single audio stream. |
 | **`structured_content.footer`** | String | Limited to 60 characters. |
-|
+| **`structured_content.url`** | String | **Ignored** property. |
+| **`structured_content.url_fallback`** | String | **Ignored** property. |
+| **`structured_content.url_text`** | String | **Ignored** property. |
 | **Item Settings** | | |
 | **`structured_content.items`** | Array | Truncated to 3 elements. |
-| **`structured_content.items.type`** | String | Only `reply` is supported |
+| **`structured_content.items.type`** | String | Only `reply` is supported. |
 | **`structured_content.items.title`** | String | Truncated to 20 charactes. |
 | **`structured_content.items.payload`** | String | Limited to 256 characters.<br>Automatically gets populated as a random hex if blank. |
+| **`structured_content.items.url`** | String | **Ignored** property. |
+| **`structured_content.items.url_fallback`** | String | **Ignored** property. |

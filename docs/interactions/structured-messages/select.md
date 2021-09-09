@@ -234,11 +234,12 @@ The following example uses WhatsApp with list messages.
 {
   "source_id": "<source_id>",
   "in_reply_to_id": "<in_reply_to_id>",
-  "body": "What do you wish?",
+  "body": "Hello! What do you wish?",
   "structured_content": {
     "type": "select",
-    "button": "Choose an option",
+    "title": "Welcome to the store!",
     "footer": "We're always happy to offer you the best options!",
+    "button": "See options",
     "sections": [
       {
         "title": "section 1",
@@ -284,14 +285,11 @@ Primary parameters are used by default, however, some parameters are unique or o
 | **`structured_content.button`** | String | **Optional**. The button text field.<br>Limited to 20 characters. "See options" by default. |
 | **`structured_content.title`** | String | **Optional**. The title text field.<br>Limited to 60 characters.  |
 | **`structured_content.footer`** | String | **Optional**. The footer text field.<br>Limited to 60 characters.  |
-|
 | **Section Settings** | | |
 | **`structured_content.sections`** | Array | **Optional**. Limited to 10 elements. |
 | **`structured_content.sections.title`** | String | **Optional if there's only a single section**. The title of the section.<br>Limited to 24 characters. |
 | **`structured_content.sections.identifier`** | String | Identifier of the section that will be used to organize items in the section.<br>Limited to 200 characters. |
-|
 | **Item Settings** | | |
 | **`structured_content.items.title`** | String | The item title field.<br>Truncated to 24 characters. |
-| **`structured_content.items.payload`** | String | **Optional**. The item payload field.<br>Limited to 200 characters.<br>Automatically gets populated as a random hex if blank. |
 | **`structured_content.items.description`** | String | **Optional**. The item description text field.<br>Limited to 72 characters. |
 | **`structured_content.items.section_identifier`** | String | **Optional if there's no sections**. The identifier of the section where the item is.<br>If there's no sections, the section_identifier field should be removed.<br>Each section must have at least 1 item.<br>Limited to 200 characters. |
