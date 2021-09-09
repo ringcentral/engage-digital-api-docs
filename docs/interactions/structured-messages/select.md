@@ -291,5 +291,6 @@ Primary parameters are used by default, however, some parameters are unique or o
 | **`structured_content.sections.identifier`** | String | Identifier of the section that will be used to organize items in the section.<br>Limited to 200 characters. |
 | **Item Settings** | | |
 | **`structured_content.items.title`** | String | The item title field.<br>Truncated to 24 characters. |
+| **`structured_content.items.payload`** | String | **Optional**. The item payload field.<br>Limited to 200 characters.<br>Automatically gets populated as a random hex if blank. |
 | **`structured_content.items.description`** | String | **Optional**. The item description text field.<br>Limited to 72 characters. |
 | **`structured_content.items.section_identifier`** | String | **Optional if there's no sections**. The identifier of the section where the item is.<br>If there's no sections, the section_identifier field should be removed.<br>Each section must have at least 1 item.<br>Limited to 200 characters. |
