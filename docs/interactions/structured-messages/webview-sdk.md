@@ -6,6 +6,12 @@ This kind of target is useful to create specific interactions that are not provi
 
 The Webview SDK provides a generic way to interact with supported channels that can open your page in a webview which allows you to use the same target on different channels without having to write multiple integrations.
 
+## Supported channels
+
+The SDK supports the following channels:
+
+- Engage Messaging (Web only for now)
+
 ## Integration
 
 You can load the SDK by adding the following `script` tag to your target page.
