@@ -6,6 +6,12 @@ This kind of target is useful to create specific interactions that are not provi
 
 The Webview SDK provides a generic way to interact with supported channels that can open your page in a webview which allows you to use the same target on different channels without having to write multiple integrations.
 
+## Supported channels
+
+The SDK supports the following channels:
+
+- Engage Messaging (Web only for now)
+
 ## Integration
 
 You can load the SDK by adding the following `script` tag to your target page.
@@ -82,9 +88,10 @@ Since not every channel supports every feature, you'll find support info in the 
 * **<span style="color:orange">Not yet</span>**: Supported by channel but not by SDK yet
 * N/A: Not supported by channel
 
-|       | **Engage Messaging Web** | **Engage Messaging iOS** | **Engage Messaging Android** | **Unsupported channels** |
+| | **Engage Messaging Web** | **Engage Messaging iOS** | **Engage Messaging Android** | **Unsupported channels** |
 |-|-|-|-|-|
 | **close** | <span style="color: green">Yes</span> | <span style="color: orange">Not yet</span> | <span style="color: orange">Not yet</span> | N/A |
+| **Automatic title update** | <span style="color: green">Yes</span> | <span style="color: orange">Not yet</span> | <span style="color: orange">Not yet</span> | N/A |
 
 ## Integrations specific behavior
 
