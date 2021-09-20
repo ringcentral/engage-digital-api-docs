@@ -120,7 +120,8 @@ Primary parameters are used by default, however, some parameters are unique or o
 |-|-|
 | **`structured_content.items.attachment_id`** | Supports gif, jpg, jpeg, png formats. Supports private attachments. [Upload attachments](../../../basics/uploads) for you own custom images.<br>On Engage Messaging Web, if the width of the **first** image is bigger than the height, every image will be displayed with a 5:3 ratio. Otherwise, a 1:1 ratio will be used.<br>Minimal recommended size with a 1:1 ratio: **258x258**<br>Minimal recommended size with a 5:3 ratio: **258x155** |
 | **`structured_content.items.url`** | Deep links are supported. |
-| **`structured_content.items.target`** | **Optional** when the type is `url`. **Ignored** when the type is `reply`. Behavior applied when clicking on the item link. Can be `webview` to open on a [webview](../web-messaging/webview) above the chat, `open` to open in new tab, or  `current` to open in current tab. Defaults to `open` when not specified.|
+| **`structured_content.items.target`** | **Optional** when the type is `url`. **Ignored** when the type is `reply`. Behavior applied when clicking on the item link. Can be `webview` to open on a [webview](../web-messaging/webview) above the chat, `open` to open in new tab, or  `current` to open in current tab. Defaults to `open` when not specified. Can also be set on `item` with type `url`.|
+| **`structured_content.items.webview_height`** | **Optional**. **Ignored** when `target` is other than `webview`. Size of the webview used to open the link. Can be `full`, `tall` or `compact`. Defaults to `full` is unset. Can also be set on `item` with type `url`.|
 
 ## Example: Google Business Messages (Rich Card Carousel)
 
