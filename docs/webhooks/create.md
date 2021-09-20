@@ -13,6 +13,7 @@ In details:
 | Field Name | Description |
 |-|-|
 | **API access token** | You can only use the API access token belonging to your user, unless you have the "Manage API access token" permission. | 
+| **Name** | User-friendly name of the given webhook that can be used to differentiate it among all others. The field is mandatory in the UI and optional when creating a webhook through the API. If it's not provided when the webhook is created in API, this field will be prefilled with the hostname from the URL + associated token name. |
 | **Active** | This checkbox toggles the webhook on and off, allowing you to halt the flow of event notifications temporarily or permanently. 
 | **Staging Environment ** | A toggle that configures which environment, staging or production, from which event notifications will be sent. |
 | **Ignore SSL validity** | A toggle to turn on and off SSL cert verification. This is often needed in testing environments for which SSL certs may not be created by a certified authority. | 

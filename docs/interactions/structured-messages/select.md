@@ -74,7 +74,7 @@ This list picker structured content has multiple specific fields. So here’s an
       {
         "title": "section 2",
         "multiple_selection": false,
-        "identifier": "2"  
+        "identifier": "2"
       }
     ],
     "items": [
@@ -109,7 +109,7 @@ Primary parameters are used by default, however, some parameters are unique or o
 |-|-|-|
 | **Structured Content Settings** | | |
 | **`structured_content.subtitle`** | String | **Optional**. The subtitle field.<br>Limited to 512 characters.  |
-| **`structured_content.attachment_id`** | String | **Optional**. Existing attachment id used to decorate the structured message with an image. [Upload attachments](../../../basics/uploads) for you own custom images. Supports private attachments.  |
+| **`structured_content.attachment_id`** | String | **Optional**. Existing attachment id used to decorate the structured message with an image. Supports private attachments. [Upload attachments](../../../basics/uploads) for you own custom images. |
 | **`structured_content.attachment_fallback_id`** | String | **Optional**. Fallback in case the attachment related to the attachment_id doesn’t meet the source requirements. Must be public. Only jpg, jpeg, png formats. Maximum size of 5 MB. [Upload attachments](../../../basics/uploads) for you own custom images. |
 | **`structured_content.sections`** | Array | **Optional**. An array of sections in which the items will be organized. If blank, every item will be part of the same section. |
 | **Section Settings** | | |
@@ -118,7 +118,7 @@ Primary parameters are used by default, however, some parameters are unique or o
 | **`structured_content.sections.identifier`** | String | Identifier of the section that will be used to organize items in the section. |
 | **Item Settings** | | |
 | **`structured_content.items.section_identifier`** | String | **Optional**. The identifier of the section where the item is. If the sections field is blank, the section_identifier field should be removed.  |
-| **`structured_content.items.attachment_id`** | String | **Optional**. Existing attachment id used to decorate the item with an image. [Upload attachments](../../../basics/uploads) for you own custom images. Supports private attachments. |
+| **`structured_content.items.attachment_id`** | String | **Optional**. Existing attachment id used to decorate the item with an image. Supports private attachments. [Upload attachments](../../../basics/uploads) for you own custom images. |
 | **`structured_content.items.attachment_fallback_id`** | String | **Optional**. Fallback in case the attachment related to the attachment_id doesn’t meet the source requirements. Must be public. Only jpg, jpeg, png formats. Maximum size of 5 MB. [Upload attachments](../../../basics/uploads) for you own custom images. |
 | **`structured_content.items.subtitle`** | String | **Optional**. The subtitle of the item. Limited to 512 characters. |
 
@@ -163,7 +163,7 @@ Primary parameters are used by default, however, some parameters are unique or o
 | API Property | Type | Description |
 |-|-|-|
 | **`items.title`** | String | The title of the item. *Truncated to 20 characters.* |
-| **`items.attachment_id`** | String | **Optional**. Existing attachment id used to decorate the item in the list. [Upload attachments](../../../basics/uploads) for you own custom images. |
+| **`items.attachment_id`** | String | **Optional**. Existing attachment id used to decorate the item in the list. Supports private attachments. [Upload attachments](../../../basics/uploads) for you own custom images. |
 | **`items.attachment_fallback_id`** | String | **Optional**. Fallback in case the attachment related to the attachment_id doesn’t meet the source requirements. Must be public. Only jpg, jpeg, png formats. Maximum size of 5 MB. [Upload attachments](../../../basics/uploads) for you own custom images. |
 
 ## Example: Engage Messaging (Quick Replies)
@@ -220,3 +220,77 @@ Primary parameters are used by default, however, some parameters are unique or o
 |-|-|
 | **`structured_content.items.title`** | Truncated to 25 characters. |
 | **`structured_content.items.payload`** | Automatically gets populated as a random hex if blank. |
+
+## Example: WhatsApp (List Messages)
+
+The following example uses WhatsApp with list messages.
+
+<img class="img-fluid" width="398" src="../../../img/structured-messages-select-whatsapp-1.png">
+<img class="img-fluid" width="398" src="../../../img/structured-messages-select-whatsapp-2.png">
+
+### JSON Body
+
+```json
+{
+  "source_id": "<source_id>",
+  "in_reply_to_id": "<in_reply_to_id>",
+  "body": "Hello! What do you wish?",
+  "structured_content": {
+    "type": "select",
+    "title": "Welcome to the store!",
+    "footer": "We're always happy to offer you the best options!",
+    "button": "See options",
+    "sections": [
+      {
+        "title": "section 1",
+        "identifier": "1"
+      },
+      {
+        "title": "section 2",
+        "identifier": "2"
+      }
+    ],
+    "items": [
+      {
+        "section_identifier": "1",
+        "title": "Option 1",
+        "payload": "first_option",
+        "description": "The first option"
+      },
+      {
+        "section_identifier": "2",
+        "title": "Option 2",
+        "payload": "second_option",
+        "description": "The second option"
+      },
+      {
+        "section_identifier": "2",
+        "title": "Option 3",
+        "payload": "third_option",
+        "description": "The third option"
+      }
+    ]
+  }
+}
+```
+
+### Properties Unique to this Channel
+
+Primary parameters are used by default, however, some parameters are unique or overwritten by parameters specific to this example.
+
+| API Property | Type | Description |
+|-|-|-|
+| **Structured Content Settings** | | |
+| **`structured_content.items`** | Array | Truncated to 10 elements. |
+| **`structured_content.button`** | String | **Optional**. The button text field.<br>Limited to 20 characters. "See options" by default. |
+| **`structured_content.title`** | String | **Optional**. The title text field.<br>Limited to 60 characters.  |
+| **`structured_content.footer`** | String | **Optional**. The footer text field.<br>Limited to 60 characters.  |
+| **Section Settings** | | |
+| **`structured_content.sections`** | Array | **Optional**. Limited to 10 elements. |
+| **`structured_content.sections.title`** | String | **Optional if there's only a single section**. The title of the section.<br>Limited to 24 characters. |
+| **`structured_content.sections.identifier`** | String | Identifier of the section that will be used to organize items in the section.<br>Limited to 200 characters. |
+| **Item Settings** | | |
+| **`structured_content.items.title`** | String | The item title field.<br>Truncated to 24 characters. |
+| **`structured_content.items.payload`** | String | **Optional**. The item payload field.<br>Limited to 200 characters.<br>Automatically gets populated as a random hex if blank. |
+| **`structured_content.items.description`** | String | **Optional**. The item description text field.<br>Limited to 72 characters. |
+| **`structured_content.items.section_identifier`** | String | **Optional if there's no sections**. The identifier of the section where the item is.<br>If there's no sections, the section_identifier field should be removed.<br>Each section must have at least 1 item.<br>Limited to 200 characters. |

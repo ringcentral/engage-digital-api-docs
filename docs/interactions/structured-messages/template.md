@@ -78,7 +78,7 @@ Otherwise, it will be converted to a Generic Template in Facebook Messenger.
 
 | API Property | Specificity |
 |-|-|
-| **`structured_content.attachment_id`** | Supports bmp, gif, jpg, jpeg, png formats. [Upload attachments](../../../basics/uploads) for you own custom images. |
+| **`structured_content.attachment_id`** | Supports bmp, gif, jpg, jpeg, png formats. Supports private attachments. [Upload attachments](../../../basics/uploads) for you own custom images. |
 | **`structured_content.url_text`** | **Ignored** property. |
 | **`structured_content.items`** | A maximum of 3 items is supported. |
 | **`structured_content.title`** | Truncated to 80 characters. |
@@ -95,7 +95,7 @@ Primary parameters are used by default, however, some parameters are unique or o
 
 | API Property | Specificity |
 |-|-|
-| **`structured_content.attachment_id`** | Supports gif, jpg, jpeg, png formats. Supports private attachments. [Upload attachments](../../../basics/uploads) for you own custom images.<br>On Engage Messaging Web, if the width of the image is bigger than the height, it will be displayed with a 5:3 ratio. Otherwise, a 1:1 ratio will be used.<br>Minimal recommended size with a 1:1 ratio: **258x258**<br>Minimal recommended size with a 5:3 ratio: **258x155** |
+| **`structured_content.attachment_id`** | Supports gif, jpg, jpeg, png formats. Supports private attachments. [Upload attachments](../../../basics/uploads) for your own custom images.<br>On Engage Messaging Web, if the width of the image is bigger than the height, it will be displayed with a 5:3 ratio. Otherwise, a 1:1 ratio will be used.<br>Minimal recommended size with a 1:1 ratio: **258x258**<br>Minimal recommended size with a 5:3 ratio: **258x155** |
 | **`structured_content.url`** | Deep links are supported. |
 | **`structured_content.target`** | **Optional**. **Ignored** when the `url` is empty. Behavior applied when clicking on the url. Can be `webview` to open url on a [webview](../web-messaging/webview) above the chat, `open` to open url in new tab, or  `current` to open url in current tab. Defaults to `open` when not specified.|
 | **`structured_content.items.target`** | **Optional** when the type is `url`. **Ignored** when the type is `reply`. Behavior applied when clicking on the item link. Can be `webview` to open on a [webview](../web-messaging/webview) above the chat, `open` to open in new tab, or  `current` to open in current tab. Defaults to `open` when not specified.|
@@ -115,3 +115,33 @@ Primary parameters are used by default, however, some parameters are unique or o
 | **`structured_content.url_text`** | Ignored property. |
 | **`structured_content.items.title`** | Truncated to 25 characters. |
 | **`structured_content.items.payload`** | Automatically gets populated as a random hex if blank. |
+| **`structured_content.attachment_id`** | Supports private attachments. |
+
+## Example: WhatsApp (Reply Buttons)
+
+<img class="img-fluid" width="398" src="../../../img/structured-messages-template-whatsapp.png">
+
+### Properties Unique to this Channel
+
+Primary parameters are used by default, however, some parameters are unique or overwritten by parameters specific to this example.
+
+| API Property | Type | Specificity |
+|-|-|-|
+| **If subtitle is present** | | |
+| **`structured_content.title`** | String | Truncated to 60 characters. |
+| **`structured_content.subtitle`** | String | Truncated to 963 characters if an attachment is present. |
+| **If subtitle is empty** | | |
+| **`structured_content.title`** | String | Limited to 1000 characters. Used as the message body. |
+| **Structured Content Settings** | | |
+| **`structured_content.attachment_id`** | String | Supports jpg, jpeg, png, mp4 formats. Supports private attachments. [Upload attachments](../../../basics/uploads) for your own custom images or videos. Should be less than 64 MB. WhatsApp supports videos with only H.264 and AAC codecs and a single audio stream. |
+| **`structured_content.footer`** | String | Limited to 60 characters. |
+| **`structured_content.url`** | String | **Ignored** property. |
+| **`structured_content.url_fallback`** | String | **Ignored** property. |
+| **`structured_content.url_text`** | String | **Ignored** property. |
+| **Item Settings** | | |
+| **`structured_content.items`** | Array | Truncated to 3 elements. |
+| **`structured_content.items.type`** | String | Only `reply` is supported. |
+| **`structured_content.items.title`** | String | Truncated to 20 charactes. |
+| **`structured_content.items.payload`** | String | Limited to 256 characters.<br>Automatically gets populated as a random hex if blank. |
+| **`structured_content.items.url`** | String | **Ignored** property. |
+| **`structured_content.items.url_fallback`** | String | **Ignored** property. |

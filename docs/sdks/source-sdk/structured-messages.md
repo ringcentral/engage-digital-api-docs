@@ -72,7 +72,7 @@ The following actions are supported by messages and private messages containing 
 | **`structured_content.url_text`** | String | **Optional**. Text that will be displayed instead of the hostname of the URL. Automatically gets populated as the hostname of the url if blank. Limited to 80 characters. |
 | **`structured_content.title`** | String | Title of the rich link. Limited to 350 characters. |
 | **`structured_content.subtitle`** | String | **Optional**. Subtitle of the rich link. Limited to 1000 characters. |
-| **`structured_content.attachment_url`** | String | **Optional**. Existing attachment id used to decorate the rich link with an image. Should be public. Should be jpg, jpeg or png. Should be less than 5MB. [Upload attachments](../../../basics/uploads) for your own custom images. |
+| **`structured_content.attachment_url`** | String | **Optional**. Existing attachment id used to decorate the rich link with an image. Supports only public attachments. Should be jpg, jpeg or png. Should be less than 5MB. [Upload attachments](../../../basics/uploads) for your own custom images. |
 
 ### Example Payload Format
 
@@ -101,7 +101,7 @@ The following actions are supported by messages and private messages containing 
 | **`structured_content.subtitle`** | String | **Optional**. Subtitle of the template. Limited to 1000 characters. |
 | **`structured_content.url`** | String | **Optional**. Allows to redirect to this URL when clicking on the image or message of the template. Limited to 2048 characters. Should only have http and https schemes. |
 | **`structured_content.url_text`** | String | **Optional**. Text that will be displayed instead of the hostname of the URL. Automatically gets populated as the hostname of the url if blank. Limited to 80 characters. |
-| **`structured_content.attachment_url`** | String | **Optional**. Link to attachment id used to decorate the template with an image. Should be public. Should be jpg, jpeg or png. Should be less than 5MB. [Upload attachments](../../../basics/uploads) for your own custom images. |
+| **`structured_content.attachment_url`** | String | **Optional**. Link to attachment id used to decorate the template with an image. Supports only public attachments. Should be jpg, jpeg or png. Should be less than 5MB. [Upload attachments](../../../basics/uploads) for your own custom images. |
 | **Item Settings** | | |
 | **`structured_content.items.type`** | String | The type of the button. Can be **url** or **reply**. |
 | **`structured_content.items.title`** | String | The title of the item. Limited to 80 characters. |
@@ -142,7 +142,7 @@ The following actions are supported by messages and private messages containing 
 | **`structured_content.items.subtitle`** | String | **Optional**. The subtitle of the template. Limited to 1000 characters. |
 | **`structured_content.items.url`** | String | **Optional**. Allows to redirect to this url when clicking on the image or message of the template. Limited to 2048 characters. Should only have http and https schemes. |
 | **`structured_content.items.url_text`** | String | **Optional**. Text that will be displayed instead of the hostname of the url. Automatically gets populated as the hostname of the url if blank. This field is only displayed if the url field is present. Limited to 80 characters. |
-| **`structured_content.items.attachment_url`** | String | **Optional**. Existing attachment id used to decorate the template with an image. Should be public. Should be jpg, jpeg or png. Should be less than 5MB. [Upload attachments](../../../basics/uploads) for you own custom images. |
+| **`structured_content.items.attachment_url`** | String | **Optional**. Existing attachment id used to decorate the template with an image. Supports only public attachments. Should be jpg, jpeg or png. Should be less than 5MB. [Upload attachments](../../../basics/uploads) for you own custom images. |
 | **`structured_content.items.attachment_fallback_id`** | String | **Optional**. Fallback in case the attachment related to the attachment_id doesn’t meet the source requirements. Must be public. Only be jpg, jpeg or png. Maximum size of 5MB. [Upload attachments](../../../basics/uploads) for you own custom images. |
 | **`structured_content.items.items`** | Array | List of items representing the buttons presented to the customer. A maximum of 4 items is supported. |
 | **Items within Item Settings** | | |

@@ -61,7 +61,7 @@ curl -X POST "https://[YOUR DOMAIN].api.digital.ringcentral.com/1.0/contents"
 | **`structured_content.currency_code`** | String | Three-letter ISO 4217 currency code for the payment. |
 | **`structured_content.total`** | Object | The total price of the items the customer is going to purchase. |
 | **`structured_content.items`** | Array | **Optional**. Items the customer is going to purchase. |
-| **`structured_content.attachment_id`** | String | **Optional**. Existing attachment id used to decorate the apple_pay with an image.<br>Should be jpg, jpeg or png.<br>Should be less than 5MB. |
+| **`structured_content.attachment_id`** | String | **Optional**. Existing attachment id used to decorate the apple_pay with an image.<br>Supports private attachments.<br>Should be jpg, jpeg or png.<br>Should be less than 5MB. |
 | **Total Settings** | | |
 | **`structured_content.total.amount`** | String | The total price. |
 | **`structured_content.total.label`** | String | Label of the total price. |

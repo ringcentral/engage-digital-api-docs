@@ -54,7 +54,7 @@ curl -X POST "https://[YOUR DOMAIN].api.digital.ringcentral.com/1.0/contents"
 | **Structured Content Settings** | | |
 | **`structured_content.type`** | String | Type of the structured message. Must be "time_select". |
 | **`structured_content.timeslots`** | Array | Represents the different options for the event. |
-| **`structured_content.attachment_id`** | String | **Optional**. Existing attachment id used to decorate the time_select with an image.<br>Should be jpg, jpeg or png.<br>Should be less than 5MB. |
+| **`structured_content.attachment_id`** | String | **Optional**. Existing attachment id used to decorate the time_select with an image.<br>Supports private attachments.<br>Should be jpg, jpeg or png.<br>Should be less than 5MB. |
 | **`structured_content.location`** | Object | **Optional**. Represents the location of the event. |
 | **Time Slot Settings** | | |
 | **`structured_content.timeslots.duration`** | Integer | The duration of the event in seconds. |

@@ -73,7 +73,7 @@ Primary parameters are used by default, however, some parameters are unique or o
 
 | API Property | Type | Description |
 |-|-|-|
-| **`structured_content.attachment_id`** | String | Supports bmp, gif, jpg, jpeg, png formats. [Upload attachments](../../../basics/uploads) for you own custom images. |
+| **`structured_content.attachment_id`** | String | Supports bmp, gif, jpg, jpeg, png formats. Supports private attachments. [Upload attachments](../../../basics/uploads) for you own custom images. |
 | **`structured_content.url_text`** | String | Ignored property when converted to a Generic Template. Truncated to 20 characters when converted to a Button Template. |
 | **`structured_content.title`** | String | Truncated to 80 characters. |
 | **`structured_content.subtitle`** | String | Truncated to 80 characters. |
@@ -107,3 +107,4 @@ Primary parameters are used by default, however, some parameters are unique or o
 |-|-|
 | **`structured_content.title`** | Truncated to 200 characters. |
 | **`structured_content.url_text`** | Truncated to 25 characters. |
+| **`structured_content.attachment_id`** | Supports private attachments. |

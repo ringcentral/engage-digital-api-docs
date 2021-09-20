@@ -170,9 +170,9 @@
                       "disabled": true
                     },
                     {
-                      "key": "label",
+                      "key": "name",
                       "value": "\u003cstring\u003e",
-                      "description": "The label of the webhook.",
+                      "description": "The name of the webhook.",
                       "disabled": true
                     },
                     {
@@ -320,9 +320,9 @@
                       "disabled": true
                     },
                     {
-                      "key": "label",
+                      "key": "name",
                       "value": "\u003cstring\u003e",
-                      "description": "The label of the webhook.",
+                      "description": "The name of the webhook.",
                       "disabled": true
                     },
                     {
@@ -4114,7 +4114,7 @@
                     "value": "application/json"
                   }
                 ],
-                "description": "This method renders all settings of your domain.\n\nAuthorization​: only users that can update settings."
+                "description": "This method renders all settings of your domain."
               }
             },
             {

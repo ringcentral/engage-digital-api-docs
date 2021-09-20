@@ -35,7 +35,7 @@ curl -X POST "https://[YOUR DOMAIN].api.digital.ringcentral.com/1.0/contents"
 | **Structured Content Settings** | | |
 | **`structured_content.type`** | String | Type of the structured message. Must be "authenticate". |
 | **`structured_content.response_body`** | String | **Optional**. Field to be the body of the user’s response. If absent, default is the structured message body. |
-| **`structured_content.attachment_id`** | Object | **Optional**. Existing attachment id used to decorate the authenticate structured message with an image.<br>Should be jpg, jpeg or png.<br>Should be less than 5MB. |
+| **`structured_content.attachment_id`** | Object | **Optional**. Existing attachment id used to decorate the authenticate structured message with an image.<br>Supports private attachments.<br>Should be jpg, jpeg or png.<br>Should be less than 5MB. |
 
 ### Webhook
 

@@ -23,6 +23,10 @@ If you would like to contribute to the RingCentral documentation effort, fork th
 
 Then you should be able to load http://localhost:8000 to view the documentation.
 
+### Generating OpenAPI doc
+
+Go check [specs/README.md](specs/README.md)
+
 ### Testing OpenAPI Specs
 
 This repo holds OpenAPI specs for Engage Digital. 
