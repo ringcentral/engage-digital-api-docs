@@ -88,9 +88,10 @@ Since not every channel supports every feature, you'll find support info in the 
 * **<span style="color:orange">Not yet</span>**: Supported by channel but not by SDK yet
 * N/A: Not supported by channel
 
-|       | **Engage Messaging Web** | **Engage Messaging iOS** | **Engage Messaging Android** | **Unsupported channels** |
+| | **Engage Messaging Web** | **Engage Messaging iOS** | **Engage Messaging Android** | **Unsupported channels** |
 |-|-|-|-|-|
 | **close** | <span style="color: green">Yes</span> | <span style="color: orange">Not yet</span> | <span style="color: orange">Not yet</span> | N/A |
+| **Automatic title update** | <span style="color: green">Yes</span> | <span style="color: orange">Not yet</span> | <span style="color: orange">Not yet</span> | N/A |
 
 ## Integrations specific behavior
 
