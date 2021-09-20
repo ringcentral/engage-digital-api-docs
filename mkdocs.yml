@@ -34,6 +34,8 @@ pages:
   - 'Interactions':
     - 'Overview': interactions/index.md
     - 'Getting Started': interactions/quick-start.md
+    - 'Mobile Messaging':
+      - 'Huawei Push Notifications': 'interactions/mobile-messaging/huawei-push-notifications.md'
     - 'Web Messaging':
       - 'Overview': 'interactions/web-messaging/index.md'
       - 'Configuring the Community': 'interactions/web-messaging/community.md'
