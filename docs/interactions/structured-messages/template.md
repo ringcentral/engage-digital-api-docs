@@ -23,7 +23,7 @@ curl -X POST "https://[YOUR DOMAIN].api.digital.ringcentral.com/1.0/contents"
     "url_fallback": "https://github.com/ringcentral",
     "url_text": "Github",
     "items": [
-      { "title": "Go to website", "type": "url", "url": "github://github.com/ringcentral", "url_fallback": "https://github.com/ringcentral", "target": "webview" },
+      { "title": "Go to website", "type": "url", "url": "github://github.com/ringcentral", "url_fallback": "https://github.com/ringcentral" },
       { "title": "Ok", "type": "reply" },
       { "title": "Give me more", "type": "reply", "payload": "more" }
     ]
