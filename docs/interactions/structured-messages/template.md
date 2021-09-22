@@ -19,7 +19,6 @@ curl -X POST "https://[YOUR DOMAIN].api.digital.ringcentral.com/1.0/contents"
     "title": "Ringcentral, Inc.",
     "subtitle": "Cloud Business Communications.",
     "url": "github://github.com/ringcentral",
-    "target": "open",
     "url_fallback": "https://github.com/ringcentral",
     "url_text": "Github",
     "items": [
@@ -99,6 +98,8 @@ Primary parameters are used by default, however, some parameters are unique or o
 | **`structured_content.url`** | Deep links are supported. |
 | **`structured_content.target`** | **Optional**. **Ignored** when the `url` is empty. Behavior applied when clicking on the url. Can be `webview` to open url on a [webview](../structured-messages/webview) above the chat, `open` to open url in new tab, or  `current` to open url in current tab. Defaults to `open` when not specified. Can also be set on `item` with type `url`.|
 | **`structured_content.webview_height`** | **Optional**. **Ignored** when `target` is other than `webview`. Size of the webview used to open the link. Can be `full`, `tall` or `compact`. Defaults to `full` if unset. Can also be set on `item` with type `url`.|
+| **`structured_content.items.target`** | **Optional** when the type is `url`. **Ignored** when the type is `reply`. Behavior applied when clicking on the item link. Can be `webview` to open on a [webview](../structured-messages/webview) above the chat, `open` to open in new tab, or  `current` to open in current tab. Defaults to `open` when not specified.|
+| **`structured_content.items.webview_height`** | **Optional**. **Ignored** when `target` is other than `webview`. Size of the webview used to open the link. Can be `full`, `tall` or `compact`. Defaults to `full` if unset.|
 
 ## Example: Google Business Messages (Rich Card)
 
