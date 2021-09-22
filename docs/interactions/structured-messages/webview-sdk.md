@@ -8,9 +8,7 @@ The Webview SDK provides a generic way to interact with supported channels that 
 
 ## Supported channels
 
-The SDK supports the following channels:
-
-- Engage Messaging (Web only for now)
+See the [webview documentation](../webview#channels-supporting-this-feature).
 
 ## Integration
 
