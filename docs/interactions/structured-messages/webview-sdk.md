@@ -14,6 +14,7 @@ See the [webview documentation](../webview#channels-supporting-this-feature).
 
 You can load the SDK by adding the following `script` tag to your target page.
 You'll need to replace `<YOUR_DOMAIN>` with your ED domain's name.
+You'll need to replace `<YOUR_ED_HOST>` with your ED hostname, valid values include `engagement.dimelo.com` and `digital.ringcentral.com`.
 
 ```html
 <script>
@@ -29,7 +30,7 @@ You'll need to replace `<YOUR_DOMAIN>` with your ED domain's name.
       js.async = true;
       fjs.parentNode.insertBefore(js, fjs);
     });
-  })(document, 'scr' + 'ipt', 'https://<YOUR_DOMAIN>.engagement.dimelo.com/webview/sdk.js', 'ed_webview_sdk_loader');
+  })(document, 'scr' + 'ipt', 'https://<YOUR_DOMAIN>.<YOUR_ED_HOST>/webview/sdk.js', 'ed_webview_sdk_loader');
 </script>
 ```
 
