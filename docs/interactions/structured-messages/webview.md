@@ -1,6 +1,6 @@
 # Webview
 
-The webview is a convenient way of opening a custom made webpage. It can be chosen by setting the optional target field to `webview` when sending a Structured Message containing a link element, such as [Rich Link](../rich-link), [Carousel](../carousel), or [Template](../template).
+The webview is a convenient way of opening a custom made webpage. It can be chosen by setting the optional `target` parameter to `webview` when sending a Structured Message containing a link element, such as [Rich Link](../rich-link), [Carousel](../carousel), or [Template](../template).
 
 The webview is a small window that sits atop the chat. It can be customized in size through the `webview_height` parameter.
 
@@ -12,7 +12,7 @@ The webview is not just a simple window opening, it can be used to display a cus
 
 It should be noted that no default picker or page is provided and this feature is intended to be customizable, not out of the box. No default response after the customer has finished taking actions on the page is provided either.
 
-What is recommended is setting the conversation's `data-id` inside of the url query string in order to provide a custom page taylored to the customer (e.g displaying a confirmation instead of a choice the second times the customer clicks on it), avoiding him doing several times the procedure.
+What is recommended is setting the conversation's `data-id` inside of the url query string in order to provide a custom page taylored to the customer (e.g. displaying a confirmation instead of a choice the second time the customer clicks on it), avoiding him doing several times the procedure.
 
 You can also use this `id` to send a `post` request to Engage Digital API to send a message to the customer after he has taken all actions on the page to confirm or give a summary of his choices. Passing any parameter the client has already given the agent through the query string is possible, such as a ticket number or an email.
 
@@ -35,8 +35,8 @@ The page on the webview should be hosted on your side, and setup to accept displ
   | **Facebook Messenger** | **<span style="color:orange">Not yet</span>** | **<span style="color:orange">Not yet</span>** |
   | **Google Business Messages** | N/A | N/A |
   | **Source SDK** | **<span style="color:orange">Not yet</span>** | **<span style="color:orange">Not yet</span>** |
-  | **Twitter Direct Messages** | **<span style="color:orange">Not yet</span>** | N/A |
-  | **Viber** | **<span style="color:orange">Not yet</span>** | N/A |
+  | **Twitter Direct Messages** | N/A | N/A |
+  | **Viber** | N/A | N/A |
   | **WhatsApp** | N/A | N/A |
 
 ## Engage Messaging Web specific customization
@@ -45,7 +45,7 @@ The page on the webview should be hosted on your side, and setup to accept displ
 
 The webview colors can be changed with the `$webview-header-background-color`, and `$webview-header-text-color`. See the [Customization](../web-messaging/customization) page for details.
 
-Engage Messaging is among the source allowing you to set a smaller window to open. To so do, set the `webview_height` parameter to fit your need, you can see the design for `tall` and `compact` webviews in the following visuals.
+Engage Messaging is one of the sources allowing you to set a smaller window to open. To so do, set the `webview_height` parameter to fit your need, you can see the design for `tall` and `compact` webviews in the following visuals.
 
 <img class="img-fluid" width="419" src="../../../img/web-messaging-webview-tall.png">
 <img class="img-fluid" width="419" src="../../../img/web-messaging-webview-compact.png">
