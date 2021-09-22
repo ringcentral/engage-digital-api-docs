@@ -12,7 +12,7 @@ The webview is not just a simple window opening, it can be used to display a cus
 
 It should be noted that no default picker or page is provided and this feature is intended to be customizable, not out of the box. No default response after the customer has finished taking actions on the page is provided either.
 
-What is recommended is setting the conversation's `data-id` inside of the url query string in order to provide a custom page taylored to the customer (e.g. displaying a confirmation instead of a choice the second time the customer clicks on it), avoiding him doing several times the procedure.
+What is recommended is setting the conversation's `data-id` inside of the url query string in order to provide a custom page taylored to the customer (e.g., displaying a confirmation instead of a choice the second time the customer clicks on it), avoiding him doing several times the procedure.
 
 You can also use this `id` to send a `post` request to Engage Digital API to send a message to the customer after he has taken all actions on the page to confirm or give a summary of his choices. Passing any parameter the client has already given the agent through the query string is possible, such as a ticket number or an email.
 
