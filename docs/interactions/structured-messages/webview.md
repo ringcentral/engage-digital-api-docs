@@ -26,18 +26,18 @@ The page on the webview should be hosted on your side, and setup to accept displ
 * **<span style="color:orange">Not yet</span>**: Supported by channel but not by Engage Digital yet
 * N/A: Not supported by channel
 
-  |  | **webview** | **webview_height** |
-  |-|-|-|
-  | **Apple Business Chat** | N/A | N/A |
-  | **Engage Android Messaging** | **<span style="color:orange">Not yet</span>** | **<span style="color:orange">Not yet</span>** |
-  | **Engage iOS Messaging** | **<span style="color:orange">Not yet</span>** | **<span style="color:orange">Not yet</span>** |
-  | **Engage Web Messaging** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** |
-  | **Facebook Messenger** | **<span style="color:orange">Not yet</span>** | **<span style="color:orange">Not yet</span>** |
-  | **Google Business Messages** | N/A | N/A |
-  | **Source SDK** | **<span style="color:orange">Not yet</span>** | **<span style="color:orange">Not yet</span>** |
-  | **Twitter Direct Messages** | N/A | N/A |
-  | **Viber** | N/A | N/A |
-  | **WhatsApp** | N/A | N/A |
+| | **webview** | **webview_height** |
+|-|-|-|
+| **Apple Business Chat** | N/A | N/A |
+| **Engage Android Messaging** | **<span style="color:orange">Not yet</span>** | **<span style="color:orange">Not yet</span>** |
+| **Engage iOS Messaging** | **<span style="color:orange">Not yet</span>** | **<span style="color:orange">Not yet</span>** |
+| **Engage Web Messaging** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** |
+| **Facebook Messenger** | **<span style="color:orange">Not yet</span>** | **<span style="color:orange">Not yet</span>** |
+| **Google Business Messages** | N/A | N/A |
+| **Source SDK** | **<span style="color:orange">Not yet</span>** | **<span style="color:orange">Not yet</span>** |
+| **Twitter Direct Messages** | N/A | N/A |
+| **Viber** | N/A | N/A |
+| **WhatsApp** | N/A | N/A |
 
 ## Engage Messaging Web specific customization
 
