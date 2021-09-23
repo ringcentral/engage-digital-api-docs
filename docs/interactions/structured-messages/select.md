@@ -165,6 +165,7 @@ Primary parameters are used by default, however, some parameters are unique or o
 | **`items.title`** | String | The title of the item. *Truncated to 20 characters.* |
 | **`items.attachment_id`** | String | **Optional**. Existing attachment id used to decorate the item in the list. Supports private attachments. [Upload attachments](../../../basics/uploads) for you own custom images. |
 | **`items.attachment_fallback_id`** | String | **Optional**. Fallback in case the attachment related to the attachment_id doesn’t meet the source requirements. Must be public. Only jpg, jpeg, png formats. Maximum size of 5 MB. [Upload attachments](../../../basics/uploads) for you own custom images. |
+| **`items.payload`** | String | **Optional**. The item payload field. Limited to 200 characters. Automatically gets populated as a random hex if blank. |
 
 ## Example: Engage Messaging (Quick Replies)
 
@@ -219,7 +220,7 @@ Primary parameters are used by default, however, some parameters are unique or o
 | API Property | Specificity |
 |-|-|
 | **`structured_content.items.title`** | Truncated to 25 characters. |
-| **`structured_content.items.payload`** | Automatically gets populated as a random hex if blank. |
+| **`structured_content.items.payload`** | **Optional**. The item payload field.<br>Limited to 200 characters.<br>Automatically gets populated as a random hex if blank. |
 
 ## Example: WhatsApp (List Messages)
 
@@ -334,3 +335,4 @@ Primary parameters are used by default, however, some parameters are unique or o
 | API Property | Type | Description |
 |-|-|-|
 | **`items.title`** | String | The title of the item. *Truncated to 20 characters.* |
+| **`items.payload`** | String | **Optional**. The item payload field.<br>Limited to 200 characters.<br>Automatically gets populated as a random hex if blank. |
