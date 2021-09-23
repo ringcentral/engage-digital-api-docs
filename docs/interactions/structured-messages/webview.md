@@ -43,7 +43,7 @@ The page on the webview should be hosted on your side, and setup to accept displ
 
 <img class="img-fluid" width="419" src="../../../img/web-messaging-webview-portrait.png">
 
-The webview colors can be changed with the `$webview-header-background-color`, and `$webview-header-text-color`. See the [Customization](../web-messaging/customization) page for details.
+The webview colors can be changed with the `$webview-header-background-color`, and `$webview-header-text-color`. See the [Customization](../../web-messaging/customization) page for details.
 
 Engage Messaging is one of the sources allowing you to set a smaller window to open. To so do, set the `webview_height` parameter to fit your need, you can see the design for `tall` and `compact` webviews in the following visuals.
 
