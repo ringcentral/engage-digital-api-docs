@@ -69,7 +69,7 @@ Primary parameters are used by default, however, some parameters are unique or o
 | **`structured_content.title`** | Limited to 640 characters. |
 | **`structured_content.items`** | A maximum of 3 items is supported. |
 | **`structured_content.items.title`** | Truncated to 20 characters. |
-| **`structured_content.items.payload`** | Limited to 1000 characters. |
+| **`structured_content.items.payload`** | Limited to 1000 characters. Automatically gets populated as a random hex if blank. |
 
 Otherwise, it will be converted to a Generic Template in Facebook Messenger.
 
@@ -83,6 +83,7 @@ Otherwise, it will be converted to a Generic Template in Facebook Messenger.
 | **`structured_content.title`** | Truncated to 80 characters. |
 | **`structured_content.subtitle`** | Truncated to 80 characters. |
 | **`structured_content.items.title`** | Truncated to 20 characters. |
+| **`structured_content.items.payload`** | Limited to 1000 characters. Automatically gets populated as a random hex if blank. |
 
 ## Example: Engage Messaging
 

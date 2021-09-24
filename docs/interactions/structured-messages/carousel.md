@@ -107,6 +107,7 @@ Primary parameters are used by default, however, some parameters are unique or o
 | **`structured_content.items.title`** | Truncated to 80 characters. |
 | **`structured_content.items.subtitle`** | Truncated to 80 characters. |
 | **`structured_content.items.items.title`** | Truncated to 20 characters. |
+| **`structured_content.items.items.payload`** | Automatically gets populated as a random hex if blank. |
 
 ## Example: Engage Messaging
 
