@@ -92,6 +92,7 @@ Primary parameters are used by default, however, some parameters are unique or o
 | **`structured_content.url`** | Deep links are supported. |
 | **`structured_content.target`** | **Optional**. **Ignored** when the `url` is empty. Behavior applied when clicking on the url. Can be **webview** to open url on a [webview](../webview) above the chat, `open` to open url in new tab, or `current` to open url in current tab. Defaults to **open** when not specified.|
 | **`structured_content.webview_height`** | **Optional**. **Ignored** when `target` is other than `webview`. Size of the webview used to open the link. Can be `full`, `tall` or `compact`. Defaults to `full` if unset.|
+
 ## Example: Google Business Messages
 
 Google Business Messages does not *natively* support rich links. That’s why the rich link is converted to a Rich Card and the link is converted to a single button that will redirect to the url when clicked. The url_text property is used to display the title of the button.
