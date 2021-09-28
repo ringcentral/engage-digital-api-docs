@@ -93,6 +93,8 @@ The server in RingCentral Engage currently uses the following JWT extensions:
 
 * “exp” : an expiration timestamp must be provided in the payload (via the “exp” key), and must be set to a future date (for example a date matching “now + 2 hours”). The expected format for this expiration date is a [Unix Timestamp](https://en.wikipedia.org/wiki/Unix_time) (integer). Our configured acceptable leeway is 10s
 
+The “uuid” key will become mandatory in a future release.
+
 #### Generation of the JWT
 
 For the headers, you must have the “typ”, “alg” and “kid” keys. The “kid” contains the `Key ID` of the key configured in the Engage Messaging Community in RingCentral Engage and used for the signature.
@@ -138,6 +140,12 @@ This code has to be inserted in the HTML source of the target website. It can be
 
 !!! Required
     Create a JWT key in RingCentral Engage and provide both the Key ID and the Secret/Public Key. Prepare and provide an example with the information wanted for the JWT payload and a copy of this section to be given to the customer tech team.
+
+#### Security
+
+The "accept" JWT mode is an unsecure mode for production if you are using JWT to set your user's data since it also allows non-signed identities.
+
+To be able to share the history cross device between web and mobile, the mobile uses a JWT to authenticate the user UUID. But then if you allow non-signed identities on the web, there's a security issue.
 
 ## Custom Variables Integration (optional)
 
