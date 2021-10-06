@@ -77,6 +77,7 @@ pages:
     - 'Requests': basics/requests.md
     - 'Responses and Errors': basics/responses.md
     - 'Authentication': basics/auth.md
+    - 'Sing Sign-on': basics/sso.md
     - 'Uploading Files': basics/uploads.md
     - 'Filters and Pagination': basics/pagination.md
     - 'User Impersonation': basics/impersonation.md
