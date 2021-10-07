@@ -32,7 +32,7 @@ RingCentral Engage Messaging supports registering information about the visitorâ
 
 The `Signed identities` field configures the handling of those signed identities by the Server:
 
-* **Accept JWT signed identities** : either non-signed and signed information are accepted. This is a flexible mode.
+* **Accept JWT signed identities** : either non-signed and signed information are accepted. This is a flexible mode. It is **not recommended for production**, see details [here](../integration#security).
 * **Reject JWT signed identities** : only non-signed information is accepted. This is a strict mode. This is the default value.
 * **Require JWT signed identities** : only signed information is accepted. This is a strict secure mode.
 
