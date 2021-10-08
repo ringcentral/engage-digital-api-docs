@@ -93,9 +93,9 @@ The server in RingCentral Engage currently uses the following JWT extensions:
 
 * “exp” : an expiration timestamp must be provided in the payload (via the “exp” key), and must be set to a future date (for example a date matching “now + 2 hours”). The expected format for this expiration date is a [Unix Timestamp](https://en.wikipedia.org/wiki/Unix_time) (integer). Our configured acceptable leeway is 10s
 
-!!! tip "Required data"
+!!! warning "Required data"
     The **“uuid”** key with a valid value is **mandatory** in the JWT payload.
-    When missing, the identity will be rejected and, if the **“require” JWT mode** is set on the community profile, the chat won't open.
+    When missing, the identity will be rejected and, if the **“Require JWT signed identities” JWT mode** is set on the community profile, the chat won't open.
 
 #### Generation of the JWT
 
