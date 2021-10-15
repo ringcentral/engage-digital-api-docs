@@ -7982,8 +7982,12 @@ components:
       properties:
         text:
           type: string
+          description: |-
+            Reply as viewed/typed by the end user.
         value:
           type: string
+          description: |-
+            Technical value, same as text for text inputs.
     SurveyResponse:
       properties:
         id:
@@ -8014,20 +8018,41 @@ components:
           type: string
         foreign_id:
           type: integer
+          deprecated: true
+          description: |-
+            The alchemer id for this response.
+            Deprecated, use 'response_foreign_id' field instead.
+        response_foreign_id:
+          type: string
+          description: |-
+            The survey provider's id for this response.
         answers:
           type: object
+          deprecated: true
+          description: |-
+            Legacy object that contains questions as keys and replies as values.
+            Use 'questions' field instead.
         questions:
           type: array
+          description: |-
+            Questions answered by this response.
           items:
-            $ref: '#/components/schemas/SurveyResponseQuestions'
-    SurveyResponseQuestions:
+            $ref: '#/components/schemas/SurveyResponseQuestion'
+    SurveyResponseQuestion:
       properties:
         foreign_id:
           type: string
+          description: |-
+            The survey provider's id for this question.
         text:
           type: string
+          description: |-
+            The question's body.
         replies:
           type: array
+          description: >-
+            The question's replies.
+            Multiple choices questions can have more than 1 element.
           items:
             $ref: '#/components/schemas/SurveyQuestionReply'
     Tag:
