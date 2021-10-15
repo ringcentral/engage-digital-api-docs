@@ -33,6 +33,7 @@ x-tag-groups:
       - Intervention Comments
       - Interventions
       - Sources
+      - Survey Responses
       - Threads
   - name: Provisioning
     tags:
@@ -91,6 +92,7 @@ tags:
   - name: Channels
   - name: Folders
   - name: Presence Status
+  - name: Survey Responses
 
 paths:
   /attachments:
@@ -4412,6 +4414,27 @@ paths:
       summary: Get all connected agents status
       tags:
         - Agent Status
+  '/survey_responses/{surveyResponseId}':
+    get:
+      description: >-
+        This method returns information about the response.
+      operationId: getSurveyResponse
+      parameters:
+        - in: path
+          name: surveyResponseId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SurveyResponse'
+          description: Success
+      summary: Get a survey response
+      tags:
+        - Survey Responses
   '/status/{agentId}':
     get:
       description: >-
@@ -7955,6 +7978,58 @@ components:
           items:
             type: string
           type: array
+    SurveyQuestionReply:
+      properties:
+        text:
+          type: string
+        value:
+          type: string
+    SurveyResponse:
+      properties:
+        id:
+          type: string
+        created_at:
+          format: date-time
+          type: string
+        updated_at:
+          format: date-time
+          type: string
+        main_indicator:
+          type: integer
+        main_indicator_scaled:
+          type: number
+        intervention_id:
+          type: string
+        survey_id:
+          type: string
+        survey_foreign_id:
+          type: string
+        survey_type:
+          type: string
+          enum:
+            - alchemer
+        source_id:
+          type: string
+        user_id:
+          type: string
+        foreign_id:
+          type: integer
+        answers:
+          type: object
+        questions:
+          type: array
+          items:
+            $ref: '#/components/schemas/SurveyResponseQuestions'
+    SurveyResponseQuestions:
+      properties:
+        foreign_id:
+          type: string
+        text:
+          type: string
+        replies:
+          type: array
+          items:
+            $ref: '#/components/schemas/SurveyQuestionReply'
     Tag:
       properties:
         created_at:
