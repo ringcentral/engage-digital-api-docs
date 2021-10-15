@@ -4417,7 +4417,7 @@ paths:
   '/survey_responses/{surveyResponseId}':
     get:
       description: >-
-        This method returns information about the response.
+        This method returns information about a survey response.
       operationId: getSurveyResponse
       parameters:
         - in: path
