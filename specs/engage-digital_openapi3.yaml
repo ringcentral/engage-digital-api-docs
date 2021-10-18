@@ -8022,6 +8022,7 @@ components:
           description: |-
             The alchemer id for this response.
             Deprecated, use 'response_foreign_id' field instead.
+            Will be removed on 2021 December 15th.
         response_foreign_id:
           type: string
           description: |-
@@ -8031,7 +8032,8 @@ components:
           deprecated: true
           description: |-
             Legacy object that contains questions as keys and replies as values.
-            Use 'questions' field instead.
+            Deprecated, use 'questions' field instead.
+            Will be removed on 2021 December 15th.
         questions:
           type: array
           description: |-
