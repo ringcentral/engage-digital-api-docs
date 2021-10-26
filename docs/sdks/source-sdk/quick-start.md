@@ -2,7 +2,7 @@
 
 In this Quick Start, we are going to help you start using the Source SDK by first creating a channel for your source to connect to. Without a channel to connect to, you will not be able to configure the Send API to send to agents. Let's get started.
 
-## Create an Engage Digital SDK Channel
+## Create an Engage Digital Channel SDK
 
 For this Quick Start, we need to create a channel and then assign an agent to that channel. There are several steps in this process starting with the community.
 
