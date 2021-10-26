@@ -2,7 +2,7 @@
 
 In this Quick Start, we are going to help you start using the Source SDK by first creating a channel for your source to connect to. Without a channel to connect to, you will not be able to configure the Send API to send to agents. Let's get started.
 
-## Create an Engage Messaging Channel
+## Create an Engage Digital SDK Channel
 
 For this Quick Start, we need to create a channel and then assign an agent to that channel. There are several steps in this process starting with the community.
 
@@ -10,7 +10,7 @@ For this Quick Start, we need to create a channel and then assign an agent to th
 
 Communities are databases of identities associated with each channel. Identities allow agents to post messages to various channels in the platform. Before you create a channel, you must create a community for each type of channel being used. You can learn more about [Communites](https://support.ringcentral.com/engagedigital/admin/intro-communities.html) from our support pages.
 
-To get started navigate to **Channels->Community profiles** to see your current community profiles. Here you will add a new community profile for the Source SDK. 
+To get started navigate to **Channels->Community profiles** to see your current community profiles. Here you will add a new community profile for the Source SDK.
 
 <img class="img-fluid" width="363" src="../../../img/source-sdk-community-profile.png">
 
@@ -36,7 +36,7 @@ Enter the follow required fields:
 | **Name** | Give your channel a name. In our example, we are using `test-source-sdk-channel`. |
 | **Community** | Select the community profile for your channel. In our example, we are using `test-source-sdk`. |
 | **Base URI** | This is the endpoint for the source you are wishing to send messaging data to, that originate from the Engage Digital platform. |
-| **API access token** | Take note of this field as you'll need this token to verify your send requests to the channel. | 
+| **API access token** | Take note of this field as you'll need this token to verify your send requests to the channel. |
 
 <img class="img-fluid" width="1043" src="../../../img/source-sdk-ed-channel-sdk-fields.png">
 
@@ -254,7 +254,7 @@ Source SDK supports the following type of attachments:
 
 It is possible to manage thread categorization from the Source SDK, a **categories field** is available for Message and Private Message objects. Using this field you can send the external categories applied on the third party side to Engage Digital. On the Engage Digital side it is possible to set up recategorization rules via the rules engine in order to apply a specific categorization according to the information received from the Source SDK.
 
-You can specify any value in this field. A mapping will be set up on the Engage Digital side to match the values received via the Source SDK with existing categories in Engage Digital. 
+You can specify any value in this field. A mapping will be set up on the Engage Digital side to match the values received via the Source SDK with existing categories in Engage Digital.
 
 !!! important "Remember!"
     Remember to pass this information to your Engage Digital project manager so that he or she can set up the category mapping.
