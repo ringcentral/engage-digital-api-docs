@@ -92,7 +92,7 @@ pages:
       - 'Overview': sdks/app-sdk/index.md
       - 'Configuration and Development': sdks/app-sdk/config.md
       - 'Methods': sdks/app-sdk/methods.md
-    - 'Source SDK':
+    - 'Channel SDK':
       - 'Overview': sdks/source-sdk/index.md
       - 'Getting Started': sdks/source-sdk/quick-start.md
       - 'Workflow': sdks/source-sdk/workflow.md
