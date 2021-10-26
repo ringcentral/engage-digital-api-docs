@@ -2,7 +2,7 @@
 
 ### Client SDKs
 
-Client SDKs provide native language interface to Engage Digital REST APIs. 
+Client SDKs provide native language interface to Engage Digital REST APIs.
 
 * [JavaScript Client SDK](https://github.com/ringcentral/engage-digital-client-js)
 * [Python Client SDK](https://github.com/ringcentral/engage-digital-client-python)
@@ -21,17 +21,17 @@ Engage Digital Messaging SDKs are libraries that allow integration of rich in-ap
 * [Android Messaging SDK](https://github.com/ringcentral/engage-digital-messaging-android) - [sample app](https://github.com/ringcentral-tutorials/engage-digital-messaging-android-demo)
 * [iOS Messaging SDK](https://github.com/ringcentral/engage-digital-messaging-ios) - [sample app](https://github.com/ringcentral-tutorials/engage-digital-messaging-ios-demo)
 
-### Source SDKs
+### Channel SDKs
 
-Source SDKs and Frameworks allow connection of Engage Digital to other messaging systems easily. Some built-in sources include Apple Business Chat, Facebook Messenger, WeChat, etc.
+Channel SDKs and Frameworks allow connection of Engage Digital to other messaging systems easily. Some built-in sources include Apple Business Chat, Facebook Messenger, WeChat, etc.
 
-* [Source SDK documentation](https://github.com/ringcentral/engage-digital-source-sdk/wiki)
-* [JavaScript Source SDK Framework](https://github.com/ringcentral/engage-digital-source-sdk-js)
-* [Glip Source SDK Demo app](https://github.com/ringcentral/engage-digital-sdk-source-glip)
-* [Reddit Source SDK Demo app](https://github.com/ringcentral/engage-digital-sdk-source-reddit)
-* [JavaScript Source SDK Demo App](https://github.com/ringcentral-tutorials/engage-digital-source-sdk-demo)
-* [PHP Source SDK](https://github.com/ringcentral/engage-digital-source-sdk)
-* [WordPress Plugin for Source SDK](https://github.com/ringcentral-tutorials/engage-digital-source-sdk-wordpress-plugin)
+* [Channel SDK documentation](https://github.com/ringcentral/engage-digital-source-sdk/wiki)
+* [JavaScript Channel SDK Framework](https://github.com/ringcentral/engage-digital-source-sdk-js)
+* [Glip Channel SDK Demo app](https://github.com/ringcentral/engage-digital-sdk-source-glip)
+* [Reddit Channel SDK Demo app](https://github.com/ringcentral/engage-digital-sdk-source-reddit)
+* [JavaScript Channel SDK Demo App](https://github.com/ringcentral-tutorials/engage-digital-source-sdk-demo)
+* [PHP Channel SDK](https://github.com/ringcentral/engage-digital-source-sdk)
+* [WordPress Plugin for Channel SDK](https://github.com/ringcentral-tutorials/engage-digital-source-sdk-wordpress-plugin)
 
 ## Community SDKs and Sample Apps
 
@@ -44,7 +44,7 @@ Some of these integrations may be incomplete. Feedback and bugs should be direct
 ### C&#35;
 
 * [Client SDKs](https://github.com/joalmeid/engage-digital-client-csharp) - [Nuget package](https://www.nuget.org/packages/RingCentral.EngageDigital/)
-* [Source SDK Framework](https://github.com/joalmeid/engage-digital-source-sdk-csharp) - [Nuget package](https://www.nuget.org/packages/RingCentral.EngageDigital.SourceSdk/)
+* [Channel SDK Framework](https://github.com/joalmeid/engage-digital-source-sdk-csharp) - [Nuget package](https://www.nuget.org/packages/RingCentral.EngageDigital.SourceSdk/)
 
 ### Go
 

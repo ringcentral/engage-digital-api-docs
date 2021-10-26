@@ -1,6 +1,6 @@
-# Source SDK Quick Start
+# Channel SDK Quick Start
 
-In this Quick Start, we are going to help you start using the Source SDK by first creating a channel for your source to connect to. Without a channel to connect to, you will not be able to configure the Send API to send to agents. Let's get started.
+In this Quick Start, we are going to help you start using the Channel SDK by first creating a channel for your source to connect to. Without a channel to connect to, you will not be able to configure the Send API to send to agents. Let's get started.
 
 ## Create an Engage Digital Channel SDK
 
@@ -10,7 +10,7 @@ For this Quick Start, we need to create a channel and then assign an agent to th
 
 Communities are databases of identities associated with each channel. Identities allow agents to post messages to various channels in the platform. Before you create a channel, you must create a community for each type of channel being used. You can learn more about [Communites](https://support.ringcentral.com/engagedigital/admin/intro-communities.html) from our support pages.
 
-To get started navigate to **Channels->Community profiles** to see your current community profiles. Here you will add a new community profile for the Source SDK.
+To get started navigate to **Channels->Community profiles** to see your current community profiles. Here you will add a new community profile for the Channel SDK.
 
 <img class="img-fluid" width="363" src="../../../img/source-sdk-community-profile.png">
 
@@ -22,9 +22,9 @@ Give your community profile a name, like `test-source-sdk`. Make sure the commun
 
 ### Create a Channel
 
-The next step is to add a channel to your new Source SDK community profile. You can learn more about [Channels](https://support.ringcentral.com/engagedigital/admin/configure-entry-points.html) in our support pages.
+The next step is to add a channel to your new Channel SDK community profile. You can learn more about [Channels](https://support.ringcentral.com/engagedigital/admin/configure-entry-points.html) in our support pages.
 
-To create a channel navigate to **Channels->Channels** to see a list of your current channels. Here you will add a new channel for your Source SDK integration using the Source SDK community profile. This new channel will be an **Engage Digital channel SDK**.
+To create a channel navigate to **Channels->Channels** to see a list of your current channels. Here you will add a new channel for your Channel SDK integration using the Channel SDK community profile. This new channel will be an **Engage Digital channel SDK**.
 
 <img class="img-fluid" width="231" src="../../../img/source-sdk-ed-channel-sdk-icon.png">
 
@@ -59,18 +59,18 @@ There are three types of channel groups: asynchronus, real time, and triage. For
 
 <img class="img-fluid" width="527" src="../../../img/channel-group-menu.png">
 
-Now let's add our Source SDK Channel to the real time channel. First click the pencil icon to edit the real time channel.
+Now let's add our Channel SDK Channel to the real time channel. First click the pencil icon to edit the real time channel.
 
 !!! Note
     These channel groups can be renamed to a custom name and may not be the name used for the real time mode. For our Quick Start, we are using the default channel group name.
 
 <img class="img-fluid" width="986" src="../../../img/channel-group-edit.png">
 
-Then add our Source SDK Channel in the Channels field by selecting it from the dropdown.
+Then add our Channel SDK Channel in the Channels field by selecting it from the dropdown.
 
 <img class="img-fluid" width="444" src="../../../img/source-sdk-channel-group-realtime.png">
 
-Now we are setup in Engage Digital with a Source SDK Channel and our Agent assigned to the channel so they can receive messages from your source. The next step is to connect your source, which is initiated from Engage Digital. Once you have your **Base URI** ready, move on to the next section.
+Now we are setup in Engage Digital with a Channel SDK Channel and our Agent assigned to the channel so they can receive messages from your source. The next step is to connect your source, which is initiated from Engage Digital. Once you have your **Base URI** ready, move on to the next section.
 
 ## Creating a Source for Engage Digital
 
@@ -83,7 +83,7 @@ Please note that all requests and responses generated on your side must be signe
 
 ### Polling to Start Integration - The implementation.info Request
 
-The starting point for any communication between your source and the Engage Digital platform is via [implementation.info](../action-details/#implementationinfo) sent through [polling](../polling). This request, sent from the Engage Digital Platform upon saving your Engage Digital Source SDK channel, allows you to respond to Engage Digital of the requests that you wish to manage on your side within your integration (message creation, thread creation, etc.) This request is made at the creation of the source (once you click **"Save"**) on the Engage Digital side.
+The starting point for any communication between your source and the Engage Digital platform is via [implementation.info](../action-details/#implementationinfo) sent through [polling](../polling). This request, sent from the Engage Digital Platform upon saving your Engage Digital Channel SDK channel, allows you to respond to Engage Digital of the requests that you wish to manage on your side within your integration (message creation, thread creation, etc.) This request is made at the creation of the source (once you click **"Save"**) on the Engage Digital side.
 
 !!! important
     You must submit this request correctly or you will not receive any other request for message synchronisation or message creation.
@@ -153,7 +153,7 @@ See [Actions](../actions) to learn more.
 
 ### Two Working Models for Interaction
 
-The Source SDK offers two working models:
+The Channel SDK offers two working models:
 
 * [Standard Polling Query](../quick-start/#standard-polling-query)
 * [Real time Query](../quick-start/#real-time-query)
@@ -161,7 +161,7 @@ The Source SDK offers two working models:
 #### Standard Polling Query
 
 In a second step, we have to implement the response to the different queries supported in the implementation.info.
-In the case of asynchronous integration required polling synchronization, please follow all the steps described in the dedicated parts of the Source SDK as follows:
+In the case of asynchronous integration required polling synchronization, please follow all the steps described in the dedicated parts of the Channel SDK as follows:
 
 * [Polling system](../polling)
 * [Action details](../action-details)
@@ -201,7 +201,7 @@ All the dedicated parameters for Message, Private Message, and User objects are 
 * [Private message](../objects/#privatemessages)
 * [User](../objects/#users)
 
-If you want to manage attachments using the Source SDK, you can use the dedicated attachments parameters available on both objects. In this case, it is not required to specify a content body. You can only send the attachment if you want. Attachments must be specified using a direct url or a Base64 content.
+If you want to manage attachments using the Channel SDK, you can use the dedicated attachments parameters available on both objects. In this case, it is not required to specify a content body. You can only send the attachment if you want. Attachments must be specified using a direct url or a Base64 content.
 
 Creating a message with attachment in real time from a third party:
 
@@ -231,7 +231,7 @@ Creating a message with attachment in real time from a third party:
 }
 ```
 
-Source SDK supports the following type of attachments:
+Channel SDK supports the following type of attachments:
 
 * **audio**: aac, mp3, ogg, m4a
 * **excel**: xls, xlsm, xlsx, xlc, xlt, xltm, xltx
@@ -252,9 +252,9 @@ Source SDK supports the following type of attachments:
 
 ### Content Categorization
 
-It is possible to manage thread categorization from the Source SDK, a **categories field** is available for Message and Private Message objects. Using this field you can send the external categories applied on the third party side to Engage Digital. On the Engage Digital side it is possible to set up recategorization rules via the rules engine in order to apply a specific categorization according to the information received from the Source SDK.
+It is possible to manage thread categorization from the Channel SDK, a **categories field** is available for Message and Private Message objects. Using this field you can send the external categories applied on the third party side to Engage Digital. On the Engage Digital side it is possible to set up recategorization rules via the rules engine in order to apply a specific categorization according to the information received from the Channel SDK.
 
-You can specify any value in this field. A mapping will be set up on the Engage Digital side to match the values received via the Source SDK with existing categories in Engage Digital.
+You can specify any value in this field. A mapping will be set up on the Engage Digital side to match the values received via the Channel SDK with existing categories in Engage Digital.
 
 !!! important "Remember!"
     Remember to pass this information to your Engage Digital project manager so that he or she can set up the category mapping.
@@ -264,7 +264,7 @@ You can specify any value in this field. A mapping will be set up on the Engage 
 
 ### Send Context Data
 
-It is possible to send context data via the Source SDK. This context data can be transmitted via the Message, Private Message or User objects. The context data linked to Message and Private Message objects will be associated with the thread on the Engage Digital side and will be displayed below the imported messages. The context data linked to the User object will be synchronized with the customer record on Engage Digital side.
+It is possible to send context data via the Channel SDK. This context data can be transmitted via the Message, Private Message or User objects. The context data linked to Message and Private Message objects will be associated with the thread on the Engage Digital side and will be displayed below the imported messages. The context data linked to the User object will be synchronized with the customer record on Engage Digital side.
 
 It is recommended to use the Message and Private Message context data for session related information (i.e. page url, shopping cart amount, detected intention, ...). On the contrary, the User context data should be used to enrich the customer record on the Engage Digital side, they should only include information related to the user.
 
@@ -276,18 +276,18 @@ For more informations regarding the Message / Private Message and User context d
 * [Private message](../objects/#privatemessages)
 * [User](../objects/#users)
 
-### User Management - Agents Replying to Source SDK Messages
+### User Management - Agents Replying to Channel SDK Messages
 
-If you need to create agent messages directly via the Source SDK (import of already existing messages, bot directly connected to the Source SDK, ...), you can specify that the user linked to the message must be considered as an agent on the Engage Digital side. For this there is a **puppetizable field** that can be set in the User object, you have to set it to `true` for users that should be considered as agents and to `false` (default value) for customers. This will ensure that messages will be correctly recognized in the Engage Digital GUI.
+If you need to create agent messages directly via the Channel SDK (import of already existing messages, bot directly connected to the Channel SDK, ...), you can specify that the user linked to the message must be considered as an agent on the Engage Digital side. For this there is a **puppetizable field** that can be set in the User object, you have to set it to `true` for users that should be considered as agents and to `false` (default value) for customers. This will ensure that messages will be correctly recognized in the Engage Digital GUI.
 
 For more informations regarding User **puppetizable field**, you can check the online documentation:
 
 * [User](../objects/#users)
 
 !!! important
-    You need to set the **puppetizable field** one time at the beginning of the project to create an identity used by all the agents to reply on the Source SDK channel. This is a requirement to enable agents to reply from the Engage Digital console.
+    You need to set the **puppetizable field** one time at the beginning of the project to create an identity used by all the agents to reply on the Channel SDK channel. This is a requirement to enable agents to reply from the Engage Digital console.
 
-Enabling agents to respond to messages coming from the Source SDK integration will need a few things setup to operate the way you want it to.  First you need to initialize an agent with an initial request to create a user identity.  As stated above, you will need the **puppetizable field** set so you can create an identity that is controlled by your agents.  Let's start with the first message you send to Engage Digital.
+Enabling agents to respond to messages coming from the Channel SDK integration will need a few things setup to operate the way you want it to.  First you need to initialize an agent with an initial request to create a user identity.  As stated above, you will need the **puppetizable field** set so you can create an identity that is controlled by your agents.  Let's start with the first message you send to Engage Digital.
 
 ```json
 {
@@ -326,7 +326,7 @@ And finallly assign this identity to your agent by going to "Agents" and selecti
 
 <img class="img-fluid" width="605" src="../../../img/source-sdk-edit-identity.png">
 
-You'll do this for each agent you want to respond to messages from this Source SDK. Now your agent(s) can reply to messages, but there's still a few more steps. By default, agents replying to messages through the Source SDK must click "Reply" and type their message in a pop-up window.
+You'll do this for each agent you want to respond to messages from this Channel SDK. Now your agent(s) can reply to messages, but there's still a few more steps. By default, agents replying to messages through the Channel SDK must click "Reply" and type their message in a pop-up window.
 
 <img class="img-fluid" width="613" src="../../../img/source-sdk-reply-msg.png">
 
@@ -370,7 +370,7 @@ Now when an agent responds to a message, that message will be sent to your Base 
 }
 ```
 
-We need to confirm the message was received by a response from your Source SDK. Create a response with the following in the JSON body.
+We need to confirm the message was received by a response from your Channel SDK. Create a response with the following in the JSON body.
 
 ```json
 {
