@@ -51,7 +51,7 @@ Engage Messaging is one of the sources allowing you to set a smaller window to o
 
 ## Engage Messaging iOS customization
 
-Our iOS SDK also permits to set a smaller window to open with the `webview_height` parameter.
+Engage Messaging is one of the sources allowing you to set a smaller window to open. To so do, set the `webview_height` parameter to fit your need, you can see the design for `full`, `tall` and `compact` webviews in the following visuals.
 
 | **Value** | **`full` (default)** | **`tall`** | **`compact`** |
 |-|-|-|-|
