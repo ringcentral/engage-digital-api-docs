@@ -1830,6 +1830,42 @@
           ]
         },
         {
+          "name": "Survey Responses",
+          "description": {
+            "type": "text/plain"
+          },
+          "item": [
+            {
+              "name": "Get a survey response",
+              "request": {
+                "url": {
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/survey_responses/:surveyResponseId",
+                  "host": [
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
+                  ],
+                  "path": [
+                    "1.0",
+                    "survey_responses",
+                    ":surveyResponseId"
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "description": "This method returns information about a survey response."
+              }
+            }
+          ]
+        },
+        {
           "name": "Threads",
           "description": {
             "type": "text/plain"

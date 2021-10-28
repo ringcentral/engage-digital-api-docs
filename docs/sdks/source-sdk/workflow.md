@@ -1,4 +1,4 @@
-# Introduction to Source SDK
+# Introduction to Channel SDK
 
 The SDK source offers two working types:
 
