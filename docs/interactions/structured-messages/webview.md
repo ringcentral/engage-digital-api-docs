@@ -49,3 +49,11 @@ Engage Messaging is one of the sources allowing you to set a smaller window to o
 
 <img class="img-fluid" width="419" src="../../../img/web-messaging-webview-tall.png">
 <img class="img-fluid" width="419" src="../../../img/web-messaging-webview-compact.png">
+
+## Engage Messaging iOS customization
+
+Our iOS SDK also permits to set a smaller window to open with the `webview_height` parameter.
+
+| **Value** | **`full` (default)** | **`tall`** | **`compact`** |
+|-|-|-|-|
+| **Preview** | <img class="img-fluid" width="419" src="../../../img/ios-messaging-webview-full.jpg"> | <img class="img-fluid" width="419" src="../../../img/ios-messaging-webview-tall.jpg"> | <img class="img-fluid" width="419" src="../../../img/ios-messaging-webview-compact.jpg"> |
