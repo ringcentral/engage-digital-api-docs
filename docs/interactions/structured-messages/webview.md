@@ -39,16 +39,15 @@ The page on the webview should be hosted on your side, and setup to accept displ
 | **Viber** | N/A | N/A |
 | **WhatsApp** | N/A | N/A |
 
-## Engage Messaging Web specific customization
-
-<img class="img-fluid" width="419" src="../../../img/web-messaging-webview-portrait.png">
+## Engage Messaging Web customization
 
 The webview colors can be changed with the `$webview-header-background-color`, and `$webview-header-text-color`. See the [Customization](../../web-messaging/customization) page for details.
 
-Engage Messaging is one of the sources allowing you to set a smaller window to open. To so do, set the `webview_height` parameter to fit your need, you can see the design for `tall` and `compact` webviews in the following visuals.
+Engage Messaging is one of the sources allowing you to set a smaller window to open. To so do, set the `webview_height` parameter to fit your need, you can see the design for `full`, `tall` and `compact` webviews in the following visuals.
 
-<img class="img-fluid" width="419" src="../../../img/web-messaging-webview-tall.png">
-<img class="img-fluid" width="419" src="../../../img/web-messaging-webview-compact.png">
+| **Value** | **`full` (default)** | **`tall`** | **`compact`** |
+|-|-|-|-|
+| **Preview** | <img class="img-fluid" width="419" src="../../../img/web-messaging-webview-portrait.png"> | <img class="img-fluid" width="419" src="../../../img/web-messaging-webview-tall.png"> | <img class="img-fluid" width="419" src="../../../img/web-messaging-webview-compact.png"> |
 
 ## Engage Messaging iOS customization
 
