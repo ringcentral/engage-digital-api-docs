@@ -90,7 +90,7 @@ Primary parameters are used by default, however, some parameters are unique or o
 |-|-|
 | **`structured_content.attachment_id`** | Supports bmp, gif, jpg, jpeg, png formats. Supports private attachments. [Upload attachments](../../../basics/uploads) for you own custom images.<br>On Engage Messaging Web, if the width of the image is bigger than the height, it will be displayed with a 5:3 ratio. Otherwise, a 1:1 ratio will be used.<br>Minimal recommended size with a 1:1 ratio: **258x258**<br>Minimal recommended size with a 5:3 ratio: **258x155** |
 | **`structured_content.url`** | Deep links are supported. |
-| **`structured_content.target`** | **Optional**. **Ignored** when the `url` is empty. Behavior applied when clicking on the url. Can be **webview** to open url on a [webview](../webview) above the chat, `open` to open url in new tab, or `current` to open url in current tab. Defaults to **open** when not specified.|
+| **`structured_content.target`** | **Optional**. **Ignored** when the `url` is empty. Behavior applied when clicking on the url. Can be **webview** to open url on a [webview](../webview) above the chat, `open` to open url in new tab, or `current` to open url in current tab. Defaults to **open** when not specified. On iOS, `current` value opens a full sized webview.|
 | **`structured_content.webview_height`** | **Optional**. **Ignored** when `target` is other than `webview`. Size of the webview used to open the link. Can be `full`, `tall` or `compact`. Defaults to `full` if unset.|
 
 ## Example: Google Business Messages
