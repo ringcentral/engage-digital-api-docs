@@ -43,7 +43,7 @@ The page on the webview should be hosted on your side, and setup to accept displ
 
 The webview colors can be changed with the `$webview-header-background-color`, and `$webview-header-text-color`. See the [Customization](../../web-messaging/customization) page for details.
 
-Engage Messaging is one of the sources allowing you to set a smaller window to open. To so do, set the `webview_height` parameter to fit your need, you can see the design for `full`, `tall` and `compact` webviews in the following visuals.
+Engage Messaging Web allows you to set a smaller window to open. To so do, set the `webview_height` parameter to fit your need, you can see the design for `full`, `tall` and `compact` webviews in the following visuals.
 
 | **Value** | **`full` (default)** | **`tall`** | **`compact`** |
 |-|-|-|-|
@@ -51,7 +51,7 @@ Engage Messaging is one of the sources allowing you to set a smaller window to o
 
 ## Engage Messaging iOS customization
 
-Engage Messaging is one of the sources allowing you to set a smaller window to open. To so do, set the `webview_height` parameter to fit your need, you can see the design for `full`, `tall` and `compact` webviews in the following visuals.
+Engage Messaging iOS allows you to set a smaller window to open. To so do, set the `webview_height` parameter to fit your need, you can see the design for `full`, `tall` and `compact` webviews in the following visuals.
 
 | **Value** | **`full` (default)** | **`tall`** | **`compact`** |
 |-|-|-|-|
