@@ -4424,7 +4424,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Survey'
+                $ref: '#/components/schemas/getAllSurveysResponse'
           description: Success
       summary: Getting all surveys
       tags:
@@ -7247,6 +7247,21 @@ components:
         records:
           items:
             $ref: '#/components/schemas/Source'
+          type: array
+    getAllSurveysResponse:
+      properties:
+        count:
+          format: int32
+          type: integer
+        limit:
+          format: int32
+          type: integer
+        offset:
+          format: int32
+          type: integer
+        records:
+          items:
+            $ref: '#/components/schemas/Survey'
           type: array
     GetAllTagsResponse:
       properties:
