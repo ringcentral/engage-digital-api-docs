@@ -4472,7 +4472,7 @@ paths:
           description: Success
       summary: Get a survey response
       tags:
-        - Surveys Responses
+        - Survey Responses
   '/status/{agentId}':
     get:
       description: >-
