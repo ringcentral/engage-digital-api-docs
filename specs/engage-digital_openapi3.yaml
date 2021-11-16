@@ -33,6 +33,7 @@ x-tag-groups:
       - Intervention Comments
       - Interventions
       - Sources
+      - Survey Responses
       - Surveys
       - Threads
   - name: Provisioning
@@ -92,6 +93,7 @@ tags:
   - name: Channels
   - name: Folders
   - name: Presence Status
+  - name: Survey Responses
   - name: Surveys
 
 paths:
@@ -4470,7 +4472,7 @@ paths:
           description: Success
       summary: Get a survey response
       tags:
-        - Surveys
+        - Surveys Responses
   '/status/{agentId}':
     get:
       description: >-
