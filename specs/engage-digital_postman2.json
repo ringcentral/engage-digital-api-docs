@@ -1830,7 +1830,7 @@
           ]
         },
         {
-          "name": "Surveys",
+          "name": "Survey Responses",
           "description": {
             "type": "text/plain"
           },
@@ -1862,7 +1862,15 @@
                 ],
                 "description": "This method returns information about a survey response."
               }
-            },
+            }
+          ]
+        },
+        {
+          "name": "Surveys",
+          "description": {
+            "type": "text/plain"
+          },
+          "item": [
             {
               "name": "Getting all surveys",
               "request": {
@@ -1887,7 +1895,7 @@
                     "value": "application/json"
                   }
                 ],
-                "description": "This method renders all surveys ordered by creation date (most recent first)."
+                "description": "This method renders all surveys ordered by creation date (ascending)."
               }
             },
             {
@@ -1915,7 +1923,7 @@
                     "value": "application/json"
                   }
                 ],
-                "description": "This method renders a survey from its id."
+                "description": "This method renders a survey from given id."
               }
             }
           ]
