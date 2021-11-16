@@ -8069,18 +8069,6 @@ components:
           description: |-
             Delay before sending survey to end users.
           type: number
-        last_activated_at:
-          description: |-
-            Internal field.
-            Updated each time the survey is enabled on the ED admin interface.
-          format: date-time
-          type: string
-        last_response_at:
-          description: |-
-            Internal field.
-            Time of last survey response. Used for polling responses from provider.
-          format: date-time
-          type: string
         category_ids:
           items:
             type: string
