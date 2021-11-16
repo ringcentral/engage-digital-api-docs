@@ -4419,7 +4419,7 @@ paths:
   /surveys:
     get:
       description: >-
-        This method renders all surveys ordered by creation date (most recent first).
+        This method renders all surveys ordered by creation date (ascending).
       operationId: getAllSurveys
       responses:
         '200':
@@ -4434,7 +4434,7 @@ paths:
   '/surveys/{surveyId}':
     get:
       description: >-
-        This method renders a survey from its id.
+        This method renders a survey from given id.
       operationId: getSurvey
       parameters:
         - in: path
@@ -8059,7 +8059,7 @@ components:
           type: string
         instant_send_threshold:
           description: |-
-            All intervention shorter than this value (in seconds) will have the survey sent instantly.
+            All intervention whose duration is shorter than this value (in seconds) will have the survey sent instantly.
           type: number
         max_time_since_last_reply:
           description: |-
@@ -8123,7 +8123,7 @@ components:
         choices:
           description: |-
             Fetched from survey provider.
-            List of choices end user can elect to answer this question.
+            List of choices end user can select to answer this question.
           items:
             $ref: '#/components/schemas/SurveyQuestionChoices'
     SurveyQuestionChoices:
