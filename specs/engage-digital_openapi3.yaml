@@ -8113,7 +8113,7 @@ components:
         foreign_id:
           description: |-
             The survey provider's id for this question.
-          type: number
+          type: string
         main:
           type: boolean
         text:
@@ -8126,14 +8126,17 @@ components:
             List of choices end user can select to answer this question.
           items:
             $ref: '#/components/schemas/SurveyQuestionChoices'
+          type: array
     SurveyQuestionChoices:
       properties:
         text:
           description: |-
             Choice text viewed by the end user.
+          type: string
         value:
           description: |-
             Technical value, same as text for text inputs.
+          type: string
     SurveyQuestionReply:
       properties:
         text:
