@@ -8069,8 +8069,6 @@ components:
           description: |-
             Delay before sending survey to end users.
           type: number
-        send_message:
-          type: string
         last_activated_at:
           description: |-
             Internal field.
@@ -8099,7 +8097,8 @@ components:
           description: |-
             Contains the information of the survey provider used.
             Currently, only provider supported is alchemer.
-          enum: ['alchemer']
+          enum:
+            - alchemer
           type: string
         questions:
           description: |-
