@@ -283,17 +283,17 @@ Primary parameters are used by default, however, some parameters are unique or o
 |-|-|-|
 | **Structured Content Settings** | | |
 | **`structured_content.items`** | Array | Truncated to 10 elements. |
-| **`structured_content.button`** | String | **Optional**. The button text field.<br>Limited to 20 characters. "See options" by default. |
-| **`structured_content.title`** | String | **Optional**. The title text field.<br>Limited to 60 characters.  |
-| **`structured_content.footer`** | String | **Optional**. The footer text field.<br>Limited to 60 characters.  |
+| **`structured_content.button`** | String | **Optional**. The button text field.<br>Limited to 20 characters.<br>*Truncated to 20 UTF-16 code units.*<br>"See options" by default. |
+| **`structured_content.title`** | String | **Optional**. The title text field.<br>Limited to 60 characters.<br>*Truncated to 60 UTF-16 code units.* |
+| **`structured_content.footer`** | String | **Optional**. The footer text field.<br>Limited to 60 characters.<br>*Truncated to 60 UTF-16 code units.* |
 | **Section Settings** | | |
 | **`structured_content.sections`** | Array | **Optional**. Limited to 10 elements. |
-| **`structured_content.sections.title`** | String | **Optional if there's only a single section**. The title of the section.<br>Limited to 24 characters. |
+| **`structured_content.sections.title`** | String | **Optional if there's only a single section**. The title of the section.<br>Limited to 24 characters.<br>*Truncated to 24 UTF-16 code units.* |
 | **`structured_content.sections.identifier`** | String | Identifier of the section that will be used to organize items in the section.<br>Limited to 200 characters. |
 | **Item Settings** | | |
-| **`structured_content.items.title`** | String | The item title field.<br>Truncated to 24 characters. |
+| **`structured_content.items.title`** | String | The item title field.<br>Truncated to 24 characters.<br>*Truncated to 24 UTF-16 code units.* |
 | **`structured_content.items.payload`** | String | **Optional**. The item payload field.<br>Limited to 200 characters.<br>Automatically gets populated as a random hex if blank. |
-| **`structured_content.items.description`** | String | **Optional**. The item description text field.<br>Limited to 72 characters. |
+| **`structured_content.items.description`** | String | **Optional**. The item description text field.<br>Limited to 72 characters.<br>*Truncated to 72 UTF-16 code units.* |
 | **`structured_content.items.section_identifier`** | String | **Optional if there's no sections**. The identifier of the section where the item is.<br>If there's no sections, the section_identifier field should be removed.<br>Each section must have at least 1 item.<br>Limited to 200 characters. |
 
 ##  Example: Instagram Messaging (Quick Replies)
