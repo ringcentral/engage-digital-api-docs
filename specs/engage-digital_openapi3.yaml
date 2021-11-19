@@ -8059,11 +8059,11 @@ components:
           type: string
         instant_send_threshold:
           description: |-
-            All intervention whose duration is shorter than this value (in seconds) will have the survey sent instantly.
+            Any intervention whose duration is shorter than this value (in seconds) will have the survey sent instantly.
           type: number
         max_time_since_last_reply:
           description: |-
-            If last message from end user is older than this value (in seconds), no survey will be sent.
+            If last message from end user is older than this duration (in seconds), no survey will be sent.
           type: number
         send_delay:
           description: |-
