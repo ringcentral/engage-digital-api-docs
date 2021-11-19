@@ -117,7 +117,7 @@ Primary parameters are used by default, however, some parameters are unique or o
 | **`structured_content.sections.identifier`** | String | Identifier of the section that will be used to organize items in the section.<br>Limited to 200 characters. |
 | **`structured_content.sections.multiple_section`** | Boolean | **Optional**. Allows the section to be multi selectable. False by default. |
 | **Item Settings** | | |
-| **`structured_content.items.section_identifier`** | String | **Optional if there's no sections**. The identifier of the section where the item is.<br>If there's no sections, the section_identifier field should be removed.<br>Each section must have at least 1 item.<br>Limited to 200 characters. |
+| **`structured_content.items.section_identifier`** | String | **Optional if there's no sections**. The identifier of the section where the item is.<br>If there's no section, the section_identifier field should be removed.<br>Each section must have at least 1 item.<br>Limited to 200 characters. |
 | **`structured_content.items.attachment_id`** | String | **Optional**. Existing attachment id used to decorate the item with an image. Supports private attachments. [Upload attachments](../../../basics/uploads) for you own custom images. |
 | **`structured_content.items.attachment_fallback_id`** | String | **Optional**. Fallback in case the attachment related to the attachment_id doesn’t meet the source requirements. Must be public. Only jpg, jpeg, png formats. Maximum size of 5 MB. [Upload attachments](../../../basics/uploads) for you own custom images. |
 | **`structured_content.items.subtitle`** | String | **Optional**. The subtitle of the item. Limited to 512 characters. |
@@ -294,7 +294,7 @@ Primary parameters are used by default, however, some parameters are unique or o
 | **`structured_content.items.title`** | String | The item title field.<br>Truncated to 24 characters.<br>*Truncated to 24 UTF-16 code units.* |
 | **`structured_content.items.payload`** | String | **Optional**. The item payload field.<br>Limited to 200 characters.<br>Automatically gets populated as a random hex if blank. |
 | **`structured_content.items.description`** | String | **Optional**. The item description text field.<br>Limited to 72 characters.<br>*Truncated to 72 UTF-16 code units.* |
-| **`structured_content.items.section_identifier`** | String | **Optional if there's no sections**. The identifier of the section where the item is.<br>If there's no sections, the section_identifier field should be removed.<br>Each section must have at least 1 item.<br>Limited to 200 characters. |
+| **`structured_content.items.section_identifier`** | String | **Optional if there's no sections**. The identifier of the section where the item is.<br>If there's no section, the section_identifier field should be removed.<br>Each section must have at least 1 item.<br>Limited to 200 characters. |
 
 ##  Example: Instagram Messaging (Quick Replies)
 
