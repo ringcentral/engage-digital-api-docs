@@ -4,8 +4,8 @@ For easy testing using [Postman](https://www.getpostman.com/), RingCentral provi
 
 The files are available here:
 
-* [Postman 2.0 Collection](http://ringcentral.github.io/api-specs/specs_engage_engage-digital_postman-2.0.json)
-* [OpenAPI 3.0 Specification](http://ringcentral.github.io/api-specs/specs_engage_engage-digital_openapi-3.0.yaml)
+* [Postman 2.0 Collection](https://raw.githubusercontent.com/ringcentral/engage-digital-api-docs/master/specs/engage-digital_postman2.json)
+* [OpenAPI 3.0 Specification](https://raw.githubusercontent.com/ringcentral/engage-digital-api-docs/master/specs/engage-digital_openapi3.yaml)
 
 This document describes how to install and use the Postman 2.0 Collection.
 
