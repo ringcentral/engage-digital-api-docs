@@ -34,6 +34,7 @@ x-tag-groups:
       - Interventions
       - Sources
       - Survey Responses
+      - Surveys
       - Threads
   - name: Provisioning
     tags:
@@ -93,6 +94,7 @@ tags:
   - name: Folders
   - name: Presence Status
   - name: Survey Responses
+  - name: Surveys
 
 paths:
   /attachments:
@@ -4414,6 +4416,42 @@ paths:
       summary: Get all connected agents status
       tags:
         - Agent Status
+  /surveys:
+    get:
+      description: >-
+        This method renders all surveys ordered by creation date (ascending).
+      operationId: getAllSurveys
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/getAllSurveysResponse'
+          description: Success
+      summary: Getting all surveys
+      tags:
+        - Surveys
+  '/surveys/{surveyId}':
+    get:
+      description: >-
+        This method renders a survey from given id.
+      operationId: getSurvey
+      parameters:
+        - in: path
+          name: surveyId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Survey'
+          description: Success
+      summary: Getting a survey from its id
+      tags:
+        - Surveys
   '/survey_responses/{surveyResponseId}':
     get:
       description: >-
@@ -7212,6 +7250,21 @@ components:
           items:
             $ref: '#/components/schemas/Source'
           type: array
+    getAllSurveysResponse:
+      properties:
+        count:
+          format: int32
+          type: integer
+        limit:
+          format: int32
+          type: integer
+        offset:
+          format: int32
+          type: integer
+        records:
+          items:
+            $ref: '#/components/schemas/Survey'
+          type: array
     GetAllTagsResponse:
       properties:
         count:
@@ -7978,6 +8031,99 @@ components:
           items:
             type: string
           type: array
+    Survey:
+      properties:
+        id:
+          type: string
+        created_at:
+          format: date-time
+          type: string
+        updated_at:
+          format: date-time
+          type: string
+        name:
+          description: |-
+            Name displayed in ED admin interface.
+            Is not displayed to end users.
+          type: string
+        link:
+          description: |-
+            Link to the survey on the provider website.
+          type: string
+        active:
+          type: boolean
+        from_name:
+          description: |-
+            Name displayed as sender when survey is sent to end user.
+            Currently only applies to surveys sent by email.
+          type: string
+        instant_send_threshold:
+          description: |-
+            Any intervention whose duration is shorter than this value (in seconds) will have the survey sent instantly.
+          type: number
+        max_time_since_last_reply:
+          description: |-
+            If last message from end user is older than this duration (in seconds), no survey will be sent.
+          type: number
+        send_delay:
+          description: |-
+            Delay before sending survey to end users.
+          type: number
+        category_ids:
+          items:
+            type: string
+          type: array
+        team_ids:
+          items:
+            type: string
+          type: array
+        source_ids:
+          items:
+            type: string
+          type: array
+        type:
+          description: |-
+            Contains the information of the survey provider used.
+            Currently, only provider supported is alchemer.
+          enum:
+            - alchemer
+          type: string
+        questions:
+          description: |-
+            Fetched from survey provider.
+            List of questions asked in this survey.
+          items:
+            $ref: '#/components/schemas/SurveyQuestion'
+          type: array
+    SurveyQuestion:
+      properties:
+        foreign_id:
+          description: |-
+            The survey provider's id for this question.
+          type: string
+        main:
+          type: boolean
+        text:
+          description: |-
+            The question's body.
+          type: string
+        choices:
+          description: |-
+            Fetched from survey provider.
+            List of choices end user can select to answer this question.
+          items:
+            $ref: '#/components/schemas/SurveyQuestionChoices'
+          type: array
+    SurveyQuestionChoices:
+      properties:
+        text:
+          description: |-
+            Choice text viewed by the end user.
+          type: string
+        value:
+          description: |-
+            Technical value, same as text for text inputs.
+          type: string
     SurveyQuestionReply:
       properties:
         text:
