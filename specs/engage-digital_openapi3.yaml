@@ -8152,12 +8152,6 @@ components:
           type: string
         survey_id:
           type: string
-        survey_foreign_id:
-          type: string
-        survey_type:
-          type: string
-          enum:
-            - alchemer
         source_id:
           type: string
         user_id:
