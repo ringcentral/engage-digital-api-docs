@@ -7587,7 +7587,7 @@ components:
             Only present when customer satisfaction extension is enabled.
         survey_id:
           type: string
-          description: |
+          description: |-
             ED internal ID for satisfaction survey.
             Only present when customer satisfaction extension is enabled.
       required:
