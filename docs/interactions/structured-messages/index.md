@@ -41,7 +41,7 @@ Engage Digital provides an omnichannel API to create structured messages. Since 
   | **Twitter Direct Messages** | **<span style="color:orange">Not yet</span>** | **<span style="color:orange">Not yet</span>** | **<span style="color:orange">Not yet</span>** | N/A | N/A | N/A |  N/A |
   | **Viber** | **<span style="color:orange">Not yet</span>** | **<span style="color:orange">Not yet</span>** | **<span style="color:orange">Not yet</span>** | **<span style="color:orange">Not yet</span>** | N/A | N/A |  N/A |
   | **WhatsApp** | **<span style="color:green">Yes</span>** | N/A | **<span style="color:green">Yes</span>** | N/A | N/A | N/A |  N/A |
-  | **Instagram Messaging** | **<span style="color:green">Yes</span>** | **<span style="color:orange">Not yet</span>** | **<span style="color:orange">Not yet</span>** | **<span style="color:orange">Not yet</span>** | N/A | N/A |  N/A |
+  | **Instagram Messaging** | **<span style="color:green">Yes</span>** | **<span style="color:orange">Not yet</span>** | **<span style="color:green">Yes</span>** | **<span style="color:orange">Not yet</span>** | N/A | N/A |  N/A |
 
 ## Channel Compatibilities
 
@@ -98,6 +98,7 @@ This section describes the generic compatibility logic of the API. Check the fol
 ### Instagram Messaging
 
 * [Quick Replies](../structured-messages/select/#example-instagram-messaging-quick-replies)
+* [Template](../structured-messages/template/#example-instagram-messaging)
 
 ## Channel SDK
 
