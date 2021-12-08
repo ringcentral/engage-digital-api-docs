@@ -6,7 +6,8 @@ The goal of csv export is to help your company integrate Engage Digital Data int
 
 From contents to identities, RingCentral Engage Digital lets you export all your most important data in one interface.
 
-There are 2 ways to export data as CSV in RingCentral Engage Digital :
+There are 2 ways to export data as CSV in RingCentral Engage Digital:
+
 - Manual
 - Automated
 
@@ -22,7 +23,12 @@ Exports can be found under Admin > Digital > Exports.
 
 ## Automated Exports
 
-Exports can be automated to minimize the time and effort involved in the integration process of your BI system, CRM or backup. Automated exports are sent in the BI format (see [Encoding and format](#encoding-&-format)).
+!!!info
+    To turn on automated exports, admin user needs to add `Automated Exports` extension.
+
+<img src="../exports/turn-on-automated-exports.png" class="img-fluid">
+
+Exports can be automated to minimize the time and effort involved in the integration process of your BI system, CRM or backup. Automated exports are sent in the BI format (see [Encoding and format](#encoding-and-format)).
 
 This approach involves providing a deployment location and access by SFTP.
 Exports will be uploaded periodically to the specified location either :
@@ -84,7 +90,7 @@ Filtering by creation time allows joining data from different exports. Indeed, w
 
 <img src="../exports/time-filtering.png" class="img-fluid">
 
-## Encoding & Format
+## Encoding and Format
 
 <img src="../exports/encoding-and-format.png" class="img-fluid">
 
@@ -126,7 +132,7 @@ List of all column type available in exports
 
 **Note**: Excel has limits for cells and titles. A cell should not exceed 32767 characters and a title 255 characters. [Check here](https://support.microsoft.com/en-us/office/excel-specifications-and-limits-1672b34d-7043-467e-8e27-269d656771c3?ui=en-us&rs=en-us&ad=us) for more information.
 
-## Datetime & Time Zones
+## Datetime and Time Zones
 
 Exports datetime fields are displayed in the user’s timezone. If the user has no time zone specified in his profile, the domain global time zone will be applied.
 
