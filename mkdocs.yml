@@ -86,6 +86,14 @@ pages:
     - 'Creating Webhooks': webhooks/create.md
     - 'Receiving Events': webhooks/receive.md
     - 'Event Types': webhooks/events.md
+  - 'Exports':
+    - 'Overview': exports/index.md
+    - 'Main Export Fields': exports/main-export-fields.md
+    - 'Extensions Report Fields': exports/extensions-report-fields.md
+  - 'UI Embed':
+    - 'Overview': ui-embed/index.md
+    - 'Views': ui-embed/views.md
+    - 'Events': ui-embed/events.md
   - 'SDKs':
     - 'Engage Digital SDKs and Sample Apps': sdks/index.md
     - 'App SDK':
