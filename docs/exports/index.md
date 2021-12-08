@@ -11,6 +11,9 @@ There are 2 ways to export data as CSV in RingCentral Engage Digital:
 - Manual
 - Automated
 
+!!!important
+    Exports fields info is in [Main Export Fields](./main-export-fields.md) and [Extensions Report Fields](./extensions-report-fields.md)
+
 ## Manual Exports
 
 Manual exports are useful when you want to filter the data given a certain date, format, team or category.
@@ -46,7 +49,6 @@ To have automatic exports available, you must have a specific extension enabled.
 - `User`: the user for the SSH connection.
 - `Directory`: the destination directory of the export file. This folder must exist and the user used for the SSH connection must have "read" and "write" permissions. 
 - `File name pattern`: pattern for the exported file name. This allows customization based on the following variables:
-    - `label`: See Label above
     - `export_name`: Name of the export (agents, messages, roles, etc…) - Only available when not using zip
     - `year`: Current year at export time (e.g 2015)
     - `month`: Current month at export time (e.g 07)
@@ -84,7 +86,7 @@ If the option is not available, the export will always be complete.
 
 ## Time Filtering
 
-By default, exports are filtered by creation time. The begin and end date selected will then be related to this value. However, some exports can also be filtered by update time instead. This information is available on each specific export section of the current document.
+By default, exports are filtered by creation time. The begin and end date selected will then be related to this value. However, some exports can also be filtered by update time instead(eg. `Conversations`). This information is available on each specific export section of the current document.
 
 Filtering by creation time allows joining data from different exports. Indeed, when exporting two different types of data from the same period (e.g. Interventions and Identities) with a time filtering by creation time, the references present in one export might be missing in the other one (e.g. if an intervention was created on 08-30-2016 and the related identity was created on 06-15-2016, an export from the 08-25-2016 to the 09-15-2016 will include the intervention but not the identity).
 
@@ -192,8 +194,11 @@ In some very rare occurrences where change to the export structure, names, value
 
 ## Implementation Recommendations
 
-New columns might be added and column positions can be changed without notice. This means that from a processing point of view you **MUST**  access columns by their ID but not their position in the file and **can’t rely on the column number**.
+!!!important
+    New columns might be added and column positions can be changed without notice. This means that from a processing point of view you **MUST**  access columns by their ID but not their position in the file and **can’t rely on the column number**.
 
-You should also be careful about column value and handle the fact that for certain types of content some column might not make sense, be empty (e.g. follower_count for an email identity), or that third party may (Klout, Twitter …) may no longer provide the data.
+!!!warning
+    You should be careful about column value and handle the fact that for certain types of content some column might not make sense, be empty (e.g. follower_count for an email identity), or that third party may (Klout, Twitter …) may no longer provide the data.
 
-Moreover different sources can be added on the fly by the administrators, if you intend to process exports you should be ready to handle new data and implement sensible error management.
+!!!important
+    Different sources can be added on the fly by the administrators, if you intend to process exports you should be ready to handle new data and implement sensible error management.
