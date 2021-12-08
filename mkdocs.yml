@@ -71,6 +71,14 @@ pages:
   - 'Routing':
     - 'Overview': routing/index.md
     - 'Getting Started': routing/quick-start.md
+  - 'Exports':
+    - 'Overview': exports/index.md
+    - 'Main Export Fields': exports/main-export-fields.md
+    - 'Extensions Report Fields': exports/extensions-report-fields.md
+  - 'UI Embed':
+    - 'Overview': ui-embed/index.md
+    - 'Views': ui-embed/views.md
+    - 'Events': ui-embed/events.md
 - 'Secondary':
   - 'Using the API':
     - 'Obtain an Access Token': basics/access-token.md
