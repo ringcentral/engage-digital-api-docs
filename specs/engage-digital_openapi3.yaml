@@ -7561,13 +7561,6 @@ components:
           description: |-
             Satisfaction grade.
             Only present when customer satisfaction extension is enabled.
-        satisfaction_survey_id:
-          type: integer
-          deprecated: true
-          description: |-
-            Survey ID on Alchemer.
-            Deprecated, will be removed on 2022 Jan. 12th, use survey_id instead.
-            Only present when customer satisfaction extension is enabled.
         satisfaction_answered_at:
           type: string
           format: date-time
