@@ -31,9 +31,10 @@ Exports can be found under Admin > Digital > Exports.
 
 <img src="../exports/turn-on-automated-exports.png" class="img-fluid">
 
-Exports can be automated to minimize the time and effort involved in the integration process of your BI system, CRM or backup. Automated exports are sent in the BI format (see [Encoding and format](#encoding-and-format)).
+Exports can be automated to minimize the time and effort involved in the integration process of your BI(Business Intelligence) system, CRM or backup. Automated exports are sent in the BI format (see [Encoding and format](#encoding-and-format)).
 
 This approach involves providing a deployment location and access by SFTP.
+
 Exports will be uploaded periodically to the specified location either :
 - everyday
 - every monday
@@ -49,10 +50,11 @@ To have automatic exports available, you must have a specific extension enabled.
 - `User`: the user for the SSH connection.
 - `Directory`: the destination directory of the export file. This folder must exist and the user used for the SSH connection must have "read" and "write" permissions. 
 - `File name pattern`: pattern for the exported file name. This allows customization based on the following variables:
-    - `export_name`: Name of the export (agents, messages, roles, etc…) - Only available when not using zip
+    - `label`: The label of the export task, this name will be used to determine export filename
     - `year`: Current year at export time (e.g 2015)
     - `month`: Current month at export time (e.g 07)
     - `day`: Current day at export time (e.g 27)
+    - `export_name`: Name of the export (agents, messages, roles, etc…) - Only available when not using zip
 - `Export to zip file`: whether or not the exports should be zipped in a single file, or transferred individually.
 - `Public key`: the RingCentral Engage Digital SSH key used for the connection. This key is provided by on demand. It is mandatory to have this key in the ~/.ssh/authorized_keys file on the server in order to have a successful connection.
 

@@ -1,8 +1,80 @@
 # Events
 
+## Event Integration
+
+### Debug Info
+
+The example below is a [Pull View](#pull-view) with a browser alert containing info for every event that gets triggered.
+
+```html
+<!doctype html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>New Tab</title>
+  </head>
+  <body>
+<iframe src="https://{your-domain}.digital.ringcentral.com/home?view=no-header" width="1400" height="1000"></iframe>
+  </body>
+  <script type="text/javascript">
+  console.log("event listener running...");
+  window.addEventListener('message', function(event) {
+    var name = event.data['name']; // Type: String, hold the event name
+    var data = event.data['data']; // Type: Object, hold the event data 
+alert(`[Event Triggered] - ${name}\n\nData:\n${JSON.stringify(data, null, 2)}`);    
+console.log(`[Event Triggered] - ${name}\n\nData:\n${JSON.stringify(data, null, 2)}`);
+  });
+</script>
+</html>
+```
+
+### POST Event Data To Server
+
+The example below is a [Pull View](#pull-view) with additional logic to POST event data to an API server.
+
+```html
+<!doctype html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>New Tab</title>
+  </head>
+  <body>
+<iframe src="https://{your-domain}.digital.ringcentral.com/home?view=no-header" width="1400" height="1000"></iframe>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script type="text/javascript">
+  console.log("event listener running...");
+  window.addEventListener('message', function(event) {
+    var name = event.data['name']; // Type: String, hold the event name
+    var data = event.data['data']; // Type: Object, hold the event data
+	console.log(`[Event Triggered] - ${name}\n\nData:\n${JSON.stringify(data, null, 2)}`);
+	
+	// POST event data to your API server for further processing
+	axios.post('https://{your API server POST endpoint}'), {
+		source: 'EngageDigitalEmbeddedUI',
+		event: {
+			name: name,
+			data: data
+		}
+	})
+	.then(function (response) {
+		console.log(response);
+	})
+	.catch(function (error) {
+		console.log(error);
+	});
+	
+  });
+</script>
+</html>
+```
+
+## Event List
+
 Here’s a list of the different events available with the embedded UI:
 
-## Pull View
+### Pull View
 
 #### `smcc:content:reply`
 
@@ -84,7 +156,7 @@ Triggered when clicking on the name of a client or its avatar.
 | taskID         | String | 59709e1d367b6875d7 |
 <br>
 
-## Task View
+### Task View
 
 #### `smcc:task:selected`
 
@@ -158,7 +230,7 @@ Triggered when a task is updated:
 | identityAvatarUrl            | String (can be null)                  | https://domain-test.engagement.dimelo.com/assets/default_avatar/thumb-412009.png |
 <br>
 
-## Global Events
+### Global Events
 
 #### `smcc:user:disconnected`
 

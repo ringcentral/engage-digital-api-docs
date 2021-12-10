@@ -32,3 +32,5 @@ After that you have successfully integrated RingCentral Engage Digital in an ifr
   });
 </script>
 ```
+
+Check out [more info on events](./events.md)
