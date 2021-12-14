@@ -147,3 +147,21 @@ Primary parameters are used by default, however, some parameters are unique or o
 | **`structured_content.items.payload`** | String | Limited to 256 characters.<br>Automatically gets populated as a random hex if blank. |
 | **`structured_content.items.url`** | String | **Ignored** property. |
 | **`structured_content.items.url_fallback`** | String | **Ignored** property. |
+
+## Example: Instagram Messaging
+
+<img class="img-fluid" width="245" src="../../../img/structured-messages-template-ig-dm.png">
+
+### Properties Unique to this Channel
+
+Primary parameters are used by default, however, some parameters are unique or overwritten by parameters specific to this example.
+
+| API Property | Specificity |
+|-|-|
+| **`structured_content.attachment_id`** | Supports bmp, gif, jpg, png formats. Supports private attachments. [Upload attachments](../../../basics/uploads) for you own custom images. |
+| **`structured_content.url_text`** | **Ignored** property. |
+| **`structured_content.items`** | A maximum of 3 items is supported. |
+| **`structured_content.title`** | Truncated to 80 characters. |
+| **`structured_content.subtitle`** | Truncated to 80 characters. |
+| **`structured_content.items.title`** | Truncated to 20 characters. |
+| **`structured_content.items.payload`** | Limited to 1000 characters. Automatically gets populated as a random hex if blank. |
