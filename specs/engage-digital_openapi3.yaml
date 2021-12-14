@@ -7556,6 +7556,40 @@ components:
           type: integer
         user_reply_in_average_count:
           type: integer
+        satisfaction_grade:
+          type: integer
+          description: |-
+            Satisfaction grade.
+            Only present when customer satisfaction extension is enabled.
+        satisfaction_survey_id:
+          type: integer
+          deprecated: true
+          description: |-
+            Survey ID on Alchemer.
+            Deprecated, will be removed on 2022 Jan. 12th, use survey_id instead.
+            Only present when customer satisfaction extension is enabled.
+        satisfaction_answered_at:
+          type: string
+          format: date-time
+          description: |-
+            Date and time when customer answered the survey.
+            Only present when customer satisfaction extension is enabled.
+        satisfaction_sent_at:
+          type: string
+          format: date-time
+          description: |-
+            Date and time when the satisfaction survey was sent to customer.
+            Only present when customer satisfaction extension is enabled.
+        survey_response_id:
+          type: string
+          description: |-
+            ED internal ID for customer response to satisfaction survey.
+            Only present when customer satisfaction extension is enabled.
+        survey_id:
+          type: string
+          description: |-
+            ED internal ID for satisfaction survey.
+            Only present when customer satisfaction extension is enabled.
       required:
         - id
     InterventionComment:
