@@ -70,7 +70,12 @@ pages:
       - 'Webview SDK': interactions/structured-messages/webview-sdk.md
   - 'Routing':
     - 'Overview': routing/index.md
-    - 'Getting Started': routing/quick-start.md
+    - 'Getting Started': routing/quick-start.
+  - 'Digital':
+    - 'Exports':
+      - 'Overview': digital/exports/index.md
+      - 'Main Export Fields': digital/exports/main-export-fields.md
+      - 'Extensions Report Fields': digital/exports/extensions-report-fields.md
 - 'Secondary':
   - 'Using the API':
     - 'Obtain an Access Token': basics/access-token.md
@@ -105,4 +110,8 @@ pages:
       - 'Options': sdks/source-sdk/options.md
       - 'Locales': sdks/source-sdk/locales.md
       - 'Structured Messages': sdks/source-sdk/structured-messages.md
+    - 'Embedded UI':
+      - 'Overview': sdks/ui-embed/index.md
+      - 'Views': sdks/ui-embed/views.md
+      - 'Events': sdks/ui-embed/events.md
   - 'Postman': postman.md
