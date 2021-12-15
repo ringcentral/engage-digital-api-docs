@@ -8190,24 +8190,10 @@ components:
           type: string
         user_id:
           type: string
-        foreign_id:
-          type: integer
-          deprecated: true
-          description: |-
-            The alchemer id for this response.
-            Deprecated, use 'response_foreign_id' field instead.
-            Will be removed on 2021 December 15th.
         response_foreign_id:
           type: string
           description: |-
             The survey provider's id for this response.
-        answers:
-          type: object
-          deprecated: true
-          description: |-
-            Legacy object that contains questions as keys and replies as values.
-            Deprecated, use 'questions' field instead.
-            Will be removed on 2021 December 15th.
         questions:
           type: array
           description: |-
