@@ -108,3 +108,20 @@ Primary parameters are used by default, however, some parameters are unique or o
 | **`structured_content.title`** | Truncated to 200 characters. |
 | **`structured_content.url_text`** | Truncated to 25 characters. |
 | **`structured_content.attachment_id`** | Supports private attachments. |
+
+## Example: Instagram Messaging
+
+Instagram Messaging does not *natively* support rich links. So a rich link can  be converted to a Generic Template
+
+<img class="img-fluid" width="245" src="../../../img/structured-messages-rich-link-ig-dm.png">
+
+### Properties Unique to this Channel
+
+Primary parameters are used by default, however, some parameters are unique or overwritten by parameters specific to this example.
+
+| API Property | Specificity |
+|-|-|
+| **`structured_content.attachment_id`** | Supports bmp, gif, jpg, png formats. Supports private attachments. [Upload attachments](../../../basics/uploads) for you own custom images. |
+| **`structured_content.url_text`** | Truncated to 20 characters. |
+| **`structured_content.title`** | Truncated to 80 characters. |
+| **`structured_content.subtitle`** | Truncated to 80 characters. |
