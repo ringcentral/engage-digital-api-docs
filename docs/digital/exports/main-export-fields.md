@@ -99,7 +99,7 @@ Other custom data can be present in the thread export depending on the source ty
 | attachments_count        | Number of attachments                                         | Integer  | 1                                                               |                                                                                                                      |
 | structured_reply_payload | Payload of the structured reply                               | String   | my_payload                                                      | [Sensitive](/digital/exports/#sensitive-columns)                                                                                                            |
 
-## slJournal(`Exports::Events`)
+## Journal(`Exports::Events`)
 
 - **Export name**: journal
 
