@@ -105,4 +105,9 @@ pages:
       - 'Options': sdks/source-sdk/options.md
       - 'Locales': sdks/source-sdk/locales.md
       - 'Structured Messages': sdks/source-sdk/structured-messages.md
+    - 'Survey SDK':
+      - 'Overview': sdks/survey-sdk/index.md
+      - 'Getting Started': sdks/survey-sdk/quick-start.md
+      - 'Configuration Fetching': sdks/survey-sdk/configuration-fetching.md
+      - 'Responses Polling': sdks/survey-sdk/responses-polling.md
   - 'Postman': postman.md
