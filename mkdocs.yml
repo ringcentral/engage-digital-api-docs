@@ -60,6 +60,7 @@ pages:
       - 'Overview': interactions/structured-messages/index.md
       - 'Getting Started': interactions/structured-messages/quick-start.md
       - 'Select': interactions/structured-messages/select.md
+      - 'List': interactions/structured-messages/list.md
       - 'Rich Link': interactions/structured-messages/rich-link.md
       - 'Template': interactions/structured-messages/template.md
       - 'Carousel': interactions/structured-messages/carousel.md
