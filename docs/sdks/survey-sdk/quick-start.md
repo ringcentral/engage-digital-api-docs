@@ -19,7 +19,7 @@ Enter the follow required fields:
 |-|-|
 | **Active** | Make sure this box is checked to indicate your survey is active. |
 | **Name** | Give your survey a name (for display purpose only). |
-| **Base URL of the bridg** | This is the root url that will be used by Engage Digital to perform HTTP requests (to fetch the configuration and the responses). |
+| **Base URL of the bridge** | This is the root url that will be used by Engage Digital to perform HTTP requests (to fetch the configuration and the responses). |
 | **Secret key** | Secret key that will be sent in a `X-SDK-SECRET` header by Engage Digital. |
 | **Verify secret key** | If this option is enabled Engage Digital will make sure that the bridge response contains the `X-SDK-SECRET` header and that its value is matching the one configured in Engage Digital. |
 

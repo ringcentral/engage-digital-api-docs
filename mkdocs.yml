@@ -108,6 +108,7 @@ pages:
     - 'Survey SDK':
       - 'Overview': sdks/survey-sdk/index.md
       - 'Getting Started': sdks/survey-sdk/quick-start.md
+      - 'Authentication': sdks/survey-sdk/authentication.md
       - 'Configuration Fetching': sdks/survey-sdk/configuration-fetching.md
       - 'Responses Polling': sdks/survey-sdk/responses-polling.md
   - 'Postman': postman.md
