@@ -159,7 +159,7 @@ Primary parameters are used by default, however, some parameters are unique or o
 | API Property | Specificity |
 |-|-|
 | **`structured_content.attachment_id`** | Supports bmp, gif, jpg, png formats. Supports private attachments. [Upload attachments](../../../basics/uploads) for you own custom images. |
-| **`structured_content.url_text`** | **Ignored** property. |
+| **`structured_content.url_text`** | Truncated to 20 characters. |
 | **`structured_content.items`** | A maximum of 3 items is supported. |
 | **`structured_content.title`** | Truncated to 80 characters. |
 | **`structured_content.subtitle`** | Truncated to 80 characters. |

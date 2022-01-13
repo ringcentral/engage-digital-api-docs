@@ -60,6 +60,7 @@ pages:
       - 'Overview': interactions/structured-messages/index.md
       - 'Getting Started': interactions/structured-messages/quick-start.md
       - 'Select': interactions/structured-messages/select.md
+      - 'List': interactions/structured-messages/list.md
       - 'Rich Link': interactions/structured-messages/rich-link.md
       - 'Template': interactions/structured-messages/template.md
       - 'Carousel': interactions/structured-messages/carousel.md
@@ -70,7 +71,12 @@ pages:
       - 'Webview SDK': interactions/structured-messages/webview-sdk.md
   - 'Routing':
     - 'Overview': routing/index.md
-    - 'Getting Started': routing/quick-start.md
+    - 'Getting Started': routing/quick-start.
+  - 'Digital':
+    - 'Exports':
+      - 'Overview': digital/exports/index.md
+      - 'Main Export Fields': digital/exports/main-export-fields.md
+      - 'Extensions Report Fields': digital/exports/extensions-report-fields.md
 - 'Secondary':
   - 'Using the API':
     - 'Obtain an Access Token': basics/access-token.md
@@ -111,4 +117,8 @@ pages:
       - 'Authentication': sdks/survey-sdk/authentication.md
       - 'Configuration Fetching': sdks/survey-sdk/configuration-fetching.md
       - 'Responses Polling': sdks/survey-sdk/responses-polling.md
+    - 'Embedded UI':
+      - 'Overview': sdks/ui-embed/index.md
+      - 'Views': sdks/ui-embed/views.md
+      - 'Events': sdks/ui-embed/events.md
   - 'Postman': postman.md
