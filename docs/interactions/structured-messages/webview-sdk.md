@@ -89,13 +89,13 @@ Since not every channel supports every feature, you'll find support info in the 
 
 | | **Engage Messaging Web** | **Engage Messaging iOS** | **Engage Messaging Android** | **Unsupported channels** |
 |-|-|-|-|-|
-| [**close**](#close) | **<span style="color: green">Yes</span>** | **<span style="color: green">Yes, since v2.4.2</span>** | **<span style="color: orange">Not yet</span>** | N/A |
-| [**Automatic title update**](#engage-messaging-webios) | **<span style="color: green">Yes</span>** | **<span style="color: green">Yes, since v2.4.2</span>** | **<span style="color: orange">Not yet</span>** | N/A |
+| [**close**](#close) | **<span style="color: green">Yes</span>** | **<span style="color: green">Yes, since v2.4.2</span>** | **<span style="color: green">Yes, since vx.y.z</span>** | N/A |
+| [**Automatic title update**](#engage-messaging) | **<span style="color: green">Yes</span>** | **<span style="color: green">Yes, since v2.4.2</span>** | **<span style="color: green">Yes, since vx.y.z</span>** | N/A |
 
 ## Integrations specific behavior
 
 Some integrations have extra behavior specific to their related channel. Those are the following.
 
-### Engage Messaging Web/iOS
+### Engage Messaging
 
-When opening your webview page in Engage Messaging web chat or in Engage Messaging iOS, the title element's text will become the chat webview header's text, and when you change your page's title element's `textContent`, it will change the chat's webview header text.
+When opening your webview page in Engage Messaging, the title element's text will become the chat webview header's text, and when you change your page's title element's `textContent`, it will change the chat's webview header text.

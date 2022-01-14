@@ -29,7 +29,7 @@ The page on the webview should be hosted on your side, and setup to accept displ
 | | **webview** | **webview_height** |
 |-|-|-|
 | **Apple Business Chat** | N/A | N/A |
-| **Engage Android Messaging** | **<span style="color:orange">Not yet</span>** | **<span style="color:orange">Not yet</span>** |
+| **Engage Android Messaging** | **<span style="color:green">Yes, since vx.y.z</span>** | **<span style="color:green">Yes, since vx.y.z</span>** |
 | **Engage iOS Messaging** | **<span style="color:green">Yes, since v2.4.2</span>** | **<span style="color:green">Yes, since v2.4.2</span>** |
 | **Engage Web Messaging** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** |
 | **Facebook Messenger** | **<span style="color:orange">Not yet</span>** | **<span style="color:orange">Not yet</span>** |
@@ -52,6 +52,14 @@ Engage Messaging Web allows you to set a smaller window to open. To so do, set t
 ## Engage Messaging iOS customization
 
 Engage Messaging iOS allows you to set a smaller window to open. To so do, set the `webview_height` parameter to fit your need, you can see the design for `full`, `tall` and `compact` webviews in the following visuals.
+
+| **Value** | **`full` (default)** | **`tall`** | **`compact`** |
+|-|-|-|-|
+| **Preview** | <img class="img-fluid" width="419" src="../../../img/ios-messaging-webview-full.jpg"> | <img class="img-fluid" width="419" src="../../../img/ios-messaging-webview-tall.jpg"> | <img class="img-fluid" width="419" src="../../../img/ios-messaging-webview-compact.jpg"> |
+
+## Engage Messaging Android customization
+
+Engage Messaging Android allows you to set a smaller window to open. To so do, set the `webview_height` parameter to fit your need, you can see the design for `full`, `tall` and `compact` webviews in the following visuals.
 
 | **Value** | **`full` (default)** | **`tall`** | **`compact`** |
 |-|-|-|-|
