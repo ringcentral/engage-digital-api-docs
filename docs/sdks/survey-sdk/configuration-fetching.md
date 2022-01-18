@@ -54,7 +54,7 @@ Here's an example of a valid Survey SDK configuration:
 
 | Field | Type | Mandatory | Description |
 |-|-|-|-|
-| id | String | **YES** | Unique identifier of the survey. |
+| id | String | NO | Unique identifier of the survey. |
 | link | String | **YES** | Link to access the survey. |
 | status | String | NO | Status of the survey (display only). |
 | questions | Array | **YES** | List of the questions belonging to the survey, see [Question object description](#question-object-description). |
