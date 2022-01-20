@@ -18,4 +18,4 @@ When sending a request to a Survey SDK bridge, Engage Digital will check both th
 If the header is not present or if it doesn't match the survey's **secret key**, the entire response will be considered invalid and will therefore be ignored.
 
 !!! note
-    Please note that this verification mechanism can be skipped by tunrning the survey's **verify secret key** setting off in Engage Digital.
+    Please note that this verification mechanism can be skipped by turning the survey's **verify secret key** setting off in Engage Digital.

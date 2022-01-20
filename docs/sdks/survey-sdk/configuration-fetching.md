@@ -64,8 +64,8 @@ Here's an example of a valid Survey SDK configuration:
 
 | Field | Type | Mandatory | Description |
 |-|-|-|-|
-| id | String | **YES** | Unique identifier of the question, the entire question will be ignored if not present,. |
-| text | String | **YES** | Question text (the entire question will be ignored if not present). |
+| id | String | **YES** | Unique identifier of the question, the entire question will be ignored if not present. |
+| text | String | **YES** | Question text, the entire question will be ignored if not present. |
 | main | Boolean | NO | Indicates whether this question is the survey's main question (a survey must have a single main question), will default to `false` if not present. |
 | choices | Array | NO | List of the available choices for the question (can be omitted for free text question), see [Choice object description](#choice-object-description). |
 
