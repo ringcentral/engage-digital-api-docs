@@ -5387,6 +5387,12 @@
                       "value": "\u003carray.string.csv\u003e",
                       "description": "List of locales corresponding to the languages spoken by the user (multiple).",
                       "disabled": true
+                    },
+                    {
+                      "key": "no_password",
+                      "value": "\u003cboolean\u003e",
+                      "description": "Whether the user is passwordless or not (boolean).  Must be used with the corresponding SSO configuration.",
+                      "disabled": true
                     }
                   ]
                 },
@@ -5676,6 +5682,12 @@
                       "key": "spoken_languages[]",
                       "value": "\u003carray.string.csv\u003e",
                       "description": "List of locales corresponding to the languages spoken by the user (multiple).",
+                      "disabled": true
+                    },
+                    {
+                      "key": "no_password",
+                      "value": "\u003cboolean\u003e",
+                      "description": "Whether the user is passwordless or not (boolean).  Must be used with the corresponding SSO configuration.",
                       "disabled": true
                     }
                   ]
