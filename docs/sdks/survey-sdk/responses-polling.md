@@ -65,7 +65,7 @@ Here's an example of a valid response to the responses polling:
 | Field | Type | Mandatory | Description |
 |-|-|-|-|
 | id | String | **YES** | Unique identifier of the response. |
-| submitted_at | Time | NO | Time the response was submitted at. |
+| submitted_at | Time | **YES** | Time the response was submitted at, the entire response will be ignored if not present. |
 | mapping_key | String | **YES** | Mapping key that was sent as the `i` parameter in the survey link, see [Response mapping key](#response-mapping-key). |
 | questions | Array | **YES** | List of questions and their associated replies, see [Question object description](#question-object-description). |
 
