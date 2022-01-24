@@ -75,4 +75,4 @@ Here's an example of a valid Survey SDK configuration:
 | Field | Type | Mandatory | Description |
 |-|-|-|-|
 | text | String | **YES** | Choice text, the entire choice will be ignored if not present. |
-| value | String | NO | Value of the choice (e.g. "Very satisfied" is equivalent to 5/5). |
+| value | String | NO | Value of the choice (e.g. "5", which is equivalent to a "Very satisfied" text value). |
