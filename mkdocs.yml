@@ -111,6 +111,12 @@ pages:
       - 'Options': sdks/source-sdk/options.md
       - 'Locales': sdks/source-sdk/locales.md
       - 'Structured Messages': sdks/source-sdk/structured-messages.md
+    - 'Survey SDK':
+      - 'Overview': sdks/survey-sdk/index.md
+      - 'Getting Started': sdks/survey-sdk/quick-start.md
+      - 'Authentication': sdks/survey-sdk/authentication.md
+      - 'Configuration Fetching': sdks/survey-sdk/configuration-fetching.md
+      - 'Responses Polling': sdks/survey-sdk/responses-polling.md
     - 'Embedded UI':
       - 'Overview': sdks/ui-embed/index.md
       - 'Views': sdks/ui-embed/views.md
