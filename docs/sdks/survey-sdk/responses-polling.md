@@ -2,7 +2,7 @@
 
 Engage Digital will poll your survey responses by performing a `GET /responses` on your bridge every 15 minutes along with a `since` parameter corresponding to the the most recent response fetched's `submitted_at` field.
 
-This parameter will be sent as milliseconds in utc time (e.g. if **base URL of the bridge** is `https://survey.bridge.com` and your most recent response was submitted on `2022-01-10T10:00:00.000Z` then Engage Digital will perform a `GET https://survey.bridge.com/responses?since=1641808800000`).
+This parameter will be sent as milliseconds in UTC time (e.g. if **base URL of the bridge** is `https://survey.bridge.com` and your most recent response was submitted on `2022-01-10T10:00:00.000Z` then Engage Digital will perform a `GET https://survey.bridge.com/responses?since=1641808800000`).
 
 ## Response example
 
