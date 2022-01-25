@@ -42,6 +42,7 @@ curl -X POST "https://[YOUR DOMAIN].api.digital.ringcentral.com/1.0/contents"
 | **Structured Content Settings** | | |
 | **`structured_content.type`** | String | Type of the structured message. Must be "select". |
 | **`structured_content.title`** | String | Title of the list structured message. Limited to 1024 characters. |
+| **`structured_content.subtitle`** | String | **Optional**. Subtitle of the list structured message. Limited to 512 characters. |
 | **`structured_content.items`** | Array | An array of items representing the options presented to the customer. A maximum of 13 items is supported. |
 | **Item Settings** | | |
 | **`items.title`** | String | The title of the item. Limited to 80 characters. |
@@ -108,8 +109,8 @@ Primary parameters are used by default, however, some parameters are unique or o
 | API Property | Type | Description |
 |-|-|-|
 | **Structured Content Settings** | | |
-| **`structured_content.title`** | String | Title of the list structured message. Limited to 1024 characters. |
-| **`structured_content.subtitle`** | String | **Optional**. The subtitle field.<br>Limited to 512 characters. |
+| **`structured_content.title`** | String | Title of the list structured message.<br>*Truncated to 512 UTF-16 code units.* |
+| **`structured_content.subtitle`** | String | **Optional**. The subtitle field.<br>*Truncated to 512 UTF-16 code units.* |
 | **`structured_content.attachment_id`** | String | **Optional**. Existing attachment id used to decorate the structured message with an image. Supports private attachments. [Upload attachments](../../../basics/uploads) for you own custom images. |
 | **`structured_content.attachment_fallback_id`** | String | **Optional**. Fallback in case the attachment related to the attachment_id doesn’t meet the source requirements. Must be public. Only jpg, jpeg, png formats. Maximum size of 5 MB. [Upload attachments](../../../basics/uploads) for you own custom images. |
 | **`structured_content.sections`** | Array | **Optional**. An array of sections in which the items will be organized.<br>Limited to 10 elements.<br>If blank, every item will be part of the same section. |
