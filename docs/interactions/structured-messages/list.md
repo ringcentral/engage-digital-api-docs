@@ -1,6 +1,6 @@
 # About List Structured Messages
 
-This structured message provides a list from which the customer can pick some elements. See [Channel capabilities](../structured-messages/#channel-capabilities) to know on which channel you can use this structured message.
+This structured message provides a list from which the customer can pick some elements. See [Channel capabilities](../#channel-capabilities) to know on which channel you can use this structured message.
 
 ## Request Example
 
