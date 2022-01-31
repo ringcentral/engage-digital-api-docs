@@ -102,6 +102,9 @@ paths:
     put:
       description: >-
         This method activates an existing topology from given attributes and renders it in case of success.
+        
+        
+        Authorization: only users that are techteam.
       operationId: activateTopology
       parameters:
         - in: path
@@ -123,6 +126,9 @@ paths:
     put:
       description: >-
         This method updates an existing topology from given attributes and renders it in case of success.
+        
+        
+        Authorization: only users that have the right to manage topologies. Topology must be inactive or the response will return an error.
       operationId: updateTopology
       parameters:
         - in: path
@@ -143,6 +149,9 @@ paths:
     delete:
       description: >-
         This method destroys an existing topology. It renders topology itself. It renders a 404 if id is invalid.
+        
+        
+        Authorization: only users that are techteam.
       operationId: deleteTopology
       parameters:
         - in: path
@@ -161,7 +170,11 @@ paths:
       tags:
         - Topologies
     get:
-      description: This method renders a topology from given id.
+      description: >-
+        This method renders a topology from given id.
+      
+      
+        Authorization: only users that have the right to manage topologies.
       operationId: getTopology
       parameters:
         - in: path
@@ -181,7 +194,10 @@ paths:
         - Topologies
   /topologies:
     post:
-      description: This method creates a topology.
+      description: >-
+        This method creates a topology. In case of success it renders the topology, otherwise, it renders an error (422 HTTP code).
+      
+          Authorization: only users that are superadmin.
       requestBody:
         required: true
         content:
@@ -199,7 +215,11 @@ paths:
       tags:
         - Topologies
     get:
-      description: This method renders all topologies ordered by name (in alphabetical order).
+      description: >-
+        This method renders all topologies ordered by name (in alphabetical order).
+        
+        
+        Authorization: Only users that have the right to manage topologies
       responses:
         '200':
           content:
