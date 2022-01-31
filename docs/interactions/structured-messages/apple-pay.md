@@ -1,6 +1,6 @@
 # About Apple Pay Structured Messages
 
-This structured message provides a convenient way to ask for a payment from the customer. See [Channel capabilities](../structured-messages/#channel-capabilities) to know on which channel you can use this structured message.
+This structured message provides a convenient way to ask for a payment from the customer. See [Channel capabilities](../#channel-capabilities) to know on which channel you can use this structured message.
 
 ## Prerequisites
 * An apple pay merchant ID.
