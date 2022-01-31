@@ -101,8 +101,7 @@ paths:
   '/topologies/{topologyId}/activate':
     put:
       description: >-
-        This method activates an existing topology. It renders the category
-        itself. It renders a 404 if id is invalid.
+        This method activates an existing topology from given attributes and renders it in case of success.
       operationId: activateTopology
       parameters:
         - in: path
@@ -117,14 +116,13 @@ paths:
               schema:
                 $ref: '#/components/schemas/Topology'
           description: Success
-      summary: Activate a topology
+      summary: Activating a topology
       tags:
         - Topologies
   '/topologies/{topologyId}':
     put:
       description: >-
-        This method updates an existing topology. It renders the category
-        itself. It renders a 404 if id is invalid.
+        This method updates an existing topology from given attributes and renders it in case of success.
       operationId: updateTopology
       parameters:
         - in: path
@@ -139,13 +137,12 @@ paths:
               schema:
                 $ref: '#/components/schemas/Topology'
           description: Success
-      summary: Update a topology
+      summary: Updating a topology
       tags:
         - Topologies
     delete:
       description: >-
-        This method destroys an existing topology. It renders the category
-        itself. It renders a 404 if id is invalid.
+        This method destroys an existing topology. It renders topology itself. It renders a 404 if id is invalid.
       operationId: deleteTopology
       parameters:
         - in: path
@@ -164,7 +161,7 @@ paths:
       tags:
         - Topologies
     get:
-      description: get topology
+      description: This method renders a topology from given id.
       operationId: getTopology
       parameters:
         - in: path
@@ -184,7 +181,7 @@ paths:
         - Topologies
   /topologies:
     post:
-      description: create topology
+      description: This method creates a topology.
       requestBody:
         required: true
         content:
@@ -198,10 +195,11 @@ paths:
               application/json:
                 schema:
                   $ref: '#/components/schemas/Topology'
+      summary: Creating a topology
       tags:
         - Topologies
     get:
-      description: get topology
+      description: This method renders all topologies ordered by name (in alphabetical order).
       responses:
         '200':
           content:
