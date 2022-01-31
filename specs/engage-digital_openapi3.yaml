@@ -86,6 +86,7 @@ tags:
   - name: Teams
   - name: Time Sheets
   - name: Timezones
+  - name: Topologies
   - name: Users
   - name: User Capacities
   - name: User Signatures
@@ -97,6 +98,77 @@ tags:
   - name: Surveys
 
 paths:
+  '/topologies/{topologyId}':
+    delete:
+      description: >-
+        This method destroys an existing topology. It renders the category
+        itself. It renders a 404 if id is invalid.
+      operationId: deleteTopology
+      parameters:
+        - in: path
+          name: topologyId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Topology'
+          description: Success
+      summary: Deleting a topology
+      tags:
+        - Topologies
+    get:
+      description: get topology
+      operationId: getTopology
+      parameters:
+        - in: path
+          name: topologyId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Topology'
+          description: Success
+      summary: Getting a topology from its id
+      tags:
+        - Topologies
+  /topologies:
+    post:
+      description: create topology
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/CreateTopology'
+      responses:
+        '200':
+            description: Created topology 
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/Topology'
+      tags:
+        - Topologies
+    get:
+      description: get topology
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAllTopologiesResponse'
+          description: Success
+      summary: Getting all topologies
+      tags:
+        - Topologies
   /attachments:
     get:
       description: This method renders attachments ordered by creation date (descending).
@@ -6680,6 +6752,26 @@ components:
           items:
             type: string
           type: array
+    CreateTopology:
+      properties:
+        name:
+          type: string
+        json_config:
+          type: string
+    Topology:
+      properties:
+        name:
+          type: string
+        created_at:
+          format: date-time
+          type: string
+        updated_at:
+          format: date-time
+          type: string
+        id:
+          type: string
+        config:
+          type: object
     Category:
       properties:
         color:
@@ -6994,6 +7086,21 @@ components:
         records:
           items:
             $ref: '#/components/schemas/Attachment'
+          type: array
+    GetAllTopologiesResponse:
+      properties:
+        count:
+          format: int32
+          type: integer
+        limit:
+          format: int32
+          type: integer
+        offset:
+          format: int32
+          type: integer
+        records:
+          items:
+            $ref: '#/components/schemas/Topology'
           type: array
     GetAllCategoriesResponse:
       properties:
