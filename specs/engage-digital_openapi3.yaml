@@ -98,7 +98,50 @@ tags:
   - name: Surveys
 
 paths:
+  '/topologies/{topologyId}/activate':
+    put:
+      description: >-
+        This method activates an existing topology. It renders the category
+        itself. It renders a 404 if id is invalid.
+      operationId: activateTopology
+      parameters:
+        - in: path
+          name: topologyId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Topology'
+          description: Success
+      summary: Activate a topology
+      tags:
+        - Topologies
   '/topologies/{topologyId}':
+    put:
+      description: >-
+        This method updates an existing topology. It renders the category
+        itself. It renders a 404 if id is invalid.
+      operationId: updateTopology
+      parameters:
+        - in: path
+          name: topologyId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Topology'
+          description: Success
+      summary: Update a topology
+      tags:
+        - Topologies
     delete:
       description: >-
         This method destroys an existing topology. It renders the category
