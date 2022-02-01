@@ -136,6 +136,12 @@ paths:
           required: true
           schema:
             type: string
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/CreateUpdateTopology'
       responses:
         '200':
           content:
@@ -203,7 +209,7 @@ paths:
         content:
           application/x-www-form-urlencoded:
             schema:
-              $ref: '#/components/schemas/CreateTopology'
+              $ref: '#/components/schemas/CreateUpdateTopology'
       responses:
         '200':
             description: Created topology 
@@ -6813,7 +6819,7 @@ components:
           items:
             type: string
           type: array
-    CreateTopology:
+    CreateUpdateTopology:
       properties:
         name:
           type: string
