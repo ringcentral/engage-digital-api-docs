@@ -104,7 +104,7 @@ paths:
         This method activates an existing topology from given attributes and renders it in case of success.
         
         
-        Authorization: only users that are techteam.
+        Authorization: Only users that have the right to manage topologies.
       operationId: activateTopology
       parameters:
         - in: path
@@ -156,7 +156,7 @@ paths:
         This method destroys an existing topology. It renders topology itself. It renders a 404 if id is invalid.
         
         
-        Authorization: only users that are techteam.
+        Authorization: Only users that have the right to manage topologies.
       operationId: deleteTopology
       parameters:
         - in: path
@@ -202,7 +202,8 @@ paths:
       description: >-
         This method creates a topology. In case of success it renders the topology, otherwise, it renders an error (422 HTTP code).
       
-          Authorization: only users that are superadmin.
+      
+        Authorization: Only users that have the right to manage topologies.
       requestBody:
         required: true
         content:
