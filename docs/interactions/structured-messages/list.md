@@ -43,10 +43,16 @@ curl -X POST "https://[YOUR DOMAIN].api.digital.ringcentral.com/1.0/contents"
 | **`structured_content.type`** | String | Type of the structured message. Must be "select". |
 | **`structured_content.title`** | String | Title of the list structured message. Limited to 1024 characters. |
 | **`structured_content.subtitle`** | String | **Optional**. Subtitle of the list structured message. Limited to 512 characters. |
-| **`structured_content.items`** | Array | An array of items representing the options presented to the customer. A maximum of 13 items is supported. |
+| **`structured_content.sections`** | Array | **Optional**. An array of sections in which the items will be organized.<br>Limited to 10 elements.<br>If blank, every item will be part of the same section. |
+| **Section Settings** | | |
+| **`structured_content.sections.title`** | String | **Optional if there's only a single section**. The title of the section.<br>Limited to 24 characters. |
+| **`structured_content.sections.identifier`** | String | Identifier of the section that will be used to organize items in the section.<br>Limited to 200 characters. |
+| **`structured_content.items`** | Array | An array of items representing the options presented to the customer. A maximum of 10 items is supported. |
 | **Item Settings** | | |
-| **`items.title`** | String | The title of the item. Limited to 80 characters. |
-| **`items.payload`** | String | **Optional**. Payload that will be returned with the structured response. Limited to 1000 characters. |
+| **`structured_content.items.title`** | String | The title of the item. Limited to 80 characters. |
+| **`structured_content.items.payload`** | String | **Optional**. Payload that will be returned with the structured response. Limited to 200 characters.<br>Automatically gets populated as a random hex if blank. |
+| **`structured_content.items.subtitle`** | String | **Optional**. The subtitle of the item. Limited to 100 characters. |
+| **`structured_content.items.section_identifier`** | String | **Optional if there's no section**. The identifier of the section where the item is.<br>If there's no section, the section_identifier field should be removed.<br>Each section must have at least 1 item.<br>Limited to 200 characters. |
 
 ## Example: Apple Business Chat (List Picker)
 
@@ -113,13 +119,9 @@ Primary parameters are used by default, however, some parameters are unique or o
 | **`structured_content.subtitle`** | String | **Optional**. The subtitle field.<br>*Truncated to 512 UTF-16 code units.* |
 | **`structured_content.attachment_id`** | String | **Optional**. Existing attachment id used to decorate the structured message with an image. Supports private attachments. [Upload attachments](../../../basics/uploads) for you own custom images. |
 | **`structured_content.attachment_fallback_id`** | String | **Optional**. Fallback in case the attachment related to the attachment_id doesn’t meet the source requirements. Must be public. Only jpg, jpeg, png formats. Maximum size of 5 MB. [Upload attachments](../../../basics/uploads) for you own custom images. |
-| **`structured_content.sections`** | Array | **Optional**. An array of sections in which the items will be organized.<br>Limited to 10 elements.<br>If blank, every item will be part of the same section. |
 | **Section Settings** | | |
-| **`structured_content.sections.title`** | String | **Optional if there's only a single section**. The title of the section.<br>Limited to 24 characters. |
-| **`structured_content.sections.identifier`** | String | Identifier of the section that will be used to organize items in the section.<br>Limited to 200 characters. |
 | **`structured_content.sections.multiple_section`** | Boolean | **Optional**. Allows the section to be multi selectable. False by default. |
 | **Item Settings** | | |
-| **`structured_content.items.section_identifier`** | String | **Optional if there's no section**. The identifier of the section where the item is.<br>If there's no section, the section_identifier field should be removed.<br>Each section must have at least 1 item.<br>Limited to 200 characters. |
 | **`structured_content.items.attachment_id`** | String | **Optional**. Existing attachment id used to decorate the item with an image. Supports private attachments. [Upload attachments](../../../basics/uploads) for you own custom images. |
 | **`structured_content.items.attachment_fallback_id`** | String | **Optional**. Fallback in case the attachment related to the attachment_id doesn’t meet the source requirements. Must be public. Only jpg, jpeg, png formats. Maximum size of 5 MB. [Upload attachments](../../../basics/uploads) for you own custom images. |
 | **`structured_content.items.subtitle`** | String | **Optional**. The subtitle of the item. Limited to 512 characters. |
@@ -184,16 +186,11 @@ Primary parameters are used by default, however, some parameters are unique or o
 | API Property | Type | Description |
 |-|-|-|
 | **Structured Content Settings** | | |
-| **`structured_content.items`** | Array | Truncated to 10 elements. |
 | **`structured_content.button`** | String | **Optional**. The button text field.<br>Limited to 20 characters.<br>*Truncated to 20 UTF-16 code units.*<br>"See options" by default. |
 | **`structured_content.subtitle`** | String | **Optional**. The subtitle field.<br>*Truncated to 60 UTF-16 code units.* |
 | **`structured_content.header`** | String | **Optional**. The header field.<br>Limited to 60 characters.<br>*Truncated to 60 UTF-16 code units.* |
 | **Section Settings** | | |
-| **`structured_content.sections`** | Array | **Optional**. An array of sections in which the items will be organized.<br>Limited to 10 elements.<br>If blank, every item will be part of the same section. |
 | **`structured_content.sections.title`** | String | **Optional if there's only a single section**. The title of the section.<br>Limited to 24 characters.<br>*Truncated to 24 UTF-16 code units.* |
-| **`structured_content.sections.identifier`** | String | Identifier of the section that will be used to organize items in the section.<br>Limited to 200 characters. |
 | **Item Settings** | | |
 | **`structured_content.items.title`** | String | The item title field.<br>Truncated to 24 characters.<br>*Truncated to 24 UTF-16 code units.* |
-| **`structured_content.items.payload`** | String | **Optional**. The item payload field.<br>Limited to 200 characters.<br>Automatically gets populated as a random hex if blank. |
-| **`structured_content.items.description`** | String | **Optional**. The item description text field.<br>Limited to 72 characters.<br>*Truncated to 72 UTF-16 code units.* |
-| **`structured_content.items.section_identifier`** | String | **Optional if there's no section**. The identifier of the section where the item is.<br>If there's no section, the section_identifier field should be removed.<br>Each section must have at least 1 item.<br>Limited to 200 characters. |
+| **`structured_content.items.subtitle`** | String | **Optional**. The item subtitle field.<br>*Truncated to 72 UTF-16 code units.* |
