@@ -40,7 +40,7 @@ curl -X POST "https://[YOUR DOMAIN].api.digital.ringcentral.com/1.0/contents"
 | **`in_reply_to_id`** | String | ID of the message being replied to. |
 | **`structured_content`** | Object | Payload of the structured message. |
 | **Structured Content Settings** | | |
-| **`structured_content.type`** | String | Type of the structured message. Must be "select". |
+| **`structured_content.type`** | String | Type of the structured message. Must be "list". |
 | **`structured_content.title`** | String | Title of the list structured message. Limited to 1024 characters. |
 | **`structured_content.subtitle`** | String | **Optional**. Subtitle of the list structured message. Limited to 512 characters. |
 | **`structured_content.sections`** | Array | **Optional**. An array of sections in which the items will be organized.<br>Limited to 10 elements.<br>If blank, every item will be part of the same section. |
@@ -67,7 +67,7 @@ This list picker structured content has multiple specific fields. So here’s an
   "source_id": "<source_id>",
   "in_reply_to_id": "<in_reply_to_id>",
   "structured_content": {
-    "type": "select",
+    "type": "list",
     "title": "Pick some options",
     "subtitle": "We have great options",
     "attachment_id": "<attachment_id>",
@@ -130,8 +130,8 @@ Primary parameters are used by default, however, some parameters are unique or o
 
 The following example uses WhatsApp with list messages.
 
-<img class="img-fluid" width="398" src="../../../img/structured-messages-select-whatsapp-1.png">
-<img class="img-fluid" width="398" src="../../../img/structured-messages-select-whatsapp-2.png">
+<img class="img-fluid" width="398" src="../../../img/structured-messages-list-whatsapp-1.png">
+<img class="img-fluid" width="398" src="../../../img/structured-messages-list-whatsapp-2.png">
 
 ### JSON Body
 
@@ -140,7 +140,7 @@ The following example uses WhatsApp with list messages.
   "source_id": "<source_id>",
   "in_reply_to_id": "<in_reply_to_id>",
   "structured_content": {
-    "type": "select",
+    "type": "list",
     "header": "Welcome to the store!",
     "title": "Hello! What do you wish?",
     "subtitle": "We're always happy to offer you the best options!",
