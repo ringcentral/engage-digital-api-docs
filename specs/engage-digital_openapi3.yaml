@@ -5862,6 +5862,14 @@ paths:
             items:
               type: string
             type: array
+        - description:  >- 
+            Whether the user is passwordless or not (boolean).
+            Must be used with the corresponding SSO configuration.
+          in: query
+          name: no_password
+          required: false
+          schema:
+            type: boolean
       responses:
         '200':
           content:
@@ -6167,6 +6175,14 @@ paths:
             items:
               type: string
             type: array
+        - description: >-
+            Whether the user is passwordless or not (boolean).
+            Must be used with the corresponding SSO configuration.
+          in: query
+          name: no_password
+          required: false
+          schema:
+            type: boolean
       responses:
         '200':
           content:
