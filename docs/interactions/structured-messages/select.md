@@ -44,8 +44,8 @@ curl -X POST "https://[YOUR DOMAIN].api.digital.ringcentral.com/1.0/contents"
 | **`structured_content.type`** | String | Type of the structured message. Must be "select". |
 | **`structured_content.items`** | Array | An array of items representing the options presented to the customer. A maximum of 13 items is supported. |
 | **Item Settings** | | |
-| **`items.title`** | String | The title of the item. Limited to 80 characters. |
-| **`items.payload`** | String | **Optional**. Payload that will be returned with the structured response. Limited to 1000 characters. |
+| **`structured_content.items.title`** | String | The title of the item. Limited to 80 characters. |
+| **`structured_content.items.payload`** | String | **Optional**. Payload that will be returned with the structured response. Limited to 1000 characters. |
 
 ## Example: Apple Business Chat (Quick Replies)
 
@@ -119,10 +119,10 @@ Primary parameters are used by default, however, some parameters are unique or o
 
 | API Property | Type | Description |
 |-|-|-|
-| **`items.title`** | String | The title of the item. *Truncated to 20 characters.* |
-| **`items.attachment_id`** | String | **Optional**. Existing attachment id used to decorate the item in the list. Supports private attachments. [Upload attachments](../../../basics/uploads) for you own custom images. |
-| **`items.attachment_fallback_id`** | String | **Optional**. Fallback in case the attachment related to the attachment_id doesn’t meet the source requirements. Must be public. Only jpg, jpeg, png formats. Maximum size of 5 MB. [Upload attachments](../../../basics/uploads) for you own custom images. |
-| **`items.payload`** | String | Automatically gets populated as a random hex if blank. |
+| **`structured_content.items.title`** | String | The title of the item. *Truncated to 20 characters.* |
+| **`structured_content.items.attachment_id`** | String | **Optional**. Existing attachment id used to decorate the item in the list. Supports private attachments. [Upload attachments](../../../basics/uploads) for you own custom images. |
+| **`structured_content.items.attachment_fallback_id`** | String | **Optional**. Fallback in case the attachment related to the attachment_id doesn’t meet the source requirements. Must be public. Only jpg, jpeg, png formats. Maximum size of 5 MB. [Upload attachments](../../../basics/uploads) for you own custom images. |
+| **`structured_content.items.payload`** | String | Automatically gets populated as a random hex if blank. |
 
 ## Example: Engage Messaging (Quick Replies)
 
@@ -217,5 +217,5 @@ Primary parameters are used by default, however, some parameters are unique or o
 
 | API Property | Type | Description |
 |-|-|-|
-| **`items.title`** | String | The title of the item. *Truncated to 20 characters.* |
-| **`items.payload`** | String | Automatically gets populated as a random hex if blank. |
+| **`structured_content.items.title`** | String | The title of the item. *Truncated to 20 characters.* |
+| **`structured_content.items.payload`** | String | Automatically gets populated as a random hex if blank. |
