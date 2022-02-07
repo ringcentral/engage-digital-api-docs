@@ -5391,7 +5391,7 @@
                     {
                       "key": "no_password",
                       "value": "\u003cboolean\u003e",
-                      "description": "Whether the user is passwordless or not (boolean).  Must be used with the corresponding SSO configuration.",
+                      "description": "Whether the user is passwordless or not (boolean). Must be used with the corresponding SSO configuration.",
                       "disabled": true
                     }
                   ]
@@ -5687,7 +5687,7 @@
                     {
                       "key": "no_password",
                       "value": "\u003cboolean\u003e",
-                      "description": "Whether the user is passwordless or not (boolean).  Must be used with the corresponding SSO configuration.",
+                      "description": "Whether the user is passwordless or not (boolean). Must be used with the corresponding SSO configuration.",
                       "disabled": true
                     }
                   ]
