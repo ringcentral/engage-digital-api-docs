@@ -8647,6 +8647,8 @@ components:
           type: string
         user_capacity_id:
           type: string
+        no_password:
+          type: boolean
       required:
         - id
     UserSignature:
