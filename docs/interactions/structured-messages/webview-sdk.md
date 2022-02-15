@@ -89,8 +89,8 @@ Since not every channel supports every feature, you'll find support info in the 
 
 | | **Engage Messaging Web** | **Engage Messaging iOS** | **Engage Messaging Android** | **Unsupported channels** |
 |-|-|-|-|-|
-| [**close**](#close) | **<span style="color: green">Yes</span>** | **<span style="color: green">Yes, since v2.4.2</span>** | **<span style="color: green">Yes, since vx.y.z</span>** | N/A |
-| [**Automatic title update**](#engage-messaging) | **<span style="color: green">Yes</span>** | **<span style="color: green">Yes, since v2.4.2</span>** | **<span style="color: green">Yes, since vx.y.z</span>** | N/A |
+| [**close**](#close) | **<span style="color: green">Yes</span>** | **<span style="color: green">Yes, since v2.4.2</span>** | **<span style="color: green">Yes, since v2.3.1</span>** | N/A |
+| [**Automatic title update**](#engage-messaging) | **<span style="color: green">Yes</span>** | **<span style="color: green">Yes, since v2.4.2</span>** | **<span style="color: green">Yes, since v2.3.1</span>** | N/A |
 
 ## Integrations specific behavior
 

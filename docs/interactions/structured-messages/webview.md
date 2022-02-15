@@ -29,7 +29,7 @@ The page on the webview should be hosted on your side, and setup to accept displ
 | | **webview** | **webview_height** |
 |-|-|-|
 | **Apple Business Chat** | N/A | N/A |
-| **Engage Android Messaging** | **<span style="color:green">Yes, since vx.y.z</span>** | **<span style="color:green">Yes, since vx.y.z</span>** |
+| **Engage Android Messaging** | **<span style="color:green">Yes, since v2.3.1</span>** | **<span style="color:green">Yes, since v2.3.1</span>** |
 | **Engage iOS Messaging** | **<span style="color:green">Yes, since v2.4.2</span>** | **<span style="color:green">Yes, since v2.4.2</span>** |
 | **Engage Web Messaging** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** |
 | **Facebook Messenger** | **<span style="color:orange">Not yet</span>** | **<span style="color:orange">Not yet</span>** |
