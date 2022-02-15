@@ -463,6 +463,7 @@ Export of all categories for a source or all sources
 | foreign_jwt_id  | Foreign JWT ID  | String   |                          |
 | foreign_saml_id | Foreign SAML ID | String   |                          |
 | enabled         | Enabled         | Boolean  |                          |
+| no_password     | No password     | Boolean  |                          |
 
 ## Agents Notifications(`Export::UsersNotifications`)
 

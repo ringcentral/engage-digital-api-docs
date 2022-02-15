@@ -1,6 +1,6 @@
 # About Time Select Structured Messages
 
-This structured message provides a list of dates from which the customer can choose an appointment. See [Channel capabilities](../structured-messages/#channel-capabilities) to know on which channel you can use this structured message.
+This structured message provides a list of dates from which the customer can choose an appointment. See [Channel capabilities](../#channel-capabilities) to know on which channel you can use this structured message.
 
 ## Request Example
 

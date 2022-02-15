@@ -1,6 +1,6 @@
 # About Template Structured Message
 
-This structured content provides some buttons associated with a message. See [Channel capabilities](../structured-messages/#channel-capabilities) to know on which channel you can use this structured message.
+This structured content provides some buttons associated with a message. See [Channel capabilities](../#channel-capabilities) to know on which channel you can use this structured message.
 
 ## Request Example
 

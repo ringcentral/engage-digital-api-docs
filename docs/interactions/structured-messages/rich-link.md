@@ -1,6 +1,6 @@
 # About Rich Link Structured Message
 
-This structured message allows to decorate a link with an image, title and subtitle. See [Channel capabilities](../structured-messages/#channel-capabilities) to know on which channel you can use this structured message.
+This structured message allows to decorate a link with an image, title and subtitle. See [Channel capabilities](../#channel-capabilities) to know on which channel you can use this structured message.
 
 ## Request Example
 
