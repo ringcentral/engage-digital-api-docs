@@ -116,7 +116,7 @@ Type | Description
 `task.created` | When a task is created
 `task.destroyed` | When contents are ignored or interventions are deferred or closed in folders view, related tasks are destroyed.
 `task.expired_from_step` | When a task couldn't be delivered to any of the assigned agents for longer than the timeout defined for the topology step. It then continue to the next step.
-`task.expired_from_workbin` | When a task was abandoned by an agent in his workbin automatically taken back by the DD to be routed to other agents.
+`task.expired_from_workbin` | When a task was abandoned by an agent in his workbin automatically taken back by Engage Digital to be routed to other agents.
 `task.recategorized` | When a content is recategorized, the task associated to this content gets the same categories.
 `task.resume` | When an agent resumes handling of a task from his history or deferred tasks
 `task.supervisor_assigned` | When a task is assigned to an agent by a supervisor and the option “Bypass queue and assign to agent” has been checked
@@ -184,9 +184,9 @@ Type | Description
 !!! warning "New content events"
     To be notified of new content from customers you should watch for content.imported but be careful as you will receive more than just customer contents.
 
-    In particular the ​`content.imported` event means imported from a DD point of view, it notifies all interactions coming directly from the synchronized source. For example you publish a post on a managed facebook page without using the DD, a content.imported webhook will be triggered. For the Chat automatic welcome message (initial message) of the conversation will also be imported. So it’s not only customer message, this is a bit more complicated and some filtering may be required. To ignore those messages you will filter based on the status field to segregate actionable contents from customer Vs source itself.
+    In particular the ​`content.imported` event means imported from an Engage Digital point of view, it notifies all interactions coming directly from the synchronized source. For example you publish a post on a managed facebook page without using Engage Digital, a content.imported webhook will be triggered. For the Chat automatic welcome message (initial message) of the conversation will also be imported. So it’s not only customer message, this is a bit more complicated and some filtering may be required. To ignore those messages you will filter based on the status field to segregate actionable contents from customer Vs source itself.
 
-    Similarly, to be notified when a content has been exported from the DD to the source, you should watch for ​`content.exported` (new content) which will also notify automatic messages like survey or auto response and ​`content.update_exported` for update on existing content.
+    Similarly, to be notified when a content has been exported from Engage Digital to the source, you should watch for ​`content.exported` (new content) which will also notify automatic messages like survey or auto response and ​`content.update_exported` for update on existing content.
 
     Finally, if you need more granular or earlier notification about contents creation, you can subscribe to ​`content.discussion_initiated` (new discussion), ​content.replied (reply on a message) and `content.approved​` (content has been approved).
 
@@ -270,5 +270,5 @@ Property | Value | Description
 
 Property | Value | Description
 ---------|-------|------------
-`key` | String | To have more information you need to look in the DD custom field admin, it depends on your setup
-`value` | String | To have more information you need to look in the DD custom field admin, it depends on your setup
+`key` | String | To have more information you need to look in Engage Digital custom field admin, it depends on your setup
+`value` | String | To have more information you need to look in Engage Digital custom field admin, it depends on your setup
