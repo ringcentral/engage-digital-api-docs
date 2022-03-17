@@ -19,7 +19,7 @@ An access token can be specified in a request parameter named `access_token`.
 
 To get all interventions on the source accessible by the token’s users, URL will looks like:
 
-`https://[YOUR DOMAIN].api.engagement.dimelo.com/1.0/interventions?access_token=abc42`
+`https://[YOUR DOMAIN].api.digital.ringcentral.com/1.0/interventions?access_token=abc42`
 
 ### Via HTTP Header
 
@@ -33,7 +33,7 @@ To get all interventions on the source accessible by the token’s users, you’
 
 ```http
 GET /1.0/interventions HTTP/1.1
-Host: test.api.engagement.dimelo.com
+Host: test.api.digital.ringcentral.com
 Authorization: Bearer abc42
 ```
 
