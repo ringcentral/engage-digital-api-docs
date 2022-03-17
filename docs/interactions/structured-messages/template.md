@@ -50,7 +50,7 @@ curl -X POST "https://[YOUR DOMAIN].api.digital.ringcentral.com/1.0/contents"
 | **Item Settings** | | |
 | **`structured_content.items.type`** | String | The type of the button. Can be **url** or **reply**. |
 | **`structured_content.items.title`** | String | The title of the item. Limited to 80 characters. |
-| **`structured_content.items.payload`** | String | **Optional** when the type is "reply". **Ignored** when the type is "url". Payload that will be returned with the structured response. Limited to 1000 characters. |
+| **`structured_content.items.payload`** | String | **Optional** when the type is "reply". **Ignored** when the type is "url". Payload that will be returned with the structured response. Limited to 1000 characters. Can only contain **ASCII** characters. |
 | **`structured_content.items.url`** | String | **Required** when the type is "url". **Ignored** when the type is "reply". Url to which the user will be redirected to when clicking on the item. Limited to 2048 characters. Should only have http and https schemes. |
 | **`structured_content.items.url_fallback`** | String | **Optional** Fallback in case the url is invalid. Limited to 2048 characters. Only http and https schemes. |
 

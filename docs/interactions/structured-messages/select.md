@@ -45,7 +45,7 @@ curl -X POST "https://[YOUR DOMAIN].api.digital.ringcentral.com/1.0/contents"
 | **`structured_content.items`** | Array | An array of items representing the options presented to the customer. A maximum of 13 items is supported. |
 | **Item Settings** | | |
 | **`structured_content.items.title`** | String | The title of the item. Limited to 80 characters. |
-| **`structured_content.items.payload`** | String | **Optional**. Payload that will be returned with the structured response. Limited to 1000 characters. |
+| **`structured_content.items.payload`** | String | **Optional**. Payload that will be returned with the structured response. Limited to 1000 characters. Can only contain **ASCII** characters. |
 
 ## Example: Apple Business Chat (Quick Replies)
 
