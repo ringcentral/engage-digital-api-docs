@@ -188,7 +188,7 @@ Primary parameters are used by default, however, some parameters are unique or o
 | **Structured Content Settings** | | |
 | **`structured_content.button`** | String | **Optional**. The button text field.<br>Limited to 20 characters.<br>*Truncated to 20 UTF-16 code units.*<br>"See options" by default. |
 | **`structured_content.subtitle`** | String | **Optional**. The subtitle field.<br>*Truncated to 60 UTF-16 code units.* |
-| **`structured_content.header`** | String | **Optional**. The header field.<br>Limited to 60 characters.<br>*Truncated to 60 UTF-16 code units.* |
+| **`structured_content.header`** | String | **Optional**. The header field.<br>Limited to 60 UTF-16 code units. |
 | **Section Settings** | | |
 | **`structured_content.sections.title`** | String | **Optional if there's only a single section**. The title of the section.<br>Limited to 24 characters.<br>*Truncated to 24 UTF-16 code units.* |
 | **Item Settings** | | |

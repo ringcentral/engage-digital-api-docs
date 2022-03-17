@@ -136,7 +136,7 @@ Primary parameters are used by default, however, some parameters are unique or o
 | **`structured_content.title`** | String | Limited to 1000 characters.<br>*Truncated to 1000 UTF-16 code units.*<br>Used as the message body. |
 | **Structured Content Settings** | | |
 | **`structured_content.attachment_id`** | String | Supports jpg, jpeg, png, mp4 formats. Supports private attachments. [Upload attachments](../../../basics/uploads) for your own custom images or videos. Should be less than 64 MB. WhatsApp supports videos with only H.264 and AAC codecs and a single audio stream. |
-| **`structured_content.footer`** | String | Limited to 60 characters.<br>*Truncated to 60 UTF-16 code units.* |
+| **`structured_content.footer`** | String | **Optional**. Limited to 60 UTF-16 code units. |
 | **`structured_content.url`** | String | **Ignored** property. |
 | **`structured_content.url_fallback`** | String | **Ignored** property. |
 | **`structured_content.url_text`** | String | **Ignored** property. |
