@@ -1,63 +1,55 @@
-# Responses Polling
+# Realtime Responses Import
 
-Engage Digital will poll your survey responses by performing a `GET /responses` on your bridge every 15 minutes along with a `since` parameter corresponding to the the most recent response fetched's `submitted_at` field.
+As explained in [Getting Started](../quick-start) you can enable the import of responses in realtime, by doing so you'll obtain a **Realtime endpoint URL** which you'll be able to use to perform HTTP POST requests in order to import survey responses in realtime (see [Payload example](#payload-example) for more detail on the payload expected by Engage Digital).
 
-This parameter will be sent as milliseconds in UTC time (e.g. if **base URL of the bridge** is `https://survey.bridge.com` and your most recent response was submitted on `2022-01-10T10:00:00.000Z` then Engage Digital will perform a `GET https://survey.bridge.com/responses?since=1641808800000`).
 
-## Response example
+## Payload example
 
-Here's an example of a valid response to the responses polling:
 ```json
 {
-  "id": "12345",
-  "records": [
-    {
-      "id": "12345_response_1",
-      "submitted_at": "2022-01-10T10:00:00.000Z",
-      "mapping_key": "response_mapping_key",
-      "questions": [
-        {
-          "id": "main_question",
-          "replies": [
-            {
-              "value": "5"
-            }
-          ]
-        },
-        {
-          "id": "multiple_choices_question",
-          "replies": [
-            {
-              "value": "Faster response time"
-            },
-            {
-              "value": "Better follow-up"
-            }
-          ]
-        },
-        {
-          "id": "free_text_question",
-          "replies": [
-            {
-              "value": "Everything's already perfect"
-            }
-          ]
-        },
-        ...
-      ]
-    },
-    ...
-  ]
+  "record": {
+    "id": "12345_response_1",
+    "submitted_at": "2022-01-10T10:00:00.000Z",
+    "mapping_key": "response_mapping_key",
+    "questions": [
+      {
+        "id": "main_question",
+        "replies": [
+          {
+            "value": "5"
+          }
+        ]
+      },
+      {
+        "id": "multiple_choices_question",
+        "replies": [
+          {
+            "value": "Faster response time"
+          },
+          {
+            "value": "Better follow-up"
+          }
+        ]
+      },
+      {
+        "id": "free_text_question",
+        "replies": [
+          {
+            "value": "Everything's already perfect"
+          }
+        ]
+      },
+      ...
+    ]
+  }
 }
 ```
-
 
 ### Detailed response format
 
 | Field | Type | Mandatory | Description |
 |-|-|-|-|
-| id | String | NO | Unique identifier of the survey. |
-| records | Array | **YES** | List of responses, see [Response object description](#response-object-description). |
+| record | Hash | **YES** | Response data, see [Response object description](#response-object-description). |
 
 
 ### Response object description
