@@ -22,7 +22,7 @@ Enter the follow required fields:
 | **Base URL of the bridge** | This is the root url that will be used by Engage Digital to perform HTTP requests (to fetch the configuration and the responses). |
 | **Secret key** | Secret key that will be sent in a `X-SDK-SECRET` header by Engage Digital. |
 | **Verify secret key** | If this option is enabled Engage Digital will make sure that the bridge response contains the `X-SDK-SECRET` header and that its value is matching the one configured in Engage Digital. |
-| **Enable import of survey results via polling** | When this option is enabled Engage Digital will regularly (every 15 minutes) make HTTP requests to fetch responses, see [Responses Polling](../responses-polling). |
+| **Enable import of survey results via polling** | When this option is enabled Engage Digital will regularly (every 15 minutes) make HTTP requests to fetch newly added responses, see [Responses Polling](../responses-polling). |
 | **Enable realtime import of survey results** | Enabling this option will display the survey **Realtime endpoint URL** which you will be able to use to push new responses to Engage Digital in realtime, see [Realtime Responses Import](../realtime-responses-import). |
 | **Additional URL parameters** | List of conversation-related data that can be added to the survey link that will be sent to the end-user, see [Additional URL parameters](#additional-url-parameters). |
 
