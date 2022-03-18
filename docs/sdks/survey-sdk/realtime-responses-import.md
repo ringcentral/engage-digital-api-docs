@@ -1,6 +1,8 @@
 # Realtime Responses Import
 
-As explained in [Getting Started](../quick-start) you can enable the import of responses in realtime, by doing so you'll obtain a **Realtime endpoint URL** which you'll be able to use to perform HTTP POST requests in order to import survey responses in realtime (see [Payload example](#payload-example) for more detail on the payload expected by Engage Digital).
+As explained in [Getting Started](../quick-start) you can enable the import of responses in realtime, by doing so the **Realtime endpoint URL** will be displayed in the survey configuration page. Please note that if the option is not enabled, Engage Digital will not accept any incoming HTTP call on this **Realtime endpoint URL**.
+
+The **Realtime endpoint URL** accepts HTTP `POST` requests in order to import survey responses in realtime (see [Payload example](#payload-example) for more detail on the payload expected by Engage Digital).
 
 
 ## Payload example
