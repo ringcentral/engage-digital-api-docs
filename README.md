@@ -29,7 +29,7 @@ Go check [specs/README.md](specs/README.md)
 
 ### Testing OpenAPI Specs
 
-This repo holds OpenAPI specs for Engage Digital. 
+This repo holds OpenAPI specs for Engage Digital.
 
 You can preview the latest version of the swagger spec on the [swagger preview][swagger-preview]
 
