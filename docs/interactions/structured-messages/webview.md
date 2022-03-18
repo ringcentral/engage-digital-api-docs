@@ -63,4 +63,4 @@ Engage Messaging Android allows you to set a smaller window to open. To do so, s
 
 | **Value** | **`full` (default)** | **`tall`** | **`compact`** |
 |-|-|-|-|
-| **Preview** | <img class="img-fluid" width="419" src="../../../img/ios-messaging-webview-full.jpg"> | <img class="img-fluid" width="419" src="../../../img/ios-messaging-webview-tall.jpg"> | <img class="img-fluid" width="419" src="../../../img/ios-messaging-webview-compact.jpg"> |
+| **Preview** | <img class="img-fluid" width="419" src="../../../img/android-messaging-webview-full.jpg"> | <img class="img-fluid" width="419" src="../../../img/android-messaging-webview-tall.jpg"> | <img class="img-fluid" width="419" src="../../../img/android-messaging-webview-compact.jpg"> |
