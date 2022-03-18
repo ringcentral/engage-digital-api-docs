@@ -61,6 +61,7 @@ x-tag-groups:
       - Folders
       - Presence Status
       - Tasks
+      - Topologies
 tags:
   - name: Events
   - name: Webhooks
