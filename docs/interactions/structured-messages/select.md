@@ -47,9 +47,9 @@ curl -X POST "https://[YOUR DOMAIN].api.digital.ringcentral.com/1.0/contents"
 | **`structured_content.items.title`** | String | The title of the item. Limited to 80 characters. |
 | **`structured_content.items.payload`** | String | **Optional**. Payload that will be returned with the structured response. Limited to 1000 characters. |
 
-## Example: Apple Business Chat (Quick Replies)
+## Example: Apple Messages for Business (Quick Replies)
 
-The following example uses Apple Business Chat with quick replies.
+The following example uses Apple Messages for Business with quick replies.
 
 <img class="img-fluid" width="300" src="../../../img/structured-messages-select-apple-biz.jpg">
 

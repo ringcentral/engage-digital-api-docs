@@ -42,7 +42,7 @@ curl -X POST "https://[YOUR DOMAIN].api.digital.ringcentral.com/1.0/contents"
 | **`structured_content.attachment_id`** | String | **Optional**. Existing attachment id used to decorate the rich link with an image. Should be public. Should be jpg, jpeg or png. Should be less than 5MB. [Upload attachments](../../../basics/uploads) for you own custom images. |
 | **`structured_content.attachment_fallback_id`** | String | **Optional**. Fallback in case the attachment related to the attachment_id doesn’t meet the source requirements. Must be public. Only jpg, jpeg, png formats. Maximum size of 5 MB. [Upload attachments](../../../basics/uploads) for you own custom images. |
 
-## Example: Apple Business Chat
+## Example: Apple Messages for Business
 
 <img class="img-fluid" width="350" src="../../../img/structured-messages-rich-link-apple-biz.png">
 
