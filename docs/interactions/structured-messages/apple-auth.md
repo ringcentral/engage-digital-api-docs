@@ -88,7 +88,7 @@ The customer will receive a message including the body and a button that will op
 }
 ```
 
-## Example: Apple Messages for Business (Apple Pay)
+## Example: Apple Messages for Business (Apple Authenticate)
 
 Nothing specifically unique as this is an Apple Messages for Business specific structured message type.
 
