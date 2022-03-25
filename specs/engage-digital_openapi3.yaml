@@ -205,6 +205,7 @@ paths:
       
       
         Authorization: Only users that have the right to manage topologies.
+      operationId: createTopology
       requestBody:
         required: true
         content:
@@ -227,6 +228,7 @@ paths:
         
         
         Authorization: Only users that have the right to manage topologies
+      operationId: getAllTopologies
       responses:
         '200':
           content:
