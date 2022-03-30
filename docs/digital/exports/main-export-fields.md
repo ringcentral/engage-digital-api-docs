@@ -98,6 +98,8 @@ Other custom data can be present in the thread export depending on the source ty
 | in_reply_to_author_id    | Source ID                                                     | ObjectId | 523ffffb7aa58d1b6700000f                                        |                                                                                                                      |
 | attachments_count        | Number of attachments                                         | Integer  | 1                                                               |                                                                                                                      |
 | structured_reply_payload | Payload of the structured reply                               | String   | my_payload                                                      | [Sensitive](/digital/exports/#sensitive-columns)                                                                                                            |
+| synchronization_status   | Synchronization status of the message                         | String   | success                                                      | Possible values : <ul><li>success</li> <li>export_pending</li><li>export_failure</li><li>export_aborted</li> <li>like_aborted</li> <li>author_block_aborted</li> <li>delete_aborted</li><li>unpublish_aborted</li></ul> |
+| synchronization_error    | Error message if the synchronization failed or has been aborted | String | hard_bounce - The server was unable to deliver your message (ex: unknown user, mailbox not found). | This field is the concatenation of content.synchronization_error and content.synchronization_error_custom fields |
 
 ## Journal(`Exports::Events`)
 
