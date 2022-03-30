@@ -54,7 +54,7 @@ curl -X POST "https://[YOUR DOMAIN].api.digital.ringcentral.com/1.0/contents"
 | **`structured_content.items.subtitle`** | String | **Optional**. The subtitle of the item. Limited to 100 characters. |
 | **`structured_content.items.section_identifier`** | String | **Optional if there's no section**. The identifier of the section where the item is.<br>If there's no section, the section_identifier field should be removed.<br>Each section must have at least 1 item.<br>Limited to 200 characters. |
 
-## Example: Apple Business Chat (List Picker)
+## Example: Apple Messages for Business (List Picker)
 
 This list picker structured content has multiple specific fields. So here’s an example payload format.
 

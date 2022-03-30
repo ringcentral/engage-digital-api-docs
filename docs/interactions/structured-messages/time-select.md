@@ -66,8 +66,8 @@ curl -X POST "https://[YOUR DOMAIN].api.digital.ringcentral.com/1.0/contents"
 | **`structured_content.location.radius`** | Integer | The radius around latitude/longitude of the location. |
 | **`structured_content.location.title`** | String | The title of the location. |
 
-## Example: Apple Business Chat (Time Picker)
+## Example: Apple Messages for Business (Time Picker)
 
-Nothing specifically unique as this is an Apple Business Chat specific structured message type.
+Nothing specifically unique as this is an Apple Messages for Business specific structured message type.
 
 <img class="img-fluid" width="350" src="../../../img/structured-messages-time-select-apple-biz.png">
