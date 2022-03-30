@@ -63,11 +63,11 @@ This section describes the generic compatibility logic of the API. Check the fol
 
 ### Apple Messages for Business
 
-* [List Picker (select)](../structured-messages/select/#example-apple-business-chat-list-picker)
-* [Rich Link](../structured-messages/rich-link/#example-apple-business-chat)
-* [Time Picker](../structured-messages/time-select/#example-apple-business-chat-time-picker)
-* [Apple Pay](../structured-messages/apple-pay/#example-apple-business-chat-apple-pay)
-* [Apple Auth](../structured-messages/apple-auth/#example-apple-business-chat-apple-pay)
+* [List Picker (select)](../structured-messages/select/#example-apple-messages-for-business-quick-replies)
+* [Rich Link](../structured-messages/rich-link/#example-apple-messages-for-business)
+* [Time Picker](../structured-messages/time-select/#example-apple-messages-for-business-time-picker)
+* [Apple Pay](../structured-messages/apple-pay/#example-apple-messages-for-business-apple-pay)
+* [Apple Auth](../structured-messages/apple-auth/#example-apple-messages-for-business-apple-authenticate)
 
 ### Facebook Messenger
 
