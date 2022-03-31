@@ -8689,6 +8689,8 @@ components:
           type: string
         verify_token:
           type: string
+        webhook_status:
+          type: string
       required:
         - id
     WebhookAccessToken:
