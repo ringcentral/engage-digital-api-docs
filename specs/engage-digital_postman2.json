@@ -7011,186 +7011,189 @@
               }
             }
           ]
-        }
-      ]
-    },
-    {
-      "name": "Topologies",
-      "item": [
-        {
-          "name": "Getting all topologies",
-          "request": {
-            "url": {
-              "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/topologies",
-              "host": [
-                "{{ENGAGE_DIGITAL_SERVER_URL}}"
-              ],
-              "path": [
-                "1.0",
-                "topologies"
-              ]
-            },
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
-              },
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "description": "This method renders all topologies ordered by name (in alphabetical order).\n\nAuthorization: Only users that have the right to manage topologies"
-          }
         },
         {
-          "name": "Creating a topology",
-          "request": {
-            "url": {
-              "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/topologies",
-              "host": [
-                "{{ENGAGE_DIGITAL_SERVER_URL}}"
-              ],
-              "path": [
-                "1.0",
-                "topologies"
-              ]
-            },
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
-              },
-              {
-                "key": "Accept",
-                "value": "application/json"
-              },
-              {
-                "key": "Accept",
-                "value": "application/json"
+          "name": "Topologies",
+          "description": {
+            "type": "text/plain"
+          },
+          "item": [
+            {
+              "name": "Getting all topologies",
+              "request": {
+                "url": {
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/topologies",
+                  "host": [
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
+                  ],
+                  "path": [
+                    "1.0",
+                    "topologies"
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "description": "This method renders all topologies ordered by name (in alphabetical order).\n\nAuthorization: Only users that have the right to manage topologies"
               }
-            ],
-            "description": "This method creates a topology. In case of success it renders the topology, otherwise, it renders an error (422 HTTP code).\n\nAuthorization: Only users that have the right to manage topologies."
-          }
-        },
-        {
-          "name": "Deleting a topology",
-          "request": {
-            "url": {
-              "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/topologies/:topologyId",
-              "host": [
-                "{{ENGAGE_DIGITAL_SERVER_URL}}"
-              ],
-              "path": [
-                "1.0",
-                "topologies",
-                ":topologyId"
-              ]
             },
-            "method": "DELETE",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
-              },
-              {
-                "key": "Accept",
-                "value": "application/json"
+            {
+              "name": "Creating a topology",
+              "request": {
+                "url": {
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/topologies",
+                  "host": [
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
+                  ],
+                  "path": [
+                    "1.0",
+                    "topologies"
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "description": "This method creates a topology. In case of success it renders the topology, otherwise, it renders an error (422 HTTP code).\n\nAuthorization: Only users that have the right to manage topologies."
               }
-            ],
-            "description": "This method destroys an existing topology. It renders topology itself. It renders a 404 if id is invalid.\n\nAuthorization: Only users that have the right to manage topologies."
-          }
-        },
-        {
-          "name": "Getting a topology from its id",
-          "request": {
-            "url": {
-              "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/topologies/:topologyId",
-              "host": [
-                "{{ENGAGE_DIGITAL_SERVER_URL}}"
-              ],
-              "path": [
-                "1.0",
-                "topologies",
-                ":topologyId"
-              ]
             },
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
-              },
-              {
-                "key": "Accept",
-                "value": "application/json"
+            {
+              "name": "Deleting a topology",
+              "request": {
+                "url": {
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/topologies/:topologyId",
+                  "host": [
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
+                  ],
+                  "path": [
+                    "1.0",
+                    "topologies",
+                    ":topologyId"
+                  ]
+                },
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "description": "This method destroys an existing topology. It renders topology itself. It renders a 404 if id is invalid.\n\nAuthorization: Only users that have the right to manage topologies."
               }
-            ],
-            "description": "This method renders a topology from given id.\n\nAuthorization: only users that have the right to manage topologies."
-          }
-        },
-        {
-          "name": "Updating a topology",
-          "request": {
-            "url": {
-              "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/topologies/:topologyId",
-              "host": [
-                "{{ENGAGE_DIGITAL_SERVER_URL}}"
-              ],
-              "path": [
-                "1.0",
-                "topologies",
-                ":topologyId"
-              ]
             },
-            "method": "PUT",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
-              },
-              {
-                "key": "Accept",
-                "value": "application/json"
-              },
-              {
-                "key": "Accept",
-                "value": "application/json"
+            {
+              "name": "Getting a topology from its id",
+              "request": {
+                "url": {
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/topologies/:topologyId",
+                  "host": [
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
+                  ],
+                  "path": [
+                    "1.0",
+                    "topologies",
+                    ":topologyId"
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "description": "This method renders a topology from given id.\n\nAuthorization: only users that have the right to manage topologies."
               }
-            ],
-            "description": "This method updates an existing topology from given attributes and renders it in case of success.\n\nAuthorization: only users that have the right to manage topologies. Topology must be inactive or the response will return an error."
-          }
-        },
-        {
-          "name": "Activating a topology",
-          "request": {
-            "url": {
-              "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/topologies/:topologyId/activate",
-              "host": [
-                "{{ENGAGE_DIGITAL_SERVER_URL}}"
-              ],
-              "path": [
-                "1.0",
-                "topologies",
-                ":topologyId",
-                "activate"
-              ]
             },
-            "method": "PUT",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
-              },
-              {
-                "key": "Accept",
-                "value": "application/json"
+            {
+              "name": "Updating a topology",
+              "request": {
+                "url": {
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/topologies/:topologyId",
+                  "host": [
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
+                  ],
+                  "path": [
+                    "1.0",
+                    "topologies",
+                    ":topologyId"
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "description": "This method updates an existing topology from given attributes and renders it in case of success.\n\nAuthorization: only users that have the right to manage topologies. Topology must be inactive or the response will return an error."
               }
-            ],
-            "description": "This method activates an existing topology from given attributes and renders it in case of success.\n\nAuthorization: Only users that have the right to manage topologies."
-          }
+            },
+            {
+              "name": "Activating a topology",
+              "request": {
+                "url": {
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/topologies/:topologyId/activate",
+                  "host": [
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
+                  ],
+                  "path": [
+                    "1.0",
+                    "topologies",
+                    ":topologyId",
+                    "activate"
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "description": "This method activates an existing topology from given attributes and renders it in case of success.\n\nAuthorization: Only users that have the right to manage topologies."
+              }
+            }
+          ]
         }
       ]
     }
