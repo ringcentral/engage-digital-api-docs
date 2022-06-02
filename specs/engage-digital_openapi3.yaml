@@ -260,6 +260,13 @@ paths:
           schema:
             format: int32
             type: integer
+        - description: >-
+            Search parameter for file extension (e.g. pdf, xlsx, jpg...)
+          in: query
+          name: extension
+          required: false
+          schema:
+            type: string
       responses:
         '200':
           content:
