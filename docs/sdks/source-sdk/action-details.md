@@ -55,7 +55,8 @@ We'll always retry to send the message after a message level error. If you want 
     "objects": {
         "messages": ["create", "show", ...],
         "private_messages": [...],
-        "threads": [...]
+        "threads": [...],
+        "status": ["mark_as_read"]
     },
     "options": ["messages.no_title", ...],
     "locales": {
