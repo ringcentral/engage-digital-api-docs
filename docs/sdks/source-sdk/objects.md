@@ -6,7 +6,7 @@ Currently the SDK defines 5 types of objects:
 * PrivateMessages: messages between 2 or more users that cannot be seen by others. Examples: direct messages on Twitter.
 * Threads: provide a way to structure the messages. Examples: blog posts, forum threads. Not mandatory (eg. Twitter).
 * Users: every other object type must have an author. This is the only object type that has no actions available.
-* Status: provides a way to update messages and private messages, like marking them as read. Used only in [Send API](../send-api)
+* Status: provides a way to update messages and private messages, like marking them as read. Only used in [Send API](../send-api)
 
 ## Messages
 
