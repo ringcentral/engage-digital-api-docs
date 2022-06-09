@@ -19,7 +19,7 @@ curl -X POST "https://[YOUR DOMAIN].api.digital.ringcentral.com/1.0/contents"
   "structured_content": {
     "type": "authenticate",
     "attachment_id": "<attachment_id>",
-    "response_body": "Response",
+    "response_body": "Response"
   }
 }
 ```

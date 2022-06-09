@@ -24,7 +24,7 @@ curl -X POST "https://[YOUR DOMAIN].api.digital.ringcentral.com/1.0/contents"
             "title":"Go to website",
             "type":"url",
             "url": "github://github.com/ringcentral",
-            "url_fallback": "https://github.com/ringcentral",
+            "url_fallback": "https://github.com/ringcentral"
           },
           {
             "title":"Ok",
