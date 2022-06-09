@@ -4894,7 +4894,7 @@ paths:
       tags:
         - Tasks
   '/tasks/{taskId}/move':
-    delete:
+    post:
       description: >-
         This method changes a task queue and renders it in case of success. Only
         accepts “undelivered” and special queue defined in topology (e.g.
@@ -4926,7 +4926,7 @@ paths:
       tags:
         - Tasks
   '/tasks/{taskId}/transfer':
-    put:
+    post:
       description: >-
         This method transfers an existing task and renders it in case of
         success.
