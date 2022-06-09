@@ -6935,7 +6935,7 @@
                     }
                   ]
                 },
-                "method": "DELETE",
+                "method": "POST",
                 "header": [
                   {
                     "key": "Authorization",
@@ -7002,7 +7002,7 @@
                     }
                   ]
                 },
-                "method": "PUT",
+                "method": "POST",
                 "header": [
                   {
                     "key": "Authorization",
