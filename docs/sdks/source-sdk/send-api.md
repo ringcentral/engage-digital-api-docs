@@ -1,6 +1,8 @@
 # Introduction to Send API
 
-The Send API allows you to send contents instantly to Engage Digital. It's purpose is to build a near realtime API when the third party to be connected can support it. This API is optional and is a way to mitigate the slow import (~2 min) of the [polling approach](../polling).
+The Send API allows you to send contents instantly to Engage Digital. Its purpose is to build a near realtime API when the third party to be connected can support it. This API is optional and is a way to mitigate the slow import (~2 min) of the [polling approach](../polling).
+
+It also allows you to mark agent contents as read, which is visible by agents when '[view.messaging](../options/#viewmessaging)' option is enabled.
 
 ## Requirements
 
@@ -52,6 +54,7 @@ This section lists the parameters you must send for all actions and specifies wh
 | Private messages | create |
 | Threads | create |
 | Users | create |
+| Status | mark_as_read |
 
 ### Create Example
 
@@ -69,6 +72,25 @@ This section lists the parameters you must send for all actions and specifies wh
     },
     "body": "Awesome post !",
     "thread_id": "42"
+  }
+}
+```
+
+#### Response
+
+``` json
+ok
+```
+
+### Mark as read Example
+
+### Request
+
+```json
+{
+  "action": "status.mark_as_read",
+  "params": {
+    "id": "890"
   }
 }
 ```
@@ -144,7 +166,7 @@ There is no particular limit for the time being.
     ?>
     ```
 
-=== "Ruby" 
+=== "Ruby"
 
     ```ruby
     require 'faraday'

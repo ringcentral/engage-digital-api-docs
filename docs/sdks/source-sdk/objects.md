@@ -1,11 +1,12 @@
 # Intro to SDK Objects
 
-Currently the SDK defines 4 types of objects:
+Currently the SDK defines 5 types of objects:
 
 * Messages: publicly available messages exchanged between any number of users. Examples: blog comments, forum posts.
 * PrivateMessages: messages between 2 or more users that cannot be seen by others. Examples: direct messages on Twitter.
 * Threads: provide a way to structure the messages. Examples: blog posts, forum threads. Not mandatory (eg. Twitter).
 * Users: every other object type must have an author. This is the only object type that has no actions available.
+* Status: provides a way to update messages and private messages, like marking them as read. Only used in [Send API](../send-api)
 
 ## Messages
 
@@ -138,7 +139,7 @@ We ignore extra fields and you only need to provide fields marked as required. A
 | firstname | String | Firstname of the user if you can provide it. |
 | lastname | String | Lastname of the user if you can provide it. |
 | screenname | String | ***Required*** Name we display for this user. |
-| avatar_url | String | | 
+| avatar_url | String | |
 | email | String | Confirmed email of the user, can be used to send email PM if no PM mechanism is supported. |
 | home_phone | String | Home phone number. |
 | mobile_phone | String | Mobile/cellular phone number. |
@@ -147,3 +148,11 @@ We ignore extra fields and you only need to provide fields marked as required. A
 | puppetizable | Boolean | Whether Engage Digital can use this user as identity to create message. False by default. |
 | gender | String | Accepted values are "`man`" or "`woman`". |
 | context_data | Hash | Data specific to the User, that will be stored in Engage Digital at the identity and identitygroup level. Expect a hash having the (expected) form: `{'field_name' => 'value'}`. *The keys must be [a-zA-Z-]*. Example: {`"country": "Germany", "age": "34", "fruits": ["Apple", "Pear"]}`. |
+
+## Status
+
+We ignore extra fields and you only need to provide fields marked as required. Used only in [Send API](../send-api)
+
+| Name | Type | Description |
+|-|-|-|
+| id | String | ***Required***, ID of the message or private message on the third party system (yours). This is the ID you return on `message.create` and `private_message.create` actions |

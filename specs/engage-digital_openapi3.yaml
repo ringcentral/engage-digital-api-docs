@@ -260,6 +260,13 @@ paths:
           schema:
             format: int32
             type: integer
+        - description: >-
+            Search parameter for file extension (e.g. pdf, xlsx, jpg...)
+          in: query
+          name: extension
+          required: false
+          schema:
+            type: string
       responses:
         '200':
           content:
@@ -4887,7 +4894,7 @@ paths:
       tags:
         - Tasks
   '/tasks/{taskId}/move':
-    delete:
+    post:
       description: >-
         This method changes a task queue and renders it in case of success. Only
         accepts “undelivered” and special queue defined in topology (e.g.
@@ -4919,7 +4926,7 @@ paths:
       tags:
         - Tasks
   '/tasks/{taskId}/transfer':
-    put:
+    post:
       description: >-
         This method transfers an existing task and renders it in case of
         success.
