@@ -51,9 +51,9 @@ Example:
 
 There are predefined fields, such as `firstname`, `lastname`, `screenname`, `company`, `email`, `uuid` or `avatar_url`. Each of them is optional.
 
-For information about UUID please see [User persistent identifier (aka UUID)](http://localhost:8000/interactions/web-messaging/#user-persistent-identifier-aka-uuid).
+For information about UUID please see [User persistent identifier (aka UUID)](../#user-persistent-identifier-aka-uuid).
 
-Other values can freely be registered in the `extra_values` hash with a key, value format. Note that we strongly recommend to register an ID in the extra values for the case of the visitor being a customer (see [related section(http://localhost:8000/interactions/web-messaging/#company-managed-uuid)]).
+Other values can freely be registered in the `extra_values` hash with a key, value format. Note that we strongly recommend to register an ID in the extra values for the case of the visitor being a customer (see [related section](../#company-managed-uuid)).
 
 ### Non Signed Identity
 
