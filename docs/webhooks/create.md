@@ -54,5 +54,9 @@ When the endpoint receives this request, it should do all of the following:
 4. Set the response body to only contain the value of `hub.challenge`.
 5. Respond with an HTTP status code of 200.
 
+## Webhook auto disconnection
+
+To improve webhook management, Engage has a specific mechanism that will control if sent webhook has been acknowledged or not. If the endpoint returns error in response to the webhook within the given threshold (e.g. if 75% of requests are failed), we'll send the email notifying that something went unexpected. After that, until the situation recovers, we will stop retrying sending webhooks. Once everything normalizes, the webhooks will be auto-recovered.
+
 
 
