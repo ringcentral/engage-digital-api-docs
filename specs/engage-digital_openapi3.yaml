@@ -1343,9 +1343,9 @@ paths:
           schema:
             type: string
         - description: >-
-            For an email or SMS source. For an email, an array containing the
+            For an email or SMS and WhatsApp source. For an email, an array containing the
             email addresses used in the “To” section of the email. This
-            parameter is mandatory when initiating a discussion. For a SMS, the
+            parameter is mandatory when initiating a discussion. For a WhatsApp message or a SMS, the
             number the SMS will be sent to. It must start with 00 or +, example:
             +33634231224 or 0033634231224. This parameter is mandatory when
             initiating a discussion.
@@ -1379,6 +1379,28 @@ paths:
             items:
               type: string
             type: array
+        - description: >-
+            Mandatory for a WhatsApp source. Initiating a discussion can only be made using a specific
+            WhatsApp approved template created on the business manager. We fetch all the templates
+            periodically and you can find all available template_names on /1.0/content_sources/source_id.
+            Should be available on the source.
+          explode: true
+          in: query
+          name: 'template_name'
+          required: false
+          schema:
+            type: string
+        - description: >-
+            Mandatory for a WhatsApp source. Initiating a discussion can only be made using a specific
+            WhatsApp approved template created on the business manager. We fetch all the templates
+            periodically and you can find all available template_languages for a given template_name
+            on /1.0/content_sources/wa_source_id. Should be an available language for the template.
+          explode: true
+          in: query
+          name: 'template_language'
+          required: false
+          schema:
+            type: string
       responses:
         '200':
           content:
@@ -8214,6 +8236,9 @@ components:
           type: boolean
         error_message:
           type: string
+        hsm_template:
+          description: Only on WhatsApp Sources.
+          type: string
         hidden_from_stats:
           description: Hide from statistics
           type: boolean
@@ -8242,6 +8267,25 @@ components:
           type: integer
         status:
           type: string
+        templete_messages:
+          description: Only for WhatsApp Sources, used to send availables outbound messages to customers.
+          items:
+            type: object
+            properties:
+              components:
+                items:
+                  type: object
+                  properties:
+                    type:
+                      type: string
+                    text:
+                      type: string
+                type: array
+              language:
+                type: string
+              name:
+                type: string
+          type: array
         time_sheet_ids:
           items:
             type: string
