@@ -56,7 +56,7 @@ When the endpoint receives this request, it should do all of the following:
 
 ## Webhook auto disconnection
 
-To improve webhook management, Engage has a specific mechanism that will control if sent webhook has been acknowledged or not. If the endpoint returns error in response to the webhook within the given threshold (e.g. if 75% of requests are failed), we'll send the email notifying that something went unexpected. After that, until the situation recovers, we will stop retrying sending webhooks. Once everything normalizes, the webhooks will be auto-recovered.
+To improve webhook management, Engage has a specific mechanism that will control if sent webhook has been acknowledged or not. If the endpoint returns error in response to the webhook within the given threshold (e.g. if 75% of requests are failed), we'll send the email notifying that something went unexpected. After that, until the situation recovers, we will stop sending webhooks except for ones that are required for a periodical check of the endpoint. Once everything normalizes, the webhooks sending will be auto-recovered.
 
 
 
