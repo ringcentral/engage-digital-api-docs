@@ -8236,8 +8236,8 @@ components:
           type: boolean
         error_message:
           type: string
-        hsm_template:
-          description: Only on WhatsApp Sources.
+        hsm_namespace:
+          description:  Only on WhatsApp Sources. Internal WhatsApp field, used on the business manager to identify the templates
           type: string
         hidden_from_stats:
           description: Hide from statistics
