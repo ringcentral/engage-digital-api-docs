@@ -1380,8 +1380,8 @@ paths:
               type: string
             type: array
         - description: >-
-            Mandatory for a WhatsApp source. Initiating a discussion can only be made using a specific
-            WhatsApp approved template created on the business manager. We fetch all the templates
+            Mandatory for a WhatsApp source. A discussion can only be initiated using a specific template
+            created on the business manager and approved by WhatsApp. We fetch all the templates
             periodically and you can find all available template_names on /1.0/content_sources/source_id.
             Should be available on the source.
           explode: true
