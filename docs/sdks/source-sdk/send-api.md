@@ -55,6 +55,7 @@ This section lists the parameters you must send for all actions and specifies wh
 | Threads | create |
 | Users | create |
 | Status | mark_as_read |
+| Typing | start stop |
 
 ### Create Example
 
@@ -101,22 +102,54 @@ ok
 ok
 ```
 
+### Typing Example
+
+### Request
+
+```json
+{
+  "action": "typing.start",
+  "params": {
+    "thread_id": "42",
+    "in_reply_to_id": "890",
+    "preview": "Hello world"
+  }
+}
+```
+
+```json
+{
+  "action": "typing.stop",
+  "params": {
+    "thread_id": "42",
+    "in_reply_to_id": "890"
+  }
+}
+```
+
+#### Response
+
+``` json
+ok
+```
+
 ### Errors
 
 | Value | HTTP Code | Description |
 |-|-|-|
 | Bad request | 400 | The body is not JSON formatted or malformed. |
 | Invalid request format | 400 | The request is malformed, a mandatory field is probably missing. |
-|Invalid request size (max: 20971520 bytes) | 413 | The request body exceeds the limit of 20 megabytes, please limit the data submitted. |
-|Source not found | 422 | The `source_id` does not exist in Engage Digital. |
+| Invalid request size (max: 20971520 bytes) | 413 | The request body exceeds the limit of 20 megabytes, please limit the data submitted. |
+| Source not found | 422 | The `source_id` does not exist in Engage Digital. |
 | Invalid signature | 422 | The signature header is invalid, don't forget to sign (cf [Request-Response](../request-response)) your body request. |
 | Invalid action | 422 | The action that you provided is invalid or not implemented in Send API. |
 | Invalid resource format | 422 | A required field is missing in the params object that you provided. |
 | Source doesn't support structured contents | 422 | The `view.messaging` option is not implemented. [Structured contents](../structured-contents) |
-| Type is required for structured contents | 422 | A structured contents type is missing. [Structured contents](../structured-contents) ||
-| Source doesn't support this type of structured content | 422 | A structured contents type is not supported by source. [Structured contents](../structured-contents)
+| Type is required for structured contents | 422 | A structured contents type is missing. [Structured contents](../structured-contents) |
+| Source doesn't support this type of structured content | 422 | A structured contents type is not supported by source. [Structured contents](../structured-contents) |
 | `structured_content`: "attribute_name" must not be empty | 422 | A mandatort contents attribute is missing. [Structured contents](../structured-contents) |
-| The author must be puppetizable | 422 | The author is used for structured contents creation must be puppetizable. [Structured contents](../structured-contents)
+| The author must be puppetizable | 422 | The author is used for structured contents creation must be puppetizable. [Structured contents](../structured-contents) |
+| too many typing requests, please try again in a few seconds | 429 | Too many typing requests were sent, retry later |
 
 ### Rate Limits
 

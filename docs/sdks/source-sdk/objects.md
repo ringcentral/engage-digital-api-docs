@@ -7,6 +7,7 @@ Currently the SDK defines 5 types of objects:
 * Threads: provide a way to structure the messages. Examples: blog posts, forum threads. Not mandatory (eg. Twitter).
 * Users: every other object type must have an author. This is the only object type that has no actions available.
 * Status: provides a way to update messages and private messages, like marking them as read. Only used in [Send API](../send-api)
+* Typing: provides a way of notifying Engage Digital that an end-user is currently typing a message. Only used in [Send API](../send-api)
 
 ## Messages
 
@@ -156,3 +157,13 @@ We ignore extra fields and you only need to provide fields marked as required. U
 | Name | Type | Description |
 |-|-|-|
 | id | String | ***Required***, ID of the message or private message on the third party system (yours). This is the ID you return on `message.create` and `private_message.create` actions |
+
+## Typing
+
+We ignore extra fields and you only need to provide fields marked as required. Used only in [Send API](../send-api)
+
+| Name | Type | Description |
+|-|-|-|
+| thread_id | String | ***Required if `in_reply_to_id` is not provided***, ID of the thread on the third party system (yours). Will be used in priority over `in_reply_to_id` if both are provided. |
+| in_reply_to_id | String | ***Required if `thread_id` is not provided***, ID of the message or private message on the third party system (yours). This is the ID you return on `message.create` and `private_message.create` actions |
+| preview | String | ***Required for `typing.start` event only***, preview of the message being typed by the end user |
