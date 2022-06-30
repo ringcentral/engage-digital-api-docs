@@ -8278,6 +8278,19 @@ components:
                       type: string
                     text:
                       type: string
+                    buttons:
+                      items:
+                        type: object
+                        properties:
+                          type:
+                            type: string
+                          text:
+                            type: string
+                          phone_number:
+                            type: string
+                          url:
+                            type: string
+                      type: array
                 type: array
               language:
                 type: string
