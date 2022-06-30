@@ -1381,8 +1381,8 @@ paths:
             type: array
         - description: >-
             Mandatory for a WhatsApp source. A discussion can only be initiated using a specific template
-            created on the business manager and approved by WhatsApp. We fetch all the templates
-            periodically and you can find all available template_names on /1.0/content_sources/source_id.
+            created on the business manager and approved by WhatsApp. You can find all available
+            template_names on /1.0/content_sources/source_id.
           explode: true
           in: query
           name: 'template_name'
@@ -1391,9 +1391,8 @@ paths:
             type: string
         - description: >-
             Mandatory for a WhatsApp source. A discussion can only be initiated using a specific template
-            created on the business manager and approved by WhatsApp. We fetch all the templates
-            periodically and you can find all available template_languages for a given template_name
-            on /1.0/content_sources/source_id. Should be an available language for the template.
+            created on the business manager and approved by WhatsApp. You can find all available
+            template_languages for a given template_name on /1.0/content_sources/source_id.
           explode: true
           in: query
           name: 'template_language'
