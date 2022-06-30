@@ -1346,7 +1346,7 @@ paths:
             For an email or SMS and WhatsApp source. For an email, an array containing the
             email addresses used in the “To” section of the email. This
             parameter is mandatory when initiating a discussion. For a WhatsApp message or a SMS, the
-            number the SMS will be sent to. It must start with 00 or +, example:
+            number the message will be sent to. It must start with 00 or +, example:
             +33634231224 or 0033634231224. This parameter is mandatory when
             initiating a discussion.
           explode: true
