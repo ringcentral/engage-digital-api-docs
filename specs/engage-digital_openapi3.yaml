@@ -8266,8 +8266,8 @@ components:
           type: integer
         status:
           type: string
-        templete_messages:
-          description: Only for WhatsApp Sources, used to send availables outbound messages to customers.
+        template_messages:
+          description: Only for WhatsApp Sources, list of the available message templates that can be used to send outbound messages.
           items:
             type: object
             properties:
