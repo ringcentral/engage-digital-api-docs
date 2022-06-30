@@ -160,7 +160,7 @@ We ignore extra fields and you only need to provide fields marked as required. U
 
 ## Typing
 
-We ignore extra fields and you only need to provide fields marked as required. Used only in [Send API](../send-api)
+We ignore extra fields and you only need to provide fields marked as required. **Can only be used if the `messaging.typing_indicator` option is enabled** (see [Options](../options)). Used only in [Send API](../send-api)
 
 | Name | Type | Description |
 |-|-|-|
