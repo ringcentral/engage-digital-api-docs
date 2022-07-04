@@ -153,7 +153,9 @@ ok
 
 ### Rate Limits
 
-There is no particular limit for the time being.
+`typing.start` requests are limited to 1 request / thread on Engage Digital every 2 seconds (receiving a `typing.stop` request for a thread will reset this 2 seconds timer).
+
+Other than that there is no limit enforced as of right now.
 
 ## Complete Examples
 
