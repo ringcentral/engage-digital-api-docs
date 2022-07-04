@@ -84,7 +84,7 @@ Enable the messaging view in Engage Digital. Can be used with **only with one re
 
 ## messaging.typing_indicator
 
-Adds the ability to send/receive `typing` events (`typing.start`/`typing.stop`). Can **only be used if the `view.messaging` options is enabled**.
+Adds the ability to send/receive `typing` events (`typing.start`/`typing.stop`). Can **only be used if the [`view.messaging`](#viewmessaging) options is enabled**.
 
 ## messages.attachments
 
