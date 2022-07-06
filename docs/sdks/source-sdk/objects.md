@@ -1,6 +1,6 @@
 # Intro to SDK Objects
 
-Currently the SDK defines 5 types of objects:
+Currently the SDK defines 6 types of objects:
 
 * Messages: publicly available messages exchanged between any number of users. Examples: blog comments, forum posts.
 * PrivateMessages: messages between 2 or more users that cannot be seen by others. Examples: direct messages on Twitter.

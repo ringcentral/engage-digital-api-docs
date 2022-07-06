@@ -55,7 +55,7 @@ This section lists the parameters you must send for all actions and specifies wh
 | Threads | create |
 | Users | create |
 | Status | mark_as_read |
-| Typing | start stop |
+| Typing | start<br/>stop |
 
 ### Create Example
 
