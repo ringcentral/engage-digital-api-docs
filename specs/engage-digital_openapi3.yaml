@@ -1343,10 +1343,10 @@ paths:
           schema:
             type: string
         - description: >-
-            For an email or SMS source. For an email, an array containing the
+            For an email or SMS and WhatsApp source. For an email, an array containing the
             email addresses used in the “To” section of the email. This
-            parameter is mandatory when initiating a discussion. For a SMS, the
-            number the SMS will be sent to. It must start with 00 or +, example:
+            parameter is mandatory when initiating a discussion. For a WhatsApp message or a SMS, the
+            number the message will be sent to. It must start with 00 or +, example:
             +33634231224 or 0033634231224. This parameter is mandatory when
             initiating a discussion.
           explode: true
@@ -1379,6 +1379,26 @@ paths:
             items:
               type: string
             type: array
+        - description: >-
+            Mandatory for a WhatsApp source. A discussion can only be initiated using a specific template
+            created on the business manager and approved by WhatsApp. You can find all available
+            template_names on /1.0/content_sources/source_id.
+          explode: true
+          in: query
+          name: 'template_name'
+          required: false
+          schema:
+            type: string
+        - description: >-
+            Mandatory for a WhatsApp source. A discussion can only be initiated using a specific template
+            created on the business manager and approved by WhatsApp. You can find all available
+            template_languages for a given template_name on /1.0/content_sources/source_id.
+          explode: true
+          in: query
+          name: 'template_language'
+          required: false
+          schema:
+            type: string
       responses:
         '200':
           content:
@@ -8214,6 +8234,9 @@ components:
           type: boolean
         error_message:
           type: string
+        template_message_namespace:
+          description:  Only on WhatsApp Sources. Internal WhatsApp field that can also be found on the business manager (unique per WhatsApp account).
+          type: string
         hidden_from_stats:
           description: Hide from statistics
           type: boolean
@@ -8242,6 +8265,38 @@ components:
           type: integer
         status:
           type: string
+        template_messages:
+          description: Only for WhatsApp Sources, list of the available message templates that can be used to send outbound messages.
+          items:
+            type: object
+            properties:
+              components:
+                items:
+                  type: object
+                  properties:
+                    type:
+                      type: string
+                    text:
+                      type: string
+                    buttons:
+                      items:
+                        type: object
+                        properties:
+                          type:
+                            type: string
+                          text:
+                            type: string
+                          phone_number:
+                            type: string
+                          url:
+                            type: string
+                      type: array
+                type: array
+              language:
+                type: string
+              name:
+                type: string
+          type: array
         time_sheet_ids:
           items:
             type: string
