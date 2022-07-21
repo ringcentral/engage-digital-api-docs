@@ -29,7 +29,7 @@ markdown_extensions:
 
 extra_css: [extra.css]
 
-pages:
+nav:
 - 'Primary':
   - 'Interactions':
     - 'Overview': interactions/index.md
