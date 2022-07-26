@@ -2595,6 +2595,30 @@ paths:
       summary: Getting an intervention from its id
       tags:
         - Interventions
+    put:
+      description: >-
+        This method updates intervention from given attributes and renders it in case of success.
+
+
+        Authorization​: no.
+      operationId: updateIntervention
+      parameters:
+        - description: Intervention custom field with key "custom_field_key". It can be multiple if custom field is multiple or is has multiple_choice type.
+          in: query
+          name: custom_field_values[custom_field_key]
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Intervention'
+          description: Success
+      summary: Updating an intervention from its id
+      tags:
+        - Interventions
   '/interventions/{interventionId}/cancel':
     delete:
       description: >-
@@ -4943,6 +4967,38 @@ paths:
                 $ref: '#/components/schemas/Task'
           description: Success
       summary: Move a task to another queue
+      tags:
+        - Tasks
+  '/tasks/{taskId}/complete':
+    post:
+      description: >-
+        This method completes a task.
+
+
+        Authorization​: for that call to succeed several conditions are required:
+          - the task must be in an agent’s workbin. 
+          - the access token user must either own the task or be able to monitor all tasks or be able to monitor his team’s tasks if the task is owned by one of his team member.
+      operationId: completeTask
+      parameters:
+        - in: path
+          name: taskId
+          required: true
+          schema:
+            type: string
+        - description: Name of the queue task has to be moved in.
+          in: query
+          name: queue
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Task'
+          description: Success
+      summary: Complete a task
       tags:
         - Tasks
   '/tasks/{taskId}/transfer':
