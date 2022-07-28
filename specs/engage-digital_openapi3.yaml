@@ -275,7 +275,8 @@ paths:
           schema:
             type: date
         - description: >-
-            Search parameter to get attachments created after a ISO 8601 date
+            Search parameter to get attachments created after a ISO 8601 datetime (inclusive)
+
           in: query
           name: created_after
           required: false
