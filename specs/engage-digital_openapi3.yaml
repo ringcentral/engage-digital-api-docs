@@ -267,6 +267,22 @@ paths:
           required: false
           schema:
             type: string
+        - description: >-
+            Search parameter to get attachments created before a ISO 8601 datetime (inclusive)
+
+          in: query
+          name: created_before
+          required: false
+          schema:
+            type: date
+        - description: >-
+            Search parameter to get attachments created after a ISO 8601 datetime (inclusive)
+
+          in: query
+          name: created_after
+          required: false
+          schema:
+            type: date
       responses:
         '200':
           content:
@@ -4976,7 +4992,7 @@ paths:
 
 
         Authorization​: for that call to succeed several conditions are required:
-          - the task must be in an agent’s workbin. 
+          - the task must be in an agent’s workbin.
           - the access token user must either own the task or be able to monitor all tasks or be able to monitor his team’s tasks if the task is owned by one of his team member.
       operationId: completeTask
       parameters:
