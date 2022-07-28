@@ -268,7 +268,8 @@ paths:
           schema:
             type: string
         - description: >-
-            Search parameter to get attachments created before a ISO 8601 date
+            Search parameter to get attachments created before a ISO 8601 datetime (inclusive)
+
           in: query
           name: created_before
           required: false
