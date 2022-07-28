@@ -418,13 +418,13 @@
                     {
                       "key": "created_before",
                       "value": "\u003cdate\u003e",
-                      "description": "Search parameter to get attachments created before a ISO 8601 date",
+                      "description": "Search parameter to get attachments created before a ISO 8601 datetime (inclusive)",
                       "disabled": true
                     },
                     {
                       "key": "created_after",
                       "value": "\u003cdate\u003e",
-                      "description": "Search parameter to get attachments created after a ISO 8601 date",
+                      "description": "Search parameter to get attachments created after a ISO 8601 datetime (inclusive)",
                       "disabled": true
                     }
                   ]
@@ -692,7 +692,7 @@
                     {
                       "key": "to[]",
                       "value": "\u003carray.string.csv\u003e",
-                      "description": "For an email or SMS source. For an email, an array containing the email addresses used in the “To” section of the email. This parameter is mandatory when initiating a discussion. For a SMS, the number the SMS will be sent to. It must start with 00 or +, example: +33634231224 or 0033634231224. This parameter is mandatory when initiating a discussion.",
+                      "description": "For an email or SMS and WhatsApp source. For an email, an array containing the email addresses used in the “To” section of the email. This parameter is mandatory when initiating a discussion. For a WhatsApp message or a SMS, the number the message will be sent to. It must start with 00 or +, example: +33634231224 or 0033634231224. This parameter is mandatory when initiating a discussion.",
                       "disabled": true
                     },
                     {
@@ -705,6 +705,18 @@
                       "key": "bcc[]",
                       "value": "\u003carray.string.csv\u003e",
                       "description": "For an email source. An array containing the email addresses used in the “Bcc” section of the email.",
+                      "disabled": true
+                    },
+                    {
+                      "key": "template_name",
+                      "value": "\u003cstring\u003e",
+                      "description": "Mandatory for a WhatsApp source. A discussion can only be initiated using a specific template created on the business manager and approved by WhatsApp. You can find all available template_names on /1.0/content_sources/source_id.",
+                      "disabled": true
+                    },
+                    {
+                      "key": "template_language",
+                      "value": "\u003cstring\u003e",
+                      "description": "Mandatory for a WhatsApp source. A discussion can only be initiated using a specific template created on the business manager and approved by WhatsApp. You can find all available template_languages for a given template_name on /1.0/content_sources/source_id.",
                       "disabled": true
                     }
                   ]
@@ -1443,6 +1455,42 @@
                   }
                 ],
                 "description": "This method renders an intervention from given id. If token’s user does not have “read” on intervention’s source a 404 HTTP response will be returned.\n\nAuthorization​: no."
+              }
+            },
+            {
+              "name": "Updating an intervention from its id",
+              "request": {
+                "url": {
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/interventions/:interventionId",
+                  "host": [
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
+                  ],
+                  "path": [
+                    "1.0",
+                    "interventions",
+                    ":interventionId"
+                  ],
+                  "query": [
+                    {
+                      "key": "custom_field_values[custom_field_key]",
+                      "value": "\u003cstring\u003e",
+                      "description": "Intervention custom field with key \"custom_field_key\". It can be multiple if custom field is multiple or is has multiple_choice type.",
+                      "disabled": true
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "description": "This method updates intervention from given attributes and renders it in case of success.\n\nAuthorization​: no."
               }
             },
             {
@@ -6922,6 +6970,43 @@
                   }
                 ],
                 "description": "This method renders a task from given id."
+              }
+            },
+            {
+              "name": "Complete a task",
+              "request": {
+                "url": {
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/tasks/:taskId/complete",
+                  "host": [
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
+                  ],
+                  "path": [
+                    "1.0",
+                    "tasks",
+                    ":taskId",
+                    "complete"
+                  ],
+                  "query": [
+                    {
+                      "key": "queue",
+                      "value": "\u003cstring\u003e",
+                      "description": "Name of the queue task has to be moved in.",
+                      "disabled": true
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "description": "This method completes a task.\n\nAuthorization​: for that call to succeed several conditions are required:\n  - the task must be in an agent’s workbin.\n  - the access token user must either own the task or be able to monitor all tasks or be able to monitor his team’s tasks if the task is owned by one of his team member."
               }
             },
             {
