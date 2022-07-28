@@ -144,11 +144,11 @@ ok
 | Invalid signature | 422 | The signature header is invalid, don't forget to sign (cf [Request-Response](../request-response)) your body request. |
 | Invalid action | 422 | The action that you provided is invalid or not implemented in Send API. |
 | Invalid resource format | 422 | A required field is missing in the params object that you provided. |
-| Source doesn't support structured contents | 422 | The `view.messaging` option is not implemented. [Structured contents](../structured-contents) |
-| Type is required for structured contents | 422 | A structured contents type is missing. [Structured contents](../structured-contents) |
-| Source doesn't support this type of structured content | 422 | A structured contents type is not supported by source. [Structured contents](../structured-contents) |
-| `structured_content`: "attribute_name" must not be empty | 422 | A mandatort contents attribute is missing. [Structured contents](../structured-contents) |
-| The author must be puppetizable | 422 | The author is used for structured contents creation must be puppetizable. [Structured contents](../structured-contents) |
+| Source doesn't support structured contents | 422 | The `view.messaging` option is not implemented. [Structured contents](../structured-messages) |
+| Type is required for structured contents | 422 | A structured contents type is missing. [Structured contents](../structured-messages) |
+| Source doesn't support this type of structured content | 422 | A structured contents type is not supported by source. [Structured contents](../structured-messages) |
+| `structured_content`: "attribute_name" must not be empty | 422 | A mandatort contents attribute is missing. [Structured contents](../structured-messages) |
+| The author must be puppetizable | 422 | The author is used for structured contents creation must be puppetizable. [Structured contents](../structured-messages) |
 | too many typing requests, please try again in a few seconds | 429 | Too many typing requests were sent, retry later |
 
 ### Rate Limits
