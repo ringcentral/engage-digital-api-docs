@@ -34,7 +34,7 @@ curl -X POST "https://[YOUR DOMAIN].api.digital.ringcentral.com/1.0/contents"
 | **`structured_content`** | Object | Payload of the structured message. |
 | **Structured Content Settings** | | |
 | **`structured_content.type`** | String | Type of the structured message. Must be "rich_link". |
-| **`structured_content.url`** | String | Url of the rich link. Limited to 2048 characters. Should only have http and https schemes except for Apple Messages for Business were it could starts with '?' ([more informations](#example-apple-messages-for-business) ). If the device does not support structured messages, this field will be sent as the message. |
+| **`structured_content.url`** | String | Url of the rich link. Limited to 2048 characters. Should only have http and https schemes except for Apple Messages for Business were it could start with '?' ([more informations](#example-apple-messages-for-business) ). If the device does not support structured messages, this field will be sent as the message. |
 | **`structured_content.url_fallback`** | String | **Optional**. Fallback in case the url is invalid. Limited to 2048 characters. Only http and https schemes. |
 | **`structured_content.url_text`** | String | **Optional**. Text that will be displayed instead of the hostname of the url. Automatically gets populated as the hostname of the url if blank. Limited to 80 characters. |
 | **`structured_content.title`** | String | Title of the rich link. Limited to 350 characters. |
