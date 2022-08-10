@@ -26,12 +26,13 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: 16
-    - run: 'out=$(npx @openapitools/openapi-generator-cli generate -i specs/engage-digital_openapi3.yaml -g ruby -o /tmp/test/  | fgrep -v "INFO" | grep -v "^#")
-      if [ -z "$out" ]
-      then
-        echo $out
-        exit -1
-      else
-        echo "No error"
-        exit 0
-      fi'
+    - run: npm install -g @openapitools/openapi-generator-cli
+    - run: 'out=$(openapi-generator-cli generate -i specs/engage-digital_openapi3.yaml -g ruby -o /tmp/test/  | fgrep -v "INFO" | grep -v "^#");
+      if [ -z "$out" ];
+      then;
+        echo $out;
+        exit -1;
+      else;
+        echo "No error";
+        exit 0;
+      fi;'
