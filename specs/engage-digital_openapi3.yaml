@@ -274,7 +274,7 @@ paths:
           name: created_before
           required: false
           schema:
-            type: string
+            type: date
         - description: >-
             Search parameter to get attachments created after a ISO 8601 datetime (inclusive)
 
@@ -282,7 +282,7 @@ paths:
           name: created_after
           required: false
           schema:
-            type: string
+            type: date
       responses:
         '200':
           content:
