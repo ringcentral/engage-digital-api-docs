@@ -223,6 +223,7 @@ Property | Value | Description
 `synchronization_status` | String | For content.exported and content.update_exported event, the status of the synchronization (successful or unsuccessful).
 `thread_id` | String | ID of the thread that owns the content
 `thread_title` | String| Title of the thread that owns the content.
+`capabilities_supported` | Array of Strings | List the kinds of sturctured messages that can be used to reply to this kind of message.
 
 #### Metadata
 
