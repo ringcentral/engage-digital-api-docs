@@ -20,11 +20,11 @@ jobs:
     - name: Run tests
       run: go test -v -covermode=count ./...
     - name: Postman generated
+      working-directory: specs
       run: |
         go get github.com/grokify/spectrum
-        cd specs
         cp engage-digital_postman2.json engage-digital_postman2.json.orig
-        ~/go/bin/spectrum --config engage-digital_postman2.config.json --basePostmanFile engage-digital_postman2.base.json --openapiFile engage-digital_openapi3.yam
+        ~/go/bin/spectrum --config engage-digital_postman2.config.json --basePostmanFile engage-digital_postman2.base.json --openapiFile engage-digital_openapi3.yaml
         diff engage-digital_postman2.json.orig engage-digital_postman2.json
   lint:
     runs-on: ubuntu-latest
