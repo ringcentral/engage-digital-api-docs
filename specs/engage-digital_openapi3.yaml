@@ -126,7 +126,7 @@ paths:
   '/topologies/{topologyId}':
     put:
       description: >-
-        This method updates an existing topology from given attributes and renders it in case of success.
+        This method an existing topology from given attributes and renders it in case of success.
 
 
         Authorization: only users that have the right to manage topologies. Topology must be inactive or the response will return an error.
@@ -136,7 +136,7 @@ paths:
           name: topologyId
           required: true
           schema:
-            type: string
+            type: integer
       requestBody:
         content:
           application/x-www-form-urlencoded:
