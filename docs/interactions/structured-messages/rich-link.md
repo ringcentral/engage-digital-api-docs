@@ -67,8 +67,6 @@ Rich Link structured messages can be used to create iMessage apps.
 
 Primary parameters are used by default, however, some parameters are unique or overwritten by parameters specific to this example.
 
-
-
 | API Property | Type | Description |
 |-|-|-|
 | **`structured_content.url`** | String | A URL string containing data that the Messages app sends to the iMessage app. It must start with '?' |
