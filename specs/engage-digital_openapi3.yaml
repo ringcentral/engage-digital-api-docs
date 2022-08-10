@@ -2619,6 +2619,11 @@ paths:
         Authorization​: no.
       operationId: updateIntervention
       parameters:
+        - in: path
+          name: interventionId
+          required: true
+          schema:
+            type: string
         - description: Intervention custom field with key "custom_field_key". It can be multiple if custom field is multiple or is has multiple_choice type.
           in: query
           name: custom_field_values[custom_field_key]
