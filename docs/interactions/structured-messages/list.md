@@ -54,7 +54,7 @@ curl -X POST "https://[YOUR DOMAIN].api.digital.ringcentral.com/1.0/contents"
 | **`structured_content.items.subtitle`** | String | **Optional**. The subtitle of the item. Limited to 100 characters. |
 | **`structured_content.items.section_identifier`** | String | **Optional if there's no section**. The identifier of the section where the item is.<br>If there's no section, the section_identifier field should be removed.<br>Each section must have at least 1 item.<br>Limited to 200 characters. |
 
-## Example: Apple Business Chat (List Picker)
+## Example: Apple Messages for Business (List Picker)
 
 This list picker structured content has multiple specific fields. So here’s an example payload format.
 
@@ -188,7 +188,7 @@ Primary parameters are used by default, however, some parameters are unique or o
 | **Structured Content Settings** | | |
 | **`structured_content.button`** | String | **Optional**. The button text field.<br>Limited to 20 characters.<br>*Truncated to 20 UTF-16 code units.*<br>"See options" by default. |
 | **`structured_content.subtitle`** | String | **Optional**. The subtitle field.<br>*Truncated to 60 UTF-16 code units.* |
-| **`structured_content.header`** | String | **Optional**. The header field.<br>Limited to 60 characters.<br>*Truncated to 60 UTF-16 code units.* |
+| **`structured_content.header`** | String | **Optional**. The header field.<br>Limited to 60 UTF-16 code units. |
 | **Section Settings** | | |
 | **`structured_content.sections.title`** | String | **Optional if there's only a single section**. The title of the section.<br>Limited to 24 characters.<br>*Truncated to 24 UTF-16 code units.* |
 | **Item Settings** | | |

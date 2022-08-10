@@ -23,7 +23,7 @@ Engage Digital Messaging SDKs are libraries that allow integration of rich in-ap
 
 ### Channel SDKs
 
-Channel SDKs and Frameworks allow connection of Engage Digital to other messaging systems easily. Some built-in sources include Apple Business Chat, Facebook Messenger, WeChat, etc.
+Channel SDKs and Frameworks allow connection of Engage Digital to other messaging systems easily. Some built-in sources include Apple Messages for Business, Facebook Messenger, WeChat, etc.
 
 * [Channel SDK documentation](https://github.com/ringcentral/engage-digital-source-sdk/wiki)
 * [JavaScript Channel SDK Framework](https://github.com/ringcentral/engage-digital-source-sdk-js)

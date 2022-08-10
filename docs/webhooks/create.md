@@ -54,5 +54,9 @@ When the endpoint receives this request, it should do all of the following:
 4. Set the response body to only contain the value of `hub.challenge`.
 5. Respond with an HTTP status code of 200.
 
+## Webhook auto disconnection
+
+To improve webhook management, Engage Digital has a specific mechanism that will prevent a webhook from staying active if it ends with an error too often. If the number of requests made to the remote endpoint that respond with an error (or take too much time to respond) reach a certain threshold (e.g. 75% of the requests to the given endpoint end up with an error) we'll send an email to notify that something is going wrong with this particular webhook and we will prevent the webhook from sending more requests. After a specific amount of time, we'll try sending some requests again and if the requests are successful the webhook will be fully active again, otherwise it'll wait again before sending more requests.
+
 
 

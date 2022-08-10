@@ -42,7 +42,7 @@ curl -X POST "https://[YOUR DOMAIN].api.digital.ringcentral.com/1.0/contents"
 | **`structured_content.attachment_id`** | String | **Optional**. Existing attachment id used to decorate the rich link with an image. Should be public. Should be jpg, jpeg or png. Should be less than 5MB. [Upload attachments](../../../basics/uploads) for you own custom images. |
 | **`structured_content.attachment_fallback_id`** | String | **Optional**. Fallback in case the attachment related to the attachment_id doesn’t meet the source requirements. Must be public. Only jpg, jpeg, png formats. Maximum size of 5 MB. [Upload attachments](../../../basics/uploads) for you own custom images. |
 
-## Example: Apple Business Chat
+## Example: Apple Messages for Business
 
 <img class="img-fluid" width="350" src="../../../img/structured-messages-rich-link-apple-biz.png">
 
@@ -90,7 +90,7 @@ Primary parameters are used by default, however, some parameters are unique or o
 |-|-|
 | **`structured_content.attachment_id`** | Supports bmp, gif, jpg, jpeg, png formats. Supports private attachments. [Upload attachments](../../../basics/uploads) for you own custom images.<br>On Engage Messaging Web, if the width of the image is bigger than the height, it will be displayed with a 5:3 ratio. Otherwise, a 1:1 ratio will be used.<br>Minimal recommended size with a 1:1 ratio: **258x258**<br>Minimal recommended size with a 5:3 ratio: **258x155** |
 | **`structured_content.url`** | Deep links are supported. |
-| **`structured_content.target`** | **Optional**. **Ignored** when the `url` is empty. Behavior applied when clicking on the url. Can be **webview** to open url on a [webview](../webview) above the chat, `open` to open url in new tab, or `current` to open url in current tab. Defaults to **open** when not specified. On iOS, `current` value opens a full sized webview.|
+| **`structured_content.target`** | **Optional**. **Ignored** when the `url` is empty. Behavior applied when clicking on the url. Can be **webview** to open url on a [webview](../webview) above the chat, `open` to open url in new tab, or `current` to open url in current tab. Defaults to **open** when not specified. On iOS and Android, `current` value opens a full sized webview.|
 | **`structured_content.webview_height`** | **Optional**. **Ignored** when `target` is other than `webview`. Size of the webview used to open the link. Can be `full`, `tall` or `compact`. Defaults to `full` if unset.|
 
 ## Example: Google Business Messages

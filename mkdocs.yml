@@ -29,7 +29,7 @@ markdown_extensions:
 
 extra_css: [extra.css]
 
-pages:
+nav:
 - 'Primary':
   - 'Interactions':
     - 'Overview': interactions/index.md
@@ -117,6 +117,7 @@ pages:
       - 'Authentication': sdks/survey-sdk/authentication.md
       - 'Configuration Fetching': sdks/survey-sdk/configuration-fetching.md
       - 'Responses Polling': sdks/survey-sdk/responses-polling.md
+      - 'Realtime Responses Import': sdks/survey-sdk/realtime-responses-import.md
     - 'Embedded UI':
       - 'Overview': sdks/ui-embed/index.md
       - 'Views': sdks/ui-embed/views.md

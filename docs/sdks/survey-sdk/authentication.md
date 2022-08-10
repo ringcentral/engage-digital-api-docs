@@ -19,3 +19,13 @@ If the header is not present or if it doesn't match the survey's **secret key**,
 
 !!! note
     Please note that this verification mechanism can be skipped by turning the survey's **verify secret key** setting off in Engage Digital.
+
+
+## Realtime Authentication
+
+When receiving a `POST` request from a Survey SDK bridge, Engage Digital will check both the presence and the validity of the `X-SDK-SECRET` header in the bridge HTTP request.
+
+If the header is not present or if it doesn't match the survey's **secret key**, the entire request will be considered invalid and will therefore be ignored.
+
+!!! note
+    Please note that this verification mechanism can be skipped by turning the survey's **verify secret key** setting off in Engage Digital.

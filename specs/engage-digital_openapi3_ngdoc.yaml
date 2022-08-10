@@ -17,94 +17,13 @@ servers:
       platform_hostname:
         default: engagement.dimelo.com
         description: Depending on environment the base hostname is changing. In production, it's digital.ringcentral.com for NA customers and engagement.dimelo.com for historical customers. It's the same base hostname as in the url of engage digital service.
-x-tag-groups:
-  - name: Events & Notifications
-    tags:
-      - Events
-      - Webhooks
-  - name: Interactions
-    popular: true
-    tags:
-      - Attachments
-      - Communities
-      - Contents
-      - Identities
-      - Identity Groups
-      - Intervention Comments
-      - Interventions
-      - Sources
-      - Survey Responses
-      - Surveys
-      - Threads
-  - name: Provisioning
-    tags:
-      - Categories
-      - CustomFields
-      - Locales
-      - Reply Assistant Entries
-      - Reply Assistant Groups
-      - Reply Assistant Versions
-      - Roles
-      - Settings
-      - Tags
-      - Teams
-      - Time Sheets
-      - Timezones
-      - Users
-      - User Capacities
-      - User Signatures
-  - name: Routing
-    popular: true
-    tags:
-      - Agent Status
-      - Channels
-      - Folders
-      - Presence Status
-      - Tasks
-      - Topologies
-tags:
-  - name: Events
-  - name: Webhooks
-  - name: Attachments
-  - name: Communities
-  - name: Contents
-  - name: Identities
-  - name: Identity Groups
-  - name: Intervention Comments
-  - name: Interventions
-  - name: Sources
-  - name: Tasks
-  - name: Threads
-  - name: Categories
-  - name: CustomFields
-  - name: Locales
-  - name: Reply Assistant Entries
-  - name: Reply Assistant Groups
-  - name: Reply Assistant Versions
-  - name: Roles
-  - name: Settings
-  - name: Tags
-  - name: Teams
-  - name: Time Sheets
-  - name: Timezones
-  - name: Topologies
-  - name: Users
-  - name: User Capacities
-  - name: User Signatures
-  - name: Agent Status
-  - name: Channels
-  - name: Folders
-  - name: Presence Status
-  - name: Survey Responses
-  - name: Surveys
-
 paths:
   '/topologies/{topologyId}/activate':
     put:
       description: >-
         This method activates an existing topology from given attributes and renders it in case of success.
-
-
+        
+        
         Authorization: Only users that have the right to manage topologies.
       operationId: activateTopology
       parameters:
@@ -127,8 +46,8 @@ paths:
     put:
       description: >-
         This method updates an existing topology from given attributes and renders it in case of success.
-
-
+        
+        
         Authorization: only users that have the right to manage topologies. Topology must be inactive or the response will return an error.
       operationId: updateTopology
       parameters:
@@ -155,8 +74,8 @@ paths:
     delete:
       description: >-
         This method destroys an existing topology. It renders topology itself. It renders a 404 if id is invalid.
-
-
+        
+        
         Authorization: Only users that have the right to manage topologies.
       operationId: deleteTopology
       parameters:
@@ -178,8 +97,8 @@ paths:
     get:
       description: >-
         This method renders a topology from given id.
-
-
+      
+      
         Authorization: only users that have the right to manage topologies.
       operationId: getTopology
       parameters:
@@ -202,8 +121,8 @@ paths:
     post:
       description: >-
         This method creates a topology. In case of success it renders the topology, otherwise, it renders an error (422 HTTP code).
-
-
+      
+      
         Authorization: Only users that have the right to manage topologies.
       operationId: createTopology
       requestBody:
@@ -214,7 +133,7 @@ paths:
               $ref: '#/components/schemas/CreateUpdateTopology'
       responses:
         '200':
-            description: Created topology
+            description: Created topology 
             content:
               application/json:
                 schema:
@@ -225,8 +144,8 @@ paths:
     get:
       description: >-
         This method renders all topologies ordered by name (in alphabetical order).
-
-
+        
+        
         Authorization: Only users that have the right to manage topologies
       operationId: getAllTopologies
       responses:
@@ -260,29 +179,6 @@ paths:
           schema:
             format: int32
             type: integer
-        - description: >-
-            Search parameter for file extension (e.g. pdf, xlsx, jpg...)
-          in: query
-          name: extension
-          required: false
-          schema:
-            type: string
-        - description: >-
-            Search parameter to get attachments created before a ISO 8601 datetime (inclusive)
-
-          in: query
-          name: created_before
-          required: false
-          schema:
-            type: date
-        - description: >-
-            Search parameter to get attachments created after a ISO 8601 datetime (inclusive)
-
-          in: query
-          name: created_after
-          required: false
-          schema:
-            type: date
       responses:
         '200':
           content:
@@ -1359,10 +1255,10 @@ paths:
           schema:
             type: string
         - description: >-
-            For an email or SMS and WhatsApp source. For an email, an array containing the
+            For an email or SMS source. For an email, an array containing the
             email addresses used in the “To” section of the email. This
-            parameter is mandatory when initiating a discussion. For a WhatsApp message or a SMS, the
-            number the message will be sent to. It must start with 00 or +, example:
+            parameter is mandatory when initiating a discussion. For a SMS, the
+            number the SMS will be sent to. It must start with 00 or +, example:
             +33634231224 or 0033634231224. This parameter is mandatory when
             initiating a discussion.
           explode: true
@@ -1395,26 +1291,6 @@ paths:
             items:
               type: string
             type: array
-        - description: >-
-            Mandatory for a WhatsApp source. A discussion can only be initiated using a specific template
-            created on the business manager and approved by WhatsApp. You can find all available
-            template_names on /1.0/content_sources/source_id.
-          explode: true
-          in: query
-          name: 'template_name'
-          required: false
-          schema:
-            type: string
-        - description: >-
-            Mandatory for a WhatsApp source. A discussion can only be initiated using a specific template
-            created on the business manager and approved by WhatsApp. You can find all available
-            template_languages for a given template_name on /1.0/content_sources/source_id.
-          explode: true
-          in: query
-          name: 'template_language'
-          required: false
-          schema:
-            type: string
       responses:
         '200':
           content:
@@ -2609,30 +2485,6 @@ paths:
                 $ref: '#/components/schemas/Intervention'
           description: Success
       summary: Getting an intervention from its id
-      tags:
-        - Interventions
-    put:
-      description: >-
-        This method updates intervention from given attributes and renders it in case of success.
-
-
-        Authorization​: no.
-      operationId: updateIntervention
-      parameters:
-        - description: Intervention custom field with key "custom_field_key". It can be multiple if custom field is multiple or is has multiple_choice type.
-          in: query
-          name: custom_field_values[custom_field_key]
-          required: false
-          schema:
-            type: string
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Intervention'
-          description: Success
-      summary: Updating an intervention from its id
       tags:
         - Interventions
   '/interventions/{interventionId}/cancel':
@@ -4954,7 +4806,7 @@ paths:
       tags:
         - Tasks
   '/tasks/{taskId}/move':
-    post:
+    delete:
       description: >-
         This method changes a task queue and renders it in case of success. Only
         accepts “undelivered” and special queue defined in topology (e.g.
@@ -4985,40 +4837,8 @@ paths:
       summary: Move a task to another queue
       tags:
         - Tasks
-  '/tasks/{taskId}/complete':
-    post:
-      description: >-
-        This method completes a task.
-
-
-        Authorization​: for that call to succeed several conditions are required:
-          - the task must be in an agent’s workbin.
-          - the access token user must either own the task or be able to monitor all tasks or be able to monitor his team’s tasks if the task is owned by one of his team member.
-      operationId: completeTask
-      parameters:
-        - in: path
-          name: taskId
-          required: true
-          schema:
-            type: string
-        - description: Name of the queue task has to be moved in.
-          in: query
-          name: queue
-          required: true
-          schema:
-            type: string
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Task'
-          description: Success
-      summary: Complete a task
-      tags:
-        - Tasks
   '/tasks/{taskId}/transfer':
-    post:
+    put:
       description: >-
         This method transfers an existing task and renders it in case of
         success.
@@ -5964,7 +5784,7 @@ paths:
             items:
               type: string
             type: array
-        - description:  >-
+        - description:  >- 
             Whether the user is passwordless or not (boolean).
             Must be used with the corresponding SSO configuration.
           in: query
@@ -7105,8 +6925,6 @@ components:
         status:
           type: string
         synchronization_status:
-          type: string
-        synchronization_error:
           type: string
         thread_id:
           type: string
@@ -8306,9 +8124,6 @@ components:
           type: boolean
         error_message:
           type: string
-        template_message_namespace:
-          description:  Only on WhatsApp Sources. Internal WhatsApp field that can also be found on the business manager (unique per WhatsApp account).
-          type: string
         hidden_from_stats:
           description: Hide from statistics
           type: boolean
@@ -8337,38 +8152,6 @@ components:
           type: integer
         status:
           type: string
-        template_messages:
-          description: Only for WhatsApp Sources, list of the available message templates that can be used to send outbound messages.
-          items:
-            type: object
-            properties:
-              components:
-                items:
-                  type: object
-                  properties:
-                    type:
-                      type: string
-                    text:
-                      type: string
-                    buttons:
-                      items:
-                        type: object
-                        properties:
-                          type:
-                            type: string
-                          text:
-                            type: string
-                          phone_number:
-                            type: string
-                          url:
-                            type: string
-                      type: array
-                type: array
-              language:
-                type: string
-              name:
-                type: string
-          type: array
         time_sheet_ids:
           items:
             type: string
@@ -8822,8 +8605,6 @@ components:
         url:
           type: string
         verify_token:
-          type: string
-        webhook_status:
           type: string
       required:
         - id
