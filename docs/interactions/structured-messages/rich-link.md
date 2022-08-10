@@ -34,7 +34,7 @@ curl -X POST "https://[YOUR DOMAIN].api.digital.ringcentral.com/1.0/contents"
 | **`structured_content`** | Object | Payload of the structured message. |
 | **Structured Content Settings** | | |
 | **`structured_content.type`** | String | Type of the structured message. Must be "rich_link". |
-| **`structured_content.url`** | String | Url of the rich link. Limited to 2048 characters. Should only have http and https schemes. If the device does not support structured messages, this field will be sent as the message. |
+| **`structured_content.url`** | String | Url of the rich link. Limited to 2048 characters. Should only have http and https schemes except for Apple Messages for Business were it could starts with '?' ([more informations](#example-apple-messages-for-business) ). If the device does not support structured messages, this field will be sent as the message. |
 | **`structured_content.url_fallback`** | String | **Optional**. Fallback in case the url is invalid. Limited to 2048 characters. Only http and https schemes. |
 | **`structured_content.url_text`** | String | **Optional**. Text that will be displayed instead of the hostname of the url. Automatically gets populated as the hostname of the url if blank. Limited to 80 characters. |
 | **`structured_content.title`** | String | Title of the rich link. Limited to 350 characters. |
@@ -55,7 +55,18 @@ Primary parameters are used by default, however, some parameters are unique or o
 | **`structured_content.title`** | String | Truncated to 200 characters. |
 | **`structured_content.attachment_id`** | String | Supports jpg, jpeg, png, and mp4 formats. Supports private attachments. Supports up to 300MB. [Upload attachments](../../../basics/uploads) for you own custom images. |
 | **`structured_content.url_text`** | String | Ignored property. |
-| **`structured_content.subtitle`** | String | Ignored property. |
+| **`structured_content.subtitle`** | String | Ignored property (except for iMessage App) |
+
+### iMessage App
+
+Rich Link structured messages can be used to create iMessage apps. To do so, you need to set the `structured_content.url` to a query string starting with `?`. And use the following properties:
+
+| API Property | Type | Description |
+|-|-|-|
+**`app_id`** | String | The App Store identifier of the iMessage app. |
+**`app_name`** | String | The name of the iMessage app. |
+**`app_icon`** | String | A Base64-encoded string representing the app icon of the iMessage app. |
+**`bid`** | String | The bundle identifier of the iMessage app. |
 
 ## Example: Facebook Messenger
 
