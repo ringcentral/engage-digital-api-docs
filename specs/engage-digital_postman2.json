@@ -417,13 +417,13 @@
                     },
                     {
                       "key": "created_before",
-                      "value": "\u003cdate\u003e",
+                      "value": "\u003cstring\u003e",
                       "description": "Search parameter to get attachments created before a ISO 8601 datetime (inclusive)",
                       "disabled": true
                     },
                     {
                       "key": "created_after",
-                      "value": "\u003cdate\u003e",
+                      "value": "\u003cstring\u003e",
                       "description": "Search parameter to get attachments created after a ISO 8601 datetime (inclusive)",
                       "disabled": true
                     }
