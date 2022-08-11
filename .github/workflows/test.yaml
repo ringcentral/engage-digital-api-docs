@@ -23,9 +23,8 @@ jobs:
       working-directory: specs
       run: |
         go install github.com/grokify/spectrum@latest
-        cp engage-digital_postman2.json engage-digital_postman2.json.orig
-        spectrum --config engage-digital_postman2.config.json --basePostmanFile engage-digital_postman2.base.json --openapiFile engage-digital_openapi3.yaml --postmanFile engage-digital_postman2.json
-        diff engage-digital_postman2.json.orig engage-digital_postman2.json
+        spectrum --config engage-digital_postman2.config.json --basePostmanFile engage-digital_postman2.base.json --openapiFile engage-digital_openapi3.yaml --postmanFile engage-digital_postman2.json.new
+        diff engage-digital_postman2.json engage-digital_postman2.json.new
   lint:
     runs-on: ubuntu-latest
     steps:
