@@ -73,7 +73,7 @@ Primary parameters are used by default, however, some parameters are unique or o
 | **`structured_content.app_id`** | String | The App Store identifier of the iMessage app. |
 | **`structured_content.app_name`** | String | The name of the iMessage app. |
 | **`structured_content.app_icon`** | String | A Base64-encoded string representing the app icon of the iMessage app. |
-| **`structured_content.bid`** | String | The bundle identifier of the iMessage app. |
+| **`structured_content.bid`** | String | The bundle identifier of the iMessage app. Must start with 'com.apple.messages.MSMessageExtensionBalloonPlugin:' |
 | **`structured_content.subtitle`** | String | **Optional**. Subtitle of the rich link.  |
 | **`structured_content.use_live_layout`** | String | **Optional**. A Boolean that determines whether the Messages app should use Live Layout. The default is true. |
 | **`structured_content.url_text`** | String | Ignored property. |
