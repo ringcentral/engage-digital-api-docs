@@ -185,7 +185,7 @@ curl -X POST "https://[YOUR DOMAIN].api.digital.ringcentral.com/1.0/contents" -H
 
 ```json
 {
-	"in_reply_to_id": {in_reply_to_id},
+	"in_reply_to_id": "{in_reply_to_id}",
 	"body": "Hi, what do you want to buy?",
 	"structured_content": {
 		"center_items": false,

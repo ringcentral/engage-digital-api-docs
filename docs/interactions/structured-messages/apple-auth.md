@@ -3,7 +3,7 @@
 This structured message provides a way to send an OAuth2 authentication request to the customer. See [Channel capabilities](../#channel-capabilities) to know on which channel you can use this structured message.
 
 ## Prerequisites
-* Set up OAuth URL and Token URL in "End User Authentication” on your Business Chat Account.
+* Set up OAuth URL and Token URL in "End User Authentication” on your Messages for Business Account.
 
 ## Request Example
 
@@ -19,7 +19,7 @@ curl -X POST "https://[YOUR DOMAIN].api.digital.ringcentral.com/1.0/contents"
   "structured_content": {
     "type": "authenticate",
     "attachment_id": "<attachment_id>",
-    "response_body": "Response",
+    "response_body": "Response"
   }
 }
 ```
@@ -35,7 +35,7 @@ curl -X POST "https://[YOUR DOMAIN].api.digital.ringcentral.com/1.0/contents"
 | **Structured Content Settings** | | |
 | **`structured_content.type`** | String | Type of the structured message. Must be "authenticate". |
 | **`structured_content.response_body`** | String | **Optional**. Field to be the body of the user’s response. If absent, default is the structured message body. |
-| **`structured_content.attachment_id`** | Object | **Optional**. Existing attachment id used to decorate the authenticate structured message with an image.<br>Should be jpg, jpeg or png.<br>Should be less than 5MB. |
+| **`structured_content.attachment_id`** | Object | **Optional**. Existing attachment id used to decorate the authenticate structured message with an image.<br>Supports private attachments.<br>Should be jpg, jpeg or png.<br>Should be less than 5MB. |
 
 ### Webhook
 
@@ -88,8 +88,8 @@ The customer will receive a message including the body and a button that will op
 }
 ```
 
-## Example: Apple Business Chat (Apple Pay)
+## Example: Apple Messages for Business (Apple Authenticate)
 
-Nothing specifically unique as this is an Apple Business Chat specific structured message type.
+Nothing specifically unique as this is an Apple Messages for Business specific structured message type.
 
 <img class="img-fluid" width="350" src="../../../img/structured-messages-apple-auth-apple-biz.png">

@@ -1,6 +1,6 @@
 # About Carousel Structured Messages
 
-This structured message allows to group multiple templates in the same message. See [Channel capabilities](../structured-messages/#channel-capabilities) to know on which channel you can use this structured message.
+This structured message allows to group multiple templates in the same message. See [Channel capabilities](../#channel-capabilities) to know on which channel you can use this structured message.
 
 ## Request Example
 ```bash
@@ -24,7 +24,7 @@ curl -X POST "https://[YOUR DOMAIN].api.digital.ringcentral.com/1.0/contents"
             "title":"Go to website",
             "type":"url",
             "url": "github://github.com/ringcentral",
-            "url_fallback": "https://github.com/ringcentral",
+            "url_fallback": "https://github.com/ringcentral"
           },
           {
             "title":"Ok",
@@ -95,9 +95,19 @@ curl -X POST "https://[YOUR DOMAIN].api.digital.ringcentral.com/1.0/contents"
 
 <img class="img-fluid" width="592" src="../../../img/structured-messages-carousel-fb.png">
 
-A carousel structured content is converted to a **Generic Template** with multiple elements in Facebook Messenger.
+### Properties Unique to this Channel
 
-The same Template <**Generic Template**> specificities apply to every item of the carousel.
+Primary parameters are used by default, however, some parameters are unique or overwritten by parameters specific to this example.
+
+| API Property | Specificity |
+|-|-|
+| **`structured_content.items.attachment_id`** | Supports bmp, gif, jpg, jpeg, png formats. Supports private attachments. [Upload attachments](../../../basics/uploads) for you own custom images. |
+| **`structured_content.items.url_text`** | Ignored property. |
+| **`structured_content.items.items`** | A maximum of 3 items is supported. |
+| **`structured_content.items.title`** | Truncated to 80 characters. |
+| **`structured_content.items.subtitle`** | Truncated to 80 characters. |
+| **`structured_content.items.items.title`** | Truncated to 20 characters. |
+| **`structured_content.items.items.payload`** | Automatically gets populated as a random hex if blank. |
 
 ## Example: Engage Messaging
 
@@ -109,8 +119,12 @@ Primary parameters are used by default, however, some parameters are unique or o
 
 | API Property | Specificity |
 |-|-|
-| **`structured_content.attachment_id`** | Supports gif, jpg, jpeg, png formats. Supports private attachments. [Upload attachments](../../../basics/uploads) for you own custom images.<br>On Engage Messaging Web, if the width of the **first** image is bigger than the height, every image will be displayed with a 5:3 ratio. Otherwise, a 1:1 ratio will be used.<br>Minimal recommended size with a 1:1 ratio: **258x258**<br>Minimal recommended size with a 5:3 ratio: **258x155** |
-| **`structured_content.url`** | Deep links are supported. |
+| **`structured_content.items.attachment_id`** | Supports gif, jpg, jpeg, png formats. Supports private attachments. [Upload attachments](../../../basics/uploads) for you own custom images.<br>On Engage Messaging Web, if the width of the **first** image is bigger than the height, every image will be displayed with a 5:3 ratio. Otherwise, a 1:1 ratio will be used.<br>Minimal recommended size with a 1:1 ratio: **258x258**<br>Minimal recommended size with a 5:3 ratio: **258x155** |
+| **`structured_content.items.url`** | Deep links are supported. |
+| **`structured_content.items.target`** | **Optional**. **Ignored** when the `url` is empty. Behavior applied when clicking on the url. Can be `webview` to open url on a [webview](../webview) above the chat, `open` to open url in new tab, or `current` to open url in current tab. Defaults to `open` when not specified. On iOS and Android, `current` value opens a full sized webview.|
+| **`structured_content.items.webview_height`** | **Optional**. **Ignored** when `target` is other than `webview`. Size of the webview used to open the link. Can be `full`, `tall` or `compact`. Defaults to `full` if unset.|
+| **`structured_content.items.items.target`** | **Optional** when the type is `url`. **Ignored** when the type is `reply`. Behavior applied when clicking on the item link. Can be `webview` to open on a [webview](../webview) above the chat, `open` to open in new tab, or `current` to open in current tab. Defaults to `open` when not specified. On iOS and Android, `current` value opens a full sized webview.|
+| **`structured_content.items.items.webview_height`** | **Optional**. **Ignored** when `target` is other than `webview`. Size of the webview used to open the link. Can be `full`, `tall` or `compact`. Defaults to `full` if unset.|
 
 ## Example: Google Business Messages (Rich Card Carousel)
 
@@ -122,8 +136,27 @@ Primary parameters are used by default, however, some parameters are unique or o
 
 | API Property | Specificity |
 |-|-|
-| **`structured_content.title`** | Truncated to 200 characters. |
-| **`structured_content.url`** | Ignored property. |
-| **`structured_content.url_text`** | Ignored property. |
-| **`structured_content.items.title`** | Truncated to 25 characters. |
-| **`structured_content.items.payload`** | Automatically gets populated as a random hex if blank. |
+| **`structured_content.items.title`** | Truncated to 200 characters. |
+| **`structured_content.items.url`** | Ignored property. |
+| **`structured_content.items.url_text`** | Ignored property. |
+| **`structured_content.items.attachment_id`** | Supports private attachments. |
+| **`structured_content.items.items.title`** | Truncated to 25 characters. |
+| **`structured_content.items.items.payload`** | Automatically gets populated as a random hex if blank. |
+
+## Example: Instagram Messaging
+
+<img class="img-fluid" width="245" src="../../../img/structured-messages-carousel-ig-dm.png">
+
+### Properties Unique to this Channel
+
+Primary parameters are used by default, however, some parameters are unique or overwritten by parameters specific to this example.
+
+| API Property | Specificity |
+|-|-|
+| **`structured_content.items.attachment_id`** | Supports bmp, gif, jpg, png formats. Supports private attachments. [Upload attachments](../../../basics/uploads) for you own custom images. |
+| **`structured_content.items.url_text`** | Ignored property. |
+| **`structured_content.items.items`** | A maximum of 3 items is supported. |
+| **`structured_content.items.title`** | Truncated to 80 characters. |
+| **`structured_content.items.subtitle`** | Truncated to 80 characters. |
+| **`structured_content.items.items.title`** | Truncated to 20 characters. |
+| **`structured_content.items.items.payload`** | Limited to 1000 characters. Automatically gets populated as a random hex if blank. |
