@@ -715,6 +715,56 @@ paths:
             items:
               type: string
             type: array
+        - description: Signatures
+          in: query
+          name: signatures
+          required: false
+          schema:
+            type: array
+            items:
+              properties:
+                language:
+                  type: string
+                body:
+                  type: string
+        - description: Automatic messages
+          in: query
+          name: auto_response_triggers
+          required: false
+          schema:
+            type: array
+            items:
+              properties:
+                language:
+                  type: string
+                created_from_trigger:
+                  type: string
+                body:
+                  type: string
+        - description: Enable answers to first messages
+          in: query
+          name: auto_response_trigger_enabled[first_message_from_user]
+          required: false
+          schema:
+            type: boolean
+        - description: Enable answers to messages outside business hours
+          in: query
+          name: auto_response_trigger_enabled[out_of_office_hours_message]
+          required: false
+          schema:
+            type: boolean
+        - description: Time between two messages (First message)
+          in: query
+          name: auto_response_trigger_grace_periods[first_message_from_user]
+          required: false
+          schema:
+            type: integer
+        - description: Time between two messages (Message outside business hours)
+          in: query
+          name: auto_response_trigger_grace_periods[out_of_office_hours_message]
+          required: false
+          schema:
+            type: integer
         - description: Default content language
           in: query
           name: default_content_language
@@ -727,6 +777,14 @@ paths:
           required: false
           schema:
             type: boolean
+        - description: Languages to detect
+          in: query
+          name: content_languages
+          required: false
+          schema:
+            items:
+              type: string
+            type: array
         - description: Automatic archiving of old contents (Boolean)
           in: query
           name: content_archiving
