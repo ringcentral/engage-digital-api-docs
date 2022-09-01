@@ -7958,6 +7958,27 @@ components:
         enable_web:
           description: Only on Engage Messaging sources. Boolean describing if the source is enabled on the web or not.
           type: boolean
+        signatures:
+          description: Only on Email sources. Signatures.
+          type: array
+          items:
+            properties:
+              language:
+                type: string
+              body:
+                type: string
+        auto_response_triggers:
+          description: Only on Email sources. Automatic messages.
+          type: array
+          items:
+            properties:
+              language:
+                type: string
+              created_from_trigger:
+                type: string
+              body:
+                type: string
+        auto_response_trigger_enabled:
         error_message:
           type: string
         hidden_from_stats:
