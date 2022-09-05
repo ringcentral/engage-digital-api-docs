@@ -1781,6 +1781,42 @@
                       "disabled": true
                     },
                     {
+                      "key": "signatures",
+                      "value": "\u003carray.object\u003e",
+                      "description": "Signatures",
+                      "disabled": true
+                    },
+                    {
+                      "key": "auto_response_triggers",
+                      "value": "\u003carray.object\u003e",
+                      "description": "Automatic messages",
+                      "disabled": true
+                    },
+                    {
+                      "key": "auto_response_trigger_enabled[first_message_from_user]",
+                      "value": "\u003cboolean\u003e",
+                      "description": "Enable answers to first messages",
+                      "disabled": true
+                    },
+                    {
+                      "key": "auto_response_trigger_enabled[out_of_office_hours_message]",
+                      "value": "\u003cboolean\u003e",
+                      "description": "Enable answers to messages outside business hours",
+                      "disabled": true
+                    },
+                    {
+                      "key": "auto_response_trigger_grace_periods[first_message_from_user]",
+                      "value": "\u003cinteger\u003e",
+                      "description": "Time between two messages (First message)",
+                      "disabled": true
+                    },
+                    {
+                      "key": "auto_response_trigger_grace_periods[out_of_office_hours_message]",
+                      "value": "\u003cinteger\u003e",
+                      "description": "Time between two messages (Message outside business hours)",
+                      "disabled": true
+                    },
+                    {
                       "key": "default_content_language",
                       "value": "\u003cstring\u003e",
                       "description": "Default content language",
@@ -1790,6 +1826,12 @@
                       "key": "auto_detect_content_language",
                       "value": "\u003cboolean\u003e",
                       "description": "Auto-detect content language (Boolean)",
+                      "disabled": true
+                    },
+                    {
+                      "key": "content_languages",
+                      "value": "\u003carray.string.csv\u003e",
+                      "description": "Languages to detect",
                       "disabled": true
                     },
                     {

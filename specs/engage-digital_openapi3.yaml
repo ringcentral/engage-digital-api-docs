@@ -884,6 +884,48 @@ paths:
             items:
               type: string
             type: array
+        - description: Signatures
+          in: query
+          name: signatures
+          required: false
+          schema:
+            type: array
+            items:
+              type: object
+            example: [{ body: 'Hello World', language: 'en' }]
+        - description: Automatic messages
+          in: query
+          name: auto_response_triggers
+          required: false
+          schema:
+            type: array
+            items:
+              type: object
+            example: [{ language: 'en', created_from_trigger: 'first_message_from_user', body: 'Hello World' }]
+        - description: Enable answers to first messages
+          in: query
+          name: auto_response_trigger_enabled[first_message_from_user]
+          required: false
+          schema:
+            type: boolean
+        - description: Enable answers to messages outside business hours
+          in: query
+          name: auto_response_trigger_enabled[out_of_office_hours_message]
+          required: false
+          schema:
+            type: boolean
+        - description: Time between two messages (First message)
+          in: query
+          name: auto_response_trigger_grace_periods[first_message_from_user]
+          required: false
+          schema:
+            type: integer
+        - description: Time between two messages (Message outside business hours)
+          in: query
+          name: auto_response_trigger_grace_periods[out_of_office_hours_message]
+          required: false
+          schema:
+            type: integer
         - description: Default content language
           in: query
           name: default_content_language
@@ -896,6 +938,14 @@ paths:
           required: false
           schema:
             type: boolean
+        - description: Languages to detect
+          in: query
+          name: content_languages
+          required: false
+          schema:
+            items:
+              type: string
+            type: array
         - description: Automatic archiving of old contents (Boolean)
           in: query
           name: content_archiving
@@ -8309,6 +8359,42 @@ components:
         enable_web:
           description: Only on Engage Messaging sources. Boolean describing if the source is enabled on the web or not.
           type: boolean
+        auto_response_triggers:
+          description: Only on Email sources. Automatic messages.
+          type: array
+          items:
+            properties:
+              language:
+                type: string
+              created_from_trigger:
+                type: string
+              body:
+                type: string
+        auto_response_trigger_enabled:
+          description: Only on Email sources. Boolean describing if answers are enabled to first messages and/or to messages outside business hours.
+          properties:
+            first_message_from_user:
+              type: boolean
+            out_of_office_hours_message:
+              type: boolean
+          type: object
+        auto_response_trigger_grace_periods:
+          description: Only on Email sources. Integer describing time between two messages.
+          properties:
+            first_message_from_user:
+              type: integer
+            out_of_office_hours_message:
+              type: integer
+          type: object
+        signatures:
+          description: Only on Email sources. Signatures.
+          type: array
+          items:
+            properties:
+              language:
+                type: string
+              body:
+                type: string
         error_message:
           type: string
         template_message_namespace:
