@@ -722,11 +722,8 @@ paths:
           schema:
             type: array
             items:
-              properties:
-                language:
-                  type: string
-                body:
-                  type: string
+              type: object
+            example: [{ body: 'Hello World', language: 'en' }]
         - description: Automatic messages
           in: query
           name: auto_response_triggers
@@ -734,13 +731,8 @@ paths:
           schema:
             type: array
             items:
-              properties:
-                language:
-                  type: string
-                created_from_trigger:
-                  type: string
-                body:
-                  type: string
+              type: object
+            example: [{ language: 'en', created_from_trigger: 'first_message_from_user', body: 'Hello World' }]
         - description: Enable answers to first messages
           in: query
           name: auto_response_trigger_enabled[first_message_from_user]

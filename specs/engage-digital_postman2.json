@@ -1716,13 +1716,13 @@
                     },
                     {
                       "key": "signatures",
-                      "value": "\u003carray.\u003e",
+                      "value": "\u003carray.object\u003e",
                       "description": "Signatures",
                       "disabled": true
                     },
                     {
                       "key": "auto_response_triggers",
-                      "value": "\u003carray.\u003e",
+                      "value": "\u003carray.object\u003e",
                       "description": "Automatic messages",
                       "disabled": true
                     },
