@@ -1,6 +1,6 @@
 # About Time Select Structured Messages
 
-This structured message provides a list of dates from which the customer can choose an appointment. See [Channel capabilities](../structured-messages/#channel-capabilities) to know on which channel you can use this structured message.
+This structured message provides a list of dates from which the customer can choose an appointment. See [Channel capabilities](../#channel-capabilities) to know on which channel you can use this structured message.
 
 ## Request Example
 
@@ -54,7 +54,7 @@ curl -X POST "https://[YOUR DOMAIN].api.digital.ringcentral.com/1.0/contents"
 | **Structured Content Settings** | | |
 | **`structured_content.type`** | String | Type of the structured message. Must be "time_select". |
 | **`structured_content.timeslots`** | Array | Represents the different options for the event. |
-| **`structured_content.attachment_id`** | String | **Optional**. Existing attachment id used to decorate the time_select with an image.<br>Should be jpg, jpeg or png.<br>Should be less than 5MB. |
+| **`structured_content.attachment_id`** | String | **Optional**. Existing attachment id used to decorate the time_select with an image.<br>Supports private attachments.<br>Should be jpg, jpeg or png.<br>Should be less than 5MB. |
 | **`structured_content.location`** | Object | **Optional**. Represents the location of the event. |
 | **Time Slot Settings** | | |
 | **`structured_content.timeslots.duration`** | Integer | The duration of the event in seconds. |
@@ -66,8 +66,8 @@ curl -X POST "https://[YOUR DOMAIN].api.digital.ringcentral.com/1.0/contents"
 | **`structured_content.location.radius`** | Integer | The radius around latitude/longitude of the location. |
 | **`structured_content.location.title`** | String | The title of the location. |
 
-## Example: Apple Business Chat (Time Picker)
+## Example: Apple Messages for Business (Time Picker)
 
-Nothing specifically unique as this is an Apple Business Chat specific structured message type.
+Nothing specifically unique as this is an Apple Messages for Business specific structured message type.
 
 <img class="img-fluid" width="350" src="../../../img/structured-messages-time-select-apple-biz.png">

@@ -33,6 +33,8 @@ x-tag-groups:
       - Intervention Comments
       - Interventions
       - Sources
+      - Survey Responses
+      - Surveys
       - Threads
   - name: Provisioning
     tags:
@@ -59,6 +61,7 @@ x-tag-groups:
       - Folders
       - Presence Status
       - Tasks
+      - Topologies
 tags:
   - name: Events
   - name: Webhooks
@@ -84,6 +87,7 @@ tags:
   - name: Teams
   - name: Time Sheets
   - name: Timezones
+  - name: Topologies
   - name: Users
   - name: User Capacities
   - name: User Signatures
@@ -91,8 +95,150 @@ tags:
   - name: Channels
   - name: Folders
   - name: Presence Status
+  - name: Survey Responses
+  - name: Surveys
 
 paths:
+  '/topologies/{topologyId}/activate':
+    put:
+      description: >-
+        This method activates an existing topology from given attributes and renders it in case of success.
+
+
+        Authorization: Only users that have the right to manage topologies.
+      operationId: activateTopology
+      parameters:
+        - in: path
+          name: topologyId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Topology'
+          description: Success
+      summary: Activating a topology
+      tags:
+        - Topologies
+  '/topologies/{topologyId}':
+    put:
+      description: >-
+        This method updates an existing topology from given attributes and renders it in case of success.
+
+
+        Authorization: only users that have the right to manage topologies. Topology must be inactive or the response will return an error.
+      operationId: updateTopology
+      parameters:
+        - in: path
+          name: topologyId
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/CreateUpdateTopology'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Topology'
+          description: Success
+      summary: Updating a topology
+      tags:
+        - Topologies
+    delete:
+      description: >-
+        This method destroys an existing topology. It renders topology itself. It renders a 404 if id is invalid.
+
+
+        Authorization: Only users that have the right to manage topologies.
+      operationId: deleteTopology
+      parameters:
+        - in: path
+          name: topologyId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Topology'
+          description: Success
+      summary: Deleting a topology
+      tags:
+        - Topologies
+    get:
+      description: >-
+        This method renders a topology from given id.
+
+
+        Authorization: only users that have the right to manage topologies.
+      operationId: getTopology
+      parameters:
+        - in: path
+          name: topologyId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Topology'
+          description: Success
+      summary: Getting a topology from its id
+      tags:
+        - Topologies
+  /topologies:
+    post:
+      description: >-
+        This method creates a topology. In case of success it renders the topology, otherwise, it renders an error (422 HTTP code).
+
+
+        Authorization: Only users that have the right to manage topologies.
+      operationId: createTopology
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/CreateUpdateTopology'
+      responses:
+        '200':
+            description: Created topology
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/Topology'
+      summary: Creating a topology
+      tags:
+        - Topologies
+    get:
+      description: >-
+        This method renders all topologies ordered by name (in alphabetical order).
+
+
+        Authorization: Only users that have the right to manage topologies
+      operationId: getAllTopologies
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAllTopologiesResponse'
+          description: Success
+      summary: Getting all topologies
+      tags:
+        - Topologies
   /attachments:
     get:
       description: This method renders attachments ordered by creation date (descending).
@@ -114,6 +260,29 @@ paths:
           schema:
             format: int32
             type: integer
+        - description: >-
+            Search parameter for file extension (e.g. pdf, xlsx, jpg...)
+          in: query
+          name: extension
+          required: false
+          schema:
+            type: string
+        - description: >-
+            Search parameter to get attachments created before a ISO 8601 datetime (inclusive)
+
+          in: query
+          name: created_before
+          required: false
+          schema:
+            type: string
+        - description: >-
+            Search parameter to get attachments created after a ISO 8601 datetime (inclusive)
+
+          in: query
+          name: created_after
+          required: false
+          schema:
+            type: string
       responses:
         '200':
           content:
@@ -1240,10 +1409,10 @@ paths:
           schema:
             type: string
         - description: >-
-            For an email or SMS source. For an email, an array containing the
+            For an email or SMS and WhatsApp source. For an email, an array containing the
             email addresses used in the “To” section of the email. This
-            parameter is mandatory when initiating a discussion. For a SMS, the
-            number the SMS will be sent to. It must start with 00 or +, example:
+            parameter is mandatory when initiating a discussion. For a WhatsApp message or a SMS, the
+            number the message will be sent to. It must start with 00 or +, example:
             +33634231224 or 0033634231224. This parameter is mandatory when
             initiating a discussion.
           explode: true
@@ -1276,6 +1445,26 @@ paths:
             items:
               type: string
             type: array
+        - description: >-
+            Mandatory for a WhatsApp source. A discussion can only be initiated using a specific template
+            created on the business manager and approved by WhatsApp. You can find all available
+            template_names on /1.0/content_sources/source_id.
+          explode: true
+          in: query
+          name: 'template_name'
+          required: false
+          schema:
+            type: string
+        - description: >-
+            Mandatory for a WhatsApp source. A discussion can only be initiated using a specific template
+            created on the business manager and approved by WhatsApp. You can find all available
+            template_languages for a given template_name on /1.0/content_sources/source_id.
+          explode: true
+          in: query
+          name: 'template_language'
+          required: false
+          schema:
+            type: string
       responses:
         '200':
           content:
@@ -2470,6 +2659,35 @@ paths:
                 $ref: '#/components/schemas/Intervention'
           description: Success
       summary: Getting an intervention from its id
+      tags:
+        - Interventions
+    put:
+      description: >-
+        This method updates intervention from given attributes and renders it in case of success.
+
+
+        Authorization​: no.
+      operationId: updateIntervention
+      parameters:
+        - in: path
+          name: interventionId
+          required: true
+          schema:
+            type: string
+        - description: Intervention custom field with key "custom_field_key". It can be multiple if custom field is multiple or is has multiple_choice type.
+          in: query
+          name: custom_field_values[custom_field_key]
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Intervention'
+          description: Success
+      summary: Updating an intervention from its id
       tags:
         - Interventions
   '/interventions/{interventionId}/cancel':
@@ -4139,10 +4357,7 @@ paths:
         - Roles
   /settings:
     get:
-      description: |-
-        This method renders all settings of your domain.
-
-        Authorization​: only users that can update settings.
+      description: This method renders all settings of your domain.
       operationId: getAllSettings
       responses:
         '200':
@@ -4465,6 +4680,63 @@ paths:
       summary: Get all connected agents status
       tags:
         - Agent Status
+  /surveys:
+    get:
+      description: >-
+        This method renders all surveys ordered by creation date (ascending).
+      operationId: getAllSurveys
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/getAllSurveysResponse'
+          description: Success
+      summary: Getting all surveys
+      tags:
+        - Surveys
+  '/surveys/{surveyId}':
+    get:
+      description: >-
+        This method renders a survey from given id.
+      operationId: getSurvey
+      parameters:
+        - in: path
+          name: surveyId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Survey'
+          description: Success
+      summary: Getting a survey from its id
+      tags:
+        - Surveys
+  '/survey_responses/{surveyResponseId}':
+    get:
+      description: >-
+        This method returns information about a survey response.
+      operationId: getSurveyResponse
+      parameters:
+        - in: path
+          name: surveyResponseId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SurveyResponse'
+          description: Success
+      summary: Get a survey response
+      tags:
+        - Survey Responses
   '/status/{agentId}':
     get:
       description: >-
@@ -4737,7 +5009,7 @@ paths:
       tags:
         - Tasks
   '/tasks/{taskId}/move':
-    delete:
+    post:
       description: >-
         This method changes a task queue and renders it in case of success. Only
         accepts “undelivered” and special queue defined in topology (e.g.
@@ -4768,8 +5040,40 @@ paths:
       summary: Move a task to another queue
       tags:
         - Tasks
+  '/tasks/{taskId}/complete':
+    post:
+      description: >-
+        This method completes a task.
+
+
+        Authorization​: for that call to succeed several conditions are required:
+          - the task must be in an agent’s workbin.
+          - the access token user must either own the task or be able to monitor all tasks or be able to monitor his team’s tasks if the task is owned by one of his team member.
+      operationId: completeTask
+      parameters:
+        - in: path
+          name: taskId
+          required: true
+          schema:
+            type: string
+        - description: Name of the queue task has to be moved in.
+          in: query
+          name: queue
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Task'
+          description: Success
+      summary: Complete a task
+      tags:
+        - Tasks
   '/tasks/{taskId}/transfer':
-    put:
+    post:
       description: >-
         This method transfers an existing task and renders it in case of
         success.
@@ -5715,6 +6019,14 @@ paths:
             items:
               type: string
             type: array
+        - description:  >-
+            Whether the user is passwordless or not (boolean).
+            Must be used with the corresponding SSO configuration.
+          in: query
+          name: no_password
+          required: false
+          schema:
+            type: boolean
       responses:
         '200':
           content:
@@ -6020,6 +6332,14 @@ paths:
             items:
               type: string
             type: array
+        - description: >-
+            Whether the user is passwordless or not (boolean).
+            Must be used with the corresponding SSO configuration.
+          in: query
+          name: no_password
+          required: false
+          schema:
+            type: boolean
       responses:
         '200':
           content:
@@ -6281,10 +6601,10 @@ paths:
           required: false
           schema:
             type: boolean
-        - description: The label of the webhook.
+        - description: The name of the webhook.
           in: query
-          name: label
-          required: true
+          name: name
+          required: false
           schema:
             type: string
         - description: >-
@@ -6550,9 +6870,9 @@ paths:
           required: false
           schema:
             type: boolean
-        - description: The label of the webhook.
+        - description: The name of the webhook.
           in: query
-          name: label
+          name: name
           required: false
           schema:
             type: string
@@ -6672,6 +6992,26 @@ components:
           items:
             type: string
           type: array
+    CreateUpdateTopology:
+      properties:
+        name:
+          type: string
+        json_config:
+          type: string
+    Topology:
+      properties:
+        name:
+          type: string
+        created_at:
+          format: date-time
+          type: string
+        updated_at:
+          format: date-time
+          type: string
+        id:
+          type: string
+        config:
+          type: object
     Category:
       properties:
         color:
@@ -6754,6 +7094,8 @@ components:
           type: integer
         author_id:
           type: string
+        auto_submitted:
+          type: boolean
         body:
           type: string
         body_formatted:
@@ -6783,6 +7125,11 @@ components:
           type: string
         creator_id:
           type: string
+        foreign_categories:
+          description: is present only if the content has foreign_categories.
+          items:
+            type: string
+          type: array
         foreign_id:
           type: string
         id:
@@ -6799,6 +7146,9 @@ components:
           type: boolean
         published:
           type: boolean
+        rating:
+          description: is present only if the content supports rating and rating is filled.
+          type: integer
         remotely_deleted:
           type: boolean
         source_id:
@@ -6810,6 +7160,8 @@ components:
         status:
           type: string
         synchronization_status:
+          type: string
+        synchronization_error:
           type: string
         thread_id:
           type: string
@@ -6976,6 +7328,21 @@ components:
         records:
           items:
             $ref: '#/components/schemas/Attachment'
+          type: array
+    GetAllTopologiesResponse:
+      properties:
+        count:
+          format: int32
+          type: integer
+        limit:
+          format: int32
+          type: integer
+        offset:
+          format: int32
+          type: integer
+        records:
+          items:
+            $ref: '#/components/schemas/Topology'
           type: array
     GetAllCategoriesResponse:
       properties:
@@ -7231,6 +7598,21 @@ components:
         records:
           items:
             $ref: '#/components/schemas/Source'
+          type: array
+    getAllSurveysResponse:
+      properties:
+        count:
+          format: int32
+          type: integer
+        limit:
+          format: int32
+          type: integer
+        offset:
+          format: int32
+          type: integer
+        records:
+          items:
+            $ref: '#/components/schemas/Survey'
           type: array
     GetAllTagsResponse:
       properties:
@@ -7523,6 +7905,33 @@ components:
           type: integer
         user_reply_in_average_count:
           type: integer
+        satisfaction_grade:
+          type: integer
+          description: |-
+            Satisfaction grade.
+            Only present when customer satisfaction extension is enabled.
+        satisfaction_answered_at:
+          type: string
+          format: date-time
+          description: |-
+            Date and time when customer answered the survey.
+            Only present when customer satisfaction extension is enabled.
+        satisfaction_sent_at:
+          type: string
+          format: date-time
+          description: |-
+            Date and time when the satisfaction survey was sent to customer.
+            Only present when customer satisfaction extension is enabled.
+        survey_response_id:
+          type: string
+          description: |-
+            ED internal ID for customer response to satisfaction survey.
+            Only present when customer satisfaction extension is enabled.
+        survey_id:
+          type: string
+          description: |-
+            ED internal ID for satisfaction survey.
+            Only present when customer satisfaction extension is enabled.
       required:
         - id
     InterventionComment:
@@ -7988,6 +8397,9 @@ components:
                 type: string
         error_message:
           type: string
+        template_message_namespace:
+          description:  Only on WhatsApp Sources. Internal WhatsApp field that can also be found on the business manager (unique per WhatsApp account).
+          type: string
         hidden_from_stats:
           description: Hide from statistics
           type: boolean
@@ -8016,6 +8428,38 @@ components:
           type: integer
         status:
           type: string
+        template_messages:
+          description: Only for WhatsApp Sources, list of the available message templates that can be used to send outbound messages.
+          items:
+            type: object
+            properties:
+              components:
+                items:
+                  type: object
+                  properties:
+                    type:
+                      type: string
+                    text:
+                      type: string
+                    buttons:
+                      items:
+                        type: object
+                        properties:
+                          type:
+                            type: string
+                          text:
+                            type: string
+                          phone_number:
+                            type: string
+                          url:
+                            type: string
+                      type: array
+                type: array
+              language:
+                type: string
+              name:
+                type: string
+          type: array
         time_sheet_ids:
           items:
             type: string
@@ -8034,6 +8478,158 @@ components:
           items:
             type: string
           type: array
+    Survey:
+      properties:
+        id:
+          type: string
+        created_at:
+          format: date-time
+          type: string
+        updated_at:
+          format: date-time
+          type: string
+        name:
+          description: |-
+            Name displayed in ED admin interface.
+            Is not displayed to end users.
+          type: string
+        link:
+          description: |-
+            Link to the survey on the provider website.
+          type: string
+        active:
+          type: boolean
+        from_name:
+          description: |-
+            Name displayed as sender when survey is sent to end user.
+            Currently only applies to surveys sent by email.
+          type: string
+        instant_send_threshold:
+          description: |-
+            Any intervention whose duration is shorter than this value (in seconds) will have the survey sent instantly.
+          type: number
+        max_time_since_last_reply:
+          description: |-
+            If last message from end user is older than this duration (in seconds), no survey will be sent.
+          type: number
+        send_delay:
+          description: |-
+            Delay before sending survey to end users.
+          type: number
+        category_ids:
+          items:
+            type: string
+          type: array
+        team_ids:
+          items:
+            type: string
+          type: array
+        source_ids:
+          items:
+            type: string
+          type: array
+        type:
+          description: |-
+            Contains the information of the survey provider used.
+            Currently, only provider supported is alchemer.
+          enum:
+            - alchemer
+          type: string
+        questions:
+          description: |-
+            Fetched from survey provider.
+            List of questions asked in this survey.
+          items:
+            $ref: '#/components/schemas/SurveyQuestion'
+          type: array
+    SurveyQuestion:
+      properties:
+        foreign_id:
+          description: |-
+            The survey provider's id for this question.
+          type: string
+        main:
+          type: boolean
+        text:
+          description: |-
+            The question's body.
+          type: string
+        choices:
+          description: |-
+            Fetched from survey provider.
+            List of choices end user can select to answer this question.
+          items:
+            $ref: '#/components/schemas/SurveyQuestionChoices'
+          type: array
+    SurveyQuestionChoices:
+      properties:
+        text:
+          description: |-
+            Choice text viewed by the end user.
+          type: string
+        value:
+          description: |-
+            Technical value, same as text for text inputs.
+          type: string
+    SurveyQuestionReply:
+      properties:
+        text:
+          type: string
+          description: |-
+            Reply as viewed/typed by the end user.
+        value:
+          type: string
+          description: |-
+            Technical value, same as text for text inputs.
+    SurveyResponse:
+      properties:
+        id:
+          type: string
+        created_at:
+          format: date-time
+          type: string
+        updated_at:
+          format: date-time
+          type: string
+        main_indicator:
+          type: integer
+        main_indicator_scaled:
+          type: number
+        intervention_id:
+          type: string
+        survey_id:
+          type: string
+        source_id:
+          type: string
+        user_id:
+          type: string
+        response_foreign_id:
+          type: string
+          description: |-
+            The survey provider's id for this response.
+        questions:
+          type: array
+          description: |-
+            Questions answered by this response.
+          items:
+            $ref: '#/components/schemas/SurveyResponseQuestion'
+    SurveyResponseQuestion:
+      properties:
+        foreign_id:
+          type: string
+          description: |-
+            The survey provider's id for this question.
+        text:
+          type: string
+          description: |-
+            The question's body.
+        replies:
+          type: array
+          description: >-
+            The question's replies.
+            Multiple choices questions can have more than 1 element.
+          items:
+            $ref: '#/components/schemas/SurveyQuestionReply'
     Tag:
       properties:
         created_at:
@@ -8281,6 +8877,8 @@ components:
           type: string
         user_capacity_id:
           type: string
+        no_password:
+          type: boolean
       required:
         - id
     UserSignature:
@@ -8315,6 +8913,8 @@ components:
         url:
           type: string
         verify_token:
+          type: string
+        webhook_status:
           type: string
       required:
         - id

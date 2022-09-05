@@ -29,18 +29,19 @@ Engage Digital provides an omnichannel API to create structured messages. Since 
 * **<span style="color:orange">Not yet</span>**: Supported by channel but not by Engage Digital yet
 * N/A: Not supported by channel
 
-  |  | **select** | **rich_link** | **template** | **carousel** | **time_select** | **apple_pay** | **authentication** |
-  |-|-|-|-|-|-|-|-|
-  | **Apple Business Chat** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | N/A | N/A | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** |
-  | **Facebook Messenger** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | N/A | N/A |  N/A |
-  | **Engage Web Messaging** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | N/A | N/A |  N/A |
-  | **Engage iOS Messaging** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | N/A | N/A |  N/A |
-  | **Engage Android Messaging** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | N/A | N/A |  N/A |
-  | **Google Business Messages** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | N/A | N/A |  N/A |
-  | **Source SDK** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | N/A | N/A |  N/A |
-  | **Twitter Direct Messages** | **<span style="color:orange">Not yet</span>** | **<span style="color:orange">Not yet</span>** | **<span style="color:orange">Not yet</span>** | N/A | N/A | N/A |  N/A |
-  | **WhatsApp** | **<span style="color:orange">Not yet</span>** | **<span style="color:orange">Not yet</span>** | **<span style="color:orange">Not yet</span>** | N/A | N/A | N/A |  N/A |
-  | **Viber** | **<span style="color:orange">Not yet</span>** | **<span style="color:orange">Not yet</span>** | **<span style="color:orange">Not yet</span>** | **<span style="color:orange">Not yet</span>** | N/A | N/A |  N/A |
+  |  | **select** | **rich_link** | **template** | **carousel** | **list** | **time_select** | **apple_pay** | **authentication** |
+  |-|-|-|-|-|-|-|-|-|
+  | **Apple Messages for Business** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | N/A | N/A | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** |
+  | **Facebook Messenger** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | N/A | N/A | N/A |  N/A |
+  | **Engage Web Messaging** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | N/A | N/A | N/A |  N/A |
+  | **Engage iOS Messaging** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | N/A | N/A | N/A |  N/A |
+  | **Engage Android Messaging** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | N/A | N/A | N/A |  N/A |
+  | **Google Business Messages** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | N/A | N/A | N/A |  N/A |
+  | **Channel SDK** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | N/A | N/A | N/A |  N/A |
+  | **Twitter Direct Messages** | **<span style="color:orange">Not yet</span>** | **<span style="color:orange">Not yet</span>** | **<span style="color:orange">Not yet</span>** | N/A | N/A | N/A | N/A |  N/A |
+  | **Viber** | **<span style="color:orange">Not yet</span>** | **<span style="color:orange">Not yet</span>** | **<span style="color:orange">Not yet</span>** | **<span style="color:orange">Not yet</span>** | N/A | N/A | N/A |  N/A |
+  | **WhatsApp** | N/A | N/A | **<span style="color:green">Yes</span>** | N/A | **<span style="color:green">Yes</span>** | N/A | N/A |  N/A |
+  | **Instagram Messaging** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | N/A | N/A | N/A | N/A |
 
 ## Channel Compatibilities
 
@@ -55,18 +56,18 @@ This section describes the generic compatibility logic of the API. Check the fol
 | Channel specific property | Ignores the property on channels not supporting it. Only the channel supporting the property processes it.<br><br>For example, the Engage Messaging channel supports the “center_items” property on the select structured content. If this property is also used to create a FB Messenger quick reply structured content, it will be ignored. |
 | Payload property presence | When the payload property (optional by default) is required by a channel, the API will generate a default value to be sent.<br><br>For example, Google Business Messages requires the presence of the “payload” property. When blank, the API will generate a random value to be sent instead. |
 | Deep links (url) | If the channel does not support deep links, we provide a url_fallback field to be used instead.<br><br>The url_fallback is validated **if the url is present**. The validations are:<ul><li>Scheme must be http or https</li><li>Max length of 2048</li></ul>For example, Engage Messaging supports deep links in its url fields. But when sending a payload with deep links on Facebook Messenger, the url_fallback field will be used if present, or return an error. |
-| Non-standard attachment type | If the channel does not support the attachment, we provide an attachment_fallback_id field to be used instead.<br><br>The attachment_fallback_id is validated **if the attachment_id is present**. The validations are:<ul><li>Must be public</li><li>Must be less than 5MB</li><li>Must be a jpg, jpeg or png</li></ul>For example, Apple Business Chat supports mp4 as its rich_link attachment. But when sending a payload with a mp4 attachment on Engage Messaging , the attachment_fallback_id field will be used if present, or return an error. |
+| Non-standard attachment type | If the channel does not support the attachment, we provide an attachment_fallback_id field to be used instead.<br><br>The attachment_fallback_id is validated **if the attachment_id is present**. The validations are:<ul><li>Must be public</li><li>Must be less than 5MB</li><li>Must be a jpg, jpeg or png</li></ul>For example, Apple Messages for Business supports mp4 as its rich_link attachment. But when sending a payload with a mp4 attachment on Engage Messaging , the attachment_fallback_id field will be used if present, or return an error. |
 | Structured content type not existing in the channel | If a structured content type does not exist in a channel, the API will try to best represent it by converting it to another type the channel supports.<br><br>See the channel specificities section for a more detailed behavior on this conversion.<br><br>For example, the rich link type does not exist in Google Business Messages. So an Engage Digital Rich Link is converted to a Google Business Messages Rich Card with a single button representing the url. |
 
 ## Channel Specificities
 
-### Apple Business Chat
+### Apple Messages for Business
 
-* [List Picker (select)](../structured-messages/select/#example-apple-business-chat-list-picker)
-* [Rich Link](../structured-messages/rich-link/#example-apple-business-chat)
-* [Time Picker](../structured-messages/time-select/#example-apple-business-chat-time-picker)
-* [Apple Pay](../structured-messages/apple-pay/#example-apple-business-chat-apple-pay)
-* [Apple Auth](../structured-messages/apple-auth/#example-apple-business-chat-apple-pay)
+* [List Picker (select)](../structured-messages/select/#example-apple-messages-for-business-quick-replies)
+* [Rich Link](../structured-messages/rich-link/#example-apple-messages-for-business)
+* [Time Picker](../structured-messages/time-select/#example-apple-messages-for-business-time-picker)
+* [Apple Pay](../structured-messages/apple-pay/#example-apple-messages-for-business-apple-pay)
+* [Apple Auth](../structured-messages/apple-auth/#example-apple-messages-for-business-apple-authenticate)
 
 ### Facebook Messenger
 
@@ -88,6 +89,18 @@ This section describes the generic compatibility logic of the API. Check the fol
 * [Rich Link](../structured-messages/rich-link/#example-google-business-messages)
 * [Rich Card](../structured-messages/template/#example-google-business-messages-rich-card)
 * [Rich Card Carousel](../structured-messages/carousel/#example-google-business-messages-rich-card-carousel)
+
+### WhatsApp
+
+* [List Messages](../structured-messages/select/#example-whatsapp-list-messages)
+* [Reply Buttons](../structured-messages/template/#example-whatsapp-reply-buttons)
+
+### Instagram Messaging
+
+* [Quick Replies](../structured-messages/select/#example-instagram-messaging-quick-replies)
+* [Template](../structured-messages/template/#example-instagram-messaging)
+* [Rich Link](../structured-messages/rich-link/#example-instagram-messaging)
+* [Carousel](../structured-messages/carousel/#example-instagram-messaging)
 
 ## Channel SDK
 

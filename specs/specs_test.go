@@ -2,8 +2,10 @@ package engageapidocs
 
 import (
 	"testing"
+	"io/ioutil"
 
-	"github.com/grokify/swaggman/openapi3"
+	"github.com/grokify/spectrum/openapi3"
+	"gopkg.in/yaml.v3"
 )
 
 var specTests = []struct {
@@ -30,6 +32,55 @@ func TestSpecs(t *testing.T) {
 				opParamsWo, opParamsAll,
 				schPropsWo, schPropsAll,
 			)
+		}
+	}
+}
+
+type Tag struct {
+	Name string
+}
+
+type TagGroup struct {
+	Name string
+	Tags []string
+}
+
+type TagData struct {
+	Tags       []Tag
+	XTagGroups []TagGroup `yaml:"x-tag-groups"`
+}
+
+func TestTags(t *testing.T) {
+	for _, tt := range specTests {
+		buf, err := ioutil.ReadFile(tt.filepath)
+		if err != nil {
+			panic(err)
+		}
+
+		tagData := &TagData{}
+		err = yaml.Unmarshal(buf, tagData)
+		if err != nil {
+			panic(err)
+		}
+
+		var anyMissing = false;
+		for _, tag := range tagData.Tags {
+			var missing = true
+			for _, xTagGroup := range tagData.XTagGroups {
+				for _, xTagGroupTags := range xTagGroup.Tags {
+					if xTagGroupTags == tag.Name {
+						missing = false
+					}
+				}
+			}
+			if missing {
+				anyMissing = true
+				t.Errorf("[%s] [%s]: [%s] Tag is missing in x-tag-groups", tt.filepath, tt.title, tag)
+			}
+		}
+
+		if !anyMissing {
+			t.Logf("SPEC_IS_VALID [%s] TITLE [%s]\n", tt.filepath, tt.title)
 		}
 	}
 }

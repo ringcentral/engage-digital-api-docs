@@ -18,18 +18,19 @@ Engage cannot guarantee that events will be sent only once. A unique identifier 
 
 ## Endpoint Unavailability
 
-When an event notification request to an endpoint is not responsed by an HTTP 200 OK status (network issue, endpoint is down ...), the request will be retried. The request will be retried during 12 hours almost 10 times with waiting time growing.
+When an event notification request to an endpoint is not responsed by an HTTP 200 OK status (network issue, endpoint is down ...), the request will be retried. The request will be retried during 3 hours 5 times with waiting time growing.
 
 To give an order of magnitude of the waiting time before each retry (those data are for information only and are susceptible to change):
 
 | Request | Time interval |
 |-|-|
-| Try #1  | ~ 1 sec |
-| Try #2  | ~ 15 sec |
-| Try #4  | ~ 5 min |
-| Try #5  | ~ 10 min |
+| Try #1  | ~ 32 sec |
+| Try #2  | ~ 4 min |
+| Try #3  | ~ 17 min |
+| Try #4  | ~ 52 min |
+| Try #5  | ~ 2 hours |
 
-It means that when the first request fails the next retry is processed after 1 sec, then 15 seconds after the last retry... If it’s still failing this request will never be sent afterward.
+It means that when the first request fails the next retry is processed after 32 sec, then 4 minutes after the last retry... If it’s still failing this request will never be sent afterward.
 
 !!! warning "Automatic Disablement"
     If your endpoint's error rate is too high over a long period of time, we MAY have to disable delivery of event notifications. You will need to fix the problem before re-enabling the event notifications in the admin interface.

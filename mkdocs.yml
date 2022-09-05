@@ -29,7 +29,7 @@ markdown_extensions:
 
 extra_css: [extra.css]
 
-pages:
+nav:
 - 'Primary':
   - 'Interactions':
     - 'Overview': interactions/index.md
@@ -47,6 +47,8 @@ pages:
       - 'JavaScript API': 'interactions/web-messaging/javascript-api.md'
       - 'Attachments': 'interactions/web-messaging/attachments.md'
       - 'Surveys': 'interactions/web-messaging/surveys.md'
+    - 'Mobile Messaging':
+      - 'Huawei Push Notifications': 'interactions/mobile-messaging/huawei-push-notifications.md'
     - 'Chatbots':
       - 'Overview': interactions/chatbots/overview.md
       - 'Implementation': interactions/chatbots/implementation.md
@@ -58,21 +60,30 @@ pages:
       - 'Overview': interactions/structured-messages/index.md
       - 'Getting Started': interactions/structured-messages/quick-start.md
       - 'Select': interactions/structured-messages/select.md
+      - 'List': interactions/structured-messages/list.md
       - 'Rich Link': interactions/structured-messages/rich-link.md
       - 'Template': interactions/structured-messages/template.md
       - 'Carousel': interactions/structured-messages/carousel.md
       - 'Time Select': interactions/structured-messages/time-select.md
       - 'Apple Pay': interactions/structured-messages/apple-pay.md
       - 'Apple Authentcate': interactions/structured-messages/apple-auth.md
+      - 'Webview': 'interactions/structured-messages/webview.md'
+      - 'Webview SDK': interactions/structured-messages/webview-sdk.md
   - 'Routing':
     - 'Overview': routing/index.md
-    - 'Getting Started': routing/quick-start.md
+    - 'Getting Started': routing/quick-start.
+  - 'Digital':
+    - 'Exports':
+      - 'Overview': digital/exports/index.md
+      - 'Main Export Fields': digital/exports/main-export-fields.md
+      - 'Extensions Report Fields': digital/exports/extensions-report-fields.md
 - 'Secondary':
   - 'Using the API':
     - 'Obtain an Access Token': basics/access-token.md
     - 'Requests': basics/requests.md
     - 'Responses and Errors': basics/responses.md
     - 'Authentication': basics/auth.md
+    - 'Single Sign-on': basics/sso.md
     - 'Uploading Files': basics/uploads.md
     - 'Filters and Pagination': basics/pagination.md
     - 'User Impersonation': basics/impersonation.md
@@ -87,7 +98,7 @@ pages:
       - 'Overview': sdks/app-sdk/index.md
       - 'Configuration and Development': sdks/app-sdk/config.md
       - 'Methods': sdks/app-sdk/methods.md
-    - 'Source SDK':
+    - 'Channel SDK':
       - 'Overview': sdks/source-sdk/index.md
       - 'Getting Started': sdks/source-sdk/quick-start.md
       - 'Workflow': sdks/source-sdk/workflow.md
@@ -100,4 +111,15 @@ pages:
       - 'Options': sdks/source-sdk/options.md
       - 'Locales': sdks/source-sdk/locales.md
       - 'Structured Messages': sdks/source-sdk/structured-messages.md
+    - 'Survey SDK':
+      - 'Overview': sdks/survey-sdk/index.md
+      - 'Getting Started': sdks/survey-sdk/quick-start.md
+      - 'Authentication': sdks/survey-sdk/authentication.md
+      - 'Configuration Fetching': sdks/survey-sdk/configuration-fetching.md
+      - 'Responses Polling': sdks/survey-sdk/responses-polling.md
+      - 'Realtime Responses Import': sdks/survey-sdk/realtime-responses-import.md
+    - 'Embedded UI':
+      - 'Overview': sdks/ui-embed/index.md
+      - 'Views': sdks/ui-embed/views.md
+      - 'Events': sdks/ui-embed/events.md
   - 'Postman': postman.md
