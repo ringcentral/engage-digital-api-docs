@@ -7173,7 +7173,7 @@ components:
           format: date-time
           type: string
         capabilities_supported:
-          description: lists the kinds of sturctured messages that can be used to reply to this kind of message
+          description: lists the types of structured messages that can be used to reply to this type of message
           items:
              type: string
           type: array
