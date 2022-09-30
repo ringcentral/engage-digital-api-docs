@@ -10,7 +10,7 @@ Please contact Support to get access to the feature on ED side.
 
 You will also need to choose which Facebook app is primary (ED or BOT app), based on that, handover protocol behavior won’t be exactly the same, see FB’s docs for more information.
 
-You can change the app’s role for the source page whenever you want, you need to go on the facebook’s page -> Settings -> Advanced messaging:
+You can change the app’s role for the source page whenever you want, you need to go on the Facebook’s page -> Settings -> Advanced messaging:
 
 <img src="../../img/bots-api-set-primary-app.png" class="img-fluid">
 
@@ -72,7 +72,7 @@ curl -X POST "https://domain-test.api.engagement.dimelo.com/1.0/bots/handover?ac
 | `from` | The app that has thread control before handover |
 | `to` | The app that should get thread control after handover |
 | `type` | The type of channel |
-| `app_id` | The id of the facebook's app that controls the Bot |
+| `app_id` | The id of the Facebook's app that controls the Bot |
 
 This call will only pass if there is currently no intervention engaged with the linked identity.
 
@@ -80,7 +80,7 @@ If the call passes, ED Facebook app will use the pass_thread control Facebook AP
 
 ## HOP features
 
-When a customer sends a message to a facebook page the thread control will go to the primary app. When no primary app is setup the Messenger thread will stay in IDLE mode
+On Facebook's side, when a customer sends a message to a Facebook page the thread control will go to the primary app. When no primary app is setup the Messenger thread will stay in IDLE mode
 
 When an agent tries to send a message via ED while another app has thread control we will either:
 
