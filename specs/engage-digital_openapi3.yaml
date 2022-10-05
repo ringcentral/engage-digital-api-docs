@@ -8365,7 +8365,7 @@ components:
           description: Only on Engage Messaging sources. Boolean describing if the source is enabled on the web or not.
           type: boolean
         auto_response_triggers:
-          description: Only on Email sources. Automatic messages.
+          description: Only on sources which support auto response triggerable. Automatic messages.
           type: array
           items:
             properties:
@@ -8376,7 +8376,7 @@ components:
               body:
                 type: string
         auto_response_trigger_enabled:
-          description: Only on Email sources. Boolean describing if answers are enabled to first messages and/or to messages outside business hours.
+          description: Only on sources which support auto response triggerable. Boolean describing if answers are enabled to first messages and/or to messages outside business hours.
           properties:
             first_message_from_user:
               type: boolean
@@ -8384,7 +8384,7 @@ components:
               type: boolean
           type: object
         auto_response_trigger_grace_periods:
-          description: Only on Email sources. Integer describing time between two messages.
+          description: Only on sources which support auto response triggerable. Integer describing time between two messages.
           properties:
             first_message_from_user:
               type: integer
@@ -8392,7 +8392,7 @@ components:
               type: integer
           type: object
         signatures:
-          description: Only on Email sources. Signatures.
+          description: Signatures.
           type: array
           items:
             properties:
@@ -8400,6 +8400,9 @@ components:
                 type: string
               body:
                 type: string
+        from_name:
+          description: Custom Sender
+          type: string
         error_message:
           type: string
         template_message_namespace:
