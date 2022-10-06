@@ -8466,7 +8466,7 @@ components:
                 type: string
           type: array
         time_sheet_ids:
-          description: Business Hours
+          description: Business Hours (Limited to 1)
           items:
             type: string
           type: array
