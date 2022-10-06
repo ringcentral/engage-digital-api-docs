@@ -834,6 +834,14 @@ paths:
           required: false
           schema:
             type: integer
+        - description: Business Hours
+          in: query
+          name: 'time_sheet_ids[]'
+          required: false
+          schema:
+            items:
+              type: string
+            type: array
         - description: Response time (seconds)
           in: query
           name: sla_response
@@ -849,6 +857,16 @@ paths:
               - max
               - half
               - base
+            type: string
+        - description: 'Attachments security level ("strict", "relaxed" or "permissive")'
+          in: query
+          name: attachments_security_level
+          required: false
+          schema:
+            enum:
+              - strict
+              - relaxed
+              - permissive
             type: string
         - description: Priority boost of messages with intervention (Integer)
           in: query
@@ -958,6 +976,12 @@ paths:
           required: false
           schema:
             type: integer
+        - description: Only on sources supporting from_name.
+          in: query
+          name: from_name
+          required: false
+          schema:
+            type: string
         - description: Only on Engage Messaging sources that are not on livechat mode. Enable or disable the source on Android.
           in: query
           name: enable_android
@@ -976,6 +1000,180 @@ paths:
           required: false
           schema:
             type: boolean
+        - description: Only on Email sources. IMAP SMTP email
+          in: query
+          name: imap_smtp_email
+          required: false
+          schema:
+            type: string
+        - description: Only on Email sources. Mailboxes to synchronize
+          in: query
+          name: imap_mailboxes_to_import
+          required: false
+          schema:
+            items:
+              type: string
+            type: array
+        - description: Only on Email sources
+          in: query
+          name: imap_address
+          required: false
+          schema:
+            type: string
+        - description: Only on Email sources
+          in: query
+          name: imap_port
+          required: false
+          schema:
+            type: integer
+        - description: Only on Email sources
+          in: query
+          name: imap_username
+          required: false
+          schema:
+            type: string
+        - description: Only on Email sources
+          in: query
+          name: imap_password
+          required: false
+          schema:
+            type: string
+        - description: Only on Email sources
+          in: query
+          name: imap_oauth_refresh_token
+          required: false
+          schema:
+            type: string
+        - description: Only on Email sources
+          in: query
+          name: imap_use_ssl_tls
+          required: false
+          schema:
+            type: boolean
+        - description: Only on Email sources
+          in: query
+          name: imap_use_start_tls
+          required: false
+          schema:
+            type: boolean
+        - description: 'Only on Email sources. ("basic" or "microsoft_identity_platform")'
+          in: query
+          name: imap_authentication_type
+          required: false
+          schema:
+            enum:
+              - basic
+              - microsoft_identity_platform
+            type: string
+        - description: 'Only on Email sources. ("NONE", "PEER", "CLIENT_ONCE" or "FAIL_IF_NO_PEER_CERT")'
+          in: query
+          name: imap_ssl_verify_mode
+          required: false
+          schema:
+            enum:
+              - NONE
+              - PEER
+              - CLIENT_ONCE
+              - FAIL_IF_NO_PEER_CERT
+            type: string
+        - description: Only on Email sources
+          in: query
+          name: smtp_address
+          required: false
+          schema:
+            type: string
+        - description: Only on Email sources
+          in: query
+          name: smtp_port
+          required: false
+          schema:
+            type: integer
+        - description: Only on Email sources
+          in: query
+          name: smtp_username
+          required: false
+          schema:
+            type: string
+        - description: Only on Email sources
+          in: query
+          name: smtp_password
+          required: false
+          schema:
+            type: string
+        - description: Only on Email sources
+          in: query
+          name: smtp_oauth_refresh_token
+          required: false
+          schema:
+            type: string
+        - description: Only on Email sources
+          in: query
+          name: smtp_use_ssl_tls
+          required: false
+          schema:
+            type: boolean
+        - description: Only on Email sources
+          in: query
+          name: smtp_use_start_tls
+          required: false
+          schema:
+            type: boolean
+        - description: 'Only on Email sources. ("basic" or "microsoft_identity_platform")'
+          in: query
+          name: smtp_authentication_type
+          required: false
+          schema:
+            enum:
+              - basic
+              - microsoft_identity_platform
+            type: string
+        - description: 'Only on Email sources. ("NONE", "PEER", "CLIENT_ONCE" or "FAIL_IF_NO_PEER_CERT")'
+          in: query
+          name: smtp_ssl_verify_mode
+          required: false
+          schema:
+            enum:
+              - NONE
+              - PEER
+              - CLIENT_ONCE
+              - FAIL_IF_NO_PEER_CERT
+            type: string
+        - description: Only on Email sources
+          in: query
+          name: smtp_helo_domain
+          required: false
+          schema:
+            type: string
+        - description: Only on Email sources
+          in: query
+          name: threading_heuristics
+          required: false
+          schema:
+            type: boolean
+        - description: 'Only on Email sources ("disabled", "relaxed" or "strict")'
+          in: query
+          name: spam_assassin_level
+          required: false
+          schema:
+            enum:
+              - disabled
+              - relaxed
+              - strict
+            type: string
+        - description: Only on Email sources
+          in: query
+          name: whitelisted_emails
+          required: false
+          schema:
+            type: string
+        - description: Only on Email sources
+          in: query
+          name: cc_blacklist
+          required: false
+          schema:
+            items:
+              type: string
+            type: array
       responses:
         '200':
           content:

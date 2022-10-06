@@ -1739,6 +1739,12 @@
                       "disabled": true
                     },
                     {
+                      "key": "time_sheet_ids[]",
+                      "value": "\u003carray.string.csv\u003e",
+                      "description": "Business Hours",
+                      "disabled": true
+                    },
+                    {
                       "key": "sla_response",
                       "value": "\u003cinteger\u003e",
                       "description": "Response time (seconds)",
@@ -1748,6 +1754,12 @@
                       "key": "sla_expired_strategy",
                       "value": "\u003cstring\u003e",
                       "description": "SLA expired strategy (\"max\", \"half\" or \"base\")",
+                      "disabled": true
+                    },
+                    {
+                      "key": "attachments_security_level",
+                      "value": "\u003cstring\u003e",
+                      "description": "Attachments security level (\"strict\", \"relaxed\" or \"permissive\")",
                       "disabled": true
                     },
                     {
@@ -1847,6 +1859,12 @@
                       "disabled": true
                     },
                     {
+                      "key": "from_name",
+                      "value": "\u003cstring\u003e",
+                      "description": "Only on sources supporting from_name.",
+                      "disabled": true
+                    },
+                    {
                       "key": "enable_android",
                       "value": "\u003cboolean\u003e",
                       "description": "Only on Engage Messaging sources that are not on livechat mode. Enable or disable the source on Android.",
@@ -1862,6 +1880,156 @@
                       "key": "enable_web",
                       "value": "\u003cboolean\u003e",
                       "description": "Only on Engage Messaging sources that are not on livechat mode. Enable or disable the source on the web.",
+                      "disabled": true
+                    },
+                    {
+                      "key": "imap_smtp_email",
+                      "value": "\u003cstring\u003e",
+                      "description": "Only on Email sources. IMAP SMTP email",
+                      "disabled": true
+                    },
+                    {
+                      "key": "imap_mailboxes_to_import",
+                      "value": "\u003carray.string.csv\u003e",
+                      "description": "Only on Email sources. Mailboxes to synchronize",
+                      "disabled": true
+                    },
+                    {
+                      "key": "imap_address",
+                      "value": "\u003cstring\u003e",
+                      "description": "Only on Email sources",
+                      "disabled": true
+                    },
+                    {
+                      "key": "imap_port",
+                      "value": "\u003cinteger\u003e",
+                      "description": "Only on Email sources",
+                      "disabled": true
+                    },
+                    {
+                      "key": "imap_username",
+                      "value": "\u003cstring\u003e",
+                      "description": "Only on Email sources",
+                      "disabled": true
+                    },
+                    {
+                      "key": "imap_password",
+                      "value": "\u003cstring\u003e",
+                      "description": "Only on Email sources",
+                      "disabled": true
+                    },
+                    {
+                      "key": "imap_oauth_refresh_token",
+                      "value": "\u003cstring\u003e",
+                      "description": "Only on Email sources",
+                      "disabled": true
+                    },
+                    {
+                      "key": "imap_use_ssl_tls",
+                      "value": "\u003cboolean\u003e",
+                      "description": "Only on Email sources",
+                      "disabled": true
+                    },
+                    {
+                      "key": "imap_use_start_tls",
+                      "value": "\u003cboolean\u003e",
+                      "description": "Only on Email sources",
+                      "disabled": true
+                    },
+                    {
+                      "key": "imap_authentication_type",
+                      "value": "\u003cstring\u003e",
+                      "description": "Only on Email sources. (\"basic\" or \"microsoft_identity_platform\")",
+                      "disabled": true
+                    },
+                    {
+                      "key": "imap_ssl_verify_mode",
+                      "value": "\u003cstring\u003e",
+                      "description": "Only on Email sources. (\"NONE\", \"PEER\", \"CLIENT_ONCE\" or \"FAIL_IF_NO_PEER_CERT\")",
+                      "disabled": true
+                    },
+                    {
+                      "key": "smtp_address",
+                      "value": "\u003cstring\u003e",
+                      "description": "Only on Email sources",
+                      "disabled": true
+                    },
+                    {
+                      "key": "smtp_port",
+                      "value": "\u003cinteger\u003e",
+                      "description": "Only on Email sources",
+                      "disabled": true
+                    },
+                    {
+                      "key": "smtp_username",
+                      "value": "\u003cstring\u003e",
+                      "description": "Only on Email sources",
+                      "disabled": true
+                    },
+                    {
+                      "key": "smtp_password",
+                      "value": "\u003cstring\u003e",
+                      "description": "Only on Email sources",
+                      "disabled": true
+                    },
+                    {
+                      "key": "smtp_oauth_refresh_token",
+                      "value": "\u003cstring\u003e",
+                      "description": "Only on Email sources",
+                      "disabled": true
+                    },
+                    {
+                      "key": "smtp_use_ssl_tls",
+                      "value": "\u003cboolean\u003e",
+                      "description": "Only on Email sources",
+                      "disabled": true
+                    },
+                    {
+                      "key": "smtp_use_start_tls",
+                      "value": "\u003cboolean\u003e",
+                      "description": "Only on Email sources",
+                      "disabled": true
+                    },
+                    {
+                      "key": "smtp_authentication_type",
+                      "value": "\u003cstring\u003e",
+                      "description": "Only on Email sources. (\"basic\" or \"microsoft_identity_platform\")",
+                      "disabled": true
+                    },
+                    {
+                      "key": "smtp_ssl_verify_mode",
+                      "value": "\u003cstring\u003e",
+                      "description": "Only on Email sources. (\"NONE\", \"PEER\", \"CLIENT_ONCE\" or \"FAIL_IF_NO_PEER_CERT\")",
+                      "disabled": true
+                    },
+                    {
+                      "key": "smtp_helo_domain",
+                      "value": "\u003cstring\u003e",
+                      "description": "Only on Email sources",
+                      "disabled": true
+                    },
+                    {
+                      "key": "threading_heuristics",
+                      "value": "\u003cboolean\u003e",
+                      "description": "Only on Email sources",
+                      "disabled": true
+                    },
+                    {
+                      "key": "spam_assassin_level",
+                      "value": "\u003cstring\u003e",
+                      "description": "Only on Email sources (\"disabled\", \"relaxed\" or \"strict\")",
+                      "disabled": true
+                    },
+                    {
+                      "key": "whitelisted_emails",
+                      "value": "\u003cstring\u003e",
+                      "description": "Only on Email sources",
+                      "disabled": true
+                    },
+                    {
+                      "key": "cc_blacklist",
+                      "value": "\u003carray.string.csv\u003e",
+                      "description": "Only on Email sources",
                       "disabled": true
                     }
                   ]
