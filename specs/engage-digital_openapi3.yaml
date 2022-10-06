@@ -8474,6 +8474,9 @@ components:
           description: Priority boost of transferred tasks
           format: int32
           type: integer
+        attachments_security_level:
+          description: Attachments security level. ("strict", "relaxed", or "permissive"). Strict allows images and medias. Relaxed allows images, media and documents. Permissive allows all kind of attachments
+          type: string
         type:
           type: string
         updated_at:
@@ -8485,79 +8488,76 @@ components:
             type: string
           type: array
         imap_smtp_email:
-          description: Only on Email sources
+          description: Email address to synchronize. Only on Email sources
           type: string
         imap_mailboxes_to_import:
-          description: Only on Email sources. Mailboxes to synchronize
+          description: Folders to synchronize. Only on Email sources
           items:
             type: string
           type: array
         imap_address:
-          description: Only on Email sources
+          description: IMAP server address. Only on Email sources
           type: string
         imap_port:
-          description: Only on Email sources
+          description: IMAP server port. Only on Email sources
           format: int32
           type: integer
         imap_username:
-          description: Only on Email sources
+          description: IMAP username. Only on Email sources
           type: string
         imap_use_ssl_tls:
-          description: Only on Email sources
+          description: Use SSL/TLS protocol to establish secure IMAP connection. Only on Email sources
           type: boolean
         imap_use_start_tls:
-          description: Only on Email sources
+          description: Use STARTTLS protocol to establish secure IMAP connection. Only on Email sources
           type: boolean
         imap_authentication_type:
-          description: Only on Email sources. ("basic" or "microsoft_identity_platform")
+          description: IMAP Authentication type ("basic" or "microsoft_identity_platform"). Only on Email sources
           type: string
         imap_ssl_verify_mode:
-          description: Only on Email sources. ("NONE", "PEER", "CLIENT_ONCE" or "FAIL_IF_NO_PEER_CERT")
+          description: IMAP SSL verification mode. ("NONE", "PEER", "CLIENT_ONCE" or "FAIL_IF_NO_PEER_CERT"). Only on Email sources
           type: string
         smtp_address:
-          description: Only on Email sources
+          description: SMTP server address. Only on Email sources
           type: string
         smtp_port:
-          description: Only on Email sources
+          description: SMTP server port. Only on Email sources
           format: int32
           type: integer
         smtp_username:
-          description: Only on Email sources
+          description: SMTP username. Only on Email sources
           type: string
         smtp_use_ssl_tls:
-          description: Only on Email sources
+          description: Use SSL/TLS protocol to establish secure SMTP connection. Only on Email sources
           type: boolean
         smtp_use_start_tls:
-          description: Only on Email sources
+          description: Use STARTTLS protocol to establish secure SMTP connection. Only on Email sources
           type: boolean
         smtp_authentication_type:
-          description: Only on Email sources. ("basic" or "microsoft_identity_platform")
+          description: SMTP Authentication type ("basic" or "microsoft_identity_platform"). Only on Email sources
           type: string
         smtp_ssl_verify_mode:
-          description: Only on Email sources. ("NONE", "PEER", "CLIENT_ONCE" or "FAIL_IF_NO_PEER_CERT")
+          description: SMTP SSL verification mode ("NONE", "PEER", "CLIENT_ONCE" or "FAIL_IF_NO_PEER_CERT"). Only on Email sources
           type: string
         smtp_helo_domain:
-          description: Only on Email sources.
+          description: Used to identify HELO/EHLO when connecting to the server. Only on Email sources
           type: string
         threading_heuristics:
-          description: Only on Email sources.
+          description: Threading_heuristics. Only on Email sources
           type: boolean
-        attachments_security_level:
-          description: Only on Email sources. ("strict", "relaxed", or "permissive")
-          type: string
         spam_assassin_level:
-          description: Only on Email sources. ("disabled", "relaxed", or "strict")
+          description: Spam threshold ("disabled", "relaxed", or "strict"). Only on Email sources
           type: string
         whitelisted_emails:
-          description: Only on Email sources.
+          description: Whitelisted emails. All emails received to this address won't be threaded and can be associated with an anonymous identity or the reply_to, if there is one. Only on Email sources
           type: string
         cc_blacklist:
-          description: Only on Email sources.
+          description: Exclude from TO/CC. Only on Email sources
           items:
             type: string
           type: array
         postmark_enabled:
-          description: Only on Email sources.
+          description: Enable Postmark. Only on Email sources
           type: string
     Survey:
       properties:
