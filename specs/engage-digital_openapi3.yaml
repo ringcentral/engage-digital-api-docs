@@ -834,7 +834,7 @@ paths:
           required: false
           schema:
             type: integer
-        - description: Business Hours
+        - description: Business Hours (Limited to 1)
           in: query
           name: 'time_sheet_ids[]'
           required: false
