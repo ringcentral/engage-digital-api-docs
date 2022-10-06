@@ -8466,6 +8466,7 @@ components:
                 type: string
           type: array
         time_sheet_ids:
+          description: Business Hours
           items:
             type: string
           type: array
@@ -8483,6 +8484,81 @@ components:
           items:
             type: string
           type: array
+        imap_smtp_email:
+          description: Only on Email sources
+          type: string
+        imap_mailboxes_to_import:
+          description: Only on Email sources. Mailboxes to synchronize
+          items:
+            type: string
+          type: array
+        imap_address:
+          description: Only on Email sources
+          type: string
+        imap_port:
+          description: Only on Email sources
+          format: int32
+          type: integer
+        imap_username:
+          description: Only on Email sources
+          type: string
+        imap_use_ssl_tls:
+          description: Only on Email sources
+          type: boolean
+        imap_use_start_tls:
+          description: Only on Email sources
+          type: boolean
+        imap_authentication_type:
+          description: Only on Email sources. ("basic" or "microsoft_identity_platform")
+          type: string
+        imap_ssl_verify_mode:
+          description: Only on Email sources. ("NONE", "PEER", "CLIENT_ONCE" or "FAIL_IF_NO_PEER_CERT")
+          type: string
+        smtp_address:
+          description: Only on Email sources
+          type: string
+        smtp_port:
+          description: Only on Email sources
+          format: int32
+          type: integer
+        smtp_username:
+          description: Only on Email sources
+          type: string
+        smtp_use_ssl_tls:
+          description: Only on Email sources
+          type: boolean
+        smtp_use_start_tls:
+          description: Only on Email sources
+          type: boolean
+        smtp_authentication_type:
+          description: Only on Email sources. ("basic" or "microsoft_identity_platform")
+          type: string
+        smtp_ssl_verify_mode:
+          description: Only on Email sources. ("NONE", "PEER", "CLIENT_ONCE" or "FAIL_IF_NO_PEER_CERT")
+          type: string
+        smtp_helo_domain:
+          description: Only on Email sources.
+          type: string
+        threading_heuristics:
+          description: Only on Email sources.
+          type: boolean
+        attachments_security_level:
+          description: Only on Email sources. ("strict", "relaxed", or "permissive")
+          type: string
+        spam_assassin_level:
+          description: Only on Email sources. ("disabled", "relaxed", or "strict")
+          type: string
+        whitelisted_emails:
+          description: Only on Email sources.
+          type: string
+        cc_blacklist:
+          description: Only on Email sources.
+          items:
+            type: string
+          type: array
+        postmark_enabled:
+          description: Only on Email sources.
+          type: string
     Survey:
       properties:
         id:
