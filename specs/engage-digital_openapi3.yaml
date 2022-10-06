@@ -858,7 +858,7 @@ paths:
               - half
               - base
             type: string
-        - description: 'Attachments security level ("strict", "relaxed" or "permissive")'
+        - description: 'Attachments security level. ("strict", "relaxed", or "permissive"). Strict allows images and medias. Relaxed allows images, media and documents. Permissive allows all kind of attachments'
           in: query
           name: attachments_security_level
           required: false
@@ -976,7 +976,7 @@ paths:
           required: false
           schema:
             type: integer
-        - description: Only on sources supporting from_name.
+        - description: Custom sender name. Only on sources which supports a custom sender name.
           in: query
           name: from_name
           required: false
@@ -1000,13 +1000,13 @@ paths:
           required: false
           schema:
             type: boolean
-        - description: Only on Email sources. IMAP SMTP email
+        - description: Email address to synchronize. Only on Email sources
           in: query
           name: imap_smtp_email
           required: false
           schema:
             type: string
-        - description: Only on Email sources. Mailboxes to synchronize
+        - description: Folders to synchronize. Does not accept empty array or blank values. Only on Email sources.
           in: query
           name: imap_mailboxes_to_import
           required: false
@@ -1014,49 +1014,49 @@ paths:
             items:
               type: string
             type: array
-        - description: Only on Email sources
+        - description: IMAP server address. Only on Email sources
           in: query
           name: imap_address
           required: false
           schema:
             type: string
-        - description: Only on Email sources
+        - description: IMAP server port. Only on Email sources
           in: query
           name: imap_port
           required: false
           schema:
             type: integer
-        - description: Only on Email sources
+        - description: IMAP username. Only on Email sources
           in: query
           name: imap_username
           required: false
           schema:
             type: string
-        - description: Only on Email sources
+        - description: IMAP password. Only on Email sources
           in: query
           name: imap_password
           required: false
           schema:
             type: string
-        - description: Only on Email sources
+        - description: IMAP OAuth 2.0 refresh token. Only on Email sources
           in: query
           name: imap_oauth_refresh_token
           required: false
           schema:
             type: string
-        - description: Only on Email sources
+        - description: Use SSL/TLS protocol to establish secure IMAP connection. Only on Email sources
           in: query
           name: imap_use_ssl_tls
           required: false
           schema:
             type: boolean
-        - description: Only on Email sources
+        - description: Use STARTTLS protocol to establish secure IMAP connection. Only on Email sources
           in: query
           name: imap_use_start_tls
           required: false
           schema:
             type: boolean
-        - description: 'Only on Email sources. ("basic" or "microsoft_identity_platform")'
+        - description: 'IMAP Authentication type ("basic" or "microsoft_identity_platform"). Only on Email sources'
           in: query
           name: imap_authentication_type
           required: false
@@ -1065,7 +1065,7 @@ paths:
               - basic
               - microsoft_identity_platform
             type: string
-        - description: 'Only on Email sources. ("NONE", "PEER", "CLIENT_ONCE" or "FAIL_IF_NO_PEER_CERT")'
+        - description: 'IMAP SSL verification mode. ("NONE", "PEER", "CLIENT_ONCE" or "FAIL_IF_NO_PEER_CERT"). Only on Email sources'
           in: query
           name: imap_ssl_verify_mode
           required: false
@@ -1076,49 +1076,49 @@ paths:
               - CLIENT_ONCE
               - FAIL_IF_NO_PEER_CERT
             type: string
-        - description: Only on Email sources
+        - description: SMTP server address. Only on Email sources
           in: query
           name: smtp_address
           required: false
           schema:
             type: string
-        - description: Only on Email sources
+        - description: SMTP server port. Only on Email sources
           in: query
           name: smtp_port
           required: false
           schema:
             type: integer
-        - description: Only on Email sources
+        - description: SMTP username. Only on Email sources
           in: query
           name: smtp_username
           required: false
           schema:
             type: string
-        - description: Only on Email sources
+        - description: SMTP password. Only on Email sources
           in: query
           name: smtp_password
           required: false
           schema:
             type: string
-        - description: Only on Email sources
+        - description: SMTP OAuth 2.0 refresh token. Only on Email sources
           in: query
           name: smtp_oauth_refresh_token
           required: false
           schema:
             type: string
-        - description: Only on Email sources
+        - description: Use SSL/TLS protocol to establish secure SMTP connection. Only on Email sources
           in: query
           name: smtp_use_ssl_tls
           required: false
           schema:
             type: boolean
-        - description: Only on Email sources
+        - description: Use STARTTLS protocol to establish secure IMAP connection. Only on Email sources
           in: query
           name: smtp_use_start_tls
           required: false
           schema:
             type: boolean
-        - description: 'Only on Email sources. ("basic" or "microsoft_identity_platform")'
+        - description: 'SMTP Authentication type ("basic" or "microsoft_identity_platform"). Only on Email sources'
           in: query
           name: smtp_authentication_type
           required: false
@@ -1127,7 +1127,7 @@ paths:
               - basic
               - microsoft_identity_platform
             type: string
-        - description: 'Only on Email sources. ("NONE", "PEER", "CLIENT_ONCE" or "FAIL_IF_NO_PEER_CERT")'
+        - description: 'SMTP SSL verification mode. ("NONE", "PEER", "CLIENT_ONCE" or "FAIL_IF_NO_PEER_CERT"). Only on Email sources'
           in: query
           name: smtp_ssl_verify_mode
           required: false
@@ -1138,19 +1138,19 @@ paths:
               - CLIENT_ONCE
               - FAIL_IF_NO_PEER_CERT
             type: string
-        - description: Only on Email sources
+        - description: Used to identify HELO/EHLO when connecting to the SMTP server. Only on Email sources
           in: query
           name: smtp_helo_domain
           required: false
           schema:
             type: string
-        - description: Only on Email sources
+        - description: Threading_heuristics. Only on Email sources
           in: query
           name: threading_heuristics
           required: false
           schema:
             type: boolean
-        - description: 'Only on Email sources ("disabled", "relaxed" or "strict")'
+        - description: 'Spam threshold ("disabled", "relaxed", or "strict"). Only on Email sources'
           in: query
           name: spam_assassin_level
           required: false
@@ -1160,13 +1160,13 @@ paths:
               - relaxed
               - strict
             type: string
-        - description: Only on Email sources
+        - description: Whitelisted emails. All emails received to this address won't be threaded and can be associated with an anonymous identity or the reply_to, if there is one. Only on Email sources
           in: query
           name: whitelisted_emails
           required: false
           schema:
             type: string
-        - description: Only on Email sources
+        - description: Exclude from TO/CC. Only on Email sources
           in: query
           name: cc_blacklist
           required: false
@@ -1174,6 +1174,12 @@ paths:
             items:
               type: string
             type: array
+        - description: Enable Postmark. Only on Email sources
+          in: query
+          name: postmark_enabled
+          required: false
+          schema:
+            type: boolean
       responses:
         '200':
           content:
