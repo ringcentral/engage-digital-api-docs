@@ -8540,7 +8540,7 @@ components:
           description: SMTP SSL verification mode ("NONE", "PEER", "CLIENT_ONCE" or "FAIL_IF_NO_PEER_CERT"). Only on Email sources
           type: string
         smtp_helo_domain:
-          description: Used to identify HELO/EHLO when connecting to the server. Only on Email sources
+          description: Used to identify HELO/EHLO when connecting to the SMTP server. Only on Email sources
           type: string
         threading_heuristics:
           description: Threading_heuristics. Only on Email sources
