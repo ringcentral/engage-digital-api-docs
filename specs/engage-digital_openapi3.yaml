@@ -1174,12 +1174,6 @@ paths:
             items:
               type: string
             type: array
-        - description: Enable Postmark. Only on Email sources
-          in: query
-          name: postmark_enabled
-          required: false
-          schema:
-            type: boolean
       responses:
         '200':
           content:
