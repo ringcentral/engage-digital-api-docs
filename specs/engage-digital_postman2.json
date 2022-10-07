@@ -1741,7 +1741,7 @@
                     {
                       "key": "time_sheet_ids[]",
                       "value": "\u003carray.string.csv\u003e",
-                      "description": "Business Hours",
+                      "description": "Business Hours (Limited to 1)",
                       "disabled": true
                     },
                     {
@@ -1759,7 +1759,7 @@
                     {
                       "key": "attachments_security_level",
                       "value": "\u003cstring\u003e",
-                      "description": "Attachments security level (\"strict\", \"relaxed\" or \"permissive\")",
+                      "description": "Attachments security level. (\"strict\", \"relaxed\", or \"permissive\"). Strict allows images and medias. Relaxed allows images, media and documents. Permissive allows all kind of attachments",
                       "disabled": true
                     },
                     {
@@ -1861,7 +1861,7 @@
                     {
                       "key": "from_name",
                       "value": "\u003cstring\u003e",
-                      "description": "Only on sources supporting from_name.",
+                      "description": "Custom sender name. Only on sources which supports a custom sender name.",
                       "disabled": true
                     },
                     {
@@ -1885,151 +1885,151 @@
                     {
                       "key": "imap_smtp_email",
                       "value": "\u003cstring\u003e",
-                      "description": "Only on Email sources. IMAP SMTP email",
+                      "description": "Email address to synchronize. Only on Email sources",
                       "disabled": true
                     },
                     {
                       "key": "imap_mailboxes_to_import",
                       "value": "\u003carray.string.csv\u003e",
-                      "description": "Only on Email sources. Mailboxes to synchronize",
+                      "description": "Folders to synchronize. Does not accept empty array or blank values. Only on Email sources.",
                       "disabled": true
                     },
                     {
                       "key": "imap_address",
                       "value": "\u003cstring\u003e",
-                      "description": "Only on Email sources",
+                      "description": "IMAP server address. Only on Email sources",
                       "disabled": true
                     },
                     {
                       "key": "imap_port",
                       "value": "\u003cinteger\u003e",
-                      "description": "Only on Email sources",
+                      "description": "IMAP server port. Only on Email sources",
                       "disabled": true
                     },
                     {
                       "key": "imap_username",
                       "value": "\u003cstring\u003e",
-                      "description": "Only on Email sources",
+                      "description": "IMAP username. Only on Email sources",
                       "disabled": true
                     },
                     {
                       "key": "imap_password",
                       "value": "\u003cstring\u003e",
-                      "description": "Only on Email sources",
+                      "description": "IMAP password. Provide associated IMAP authentication type -\u003e `basic`. Only on Email sources",
                       "disabled": true
                     },
                     {
                       "key": "imap_oauth_refresh_token",
                       "value": "\u003cstring\u003e",
-                      "description": "Only on Email sources",
+                      "description": "IMAP OAuth 2.0 refresh token. Provide associated IMAP authentication type -\u003e `microsoft_identity_platform`. Only on Email sources",
                       "disabled": true
                     },
                     {
                       "key": "imap_use_ssl_tls",
                       "value": "\u003cboolean\u003e",
-                      "description": "Only on Email sources",
+                      "description": "Use SSL/TLS protocol to establish secure IMAP connection. Only on Email sources",
                       "disabled": true
                     },
                     {
                       "key": "imap_use_start_tls",
                       "value": "\u003cboolean\u003e",
-                      "description": "Only on Email sources",
+                      "description": "Use STARTTLS protocol to establish secure IMAP connection. Only on Email sources",
                       "disabled": true
                     },
                     {
                       "key": "imap_authentication_type",
                       "value": "\u003cstring\u003e",
-                      "description": "Only on Email sources. (\"basic\" or \"microsoft_identity_platform\")",
+                      "description": "IMAP Authentication type (\"basic\" or \"microsoft_identity_platform\"). Provide either associated imap_password or imap_oauth_refresh_token. Only on Email sources",
                       "disabled": true
                     },
                     {
                       "key": "imap_ssl_verify_mode",
                       "value": "\u003cstring\u003e",
-                      "description": "Only on Email sources. (\"NONE\", \"PEER\", \"CLIENT_ONCE\" or \"FAIL_IF_NO_PEER_CERT\")",
+                      "description": "IMAP SSL verification mode. (\"NONE\", \"PEER\", \"CLIENT_ONCE\" or \"FAIL_IF_NO_PEER_CERT\"). Only on Email sources",
                       "disabled": true
                     },
                     {
                       "key": "smtp_address",
                       "value": "\u003cstring\u003e",
-                      "description": "Only on Email sources",
+                      "description": "SMTP server address. Only on Email sources",
                       "disabled": true
                     },
                     {
                       "key": "smtp_port",
                       "value": "\u003cinteger\u003e",
-                      "description": "Only on Email sources",
+                      "description": "SMTP server port. Only on Email sources",
                       "disabled": true
                     },
                     {
                       "key": "smtp_username",
                       "value": "\u003cstring\u003e",
-                      "description": "Only on Email sources",
+                      "description": "SMTP username. Only on Email sources",
                       "disabled": true
                     },
                     {
                       "key": "smtp_password",
                       "value": "\u003cstring\u003e",
-                      "description": "Only on Email sources",
+                      "description": "SMTP password. Provide associated SMTP authentication type -\u003e `basic`. Only on Email sources",
                       "disabled": true
                     },
                     {
                       "key": "smtp_oauth_refresh_token",
                       "value": "\u003cstring\u003e",
-                      "description": "Only on Email sources",
+                      "description": "SMTP OAuth 2.0 refresh token. Provide associated SMTP authentication type -\u003e `microsoft_identity_platform`. Only on Email sources",
                       "disabled": true
                     },
                     {
                       "key": "smtp_use_ssl_tls",
                       "value": "\u003cboolean\u003e",
-                      "description": "Only on Email sources",
+                      "description": "Use SSL/TLS protocol to establish secure SMTP connection. Only on Email sources",
                       "disabled": true
                     },
                     {
                       "key": "smtp_use_start_tls",
                       "value": "\u003cboolean\u003e",
-                      "description": "Only on Email sources",
+                      "description": "Use STARTTLS protocol to establish secure IMAP connection. Only on Email sources",
                       "disabled": true
                     },
                     {
                       "key": "smtp_authentication_type",
                       "value": "\u003cstring\u003e",
-                      "description": "Only on Email sources. (\"basic\" or \"microsoft_identity_platform\")",
+                      "description": "SMTP Authentication type (\"basic\" or \"microsoft_identity_platform\"). Provide either associated smtp_password or smtp_oauth_refresh_token. Only on Email sources",
                       "disabled": true
                     },
                     {
                       "key": "smtp_ssl_verify_mode",
                       "value": "\u003cstring\u003e",
-                      "description": "Only on Email sources. (\"NONE\", \"PEER\", \"CLIENT_ONCE\" or \"FAIL_IF_NO_PEER_CERT\")",
+                      "description": "SMTP SSL verification mode. (\"NONE\", \"PEER\", \"CLIENT_ONCE\" or \"FAIL_IF_NO_PEER_CERT\"). Only on Email sources",
                       "disabled": true
                     },
                     {
                       "key": "smtp_helo_domain",
                       "value": "\u003cstring\u003e",
-                      "description": "Only on Email sources",
+                      "description": "Used to identify HELO/EHLO when connecting to the SMTP server. Only on Email sources",
                       "disabled": true
                     },
                     {
                       "key": "threading_heuristics",
                       "value": "\u003cboolean\u003e",
-                      "description": "Only on Email sources",
+                      "description": "Threading_heuristics. Only on Email sources",
                       "disabled": true
                     },
                     {
                       "key": "spam_assassin_level",
                       "value": "\u003cstring\u003e",
-                      "description": "Only on Email sources (\"disabled\", \"relaxed\" or \"strict\")",
+                      "description": "Spam threshold (\"disabled\", \"relaxed\", or \"strict\"). Only on Email sources",
                       "disabled": true
                     },
                     {
                       "key": "whitelisted_emails",
                       "value": "\u003cstring\u003e",
-                      "description": "Only on Email sources",
+                      "description": "Whitelisted emails. All emails received to this address won't be threaded and can be associated with an anonymous identity or the reply_to, if there is one. Only on Email sources",
                       "disabled": true
                     },
                     {
                       "key": "cc_blacklist",
                       "value": "\u003carray.string.csv\u003e",
-                      "description": "Only on Email sources",
+                      "description": "Exclude from TO/CC. Only on Email sources",
                       "disabled": true
                     }
                   ]
