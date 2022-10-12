@@ -2,13 +2,10 @@
 
 Engage Digital’s Bots API is our way to integrate bots into Engage Digital chat channels. This guide is meant to provide integrators a comprehensive overview of the available features for them to be able to create an implementation.
 
-Currently it's only available on Messenger channels, their documentation is available [here](https://developers.facebook.com/docs/messenger-platform/handover-protocol).
-
+Currently it's only available on Messenger channels, whose associated documentation on Facebook is available [here](https://developers.facebook.com/docs/messenger-platform/handover-protocol).
 ## Setup
 
-Please contact Support to get access to the feature on ED side.
-
-You will also need to choose which Facebook app is primary (ED or BOT app), based on that, handover protocol behavior won’t be exactly the same, see FB’s docs for more information.
+First you will need to choose which Facebook app is primary (ED or BOT app), based on that, handover protocol behavior won’t be exactly the same, see aforementioned Facebook documentation for more information.
 
 You can change the app’s role for the source page whenever you want, you need to go on the Facebook’s page -> Settings -> Advanced messaging:
 
