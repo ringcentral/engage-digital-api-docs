@@ -379,11 +379,12 @@ paths:
           schema:
             type: string
       responses:
-        '2OO':
+        '200':
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/HandoverFromBotToAgentResponse'
+          description: Success
       summary: Bot handover
       tags:
         - Bots
