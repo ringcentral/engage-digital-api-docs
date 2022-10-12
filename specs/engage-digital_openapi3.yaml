@@ -345,7 +345,7 @@ paths:
         - Attachments
   /bots:
     post:
-      description: This method does the thread handover on the "provider" side, currently only available with Messenger
+      description: This method is used to handover a thread from bot to agent or from agent to bot
       operationId: handoverFromBotToAgent
       parameters:
         - description: The foreign_id of the identity for which you want to do the handover.
@@ -354,28 +354,24 @@ paths:
           required: true
           schema:
             type: string
-      parameters:
         - description: The app that has thread control before handover.
           in: query
           name: from
           required: true
           schema:
             type: string
-      parameters:
         - description: The app that should get thread control after handover.
           in: query
           name: to
           required: true
           schema:
             type: string
-      parameters:
         - description: The type of channel.
           in: query
           name: type
           required: true
           schema:
             type: string
-      parameters:
         - description: The id of the Facebook's app that controls the Bot.
           in: query
           name: app_id
