@@ -87,3 +87,21 @@ When an agent tries to send a message via ED while another app has thread contro
 After that we will retry the synchronization of the content
 
 When the intervention is closed, we will release thread control
+
+## Workflow
+
+### Bot primary
+
+<img src="../../img/bots-api-workflow-bot-primary.png" class="img-fluid">
+
+### ED primary
+
+<img src="../../img/bots-api-workflow-ed-primary.png" class="img-fluid">
+
+### No specified primary
+
+<img src="../../img/bots-api-workflow-no-primary.png" class="img-fluid">
+
+### When agent interrupts bot
+
+<img src="../../img/bots-api-workflow-agent-interrupts-bot.png" class="img-fluid">
