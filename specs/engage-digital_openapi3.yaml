@@ -8549,7 +8549,7 @@ components:
           description: Spam threshold ("disabled", "relaxed", or "strict"). Only on Email sources
           type: string
         whitelisted_emails:
-          description: Whitelisted emails. All emails received to this address won't be threaded and can be associated with an anonymous identity or the reply_to, if there is one. Only on Email sources
+          description: Whitelisted emails. All emails received from this address won't be threaded and can be associated with an anonymous identity or the Reply-To, if there is one. To be filled when implementing a form. Only on Email sources
           type: string
         cc_blacklist:
           description: Exclude from TO/CC. Only on Email sources
