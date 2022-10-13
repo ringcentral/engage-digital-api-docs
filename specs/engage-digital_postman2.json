@@ -1915,13 +1915,13 @@
                     {
                       "key": "imap_password",
                       "value": "\u003cstring\u003e",
-                      "description": "IMAP password. Provide associated IMAP authentication type -\u003e `basic`. Only on Email sources",
+                      "description": "IMAP password. Used when IMAP authentication type is `basic`. Only on Email sources",
                       "disabled": true
                     },
                     {
                       "key": "imap_oauth_refresh_token",
                       "value": "\u003cstring\u003e",
-                      "description": "IMAP OAuth 2.0 refresh token. Provide associated IMAP authentication type -\u003e `microsoft_identity_platform`. Only on Email sources",
+                      "description": "IMAP OAuth 2.0 refresh token. Used when IMAP authentication type is `microsoft_identity_platform`. Only on Email sources",
                       "disabled": true
                     },
                     {
@@ -1939,7 +1939,7 @@
                     {
                       "key": "imap_authentication_type",
                       "value": "\u003cstring\u003e",
-                      "description": "IMAP Authentication type (\"basic\" or \"microsoft_identity_platform\"). Provide either associated imap_password or imap_oauth_refresh_token. Only on Email sources",
+                      "description": "IMAP Authentication type (\"basic\" or \"microsoft_identity_platform\"). Only on Email sources",
                       "disabled": true
                     },
                     {
@@ -1969,13 +1969,13 @@
                     {
                       "key": "smtp_password",
                       "value": "\u003cstring\u003e",
-                      "description": "SMTP password. Provide associated SMTP authentication type -\u003e `basic`. Only on Email sources",
+                      "description": "SMTP password. Used when SMTP authentication type is `basic`. Only on Email sources",
                       "disabled": true
                     },
                     {
                       "key": "smtp_oauth_refresh_token",
                       "value": "\u003cstring\u003e",
-                      "description": "SMTP OAuth 2.0 refresh token. Provide associated SMTP authentication type -\u003e `microsoft_identity_platform`. Only on Email sources",
+                      "description": "SMTP OAuth 2.0 refresh token. Used when SMTP authentication type is `microsoft_identity_platform`. Only on Email sources",
                       "disabled": true
                     },
                     {
@@ -1993,7 +1993,7 @@
                     {
                       "key": "smtp_authentication_type",
                       "value": "\u003cstring\u003e",
-                      "description": "SMTP Authentication type (\"basic\" or \"microsoft_identity_platform\"). Provide either associated smtp_password or smtp_oauth_refresh_token. Only on Email sources",
+                      "description": "SMTP Authentication type (\"basic\" or \"microsoft_identity_platform\"). Only on Email sources",
                       "disabled": true
                     },
                     {
@@ -2011,7 +2011,7 @@
                     {
                       "key": "threading_heuristics",
                       "value": "\u003cboolean\u003e",
-                      "description": "Threading_heuristics. Only on Email sources",
+                      "description": "Threading heuristics. Only on Email sources",
                       "disabled": true
                     },
                     {
@@ -2023,7 +2023,7 @@
                     {
                       "key": "whitelisted_emails",
                       "value": "\u003cstring\u003e",
-                      "description": "Whitelisted emails. All emails received to this address won't be threaded and can be associated with an anonymous identity or the reply_to, if there is one. Only on Email sources",
+                      "description": "Whitelisted emails. All emails received from this address won't be threaded and can be associated with an anonymous identity or the Reply-To, if there is one. To be filled when implementing a form. Only on Email sources",
                       "disabled": true
                     },
                     {

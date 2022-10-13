@@ -1032,13 +1032,13 @@ paths:
           required: false
           schema:
             type: string
-        - description: IMAP password. Provide associated IMAP authentication type -> `basic`. Only on Email sources
+        - description: IMAP password. Used when IMAP authentication type is `basic`. Only on Email sources
           in: query
           name: imap_password
           required: false
           schema:
             type: string
-        - description: IMAP OAuth 2.0 refresh token. Provide associated IMAP authentication type -> `microsoft_identity_platform`. Only on Email sources
+        - description: IMAP OAuth 2.0 refresh token. Used when IMAP authentication type is `microsoft_identity_platform`. Only on Email sources
           in: query
           name: imap_oauth_refresh_token
           required: false
@@ -1056,7 +1056,7 @@ paths:
           required: false
           schema:
             type: boolean
-        - description: 'IMAP Authentication type ("basic" or "microsoft_identity_platform"). Provide either associated imap_password or imap_oauth_refresh_token. Only on Email sources'
+        - description: 'IMAP Authentication type ("basic" or "microsoft_identity_platform"). Only on Email sources'
           in: query
           name: imap_authentication_type
           required: false
@@ -1094,13 +1094,13 @@ paths:
           required: false
           schema:
             type: string
-        - description: SMTP password. Provide associated SMTP authentication type -> `basic`. Only on Email sources
+        - description: SMTP password. Used when SMTP authentication type is `basic`. Only on Email sources
           in: query
           name: smtp_password
           required: false
           schema:
             type: string
-        - description: SMTP OAuth 2.0 refresh token. Provide associated SMTP authentication type -> `microsoft_identity_platform`. Only on Email sources
+        - description: SMTP OAuth 2.0 refresh token. Used when SMTP authentication type is `microsoft_identity_platform`. Only on Email sources
           in: query
           name: smtp_oauth_refresh_token
           required: false
@@ -1118,7 +1118,7 @@ paths:
           required: false
           schema:
             type: boolean
-        - description: 'SMTP Authentication type ("basic" or "microsoft_identity_platform"). Provide either associated smtp_password or smtp_oauth_refresh_token. Only on Email sources'
+        - description: 'SMTP Authentication type ("basic" or "microsoft_identity_platform"). Only on Email sources'
           in: query
           name: smtp_authentication_type
           required: false
@@ -1144,7 +1144,7 @@ paths:
           required: false
           schema:
             type: string
-        - description: Threading_heuristics. Only on Email sources
+        - description: Threading heuristics. Only on Email sources
           in: query
           name: threading_heuristics
           required: false
@@ -1160,7 +1160,7 @@ paths:
               - relaxed
               - strict
             type: string
-        - description: Whitelisted emails. All emails received to this address won't be threaded and can be associated with an anonymous identity or the reply_to, if there is one. Only on Email sources
+        - description: Whitelisted emails. All emails received from this address won't be threaded and can be associated with an anonymous identity or the Reply-To, if there is one. To be filled when implementing a form. Only on Email sources
           in: query
           name: whitelisted_emails
           required: false
