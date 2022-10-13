@@ -514,13 +514,14 @@
               "name": "Bot handover",
               "request": {
                 "url": {
-                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/bots",
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/bots/handover",
                   "host": [
                     "{{ENGAGE_DIGITAL_SERVER_URL}}"
                   ],
                   "path": [
                     "1.0",
-                    "bots"
+                    "bots",
+                    "handover"
                   ],
                   "query": [
                     {

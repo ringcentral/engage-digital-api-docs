@@ -343,7 +343,7 @@ paths:
       summary: Getting an attachment from its id
       tags:
         - Attachments
-  /bots:
+  '/bots/handover':
     post:
       description: This method is used to handover a thread from bot to agent or from agent to bot
       operationId: handoverFromBotToAgent
