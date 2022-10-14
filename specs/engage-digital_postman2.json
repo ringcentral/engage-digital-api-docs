@@ -567,7 +567,7 @@
                     "value": "application/json"
                   }
                 ],
-                "description": "This method is used to handover a thread from bot to agent or from agent to bot (only Messenger sources for now)"
+                "description": "This method is used to handover a thread from bot to agent or from agent to bot (only Messenger sources, see Bots API documentation)"
               }
             }
           ]
