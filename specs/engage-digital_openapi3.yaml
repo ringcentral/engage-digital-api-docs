@@ -345,7 +345,7 @@ paths:
         - Attachments
   '/bots/handover':
     post:
-      description: This method is used to handover a thread from bot to agent or from agent to bot
+      description: This method is used to handover a thread from bot to agent or from agent to bot (only Messenger sources for now)
       operationId: handoverFromBotToAgent
       parameters:
         - description: The foreign_id of the identity for which you want to do the handover.
