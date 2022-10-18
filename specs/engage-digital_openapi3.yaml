@@ -8469,6 +8469,7 @@ components:
                 type: string
           type: array
         time_sheet_ids:
+          description: Business Hours (Limited to 1)
           items:
             type: string
           type: array
@@ -8476,6 +8477,9 @@ components:
           description: Priority boost of transferred tasks
           format: int32
           type: integer
+        attachments_security_level:
+          description: Attachments security level. ("strict", "relaxed", or "permissive"). Strict allows images and medias. Relaxed allows images, media and documents. Permissive allows all kind of attachments
+          type: string
         type:
           type: string
         updated_at:
@@ -8486,6 +8490,78 @@ components:
           items:
             type: string
           type: array
+        imap_smtp_email:
+          description: Email address to synchronize. Only on Email sources
+          type: string
+        imap_mailboxes_to_import:
+          description: Folders to synchronize. Only on Email sources
+          items:
+            type: string
+          type: array
+        imap_address:
+          description: IMAP server address. Only on Email sources
+          type: string
+        imap_port:
+          description: IMAP server port. Only on Email sources
+          format: int32
+          type: integer
+        imap_username:
+          description: IMAP username. Only on Email sources
+          type: string
+        imap_use_ssl_tls:
+          description: Use SSL/TLS protocol to establish secure IMAP connection. Only on Email sources
+          type: boolean
+        imap_use_start_tls:
+          description: Use STARTTLS protocol to establish secure IMAP connection. Only on Email sources
+          type: boolean
+        imap_authentication_type:
+          description: IMAP Authentication type ("basic" or "microsoft_identity_platform"). Only on Email sources
+          type: string
+        imap_ssl_verify_mode:
+          description: IMAP SSL verification mode. ("NONE", "PEER", "CLIENT_ONCE" or "FAIL_IF_NO_PEER_CERT"). Only on Email sources
+          type: string
+        smtp_address:
+          description: SMTP server address. Only on Email sources
+          type: string
+        smtp_port:
+          description: SMTP server port. Only on Email sources
+          format: int32
+          type: integer
+        smtp_username:
+          description: SMTP username. Only on Email sources
+          type: string
+        smtp_use_ssl_tls:
+          description: Use SSL/TLS protocol to establish secure SMTP connection. Only on Email sources
+          type: boolean
+        smtp_use_start_tls:
+          description: Use STARTTLS protocol to establish secure SMTP connection. Only on Email sources
+          type: boolean
+        smtp_authentication_type:
+          description: SMTP Authentication type ("basic" or "microsoft_identity_platform"). Only on Email sources
+          type: string
+        smtp_ssl_verify_mode:
+          description: SMTP SSL verification mode ("NONE", "PEER", "CLIENT_ONCE" or "FAIL_IF_NO_PEER_CERT"). Only on Email sources
+          type: string
+        smtp_helo_domain:
+          description: Used to identify HELO/EHLO when connecting to the SMTP server. Only on Email sources
+          type: string
+        threading_heuristics:
+          description: Threading_heuristics. Only on Email sources
+          type: boolean
+        spam_assassin_level:
+          description: Spam threshold ("disabled", "relaxed", or "strict"). Only on Email sources
+          type: string
+        whitelisted_emails:
+          description: Whitelisted emails. All emails received from this address won't be threaded and can be associated with an anonymous identity or the Reply-To, if there is one. To be filled when implementing a form. Only on Email sources
+          type: string
+        cc_blacklist:
+          description: Exclude from TO/CC. Only on Email sources
+          items:
+            type: string
+          type: array
+        postmark_enabled:
+          description: Enable Postmark. Only on Email sources
+          type: string
     Survey:
       properties:
         id:
