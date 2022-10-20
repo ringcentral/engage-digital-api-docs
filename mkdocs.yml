@@ -70,6 +70,7 @@ nav:
       - 'Apple Authenticate': interactions/structured-messages/apple-auth.md
       - 'Webview': 'interactions/structured-messages/webview.md'
       - 'Webview SDK': interactions/structured-messages/webview-sdk.md
+    - 'Bots API': interactions/bots-api.md
   - 'Routing':
     - 'Overview': routing/index.md
     - 'Getting Started': routing/quick-start.

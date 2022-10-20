@@ -26,6 +26,7 @@ x-tag-groups:
     popular: true
     tags:
       - Attachments
+      - Bots
       - Communities
       - Contents
       - Identities
@@ -97,6 +98,7 @@ tags:
   - name: Presence Status
   - name: Survey Responses
   - name: Surveys
+  - name: Bots
 
 paths:
   '/topologies/{topologyId}/activate':
@@ -341,6 +343,51 @@ paths:
       summary: Getting an attachment from its id
       tags:
         - Attachments
+  '/bots/handover':
+    post:
+      description: This method is used to handover a thread from bot to agent or from agent to bot (only Messenger sources, see Bots API documentation)
+      operationId: handoverFromBotToAgent
+      parameters:
+        - description: The foreign_id of the identity for which you want to do the handover.
+          in: query
+          name: identity_foreign_id
+          required: true
+          schema:
+            type: string
+        - description: The app that has thread control before handover.
+          in: query
+          name: from
+          required: true
+          schema:
+            type: string
+        - description: The app that should get thread control after handover.
+          in: query
+          name: to
+          required: true
+          schema:
+            type: string
+        - description: The type of channel.
+          in: query
+          name: type
+          required: true
+          schema:
+            type: string
+        - description: The id of the Facebook's app that controls the Bot.
+          in: query
+          name: app_id
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HandoverFromBotToAgentResponse'
+          description: Success
+      summary: Bot handover
+      tags:
+        - Bots
   /categories:
     get:
       description: This method renders categories ordered by creation date (ascending).
@@ -7754,6 +7801,12 @@ components:
           items:
             $ref: '#/components/schemas/Webhook'
           type: array
+    HandoverFromBotToAgentResponse:
+      properties:
+        status:
+          type: string
+        message:
+          type: string
     Identity:
       properties:
         avatar_url:
