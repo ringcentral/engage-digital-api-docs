@@ -6478,6 +6478,12 @@
                       "value": "\u003cinteger\u003e",
                       "description": "this field defines the time before a task expires (in seconds).",
                       "disabled": true
+                    },
+                    {
+                      "key": "agent_sla",
+                      "value": "\u003cinteger\u003e",
+                      "description": "Agent SLA in seconds.",
+                      "disabled": true
                     }
                   ]
                 },
