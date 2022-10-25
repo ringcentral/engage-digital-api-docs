@@ -505,6 +505,74 @@
           ]
         },
         {
+          "name": "Bots",
+          "description": {
+            "type": "text/plain"
+          },
+          "item": [
+            {
+              "name": "Bot handover",
+              "request": {
+                "url": {
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/bots/handover",
+                  "host": [
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
+                  ],
+                  "path": [
+                    "1.0",
+                    "bots",
+                    "handover"
+                  ],
+                  "query": [
+                    {
+                      "key": "identity_foreign_id",
+                      "value": "\u003cstring\u003e",
+                      "description": "The foreign_id of the identity for which you want to do the handover.",
+                      "disabled": true
+                    },
+                    {
+                      "key": "from",
+                      "value": "\u003cstring\u003e",
+                      "description": "The app that has thread control before handover.",
+                      "disabled": true
+                    },
+                    {
+                      "key": "to",
+                      "value": "\u003cstring\u003e",
+                      "description": "The app that should get thread control after handover.",
+                      "disabled": true
+                    },
+                    {
+                      "key": "type",
+                      "value": "\u003cstring\u003e",
+                      "description": "The type of channel.",
+                      "disabled": true
+                    },
+                    {
+                      "key": "app_id",
+                      "value": "\u003cstring\u003e",
+                      "description": "The id of the Facebook's app that controls the Bot.",
+                      "disabled": true
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "description": "This method is used to handover a thread from bot to agent or from agent to bot (only Messenger sources, see Bots API documentation)"
+              }
+            }
+          ]
+        },
+        {
           "name": "Communities",
           "description": {
             "type": "text/plain"
