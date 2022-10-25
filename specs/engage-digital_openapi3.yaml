@@ -734,6 +734,12 @@ paths:
           required: false
           schema:
             type: integer
+        - description: Agent SLA in seconds.
+          in: query
+          name: agent_sla
+          required: false
+          schema:
+            type: integer
       responses:
         '200':
           content:
@@ -7109,6 +7115,8 @@ components:
             type: string
           type: array
         task_timeout_seconds:
+          type: integer
+        agent_sla:
           type: integer
         updated_at:
           format: date-time
