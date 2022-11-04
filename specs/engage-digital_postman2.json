@@ -1865,6 +1865,12 @@
                       "disabled": true
                     },
                     {
+                      "key": "default_task_priority",
+                      "value": "\u003cinteger\u003e",
+                      "description": "Default priority for interactions.",
+                      "disabled": true
+                    },
+                    {
                       "key": "enable_android",
                       "value": "\u003cboolean\u003e",
                       "description": "Only on Engage Messaging sources that are not on livechat mode. Enable or disable the source on Android.",
@@ -1892,6 +1898,12 @@
                       "key": "imap_mailboxes_to_import",
                       "value": "\u003carray.string.csv\u003e",
                       "description": "Folders to synchronize. Does not accept empty array or blank values. Only on Email sources.",
+                      "disabled": true
+                    },
+                    {
+                      "key": "imap_mailbox_used_for_sent_mail",
+                      "value": "\u003cstring\u003e",
+                      "description": "Folder for 'Sent Mail'. Only on Email sources.",
                       "disabled": true
                     },
                     {
@@ -2030,6 +2042,24 @@
                       "key": "cc_blacklist",
                       "value": "\u003carray.string.csv\u003e",
                       "description": "Exclude from TO/CC. Only on Email sources",
+                      "disabled": true
+                    },
+                    {
+                      "key": "email_parser",
+                      "value": "\u003cboolean\u003e",
+                      "description": "Email parser (BBCode). Only on Email sources",
+                      "disabled": true
+                    },
+                    {
+                      "key": "time_for_thread_inclusion",
+                      "value": "\u003cinteger\u003e",
+                      "description": "Time for thread inclusion. Only on Email sources",
+                      "disabled": true
+                    },
+                    {
+                      "key": "time_for_thread_inclusion_enabled",
+                      "value": "\u003cboolean\u003e",
+                      "description": "Enable time for thread inclusion. Only on Email sources",
                       "disabled": true
                     }
                   ]

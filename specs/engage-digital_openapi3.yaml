@@ -982,6 +982,12 @@ paths:
           required: false
           schema:
             type: string
+        - description: Default priority for interactions.
+          in: query
+          name: default_task_priority
+          required: false
+          schema:
+            type: integer
         - description: Only on Engage Messaging sources that are not on livechat mode. Enable or disable the source on Android.
           in: query
           name: enable_android
@@ -1014,6 +1020,12 @@ paths:
             items:
               type: string
             type: array
+        - description: Folder for 'Sent Mail'. Only on Email sources.
+          in: query
+          name: imap_mailbox_used_for_sent_mail
+          required: false
+          schema:
+            type: string
         - description: IMAP server address. Only on Email sources
           in: query
           name: imap_address
@@ -1174,6 +1186,24 @@ paths:
             items:
               type: string
             type: array
+        - description: Email parser (BBCode). Only on Email sources
+          in: query
+          name: email_parser
+          required: false
+          schema:
+            type: boolean
+        - description: Time for thread inclusion. Only on Email sources
+          in: query
+          name: time_for_thread_inclusion
+          required: false
+          schema:
+            type: integer
+        - description: Enable time for thread inclusion. Only on Email sources
+          in: query
+          name: time_for_thread_inclusion_enabled
+          required: false
+          schema:
+            type: boolean
       responses:
         '200':
           content:
@@ -8629,6 +8659,10 @@ components:
           description: Response time (seconds)
           format: int32
           type: integer
+        default_task_priority:
+          description: Default priority for interactions
+          format: int32
+          type: integer
         status:
           type: string
         template_messages:
@@ -8681,6 +8715,18 @@ components:
           items:
             type: string
           type: array
+        email_parser:
+          description: Email parser (BBCode). Only on Email sources
+          type: boolean
+        time_for_thread_inclusion_enabled:
+          description: Enable time for thread inclusion. Only on Email sources
+          type: boolean
+        time_for_thread_inclusion:
+          description: Time for thread inclusion. Only on Email sources
+          type: integer
+        imap_mailbox_used_for_sent_mail:
+          description: Folder for 'Sent Mail'. Only on Email sources
+          type: string
     Survey:
       properties:
         id:
