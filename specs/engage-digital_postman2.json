@@ -2121,7 +2121,7 @@
                     {
                       "key": "time_for_thread_inclusion",
                       "value": "\u003cinteger\u003e",
-                      "description": "Time for thread inclusion. Only on Email sources",
+                      "description": "Time for thread inclusion.",
                       "disabled": true
                     },
                     {
