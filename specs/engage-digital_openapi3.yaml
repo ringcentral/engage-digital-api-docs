@@ -26,6 +26,7 @@ x-tag-groups:
     popular: true
     tags:
       - Attachments
+      - Bots
       - Communities
       - Contents
       - Identities
@@ -97,6 +98,7 @@ tags:
   - name: Presence Status
   - name: Survey Responses
   - name: Surveys
+  - name: Bots
 
 paths:
   '/topologies/{topologyId}/activate':
@@ -341,6 +343,51 @@ paths:
       summary: Getting an attachment from its id
       tags:
         - Attachments
+  '/bots/handover':
+    post:
+      description: This method is used to handover a thread from bot to agent or from agent to bot (only Messenger sources, see Bots API documentation)
+      operationId: handoverFromBotToAgent
+      parameters:
+        - description: The foreign_id of the identity for which you want to do the handover.
+          in: query
+          name: identity_foreign_id
+          required: true
+          schema:
+            type: string
+        - description: The app that has thread control before handover.
+          in: query
+          name: from
+          required: true
+          schema:
+            type: string
+        - description: The app that should get thread control after handover.
+          in: query
+          name: to
+          required: true
+          schema:
+            type: string
+        - description: The type of channel.
+          in: query
+          name: type
+          required: true
+          schema:
+            type: string
+        - description: The id of the Facebook's app that controls the Bot.
+          in: query
+          name: app_id
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HandoverFromBotToAgentResponse'
+          description: Success
+      summary: Bot handover
+      tags:
+        - Bots
   /categories:
     get:
       description: This method renders categories ordered by creation date (ascending).
@@ -684,6 +731,12 @@ paths:
         - description: this field defines the time before a task expires (in seconds).
           in: query
           name: task_timeout_seconds
+          required: false
+          schema:
+            type: integer
+        - description: Agent SLA in seconds.
+          in: query
+          name: agent_sla
           required: false
           schema:
             type: integer
@@ -7291,6 +7344,8 @@ components:
           type: array
         task_timeout_seconds:
           type: integer
+        agent_sla:
+          type: integer
         updated_at:
           format: date-time
           type: string
@@ -7982,6 +8037,12 @@ components:
           items:
             $ref: '#/components/schemas/Webhook'
           type: array
+    HandoverFromBotToAgentResponse:
+      properties:
+        status:
+          type: string
+        message:
+          type: string
     Identity:
       properties:
         avatar_url:
@@ -8593,7 +8654,7 @@ components:
           description: Only on Engage Messaging sources. Boolean describing if the source is enabled on the web or not.
           type: boolean
         auto_response_triggers:
-          description: Only on Email sources. Automatic messages.
+          description: Automatic Messages. Only on sources which supports Automatic Messages.
           type: array
           items:
             properties:
@@ -8604,7 +8665,7 @@ components:
               body:
                 type: string
         auto_response_trigger_enabled:
-          description: Only on Email sources. Boolean describing if answers are enabled to first messages and/or to messages outside business hours.
+          description: Boolean describing if answers are enabled to first messages and/or to messages outside business hours. Only on sources which supports Automatic Messages.
           properties:
             first_message_from_user:
               type: boolean
@@ -8612,7 +8673,7 @@ components:
               type: boolean
           type: object
         auto_response_trigger_grace_periods:
-          description: Only on Email sources. Integer describing time between two messages.
+          description: Integer describing time between two messages. Only on sources which supports Automatic Messages.
           properties:
             first_message_from_user:
               type: integer
@@ -8620,7 +8681,7 @@ components:
               type: integer
           type: object
         signatures:
-          description: Only on Email sources. Signatures.
+          description: Signatures.
           type: array
           items:
             properties:
@@ -8628,6 +8689,9 @@ components:
                 type: string
               body:
                 type: string
+        from_name:
+          description: Custom sender name. Only on sources which supports a custom sender name.
+          type: string
         error_message:
           type: string
         template_message_namespace:
@@ -8698,6 +8762,7 @@ components:
                 type: string
           type: array
         time_sheet_ids:
+          description: Business Hours (Limited to 1)
           items:
             type: string
           type: array
@@ -8705,6 +8770,9 @@ components:
           description: Priority boost of transferred tasks
           format: int32
           type: integer
+        attachments_security_level:
+          description: Attachments security level. ("strict", "relaxed", or "permissive"). Strict allows images and medias. Relaxed allows images, media and documents. Permissive allows all kind of attachments
+          type: string
         type:
           type: string
         updated_at:
@@ -8727,6 +8795,78 @@ components:
         imap_mailbox_used_for_sent_mail:
           description: Folder for 'Sent Mail'. Only on Email sources
           type: string
+        imap_smtp_email:
+          description: Email address to synchronize. Only on Email sources
+          type: string
+        imap_mailboxes_to_import:
+          description: Folders to synchronize. Only on Email sources
+          items:
+            type: string
+          type: array
+        imap_address:
+          description: IMAP server address. Only on Email sources
+          type: string
+        imap_port:
+          description: IMAP server port. Only on Email sources
+          format: int32
+          type: integer
+        imap_username:
+          description: IMAP username. Only on Email sources
+          type: string
+        imap_use_ssl_tls:
+          description: Use SSL/TLS protocol to establish secure IMAP connection. Only on Email sources
+          type: boolean
+        imap_use_start_tls:
+          description: Use STARTTLS protocol to establish secure IMAP connection. Only on Email sources
+          type: boolean
+        imap_authentication_type:
+          description: IMAP Authentication type ("basic" or "microsoft_identity_platform"). Only on Email sources
+          type: string
+        imap_ssl_verify_mode:
+          description: IMAP SSL verification mode. ("NONE", "PEER", "CLIENT_ONCE" or "FAIL_IF_NO_PEER_CERT"). Only on Email sources
+          type: string
+        smtp_address:
+          description: SMTP server address. Only on Email sources
+          type: string
+        smtp_port:
+          description: SMTP server port. Only on Email sources
+          format: int32
+          type: integer
+        smtp_username:
+          description: SMTP username. Only on Email sources
+          type: string
+        smtp_use_ssl_tls:
+          description: Use SSL/TLS protocol to establish secure SMTP connection. Only on Email sources
+          type: boolean
+        smtp_use_start_tls:
+          description: Use STARTTLS protocol to establish secure SMTP connection. Only on Email sources
+          type: boolean
+        smtp_authentication_type:
+          description: SMTP Authentication type ("basic" or "microsoft_identity_platform"). Only on Email sources
+          type: string
+        smtp_ssl_verify_mode:
+          description: SMTP SSL verification mode ("NONE", "PEER", "CLIENT_ONCE" or "FAIL_IF_NO_PEER_CERT"). Only on Email sources
+          type: string
+        smtp_helo_domain:
+          description: Used to identify HELO/EHLO when connecting to the SMTP server. Only on Email sources
+          type: string
+        threading_heuristics:
+          description: Threading_heuristics. Only on Email sources
+          type: boolean
+        spam_assassin_level:
+          description: Spam threshold ("disabled", "relaxed", or "strict"). Only on Email sources
+          type: string
+        whitelisted_emails:
+          description: Whitelisted emails. All emails received from this address won't be threaded and can be associated with an anonymous identity or the Reply-To, if there is one. To be filled when implementing a form. Only on Email sources
+          type: string
+        cc_blacklist:
+          description: Exclude from TO/CC. Only on Email sources
+          items:
+            type: string
+          type: array
+        postmark_enabled:
+          description: Enable Postmark. Only on Email sources
+          type: boolean
     Survey:
       properties:
         id:

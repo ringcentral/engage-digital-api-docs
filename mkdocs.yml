@@ -56,6 +56,7 @@ nav:
       - 'Creating Interventions': interactions/chatbots/interventions.md
       - 'Transferring to an Agent': interactions/chatbots/transfers.md
       - 'Closing Threads': interactions/chatbots/threads.md
+      - 'Bots API': interactions/bots-api.md
     - 'Structured Messages':
       - 'Overview': interactions/structured-messages/index.md
       - 'Getting Started': interactions/structured-messages/quick-start.md
