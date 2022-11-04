@@ -1245,7 +1245,7 @@ paths:
           required: false
           schema:
             type: boolean
-        - description: Time for thread inclusion. Only on Email sources
+        - description: Time for thread inclusion.
           in: query
           name: time_for_thread_inclusion
           required: false
@@ -8783,18 +8783,15 @@ components:
           items:
             type: string
           type: array
-        email_parser:
-          description: Email parser (BBCode). Only on Email sources
-          type: boolean
+        time_for_thread_inclusion:
+          description: Time for thread inclusion
+          type: integer
         time_for_thread_inclusion_enabled:
           description: Enable time for thread inclusion. Only on Email sources
           type: boolean
-        time_for_thread_inclusion:
-          description: Time for thread inclusion. Only on Email sources
-          type: integer
-        imap_mailbox_used_for_sent_mail:
-          description: Folder for 'Sent Mail'. Only on Email sources
-          type: string
+        email_parser:
+          description: Email parser (BBCode). Only on Email sources
+          type: boolean
         imap_smtp_email:
           description: Email address to synchronize. Only on Email sources
           type: string
@@ -8803,6 +8800,9 @@ components:
           items:
             type: string
           type: array
+        imap_mailbox_used_for_sent_mail:
+          description: Folder for 'Sent Mail'. Only on Email sources
+          type: string
         imap_address:
           description: IMAP server address. Only on Email sources
           type: string
