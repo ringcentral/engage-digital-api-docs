@@ -887,6 +887,14 @@ paths:
           required: false
           schema:
             type: integer
+        - description: Business Hours (Limited to 1)
+          in: query
+          name: 'time_sheet_ids[]'
+          required: false
+          schema:
+            items:
+              type: string
+            type: array
         - description: Response time (seconds)
           in: query
           name: sla_response
@@ -902,6 +910,16 @@ paths:
               - max
               - half
               - base
+            type: string
+        - description: 'Attachments security level. ("strict", "relaxed", or "permissive"). Strict allows images and medias. Relaxed allows images, media and documents. Permissive allows all kind of attachments'
+          in: query
+          name: attachments_security_level
+          required: false
+          schema:
+            enum:
+              - strict
+              - relaxed
+              - permissive
             type: string
         - description: Priority boost of messages with intervention (Integer)
           in: query
@@ -1011,6 +1029,18 @@ paths:
           required: false
           schema:
             type: integer
+        - description: Custom sender name. Only on sources which supports a custom sender name.
+          in: query
+          name: from_name
+          required: false
+          schema:
+            type: string
+        - description: Default priority for interactions.
+          in: query
+          name: default_task_priority
+          required: false
+          schema:
+            type: integer
         - description: Only on Engage Messaging sources that are not on livechat mode. Enable or disable the source on Android.
           in: query
           name: enable_android
@@ -1026,6 +1056,204 @@ paths:
         - description: Only on Engage Messaging sources that are not on livechat mode. Enable or disable the source on the web.
           in: query
           name: enable_web
+          required: false
+          schema:
+            type: boolean
+        - description: Email address to synchronize. Only on Email sources
+          in: query
+          name: imap_smtp_email
+          required: false
+          schema:
+            type: string
+        - description: Folders to synchronize. Does not accept empty array or blank values. Only on Email sources.
+          in: query
+          name: imap_mailboxes_to_import
+          required: false
+          schema:
+            items:
+              type: string
+            type: array
+        - description: Folder for 'Sent Mail'. Only on Email sources.
+          in: query
+          name: imap_mailbox_used_for_sent_mail
+          required: false
+          schema:
+            type: string
+        - description: IMAP server address. Only on Email sources
+          in: query
+          name: imap_address
+          required: false
+          schema:
+            type: string
+        - description: IMAP server port. Only on Email sources
+          in: query
+          name: imap_port
+          required: false
+          schema:
+            type: integer
+        - description: IMAP username. Only on Email sources
+          in: query
+          name: imap_username
+          required: false
+          schema:
+            type: string
+        - description: IMAP password. Used when IMAP authentication type is `basic`. Only on Email sources
+          in: query
+          name: imap_password
+          required: false
+          schema:
+            type: string
+        - description: IMAP OAuth 2.0 refresh token. Used when IMAP authentication type is `microsoft_identity_platform`. Only on Email sources
+          in: query
+          name: imap_oauth_refresh_token
+          required: false
+          schema:
+            type: string
+        - description: Use SSL/TLS protocol to establish secure IMAP connection. Only on Email sources
+          in: query
+          name: imap_use_ssl_tls
+          required: false
+          schema:
+            type: boolean
+        - description: Use STARTTLS protocol to establish secure IMAP connection. Only on Email sources
+          in: query
+          name: imap_use_start_tls
+          required: false
+          schema:
+            type: boolean
+        - description: 'IMAP Authentication type ("basic" or "microsoft_identity_platform"). Only on Email sources'
+          in: query
+          name: imap_authentication_type
+          required: false
+          schema:
+            enum:
+              - basic
+              - microsoft_identity_platform
+            type: string
+        - description: 'IMAP SSL verification mode. ("NONE", "PEER", "CLIENT_ONCE" or "FAIL_IF_NO_PEER_CERT"). Only on Email sources'
+          in: query
+          name: imap_ssl_verify_mode
+          required: false
+          schema:
+            enum:
+              - NONE
+              - PEER
+              - CLIENT_ONCE
+              - FAIL_IF_NO_PEER_CERT
+            type: string
+        - description: SMTP server address. Only on Email sources
+          in: query
+          name: smtp_address
+          required: false
+          schema:
+            type: string
+        - description: SMTP server port. Only on Email sources
+          in: query
+          name: smtp_port
+          required: false
+          schema:
+            type: integer
+        - description: SMTP username. Only on Email sources
+          in: query
+          name: smtp_username
+          required: false
+          schema:
+            type: string
+        - description: SMTP password. Used when SMTP authentication type is `basic`. Only on Email sources
+          in: query
+          name: smtp_password
+          required: false
+          schema:
+            type: string
+        - description: SMTP OAuth 2.0 refresh token. Used when SMTP authentication type is `microsoft_identity_platform`. Only on Email sources
+          in: query
+          name: smtp_oauth_refresh_token
+          required: false
+          schema:
+            type: string
+        - description: Use SSL/TLS protocol to establish secure SMTP connection. Only on Email sources
+          in: query
+          name: smtp_use_ssl_tls
+          required: false
+          schema:
+            type: boolean
+        - description: Use STARTTLS protocol to establish secure IMAP connection. Only on Email sources
+          in: query
+          name: smtp_use_start_tls
+          required: false
+          schema:
+            type: boolean
+        - description: 'SMTP Authentication type ("basic" or "microsoft_identity_platform"). Only on Email sources'
+          in: query
+          name: smtp_authentication_type
+          required: false
+          schema:
+            enum:
+              - basic
+              - microsoft_identity_platform
+            type: string
+        - description: 'SMTP SSL verification mode. ("NONE", "PEER", "CLIENT_ONCE" or "FAIL_IF_NO_PEER_CERT"). Only on Email sources'
+          in: query
+          name: smtp_ssl_verify_mode
+          required: false
+          schema:
+            enum:
+              - NONE
+              - PEER
+              - CLIENT_ONCE
+              - FAIL_IF_NO_PEER_CERT
+            type: string
+        - description: Used to identify HELO/EHLO when connecting to the SMTP server. Only on Email sources
+          in: query
+          name: smtp_helo_domain
+          required: false
+          schema:
+            type: string
+        - description: Threading heuristics. Only on Email sources
+          in: query
+          name: threading_heuristics
+          required: false
+          schema:
+            type: boolean
+        - description: 'Spam threshold ("disabled", "relaxed", or "strict"). Only on Email sources'
+          in: query
+          name: spam_assassin_level
+          required: false
+          schema:
+            enum:
+              - disabled
+              - relaxed
+              - strict
+            type: string
+        - description: Whitelisted emails. All emails received from this address won't be threaded and can be associated with an anonymous identity or the Reply-To, if there is one. To be filled when implementing a form. Only on Email sources
+          in: query
+          name: whitelisted_emails
+          required: false
+          schema:
+            type: string
+        - description: Exclude from TO/CC. Only on Email sources
+          in: query
+          name: cc_blacklist
+          required: false
+          schema:
+            items:
+              type: string
+            type: array
+        - description: Email parser (BBCode). Only on Email sources
+          in: query
+          name: email_parser
+          required: false
+          schema:
+            type: boolean
+        - description: Time for thread inclusion.
+          in: query
+          name: time_for_thread_inclusion
+          required: false
+          schema:
+            type: integer
+        - description: Enable time for thread inclusion. Only on Email sources
+          in: query
+          name: time_for_thread_inclusion_enabled
           required: false
           schema:
             type: boolean
@@ -8495,6 +8723,10 @@ components:
           description: Response time (seconds)
           format: int32
           type: integer
+        default_task_priority:
+          description: Default priority for interactions
+          format: int32
+          type: integer
         status:
           type: string
         template_messages:
@@ -8551,6 +8783,15 @@ components:
           items:
             type: string
           type: array
+        time_for_thread_inclusion:
+          description: Time for thread inclusion
+          type: integer
+        time_for_thread_inclusion_enabled:
+          description: Enable time for thread inclusion. Only on Email sources
+          type: boolean
+        email_parser:
+          description: Email parser (BBCode). Only on Email sources
+          type: boolean
         imap_smtp_email:
           description: Email address to synchronize. Only on Email sources
           type: string
@@ -8559,6 +8800,9 @@ components:
           items:
             type: string
           type: array
+        imap_mailbox_used_for_sent_mail:
+          description: Folder for 'Sent Mail'. Only on Email sources
+          type: string
         imap_address:
           description: IMAP server address. Only on Email sources
           type: string
@@ -8622,7 +8866,7 @@ components:
           type: array
         postmark_enabled:
           description: Enable Postmark. Only on Email sources
-          type: string
+          type: boolean
     Survey:
       properties:
         id:
