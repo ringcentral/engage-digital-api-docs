@@ -4137,6 +4137,16 @@
                       "key": "use_emoji",
                       "value": "\u003cboolean\u003e",
                       "disabled": true
+                    },
+                    {
+                      "key": "receive_functional_alerts",
+                      "value": "\u003cboolean\u003e",
+                      "disabled": true
+                    },
+                    {
+                      "key": "receive_configurational_alerts",
+                      "value": "\u003cboolean\u003e",
+                      "disabled": true
                     }
                   ]
                 },
@@ -4536,6 +4546,16 @@
                     },
                     {
                       "key": "use_emoji",
+                      "value": "\u003cboolean\u003e",
+                      "disabled": true
+                    },
+                    {
+                      "key": "receive_functional_alerts",
+                      "value": "\u003cboolean\u003e",
+                      "disabled": true
+                    },
+                    {
+                      "key": "receive_configurational_alerts",
                       "value": "\u003cboolean\u003e",
                       "disabled": true
                     }
