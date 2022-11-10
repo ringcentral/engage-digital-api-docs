@@ -4231,6 +4231,16 @@ paths:
           required: false
           schema:
             type: boolean
+        - in: query
+          name: receive_functional_alerts
+          required: false
+          schema:
+            type: boolean
+        - in: query
+          name: receive_configurational_alerts
+          required: false
+          schema:
+            type: boolean
       responses:
         '200':
           content:
@@ -4623,6 +4633,16 @@ paths:
             type: boolean
         - in: query
           name: use_emoji
+          required: false
+          schema:
+            type: boolean
+        - in: query
+          name: receive_functional_alerts
+          required: false
+          schema:
+            type: boolean
+        - in: query
+          name: receive_configurational_alerts
           required: false
           schema:
             type: boolean
@@ -8509,6 +8529,10 @@ components:
         use_cobrowsing:
           type: boolean
         use_emoji:
+          type: boolean
+        receive_functional_alerts:
+          type: boolean
+        receive_configurational_alerts:
           type: boolean
     Settings:
       properties:
