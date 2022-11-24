@@ -788,6 +788,77 @@ This instance method returns the id of the intervention’s identity.
 
 Object ID
 
+## SMCC.NICE.MAX
+
+The `SMCC.NICE.MAX` namespace contains method for integration of NICE.MAX in ED.
+
+### SMCC.NICE.MAX.onPostMessage(callback)
+
+Registers a callback for messages received with *postMessage* and the issuer was *MAX* from an iframe. Use multiple times to register many callbacks.
+
+#### Parameters
+
+| Name | Description |
+|-|-|
+| `callback` | A callback called when a message from an allowed iframe is received. |
+
+#### Returns
+
+none
+
+#### Example
+
+```javascript
+SMCC.NICE.MAX.onPostMessage(function(data, origin) {
+  console.log(data.text, “received from”, origin);
+});
+```
+
+!!! info "Note"
+    Works almost like:
+    [SMCC.Window.onPostMessage(callback)](../methods/#smccwindowonpostmessagecallback)
+
+### SMCC.NICE.MAX.registerEvents(subscriptionTypes)
+
+Registers a callback for messages received with postMessage from an iframe.
+
+#### Parameters
+
+| Name | Description |
+|-|-|
+| `subscriptionTypes` | This is a required array of strings. It is not case sensitive, since everything in the array will be normalized to lowercase. The values in the array are additive. Each option specifies a type of message that you will receive. There are a few possible valid entries: <ul><li>`all`: This will return everything.</li><li>`agent`: This will return anything that doesn't have a contact ID.</li><li>`contact`: This will return events limited either by the contact ID requested or the contact ID for the associated panel if the IFrame is connected to a skill or contact.</li><li>`contacts`: This will return all events that have a contact ID. If you are in a contact panel and want additional information with the panel's contact, add this field.</li><li>`sessioninfo`: This will return an agent's session token. If you are looking to make agent session specific API calls, register for this event.</li></ul>
+
+!!! info "Note"
+    Array can't be empty.
+
+#### Returns
+
+none
+
+#### Example
+
+```javascript
+SMCC.NICE.MAX.registerEvents(["all"]);
+```
+
+### SMCC.NICE.MAX.unregisterEvents()
+
+Unregister a callback for message received.
+
+#### Parameters
+
+none
+
+#### Returns
+
+none
+
+#### Example
+
+```javascript
+SMCC.NICE.MAX.unregisterEvents();
+```
+
 ## SMCC.Promise
 
 `SMCC.Promise` provides a chainable utility object. Here is a good [blog](http://blog.parse.com/2013/01/29/whats-so-great-about-javascript-promises/) that describes how promises are working. Engage Digital SMCC
