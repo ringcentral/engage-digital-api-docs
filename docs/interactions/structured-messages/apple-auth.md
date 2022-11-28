@@ -3,7 +3,7 @@
 This structured message provides a way to send an OAuth2 authentication request to the customer. See [Channel capabilities](../#channel-capabilities) to know on which channel you can use this structured message.
 
 ## Prerequisites
-* Set up OAuth URL and Token URL in "End User Authentication” on your Messages for Business Account.
+* Set up OAuth URL, Token URL and Client Identifier in "End User Authentication” on your Messages for Business Account.
 
 ## Request Example
 
@@ -30,11 +30,11 @@ curl -X POST "https://[YOUR DOMAIN].api.digital.ringcentral.com/1.0/contents"
 |-|-|-|
 | **`source_id`** | String | ID of the source. |
 | **`in_reply_to_id`** | String | ID of the message being replied to. |
-| **`body`** | String | The authenticate structured content body. |
+| **`body`** | String | Content of the authentication message that the customer will receive. Optional if you provided the "Default title" field with a value in your channel settings. |
 | **`structured_content`** | Object | Payload of the structured message. |
 | **Structured Content Settings** | | |
 | **`structured_content.type`** | String | Type of the structured message. Must be "authenticate". |
-| **`structured_content.response_body`** | String | **Optional**. Field to be the body of the user’s response. If absent, default is the structured message body. |
+| **`structured_content.response_body`** | String | **Optional**. Field to be the body of the user’s response. If absent, thedefault is the structured message body. |
 | **`structured_content.attachment_id`** | Object | **Optional**. Existing attachment id used to decorate the authenticate structured message with an image.<br>Supports private attachments.<br>Should be jpg, jpeg or png.<br>Should be less than 5MB. |
 
 ### Webhook
