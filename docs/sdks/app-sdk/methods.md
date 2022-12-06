@@ -790,11 +790,11 @@ Object ID
 
 ## SMCC.NICE.MAX
 
-The `SMCC.NICE.MAX` namespace contains method for integration of NICE.MAX in ED.
+The `SMCC.NICE.MAX` namespace contains methods for the integration of NICE.MAX in ED.
 
 ### SMCC.NICE.MAX.onPostMessage(callback)
 
-Registers a callback for messages received with *postMessage* and the issuer was *MAX* from an iframe. Use multiple times to register many callbacks.
+Registers a callback for messages received with *postMessage* and issuer *MAX* from an iframe. Use multiple times to register multiple callbacks.
 
 #### Parameters
 
@@ -810,12 +810,12 @@ none
 
 ```javascript
 SMCC.NICE.MAX.onPostMessage(function(data, origin) {
-  console.log(data.text, “received from”, origin);
+  console.log(data.text, "received from", origin);
 });
 ```
 
 !!! info "Note"
-    Works almost like:
+    Works similarly to:
     [SMCC.Window.onPostMessage(callback)](../methods/#smccwindowonpostmessagecallback)
 
 ### SMCC.NICE.MAX.registerEvents(subscriptionTypes)
@@ -843,7 +843,7 @@ SMCC.NICE.MAX.registerEvents(["all"]);
 
 ### SMCC.NICE.MAX.unregisterEvents()
 
-Unregister a callback for message received.
+Unregister all callbacks linked to NICE events.
 
 #### Parameters
 
