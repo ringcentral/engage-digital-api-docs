@@ -39,7 +39,7 @@ When we post a message, we'll send the following attributes:
 
 | Name | Type | Description |
 |-|-|-|
-| attachments | Array | Example: `[{ "url": "https://www.ringcentral.com/brand.png", type: "image" }]` |
+| attachments | Array | Example: `[{ "url": "https://www.ringcentral.com/brand.png", "type": "image", "filename": "brand.png" }]` |
 | author_id| String | |
 | body | String | |
 | categories | Array | |
@@ -83,7 +83,7 @@ When we post a private message, we'll send the following attributes:
 
 | Name | Type | Description |
 |-|-|-|
-| attachments | Array | Example: `[{ "url": "https://www.ringcentral.com/brand.png", type: "image" }]` |
+| attachments | Array | Example: `[{ "url": "https://www.ringcentral.com/brand.png", "type": "image", "filename": "brand.png" }]` |
 | author_id| String | |
 | body | String | |
 | categories | Array | |
@@ -120,6 +120,7 @@ When we post a thread, we'll send the following attributes:
 
 | Name | Type | Description |
 |-|-|-|
+| attachments | Array | Example: `[{ "url": "https://www.ringcentral.com/brand.png", "type": "image", "filename": "brand.png" }]` |
 | author_id| String | |
 | body | String | |
 | categories | Array | |
