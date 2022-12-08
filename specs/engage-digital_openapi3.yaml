@@ -8535,6 +8535,8 @@ components:
           type: boolean
         dump_in_preprod:
           type: boolean
+        enable_auto_scroll_down:
+          type: boolean
         expire_password_after:
           type: integer
         expire_password_enabled:
