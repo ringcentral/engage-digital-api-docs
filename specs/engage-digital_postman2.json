@@ -4658,6 +4658,12 @@
                       "disabled": true
                     },
                     {
+                      "key": "enable_auto_scroll_down",
+                      "value": "\u003cboolean\u003e",
+                      "description": "enable auto scroll down (Boolean)",
+                      "disabled": true
+                    },
+                    {
                       "key": "expire_password_enabled",
                       "value": "\u003cboolean\u003e",
                       "description": "enable password expiration (Boolean)",

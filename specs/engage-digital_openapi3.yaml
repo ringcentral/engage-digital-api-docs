@@ -4711,6 +4711,11 @@ paths:
           required: false
           schema:
             type: integer
+        - description: enable auto scroll down (Boolean)
+          in: query
+          name: enable_auto_scroll_down
+          schema:
+            type: boolean
         - description: enable password expiration (Boolean)
           in: query
           name: expire_password_enabled
@@ -8534,6 +8539,8 @@ components:
         display_only_unknown_bbcode:
           type: boolean
         dump_in_preprod:
+          type: boolean
+        enable_auto_scroll_down:
           type: boolean
         expire_password_after:
           type: integer
