@@ -6699,6 +6699,12 @@ paths:
           required: false
           schema:
             type: string
+        - description: The name of the signature.
+          in: query
+          name: name
+          required: false
+          schema:
+            type: string
       responses:
         '200':
           content:
@@ -6807,6 +6813,12 @@ paths:
         - description: The two-letter code of the signature language.
           in: query
           name: language
+          required: false
+          schema:
+            type: string
+        - description: The name of the signature.
+          in: query
+          name: name
           required: false
           schema:
             type: string

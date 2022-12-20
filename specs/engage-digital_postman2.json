@@ -6367,6 +6367,12 @@
                       "value": "\u003cstring\u003e",
                       "description": "The two-letter code of the signature language.",
                       "disabled": true
+                    },
+                    {
+                      "key": "name",
+                      "value": "\u003cstring\u003e",
+                      "description": "The name of the signature.",
+                      "disabled": true
                     }
                   ]
                 },
@@ -6476,6 +6482,12 @@
                       "key": "language",
                       "value": "\u003cstring\u003e",
                       "description": "The two-letter code of the signature language.",
+                      "disabled": true
+                    },
+                    {
+                      "key": "name",
+                      "value": "\u003cstring\u003e",
+                      "description": "The name of the signature.",
                       "disabled": true
                     }
                   ]
