@@ -6699,7 +6699,8 @@ paths:
           required: false
           schema:
             type: string
-        - description: The name of the signature.
+        - description: The signature name.
+
           in: query
           name: name
           required: false
