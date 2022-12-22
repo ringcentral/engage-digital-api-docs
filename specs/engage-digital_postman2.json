@@ -6371,7 +6371,7 @@
                     {
                       "key": "name",
                       "value": "\u003cstring\u003e",
-                      "description": "The name of the signature.",
+                      "description": "The signature name.",
                       "disabled": true
                     }
                   ]
@@ -6487,7 +6487,7 @@
                     {
                       "key": "name",
                       "value": "\u003cstring\u003e",
-                      "description": "The name of the signature.",
+                      "description": "The signature name.",
                       "disabled": true
                     }
                   ]
