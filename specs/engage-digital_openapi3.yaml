@@ -6700,7 +6700,6 @@ paths:
           schema:
             type: string
         - description: The signature name.
-
           in: query
           name: name
           required: false
@@ -6818,7 +6817,6 @@ paths:
           schema:
             type: string
         - description: The signature name.
-
           in: query
           name: name
           required: false
