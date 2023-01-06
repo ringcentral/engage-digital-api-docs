@@ -7,6 +7,6 @@ This guide is meant to provide developers with a comprehensive overview of the a
 
 In the following diagram the "Survey integration bridge" is the part you are responsible for and its job is to allow data from the third party survey provider to be formatted and forwarded to Engage Digital.
 
-See [Getting Started](../quick-start) to start integrating your third party survey provider in Engage Digital.
+See [Getting Started](./quick-start.md) to start integrating your third party survey provider in Engage Digital.
 
 <img class="img-fluid" src="../../../img/survey-sdk-overview-diagram.png">
