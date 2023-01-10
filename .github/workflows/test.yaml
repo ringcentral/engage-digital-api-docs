@@ -22,7 +22,7 @@ jobs:
     - name: Postman generated
       working-directory: specs
       run: |
-        go install github.com/grokify/spectrum@latest
+        go install github.com/grokify/spectrum@v1.15.0
         spectrum --config engage-digital_postman2.config.json --basePostmanFile engage-digital_postman2.base.json --openapiFile engage-digital_openapi3.yaml --postmanFile engage-digital_postman2.json.new
         diff engage-digital_postman2.json engage-digital_postman2.json.new
   lint:
