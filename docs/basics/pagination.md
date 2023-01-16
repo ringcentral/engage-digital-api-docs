@@ -66,46 +66,46 @@ Query parameter: `q={filters}` (eg. `q=assigned_to_me:"true"`)
 
 #### Parameters
 
-| parameter | value | description |  |
-|---|---|---|---|
-| active_and_assigned | true or false | Restrict on assigned and active threads. Active threads have at least one intervention open that is not deferred. |  |
-| active_and_assigned_to | user_id | Restrict on threads active and assigned to specific user id. Active threads have at least one intervention open that is not deferred. |  |
-| active_and_assigned_to_disabled_agents | true | Restrict on threads active and assigned to disabled agents. Active threads have at least one intervention open that is not deferred. |  |
-| active_and_assigned_to_me | true or false | Restrict on threads active and assigned to you. Active threads have at least one intervention open that is not deferred. |  |
-| active_and_assigned_to_team | team_id | Restrict on threads active and assigned to given id. Negation is supported. Active threads have at least one intervention open that is not deferred. |  |
-| assigned | true or false | Restrict on assigned (and not assigned) threads. Assigned threads are threads with at least one intervention (open or closed). |  |
-| assigned_to | user_id | Restrict on thread assigned to specified user id. Assigned threads are threads with at least one intervention (open or closed). |  |
-| assigned_to_me | true or false | Restrict on threads assigned to you (and not assigned to you). Assigned threads are threads with at least one intervention (open or closed). |  |
-| assigned_to_team | team_id | Restrict on thread assigned to given team id. Negation is supported. |  |
-| not_published | true or false | Restrict on threads that includes contents are not published. |  |
-| approval_required | true or false | Restrict on threads that includes contents that require s approval. |  |
-| categorized | true or false | Restrict on threads with at least one category or no category. |  |
-| categorized_in | category_id | Restrict on category id. Many categories can be specified if you want to match at least one of specified categories. |  |
-| categorized_in_mine | true or false | Restrict on your categories. It matches one of your categories. |  |
-| categorized_in_mine_of | category_id | Restrict threads containing categories in at least one of your categories in given category id. Negation is not supported. |  |
-| first_content_after | date | Restrict threads where their first content is created after given date. Negation is not supported. |  |
-| first_content_before | date | Restrict threads where their first content is created before given date. Negation is not supported. |  |
-| foreign | id | Restrict threads with the mentioned foreign_id. Negation is not supported. |  |
-| forwarded_into | category_id | Restrict threads containing forwarded contents in at least one of given category id. Negation is supported. |  |
-| forwarded_into_mine | true or false | Restrict threads containing forwarded contents in at least one of your categories. |  |
-| forwarded_into_mine_of | category_id | Restrict threads containing forwarded categories in at least one of your categories in given category id. Negation is not supported. |  |
-| language |  | Restrict threads by content language. |  |
-| language |  | Restrict threads by content language. |  |
-| last_content_after | date | Restrict threads where their last content is created after given date. Negation is not supported. |  |
-| last_content_before | date | Restrict threads where their last content is created before given date. Negation is not supported. |  |
+| parameter | value | description |
+|---|---|---|
+| active_and_assigned | true or false | Restrict on assigned and active threads. Active threads have at least one intervention open that is not deferred. |
+| active_and_assigned_to | user_id | Restrict on threads active and assigned to specific user id. Active threads have at least one intervention open that is not deferred. |
+| active_and_assigned_to_disabled_agents | true | Restrict on threads active and assigned to disabled agents. Active threads have at least one intervention open that is not deferred. |
+| active_and_assigned_to_me | true or false | Restrict on threads active and assigned to you. Active threads have at least one intervention open that is not deferred. |
+| active_and_assigned_to_team | team_id | Restrict on threads active and assigned to given id. Negation is supported. Active threads have at least one intervention open that is not deferred. |
+| assigned | true or false | Restrict on assigned (and not assigned) threads. Assigned threads are threads with at least one intervention (open or closed). |
+| assigned_to | user_id | Restrict on thread assigned to specified user id. Assigned threads are threads with at least one intervention (open or closed). |
+| assigned_to_me | true or false | Restrict on threads assigned to you (and not assigned to you). Assigned threads are threads with at least one intervention (open or closed). |
+| assigned_to_team | team_id | Restrict on thread assigned to given team id. Negation is supported. |
+| not_published | true or false | Restrict on threads that includes contents are not published. |
+| approval_required | true or false | Restrict on threads that includes contents that require s approval. |
+| categorized | true or false | Restrict on threads with at least one category or no category. |
+| categorized_in | category_id | Restrict on category id. Many categories can be specified if you want to match at least one of specified categories. |
+| categorized_in_mine | true or false | Restrict on your categories. It matches one of your categories. |
+| categorized_in_mine_of | category_id | Restrict threads containing categories in at least one of your categories in given category id. Negation is not supported. |
+| first_content_after | date | Restrict threads where their first content is created after given date. Negation is not supported. |
+| first_content_before | date | Restrict threads where their first content is created before given date. Negation is not supported. |
+| foreign | id | Restrict threads with the mentioned foreign_id. Negation is not supported. |
+| forwarded_into | category_id | Restrict threads containing forwarded contents in at least one of given category id. Negation is supported. |
+| forwarded_into_mine | true or false | Restrict threads containing forwarded contents in at least one of your categories. |
+| forwarded_into_mine_of | category_id | Restrict threads containing forwarded categories in at least one of your categories in given category id. Negation is not supported. |
+| language |  | Restrict threads by content language. |
+| language |  | Restrict threads by content language. |
+| last_content_after | date | Restrict threads where their last content is created after given date. Negation is not supported. |
+| last_content_before | date | Restrict threads where their last content is created before given date. Negation is not supported. |
 | needs_manual_categorization | true | Restrict threads having a content that needs manual categorization (meaning ICE could not classify a mandatory category) |
-| not_categorized_in |  | Restrict threads that do not contain one or several specific categories |  |
-| opened_and_assigned | true or false | Restrict on threads under open interventions. |  |
-| opened_and_assigned_to | user_id | Restrict on thread under open intervention assigned to specified user id. |  |
-| opened_and_assigned_to_disabled_agents | true | Restrict on threads under open interventions assigned to disabled agents. |  |
-| opened_and_assigned_to_me | true or false | Restrict on threads under your open interventions. |  |
-| opened_and_assigned_to_team | team_id | Restrict on threads under open interventions of given team id. Negation is supported. |  |
+| not_categorized_in |  | Restrict threads that do not contain one or several specific categories |
+| opened_and_assigned | true or false | Restrict on threads under open interventions. |
+| opened_and_assigned_to | user_id | Restrict on thread under open intervention assigned to specified user id. |
+| opened_and_assigned_to_disabled_agents | true | Restrict on threads under open interventions assigned to disabled agents. |
+| opened_and_assigned_to_me | true or false | Restrict on threads under your open interventions. |
+| opened_and_assigned_to_team | team_id | Restrict on threads under open interventions of given team id. Negation is supported. |
 | status_in | name | Restrict on thread with least one of specified status. Accepted statuses are new (a freshly created), assigned (under intervention), forwarded, replied (replied by an agent), user_reply (a reply made by an agent), user_initiated (initiated by an agent) or ignored. Negation can be specified using a minus before keyword. |
-| scheduled | true or false | Restrict on thread with a content scheduled for publication in the future. |  |
-| text |words | Restrict on threads matching specified text (ignore case). Negation is not supported yet. Note that this is the default keyword. |  |
-| source | id | Restrict on threads whose source has the given id. Negation is supported. If you specify many times this criteria, this will match any of specified source id. |  |
-| identity | id | Restrict on threads that contains a message from given identity id. You can specify many ids. Negation is not supported. |  |
-| identity_group | id | Restrict on threads that contains a message from given identity group id. You can specify many ids. Negation is not supported. |  |
+| scheduled | true or false | Restrict on thread with a content scheduled for publication in the future. |
+| text |words | Restrict on threads matching specified text (ignore case). Negation is not supported yet. Note that this is the default keyword. |
+| source | id | Restrict on threads whose source has the given id. Negation is supported. If you specify many times this criteria, this will match any of specified source id. |
+| identity | id | Restrict on threads that contains a message from given identity id. You can specify many ids. Negation is not supported. |
+| identity_group | id | Restrict on threads that contains a message from given identity group id. You can specify many ids. Negation is not supported. |
 
 ### Additional Info
 
