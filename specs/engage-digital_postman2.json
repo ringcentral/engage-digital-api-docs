@@ -1819,6 +1819,12 @@
                       "disabled": true
                     },
                     {
+                      "key": "sla_threshold",
+                      "value": "\u003cinteger\u003e",
+                      "description": "Customer SLA warning threshold (greater than 0 and less than 100, default value is 0).",
+                      "disabled": true
+                    },
+                    {
                       "key": "sla_expired_strategy",
                       "value": "\u003cstring\u003e",
                       "description": "SLA expired strategy (\"max\", \"half\" or \"base\")",
@@ -6767,6 +6773,12 @@
                       "key": "agent_sla",
                       "value": "\u003cinteger\u003e",
                       "description": "Agent SLA in seconds.",
+                      "disabled": true
+                    },
+                    {
+                      "key": "agent_sla_threshold",
+                      "value": "\u003cinteger\u003e",
+                      "description": "Agent SLA warning threshold (greater than 0 and less than 100, default value is 0).",
                       "disabled": true
                     }
                   ]
