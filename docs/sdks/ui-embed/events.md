@@ -229,3 +229,9 @@ Triggered when a task is updated:
 | identitySignature            | String (can be null)                  | Anonyme                                                                          |
 | identityAvatarUrl            | String (can be null)                  | https://domain-test.engagement.dimelo.com/assets/default_avatar/thumb-412009.png |
 <br>
+
+### Global Events
+
+#### `smcc:user:disconnected` (omnichannel only)
+
+Triggered when the user is disconnected from the application or on failed authentication when the experimental `Disable redirection to login when embedded` feature is enabled.
