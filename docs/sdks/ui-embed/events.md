@@ -234,4 +234,4 @@ Triggered when a task is updated:
 
 #### `smcc:user:disconnected` (omnichannel only)
 
-Triggered when the user is disconnected from the application or on failed authentication when the experimental `Disable redirection to login when embedded` feature is enabled.
+Triggered when the user is disconnected from the application or on failed authentication when the account is omnichannel.
