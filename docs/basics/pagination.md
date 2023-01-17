@@ -90,7 +90,6 @@ Query parameter: `q={filters}` (eg. `q=assigned_to_me:"true"`)
 | forwarded_into_mine | true or false | Restrict threads containing forwarded contents in at least one of your categories. |
 | forwarded_into_mine_of | category_id | Restrict threads containing forwarded categories in at least one of your categories in given category id. Negation is not supported. |
 | language |  | Restrict threads by content language. |
-| language |  | Restrict threads by content language. |
 | last_content_after | date | Restrict threads where their last content is created after given date. Negation is not supported. |
 | last_content_before | date | Restrict threads where their last content is created before given date. Negation is not supported. |
 | needs_manual_categorization | true | Restrict threads having a content that needs manual categorization (meaning ICE could not classify a mandatory category) |
