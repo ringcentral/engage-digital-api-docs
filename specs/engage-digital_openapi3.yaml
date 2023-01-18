@@ -1682,6 +1682,13 @@ paths:
               type: string
             type: array
         - description: >-
+            Marks the message as automatically sent.
+          in: query
+          name: auto_submitted
+          required: false
+          schema:
+            type: boolean
+        - description: >-
             For an email source. The subject of the email. This parameter is
             mandatory when initiating a discussion.
           in: query
