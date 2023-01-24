@@ -752,6 +752,12 @@
                       "disabled": true
                     },
                     {
+                      "key": "auto_submitted",
+                      "value": "\u003cboolean\u003e",
+                      "description": "Marks the message as automatically sent.",
+                      "disabled": true
+                    },
+                    {
                       "key": "title",
                       "value": "\u003cstring\u003e",
                       "description": "For an email source. The subject of the email. This parameter is mandatory when initiating a discussion.",
