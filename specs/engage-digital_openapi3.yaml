@@ -908,7 +908,8 @@ paths:
           required: false
           schema:
             type: integer
-        - description: Customer SLA warning threshold (greater than 0 and less than 100, default value is 0).
+        - description: Customer SLA warning threshold (must be greater than 0 and less than 100, default value is 0).
+
           in: query
           name: sla_threshold
           required: false
