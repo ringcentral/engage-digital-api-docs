@@ -740,6 +740,13 @@ paths:
           required: false
           schema:
             type: integer
+        - description: Agent SLA warning threshold (must be greater than 0 and less than 100, default value is 0).
+
+          in: query
+          name: agent_sla_threshold
+          required: false
+          schema:
+            type: integer
       responses:
         '200':
           content:
@@ -898,6 +905,13 @@ paths:
         - description: Response time (seconds)
           in: query
           name: sla_response
+          required: false
+          schema:
+            type: integer
+        - description: Customer SLA warning threshold (must be greater than 0 and less than 100, default value is 0).
+
+          in: query
+          name: sla_threshold
           required: false
           schema:
             type: integer
@@ -7290,6 +7304,8 @@ components:
           type: integer
         agent_sla:
           type: integer
+        agent_sla_threshold:
+          type: integer
         updated_at:
           format: date-time
           type: string
@@ -8669,6 +8685,11 @@ components:
           type: string
         sla_response:
           description: Response time (seconds)
+          format: int32
+          type: integer
+        sla_threshold:
+          description: Customer SLA warning threshold (must be greater than 0 and less than 100, default value is 0).
+
           format: int32
           type: integer
         default_task_priority:
