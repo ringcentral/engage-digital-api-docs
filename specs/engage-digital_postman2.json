@@ -6778,7 +6778,7 @@
                     {
                       "key": "agent_sla_threshold",
                       "value": "\u003cinteger\u003e",
-                      "description": "Agent SLA warning threshold (greater than 0 and less than 100, default value is 0).",
+                      "description": "Agent SLA warning threshold (must be greater than 0 and less than 100, default value is 0).",
                       "disabled": true
                     }
                   ]
