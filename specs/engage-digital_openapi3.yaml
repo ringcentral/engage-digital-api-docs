@@ -8761,7 +8761,8 @@ components:
           format: int32
           type: integer
         sla_threshold:
-          description: Customer SLA warning threshold (greater than 0 and less than 100, default value is 0).
+          description: Customer SLA warning threshold (must be greater than 0 and less than 100, default value is 0).
+
           format: int32
           type: integer
         default_task_priority:
