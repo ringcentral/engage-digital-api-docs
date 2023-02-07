@@ -735,8 +735,8 @@
                     },
                     {
                       "key": "private",
-                      "value": "\u003cinteger\u003e",
-                      "description": "Created contents are public by default, set this parameter to \"1\" in order to create a private reply. It is NOT supported on every source.",
+                      "value": "\u003cboolean\u003e",
+                      "description": "Created contents are public by default, set this parameter to \"true\" in order to create a private reply. It is NOT supported on every source.",
                       "disabled": true
                     },
                     {
