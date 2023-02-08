@@ -39,7 +39,7 @@ https://your-subdomain.digital.ringcentral.com/login
 
 directly. If you want your users to only be able to log in through the SSO you will need to disable this checkbox - once you do, users can still see the form on */login*, but they will not be able to log in anymore. Be careful though, this means that no one will be able to log in if the SSO is down for some reason.
 
-![SSO configuration in Engage Digital admin](../../img/sso-config-admin.png)
+![SSO configuration in Engage Digital admin](../img/sso-config-admin.png)
 
 ### Used as Default Authentication
 
@@ -66,7 +66,7 @@ When authenticating with JWT the given Engage Digital user will be matched **fir
 
 and then by his `External ID`, which can be set in the user configuration part of the admin:
 
-![User ID configuration in Engage Digital admin](../../img/sso-user-id-config.png)
+![User ID configuration in Engage Digital admin](../img/sso-user-id-config.png)
 
 ### Authentication Process
 
@@ -79,7 +79,7 @@ Here are the steps for a user to become authenticated within Engage Digital usin
 5. The user is redirected back to Engage Digital JWT Endpoint URL.
 6. We make sure the JWT data is valid and authenticate the user, identified by the `external_id` provided in the token (must either match the user’s `JWT external ID` or his `External ID`), within Engage Digital.
 
-![Sequence Diagram for SSO Authentication Flow](../../img/sso-sequence.png)
+![Sequence Diagram for SSO Authentication Flow](../img/sso-sequence.png)
 
 This flow allows for the authentication to be completely decoupled from Engage Digital, without hindering the user experience. If the user was already authenticated on your side, he will not even notice the back and forth and will have the desired page loaded seemingly directly.
 

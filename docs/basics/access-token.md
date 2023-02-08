@@ -22,7 +22,7 @@ To obtain a token, follow these steps:
     
 4. Finally, enter a label/description for your token, and select an Agent on which the token will act on behalf of. Make sure the token is "enabled" and click "Save."
     
-      ![API access token](../../img/api-token.png)
+      ![API access token](../img/api-token.png)
 
 ## How do I transmit the token to the Engage REST API?
 

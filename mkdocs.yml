@@ -73,7 +73,7 @@ nav:
       - 'Webview SDK': interactions/structured-messages/webview-sdk.md
   - 'Routing':
     - 'Overview': routing/index.md
-    - 'Getting Started': routing/quick-start.
+    - 'Getting Started': routing/quick-start
   - 'Digital':
     - 'Exports':
       - 'Overview': digital/exports/index.md
