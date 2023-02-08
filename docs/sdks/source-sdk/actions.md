@@ -25,7 +25,7 @@ There are a few operations which have a predefined meaning, in the sense that we
 
 Any other operation will be considered a custom action and will result in a button showing up in the interface for the specific content to which it applies.
 
-Please have a look on the [Actions details](../action-details.md) page for the complete list of parameters each action needs and the answer we except to receive.
+Please have a look on the [Actions details](../action-details) page for the complete list of parameters each action needs and the answer we except to receive.
 
 ## Collection vs Instance Level
 
