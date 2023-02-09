@@ -1667,14 +1667,14 @@ paths:
           schema:
             type: string
         - description: >-
-            Created contents are public by default, set this parameter to "1" in
+            Created contents are public by default, set this parameter to "true" in
             order to create a private reply. It is NOT supported on every
             source.
           in: query
           name: private
           required: false
           schema:
-            type: integer
+            type: boolean
         - description: >-
             The source to create content to. If you specify `in_reply_to_id`
             parameter, source will be determined from it. Otherwise, this
