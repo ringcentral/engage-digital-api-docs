@@ -17,7 +17,7 @@ Replying to a message is as simple as composing an HTTP POST to the `contents` r
 | `author_id` | The identity id of content. This parameter is not mandatory, by default it use the token’s user first identity on source. |
 | `body` | The content’s body. This parameter is mandatory. | 
 | `in_reply_to_id` | The content’s id you want to reply to. If omitted, a new discussion will be created. If source does not support to initiate discussion this parameter is mandatory. |
-| `private` | Created contents are public by default, set this parameter to "1" in order to create a private reply. |
+| `private` | Created contents are public by default, set this parameter to `true` in order to create a private reply. |
 | `source_id` | The source to create content to. If you specify `in_reply_to_id` parameter, source will be determined from. Otherwise, this parameter is mandatory. |
 
 ### Authorization
