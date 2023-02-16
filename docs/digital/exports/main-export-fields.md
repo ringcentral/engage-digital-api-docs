@@ -52,6 +52,10 @@ Other custom data can be present in the thread export depending on the source ty
 | visit_count            | Website visit count      | Integer                                  | 21                           | [Sensitive](../#sensitive-columns)                                                                                                                          |
 | visit _started_at      | Website visit start time | Timestamp                                | 1470399681                   | [Sensitive](../#sensitive-columns)                                                                                                                          |
 | {custom_variable_name} | Chat custom variable     | Depends on the chat custom variable type | 12                           | [Sensitive](../#sensitive-columns) Columns corresponding to the chat custom variables will also be available                                                |
+| intervention_user_names | Agent user names       | Array                                    | John Doe, Leo Major          | [Sensitive](../#sensitive-columns) |
+
+| opened_intervention_user_names | Active agent user names | Array                            | John Doe, Leo Major          | [Sensitive](../#sensitive-columns) |
+
 
 ## Message(`Export::Contents`)
 
