@@ -1833,7 +1833,7 @@
                     {
                       "key": "sla_filtering_categories_strategy",
                       "value": "\u003cstring\u003e",
-                      "description": "Filtering strategy for Customer SLA indicator",
+                      "description": "Categories filtering strategy for Customer SLA indicator",
                       "disabled": true
                     },
                     {

@@ -913,7 +913,7 @@ paths:
           required: false
           schema:
             type: integer
-        - description: Filtering strategy for Customer SLA indicator
+        - description: Categories filtering strategy for Customer SLA indicator
           in: query
           name: sla_filtering_categories_strategy
           required: false
@@ -8707,7 +8707,7 @@ components:
           format: int32
           type: integer
         sla_filtering_categories_strategy:
-          description: Filtering strategy for Customer SLA indicator ("ignored_categories" or "selected_categories")
+          description: Categories filtering strategy for Customer SLA indicator ("ignored_categories" or "selected_categories")
           type: string
         sla_filtering_category_ids:
           description: Filtering categories for Customer SLA indicator
