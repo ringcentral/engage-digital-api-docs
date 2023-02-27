@@ -1831,6 +1831,18 @@
                       "disabled": true
                     },
                     {
+                      "key": "sla_filtering_categories_strategy",
+                      "value": "\u003cstring\u003e",
+                      "description": "Categories filtering strategy for Customer SLA indicator",
+                      "disabled": true
+                    },
+                    {
+                      "key": "sla_filtering_category_ids[]",
+                      "value": "\u003carray.string.csv\u003e",
+                      "description": "Filtering categories for Customer SLA indicator",
+                      "disabled": true
+                    },
+                    {
                       "key": "sla_expired_strategy",
                       "value": "\u003cstring\u003e",
                       "description": "SLA expired strategy (\"max\", \"half\" or \"base\")",

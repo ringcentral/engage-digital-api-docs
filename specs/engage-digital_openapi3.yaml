@@ -741,7 +741,6 @@ paths:
           schema:
             type: integer
         - description: Agent SLA warning threshold (must be greater than 0 and less than 100, default value is 0).
-
           in: query
           name: agent_sla_threshold
           required: false
@@ -909,12 +908,28 @@ paths:
           schema:
             type: integer
         - description: Customer SLA warning threshold (must be greater than 0 and less than 100, default value is 0).
-
           in: query
           name: sla_threshold
           required: false
           schema:
             type: integer
+        - description: Categories filtering strategy for Customer SLA indicator
+          in: query
+          name: sla_filtering_categories_strategy
+          required: false
+          schema:
+            enum:
+              - ignored_categories
+              - selected_categories
+            type: string
+        - description: Filtering categories for Customer SLA indicator
+          in: query
+          name: 'sla_filtering_category_ids[]'
+          required: false
+          schema:
+            items:
+              type: string
+            type: array
         - description: 'SLA expired strategy ("max", "half" or "base")'
           in: query
           name: sla_expired_strategy
@@ -8689,9 +8704,16 @@ components:
           type: integer
         sla_threshold:
           description: Customer SLA warning threshold (must be greater than 0 and less than 100, default value is 0).
-
           format: int32
           type: integer
+        sla_filtering_categories_strategy:
+          description: Categories filtering strategy for Customer SLA indicator ("ignored_categories" or "selected_categories")
+          type: string
+        sla_filtering_category_ids:
+          description: Filtering categories for Customer SLA indicator
+          items:
+            type: string
+          type: array
         default_task_priority:
           description: Default priority for interactions
           format: int32
