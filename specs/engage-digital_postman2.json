@@ -511,6 +511,42 @@
           },
           "item": [
             {
+              "name": "Bot engage",
+              "request": {
+                "url": {
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/bots/engage",
+                  "host": [
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
+                  ],
+                  "path": [
+                    "1.0",
+                    "bots",
+                    "engage"
+                  ],
+                  "query": [
+                    {
+                      "key": "content_id",
+                      "value": "\u003cstring\u003e",
+                      "description": "The content_id of the content for which you want to engage the bot.",
+                      "disabled": true
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "description": "This method is used to engage a thread from a bot. In case of success it renders the intervention, otherwise, it renders an error (422 HTTP code). This method opens intervention as the virtual agent user."
+              }
+            },
+            {
               "name": "Bot handover",
               "request": {
                 "url": {
