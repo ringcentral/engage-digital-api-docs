@@ -557,7 +557,7 @@
                     {
                       "key": "intervention_id",
                       "value": "\u003cstring\u003e",
-                      "description": "The id of the intervention that we want to handover (Engage Virtual Agent handover).",
+                      "description": "The id of the intervention that we want to handover (only for Engage Virtual Agent handover).",
                       "disabled": true
                     }
                   ]
@@ -573,7 +573,7 @@
                     "value": "application/json"
                   }
                 ],
-                "description": "This method is used to handover a conversation between a bot and an agent. It handles are 2 different cases, specific sources handover (Messenger for example, see Bots API doc) and handover between Engage Virtual Agents and human agents"
+                "description": "This method is used to handover a conversation between a bot and an agent. It handles 2 different cases, specific sources handover (Messenger for example, see Bots API doc) and handover between Engage Virtual Agents and human agents"
               }
             }
           ]

@@ -346,7 +346,7 @@ paths:
   '/bots/handover':
     post:
       description: This method is used to handover a conversation between a bot and an agent.
-        It handles are 2 different cases, specific sources handover (Messenger for example, see Bots API doc)
+        It handles 2 different cases, specific sources handover (Messenger for example, see Bots API doc)
         and handover between Engage Virtual Agents and human agents
       operationId: handoverFromBotToAgent
       parameters:
@@ -380,7 +380,7 @@ paths:
           required: false
           schema:
             type: string
-        - description: The id of the intervention that we want to handover (Engage Virtual Agent handover).
+        - description: The id of the intervention that we want to handover (only for Engage Virtual Agent handover).
           in: query
           name: intervention_id
           required: false
