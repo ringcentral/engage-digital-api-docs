@@ -525,33 +525,39 @@
                   ],
                   "query": [
                     {
-                      "key": "identity_foreign_id",
-                      "value": "\u003cstring\u003e",
-                      "description": "The foreign_id of the identity for which you want to do the handover.",
-                      "disabled": true
-                    },
-                    {
                       "key": "from",
                       "value": "\u003cstring\u003e",
-                      "description": "The app that has thread control before handover.",
+                      "description": "Who we are taking the conversation control from (either bot or agent).",
                       "disabled": true
                     },
                     {
                       "key": "to",
                       "value": "\u003cstring\u003e",
-                      "description": "The app that should get thread control after handover.",
+                      "description": "Who we are giving the convesation control to (either bot or agent).",
                       "disabled": true
                     },
                     {
                       "key": "type",
                       "value": "\u003cstring\u003e",
-                      "description": "The type of channel.",
+                      "description": "The type of handover (either type of channel or engage_virtual_agent).",
+                      "disabled": true
+                    },
+                    {
+                      "key": "identity_foreign_id",
+                      "value": "\u003cstring\u003e",
+                      "description": "The foreign_id of the identity for which you want to do the handover (only for source specific handover).",
                       "disabled": true
                     },
                     {
                       "key": "app_id",
                       "value": "\u003cstring\u003e",
-                      "description": "The id of the Facebook's app that controls the Bot.",
+                      "description": "The id of the Facebook's app that controls the Bot (only for source specific handover).",
+                      "disabled": true
+                    },
+                    {
+                      "key": "intervention_id",
+                      "value": "\u003cstring\u003e",
+                      "description": "The id of the intervention that we want to handover (Engage Virtual Agent handover).",
                       "disabled": true
                     }
                   ]
@@ -567,7 +573,7 @@
                     "value": "application/json"
                   }
                 ],
-                "description": "This method is used to handover a thread from bot to agent or from agent to bot (only Messenger sources, see Bots API documentation)"
+                "description": "This method is used to handover a conversation between a bot and an agent. It handles are 2 different cases, specific sources handover (Messenger for example, see Bots API doc) and handover between Engage Virtual Agents and human agents"
               }
             }
           ]
