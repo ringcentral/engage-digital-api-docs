@@ -370,36 +370,44 @@ paths:
         - Bots
   '/bots/handover':
     post:
-      description: This method is used to handover a thread from bot to agent or from agent to bot (only Messenger sources, see Bots API documentation)
+      description: This method is used to handover a conversation between a bot and an agent.
+        It handles 2 different cases, specific sources handover (Messenger for example, see Bots API doc)
+        and handover between Engage Virtual Agents and human agents
       operationId: handoverFromBotToAgent
       parameters:
-        - description: The foreign_id of the identity for which you want to do the handover.
-          in: query
-          name: identity_foreign_id
-          required: true
-          schema:
-            type: string
-        - description: The app that has thread control before handover.
+        - description: Who we are taking the conversation control from (either bot or agent).
           in: query
           name: from
           required: true
           schema:
             type: string
-        - description: The app that should get thread control after handover.
+        - description: Who we are giving the convesation control to (either bot or agent).
           in: query
           name: to
           required: true
           schema:
             type: string
-        - description: The type of channel.
+        - description: The type of handover (either type of channel or engage_virtual_agent).
           in: query
           name: type
           required: true
           schema:
             type: string
-        - description: The id of the Facebook's app that controls the Bot.
+        - description: The foreign_id of the identity for which you want to do the handover (only for source specific handover).
+          in: query
+          name: identity_foreign_id
+          required: true
+          schema:
+            type: string
+        - description: The id of the Facebook's app that controls the Bot (only for source specific handover).
           in: query
           name: app_id
+          required: false
+          schema:
+            type: string
+        - description: The id of the intervention that we want to handover (only for Engage Virtual Agent handover).
+          in: query
+          name: intervention_id
           required: false
           schema:
             type: string
