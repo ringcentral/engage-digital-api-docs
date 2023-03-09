@@ -343,6 +343,31 @@ paths:
       summary: Getting an attachment from its id
       tags:
         - Attachments
+  '/bots/engage':
+    post:
+      description: This method is used to engage a thread from a bot. In case of success
+        it renders the intervention, otherwise, it renders an error (422 HTTP
+        code). This method opens intervention as the virtual agent user.
+      operationId: botEngage
+      parameters:
+        - description: The content_id of the content for which you want to engage the bot.
+          in: query
+          name: content_id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Intervention'
+          description: Success
+        '422':
+          description: Unprocessable Entity
+      summary: Bot engage
+      tags:
+        - Bots
   '/bots/handover':
     post:
       description: This method is used to handover a conversation between a bot and an agent.
