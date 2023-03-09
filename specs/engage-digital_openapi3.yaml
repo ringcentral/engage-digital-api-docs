@@ -368,31 +368,6 @@ paths:
       summary: Bot engage
       tags:
         - Bots
-  '/bots/complete':
-    post:
-      description: This method is used to complete an intervention from a bot (closing the intervention and completing the task). 
-        In case of success it renders 200, otherwise, it renders an error (422 HTTP
-        code).
-      operationId: botComplete
-      parameters:
-        - description: The intervention_id of the intervention for which you want to complet.
-          in: query
-          name: intervention_id
-          required: true
-          schema:
-            type: string
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/BotCompleteResponse'
-          description: Success
-        '422':
-          description: Unprocessable Entity
-      summary: Bot complete
-      tags:
-        - Bots
   '/bots/handover':
     post:
       description: This method is used to handover a conversation between a bot and an agent.
@@ -8070,12 +8045,6 @@ components:
           items:
             $ref: '#/components/schemas/Webhook'
           type: array
-    BotCompleteResponse:
-      properties:
-        status:
-          type: string
-        message:
-          type: string
     HandoverFromBotToAgentResponse:
       properties:
         status:
