@@ -6,7 +6,7 @@ The embedded UI allows RingCentral Engage Digital to be integrated in third part
 
 ### Enable Iframe Integration
 
-By default, iframe integrations are not permitted. In order to use the embedded UI, you'll have to allow it. This parameter is available in the “security” advanced setting:
+By default, iframe integrations are not permitted. To use the embedded UI, please have "Deny iFrame integration" unchecked. This parameter is available in Admin view -> Settings -> Security -> General:
 
 <img src="../ui-embed/enable-iframe-integration.png" class="img-fluid">
 
