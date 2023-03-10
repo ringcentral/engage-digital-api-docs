@@ -529,6 +529,12 @@
                       "value": "\u003cstring\u003e",
                       "description": "The intervention_id of the intervention for which you want to complete.",
                       "disabled": true
+                    },
+                    {
+                      "key": "close_thread",
+                      "value": "\u003cboolean\u003e",
+                      "description": "Wether if the thread should be closed at the same time.",
+                      "disabled": true
                     }
                   ]
                 },
