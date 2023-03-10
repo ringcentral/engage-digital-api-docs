@@ -375,7 +375,7 @@ paths:
         code).
       operationId: botComplete
       parameters:
-        - description: The intervention_id of the intervention for which you want to complet.
+        - description: The intervention_id of the intervention for which you want to complete.
           in: query
           name: intervention_id
           required: true

@@ -527,7 +527,7 @@
                     {
                       "key": "intervention_id",
                       "value": "\u003cstring\u003e",
-                      "description": "The intervention_id of the intervention for which you want to complet.",
+                      "description": "The intervention_id of the intervention for which you want to complete.",
                       "disabled": true
                     }
                   ]
