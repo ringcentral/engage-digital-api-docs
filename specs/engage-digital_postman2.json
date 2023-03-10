@@ -511,6 +511,42 @@
           },
           "item": [
             {
+              "name": "Bot complete",
+              "request": {
+                "url": {
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/bots/complete",
+                  "host": [
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
+                  ],
+                  "path": [
+                    "1.0",
+                    "bots",
+                    "complete"
+                  ],
+                  "query": [
+                    {
+                      "key": "intervention_id",
+                      "value": "\u003cstring\u003e",
+                      "description": "The intervention_id of the intervention that you want to complete.",
+                      "disabled": true
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "description": "This method is used to complete an intervention from a bot (closing the intervention and completing the task). In case of success it renders 200, otherwise, it renders an error (422 HTTP code)."
+              }
+            },
+            {
               "name": "Bot engage",
               "request": {
                 "url": {
