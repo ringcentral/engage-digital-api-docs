@@ -376,12 +376,17 @@ paths:
       operationId: botComplete
       parameters:
         - description: The intervention_id of the intervention that you want to complete.
-
           in: query
           name: intervention_id
           required: true
           schema:
             type: string
+        - description: Wether if the thread should be closed at the same time.
+          in: query
+          name: close_thread
+          required: false
+          schema:
+            type: boolean
       responses:
         '200':
           content:
