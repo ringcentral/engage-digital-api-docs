@@ -14,6 +14,12 @@ The following files are used to generate the Postman collection and are not desi
 
 ## Postman Collection
 
+### Script
+
+Run `./gen_postman.sh`
+
+or proceed with the manual installation as described below
+
 Use `spectrum` to create the Postman 2.x collection from the OpenAPI 3 API Specification.
 
 ### Installation
