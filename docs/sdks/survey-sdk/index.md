@@ -9,4 +9,4 @@ In the following diagram the "Survey integration bridge" is the part you are res
 
 See [Getting Started](./quick-start.md) to start integrating your third party survey provider in Engage Digital.
 
-<img class="img-fluid" src="../../../img/survey-sdk-overview-diagram.png">
+<img class="img-fluid" src="../../img/survey-sdk-overview-diagram.png">

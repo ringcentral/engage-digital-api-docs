@@ -2,8 +2,8 @@
 
 Engage Digital provides a REST API (using JSON bodies) to create structured messages from third party applications. This provides a richer messaging experience for customers.
 
-<img class="img-fluid" width="396" src="../../../img/structured-messages-demo.png">
-<img class="img-fluid" width="398" src="../../../img/structured-messages-demo-template.png">
+<img class="img-fluid" width="396" src="../../img/structured-messages-demo.png">
+<img class="img-fluid" width="398" src="../../img/structured-messages-demo-template.png">
 
 <a target="new" href="https://ringcentral-tutorials.github.io/engage-digital-structured-messages-demo/index.html" class="btn btn-primary">Try it out</a>
 

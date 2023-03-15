@@ -20,7 +20,7 @@ All our requests are POST requests whose body will consist of an JSON object spe
 }
 ```
 
-We will also send a specific `X-SMCCSDK-SIGNATURE` header containing the hex encoded [HMAC SHA-512](https://en.wikipedia.org/wiki/HMAC) signature for the request body. You will need to verify this signature and discard any requests that fail this validation. [See below]() for a complete example of handling a request and sending the response.
+We will also send a specific `X-SMCCSDK-SIGNATURE` header containing the hex encoded [HMAC SHA-512](https://en.wikipedia.org/wiki/HMAC) signature for the request body. You will need to verify this signature and discard any requests that fail this validation. [See below](#complete-example) for a complete example of handling a request and sending the response.
 
 In case you are unable to authenticate request via `X-SMCCSDK-SIGNATURE` header, you can authenticate the request via a `signature` query parameter containing the hex encoded [HMAC SHA-512](https://en.wikipedia.org/wiki/HMAC) (we recommend you to use this method only if the first one does not work).
 

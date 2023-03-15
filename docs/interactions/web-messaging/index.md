@@ -126,7 +126,7 @@ On the Messaging mode, the user can start a new conversation on his own by click
 
 This can be used in the Rules Engine for some custom processing:
 
-<img class="img-fluid" width="696" src="../../../img/web-messaging-rules-engine.png">
+<img class="img-fluid" width="696" src="../../img/web-messaging-rules-engine.png">
 
 ## Visitor Identification
 
