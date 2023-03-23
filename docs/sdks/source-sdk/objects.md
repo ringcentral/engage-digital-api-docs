@@ -28,7 +28,7 @@ We ignore extra fields and you only need to provide fields marked as required. A
 | in_reply_to_id | String | It has to be a valid content ID if present. |
 | ip | String | Example: `1.2.3.4` |
 | language | String | Example `en` |
-| structured_content | Hash | ***Optional.*** Please keep in mind that an author used for structured content creation must be marked as a "puppet" identity and configured as a controlled identity in Engage Digital. Example: [Structured contents](../structured-contents). |
+| structured_content | Hash | ***Optional.*** Please keep in mind that an author used for structured content creation must be marked as a "puppet" identity and configured as a controlled identity in Engage Digital. Example: [Structured contents](../structured-messages). |
 | structured_reply | Hash | ***Optional.*** Can be used when object is a reply to a structured content with a payload. Example: `{ payload: "DEFINED_PAYLOAD" }` |
 | thread_id | String | ***Required*** If the option `messages.unthreaded` is set this field will be ignored. |
 | updated_at | DateTime | Supported formats: `2012-02-10`, `2012-10-01T17:18:40Z` (ISO 8601) |
@@ -39,7 +39,7 @@ When we post a message, we'll send the following attributes:
 
 | Name | Type | Description |
 |-|-|-|
-| attachments | Array | Example: `[{ "url": "https://www.ringcentral.com/brand.png", type: "image" }]` |
+| attachments | Array | Example: `[{ "url": "https://www.ringcentral.com/brand.png", "type": "image", "filename": "brand.png" }]` |
 | author_id| String | |
 | body | String | |
 | categories | Array | |
@@ -47,7 +47,7 @@ When we post a message, we'll send the following attributes:
 | format | String | Example: "text" |
 | in_reply_to_id | String | |
 | sender_name | String | Example: "Jane from RingCentral" |
-| structured_content | Hash | ***Optional.*** Example: [Structured contents](../structured-contents). |
+| structured_content | Hash | ***Optional.*** Example: [Structured contents](../structured-messages). |
 | thread_id | String | Unless the `messages.unthreaded` option is set |
 | updated_at | DateTime | Example: `2012-10-01T17:18:40Z` |
 
@@ -73,7 +73,7 @@ Please note that private messages don't use threads, but are organized based on 
 | ip | String | Example: `1.2.3.4`. |
 | language | String | Example `en`. |
 | recipient | Hash | ***Required*** An User object. |
-| structured_content | Hash | ***Optional.*** Please keep in mind that an author used for structured content creation must be marked as a "puppet" identity and configured as a controlled identity in Engage Digital. Example: [Structured contents](../structured-contents). |
+| structured_content | Hash | ***Optional.*** Please keep in mind that an author used for structured content creation must be marked as a "puppet" identity and configured as a controlled identity in Engage Digital. Example: [Structured contents](../structured-messages). |
 | structured_reply | Hash | ***Optional.*** Can be used when object is a reply to a structured content with a payload. Example: `{ payload: "DEFINED_PAYLOAD" }` |
 | updated_at | DateTime | Supported formats: `2012-02-10`, `2012-10-01T17:18:40Z` (ISO 8601) |
 
@@ -83,7 +83,7 @@ When we post a private message, we'll send the following attributes:
 
 | Name | Type | Description |
 |-|-|-|
-| attachments | Array | Example: `[{ "url": "https://www.ringcentral.com/brand.png", type: "image" }]` |
+| attachments | Array | Example: `[{ "url": "https://www.ringcentral.com/brand.png", "type": "image", "filename": "brand.png" }]` |
 | author_id| String | |
 | body | String | |
 | categories | Array | |
@@ -94,7 +94,7 @@ When we post a private message, we'll send the following attributes:
 | ip | String | |
 | sender_name | String | Example: "Jane from RingCentral" |
 | recipient_id | String | |
-| structured_content | Hash | ***Optional.*** Example: [Structured contents](../structured-contents). |
+| structured_content | Hash | ***Optional.*** Example: [Structured contents](../structured-messages). |
 | updated_at | DateTime | Example: `2012-10-01T17:18:40Z` |
 
 ## Threads
@@ -120,6 +120,7 @@ When we post a thread, we'll send the following attributes:
 
 | Name | Type | Description |
 |-|-|-|
+| attachments | Array | Example: `[{ "url": "https://www.ringcentral.com/brand.png", "type": "image", "filename": "brand.png" }]` |
 | author_id| String | |
 | body | String | |
 | categories | Array | |

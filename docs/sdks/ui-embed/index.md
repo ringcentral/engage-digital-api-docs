@@ -2,11 +2,11 @@
 
 The embedded UI allows RingCentral Engage Digital to be integrated in third parties, external CRMs or other customer care products.
 
-# Configuration
+## Configuration
 
-## Enable Iframe Integration
+### Enable Iframe Integration
 
-By default, iframe integrations are not permitted. In order to use the embedded UI, you'll have to allow it. This parameter is available in the “security” advanced setting:
+By default, iframe integrations are not permitted. To use the embedded UI, please have "Deny iFrame integration" unchecked. This parameter is available in Admin view -> Settings -> Security -> General:
 
 <img src="../ui-embed/enable-iframe-integration.png" class="img-fluid">
 
@@ -20,7 +20,7 @@ It will be done through the use of an iframe tag. The iframe's source attribute 
 <iframe src="https://{your-domain}.digital.ringcentral.com/tasks?view=no-header" width="1400" height="1000"></iframe>
 ```
 
-## Events Subscription
+### Events Subscription
 
 After that you have successfully integrated RingCentral Engage Digital in an iframe you can subscribe to the events sent by it. The communication can be established through the Window web API, like this:
 

@@ -22,8 +22,8 @@ paths:
     put:
       description: >-
         This method activates an existing topology from given attributes and renders it in case of success.
-        
-        
+
+
         Authorization: Only users that have the right to manage topologies.
       operationId: activateTopology
       parameters:
@@ -46,8 +46,8 @@ paths:
     put:
       description: >-
         This method updates an existing topology from given attributes and renders it in case of success.
-        
-        
+
+
         Authorization: only users that have the right to manage topologies. Topology must be inactive or the response will return an error.
       operationId: updateTopology
       parameters:
@@ -74,8 +74,8 @@ paths:
     delete:
       description: >-
         This method destroys an existing topology. It renders topology itself. It renders a 404 if id is invalid.
-        
-        
+
+
         Authorization: Only users that have the right to manage topologies.
       operationId: deleteTopology
       parameters:
@@ -97,8 +97,8 @@ paths:
     get:
       description: >-
         This method renders a topology from given id.
-      
-      
+
+
         Authorization: only users that have the right to manage topologies.
       operationId: getTopology
       parameters:
@@ -121,8 +121,8 @@ paths:
     post:
       description: >-
         This method creates a topology. In case of success it renders the topology, otherwise, it renders an error (422 HTTP code).
-      
-      
+
+
         Authorization: Only users that have the right to manage topologies.
       operationId: createTopology
       requestBody:
@@ -133,7 +133,7 @@ paths:
               $ref: '#/components/schemas/CreateUpdateTopology'
       responses:
         '200':
-            description: Created topology 
+            description: Created topology
             content:
               application/json:
                 schema:
@@ -144,8 +144,8 @@ paths:
     get:
       description: >-
         This method renders all topologies ordered by name (in alphabetical order).
-        
-        
+
+
         Authorization: Only users that have the right to manage topologies
       operationId: getAllTopologies
       responses:
@@ -4227,6 +4227,11 @@ paths:
           required: false
           schema:
             type: integer
+        - description: enable auto scroll down (Boolean)
+          in: query
+          name: enable_auto_scroll_down
+          schema:
+            type: boolean
         - description: enable password expiration (Boolean)
           in: query
           name: expire_password_enabled
@@ -5784,7 +5789,7 @@ paths:
             items:
               type: string
             type: array
-        - description:  >- 
+        - description:  >-
             Whether the user is passwordless or not (boolean).
             Must be used with the corresponding SSO configuration.
           in: query
@@ -6178,6 +6183,12 @@ paths:
           required: false
           schema:
             type: string
+        - description: The signature name.
+          in: query
+          name: name
+          required: false
+          schema:
+            type: string
       responses:
         '200':
           content:
@@ -6286,6 +6297,12 @@ paths:
         - description: The two-letter code of the signature language.
           in: query
           name: language
+          required: false
+          schema:
+            type: string
+        - description: The signature name.
+          in: query
+          name: name
           required: false
           schema:
             type: string
@@ -6411,125 +6428,45 @@ paths:
           schema:
             items:
               enum:
-                - api_access_token.created
-                - api_access_token.destroyed
-                - api_access_token.updated
-                - automatic_exports_task.created
-                - automatic_exports_task.destroyed
-                - automatic_exports_task.failed
-                - automatic_exports_task.succeed
-                - automatic_exports_task.updated
-                - category.created
-                - category.destroyed
-                - category.updated
-                - community.created
-                - community.destroyed
-                - community.updated
-                - content.admin_stamped
                 - content.approved
-                - content.author_blocked
-                - content.author_stamped
-                - content.author_unblocked
-                - content.auto_categorization_infirmed
-                - content.auto_categorization_not_precise
-                - content.auto_categorized
-                - content.auto_ignored
-                - content.categorized
-                - content.destroyed
                 - content.discussion_initiated
-                - content.discussion_planned
-                - content.ice_nth_content_ignored
-                - content.ignored
+                - content.exported
                 - content.imported
-                - content.liked
-                - content.moderated_ban
-                - content.moderated_modif
-                - content.moderated_nok
-                - content.moderated_ok
-                - content.planned_discussion_synchronized
-                - content.published
-                - content.recategorized
                 - content.replied
-                - content.reply_assistant_used
-                - content.retried_synchronization
-                - content.retweeted
-                - content.source_changed
-                - content.stared
-                - content.thread_closed
-                - content.thread_opened
-                - content.unliked
-                - content.unpublished
-                - content.unstamped
-                - content.unstared
-                - content.updated
-                - content_source.created
-                - content_source.destroyed
-                - content_source.updated
-                - content_thread.categorized
-                - content_thread.destroyed
-                - content_thread.recategorized
-                - custom_field.created
-                - custom_field.destroyed
-                - custom_field.updated
-                - expired_data_purge.deleted
-                - extension.created
-                - extension.destroyed
-                - extension.updated
-                - folder.created
-                - folder.destroyed
-                - folder.updated
-                - identity.followed
-                - identity.unfollowed
-                - identity.updated
+                - content.update_exported
+                - identity.merged
+                - identity.unmerged
                 - intervention.assigned
                 - intervention.canceled
                 - intervention.closed
+                - intervention.custom_fields_updated
                 - intervention.deferred
                 - intervention.opened
+                - intervention.reactivated
                 - intervention.recategorized
                 - intervention.reopened
-                - intervention.updated
                 - intervention.user_updated
-                - intervention_comment.created
-                - intervention_comment.destroyed
-                - reply_assistant_knowledge_base_entry.created
-                - reply_assistant_knowledge_base_entry.destroyed
-                - reply_assistant_knowledge_base_entry.updated
-                - reply_assistant_knowledge_base_version.created
-                - reply_assistant_knowledge_base_version.destroyed
-                - reply_assistant_knowledge_base_version.updated
-                - reply_assistant_sentence_entry.created
-                - reply_assistant_sentence_entry.destroyed
-                - reply_assistant_sentence_entry.updated
-                - reply_assistant_sentence_version.created
-                - reply_assistant_sentence_version.destroyed
-                - reply_assistant_sentence_version.updated
-                - reply_assistant_version_permalink.created
-                - reply_assistant_version_permalink.destroyed
-                - reply_assistant_version_permalink.updated
-                - role.created
-                - role.destroyed
-                - role.updated
-                - security.updated
-                - session.created
-                - session.destroyed
-                - settings.updated
-                - survey.created
-                - survey.destroyed
-                - survey.updated
-                - tag.created
-                - tag.destroyed
-                - tag.updated
-                - team.created
-                - team.destroyed
-                - team.updated
-                - user.created
-                - user.destroyed
-                - user.disconnected
-                - user.impersonated
-                - user.invited
-                - user.notifications_updated
-                - user.updated
+                - push_agent.accept_task
+                - push_agent.availability_change
+                - push_agent.busyness_change
+                - push_agent.connected
+                - push_agent.disconnected
+                - push_agent.missed_task
+                - push_agent.reconnected
+                - push_agent.request_task
+                - survey_response.imported
+                - task.assigned
+                - task.completed
+                - task.created
+                - task.destroyed
+                - task.expired_from_step
+                - task.expired_from_workbin
+                - task.recategorized
+                - task.resume
+                - task.supervisor_assigned
+                - task.taken
+                - task.transferred
+                - task.undelivered
               type: string
             type: array
       responses:
@@ -8003,6 +7940,8 @@ components:
         display_only_unknown_bbcode:
           type: boolean
         dump_in_preprod:
+          type: boolean
+        enable_auto_scroll_down:
           type: boolean
         expire_password_after:
           type: integer

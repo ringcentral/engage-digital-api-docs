@@ -414,6 +414,18 @@
                       "value": "\u003cstring\u003e",
                       "description": "Search parameter for file extension (e.g. pdf, xlsx, jpg...)",
                       "disabled": true
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "\u003cstring\u003e",
+                      "description": "Search parameter to get attachments created before a ISO 8601 datetime (inclusive)",
+                      "disabled": true
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "\u003cstring\u003e",
+                      "description": "Search parameter to get attachments created after a ISO 8601 datetime (inclusive)",
+                      "disabled": true
                     }
                   ]
                 },
@@ -488,6 +500,158 @@
                   }
                 ],
                 "description": "This method renders an attachment from given id."
+              }
+            }
+          ]
+        },
+        {
+          "name": "Bots",
+          "description": {
+            "type": "text/plain"
+          },
+          "item": [
+            {
+              "name": "Bot complete",
+              "request": {
+                "url": {
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/bots/complete",
+                  "host": [
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
+                  ],
+                  "path": [
+                    "1.0",
+                    "bots",
+                    "complete"
+                  ],
+                  "query": [
+                    {
+                      "key": "intervention_id",
+                      "value": "\u003cstring\u003e",
+                      "description": "The intervention_id of the intervention that you want to complete.",
+                      "disabled": true
+                    },
+                    {
+                      "key": "close_thread",
+                      "value": "\u003cboolean\u003e",
+                      "description": "Wether if the thread should be closed at the same time.",
+                      "disabled": true
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "description": "This method is used to complete an intervention from a bot (closing the intervention and completing the task). In case of success it renders 200, otherwise, it renders an error (422 HTTP code)."
+              }
+            },
+            {
+              "name": "Bot engage",
+              "request": {
+                "url": {
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/bots/engage",
+                  "host": [
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
+                  ],
+                  "path": [
+                    "1.0",
+                    "bots",
+                    "engage"
+                  ],
+                  "query": [
+                    {
+                      "key": "content_id",
+                      "value": "\u003cstring\u003e",
+                      "description": "The content_id of the content for which you want to engage the bot.",
+                      "disabled": true
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "description": "This method is used to engage a thread from a bot. In case of success it renders the intervention, otherwise, it renders an error (422 HTTP code). This method opens intervention as the virtual agent user."
+              }
+            },
+            {
+              "name": "Bot handover",
+              "request": {
+                "url": {
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/bots/handover",
+                  "host": [
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
+                  ],
+                  "path": [
+                    "1.0",
+                    "bots",
+                    "handover"
+                  ],
+                  "query": [
+                    {
+                      "key": "from",
+                      "value": "\u003cstring\u003e",
+                      "description": "Who we are taking the conversation control from (either bot or agent).",
+                      "disabled": true
+                    },
+                    {
+                      "key": "to",
+                      "value": "\u003cstring\u003e",
+                      "description": "Who we are giving the convesation control to (either bot or agent).",
+                      "disabled": true
+                    },
+                    {
+                      "key": "type",
+                      "value": "\u003cstring\u003e",
+                      "description": "The type of handover (either type of channel or engage_virtual_agent).",
+                      "disabled": true
+                    },
+                    {
+                      "key": "identity_foreign_id",
+                      "value": "\u003cstring\u003e",
+                      "description": "The foreign_id of the identity for which you want to do the handover (only for source specific handover).",
+                      "disabled": true
+                    },
+                    {
+                      "key": "app_id",
+                      "value": "\u003cstring\u003e",
+                      "description": "The id of the Facebook's app that controls the Bot (only for source specific handover).",
+                      "disabled": true
+                    },
+                    {
+                      "key": "intervention_id",
+                      "value": "\u003cstring\u003e",
+                      "description": "The id of the intervention that we want to handover (only for Engage Virtual Agent handover).",
+                      "disabled": true
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "description": "This method is used to handover a conversation between a bot and an agent. It handles 2 different cases, specific sources handover (Messenger for example, see Bots API doc) and handover between Engage Virtual Agents and human agents"
               }
             }
           ]
@@ -655,8 +819,8 @@
                     },
                     {
                       "key": "private",
-                      "value": "\u003cinteger\u003e",
-                      "description": "Created contents are public by default, set this parameter to \"1\" in order to create a private reply. It is NOT supported on every source.",
+                      "value": "\u003cboolean\u003e",
+                      "description": "Created contents are public by default, set this parameter to \"true\" in order to create a private reply. It is NOT supported on every source.",
                       "disabled": true
                     },
                     {
@@ -672,6 +836,12 @@
                       "disabled": true
                     },
                     {
+                      "key": "auto_submitted",
+                      "value": "\u003cboolean\u003e",
+                      "description": "Marks the message as automatically sent.",
+                      "disabled": true
+                    },
+                    {
                       "key": "title",
                       "value": "\u003cstring\u003e",
                       "description": "For an email source. The subject of the email. This parameter is mandatory when initiating a discussion.",
@@ -680,7 +850,7 @@
                     {
                       "key": "to[]",
                       "value": "\u003carray.string.csv\u003e",
-                      "description": "For an email or SMS source. For an email, an array containing the email addresses used in the “To” section of the email. This parameter is mandatory when initiating a discussion. For a SMS, the number the SMS will be sent to. It must start with 00 or +, example: +33634231224 or 0033634231224. This parameter is mandatory when initiating a discussion.",
+                      "description": "For an email or SMS and WhatsApp source. For an email, an array containing the email addresses used in the “To” section of the email. This parameter is mandatory when initiating a discussion. For a WhatsApp message or a SMS, the number the message will be sent to. It must start with 00 or +, example: +33634231224 or 0033634231224. This parameter is mandatory when initiating a discussion.",
                       "disabled": true
                     },
                     {
@@ -693,6 +863,18 @@
                       "key": "bcc[]",
                       "value": "\u003carray.string.csv\u003e",
                       "description": "For an email source. An array containing the email addresses used in the “Bcc” section of the email.",
+                      "disabled": true
+                    },
+                    {
+                      "key": "template_name",
+                      "value": "\u003cstring\u003e",
+                      "description": "Mandatory for a WhatsApp source. A discussion can only be initiated using a specific template created on the business manager and approved by WhatsApp. You can find all available template_names on /1.0/content_sources/source_id.",
+                      "disabled": true
+                    },
+                    {
+                      "key": "template_language",
+                      "value": "\u003cstring\u003e",
+                      "description": "Mandatory for a WhatsApp source. A discussion can only be initiated using a specific template created on the business manager and approved by WhatsApp. You can find all available template_languages for a given template_name on /1.0/content_sources/source_id.",
                       "disabled": true
                     }
                   ]
@@ -1434,6 +1616,42 @@
               }
             },
             {
+              "name": "Updating an intervention from its id",
+              "request": {
+                "url": {
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/interventions/:interventionId",
+                  "host": [
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
+                  ],
+                  "path": [
+                    "1.0",
+                    "interventions",
+                    ":interventionId"
+                  ],
+                  "query": [
+                    {
+                      "key": "custom_field_values[custom_field_key]",
+                      "value": "\u003cstring\u003e",
+                      "description": "Intervention custom field with key \"custom_field_key\". It can be multiple if custom field is multiple or is has multiple_choice type.",
+                      "disabled": true
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "description": "This method updates intervention from given attributes and renders it in case of success.\n\nAuthorization​: no."
+              }
+            },
+            {
               "name": "Cancelling an intervention",
               "request": {
                 "url": {
@@ -1679,15 +1897,45 @@
                       "disabled": true
                     },
                     {
+                      "key": "time_sheet_ids[]",
+                      "value": "\u003carray.string.csv\u003e",
+                      "description": "Business Hours (Limited to 1)",
+                      "disabled": true
+                    },
+                    {
                       "key": "sla_response",
                       "value": "\u003cinteger\u003e",
                       "description": "Response time (seconds)",
                       "disabled": true
                     },
                     {
+                      "key": "sla_threshold",
+                      "value": "\u003cinteger\u003e",
+                      "description": "Customer SLA warning threshold (must be greater than 0 and less than 100, default value is 0).",
+                      "disabled": true
+                    },
+                    {
+                      "key": "sla_filtering_categories_strategy",
+                      "value": "\u003cstring\u003e",
+                      "description": "Categories filtering strategy for Customer SLA indicator",
+                      "disabled": true
+                    },
+                    {
+                      "key": "sla_filtering_category_ids[]",
+                      "value": "\u003carray.string.csv\u003e",
+                      "description": "Filtering categories for Customer SLA indicator",
+                      "disabled": true
+                    },
+                    {
                       "key": "sla_expired_strategy",
                       "value": "\u003cstring\u003e",
                       "description": "SLA expired strategy (\"max\", \"half\" or \"base\")",
+                      "disabled": true
+                    },
+                    {
+                      "key": "attachments_security_level",
+                      "value": "\u003cstring\u003e",
+                      "description": "Attachments security level. (\"strict\", \"relaxed\", or \"permissive\"). Strict allows images and medias. Relaxed allows images, media and documents. Permissive allows all kind of attachments",
                       "disabled": true
                     },
                     {
@@ -1721,6 +1969,42 @@
                       "disabled": true
                     },
                     {
+                      "key": "signatures",
+                      "value": "\u003carray.object\u003e",
+                      "description": "Signatures",
+                      "disabled": true
+                    },
+                    {
+                      "key": "auto_response_triggers",
+                      "value": "\u003carray.object\u003e",
+                      "description": "Automatic messages",
+                      "disabled": true
+                    },
+                    {
+                      "key": "auto_response_trigger_enabled[first_message_from_user]",
+                      "value": "\u003cboolean\u003e",
+                      "description": "Enable answers to first messages",
+                      "disabled": true
+                    },
+                    {
+                      "key": "auto_response_trigger_enabled[out_of_office_hours_message]",
+                      "value": "\u003cboolean\u003e",
+                      "description": "Enable answers to messages outside business hours",
+                      "disabled": true
+                    },
+                    {
+                      "key": "auto_response_trigger_grace_periods[first_message_from_user]",
+                      "value": "\u003cinteger\u003e",
+                      "description": "Time between two messages (First message)",
+                      "disabled": true
+                    },
+                    {
+                      "key": "auto_response_trigger_grace_periods[out_of_office_hours_message]",
+                      "value": "\u003cinteger\u003e",
+                      "description": "Time between two messages (Message outside business hours)",
+                      "disabled": true
+                    },
+                    {
                       "key": "default_content_language",
                       "value": "\u003cstring\u003e",
                       "description": "Default content language",
@@ -1733,6 +2017,12 @@
                       "disabled": true
                     },
                     {
+                      "key": "content_languages",
+                      "value": "\u003carray.string.csv\u003e",
+                      "description": "Languages to detect",
+                      "disabled": true
+                    },
+                    {
                       "key": "content_archiving",
                       "value": "\u003cboolean\u003e",
                       "description": "Automatic archiving of old contents (Boolean)",
@@ -1742,6 +2032,18 @@
                       "key": "content_archiving_period",
                       "value": "\u003cinteger\u003e",
                       "description": "Archive contents older than (seconds)",
+                      "disabled": true
+                    },
+                    {
+                      "key": "from_name",
+                      "value": "\u003cstring\u003e",
+                      "description": "Custom sender name. Only on sources which supports a custom sender name.",
+                      "disabled": true
+                    },
+                    {
+                      "key": "default_task_priority",
+                      "value": "\u003cinteger\u003e",
+                      "description": "Default priority for interactions.",
                       "disabled": true
                     },
                     {
@@ -1760,6 +2062,180 @@
                       "key": "enable_web",
                       "value": "\u003cboolean\u003e",
                       "description": "Only on Engage Messaging sources that are not on livechat mode. Enable or disable the source on the web.",
+                      "disabled": true
+                    },
+                    {
+                      "key": "imap_smtp_email",
+                      "value": "\u003cstring\u003e",
+                      "description": "Email address to synchronize. Only on Email sources",
+                      "disabled": true
+                    },
+                    {
+                      "key": "imap_mailboxes_to_import",
+                      "value": "\u003carray.string.csv\u003e",
+                      "description": "Folders to synchronize. Does not accept empty array or blank values. Only on Email sources.",
+                      "disabled": true
+                    },
+                    {
+                      "key": "imap_mailbox_used_for_sent_mail",
+                      "value": "\u003cstring\u003e",
+                      "description": "Folder for 'Sent Mail'. Only on Email sources.",
+                      "disabled": true
+                    },
+                    {
+                      "key": "imap_address",
+                      "value": "\u003cstring\u003e",
+                      "description": "IMAP server address. Only on Email sources",
+                      "disabled": true
+                    },
+                    {
+                      "key": "imap_port",
+                      "value": "\u003cinteger\u003e",
+                      "description": "IMAP server port. Only on Email sources",
+                      "disabled": true
+                    },
+                    {
+                      "key": "imap_username",
+                      "value": "\u003cstring\u003e",
+                      "description": "IMAP username. Only on Email sources",
+                      "disabled": true
+                    },
+                    {
+                      "key": "imap_password",
+                      "value": "\u003cstring\u003e",
+                      "description": "IMAP password. Used when IMAP authentication type is `basic`. Only on Email sources",
+                      "disabled": true
+                    },
+                    {
+                      "key": "imap_oauth_refresh_token",
+                      "value": "\u003cstring\u003e",
+                      "description": "IMAP OAuth 2.0 refresh token. Used when IMAP authentication type is `microsoft_identity_platform`. Only on Email sources",
+                      "disabled": true
+                    },
+                    {
+                      "key": "imap_use_ssl_tls",
+                      "value": "\u003cboolean\u003e",
+                      "description": "Use SSL/TLS protocol to establish secure IMAP connection. Only on Email sources",
+                      "disabled": true
+                    },
+                    {
+                      "key": "imap_use_start_tls",
+                      "value": "\u003cboolean\u003e",
+                      "description": "Use STARTTLS protocol to establish secure IMAP connection. Only on Email sources",
+                      "disabled": true
+                    },
+                    {
+                      "key": "imap_authentication_type",
+                      "value": "\u003cstring\u003e",
+                      "description": "IMAP Authentication type (\"basic\" or \"microsoft_identity_platform\"). Only on Email sources",
+                      "disabled": true
+                    },
+                    {
+                      "key": "imap_ssl_verify_mode",
+                      "value": "\u003cstring\u003e",
+                      "description": "IMAP SSL verification mode. (\"NONE\", \"PEER\", \"CLIENT_ONCE\" or \"FAIL_IF_NO_PEER_CERT\"). Only on Email sources",
+                      "disabled": true
+                    },
+                    {
+                      "key": "smtp_address",
+                      "value": "\u003cstring\u003e",
+                      "description": "SMTP server address. Only on Email sources",
+                      "disabled": true
+                    },
+                    {
+                      "key": "smtp_port",
+                      "value": "\u003cinteger\u003e",
+                      "description": "SMTP server port. Only on Email sources",
+                      "disabled": true
+                    },
+                    {
+                      "key": "smtp_username",
+                      "value": "\u003cstring\u003e",
+                      "description": "SMTP username. Only on Email sources",
+                      "disabled": true
+                    },
+                    {
+                      "key": "smtp_password",
+                      "value": "\u003cstring\u003e",
+                      "description": "SMTP password. Used when SMTP authentication type is `basic`. Only on Email sources",
+                      "disabled": true
+                    },
+                    {
+                      "key": "smtp_oauth_refresh_token",
+                      "value": "\u003cstring\u003e",
+                      "description": "SMTP OAuth 2.0 refresh token. Used when SMTP authentication type is `microsoft_identity_platform`. Only on Email sources",
+                      "disabled": true
+                    },
+                    {
+                      "key": "smtp_use_ssl_tls",
+                      "value": "\u003cboolean\u003e",
+                      "description": "Use SSL/TLS protocol to establish secure SMTP connection. Only on Email sources",
+                      "disabled": true
+                    },
+                    {
+                      "key": "smtp_use_start_tls",
+                      "value": "\u003cboolean\u003e",
+                      "description": "Use STARTTLS protocol to establish secure IMAP connection. Only on Email sources",
+                      "disabled": true
+                    },
+                    {
+                      "key": "smtp_authentication_type",
+                      "value": "\u003cstring\u003e",
+                      "description": "SMTP Authentication type (\"basic\" or \"microsoft_identity_platform\"). Only on Email sources",
+                      "disabled": true
+                    },
+                    {
+                      "key": "smtp_ssl_verify_mode",
+                      "value": "\u003cstring\u003e",
+                      "description": "SMTP SSL verification mode. (\"NONE\", \"PEER\", \"CLIENT_ONCE\" or \"FAIL_IF_NO_PEER_CERT\"). Only on Email sources",
+                      "disabled": true
+                    },
+                    {
+                      "key": "smtp_helo_domain",
+                      "value": "\u003cstring\u003e",
+                      "description": "Used to identify HELO/EHLO when connecting to the SMTP server. Only on Email sources",
+                      "disabled": true
+                    },
+                    {
+                      "key": "threading_heuristics",
+                      "value": "\u003cboolean\u003e",
+                      "description": "Threading heuristics. Only on Email sources",
+                      "disabled": true
+                    },
+                    {
+                      "key": "spam_assassin_level",
+                      "value": "\u003cstring\u003e",
+                      "description": "Spam threshold (\"disabled\", \"relaxed\", or \"strict\"). Only on Email sources",
+                      "disabled": true
+                    },
+                    {
+                      "key": "whitelisted_emails",
+                      "value": "\u003cstring\u003e",
+                      "description": "Whitelisted emails. All emails received from this address won't be threaded and can be associated with an anonymous identity or the Reply-To, if there is one. To be filled when implementing a form. Only on Email sources",
+                      "disabled": true
+                    },
+                    {
+                      "key": "cc_blacklist",
+                      "value": "\u003carray.string.csv\u003e",
+                      "description": "Exclude from TO/CC. Only on Email sources",
+                      "disabled": true
+                    },
+                    {
+                      "key": "email_parser",
+                      "value": "\u003cboolean\u003e",
+                      "description": "Email parser (BBCode). Only on Email sources",
+                      "disabled": true
+                    },
+                    {
+                      "key": "time_for_thread_inclusion",
+                      "value": "\u003cinteger\u003e",
+                      "description": "Time for thread inclusion.",
+                      "disabled": true
+                    },
+                    {
+                      "key": "time_for_thread_inclusion_enabled",
+                      "value": "\u003cboolean\u003e",
+                      "description": "Enable time for thread inclusion. Only on Email sources",
                       "disabled": true
                     }
                   ]
@@ -4290,6 +4766,12 @@
                       "disabled": true
                     },
                     {
+                      "key": "enable_auto_scroll_down",
+                      "value": "\u003cboolean\u003e",
+                      "description": "enable auto scroll down (Boolean)",
+                      "disabled": true
+                    },
+                    {
                       "key": "expire_password_enabled",
                       "value": "\u003cboolean\u003e",
                       "description": "enable password expiration (Boolean)",
@@ -5993,6 +6475,12 @@
                       "value": "\u003cstring\u003e",
                       "description": "The two-letter code of the signature language.",
                       "disabled": true
+                    },
+                    {
+                      "key": "name",
+                      "value": "\u003cstring\u003e",
+                      "description": "The signature name.",
+                      "disabled": true
                     }
                   ]
                 },
@@ -6102,6 +6590,12 @@
                       "key": "language",
                       "value": "\u003cstring\u003e",
                       "description": "The two-letter code of the signature language.",
+                      "disabled": true
+                    },
+                    {
+                      "key": "name",
+                      "value": "\u003cstring\u003e",
+                      "description": "The signature name.",
                       "disabled": true
                     }
                   ]
@@ -6375,6 +6869,18 @@
                       "key": "task_timeout_seconds",
                       "value": "\u003cinteger\u003e",
                       "description": "this field defines the time before a task expires (in seconds).",
+                      "disabled": true
+                    },
+                    {
+                      "key": "agent_sla",
+                      "value": "\u003cinteger\u003e",
+                      "description": "Agent SLA in seconds.",
+                      "disabled": true
+                    },
+                    {
+                      "key": "agent_sla_threshold",
+                      "value": "\u003cinteger\u003e",
+                      "description": "Agent SLA warning threshold (must be greater than 0 and less than 100, default value is 0).",
                       "disabled": true
                     }
                   ]
@@ -6910,6 +7416,43 @@
                   }
                 ],
                 "description": "This method renders a task from given id."
+              }
+            },
+            {
+              "name": "Complete a task",
+              "request": {
+                "url": {
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/tasks/:taskId/complete",
+                  "host": [
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
+                  ],
+                  "path": [
+                    "1.0",
+                    "tasks",
+                    ":taskId",
+                    "complete"
+                  ],
+                  "query": [
+                    {
+                      "key": "queue",
+                      "value": "\u003cstring\u003e",
+                      "description": "Name of the queue task has to be moved in.",
+                      "disabled": true
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "description": "This method completes a task.\n\nAuthorization​: for that call to succeed several conditions are required:\n  - the task must be in an agent’s workbin.\n  - the access token user must either own the task or be able to monitor all tasks or be able to monitor his team’s tasks if the task is owned by one of his team member."
               }
             },
             {

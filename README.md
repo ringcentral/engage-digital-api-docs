@@ -21,6 +21,12 @@ If you would like to contribute to the RingCentral documentation effort, fork th
 % mkdocs serve
 ```
 
+Or with docker:
+
+```
+./preview.sh
+```
+
 Then you should be able to load http://localhost:8000 to view the documentation.
 
 ### Generating OpenAPI doc

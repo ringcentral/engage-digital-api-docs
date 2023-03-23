@@ -50,7 +50,7 @@ curl -X POST "https://[YOUR DOMAIN].api.digital.ringcentral.com/1.0/contents"
 | **`structured_content.items`** | Array | An array of items representing the options presented to the customer. A maximum of 10 items is supported. |
 | **Item Settings** | | |
 | **`structured_content.items.title`** | String | The title of the item. Limited to 80 characters. |
-| **`structured_content.items.payload`** | String | **Optional**. Payload that will be returned with the structured response. Limited to 200 characters.<br>Automatically gets populated as a random hex if blank. |
+| **`structured_content.items.payload`** | String | **Optional**. Payload that will be returned with the structured response. Limited to 200 characters.<br>Automatically gets populated as a random hex if blank. Can only contain **ASCII** characters. |
 | **`structured_content.items.subtitle`** | String | **Optional**. The subtitle of the item. Limited to 100 characters. |
 | **`structured_content.items.section_identifier`** | String | **Optional if there's no section**. The identifier of the section where the item is.<br>If there's no section, the section_identifier field should be removed.<br>Each section must have at least 1 item.<br>Limited to 200 characters. |
 

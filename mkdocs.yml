@@ -56,6 +56,7 @@ nav:
       - 'Creating Interventions': interactions/chatbots/interventions.md
       - 'Transferring to an Agent': interactions/chatbots/transfers.md
       - 'Closing Threads': interactions/chatbots/threads.md
+      - 'Bots API': interactions/bots-api.md
     - 'Structured Messages':
       - 'Overview': interactions/structured-messages/index.md
       - 'Getting Started': interactions/structured-messages/quick-start.md
@@ -65,13 +66,14 @@ nav:
       - 'Template': interactions/structured-messages/template.md
       - 'Carousel': interactions/structured-messages/carousel.md
       - 'Time Select': interactions/structured-messages/time-select.md
+      - 'Apple Form': interactions/structured-messages/apple-form.md
       - 'Apple Pay': interactions/structured-messages/apple-pay.md
-      - 'Apple Authentcate': interactions/structured-messages/apple-auth.md
+      - 'Apple Authenticate': interactions/structured-messages/apple-auth.md
       - 'Webview': 'interactions/structured-messages/webview.md'
       - 'Webview SDK': interactions/structured-messages/webview-sdk.md
   - 'Routing':
     - 'Overview': routing/index.md
-    - 'Getting Started': routing/quick-start.
+    - 'Getting Started': routing/quick-start
   - 'Digital':
     - 'Exports':
       - 'Overview': digital/exports/index.md

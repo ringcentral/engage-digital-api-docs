@@ -19,7 +19,7 @@ Engage Digital supports the following types of structure messages:
   | **`carousel`** | This structured message allows to group multiple templates in the same message. |
   | **`time_select`** | This structured message provides a list of dates from which the customer can choose an appointment. |
   | **`apple_pay`** | This structured message provides a convenient way to ask for a payment from the customer. |
-  | **`authentication`** | This structured message provides a way to send an OAuth2 authentication request to the customer. |
+  | **`authenticate`** | This structured message provides a way to send an OAuth2 authentication request to the customer. |
 
 ## Channel Capabilities
 
@@ -29,19 +29,19 @@ Engage Digital provides an omnichannel API to create structured messages. Since 
 * **<span style="color:orange">Not yet</span>**: Supported by channel but not by Engage Digital yet
 * N/A: Not supported by channel
 
-  |  | **select** | **rich_link** | **template** | **carousel** | **list** | **time_select** | **apple_pay** | **authentication** |
-  |-|-|-|-|-|-|-|-|-|
-  | **Apple Messages for Business** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | N/A | N/A | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** |
-  | **Facebook Messenger** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | N/A | N/A | N/A |  N/A |
-  | **Engage Web Messaging** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | N/A | N/A | N/A |  N/A |
-  | **Engage iOS Messaging** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | N/A | N/A | N/A |  N/A |
-  | **Engage Android Messaging** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | N/A | N/A | N/A |  N/A |
-  | **Google Business Messages** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | N/A | N/A | N/A |  N/A |
-  | **Channel SDK** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | N/A | N/A | N/A |  N/A |
-  | **Twitter Direct Messages** | **<span style="color:orange">Not yet</span>** | **<span style="color:orange">Not yet</span>** | **<span style="color:orange">Not yet</span>** | N/A | N/A | N/A | N/A |  N/A |
-  | **Viber** | **<span style="color:orange">Not yet</span>** | **<span style="color:orange">Not yet</span>** | **<span style="color:orange">Not yet</span>** | **<span style="color:orange">Not yet</span>** | N/A | N/A | N/A |  N/A |
-  | **WhatsApp** | N/A | N/A | **<span style="color:green">Yes</span>** | N/A | **<span style="color:green">Yes</span>** | N/A | N/A |  N/A |
-  | **Instagram Messaging** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | N/A | N/A | N/A | N/A |
+  |  | **select** | **rich_link** | **template** | **carousel** | **list** | **time_select** | **form** | **apple_pay** | **authenticate** |
+  |-|-|-|-|-|-|-|-|-|-|
+  | **Apple Messages for Business** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | N/A | N/A | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** |
+  | **Facebook Messenger** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | N/A | N/A | N/A | N/A | N/A |
+  | **Engage Web Messaging** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | N/A | N/A | N/A | N/A | N/A |
+  | **Engage iOS Messaging** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | N/A | N/A | N/A | N/A | N/A |
+  | **Engage Android Messaging** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | N/A | N/A | N/A | N/A | N/A |
+  | **Google Business Messages** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | N/A | N/A | N/A | N/A | N/A |
+  | **Channel SDK** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | N/A | N/A | N/A | N/A | N/A |
+  | **Twitter Direct Messages** | **<span style="color:orange">Not yet</span>** | **<span style="color:orange">Not yet</span>** | **<span style="color:orange">Not yet</span>** | N/A | N/A | N/A | N/A | N/A | N/A |
+  | **Viber** | **<span style="color:orange">Not yet</span>** | **<span style="color:orange">Not yet</span>** | **<span style="color:orange">Not yet</span>** | **<span style="color:orange">Not yet</span>** | N/A | N/A | N/A | N/A | N/A |
+  | **WhatsApp** | N/A | N/A | **<span style="color:green">Yes</span>** | N/A | **<span style="color:green">Yes</span>** | N/A | N/A | N/A | N/A |
+  | **Instagram Messaging** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** | N/A | N/A | N/A |N/A | N/A |
 
 ## Channel Compatibilities
 

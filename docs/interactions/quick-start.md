@@ -19,7 +19,7 @@ The first thing you need to do is obtain an API Access Token if you do not alrea
 
     4. Finally, enter a label/description for your token, and select an Agent on which the token will act on behalf of. Make sure the token is "enabled" and click "Save."
 
-          ![API access token](../../../img/api-token.png)
+          ![API access token](../img/api-token.png)
 
 Make note of the access token generated as you will need it later.
 

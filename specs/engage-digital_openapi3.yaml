@@ -26,6 +26,7 @@ x-tag-groups:
     popular: true
     tags:
       - Attachments
+      - Bots
       - Communities
       - Contents
       - Identities
@@ -97,6 +98,7 @@ tags:
   - name: Presence Status
   - name: Survey Responses
   - name: Surveys
+  - name: Bots
 
 paths:
   '/topologies/{topologyId}/activate':
@@ -267,6 +269,22 @@ paths:
           required: false
           schema:
             type: string
+        - description: >-
+            Search parameter to get attachments created before a ISO 8601 datetime (inclusive)
+
+          in: query
+          name: created_before
+          required: false
+          schema:
+            type: string
+        - description: >-
+            Search parameter to get attachments created after a ISO 8601 datetime (inclusive)
+
+          in: query
+          name: created_after
+          required: false
+          schema:
+            type: string
       responses:
         '200':
           content:
@@ -325,6 +343,115 @@ paths:
       summary: Getting an attachment from its id
       tags:
         - Attachments
+  '/bots/engage':
+    post:
+      description: This method is used to engage a thread from a bot. In case of success
+        it renders the intervention, otherwise, it renders an error (422 HTTP
+        code). This method opens intervention as the virtual agent user.
+      operationId: botEngage
+      parameters:
+        - description: The content_id of the content for which you want to engage the bot.
+          in: query
+          name: content_id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Intervention'
+          description: Success
+        '422':
+          description: Unprocessable Entity
+      summary: Bot engage
+      tags:
+        - Bots
+  '/bots/complete':
+    post:
+      description: This method is used to complete an intervention from a bot (closing the intervention and completing the task).
+        In case of success it renders 200, otherwise, it renders an error (422 HTTP
+        code).
+      operationId: botComplete
+      parameters:
+        - description: The intervention_id of the intervention that you want to complete.
+          in: query
+          name: intervention_id
+          required: true
+          schema:
+            type: string
+        - description: Wether if the thread should be closed at the same time.
+          in: query
+          name: close_thread
+          required: false
+          schema:
+            type: boolean
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BotCompleteResponse'
+          description: Success
+        '422':
+          description: Unprocessable Entity
+      summary: Bot complete
+      tags:
+        - Bots
+  '/bots/handover':
+    post:
+      description: This method is used to handover a conversation between a bot and an agent.
+        It handles 2 different cases, specific sources handover (Messenger for example, see Bots API doc)
+        and handover between Engage Virtual Agents and human agents
+      operationId: handoverFromBotToAgent
+      parameters:
+        - description: Who we are taking the conversation control from (either bot or agent).
+          in: query
+          name: from
+          required: true
+          schema:
+            type: string
+        - description: Who we are giving the convesation control to (either bot or agent).
+          in: query
+          name: to
+          required: true
+          schema:
+            type: string
+        - description: The type of handover (either type of channel or engage_virtual_agent).
+          in: query
+          name: type
+          required: true
+          schema:
+            type: string
+        - description: The foreign_id of the identity for which you want to do the handover (only for source specific handover).
+          in: query
+          name: identity_foreign_id
+          required: true
+          schema:
+            type: string
+        - description: The id of the Facebook's app that controls the Bot (only for source specific handover).
+          in: query
+          name: app_id
+          required: false
+          schema:
+            type: string
+        - description: The id of the intervention that we want to handover (only for Engage Virtual Agent handover).
+          in: query
+          name: intervention_id
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HandoverFromBotToAgentResponse'
+          description: Success
+      summary: Bot handover
+      tags:
+        - Bots
   /categories:
     get:
       description: This method renders categories ordered by creation date (ascending).
@@ -671,6 +798,18 @@ paths:
           required: false
           schema:
             type: integer
+        - description: Agent SLA in seconds.
+          in: query
+          name: agent_sla
+          required: false
+          schema:
+            type: integer
+        - description: Agent SLA warning threshold (must be greater than 0 and less than 100, default value is 0).
+          in: query
+          name: agent_sla_threshold
+          required: false
+          schema:
+            type: integer
       responses:
         '200':
           content:
@@ -818,12 +957,43 @@ paths:
           required: false
           schema:
             type: integer
+        - description: Business Hours (Limited to 1)
+          in: query
+          name: 'time_sheet_ids[]'
+          required: false
+          schema:
+            items:
+              type: string
+            type: array
         - description: Response time (seconds)
           in: query
           name: sla_response
           required: false
           schema:
             type: integer
+        - description: Customer SLA warning threshold (must be greater than 0 and less than 100, default value is 0).
+          in: query
+          name: sla_threshold
+          required: false
+          schema:
+            type: integer
+        - description: Categories filtering strategy for Customer SLA indicator
+          in: query
+          name: sla_filtering_categories_strategy
+          required: false
+          schema:
+            enum:
+              - ignored_categories
+              - selected_categories
+            type: string
+        - description: Filtering categories for Customer SLA indicator
+          in: query
+          name: 'sla_filtering_category_ids[]'
+          required: false
+          schema:
+            items:
+              type: string
+            type: array
         - description: 'SLA expired strategy ("max", "half" or "base")'
           in: query
           name: sla_expired_strategy
@@ -833,6 +1003,16 @@ paths:
               - max
               - half
               - base
+            type: string
+        - description: 'Attachments security level. ("strict", "relaxed", or "permissive"). Strict allows images and medias. Relaxed allows images, media and documents. Permissive allows all kind of attachments'
+          in: query
+          name: attachments_security_level
+          required: false
+          schema:
+            enum:
+              - strict
+              - relaxed
+              - permissive
             type: string
         - description: Priority boost of messages with intervention (Integer)
           in: query
@@ -868,6 +1048,48 @@ paths:
             items:
               type: string
             type: array
+        - description: Signatures
+          in: query
+          name: signatures
+          required: false
+          schema:
+            type: array
+            items:
+              type: object
+            example: [{ body: 'Hello World', language: 'en' }]
+        - description: Automatic messages
+          in: query
+          name: auto_response_triggers
+          required: false
+          schema:
+            type: array
+            items:
+              type: object
+            example: [{ language: 'en', created_from_trigger: 'first_message_from_user', body: 'Hello World' }]
+        - description: Enable answers to first messages
+          in: query
+          name: auto_response_trigger_enabled[first_message_from_user]
+          required: false
+          schema:
+            type: boolean
+        - description: Enable answers to messages outside business hours
+          in: query
+          name: auto_response_trigger_enabled[out_of_office_hours_message]
+          required: false
+          schema:
+            type: boolean
+        - description: Time between two messages (First message)
+          in: query
+          name: auto_response_trigger_grace_periods[first_message_from_user]
+          required: false
+          schema:
+            type: integer
+        - description: Time between two messages (Message outside business hours)
+          in: query
+          name: auto_response_trigger_grace_periods[out_of_office_hours_message]
+          required: false
+          schema:
+            type: integer
         - description: Default content language
           in: query
           name: default_content_language
@@ -880,6 +1102,14 @@ paths:
           required: false
           schema:
             type: boolean
+        - description: Languages to detect
+          in: query
+          name: content_languages
+          required: false
+          schema:
+            items:
+              type: string
+            type: array
         - description: Automatic archiving of old contents (Boolean)
           in: query
           name: content_archiving
@@ -889,6 +1119,18 @@ paths:
         - description: Archive contents older than (seconds)
           in: query
           name: content_archiving_period
+          required: false
+          schema:
+            type: integer
+        - description: Custom sender name. Only on sources which supports a custom sender name.
+          in: query
+          name: from_name
+          required: false
+          schema:
+            type: string
+        - description: Default priority for interactions.
+          in: query
+          name: default_task_priority
           required: false
           schema:
             type: integer
@@ -907,6 +1149,204 @@ paths:
         - description: Only on Engage Messaging sources that are not on livechat mode. Enable or disable the source on the web.
           in: query
           name: enable_web
+          required: false
+          schema:
+            type: boolean
+        - description: Email address to synchronize. Only on Email sources
+          in: query
+          name: imap_smtp_email
+          required: false
+          schema:
+            type: string
+        - description: Folders to synchronize. Does not accept empty array or blank values. Only on Email sources.
+          in: query
+          name: imap_mailboxes_to_import
+          required: false
+          schema:
+            items:
+              type: string
+            type: array
+        - description: Folder for 'Sent Mail'. Only on Email sources.
+          in: query
+          name: imap_mailbox_used_for_sent_mail
+          required: false
+          schema:
+            type: string
+        - description: IMAP server address. Only on Email sources
+          in: query
+          name: imap_address
+          required: false
+          schema:
+            type: string
+        - description: IMAP server port. Only on Email sources
+          in: query
+          name: imap_port
+          required: false
+          schema:
+            type: integer
+        - description: IMAP username. Only on Email sources
+          in: query
+          name: imap_username
+          required: false
+          schema:
+            type: string
+        - description: IMAP password. Used when IMAP authentication type is `basic`. Only on Email sources
+          in: query
+          name: imap_password
+          required: false
+          schema:
+            type: string
+        - description: IMAP OAuth 2.0 refresh token. Used when IMAP authentication type is `microsoft_identity_platform`. Only on Email sources
+          in: query
+          name: imap_oauth_refresh_token
+          required: false
+          schema:
+            type: string
+        - description: Use SSL/TLS protocol to establish secure IMAP connection. Only on Email sources
+          in: query
+          name: imap_use_ssl_tls
+          required: false
+          schema:
+            type: boolean
+        - description: Use STARTTLS protocol to establish secure IMAP connection. Only on Email sources
+          in: query
+          name: imap_use_start_tls
+          required: false
+          schema:
+            type: boolean
+        - description: 'IMAP Authentication type ("basic" or "microsoft_identity_platform"). Only on Email sources'
+          in: query
+          name: imap_authentication_type
+          required: false
+          schema:
+            enum:
+              - basic
+              - microsoft_identity_platform
+            type: string
+        - description: 'IMAP SSL verification mode. ("NONE", "PEER", "CLIENT_ONCE" or "FAIL_IF_NO_PEER_CERT"). Only on Email sources'
+          in: query
+          name: imap_ssl_verify_mode
+          required: false
+          schema:
+            enum:
+              - NONE
+              - PEER
+              - CLIENT_ONCE
+              - FAIL_IF_NO_PEER_CERT
+            type: string
+        - description: SMTP server address. Only on Email sources
+          in: query
+          name: smtp_address
+          required: false
+          schema:
+            type: string
+        - description: SMTP server port. Only on Email sources
+          in: query
+          name: smtp_port
+          required: false
+          schema:
+            type: integer
+        - description: SMTP username. Only on Email sources
+          in: query
+          name: smtp_username
+          required: false
+          schema:
+            type: string
+        - description: SMTP password. Used when SMTP authentication type is `basic`. Only on Email sources
+          in: query
+          name: smtp_password
+          required: false
+          schema:
+            type: string
+        - description: SMTP OAuth 2.0 refresh token. Used when SMTP authentication type is `microsoft_identity_platform`. Only on Email sources
+          in: query
+          name: smtp_oauth_refresh_token
+          required: false
+          schema:
+            type: string
+        - description: Use SSL/TLS protocol to establish secure SMTP connection. Only on Email sources
+          in: query
+          name: smtp_use_ssl_tls
+          required: false
+          schema:
+            type: boolean
+        - description: Use STARTTLS protocol to establish secure IMAP connection. Only on Email sources
+          in: query
+          name: smtp_use_start_tls
+          required: false
+          schema:
+            type: boolean
+        - description: 'SMTP Authentication type ("basic" or "microsoft_identity_platform"). Only on Email sources'
+          in: query
+          name: smtp_authentication_type
+          required: false
+          schema:
+            enum:
+              - basic
+              - microsoft_identity_platform
+            type: string
+        - description: 'SMTP SSL verification mode. ("NONE", "PEER", "CLIENT_ONCE" or "FAIL_IF_NO_PEER_CERT"). Only on Email sources'
+          in: query
+          name: smtp_ssl_verify_mode
+          required: false
+          schema:
+            enum:
+              - NONE
+              - PEER
+              - CLIENT_ONCE
+              - FAIL_IF_NO_PEER_CERT
+            type: string
+        - description: Used to identify HELO/EHLO when connecting to the SMTP server. Only on Email sources
+          in: query
+          name: smtp_helo_domain
+          required: false
+          schema:
+            type: string
+        - description: Threading heuristics. Only on Email sources
+          in: query
+          name: threading_heuristics
+          required: false
+          schema:
+            type: boolean
+        - description: 'Spam threshold ("disabled", "relaxed", or "strict"). Only on Email sources'
+          in: query
+          name: spam_assassin_level
+          required: false
+          schema:
+            enum:
+              - disabled
+              - relaxed
+              - strict
+            type: string
+        - description: Whitelisted emails. All emails received from this address won't be threaded and can be associated with an anonymous identity or the Reply-To, if there is one. To be filled when implementing a form. Only on Email sources
+          in: query
+          name: whitelisted_emails
+          required: false
+          schema:
+            type: string
+        - description: Exclude from TO/CC. Only on Email sources
+          in: query
+          name: cc_blacklist
+          required: false
+          schema:
+            items:
+              type: string
+            type: array
+        - description: Email parser (BBCode). Only on Email sources
+          in: query
+          name: email_parser
+          required: false
+          schema:
+            type: boolean
+        - description: Time for thread inclusion.
+          in: query
+          name: time_for_thread_inclusion
+          required: false
+          schema:
+            type: integer
+        - description: Enable time for thread inclusion. Only on Email sources
+          in: query
+          name: time_for_thread_inclusion_enabled
           required: false
           schema:
             type: boolean
@@ -1306,14 +1746,14 @@ paths:
           schema:
             type: string
         - description: >-
-            Created contents are public by default, set this parameter to "1" in
+            Created contents are public by default, set this parameter to "true" in
             order to create a private reply. It is NOT supported on every
             source.
           in: query
           name: private
           required: false
           schema:
-            type: integer
+            type: boolean
         - description: >-
             The source to create content to. If you specify `in_reply_to_id`
             parameter, source will be determined from it. Otherwise, this
@@ -1334,6 +1774,13 @@ paths:
             items:
               type: string
             type: array
+        - description: >-
+            Marks the message as automatically sent.
+          in: query
+          name: auto_submitted
+          required: false
+          schema:
+            type: boolean
         - description: >-
             For an email source. The subject of the email. This parameter is
             mandatory when initiating a discussion.
@@ -2562,7 +3009,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetAllInterventionsResponse'
+                $ref: '#/components/schemas/Intervention'
           description: Success
         '422':
           description: Unprocessable Entity
@@ -2603,6 +3050,11 @@ paths:
         Authorization​: no.
       operationId: updateIntervention
       parameters:
+        - in: path
+          name: interventionId
+          required: true
+          schema:
+            type: string
         - description: Intervention custom field with key "custom_field_key". It can be multiple if custom field is multiple or is has multiple_choice type.
           in: query
           name: custom_field_values[custom_field_key]
@@ -4359,6 +4811,11 @@ paths:
           required: false
           schema:
             type: integer
+        - description: enable auto scroll down (Boolean)
+          in: query
+          name: enable_auto_scroll_down
+          schema:
+            type: boolean
         - description: enable password expiration (Boolean)
           in: query
           name: expire_password_enabled
@@ -4976,7 +5433,7 @@ paths:
 
 
         Authorization​: for that call to succeed several conditions are required:
-          - the task must be in an agent’s workbin. 
+          - the task must be in an agent’s workbin.
           - the access token user must either own the task or be able to monitor all tasks or be able to monitor his team’s tasks if the task is owned by one of his team member.
       operationId: completeTask
       parameters:
@@ -6342,6 +6799,12 @@ paths:
           required: false
           schema:
             type: string
+        - description: The signature name.
+          in: query
+          name: name
+          required: false
+          schema:
+            type: string
       responses:
         '200':
           content:
@@ -6450,6 +6913,12 @@ paths:
         - description: The two-letter code of the signature language.
           in: query
           name: language
+          required: false
+          schema:
+            type: string
+        - description: The signature name.
+          in: query
+          name: name
           required: false
           schema:
             type: string
@@ -6575,125 +7044,45 @@ paths:
           schema:
             items:
               enum:
-                - api_access_token.created
-                - api_access_token.destroyed
-                - api_access_token.updated
-                - automatic_exports_task.created
-                - automatic_exports_task.destroyed
-                - automatic_exports_task.failed
-                - automatic_exports_task.succeed
-                - automatic_exports_task.updated
-                - category.created
-                - category.destroyed
-                - category.updated
-                - community.created
-                - community.destroyed
-                - community.updated
-                - content.admin_stamped
                 - content.approved
-                - content.author_blocked
-                - content.author_stamped
-                - content.author_unblocked
-                - content.auto_categorization_infirmed
-                - content.auto_categorization_not_precise
-                - content.auto_categorized
-                - content.auto_ignored
-                - content.categorized
-                - content.destroyed
                 - content.discussion_initiated
-                - content.discussion_planned
-                - content.ice_nth_content_ignored
-                - content.ignored
+                - content.exported
                 - content.imported
-                - content.liked
-                - content.moderated_ban
-                - content.moderated_modif
-                - content.moderated_nok
-                - content.moderated_ok
-                - content.planned_discussion_synchronized
-                - content.published
-                - content.recategorized
                 - content.replied
-                - content.reply_assistant_used
-                - content.retried_synchronization
-                - content.retweeted
-                - content.source_changed
-                - content.stared
-                - content.thread_closed
-                - content.thread_opened
-                - content.unliked
-                - content.unpublished
-                - content.unstamped
-                - content.unstared
-                - content.updated
-                - content_source.created
-                - content_source.destroyed
-                - content_source.updated
-                - content_thread.categorized
-                - content_thread.destroyed
-                - content_thread.recategorized
-                - custom_field.created
-                - custom_field.destroyed
-                - custom_field.updated
-                - expired_data_purge.deleted
-                - extension.created
-                - extension.destroyed
-                - extension.updated
-                - folder.created
-                - folder.destroyed
-                - folder.updated
-                - identity.followed
-                - identity.unfollowed
-                - identity.updated
+                - content.update_exported
+                - identity.merged
+                - identity.unmerged
                 - intervention.assigned
                 - intervention.canceled
                 - intervention.closed
+                - intervention.custom_fields_updated
                 - intervention.deferred
                 - intervention.opened
+                - intervention.reactivated
                 - intervention.recategorized
                 - intervention.reopened
-                - intervention.updated
                 - intervention.user_updated
-                - intervention_comment.created
-                - intervention_comment.destroyed
-                - reply_assistant_knowledge_base_entry.created
-                - reply_assistant_knowledge_base_entry.destroyed
-                - reply_assistant_knowledge_base_entry.updated
-                - reply_assistant_knowledge_base_version.created
-                - reply_assistant_knowledge_base_version.destroyed
-                - reply_assistant_knowledge_base_version.updated
-                - reply_assistant_sentence_entry.created
-                - reply_assistant_sentence_entry.destroyed
-                - reply_assistant_sentence_entry.updated
-                - reply_assistant_sentence_version.created
-                - reply_assistant_sentence_version.destroyed
-                - reply_assistant_sentence_version.updated
-                - reply_assistant_version_permalink.created
-                - reply_assistant_version_permalink.destroyed
-                - reply_assistant_version_permalink.updated
-                - role.created
-                - role.destroyed
-                - role.updated
-                - security.updated
-                - session.created
-                - session.destroyed
-                - settings.updated
-                - survey.created
-                - survey.destroyed
-                - survey.updated
-                - tag.created
-                - tag.destroyed
-                - tag.updated
-                - team.created
-                - team.destroyed
-                - team.updated
-                - user.created
-                - user.destroyed
-                - user.disconnected
-                - user.impersonated
-                - user.invited
-                - user.notifications_updated
-                - user.updated
+                - push_agent.accept_task
+                - push_agent.availability_change
+                - push_agent.busyness_change
+                - push_agent.connected
+                - push_agent.disconnected
+                - push_agent.missed_task
+                - push_agent.reconnected
+                - push_agent.request_task
+                - survey_response.imported
+                - task.assigned
+                - task.completed
+                - task.created
+                - task.destroyed
+                - task.expired_from_step
+                - task.expired_from_workbin
+                - task.recategorized
+                - task.resume
+                - task.supervisor_assigned
+                - task.taken
+                - task.transferred
+                - task.undelivered
               type: string
             type: array
       responses:
@@ -6992,6 +7381,10 @@ components:
           type: array
         task_timeout_seconds:
           type: integer
+        agent_sla:
+          type: integer
+        agent_sla_threshold:
+          type: integer
         updated_at:
           format: date-time
           type: string
@@ -7101,6 +7494,11 @@ components:
         updated_at:
           format: date-time
           type: string
+        capabilities_supported:
+          description: lists the types of structured messages that can be used to reply to this type of message
+          items:
+             type: string
+          type: array
       required:
         - id
     ContentAttachment:
@@ -7678,6 +8076,18 @@ components:
           items:
             $ref: '#/components/schemas/Webhook'
           type: array
+    BotCompleteResponse:
+      properties:
+        status:
+          type: string
+        message:
+          type: string
+    HandoverFromBotToAgentResponse:
+      properties:
+        status:
+          type: string
+        message:
+          type: string
     Identity:
       properties:
         avatar_url:
@@ -8170,6 +8580,8 @@ components:
           type: boolean
         dump_in_preprod:
           type: boolean
+        enable_auto_scroll_down:
+          type: boolean
         expire_password_after:
           type: integer
         expire_password_enabled:
@@ -8288,6 +8700,47 @@ components:
         enable_web:
           description: Only on Engage Messaging sources. Boolean describing if the source is enabled on the web or not.
           type: boolean
+        auto_response_triggers:
+          description: Automatic Messages. Only on sources which supports Automatic Messages.
+          type: array
+          items:
+            properties:
+              language:
+                type: string
+              created_from_trigger:
+                type: string
+              body:
+                type: string
+        auto_response_trigger_enabled:
+          description: Boolean describing if answers are enabled to first messages and/or to messages outside business hours. Only on sources which supports Automatic Messages.
+          properties:
+            first_message_from_user:
+              type: boolean
+            out_of_office_hours_message:
+              type: boolean
+          type: object
+        auto_response_trigger_grace_periods:
+          description: Integer describing time between two messages. Only on sources which supports Automatic Messages.
+          properties:
+            first_message_from_user:
+              type: integer
+            out_of_office_hours_message:
+              type: integer
+          type: object
+        signatures:
+          description: Signatures.
+          type: array
+          items:
+            properties:
+              language:
+                type: string
+              name:
+                type: string
+              body:
+                type: string
+        from_name:
+          description: Custom sender name. Only on sources which supports a custom sender name.
+          type: string
         error_message:
           type: string
         template_message_namespace:
@@ -8317,6 +8770,22 @@ components:
           type: string
         sla_response:
           description: Response time (seconds)
+          format: int32
+          type: integer
+        sla_threshold:
+          description: Customer SLA warning threshold (must be greater than 0 and less than 100, default value is 0).
+          format: int32
+          type: integer
+        sla_filtering_categories_strategy:
+          description: Categories filtering strategy for Customer SLA indicator ("ignored_categories" or "selected_categories")
+          type: string
+        sla_filtering_category_ids:
+          description: Filtering categories for Customer SLA indicator
+          items:
+            type: string
+          type: array
+        default_task_priority:
+          description: Default priority for interactions
           format: int32
           type: integer
         status:
@@ -8354,6 +8823,7 @@ components:
                 type: string
           type: array
         time_sheet_ids:
+          description: Business Hours (Limited to 1)
           items:
             type: string
           type: array
@@ -8361,6 +8831,9 @@ components:
           description: Priority boost of transferred tasks
           format: int32
           type: integer
+        attachments_security_level:
+          description: Attachments security level. ("strict", "relaxed", or "permissive"). Strict allows images and medias. Relaxed allows images, media and documents. Permissive allows all kind of attachments
+          type: string
         type:
           type: string
         updated_at:
@@ -8371,6 +8844,90 @@ components:
           items:
             type: string
           type: array
+        time_for_thread_inclusion:
+          description: Time for thread inclusion
+          type: integer
+        time_for_thread_inclusion_enabled:
+          description: Enable time for thread inclusion. Only on Email sources
+          type: boolean
+        email_parser:
+          description: Email parser (BBCode). Only on Email sources
+          type: boolean
+        imap_smtp_email:
+          description: Email address to synchronize. Only on Email sources
+          type: string
+        imap_mailboxes_to_import:
+          description: Folders to synchronize. Only on Email sources
+          items:
+            type: string
+          type: array
+        imap_mailbox_used_for_sent_mail:
+          description: Folder for 'Sent Mail'. Only on Email sources
+          type: string
+        imap_address:
+          description: IMAP server address. Only on Email sources
+          type: string
+        imap_port:
+          description: IMAP server port. Only on Email sources
+          format: int32
+          type: integer
+        imap_username:
+          description: IMAP username. Only on Email sources
+          type: string
+        imap_use_ssl_tls:
+          description: Use SSL/TLS protocol to establish secure IMAP connection. Only on Email sources
+          type: boolean
+        imap_use_start_tls:
+          description: Use STARTTLS protocol to establish secure IMAP connection. Only on Email sources
+          type: boolean
+        imap_authentication_type:
+          description: IMAP Authentication type ("basic" or "microsoft_identity_platform"). Only on Email sources
+          type: string
+        imap_ssl_verify_mode:
+          description: IMAP SSL verification mode. ("NONE", "PEER", "CLIENT_ONCE" or "FAIL_IF_NO_PEER_CERT"). Only on Email sources
+          type: string
+        smtp_address:
+          description: SMTP server address. Only on Email sources
+          type: string
+        smtp_port:
+          description: SMTP server port. Only on Email sources
+          format: int32
+          type: integer
+        smtp_username:
+          description: SMTP username. Only on Email sources
+          type: string
+        smtp_use_ssl_tls:
+          description: Use SSL/TLS protocol to establish secure SMTP connection. Only on Email sources
+          type: boolean
+        smtp_use_start_tls:
+          description: Use STARTTLS protocol to establish secure SMTP connection. Only on Email sources
+          type: boolean
+        smtp_authentication_type:
+          description: SMTP Authentication type ("basic" or "microsoft_identity_platform"). Only on Email sources
+          type: string
+        smtp_ssl_verify_mode:
+          description: SMTP SSL verification mode ("NONE", "PEER", "CLIENT_ONCE" or "FAIL_IF_NO_PEER_CERT"). Only on Email sources
+          type: string
+        smtp_helo_domain:
+          description: Used to identify HELO/EHLO when connecting to the SMTP server. Only on Email sources
+          type: string
+        threading_heuristics:
+          description: Threading_heuristics. Only on Email sources
+          type: boolean
+        spam_assassin_level:
+          description: Spam threshold ("disabled", "relaxed", or "strict"). Only on Email sources
+          type: string
+        whitelisted_emails:
+          description: Whitelisted emails. All emails received from this address won't be threaded and can be associated with an anonymous identity or the Reply-To, if there is one. To be filled when implementing a form. Only on Email sources
+          type: string
+        cc_blacklist:
+          description: Exclude from TO/CC. Only on Email sources
+          items:
+            type: string
+          type: array
+        postmark_enabled:
+          description: Enable Postmark. Only on Email sources
+          type: boolean
     Survey:
       properties:
         id:
@@ -8779,6 +9336,8 @@ components:
         id:
           type: string
         body:
+          type: string
+        name:
           type: string
         source_ids:
           items:
