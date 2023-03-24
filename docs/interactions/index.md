@@ -37,7 +37,7 @@ RingCentral Engage offers a fully integrated three-in-one source called **Engage
 
 When the source is configured as messaging, the conversation histories are shared between the web and mobile channels. The 2 web chat channels also feature a proactive mode that allows a fine targeting of visitors being engaged.
 
-Learn more about creating a [web messaging channel]() so customers can interact with agents right from their browser.
+Learn more about creating a [web messaging channel](./web-messaging/index.md) so customers can interact with agents right from their browser.
 
 ## Engage Bots
 
