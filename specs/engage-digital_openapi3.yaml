@@ -5130,7 +5130,7 @@ paths:
         user does not exist (not_found) or if he’s not connected (disconnected).
 
 
-        Authorization​: only users that have the right to monitor the task view.
+        Authorization​: only users that have the right to monitor the task view or own agent status.
       operationId: getAgentStatus
       parameters:
         - in: path
@@ -5156,7 +5156,7 @@ paths:
         or “available”.
 
 
-        Authorization​: only users that have the right to monitor the task view.
+        Authorization​: only users that have the right to monitor the task view or own agent status.
       operationId: changeAgentStatus
       parameters:
         - in: path
