@@ -6705,7 +6705,7 @@
                     "value": "application/json"
                   }
                 ],
-                "description": "This method get the status of a connected agent. Returns a 404 if the user does not exist (not_found) or if he’s not connected (disconnected).\n\nAuthorization​: only users that have the right to monitor the task view."
+                "description": "This method get the status of a connected agent. Returns a 404 if the user does not exist (not_found) or if he’s not connected (disconnected).\n\nAuthorization​: only users that have the right to monitor the task view or own agent status."
               }
             },
             {
@@ -6747,7 +6747,7 @@
                     "value": "application/json"
                   }
                 ],
-                "description": "This method updates an agent's availability. Can be used to set either channels statuses OR custom  status. If both parameters are provided, ignores custom status.The status parameter​ **MUST** b​e either “away” or “available”.\n\nAuthorization​: only users that have the right to monitor the task view."
+                "description": "This method updates an agent's availability. Can be used to set either channels statuses OR custom  status. If both parameters are provided, ignores custom status.The status parameter​ **MUST** b​e either “away” or “available”.\n\nAuthorization​: only users that have the right to monitor the task view or own agent status."
               }
             }
           ]
