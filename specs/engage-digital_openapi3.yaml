@@ -810,6 +810,22 @@ paths:
           required: false
           schema:
             type: integer
+        - description: this field defines the time before a task is auto completed (in seconds).
+          in: query
+          name: task_auto_complete_seconds
+          required: false
+          schema:
+            type: integer
+        - description: >-
+            An array containing id of each category set when auto completing a task
+            (multiple).
+          in: query
+          name: 'auto_complete_category_ids[]'
+          required: false
+          schema:
+            items:
+              type: string
+            type: array
       responses:
         '200':
           content:
@@ -7388,6 +7404,12 @@ components:
         updated_at:
           format: date-time
           type: string
+        auto_complete_category_ids:
+          items:
+            type: string
+          type: array
+        task_auto_complete_seconds:
+          type: integer
     Community:
       properties:
         active:
