@@ -10,7 +10,7 @@ A customer of RingCentral Engage wants to have a Chat integrated in a website, c
 
 On the target website, we insert a short javascript code that will load a javascript script called “the loader”.
 
-Depending on whether or not the Chat source is active, or in maintenance, the loader contains the required data to run or do nothing. Among the data is configuration data of the source and the customization, and some code to initialize things. Once loaded itself, the loader will asynchronously load the full javascript code of the Chat, configure things and start the session. The full javascript code is common for all our customers and the loader depends on each source configuration. 
+Depending on whether or not the Chat source is active, or in maintenance, the loader contains the required data to run or do nothing. Among the data is configuration data of the source and the customization, and some code to initialize things. Once loaded itself, the loader will asynchronously load the full javascript code of the Chat, configure things and start the session. The full javascript code is common for all our customers and the loader depends on each source configuration.
 
 The Chat client-side code is composed of two pieces:
 
@@ -126,7 +126,7 @@ On the Messaging mode, the user can start a new conversation on his own by click
 
 This can be used in the Rules Engine for some custom processing:
 
-<img class="img-fluid" width="696" src="../../../img/web-messaging-rules-engine.png">
+<img class="img-fluid" width="696" src="../../img/web-messaging-rules-engine.png">
 
 ## Visitor Identification
 
@@ -148,7 +148,7 @@ Every customer using Chat has an internal ID in RingCentral Engage. This ID's pu
 
 #### Automated RingCentral Engage UUID
 
-This is the default configuration. RingCentral Engage Messaging automatically generates IDs (called UUID) for every new customer using the chat. RingCentral Engage persists this identifier hisotrically in the customer browser cache. If the customer empties its cache or switches browser or computer a new UUID will be generated and the new conversation will not be merged with the old one. Basically at the RingCentral Engage level this will be a brand new customer even if the person has the same name and attributes as another one.
+This is the default configuration. RingCentral Engage Messaging automatically generates IDs (called UUID) for every new customer using the chat. RingCentral Engage persists this identifier historically in the customer browser cache. If the customer empties its cache or switches browser or computer a new UUID will be generated and the new conversation will not be merged with the old one. Basically at the RingCentral Engage level this will be a brand new customer even if the person has the same name and attributes as another one.
 
 A good advantage of this mode is that it handles nicely, the situation when visitors start a Chat session as anonymous and then log in during the session. The identity remains the same and is just updated with the newly available information and the conversation is not interrupted.
 

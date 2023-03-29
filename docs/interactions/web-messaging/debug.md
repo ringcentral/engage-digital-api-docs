@@ -2,7 +2,11 @@
 
 ## Debug Mode
 
-In the target website, you can type DEBUG on the keyboard to activate the Debug mode. With the debug toolbar appearing on the top right corner of the website.
+In the target website, you can type the following command in the browser's console to activate the Debug mode.
+```javascript
+Dimelo.Messaging.Debug.start();
+```
+With the debug toolbar appearing on the top right corner of the website.
 
 <img class="img-fluid" width="486" src="../../../img/web-messaging-debug.png">
 
