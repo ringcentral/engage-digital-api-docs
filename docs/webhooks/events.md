@@ -219,6 +219,7 @@ Property | Value | Description
 `in_reply_to_id` | String | ID of the content for which this content is a reply
 `private` | Boolean | Whether the content is a private message
 `source_id` | String | ID of the source associated to the content
+`source_type` | String | Type of the source associated to the content
 `status` | String | Status of the content
 `synchronization_status` | String | For content.exported and content.update_exported event, the status of the synchronization (successful or unsuccessful).
 `thread_id` | String | ID of the thread that owns the content
