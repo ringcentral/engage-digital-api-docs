@@ -244,6 +244,7 @@ List of events containing a `task_id`:
 | tw_following_count               | People the identity follows   | Integer  | 865                                  | Extra (twitter) updated only when there is a new tweet from the user    |
 | tw_statuses_count                | Number of tweets              | Integer  | 1023                                 | Extra (twitter) updated only when there is a new tweet from the user    |
 | tw_location                      | User's location               | String   | Paris                                | Extra (twitter) updated only when there is a new tweet from the user    |
+| ig_followers_count               | People following the identity | Integer  | 395                                  | Extra (Instagram) updated only when there is a new message from the user  |
 | dimelo_type                      | DC Account type               | String   | facebook                             | Extra (DC)                                                              |
 | dimelo_custom_field_1 (up to 10) | DC custom fields              | String   | 01 23 45 67 89                       | Extra (DC)                                                              |
 | fb_bio                           | Facebook bio                  | String   | Painter living in Paris              | Extra (facebook) updated only when there is a new message from the user |
