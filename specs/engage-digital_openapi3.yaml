@@ -810,7 +810,7 @@ paths:
           required: false
           schema:
             type: integer
-        - description: this field defines the time before a task is auto completed (in seconds).
+        - description: Time before a task is auto completed (in seconds).
           in: query
           name: task_auto_complete_seconds
           required: false

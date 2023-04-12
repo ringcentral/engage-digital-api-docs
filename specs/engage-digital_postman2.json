@@ -6886,7 +6886,7 @@
                     {
                       "key": "task_auto_complete_seconds",
                       "value": "\u003cinteger\u003e",
-                      "description": "this field defines the time before a task is auto completed (in seconds).",
+                      "description": "Time before a task is auto completed (in seconds).",
                       "disabled": true
                     },
                     {
