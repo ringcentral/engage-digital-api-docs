@@ -7405,10 +7405,13 @@ components:
           format: date-time
           type: string
         auto_complete_category_ids:
+          description: An array containing id of each category set when auto completing a task
+            (multiple).
           items:
             type: string
           type: array
         task_auto_complete_seconds:
+          description: Time before a task is auto completed (in seconds).
           type: integer
     Community:
       properties:
