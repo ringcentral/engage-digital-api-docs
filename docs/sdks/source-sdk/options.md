@@ -86,6 +86,11 @@ Enable the messaging view in Engage Digital. Can be used with **only with one re
 
 Adds the ability to send/receive `typing` events (`typing.start`/`typing.stop`). **Can only be used if the [`view.messaging`](#viewmessaging) options is enabled**.
 
+## messaging.queuing_update
+
+Adds the ability to receive `messaging.queuing_update` requests (only available if using the Task mode in Engage Digital).
+
+
 ## messages.attachments
 
 Enable the message composition with attachments in Engage Digital.

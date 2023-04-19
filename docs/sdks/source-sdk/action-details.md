@@ -239,6 +239,30 @@ The reply action is used internally into Engage Digital by displaying the reply 
 !!! alert "Please Note"
     You don't need to implement `reply` action to reply to a content. You can create any message with the `message.create` action. `Reply` action is used to respond to a **specific message.**
 
+
+### messaging.queuing_update
+
+The `messaging.queuing_update` action is sent by Engage Digital to notify you about queuing updates, it includes the estimated wait time (in seconds) and the position of the task in the queue.
+In order to receive this action the task mode should be enabled and the corresponding channel (on Engage Digital) should be part of a channel group that is included in the current routing strategy.
+
+#### Request
+
+```json
+{
+  "action": "messaging.queuing_update",
+  "params": {
+    "estimated_wait_time": 30,
+    "position": 1,
+    "thread_id": "1",
+    "in_reply_to_id": "10"
+  }
+}
+```
+
+#### Response
+
+We're not expecting any specific response format for this request but the response code should be in the `2xx` range.
+
 ## Custom Actions
 
 All non-standard actions will receive the same parameters: the content id and the id of the user who performed the action. The response will have to show the entire content so we can process all the changes that occured.
