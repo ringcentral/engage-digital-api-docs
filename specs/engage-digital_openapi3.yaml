@@ -2571,6 +2571,102 @@ paths:
       summary: Getting an identity from its id
       tags:
         - Identities
+  /identities/import:
+    post:
+      description: >-
+        This method imports an identity. The identity created or matching the
+        identifier criteria will be returned.
+        Identity import is only available for the following communities: Email, Phone.
+        Emails identities import the following fields: company, firstname, gender, home_phone, lastname, mobile_phone, screenname, extra_values[extra_value_key]
+        Phone identities only import the following fields: company, firstname, gender, lastname, extra_values[extra_value_key]. screenname and mobile_phone are automatically set to the identifier parameter sanitized value. identifier value must be an international phone number, it will be sanitized so "+336.23.45.67.89" will be stored as "33623456789".
+
+      operationId: importIdentity
+      parameters:
+        - description: The community of the identity. Optional if source_id is provided.
+          in: query
+          name: community_id
+          required: true
+          schema:
+            type: string
+        - description: The source of the identity. Not used if community_id is provided.
+          in: query
+          name: source_id
+          required: false
+          schema:
+            type: string
+        - description: The identifier representing the identity on the community (email address for emails communities, phone number with international format for phone communities).
+          in: query
+          name: identifier
+          required: true
+          schema:
+            type: string
+        - description: If present and an identity with the provided identifier is already existing, it'll be updated. Otherwise, the following parameters will be used only during an identity creation.
+          in: query
+          name: upsert
+          required: false
+          schema:
+            type: boolean
+        - description: Identity company.
+          in: query
+          name: company
+          required: false
+          schema:
+            type: string
+        - description: Identity firstname.
+          in: query
+          name: firstname
+          required: false
+          schema:
+            type: string
+        - description: Identity’s gender. It can be "man", "woman" or empty.
+          in: query
+          name: gender
+          required: false
+          schema:
+            enum:
+              - man
+              - woman
+            type: string
+        - description: Identity home phone.
+          in: query
+          name: home_phone
+          required: false
+          schema:
+            type: string
+        - description: Identity lastname.
+          in: query
+          name: lastname
+          required: false
+          schema:
+            type: string
+        - description: Identity mobile phone.
+          in: query
+          name: mobile_phone
+          required: false
+          schema:
+            type: string
+        - description: Identity screenname.
+          in: query
+          name: screenname
+          required: false
+          schema:
+            type: string
+        - description: Identity extra_values with key « extra_value ».
+          in: query
+          name: 'extra_values[extra_value_key]'
+          required: false
+          schema:
+            type: string
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Identity'
+          description: Success
+      summary: Importing an identity
+      tags:
+        - Identities
   /identity_groups:
     get:
       description: >-
