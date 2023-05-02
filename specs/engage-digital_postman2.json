@@ -1073,6 +1073,108 @@
               }
             },
             {
+              "name": "Importing an identity",
+              "request": {
+                "url": {
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/identities/import",
+                  "host": [
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
+                  ],
+                  "path": [
+                    "1.0",
+                    "identities",
+                    "import"
+                  ],
+                  "query": [
+                    {
+                      "key": "community_id",
+                      "value": "\u003cstring\u003e",
+                      "description": "The community of the identity. Optional if source_id is provided.",
+                      "disabled": true
+                    },
+                    {
+                      "key": "source_id",
+                      "value": "\u003cstring\u003e",
+                      "description": "The source of the identity. Not used if community_id is provided.",
+                      "disabled": true
+                    },
+                    {
+                      "key": "identifier",
+                      "value": "\u003cstring\u003e",
+                      "description": "The identifier representing the identity on the community (email address for emails communities, phone number with international format for phone communities).",
+                      "disabled": true
+                    },
+                    {
+                      "key": "upsert",
+                      "value": "\u003cboolean\u003e",
+                      "description": "If present and an identity with the provided identifier is already existing, it'll be updated. Otherwise, the following parameters will be used only during an identity creation.",
+                      "disabled": true
+                    },
+                    {
+                      "key": "company",
+                      "value": "\u003cstring\u003e",
+                      "description": "Identity company.",
+                      "disabled": true
+                    },
+                    {
+                      "key": "firstname",
+                      "value": "\u003cstring\u003e",
+                      "description": "Identity firstname.",
+                      "disabled": true
+                    },
+                    {
+                      "key": "gender",
+                      "value": "\u003cstring\u003e",
+                      "description": "Identity’s gender. It can be \"man\", \"woman\" or empty.",
+                      "disabled": true
+                    },
+                    {
+                      "key": "home_phone",
+                      "value": "\u003cstring\u003e",
+                      "description": "Identity home phone.",
+                      "disabled": true
+                    },
+                    {
+                      "key": "lastname",
+                      "value": "\u003cstring\u003e",
+                      "description": "Identity lastname.",
+                      "disabled": true
+                    },
+                    {
+                      "key": "mobile_phone",
+                      "value": "\u003cstring\u003e",
+                      "description": "Identity mobile phone.",
+                      "disabled": true
+                    },
+                    {
+                      "key": "screenname",
+                      "value": "\u003cstring\u003e",
+                      "description": "Identity screenname.",
+                      "disabled": true
+                    },
+                    {
+                      "key": "extra_values[extra_value_key]",
+                      "value": "\u003cstring\u003e",
+                      "description": "Identity extra_values with key « extra_value ».",
+                      "disabled": true
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "description": "This method imports an identity. The identity created or matching the identifier criteria will be returned. Identity import is only available for the following communities: Email, Phone. Emails identities import the following fields: company, firstname, gender, home_phone, lastname, mobile_phone, screenname, extra_values[extra_value_key] Phone identities only import the following fields: company, firstname, gender, lastname, extra_values[extra_value_key]. screenname and mobile_phone are automatically set to the identifier parameter sanitized value. identifier value must be an international phone number, it will be sanitized so \"+336.23.45.67.89\" will be stored as \"33623456789\"."
+              }
+            },
+            {
               "name": "Getting an identity from its id",
               "request": {
                 "url": {
