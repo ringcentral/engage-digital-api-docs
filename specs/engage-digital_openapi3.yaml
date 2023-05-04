@@ -2860,6 +2860,37 @@ paths:
       summary: Updating an identity group
       tags:
         - Identity Groups
+  '/identity_groups/{identityGroupId}/merge':
+    put:
+      description: >-
+        This method merges an identity into an identity group.
+        In case of conflicts, the attributes of the identity group will be kept.
+        The identity group will be returned.
+
+        Authorization​: only users which can update identities.
+      operationId: mergeIdentityGroup
+      parameters:
+        - in: path
+          name: identityGroupId
+          required: true
+          schema:
+            type: string
+        - description: The identity which will be merged into the identity group.
+          in: query
+          name: associated_identity_id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IdentityGroup'
+          description: Success
+      summary: Merging an identity into an identity group
+      tags:
+        - Identity Groups
   /interface_locales:
     get:
       description: This method renders all available locales for user interface.
