@@ -1398,6 +1398,43 @@
                 ],
                 "description": "This method updates an identity group from given attributes and renders it in case of success.\n\nAuthorization​: no."
               }
+            },
+            {
+              "name": "Merging an identity into an identity group",
+              "request": {
+                "url": {
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/identity_groups/:identityGroupId/merge",
+                  "host": [
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
+                  ],
+                  "path": [
+                    "1.0",
+                    "identity_groups",
+                    ":identityGroupId",
+                    "merge"
+                  ],
+                  "query": [
+                    {
+                      "key": "associated_identity_id",
+                      "value": "\u003cstring\u003e",
+                      "description": "The identity which will be merged into the identity group.",
+                      "disabled": true
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "description": "This method merges an identity into an identity group. In case of conflicts, the attributes of the identity group will be kept. The identity group will be returned.\nAuthorization​: only users which can update identities."
+              }
             }
           ]
         },
