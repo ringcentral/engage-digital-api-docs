@@ -2032,7 +2032,7 @@
                     {
                       "key": "color",
                       "value": "\u003cinteger\u003e",
-                      "description": "Color of the icon (see S​ ource colors​) (Integer)",
+                      "description": "Color of the icon (see Source colors) (Integer)",
                       "disabled": true
                     },
                     {
