@@ -967,7 +967,7 @@ paths:
           required: false
           schema:
             type: string
-        - description: Color of the icon (see S​ ource colors​) (Integer)
+        - description: Color of the icon (see Source colors) (Integer)
           in: query
           name: color
           required: false
@@ -8819,6 +8819,11 @@ components:
             4 Yellow: 5 Orange: 6 Red: 7 Asphalt: 8 Grey: 9
           format: int32
           type: integer
+        color_hex:
+          description: >-
+            Hex code of the color of the icon
+          example: "#A1A1A1"
+          type: string
         community_id:
           type: string
         content_archiving:
