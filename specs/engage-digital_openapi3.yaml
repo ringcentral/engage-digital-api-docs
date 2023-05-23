@@ -2487,6 +2487,12 @@ paths:
           required: false
           schema:
             type: string
+        - description: To filter identities on given source's community. Not used if community_id is provided.
+          in: query
+          name: source_id
+          required: false
+          schema:
+            type: string
         - description: To filter on given group id.
           in: query
           name: identity_group_id
