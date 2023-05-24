@@ -1015,6 +1015,12 @@
                       "disabled": true
                     },
                     {
+                      "key": "source_id",
+                      "value": "\u003cstring\u003e",
+                      "description": "To filter identities on given source's community. Not used if community_id is provided.",
+                      "disabled": true
+                    },
+                    {
                       "key": "identity_group_id",
                       "value": "\u003cstring\u003e",
                       "description": "To filter on given group id.",
