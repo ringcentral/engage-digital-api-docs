@@ -1806,12 +1806,26 @@ paths:
           schema:
             type: string
         - description: >-
-            For an email or SMS and WhatsApp source. For an email, an array containing the
-            email addresses used in the “To” section of the email. This
-            parameter is mandatory when initiating a discussion. For a WhatsApp message or a SMS, the
-            number the message will be sent to. It must start with 00 or +, example:
+            For a SMS, WhatsApp, or Engage Messaging source.
+            For a WhatsApp message or a SMS,
+            the number the message will be sent to.
+            It must start with 00 or +, example:
             +33634231224 or 0033634231224. This parameter is mandatory when
             initiating a discussion.
+            For an Engage Messaging content,
+            the foreign_id of the identity to send the message to.
+            The oubound messaging option must be enabled.
+            This parameter is mandatory when initiating a discussion and
+            forbidden when replying to an existing message.
+          in: query
+          name: 'to'
+          required: false
+          schema:
+            type: string
+        - description: >-
+            For an email source. An array containing the
+            email addresses used in the “To” section of the email. This
+            parameter is mandatory when initiating a discussion.
           explode: true
           in: query
           name: 'to[]'
