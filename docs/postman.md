@@ -15,7 +15,7 @@ Before you can use Postman, it is important to note the URL for your account and
 
 ### Your API URL
 
-Engage Digital accounts use a customer subdomain that is important to note when accessing both the web application and API. In the following URL, replace the `{mycompany}` variable in the web URL with your own subdomain when accessing your account. 
+Engage Digital accounts use a customer subdomain that is important to note when accessing both the web application and API. In the following URL, replace the `{mycompany}` variable in the web URL with your own subdomain when accessing your account.
 
 `https://{mycompany}.digital.ringcentral.com`
 
@@ -44,8 +44,8 @@ Use the following steps to configure your Postman environment:
 1. In Postman, create an environment by clicking the Gear icon for "Management Environments" in the upper right corner. This will bring up a list of existing environments.
 2. Click "Add" to create a new environment.
 3. Choose a name of your choice.
-4. Enter your server URL with "Variable": `RINGCENTRAL_ENGAGE_SERVER_URL` and "Initial Value" set to your API URL. This would be: `https://{mycompany}.api.digital.ringcentral.com` uising your company's subdomain replacing `{mycompany}`.
-4. Enter your static access token with "Variable" set to `RINGCENTRAL_ENGAGE_ACCESS_TOKEN` and "Initial Value" set to your access token. This will set the proper request header.
+4. Enter your server URL with "Variable": `ENGAGE_DIGITAL_SERVER_URL` and "Initial Value" set to your API URL. This would be: `https://{mycompany}.api.digital.ringcentral.com` uising your company's subdomain replacing `{mycompany}`.
+4. Enter your static access token with "Variable" set to `ENGAGE_DIGITAL_ACCESS_TOKEN` and "Initial Value" set to your access token. This will set the proper request header.
 5. Click the "Add" button to finish adding this environment.
 
 ### Importing the Postman collection
@@ -54,7 +54,7 @@ Use the following steps to import the Engage Digital Postman collection.
 
 1. In the upper left corner of the Postman application click the "Import" button.
 2. Click the "Import from Link" tab.
-3. Paste in the following URL where it says "Enter a URL and press import": [`http://ringcentral.github.io/api-specs/specs_engage_engage-digital_postman-2.0.json`](http://ringcentral.github.io/api-specs/specs_engage_engage-digital_postman-2.0.json)
+3. Paste in the following URL where it says "Enter a URL and press import": [`https://raw.githubusercontent.com/ringcentral/engage-digital-api-docs/master/specs/engage-digital_postman2.json`](https://raw.githubusercontent.com/ringcentral/engage-digital-api-docs/master/specs/engage-digital_postman2.json)
 4. Click the "Import" button
 
 ### Making an API call
