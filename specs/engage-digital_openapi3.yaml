@@ -1324,6 +1324,12 @@ paths:
           required: false
           schema:
             type: boolean
+        - description: Common ancestors threading. Only on Email sources
+          in: query
+          name: common_ancestors_threading
+          required: false
+          schema:
+            type: boolean
         - description: 'Spam threshold ("disabled", "relaxed", or "strict"). Only on Email sources'
           in: query
           name: spam_assassin_level
@@ -9076,6 +9082,9 @@ components:
           type: string
         threading_heuristics:
           description: Threading_heuristics. Only on Email sources
+          type: boolean
+        common_ancestors_threading:
+          description: Common ancestors threading. Only on Email sources
           type: boolean
         spam_assassin_level:
           description: Spam threshold ("disabled", "relaxed", or "strict"). Only on Email sources
