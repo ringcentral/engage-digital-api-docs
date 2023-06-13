@@ -2348,6 +2348,12 @@
                       "disabled": true
                     },
                     {
+                      "key": "common_ancestors_threading",
+                      "value": "\u003cboolean\u003e",
+                      "description": "Common ancestors threading. Only on Email sources",
+                      "disabled": true
+                    },
+                    {
                       "key": "spam_assassin_level",
                       "value": "\u003cstring\u003e",
                       "description": "Spam threshold (\"disabled\", \"relaxed\", or \"strict\"). Only on Email sources",
