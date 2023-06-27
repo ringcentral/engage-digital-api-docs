@@ -96,7 +96,7 @@ On web messaging mode only, an email notification containing unread messages is 
 
 <img class="img-fluid" width="469" src="../../../img/web-messaging-chat-link.png">
 
-If blank, the link will be the last visited page. 
+If blank, the link will be the last visited page.
 
 ### Time for Thread Inclusion and Threads Auto Closing
 
@@ -105,11 +105,23 @@ This parameter is mainly used in the mobile single-threaded part of this connect
 !!! warning
     This parameter is also used for auto closing the messaging threads. The messaging thread will be automatically closed by the application if the inactivity in the thread is at least the max between this parameter and 4 days. This is to ensure we do not leave open threads forever.
 
+### Enable Outbound Messaging
+
+This setting is available for web messaging, iOS messaging and Android messaging. It allows to initiate discussions on behalf of an agent through Engage Digital's API.
+
+It can be configured under the "Advanced settings" section:
+
+<img class="img-fluid" width="276" src="../../../img/web-messaging-enable-outbound-messaging.png">
+
+Enabling this option will unlock the `Initiate discussion` permission for this source. You will then be able to add it to agents you want to send messages on behalf of.
+
 ## Related Configuration
 
 ### Engage Messaging Specific Permissions
 
 You must ensure that each of the agents that will handle the messaging conversation has the `Read` and `Reply` permissions on the Engage Messaging source.
+
+You must also ensure they have the `Initiate discussion` permission if you enabled the outbound messaging option and want to send outbound messages on their behalf through the API.
 
 You must ensure that the Roles of the administrators/managers that will configure the messaging (triggers, items & custom variables) contain the `Manage Engage Messaging configuration` permission.
 
