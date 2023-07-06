@@ -2278,7 +2278,7 @@ paths:
         - Events
   /folders:
     get:
-      description: This method renders folders.
+      description: This method renders folders (shared folders and search folders that belongs to the current user).
       operationId: getAllFolders
       parameters:
         - description: The record index to start. Default value is 0.
@@ -7797,10 +7797,13 @@ components:
           type: string
     Folder:
       properties:
+        id:
+          type: string
         created_at:
           format: date-time
           type: string
-        id:
+        updated_at:
+          format: date-time
           type: string
         label:
           type: string
@@ -7814,8 +7817,9 @@ components:
           type: boolean
         role_restriction:
           $ref: '#/components/schemas/Restriction'
-        updated_at:
-          format: date-time
+        team_restriction:
+          $ref: '#/components/schemas/Restriction'
+        user_id:
           type: string
       required:
         - id
