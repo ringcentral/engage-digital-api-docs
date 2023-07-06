@@ -7114,7 +7114,7 @@
                     "value": "application/json"
                   }
                 ],
-                "description": "This method renders folders."
+                "description": "This method renders folders (shared folders and search folders that belongs to the current user)."
               }
             },
             {
