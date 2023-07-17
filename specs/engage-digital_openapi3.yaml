@@ -7632,6 +7632,13 @@ components:
           type: array
         foreign_id:
           type: string
+        headers:
+          description: only if content is an email
+          additionalProperties:
+            type: string
+          example:
+            Subject: Hello!
+            X-Spam-Score: "9.1"
         id:
           type: string
         in_reply_to_author_id:
@@ -7709,7 +7716,7 @@ components:
             access_token]
           type: string
     ContentBodyFormatted:
-      description: always contains text a​nd​ html versions.
+      description: always contains text and html versions.
       properties:
         html:
           type: string
