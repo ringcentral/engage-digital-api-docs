@@ -7636,6 +7636,8 @@ components:
           description: only if content is an email
           additionalProperties:
             type: array
+            items:
+              type: string
           example:
             Subject: ["Hello!"]
             X-Spam-Score: ["9.1"]
