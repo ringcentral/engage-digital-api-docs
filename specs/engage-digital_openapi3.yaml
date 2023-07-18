@@ -7635,10 +7635,11 @@ components:
         headers:
           description: only if content is an email
           additionalProperties:
-            type: string
+            type: array
           example:
-            Subject: Hello!
-            X-Spam-Score: "9.1"
+            Subject: ["Hello!"]
+            X-Spam-Score: ["9.1"]
+            X-Test: ["1", "2"]
         id:
           type: string
         in_reply_to_author_id:
