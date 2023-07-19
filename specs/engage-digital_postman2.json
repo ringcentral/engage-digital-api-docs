@@ -3158,7 +3158,7 @@
                     {
                       "key": "read_only",
                       "value": "\u003cboolean\u003e",
-                      "description": "true or false, that indicates if the custom field is in read-only (default: true).",
+                      "description": "true or false, that indicates if the custom field is in read-only (default: false).",
                       "disabled": true
                     }
                   ]

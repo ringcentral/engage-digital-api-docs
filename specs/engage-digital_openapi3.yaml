@@ -2097,7 +2097,7 @@ paths:
             type: integer
         - description: >-
             true or false, that indicates if the custom field is in read-only
-            (default: true).
+            (default: false).
           in: query
           name: read_only
           required: false
