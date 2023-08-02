@@ -457,6 +457,13 @@ paths:
       description: This method renders categories ordered by creation date (ascending).
       operationId: getAllCategories
       parameters:
+        - description: To filter categories on given category ids (separated by commas).
+          in: query
+          name: ids
+          example: '59248c4dae276a021cb296d2,ff0dc9ba250002871f7aabba'
+          required: false
+          schema:
+            type: string
         - description: To filter categories on given category parent id.
           in: query
           name: parent_id
