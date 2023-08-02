@@ -153,7 +153,7 @@ Here are the available options to the `addMessage` action:
 | - | - | - | - |
 |body|String|""|The body of the message to add|
 |agent|Boolean|false|Whether the message will appear to be from the agent or from the customer|
-|engage|Boolean|false|For customer messages only, determines whether the chat should be considered "engaged" (and thus creates a task in RingCentral Engage) or wait for the next real customer message|
+|engage|Boolean|false|For customer messages only, determines whether the chat should be considered "engaged" (and thus creates an interaction in RingCentral Engage) or wait for the next real customer message|
 
 ### Page Change
 

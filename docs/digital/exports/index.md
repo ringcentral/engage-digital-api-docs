@@ -72,7 +72,7 @@ When not using the `Export to zip file` option, the export_name variable is repl
 | Identity groups                | identity_groups                |
 | Intervention’s comments        | interventions_comments         |
 | Interventions                  | interventions                  |
-| Journal                        | journal                        |
+| Audit Log                      | journal                        |
 | Messages                       | messages                       |
 | Presence time                  | presence_time                  |
 | Roles                          | roles                          |

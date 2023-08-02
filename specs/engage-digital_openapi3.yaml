@@ -2095,6 +2095,15 @@ paths:
           schema:
             default: -1
             type: integer
+        - description: >-
+            true or false, that indicates if the custom field is in read-only
+            (default: false).
+          in: query
+          name: read_only
+          required: false
+          schema:
+            default: false
+            type: boolean
       responses:
         '200':
           content:
@@ -2189,6 +2198,15 @@ paths:
           schema:
             format: int32
             type: integer
+        - description: >-
+            true or false, that indicates if the custom field is in read-only
+            (default: false).
+          in: query
+          name: read_only
+          required: false
+          schema:
+            default: false
+            type: boolean
       responses:
         '200':
           content:
