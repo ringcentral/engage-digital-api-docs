@@ -2799,6 +2799,12 @@
                   ],
                   "query": [
                     {
+                      "key": "ids",
+                      "value": "\u003cstring\u003e",
+                      "description": "To filter categories on given category ids (separated by commas).",
+                      "disabled": true
+                    },
+                    {
                       "key": "parent_id",
                       "value": "\u003cstring\u003e",
                       "description": "To filter categories on given category parent id.",
