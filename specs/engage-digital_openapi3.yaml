@@ -6591,7 +6591,7 @@ paths:
             type: string
         - description: >-
             List of locales corresponding to the languages spoken by the user
-            (multiple).
+            (multiple). Is not available with RingCX.
           in: query
           name: 'spoken_languages[]'
           required: false
@@ -6721,7 +6721,7 @@ paths:
             type: string
         - description: >-
             List of locales corresponding to the languages spoken by the user
-            (multiple).
+            (multiple). Is not available with RingCX.
           in: query
           name: 'spoken_languages[]'
           required: false
@@ -6904,7 +6904,7 @@ paths:
             type: string
         - description: >-
             List of locales corresponding to the languages spoken by the user
-            (multiple).
+            (multiple). Is not available with RingCX.
           in: query
           name: 'spoken_languages[]'
           required: false

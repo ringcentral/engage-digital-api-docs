@@ -6048,7 +6048,7 @@
                     {
                       "key": "spoken_languages[]",
                       "value": "\u003carray.string.csv\u003e",
-                      "description": "List of locales corresponding to the languages spoken by the user (multiple).",
+                      "description": "List of locales corresponding to the languages spoken by the user (multiple). Is not available with RingCX.",
                       "disabled": true
                     },
                     {
@@ -6168,7 +6168,7 @@
                     {
                       "key": "spoken_languages[]",
                       "value": "\u003carray.string.csv\u003e",
-                      "description": "List of locales corresponding to the languages spoken by the user (multiple).",
+                      "description": "List of locales corresponding to the languages spoken by the user (multiple). Is not available with RingCX.",
                       "disabled": true
                     }
                   ]
@@ -6344,7 +6344,7 @@
                     {
                       "key": "spoken_languages[]",
                       "value": "\u003carray.string.csv\u003e",
-                      "description": "List of locales corresponding to the languages spoken by the user (multiple).",
+                      "description": "List of locales corresponding to the languages spoken by the user (multiple). Is not available with RingCX.",
                       "disabled": true
                     },
                     {
