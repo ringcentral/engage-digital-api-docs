@@ -5164,6 +5164,12 @@
                   ],
                   "query": [
                     {
+                      "key": "ids",
+                      "value": "\u003cstring\u003e",
+                      "description": "To filter tags on given tag ids (separated by commas).",
+                      "disabled": true
+                    },
+                    {
                       "key": "offset",
                       "value": "\u003cinteger.int32\u003e",
                       "description": "The record index to start. Default value is 0.",

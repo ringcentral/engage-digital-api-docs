@@ -5385,6 +5385,13 @@ paths:
       description: This method renders tags ordered by name (ascending).
       operationId: getAllTags
       parameters:
+        - description: To filter tags on given tag ids (separated by commas).
+          in: query
+          name: ids
+          example: '59248c4dae276a021cb296d2,ff0dc9ba250002871f7aabba'
+          required: false
+          schema:
+            type: string
         - description: The record index to start. Default value is 0.
           in: query
           name: offset
