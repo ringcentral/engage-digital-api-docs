@@ -1111,6 +1111,12 @@
                       "disabled": true
                     },
                     {
+                      "key": "type",
+                      "value": "\u003cstring\u003e",
+                      "description": "The type of the identity. Not used if community_id or source_id is provided.",
+                      "disabled": true
+                    },
+                    {
                       "key": "identifier",
                       "value": "\u003cstring\u003e",
                       "description": "The identifier representing the identity on the community (email address for emails communities, phone number with international format for phone communities).",

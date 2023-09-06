@@ -2645,6 +2645,12 @@ paths:
           required: false
           schema:
             type: string
+        - description: The type of the identity. Not used if community_id or source_id is provided.
+          in: query
+          name: type
+          required: false
+          schema:
+            type: string
         - description: The identifier representing the identity on the community (email address for emails communities, phone number with international format for phone communities).
           in: query
           name: identifier
