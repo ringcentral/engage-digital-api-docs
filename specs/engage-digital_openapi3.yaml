@@ -2541,6 +2541,13 @@ paths:
         - description: To filter on given group id.
           in: query
           name: identity_group_id
+          example: '64fb04186c98bd4ebe19cb24,64fab8d26c98bd7ab989b335'
+          required: false
+          schema:
+            type: string
+        - description: To filter identities on given group ids (separated by commas).
+          in: query
+          name: identity_group_ids
           required: false
           schema:
             type: string
