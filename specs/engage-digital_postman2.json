@@ -1033,6 +1033,12 @@
                       "disabled": true
                     },
                     {
+                      "key": "identity_group_ids",
+                      "value": "\u003cstring\u003e",
+                      "description": "To filter identities on given group ids (separated by commas).",
+                      "disabled": true
+                    },
+                    {
                       "key": "user_id",
                       "value": "\u003cstring\u003e",
                       "description": "To filter identities on given user id.",
