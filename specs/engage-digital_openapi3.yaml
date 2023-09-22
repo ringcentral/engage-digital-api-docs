@@ -8579,22 +8579,22 @@ components:
           type: string
           description: |-
             Auto summary of the intervention segment.
-            Only present when the conversation summary extension is enabled or with RingCX.
+            Only present with RingCX.
         agent_summary:
           type: string
           description: |-
             Agent's summary of the intervention segment.
-            Only present when the conversation summary extension is enabled or with RingCX.
+            Only present with RingCX.
         summary_edited:
           type: boolean
           description: |-
             Indicates if the summary was edited by the agent.
-            Only present when the conversation summary extension is enabled or with RingCX.
+            Only present with RingCX.
         generate_auto_summary:
           type: boolean
           description: |-
             Indicates if the intervention segment supports summary generation.
-            Only present when the conversation summary extension is enabled or with RingCX.
+            Only present with RingCX.
     Locale:
       properties:
         code:
