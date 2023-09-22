@@ -32,6 +32,7 @@ x-tag-groups:
       - Identities
       - Identity Groups
       - Intervention Comments
+      - Intervention Segments
       - Interventions
       - Sources
       - Survey Responses
@@ -72,6 +73,7 @@ tags:
   - name: Identities
   - name: Identity Groups
   - name: Intervention Comments
+  - name: Intervention Segments
   - name: Interventions
   - name: Sources
   - name: Tasks
@@ -3111,6 +3113,29 @@ paths:
       summary: Getting an intervention comment from its id
       tags:
         - Intervention Comments
+  '/intervention_segments/{interventionSegmentId}':
+    get:
+      description: >-
+        This method renders an intervention segment from given id. If token’s
+        user does not have “read” on segment’s source a 404 HTTP response will
+        be returned.
+      operationId: getInterventionSegment
+      parameters:
+        - in: path
+          name: interventionSegmentId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InterventionSegment'
+          description: Success
+      summary: Getting an intervention segment from its id
+      tags:
+        - Intervention Segments
   /interventions:
     get:
       description: >-
@@ -8524,6 +8549,52 @@ components:
           type: string
         videntity_id:
           type: string
+    InterventionSegment:
+      properties:
+        id:
+          type: string
+        foreign_id:
+          type: string
+        identity_id:
+          type: string
+        identity_foreign_id:
+          type: string
+        intervention_id:
+          type: string
+        thread_id:
+          type: string
+        thread_foreign_id:
+          type: string
+        source_id:
+          type: string
+        created_at:
+          format: date-time
+          type: string
+        updated_at:
+          format: date-time
+          type: string
+        user_id:
+          type: string
+        auto_summary:
+          type: string
+          description: |-
+            Auto summary of the intervention segment.
+            Only present when the conversation summary extension is enabled or with RingCX.
+        agent_summary:
+          type: string
+          description: |-
+            Agent's summary of the intervention segment.
+            Only present when the conversation summary extension is enabled or with RingCX.
+        summary_edited:
+          type: boolean
+          description: |-
+            Indicates if the summary was edited by the agent.
+            Only present when the conversation summary extension is enabled or with RingCX.
+        generate_auto_summary:
+          type: boolean
+          description: |-
+            Indicates if the intervention segment supports summary generation.
+            Only present when the conversation summary extension is enabled or with RingCX.
     Locale:
       properties:
         code:
