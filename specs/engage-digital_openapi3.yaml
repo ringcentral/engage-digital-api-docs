@@ -3028,29 +3028,6 @@ paths:
       summary: Getting all intervention comments
       tags:
         - Intervention Comments
-  '/intervention_segments/{interventionSegmentId}':
-    get:
-      description: >-
-        This method renders an intervention segment from given id. If token’s
-        user does not have “read” on segment’s source a 404 HTTP response will
-        be returned.
-      operationId: getInterventionSegment
-      parameters:
-        - in: path
-          name: interventionSegmentId
-          required: true
-          schema:
-            type: string
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InterventionSegment'
-          description: Success
-      summary: Getting an intervention segment from its id
-      tags:
-        - Intervention Segments
     post:
       description: >-
         This method creates a new intervention comment. In case of success it
@@ -3136,6 +3113,29 @@ paths:
       summary: Getting an intervention comment from its id
       tags:
         - Intervention Comments
+  '/intervention_segments/{interventionSegmentId}':
+    get:
+      description: >-
+        This method renders an intervention segment from given id. If token’s
+        user does not have “read” on segment’s source a 404 HTTP response will
+        be returned.
+      operationId: getInterventionSegment
+      parameters:
+        - in: path
+          name: interventionSegmentId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InterventionSegment'
+          description: Success
+      summary: Getting an intervention segment from its id
+      tags:
+        - Intervention Segments
   /interventions:
     get:
       description: >-
