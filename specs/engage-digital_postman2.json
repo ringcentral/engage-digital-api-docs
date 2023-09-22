@@ -1633,42 +1633,6 @@
           ]
         },
         {
-          "name": "Intervention Segments",
-          "description": {
-            "type": "text/plain"
-          },
-          "item": [
-            {
-              "name": "Getting an intervention segment from its id",
-              "request": {
-                "url": {
-                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/intervention_segments/:interventionSegmentId",
-                  "host": [
-                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
-                  ],
-                  "path": [
-                    "1.0",
-                    "intervention_segments",
-                    ":interventionSegmentId"
-                  ]
-                },
-                "method": "GET",
-                "header": [
-                  {
-                    "key": "Authorization",
-                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "description": "This method renders an intervention segment from given id. If token’s user does not have “read” on segment’s source a 404 HTTP response will be returned."
-              }
-            }
-          ]
-        },
-        {
           "name": "Interventions",
           "description": {
             "type": "text/plain"
