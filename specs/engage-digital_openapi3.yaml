@@ -405,7 +405,7 @@ paths:
     post:
       description: This method is used to handover a conversation between a bot and an agent.
         It handles 2 different cases, specific sources handover (Messenger for example, see Bots API doc)
-        and handover between Engage Virtual Agents and human agents
+        and handover between Engage Virtual Agents and human agents. This method recategorize the thread if the thread_category_ids parameter is provided.
       operationId: handoverFromBotToAgent
       parameters:
         - description: Who we are taking the conversation control from (either bot or agent).
@@ -444,6 +444,15 @@ paths:
           required: false
           schema:
             type: string
+        - description: An array containing the new categories to set on the thread.
+          explode: true
+          in: query
+          name: 'thread_category_ids[]'
+          required: false
+          schema:
+            items:
+              type: string
+            type: array
       responses:
         '200':
           content:
