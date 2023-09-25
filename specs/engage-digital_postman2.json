@@ -637,6 +637,12 @@
                       "value": "\u003cstring\u003e",
                       "description": "The id of the intervention that we want to handover (only for Engage Virtual Agent handover).",
                       "disabled": true
+                    },
+                    {
+                      "key": "thread_category_ids[]",
+                      "value": "\u003carray.string.csv\u003e",
+                      "description": "An array containing the new categories to set on the thread.",
+                      "disabled": true
                     }
                   ]
                 },
@@ -651,7 +657,7 @@
                     "value": "application/json"
                   }
                 ],
-                "description": "This method is used to handover a conversation between a bot and an agent. It handles 2 different cases, specific sources handover (Messenger for example, see Bots API doc) and handover between Engage Virtual Agents and human agents"
+                "description": "This method is used to handover a conversation between a bot and an agent. It handles 2 different cases, specific sources handover (Messenger for example, see Bots API doc) and handover between Engage Virtual Agents and human agents. This method recategorize the thread if the thread_category_ids parameter is provided."
               }
             }
           ]
