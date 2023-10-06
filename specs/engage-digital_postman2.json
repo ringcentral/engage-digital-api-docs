@@ -1272,6 +1272,12 @@
                       "disabled": true
                     },
                     {
+                      "key": "ids",
+                      "value": "\u003cstring\u003e",
+                      "description": "To filter groups on given group ids (separated by commas).",
+                      "disabled": true
+                    },
+                    {
                       "key": "sort",
                       "value": "\u003cstring\u003e",
                       "description": "To change the criteria chosen to sort the identities. The value can be “created_at” or “updated_at”.",
