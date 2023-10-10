@@ -2771,6 +2771,13 @@ paths:
           required: false
           schema:
             type: string
+        - description: To filter groups on given group ids (separated by commas).
+          in: query
+          name: ids
+          example: '59248c4dae276a021cb296d2,ff0dc9ba250002871f7aabba'
+          required: false
+          schema:
+            type: string
         - description: >-
             To change the criteria chosen to sort the identities. The value can
             be “created_at” or “updated_at”.
