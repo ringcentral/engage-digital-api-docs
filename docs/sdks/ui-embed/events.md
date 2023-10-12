@@ -20,8 +20,8 @@ The example below is a [Pull View](#pull-view) with a browser alert containing i
   console.log("event listener running...");
   window.addEventListener('message', function(event) {
     var name = event.data['name']; // Type: String, hold the event name
-    var data = event.data['data']; // Type: Object, hold the event data 
-alert(`[Event Triggered] - ${name}\n\nData:\n${JSON.stringify(data, null, 2)}`);    
+    var data = event.data['data']; // Type: Object, hold the event data
+alert(`[Event Triggered] - ${name}\n\nData:\n${JSON.stringify(data, null, 2)}`);
 console.log(`[Event Triggered] - ${name}\n\nData:\n${JSON.stringify(data, null, 2)}`);
   });
 </script>
@@ -49,7 +49,7 @@ The example below is a [Pull View](#pull-view) with additional logic to POST eve
     var name = event.data['name']; // Type: String, hold the event name
     var data = event.data['data']; // Type: Object, hold the event data
 	console.log(`[Event Triggered] - ${name}\n\nData:\n${JSON.stringify(data, null, 2)}`);
-	
+
 	// POST event data to your API server for further processing
 	axios.post('https://{your API server POST endpoint}'), {
 		source: 'EngageDigitalEmbeddedUI',
@@ -64,7 +64,7 @@ The example below is a [Pull View](#pull-view) with additional logic to POST eve
 	.catch(function (error) {
 		console.log(error);
 	});
-	
+
   });
 </script>
 </html>
@@ -206,10 +206,10 @@ Triggered when a task is missed
 
 Triggered when a task is updated:
 
-- User (agent) reply to Identity (customer) 
+- User (agent) reply to Identity (customer)
 - Identity (customer) write to User (agent)
 - Task is deferred and then retrieved
-- Identity (customer) write to User (agent) but then delete content before agent reply 
+- Identity (customer) write to User (agent) but then delete content before agent reply
 - Content is deleted which leads to a different payload with some null values.
 
 | Key                          | Type                                  | Example                                                                          |
@@ -232,6 +232,6 @@ Triggered when a task is updated:
 
 ### Global Events
 
-#### `smcc:user:disconnected`
+#### `smcc:user:disconnected` (omnichannel only)
 
-Triggered when the user is disconnected from the application or on failed authentication when the experimental `Disable redirection to login when embedded` feature is enabled.
+Triggered when the user is disconnected from the application or on failed authentication when the account is omnichannel.
