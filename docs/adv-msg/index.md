@@ -143,7 +143,7 @@ Be sure to set the proper [authorization header](https://developers.ringcentral.
 
 ## Identities API
 
-A single end user can use many different channels. To identify the end user, we have the identities API. This identity is then linked to each post in the form of an alphanumeric ID. To find the name of the end user, or typically known as the sender or poster, look frot eh `authorIdentityId` object adn pass that into the query string using the identities API.
+A single end user can use many different channels. To identify the end user, we have the identities API. This identity is then linked to each post in the form of an alphanumeric ID. To find the name of the end user, or typically known as the sender or poster, look for the `authorIdentityId` object and pass that into the query string using the identities API.
 
 === "HTTP"
     ```html
