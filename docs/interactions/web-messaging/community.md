@@ -32,7 +32,6 @@ RingCentral Engage Messaging supports registering information about the visitor�
 
 The `Signed identities` field configures the handling of those signed identities by the Server:
 
-* **Accept JWT signed identities** : either non-signed and signed information are accepted. This is a flexible mode. It is **not recommended for production**, see details [here](../integration#security).
 * **Reject JWT signed identities** : only non-signed information is accepted. This is a strict mode. This is the default value.
 * **Require JWT signed identities** : only signed information is accepted. This is a strict secure mode.
 
@@ -57,4 +56,4 @@ The `Key ID` must be a string containing no spaces (a-z 0-9 and ”_”).
 
 You may add several keys. This is useful because keys are secret, must be compartmentalised to the utmost, and may change periodically.
 
-Changing a key used by the target website without requiring synchronisation between the deployment of the new key on the target website and the changement in RingCentral Engage can be done by simply adding the new key in the configuration. The previous one can be removed at a later time, when it is sure that it is no longer in use. 
+Changing a key used by the target website without requiring synchronisation between the deployment of the new key on the target website and the changement in RingCentral Engage can be done by simply adding the new key in the configuration. The previous one can be removed at a later time, when it is sure that it is no longer in use.

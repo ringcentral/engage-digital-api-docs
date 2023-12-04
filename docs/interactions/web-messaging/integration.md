@@ -145,8 +145,6 @@ This code has to be inserted in the HTML source of the target website. It can be
 
 #### Security
 
-The **“Accept JWT signed identities” JWT mode** is an unsecure mode for production if you are using JWT to set your user's data since it also allows non-signed identities. This mode is **not recommended** when you have a JWT integration.
-
 To be able to share the history cross device between web and mobile, the mobile SDK uses a JWT to authenticate the user through its UUID. But then if you allow non-signed identities on the web, there is a security risk since, without a JWT, identity UUID is not guaranteed to come from your system.
 
 ## Custom Variables Integration (optional)
