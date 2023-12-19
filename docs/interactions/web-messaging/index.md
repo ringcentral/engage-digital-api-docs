@@ -132,7 +132,7 @@ This can be used in the Rules Engine for some custom processing:
 
 When the Chat is shown and connects to the server, a new Identity is created in RingCentral Engage, belonging to the Engage Messaging Community linked to the Engage Messaging source.
 
-By default a visitor is anonymous. A new Identity with no information is created.
+When rejecting signed identities, a visitor is anonymous by default. A new Identity with no information is created.
 
 We offer a mechanism, with an integration on the target website, to register data about the visitor: their name, their email address, an avatar… and some extra values.
 
@@ -148,11 +148,13 @@ Every customer using Chat has an internal ID in RingCentral Engage. This ID's pu
 
 #### Automated RingCentral Engage UUID
 
-This is the default configuration. RingCentral Engage Messaging automatically generates IDs (called UUID) for every new customer using the chat. RingCentral Engage persists this identifier historically in the customer browser cache. If the customer empties its cache or switches browser or computer a new UUID will be generated and the new conversation will not be merged with the old one. Basically at the RingCentral Engage level this will be a brand new customer even if the person has the same name and attributes as another one.
+This is the default configuration when rejecting signed identities. RingCentral Engage Messaging automatically generates IDs (called UUID) for every new customer using the chat. RingCentral Engage persists this identifier historically in the customer browser cache. If the customer empties its cache or switches browser or computer a new UUID will be generated and the new conversation will not be merged with the old one. Basically at the RingCentral Engage level this will be a brand new customer even if the person has the same name and attributes as another one.
 
 A good advantage of this mode is that it handles nicely, the situation when visitors start a Chat session as anonymous and then log in during the session. The identity remains the same and is just updated with the newly available information and the conversation is not interrupted.
 
 #### Company Managed UUID
+
+This is mandatory when requiring signed identities.
 
 If your customers are always authenticated we strongly recommend having a customer identifier registered under the “uuid” identity field. This would allow grouping this chat with other chats previously opened by this same physical customer, based on this ID.
 
@@ -161,7 +163,7 @@ The ID used can be the customer ID, an ID from a CRM, or the ID of an SSO system
 If the ID is needed by the agent to perform some operations (e.g. searching the customer in a CRM using his ID), the customer ID should also be registered as an extra value in order to be displayed in the RingCentral Engage interface, or you can also [map the UUID directly into an Identity Group Field](./community/#map-the-uuid-to-an-identity-group-field).
 
 !!! warning
-    Since each chat is binded to an identity, identifying a visitor while a chat session is already open will result in the creation of a new chat session. So don’t use it if anonymous users are supposed to login as a customer during a chat session.
+    Since each chat is bound to an identity, identifying a visitor while a chat session is already open will result in the creation of a new chat session. So don’t use it if anonymous users are supposed to login as a customer during a chat session.
 
 !!! important
     Don’t use guessable uuid if you do not rely on JWT to sign parameters or you could face customer impersonation.

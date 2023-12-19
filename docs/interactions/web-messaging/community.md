@@ -1,6 +1,6 @@
 # Configuring the Community
 
-To add a RingCentral Engage Messaging to an existing RingCentral Engage instance, you need to create a RingCentral Engage Messaging community. No specific configuration is required.
+To add a RingCentral Engage Messaging to an existing RingCentral Engage instance, you need to create a RingCentral Engage Messaging community. By default, the community forces you to use JWT signed identities so you have to either configure JWT keys or change the mode to reject JWT signed identities.
 
 ## Extra Values Mapping
 
@@ -21,19 +21,20 @@ If you identify your customers through this ID, you can add your UUID to the ext
 
 ## JWT Signature
 
-RingCentral Engage Messaging supports registering information about the visitor’s identity with a JSON Web Token (JWT), a cryptographically secure signature mechanism. RingCentral EngageMessaging supports the HMAC SHA256 signature and the RSA SHA256 signature.
+RingCentral Engage Messaging supports registering information about the visitor’s identity with a JSON Web Token (JWT), a cryptographically secure signature mechanism. RingCentral Engage Messaging supports the HMAC SHA256 signature and the RSA SHA256 signature.
 
 !!! warning
     When registering information about the visitor’s Identity, the data flow is:
     **the target website → the visitor’s browser → RingCentral Engage**
     You can’t have the guarantee that the data is not altered between the information that is announced on the target website and read by the Chat Client, and what is received by the Server. The only way to have such a guarantee is to add a cryptographically secure signature of the data. JSON Web Token (JWT) is such a signature mechanism, de facto standard, based on a shared secret or an asymmetric public/private key.
+    The default configuration strongly encourages you to use this mechanism since you either have to fill JWT keys or opt out when creating a new community.
 
 ### Handling
 
 The `Signed identities` field configures the handling of those signed identities by the Server:
 
-* **Reject JWT signed identities** : only non-signed information is accepted. This is a strict mode. This is the default value.
-* **Require JWT signed identities** : only signed information is accepted. This is a strict secure mode.
+* **Reject JWT signed identities** : only non-signed information is accepted. This is a strict mode.
+* **Require JWT signed identities** : only signed information is accepted. This is a strict secure mode. This is the default value.
 
 The JWT are required to have an expiry date set in an “exp” field AND the expiry date is required to be at least 1 hour in the future. Otherwise, the JWT will be rejected.
 
