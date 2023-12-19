@@ -1,6 +1,6 @@
 # Configuring the Community
 
-To add a RingCentral Engage Messaging (EM) to an existing RingCentral Engage instance, you need to create a RingCentral Engage Messaging community. By default, the community forces you to use JWT signed identities so you have to either configure JWT keys or change the mode to reject JWT signed identities.
+To add a RingCentral Engage Messaging to an existing RingCentral Engage instance, you need to create a RingCentral Engage Messaging community. By default, the community forces you to use JWT signed identities so you have to either configure JWT keys or change the mode to reject JWT signed identities.
 
 ## Extra Values Mapping
 
