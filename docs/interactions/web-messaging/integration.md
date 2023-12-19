@@ -95,7 +95,7 @@ The server in RingCentral Engage currently uses the following JWT extensions:
 
 !!! warning "Required data"
     The **“uuid”** key with a valid value is **mandatory** in the JWT payload.
-    When missing, the JWT will be rejected, a default identity will be used, and, if the **“Require JWT signed identities” JWT mode** is set on the community profile, the chat won't open.
+    When missing, the JWT will be rejected and the chat won't open.
 
 #### Generation of the JWT
 
