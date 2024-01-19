@@ -7699,6 +7699,8 @@ components:
             X-Test: ["1", "2"]
         id:
           type: string
+        identity_group_id:
+          type: string
         in_reply_to_author_id:
           type: string
         in_reply_to_id:
@@ -8467,6 +8469,8 @@ components:
         id:
           type: string
         identity_id:
+          type: string
+        identity_group_id:
           type: string
         last_user_reply_in:
           type: integer
