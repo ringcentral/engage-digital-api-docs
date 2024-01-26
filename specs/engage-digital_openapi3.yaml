@@ -908,7 +908,8 @@ paths:
       description: This method renders sources ordered by creation date (ascending).
       operationId: getAllSources
       parameters:
-        - description: Filter by user permissions. Defaults on read for backward compatibility.
+        - description: Filter by user permissions. Default on read for backward compatibility.
+
           in: query
           name: permission
           required: false
