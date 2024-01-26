@@ -1978,6 +1978,12 @@
                       "disabled": true
                     },
                     {
+                      "key": "active",
+                      "value": "\u003cboolean\u003e",
+                      "description": "Filter by active state",
+                      "disabled": true
+                    },
+                    {
                       "key": "limit",
                       "value": "\u003cinteger.int32\u003e",
                       "description": "The max number of records to return. Default value is 30, max value is 150.",
