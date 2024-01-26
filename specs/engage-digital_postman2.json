@@ -1974,7 +1974,7 @@
                     {
                       "key": "permission",
                       "value": "\u003cstring\u003e",
-                      "description": "Filter by user permissions. Defaults on read for backward compatibility.",
+                      "description": "Filter by user permissions. Default on read for backward compatibility.",
                       "disabled": true
                     },
                     {
