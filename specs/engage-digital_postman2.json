@@ -1972,6 +1972,12 @@
                   ],
                   "query": [
                     {
+                      "key": "permission",
+                      "value": "\u003cstring\u003e",
+                      "description": "Filter by user permissions. Defaults on read for backward compatibility.",
+                      "disabled": true
+                    },
+                    {
                       "key": "offset",
                       "value": "\u003cinteger.int32\u003e",
                       "description": "The record index to start. Default value is 0.",
