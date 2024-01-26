@@ -915,6 +915,12 @@ paths:
           schema:
             format: int32
             type: integer
+        - description: Filter by active state
+          in: query
+          name: active
+          required: false
+          schema:
+            type: boolean
         - description: >-
             The max number of records to return. Default value is 30, max value
             is 150.
