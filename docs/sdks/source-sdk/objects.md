@@ -40,12 +40,13 @@ When we post a message, we'll send the following attributes:
 | Name | Type | Description |
 |-|-|-|
 | attachments | Array | Example: `[{ "url": "https://www.ringcentral.com/brand.png", "type": "image", "filename": "brand.png" }]` |
-| author_id| String | |
+| author_id | String | |
 | body | String | |
-| categories | Array | |
+| content_id | String | The message's internal ID |
 | created_at | DateTime | Example: `2012-10-01T17:18:40Z` |
 | format | String | Example: "text" |
 | in_reply_to_id | String | |
+| retry | Boolean | Set to `false` if it's the first time we're trying to send this message, `true` otherwise |
 | sender_name | String | Example: "Jane from RingCentral" |
 | structured_content | Hash | ***Optional.*** Example: [Structured contents](../structured-messages). |
 | thread_id | String | Unless the `messages.unthreaded` option is set |
@@ -84,16 +85,15 @@ When we post a private message, we'll send the following attributes:
 | Name | Type | Description |
 |-|-|-|
 | attachments | Array | Example: `[{ "url": "https://www.ringcentral.com/brand.png", "type": "image", "filename": "brand.png" }]` |
-| author_id| String | |
+| author_id | String | |
 | body | String | |
-| categories | Array | |
+| content_id | String | The private message's internal ID |
 | created_at | DateTime | Example: `2012-10-01T17:18:40Z` |
 | format | String | Example: "html" |
-| id | String | |
 | in_reply_to_id | String | |
-| ip | String | |
 | sender_name | String | Example: "Jane from RingCentral" |
 | recipient_id | String | |
+| retry | Boolean | Set to `false` if it's the first time we're trying to send this message, `true` otherwise |
 | structured_content | Hash | ***Optional.*** Example: [Structured contents](../structured-messages). |
 | updated_at | DateTime | Example: `2012-10-01T17:18:40Z` |
 
@@ -121,15 +121,14 @@ When we post a thread, we'll send the following attributes:
 | Name | Type | Description |
 |-|-|-|
 | attachments | Array | Example: `[{ "url": "https://www.ringcentral.com/brand.png", "type": "image", "filename": "brand.png" }]` |
-| author_id| String | |
+| author_id | String | |
 | body | String | |
-| categories | Array | |
+| content_id | String | The thread's internal ID |
 | created_at | DateTime | Example: `2012-10-01T17:18:40Z` |
 | format | String | Example: "text" |
-| id | String | |
+| retry | Boolean | Set to `false` if it's the first time we're trying to send this message, `true` otherwise |
 | sender_name | String | Example: "Jane from RingCentral" |
 | title | String | |
-| updated_at | DateTime | Example: `2012-10-01T17:18:40Z` |
 
 ## Users
 
