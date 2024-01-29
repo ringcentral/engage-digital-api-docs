@@ -46,7 +46,7 @@ When we post a message, we'll send the following attributes:
 | created_at | DateTime | Example: `2012-10-01T17:18:40Z` |
 | format | String | Example: "text" |
 | in_reply_to_id | String | |
-| retry | Boolean | Set to `false` if it's the first time we're trying to send this message, `true` otherwise |
+| retry | Boolean | `false` if it's the first time we're trying to send this message, `true` otherwise |
 | sender_name | String | Example: "Jane from RingCentral" |
 | structured_content | Hash | ***Optional.*** Example: [Structured contents](../structured-messages). |
 | thread_id | String | Unless the `messages.unthreaded` option is set |
