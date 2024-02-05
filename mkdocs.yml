@@ -79,8 +79,6 @@ nav:
       - 'Overview': digital/exports/index.md
       - 'Main Export Fields': digital/exports/main-export-fields.md
       - 'Extensions Report Fields': digital/exports/extensions-report-fields.md
-  - 'Advanced Messaging':
-    - 'Overview': adv-msg/index.md
 - 'Secondary':
   - 'Using the API':
     - 'Obtain an Access Token': basics/access-token.md
