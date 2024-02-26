@@ -547,6 +547,43 @@ This export displays user permissions by source.
 | user_id         | Agent Id                | ObjectId | 51f241de7aa58dd360006706                         |           |
 | user_name       | Agent Name              | String   | Jean Dupuis                                      |           |
 
+## Interventions Segments(`Export::InterventionsSegments`)
+
+- **Export name**: interventions_segments
+
+- **Incremental availability**: Yes
+
+- **Time filtering**: Creation time
+
+| Column Name                 | Description                                                                                | Type     | Example                                                                         | Comment |
+|-----------------------------|--------------------------------------------------------------------------------------------|----------|---------------------------------------------------------------------------------|---------|
+| created_at                  | Creation Date                                                                              | Datetime | 23/08/2013 12:15                                                                |         |
+| updated_at                  | Update Date                                                                                | Datetime | 23/08/2013 12:15                                                                |         |
+| id                          | Intervention Comment ID                                                                    | ObjectId | 55dc83d677656254ca000a2e                                                        |         |
+| intervention_id             | Intervention ID                                                                            | ObjectId | 55cdaade77656222d500061d                                                        |         |
+| foreign_id                  | Foreign ID                                                                                 | ObjectId | 55dc83d677656254ca000a2e                                                        |         |
+| user_id                     | Agent Id                                                                                   | ObjectId | 51f241de7aa58dd360006706                                                        |         |
+| user_name                   | Agent Name                                                                                 | String   | Jean Dupuis                                                                     |         |
+| first_user_reply_in         | First reply time (minutes or seconds according to configuration)                           | Integer  | 4                                                                               |         |
+| first_user_reply_in_bh      | First reply time in business hours (minutes or seconds according to configuration)         | Integer  | 4                                                                               |         |
+| user_reply_in_average       | Average agent reply time (minutes or seconds according to configuration)                   | Integer  | 3                                                                               |         |
+| user_reply_in_average_bh    | Average agent reply time in business hours (minutes or seconds according to configuration) | Integer  | 2                                                                               |         |
+| user_reply_in_average_count | Number of exchanges between Identity -> User (used to weight user_reply)                   | Integer  | 3                                                                               |         |
+| identity_id                 | Identity ID                                                                                | ObjectId | 55cda9e6776562a644000001                                                        |         |
+| identity_name               | Identity Name                                                                              | String   | Pierre Dupont                                                                   |         | 
+| identity_foreign_id         | Identity's Foreign ID                                                                      | ObjectId | 55dc83d677656254ca000a2e                                                        |         |
+| source_id                   | Source ID                                                                                  | ObjectId | 55cda687776562377900083d                                                        |         |
+| source_name                 | Source Name                                                                                | String   | My Facebook Page                                                                |         |
+| source_type                 | Source type                                                                                | String   | Facebook                                                                        |         |
+| thread_id                   | Thread ID                                                                                  | ObjectId | 55cda7bd7765622b58000735                                                        |         |
+| thread_foreign_id           | Thread's foreign ID                                                                        | ObjectId | 55dc83d677656254ca000a2e                                                        |         |
+| auto_summary                | Auto summary of the intervention segment                                                   | String   | Client asks for help for his smart brewer as he couldn't do cappuccinos.        |         |
+| agent_summary               | Agent's summary of the intervention segment                                                | String   | EDITED Client asks for help for his smart brewer as he couldn't do cappuccinos. |         |
+| summary_edited              | Indicates if the summary was edited by the agent                                           | Boolean  | true                                                                            |         |
+
+!!!note
+    Export is only available if the 'Enable AI summaries' feature flag is enabled or the domain is RCX.
+
 ## Presence Statuses(`Export::PresenceStatus`)
 
 - **Export name**: presence_status
