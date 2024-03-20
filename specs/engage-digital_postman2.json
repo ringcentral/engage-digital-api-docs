@@ -463,8 +463,8 @@
                     "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
-                    "key": "Accept",
-                    "value": "application/json"
+                    "key": "Content-Type",
+                    "value": "multipart/form-data:"
                   },
                   {
                     "key": "Accept",
@@ -5923,7 +5923,7 @@
                     {
                       "key": "email",
                       "value": "\u003cstring\u003e",
-                      "description": "To filter users on given email.",
+                      "description": "To filter users on given email (case-insensitive).",
                       "disabled": true
                     },
                     {
@@ -7837,8 +7837,8 @@
                     "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
-                    "key": "Accept",
-                    "value": "application/json"
+                    "key": "Content-Type",
+                    "value": "application/x-www-form-urlencoded"
                   },
                   {
                     "key": "Accept",
@@ -7925,8 +7925,8 @@
                     "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
-                    "key": "Accept",
-                    "value": "application/json"
+                    "key": "Content-Type",
+                    "value": "application/x-www-form-urlencoded"
                   },
                   {
                     "key": "Accept",
