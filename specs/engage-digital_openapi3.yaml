@@ -6470,7 +6470,7 @@ paths:
         returned.
       operationId: getAllUsers
       parameters:
-        - description: To filter users on given email.
+        - description: To filter users on given email (case-insensitive).
           in: query
           name: email
           required: false

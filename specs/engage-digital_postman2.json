@@ -5923,7 +5923,7 @@
                     {
                       "key": "email",
                       "value": "\u003cstring\u003e",
-                      "description": "To filter users on given email.",
+                      "description": "To filter users on given email (case-insensitive).",
                       "disabled": true
                     },
                     {
