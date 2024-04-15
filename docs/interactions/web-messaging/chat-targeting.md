@@ -10,11 +10,11 @@ You can activate / deactivate a trigger when needed.
 
 You can have a trigger with no condition. This means that it will always try to execute. This is useful for the click to chat use case, for placing a button somewhere in the website.
 
-Note that for when the trigger is marked as “**Execute only if agents are available**”, theconditions configured in the trigger are only the first step of the decision process to execute the actions or not; the second step being evaluation by the server and depends on the presence and occupancy of the agents. Meaning that even if the trigger has no condition, the actions won’t be executed if no agents are present, for example.
+Note that for when the trigger is marked as “**Execute only if agents are available**”, the conditions configured in the trigger are only the first step of the decision process to execute the actions or not; the second step being evaluation by the server and depends on the presence and occupancy of the agents. Meaning that even if the trigger has no condition, the actions won’t be executed if no agents are present, for example.
 
 ### Queuing
 
-The `Queuing factor` field, empty by default, controls the extra slots that are allowed in the waiting queue for this trigger. When empty, it uses the value configured in the Engage Messaging source.
+The `Queuing factor` field, empty by default, controls the extra slots that are allowed in the waiting queue for this trigger. When empty, it uses the value configured in the RingCX Messaging source.
 
 ## Conditions
 
@@ -24,7 +24,7 @@ Each condition is defined by selecting what matches what values, and when.
 
 ### What
 
-The Chat Manager tracks predefined criteria:
+The Chat Manager tracks the predefined criteria:
 
 | Criterion | Type | Example | Notes |
 |-|-|-|-| 
@@ -68,7 +68,7 @@ Each criterion is matched against a value, with an operator. The operators depen
 
 The operator *“is”* is the equality matcher.
 
-The operator “is present” matches for when a criterion is defined (i.e. found) and is not blank. The Chat Manager may find the string (e.g. the value of a form field), but it can be blank (e.g. not filled yet). It has the same meaning as in Engage Digital Communities for the validation of presence of the title of Questions for example. For Boolean, it has the meaning of `is defined and is true`.
+The operator “is present” matches for when a criterion is defined (i.e. found) and is not blank. The Chat Manager may find the string (e.g. the value of a form field), but it can be blank (e.g. not filled yet). It has the same meaning as in RingCX Digital Communities for the validation of presence of the title of Questions for example. For Boolean, it has the meaning of `is defined and is true`.
 
 The operator “is not present” is its opposite, and target values that are blank or that can’t be found. You may notice the utility: if the condition is `is not “”` (i.e. `is not an empty string`), if the Chat Manager can’t find it (i.e. it is seen as not defined), then, the condition is true, as it is not defined, it is not an empty string. The operator “is not present” is helpful in many of those cases. For Boolean, it has the meaning of `is not defined or is false`.
 
@@ -106,7 +106,7 @@ Example of matching:
 | “ La Naïveté des Gens ” | “la naivete des gens” | ends with | “ des gens ” | “des gens” | true |
 | “ La Naïveté ” | “la naivete” | contains | “naif” | “naif” | false |
 
-#### Boolen Type
+#### Boolean Type
 
 There are no dedicated operators.
 
@@ -180,7 +180,7 @@ The option `This trigger is activated only once per visit` means that the trigge
 
 ## Processing
 
-In addition to actions, there can be processings associated with a trigger for when a conversation starts.
+In addition to actions, there can be processings associated with the trigger for when a conversation starts.
 
 ### Categorization
 
