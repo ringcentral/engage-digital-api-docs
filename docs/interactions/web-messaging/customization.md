@@ -2,11 +2,11 @@
 
 We designed the chat window to respect industry standards allowing for a user to be comfortable and to ease the engagement.
 
-In a first approach, we encourage a light customization, purely in CSS. We offer a mechanism to change the colors of the chat window, based on our default stylesheet. This is done directly in RingCentral Engage.
+In a first approach, we encourage a light customization, purely in CSS. We offer a mechanism to change the colors of the chat window, based on our default stylesheet. This is done directly in RingCentral RingCX.
 
 ## Customizing the Languages
 
-You can add your own languages or modify the texts of the current languages with the custom languages field in your Engage Messaging source or by implementing it in the JavaScript of the page containing the chat.
+You can add your own languages or modify the texts of the current languages with the custom languages field in your RingCX Messaging source or by implementing it in the JavaScript of the page containing the chat.
 
 ``` html
 <script>
@@ -79,7 +79,7 @@ On the next page is an example of JSON language format:
             "month_names": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
         },
         "default_cobrowsing_active_status": "Cobrowsing is active",
-        "default_title": "Engage Messaging",
+        "default_title": "RingCX Messaging",
         "dialog_frame": {
             "button_ok_label": "Ok",
             "error_title": "Error !"
@@ -130,7 +130,7 @@ On the next page is an example of JSON language format:
 
 We extensively use SCSS that is a superset of the CSS language and that provides some useful features such as variables. We generate from SCSS the CSS used by the chat system.
 
-On the Engage Messaging source configuration, there is a field named custom CSS. This field accepts CSS code as well as SCSS code. The code inserted here is used to generate a custom stylesheet for the chat window and to generate as well the stylesheets of each of the Catalog items (Button, Invitation…) you may use.
+On the RingCX Messaging source configuration, there is a field named custom CSS. This field accepts CSS code as well as SCSS code. The code inserted here is used to generate a custom stylesheet for the chat window and to generate as well the stylesheets of each of the Catalog items (Button, Invitation…) you may use.
 
 In this field, you can have some global CSS code and you can redefine the variables we use to generate the “design” part of the chat stylesheet, in order to recreate it with the colors wanted.
 
@@ -180,7 +180,7 @@ You only have to define the one you want to change.
 
 ### Common Use Case
 
-The common use case is to only change the `$highlight-color` as the others colors are pretty neutral and industry standard.
+The common use case is to only change the `$highlight-color` as the other colors are pretty neutral and industry standard.
 
 Other changes are beyond our recommendation.
 
