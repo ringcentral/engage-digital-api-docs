@@ -1,6 +1,6 @@
 # Configuring the Source
 
-To add a chat to an existing RingCentral Engage instance, you need to create an Engage Messaging source. Right after its creation, edit it to access advanced configuration.
+To add a chat to an existing RingCentral RingCX instance, you need to create a RingCX Messaging source. Right after its creation, edit it to access advanced configuration.
 
 ## Avatar
 
@@ -10,11 +10,11 @@ Note that the avatar is displayed:
 
 * in a 35x35px circle in the chat window header
 * in a 24x24px circle in the chat window conversation on the left of the last message of every block of agent messages
-* in a 35x35px circle in RingCentral Engage
+* in a 35x35px circle in RingCentral RingCX
 
 We recommend a 100x100px image that fits being displayed rounded, to support high DPI screens.
 
-When no avatar is configured in the source, in the chat window, there is no avatar and in RingCentral Engage, a stylized avatar is used like any other identity without avatar.
+When no avatar is configured in the source, in the chat window, there is no avatar and in RingCentral RingCX, a stylized avatar is used like any other identity without avatar.
 
 ## Sender Name
 
@@ -35,7 +35,7 @@ Here is an example that specify the rendering of the sender name for some among 
 
 ## Integrations
 
-RingCentral Engage Messaging supports natively several basic integrations with trackers for example. These are optional. They are made with the chat public Javascript API and one can copy and adapt them freely.
+RingCentral RingCX Messaging supports natively several basic integrations with trackers for example. These are optional. They are made with the chat public Javascript API and one can copy and adapt them freely.
 
 Available integrations:
 
@@ -107,7 +107,7 @@ This parameter is mainly used in the mobile single-threaded part of this connect
 
 ### Enable Outbound Messaging
 
-This setting is available for web messaging, iOS messaging and Android messaging. It allows to initiate discussions on behalf of an agent through Engage Digital's API.
+This setting is available for web messaging, iOS messaging and Android messaging. It allows to initiate discussions on behalf of an agent through RingCX Digital's API.
 
 It can be configured under the "Advanced settings" section:
 
@@ -117,13 +117,13 @@ Enabling this option will unlock the `Initiate discussion` permission for this s
 
 ## Related Configuration
 
-### Engage Messaging Specific Permissions
+### RingCX Messaging Specific Permissions
 
-You must ensure that each of the agents that will handle the messaging conversation has the `Read` and `Reply` permissions on the Engage Messaging source.
+You must ensure that each of the agents that will handle the messaging conversation has the `Read` and `Reply` permissions on the RingCX Messaging source.
 
 You must also ensure they have the `Initiate discussion` permission if you enabled the outbound messaging option and want to send outbound messages on their behalf through the API.
 
-You must ensure that the Roles of the administrators/managers that will configure the messaging (triggers, items & custom variables) contain the `Manage Engage Messaging configuration` permission.
+You must ensure that the Roles of the administrators/managers that will configure the messaging (triggers, items & custom variables) contain the `Manage RingCX Messaging configuration` permission.
 
 ### Task View (Mandatory for Live Chat mode)
 
@@ -131,7 +131,7 @@ The agents handle the messaging conversation via the task view (a.k.a. the Push 
 
 You must ensure that there is a topology. When you create a new one, it will be populated with a set of standard default values.
 
-You must add the Engage Messaging source to the `Realtime` channel.
+You must add the RingCX Messaging source to the `Realtime` channel.
 
 You must ensure that the role of the agents contains the `View tasks` permission.
 
