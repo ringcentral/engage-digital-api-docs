@@ -1,10 +1,10 @@
 # Introduction to Web Messaging
 
 
-A customer of RingCentral Engage wants to have a Chat integrated in a website, called the **target website**, in order for their own visitors/customers, called the **visitors**, to get assistance or to proactively provide them with assistance. For that purpose, an instance of RingCentral Engage is configured to have a RingCentral Engage Messaging source. An integration is done in the target website to setup the required code, and the final configuration is done in RingCentral Engage by a trained administrator or by an expert from RingCentral Engage. The officers of the customer handling the Chat conversations and responding to the visitors on RingCentral Engage are called the **agents**. The fact that a visitor sends a message via the Chat is called an **engagement** ‒ the Chat is said to have **engaged**.
+A customer of RingCentral RingCX wants to have a Chat integrated in a website, called the **target website**, in order for their own visitors/customers, called the **visitors**, to get assistance or to proactively provide them with assistance. For that purpose, an instance of RingCentral RingCX is configured to have a RingCentral Messaging source. An integration is done in the target website to setup the required code, and the final configuration is done in RingCentral RingCX by a trained administrator or by an expert from RingCentral RingCX. The officers of the customer handling the Chat conversations and responding to the visitors on RingCentral RingCX platform are called the **agents**. The fact that a visitor sends a message via the Chat is called an **engagement** ‒ the Chat is said to have **engaged**.
 
 !!! Note
-    The principle of RingCentral Engage Messaging is to have an integration step in the target website that is minimal. The possibility to configure precisely how and when the Chat is shown, directly in RingCentral Engage, without having to add another step of integration nor modify the existing integration, will provide long-term value to our customer.
+    The principle of RingCentral RingCX Messaging is to have an integration step in the target website that is minimal. The possibility to configure precisely how and when the Chat is shown, directly in RingCentral RingCX, without having to add another step of integration nor modify the existing integration, will provide long-term value to our customer.
 
 ## Architecture of the Client
 
@@ -33,7 +33,7 @@ The Chat Manager has multiple triggers that, when verified, will show the Chat o
 3. The messaging trigger
 4. The configured trigger
 
-If a trigger is verified, the following triggers won’t be evaluated. The first 3 triggers are hardcoded in the Chat Manager logic. The last one is to be configured in RingCentral Engage.
+If a trigger is verified, the following triggers won’t be evaluated. The first 3 triggers are hardcoded in the Chat Manager logic. The last one is to be configured in RingCentral RingCX.
 
 ### The Embedded Trigger
 
@@ -55,7 +55,7 @@ It will open the Chat.
 
 ### The Configured Trigger
 
-These triggers are configured within RingCentral Engage and don’t require modification on the target website.
+These triggers are configured within RingCentral RingCX and don’t require modification on the target website.
 
 A configured trigger is a rule, configured to take some actions upon some conditions:
 
@@ -81,7 +81,7 @@ On the Messaging mode, the online mode will always be used.
 
 The triggers are configured with actions to take, and most actions consist of showing an item on the target website, or directly opening the Chat window.
 
-The Chat Items are of two kinds: Buttons and Invitations. They are created and customized directly in RingCentral Engage and usually don’t need integration on the target website. They are actionable and aim to open the Chat window.
+The Chat Items are of two kinds: Buttons and Invitations. They are created and customized directly in RingCentral RingCX and usually don’t need integration on the target website. They are actionable and aim to open the Chat window.
 
 ### Continuation
 
@@ -105,11 +105,11 @@ The data collected serves for the triggers’ conditions. They are matched again
 
 The collection of data is steady, i.e. it doesn’t only happen at the beginning of each page view. Meaning that we natively support things that change while the page remains the same (javascript action, form fields filled, elements appearing…).
 
-Once the Chat client is shown to the visitor, when he engages, the part corresponding to the current page viewed is sent to the server to be displayed in RingCentral Engage, alongside the conversation. This allows agents to have a context about the visitor activity on the website. Then, as the visitor continues his browsing, the session data is updated and sent to the server to refresh the context data the agents see.
+Once the Chat client is shown to the visitor, when he engages, the part corresponding to the current page viewed is sent to the server to be displayed in RingCentral RingCX, alongside the conversation. This allows agents to have a context about the visitor activity on the website. Then, as the visitor continues his browsing, the session data is updated and sent to the server to refresh the context data the agents see.
 
 ### Custom Variables
 
-Custom variables are defined in RingCentral Engage and are populated with data given to the Chat Manager by an integration on the target website, or by data found by the Chat Manager itself on the pages of the target website.
+Custom variables are defined in RingCentral RingCX and are populated with data given to the Chat Manager by an integration on the target website, or by data found by the Chat Manager itself on the pages of the target website.
 
 A custom variable can be:
 
@@ -130,7 +130,7 @@ This can be used in the Rules Engine for some custom processing:
 
 ## Visitor Identification
 
-When the Chat is shown and connects to the server, a new Identity is created in RingCentral Engage, belonging to the Engage Messaging Community linked to the Engage Messaging source.
+When the Chat is shown and connects to the server, a new Identity is created in RingCentral RingCX, belonging to the Messaging Community linked to the RingCX Messaging source.
 
 When rejecting signed identities, a visitor is anonymous by default. A new Identity with no information is created.
 
@@ -138,17 +138,17 @@ We offer a mechanism, with an integration on the target website, to register dat
 
 ### Extra Values
 
-The RingCentral Engage Messaging source allows for an identity to store extra values. Every extra value registered about the visitor from the Chat client is sent to the Server and is stored in the Identity.
+The RingCentral RingCX Messaging source allows for an identity to store extra values. Every extra value registered about the visitor from the Chat client is sent to the Server and is stored in the Identity.
 
-In the configuration of the related Engage Messaging Community in RingCentral Engage, a mapping can be setup to map those extra values to the Custom Fields defined in RingCentral Engage, like with any kind of Community that provides extra values (RingCentral Engage Mail, RingCentral Engage Chat, RingCentral Engage Communities…).
+In the configuration of the related Messaging Community in RingCentral RingCX, a mapping can be setup to map those extra values to the Custom Fields defined in RingCentral RingCX, like with any kind of Community that provides extra values (RingCentral RingCX Mail, RingCentral RingCX Chat, RingCentral RingCX Communities…).
 
 ### User Persistent Identifier (aka UUID)
 
-Every customer using Chat has an internal ID in RingCentral Engage. This ID's purpose is to link different conversations to the same customer so that the Agent and the Company can track history and usage of the chat Channel.
+Every customer using Chat has an internal ID in RingCentral RingCX. This ID's purpose is to link different conversations to the same customer so that the Agent and the Company can track history and usage of the chat Channel.
 
-#### Automated RingCentral Engage UUID
+#### Automated RingCentral RingCX UUID
 
-This is the default configuration when rejecting signed identities. RingCentral Engage Messaging automatically generates IDs (called UUID) for every new customer using the chat. RingCentral Engage persists this identifier historically in the customer browser cache. If the customer empties its cache or switches browser or computer a new UUID will be generated and the new conversation will not be merged with the old one. Basically at the RingCentral Engage level this will be a brand new customer even if the person has the same name and attributes as another one.
+This is the default configuration when rejecting signed identities. RingCentral RingCX Messaging automatically generates IDs (called UUID) for every new customer using the chat. RingCentral RingCX persists this identifier historically in the customer browser cache. If the customer empties its cache or switches browser or computer a new UUID will be generated and the new conversation will not be merged with the old one. Basically at the RingCentral RingCX level this will be a brand new customer even if the person has the same name and attributes as another one.
 
 A good advantage of this mode is that it handles nicely, the situation when visitors start a Chat session as anonymous and then log in during the session. The identity remains the same and is just updated with the newly available information and the conversation is not interrupted.
 
@@ -160,7 +160,7 @@ If your customers are always authenticated we strongly recommend having a custom
 
 The ID used can be the customer ID, an ID from a CRM, or the ID of an SSO system or any stable and unique ID that could be assigned to a particular client.
 
-If the ID is needed by the agent to perform some operations (e.g. searching the customer in a CRM using his ID), the customer ID should also be registered as an extra value in order to be displayed in the RingCentral Engage interface, or you can also [map the UUID directly into an Identity Group Field](./community/#map-the-uuid-to-an-identity-group-field).
+If the ID is needed by the agent to perform some operations (e.g. searching the customer in a CRM using his ID), the customer ID should also be registered as an extra value in order to be displayed in the RingCentral RingCX interface, or you can also [map the UUID directly into an Identity Group Field](./community/#map-the-uuid-to-an-identity-group-field).
 
 !!! warning
     Since each chat is bound to an identity, identifying a visitor while a chat session is already open will result in the creation of a new chat session. So don’t use it if anonymous users are supposed to login as a customer during a chat session.
@@ -168,9 +168,9 @@ If the ID is needed by the agent to perform some operations (e.g. searching the 
 !!! important
     Don’t use guessable uuid if you do not rely on JWT to sign parameters or you could face customer impersonation.
 
-## Messaging Mode Features
+## RingCX Messaging Mode Features
 
-When the Engage Messaging source is configured in Messaging mode (not Live Chat), the Chat won’t be synchronous anymore. The differences with the Live Chat mode are the following:
+When the RingCX Messaging source is configured in Messaging mode (not Live Chat), the Chat won’t be synchronous anymore. The differences with the Live Chat mode are the following:
 
 * No more “connected” or “disconnected” events. Meaning that a conversation can last for days without any interruption.
 * Closing an intervention won’t end the conversation, but a conversation can be locked and unlocked.
