@@ -1,25 +1,25 @@
-# Engage Chatbots
+# Chatbots
 
-Engage Digital allows developers to create automated agents, or bots, to assist in processing client inquiries. Bots can help in the following ways:
+RingCX Digital allows developers to create automated agents, or bots, to assist in processing client inquiries. Bots can help in the following ways:
 
 * Pre-qualify a client inquiry
 * Augment incoming inquiries with additional data about the customer or request
 * Automate the handling of common customer/client inquiries or interactions
 
 !!! tip "Before you begin..."
-    This document aims to describe the process of integration of a multi-channel bot within Engage’s architecture. It does not describe the operating of the tools used for the integration nor does it explain the life-cycle of messages within Engage Digital. A thorough knowledge of Engage tools and of its operating is necessary to comprehend the entire process described in this documentation.
+    This document aims to describe the process of integration of a multi-channel bot within the RingCX architecture. It does not describe the operating of the tools used for the integration nor does it explain the life-cycle of messages within RingCX Digital. A thorough knowledge of the RingCX tools and of its operating is necessary to comprehend the entire process described in this documentation.
     
     Below is a list of documentation that we recommend you read carefully beforehand:
     
-    * [Engage Webhook API](https://developers.ringcentral.com/engage/guide/webhooks) - Functionality that allows automatic events concerning the message’s life-cycle from Engage Digital Platform to be sent to a predefined url
+    * [RingCX Webhook API](https://developers.ringcentral.com/engage/guide/webhooks) - Functionality that allows automatic events concerning the message’s life-cycle from the RingCX Digital Platform to be sent to a predefined url
     
-    * [Engage REST API](https://developers.ringcentral.com/engage/guide/basics) -  Engage Digital’s API which allows to retrieve data stored in it.
+    * [RingCX REST API](https://developers.ringcentral.com/engage/guide/basics) - RingCX Digital’s API which allows to retrieve data stored in it.
 
 ## Bot Architecture
 
-Engage Bots work primarily through what we call a "proxy," or an intermediary service that brokers the interaction between Engage Digital's API and an AI engine. The proxy is responsible for processing incoming events from Engage, determining the appropriate course of action to take by interfacing with the bot's AI, and finally formulating responses to the customer when applicable. The components of an Engage Bot integration are therefore the following:
+RingCX Bots work primarily through what we call a "proxy," or an intermediary service that brokers the interaction between the RingCX Digital's API and an AI engine. The proxy is responsible for processing incoming events from RingCX, determining the appropriate course of action to take by interfacing with the bot's AI, and finally formulating responses to the customer when applicable. The components of a RingCX Bot integration are therefore the following:
 
-1. **Engage Digital**
+1. **RingCX Digital**
 2. **Bot Proxy**
 3. **Bot AI**
     
@@ -31,17 +31,17 @@ You can see the relationship between these components clearly in the diagram bel
 
 In an ideal interaction within this architecture, the following steps will be followed. 
 
-1. Engage Digital receives a message posted by a customer. 
-2. Engage Digital posts an event notification via a webhook to notify the bot of the newly posted message. 
-3. The Bot Proxy fetches additional information if necessary via Engage's REST API.
+1. RingCX Digital receives a message posted by a customer. 
+2. RingCX Digital posts an event notification via a webhook to notify the bot of the newly posted message. 
+3. The Bot Proxy fetches additional information if necessary via the RingCX REST API.
 4. The Bot Proxy sends all the gathered information to its Bot AI.
 5. The Bot AI formulates an answer according to the data it has received.
 6. The Bot AI transmits its generated answer back to the Bot Proxy.
 7. The Bot Proxy formats the answer.
-8. The Bot Proxy submits the formated answer via the Engage REST API.
-9. Finally, the answer is transferred to the customer via Engage.
+8. The Bot Proxy submits the formated answer via the RingCX REST API.
+9. Finally, the answer is transferred to the customer via RingCX.
 
-The diagram belows shows this interaction sequence as well.
+The diagram below shows this interaction sequence as well.
 
 <img src="../dimelo_chatbot_success.png" class="img-fluid">
 
@@ -53,9 +53,9 @@ Not pictured above is the optional step of signaling that a response is required
 
 The failure scenario corresponds to the process during which the AI is not able to generate an answer to the message sent by the proxy. When this happens, the following workflow is recommended:
 
-1. Engage Digital receives a message posted by a customer. 
-2. Engage Digital posts an event notification via a webhook to notify the bot of the newly posted message. 
-3. The Bot Proxy fetches additional information if necessary via Engage's REST API.
+1. RingCX Digital receives a message posted by a customer. 
+2. RingCX Digital posts an event notification via a webhook to notify the bot of the newly posted message. 
+3. The Bot Proxy fetches additional information if necessary via the RingCX REST API.
 4. The Bot Proxy sends all the gathered information to its Bot AI.
 5. The Bot AI fails to generate an answer.
 6. The Bot AI notifies the Bot Proxy of its failure to generate a response.
@@ -70,5 +70,5 @@ The diagram below describes this process as well.
 
 ## Best Practices
 
-* Engage recommends using bots on private channels or at least on a third-party source connected via an SDK. However Engage does not recommend its upload on public platforms such as Facebook, Twitter, etc because automatic messages are often banned.
+* We recommend to use bots on private channels or at least on a third-party source connected via an SDK. However it is not recommended to upload RingCX on public platforms such as Facebook, Twitter, etc because automatic messages are often banned.
 
