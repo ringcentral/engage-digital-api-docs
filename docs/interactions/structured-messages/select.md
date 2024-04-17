@@ -124,13 +124,13 @@ Primary parameters are used by default, however, some parameters are unique or o
 | **`structured_content.items.attachment_fallback_id`** | String | **Optional**. Fallback in case the attachment related to the attachment_id doesn’t meet the source requirements. Must be public. Only jpg, jpeg, png formats. Maximum size of 5 MB. [Upload attachments](../../../basics/uploads) for you own custom images. |
 | **`structured_content.items.payload`** | String | Automatically gets populated as a random hex if blank. |
 
-## Example: Engage Messaging (Quick Replies)
+## Example: RingCX Messaging (Quick Replies)
 
-The following example uses Engage Messaging with quick replies.
+The following example uses RingCX Messaging with quick replies.
 
 <img class="img-fluid" width="600" src="../../../img/structured-messages-select-engage.png">
 
-The Engage Messaging quick replies support both the centering of items and the disabling of the text input:
+The RingCX Messaging quick replies support both the centering of items and the disabling of the text input:
 
 ### JSON Body
 
