@@ -1,6 +1,6 @@
 # Extensions Report Fields
 
-In RingCentral Engage Digital, we can enable extensions.
+In RingCentral RingCX Digital, we can enable extensions.
 
 Each extension may append columns to existing csv or provide new exports.
 
