@@ -6,7 +6,7 @@ There are two different workflows with Apple Authenticate messages depending on 
 
 ## Prerequisites
 * Set up OAuth URL, Token URL and Client Identifier in "End User Authentication” on your Messages for Business Account.
-* In your Engage Digital channel settings, set up the Scopes and Client Secret fields in "OAuth Settings". Client Secret is only required to support the legacy Authentication message in order to request the access token.
+* In your RingCX Digital channel settings, set up the Scopes and Client Secret fields in "OAuth Settings". Client Secret is only required to support the legacy Authentication message in order to request the access token.
 
 ## Request Example
 
@@ -42,7 +42,7 @@ curl -X POST "https://[YOUR DOMAIN].api.digital.ringcentral.com/1.0/contents"
 
 ### Webhook
 
-The customer will receive a message including the body and a button that will open the OAuth login page. Once authenticated, the token will be sent back by Apple and will be accessible through the Engage Digital webhook of the imported message in the "authenticate” part. The token is sent back. See following page for an example of the webhook payload format.
+The customer will receive a message including the body and a button that will open the OAuth login page. Once authenticated, the token will be sent back by Apple and will be accessible through the RingCX Digital webhook of the imported message in the "authenticate” part. The token is sent back. See following page for an example of the webhook payload format.
 
 #### Webhook Payload Format for legacy Authentication message
 The `authenticate` entry includes the decrypted `access_token`, the encrypted version is stored in `structured_reply`. Unlike the new Authentication message response, the decrypted token is only accessible through the `content.imported` webhook.
