@@ -1,23 +1,23 @@
 style: quick-start
 no_breadcrumb:true
 
-# Getting Started with Engage Routing
+# Getting Started with Routing
 
-Routing is a critical high-level concept with the Engage Platform, as it handles how teams can share the work load across their agents and ecosystem. There are two primary ways in which workflows and workloads are managed: through a task-based system, and via folders.
+Routing is a critical high-level concept with the RingCX Platform, as it handles how teams can share the work load across their agents and ecosystem. There are two primary ways in which workflows and workloads are managed: through a task-based system, and via folders.
 
-All folders in Engage are "smart folders" whose contents are determined by rules defined by an administrator. This helps drive transparency across teams, and facilitates greater collaboration.
+All folders in RingCX are "smart folders" whose contents are determined by rules defined by an administrator. This helps drive transparency across teams, and facilitates greater collaboration.
 
 Tasks provide a more directed way of designating a specific agent to be responsible for handling and resolving a customer interaction or intervention.
 
-Welcome to the Engage Platform. In this Quick Start, we are going to help you get a list of tasks that can be assigned to agents within your account. Obtaining a reference to a task by its ID is an important first step in managing the workflow of that task. This Quick Start will have you up and running in minutes.
+Welcome to the RingCX Platform. In this Quick Start, we are going to help you get a list of tasks that can be assigned to agents within your account. Obtaining a reference to a task by its ID is an important first step in managing the workflow of that task. This Quick Start will have you up and running in minutes.
 
 ## Obtain Access Key
 
-The first thing you need to do is obtain an API Access Token if you do not already have one. Access tokens can be created and/or accessed via the "API access token" area in the "Admin" area of your Engage portal.
+The first thing you need to do is obtain an API Access Token if you do not already have one. Access tokens can be created and/or accessed via the "API access token" area in the "Admin" area of your RingCX portal.
 
-??? tip "How to generate an Engage API access token"
+??? tip "How to generate a RingCX API access token"
 
-    1. Login to your Engage portal and click on the "Admin" menu located in the top, horizontal menu.
+    1. Login to your RingCX portal and click on the "Admin" menu located in the top, horizontal menu.
 
     2. Select "API access tokens" towards the bottom of the left hand menu.
 
@@ -104,6 +104,6 @@ Having difficulty? Feeling frustrated? Receiving an error you don't understand? 
 
 ## What's Next?
 
-When you have successfully made your first API call, it is time to take your next step towards building a more robust Engage application.
+When you have successfully made your first API call, it is time to take your next step towards building a more robust application.
 
 <a class="btn btn-success btn-lg" href="https://developers.ringcentral.com/engage/api-reference/">Explore the REST API &raquo;</a>
