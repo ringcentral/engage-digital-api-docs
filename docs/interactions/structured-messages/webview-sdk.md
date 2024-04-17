@@ -87,7 +87,7 @@ Since not every channel supports every feature, you'll find support info in the 
 * **<span style="color:orange">Not yet</span>**: Supported by channel but not by SDK yet
 * N/A: Not supported by channel
 
-| | **Engage Messaging Web** | **Engage Messaging iOS** | **Engage Messaging Android** | **Unsupported channels** |
+| | **RingCX Messaging Web** | **RingCX Messaging iOS** | **RingCX Messaging Android** | **Unsupported channels** |
 |-|-|-|-|-|
 | [**close**](#close) | **<span style="color: green">Yes</span>** | **<span style="color: green">Yes, since v2.4.2</span>** | **<span style="color: green">Yes, since v2.3.1</span>** | N/A |
 | [**Automatic title update**](#engage-messaging) | **<span style="color: green">Yes</span>** | **<span style="color: green">Yes, since v2.4.2</span>** | **<span style="color: green">Yes, since v2.3.1</span>** | N/A |
@@ -96,6 +96,6 @@ Since not every channel supports every feature, you'll find support info in the 
 
 Some integrations have extra behavior specific to their related channel. Those are the following.
 
-### Engage Messaging
+### RingCX Messaging
 
-When opening your webview page in Engage Messaging, the title element's text will become the chat webview header's text, and when you change your page's title element's `textContent`, it will change the chat's webview header text.
+When opening your webview page in RingCX Messaging, the title element's text will become the chat webview header's text, and when you change your page's title element's `textContent`, it will change the chat's webview header text.
