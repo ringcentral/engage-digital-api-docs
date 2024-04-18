@@ -1,4 +1,4 @@
-# Engage API Responses
+# RingCX API Responses
 
 All responses are formatted in JSON, with the exception of a few errors. Here is an example:
 
