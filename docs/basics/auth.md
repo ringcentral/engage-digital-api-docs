@@ -1,4 +1,4 @@
-# Authenticating to the Engage API
+# Authenticating to the RingCX API
 
 ## Access Tokens
 
