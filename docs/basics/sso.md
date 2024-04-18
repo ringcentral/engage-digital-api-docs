@@ -1,6 +1,6 @@
 # Single Sign-on Using JWT
 
-Single sign-on (SSO) is an authentication process which allows our clients to authenticate users on their systems and then tell Engage Digital who that user is. In effect, this allows users to log in only once and then be able to use Engage Digital without having to use their credentials again.
+Single sign-on (SSO) is an authentication process which allows our clients to authenticate users on their systems and then tell RingCX Digital who that user is. In effect, this allows users to log in only once and then be able to use RingCX Digital without having to use their credentials again.
 
 There are a few key benefits to using SSO:
 
@@ -11,7 +11,7 @@ There are a few key benefits to using SSO:
 
 ### JWT
 
-To enable SSO we use a secure protocol, called JSON Web Token (JWT), of transferring user authentication data from the client systems to Engage Digital.  JWT is a fairly recent standard, but it is open, simple and with strong support. You can read more about it on the [IETF website](http://tools.ietf.org/html/draft-jones-json-web-token-10) and you’ll be able to find a large number of open source implementations for most languages. You can find a JWT example [below](./#example-token).
+To enable SSO we use a secure protocol, called JSON Web Token (JWT), of transferring user authentication data from the client systems to RingCX Digital.  JWT is a fairly recent standard, but it is open, simple and with strong support. You can read more about it on the [IETF website](http://tools.ietf.org/html/draft-jones-json-web-token-10) and you’ll be able to find a large number of open source implementations for most languages. You can find a JWT example [below](./#example-token).
 
 ## Configuration
 
@@ -31,7 +31,7 @@ https://your-subdomain.digital.ringcentral.com/users/auth/jwt/callback?jwt={jwt_
 !!! Note
     This option can only be disabled if you configured a Remote login URL.
 
-Once you enable SSO, all unauthenticated users that visit a page will get redirected to the "*JWT Remote login*" url. But, if the checkbox "*Enable non-SSO login*" is enabled, users will still be able to login using their Engage Digital credentials by visiting:
+Once you enable SSO, all unauthenticated users that visit a page will get redirected to the "*JWT Remote login*" url. But, if the checkbox "*Enable non-SSO login*" is enabled, users will still be able to login using their RingCX Digital credentials by visiting:
 
 ``` html
 https://your-subdomain.digital.ringcentral.com/login
@@ -39,7 +39,7 @@ https://your-subdomain.digital.ringcentral.com/login
 
 directly. If you want your users to only be able to log in through the SSO you will need to disable this checkbox - once you do, users can still see the form on */login*, but they will not be able to log in anymore. Be careful though, this means that no one will be able to log in if the SSO is down for some reason.
 
-![SSO configuration in Engage Digital admin](../img/sso-config-admin.png)
+![SSO configuration in RingCX Digital admin](../img/sso-config-admin.png)
 
 ### Used as Default Authentication
 
@@ -59,29 +59,29 @@ he will be redirected to the configured *Remote login url*.
 
 ### User Configuration
 
-When authenticating with JWT the given Engage Digital user will be matched **first** by his `JWT external ID`,
+When authenticating with JWT the given RingCX Digital user will be matched **first** by his `JWT external ID`,
 
 !!! note "Please note" 
     This field will only be visible in the admin *if JWT is enabled on the domain*
 
 and then by his `External ID`, which can be set in the user configuration part of the admin:
 
-![User ID configuration in Engage Digital admin](../img/sso-user-id-config.png)
+![User ID configuration in RingCX Digital admin](../img/sso-user-id-config.png)
 
 ### Authentication Process
 
-Here are the steps for a user to become authenticated within Engage Digital using SSO:
+Here are the steps for a user to become authenticated within RingCX Digital using SSO:
 
-1. An authenticated user tries to access a page of Engage Digital.
+1. An authenticated user tries to access a page of RingCX Digital.
 2. Our application acknowledges that SSO is enabled for this domain and will redirect the user to the *JWT Remote login URL*.
 3. The user is authenticated on your side.
 4. A JWT token is built using the *JWT shared secret* and user data.
-5. The user is redirected back to Engage Digital JWT Endpoint URL.
-6. We make sure the JWT data is valid and authenticate the user, identified by the `external_id` provided in the token (must either match the user’s `JWT external ID` or his `External ID`), within Engage Digital.
+5. The user is redirected back to RingCX Digital JWT Endpoint URL.
+6. We make sure the JWT data is valid and authenticate the user, identified by the `external_id` provided in the token (must either match the user’s `JWT external ID` or his `External ID`), within RingCX Digital.
 
 ![Sequence Diagram for SSO Authentication Flow](../img/sso-sequence.png)
 
-This flow allows for the authentication to be completely decoupled from Engage Digital, without hindering the user experience. If the user was already authenticated on your side, he will not even notice the back and forth and will have the desired page loaded seemingly directly.
+This flow allows for the authentication to be completely decoupled from RingCX Digital, without hindering the user experience. If the user was already authenticated on your side, he will not even notice the back and forth and will have the desired page loaded seemingly directly.
 
 ## JWT Implementation
 
@@ -159,7 +159,7 @@ So the final JWT token will be:
 To allow for a seamless integration, when we redirect to the *remote login url* (step 2 in authentication process) we also pass a *return_to* query parameter containing the URL the user tried to access. When you redirect back to our application (step 5 in authentication process), you can also pass this *return_to* query parameter (in addition to the `jwt`) and we will use it to redirect the user to the initial page he tried to access.
 
 !!! Note
-    This is entirely **optional** - if you don’t pass a *return_to* parameter when you redirect back to our application we will simply redirect the user to Engage Digital homepage - but it’s a simple way to enhance user experience.
+    This is entirely **optional** - if you don’t pass a *return_to* parameter when you redirect back to our application we will simply redirect the user to RingCX Digital homepage - but it’s a simple way to enhance user experience.
 
 ### Error Handling
 
@@ -171,4 +171,4 @@ If there is any kind of error when processing the JWT token we will redirect the
 | `token_expired` | The token `iat` occurred more than 5 minutes ago. Please make sure your system uses NNTP or something similar to keep your system time up to date. |
 | `token_missing_attribute` | One of the token attributes (`external_id`, `iat`, `jti`) is missing or is blank. |
 | `token_replay` | We received another token with the same jti in the last 5 minutes. |
-| `user_not_found` | We could not find any user with the given `external_id`. Please make sure to first create the user on Engage Digital side as well. |
+| `user_not_found` | We could not find any user with the given `external_id`. Please make sure to first create the user on RingCX Digital side as well. |
