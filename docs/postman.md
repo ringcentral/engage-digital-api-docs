@@ -1,6 +1,6 @@
-# Using Postman to Test Engage Digital APIs
+# Using Postman to Test RingCX Digital APIs
 
-For easy testing using [Postman](https://www.getpostman.com/), RingCentral provides a Postman 2.0 Collection for Engage Digital. It is based on the RingCentral Engage Digital OpenAPI 3.0 Specificaion. While Postman can import an OpenAPI 3.0 Specification directly, RingCentral recommends using the Collection as it provides better authorization handling using Postman variables and environments as recommended by Postman.
+For easy testing using [Postman](https://www.getpostman.com/), RingCentral provides a Postman 2.0 Collection for RingCX Digital. It is based on the RingCentral RingCX Digital OpenAPI 3.0 Specificaion. While Postman can import an OpenAPI 3.0 Specification directly, RingCentral recommends using the Collection as it provides better authorization handling using Postman variables and environments as recommended by Postman.
 
 The files are available here:
 
@@ -15,7 +15,7 @@ Before you can use Postman, it is important to note the URL for your account and
 
 ### Your API URL
 
-Engage Digital accounts use a customer subdomain that is important to note when accessing both the web application and API. In the following URL, replace the `{mycompany}` variable in the web URL with your own subdomain when accessing your account.
+RingCX Digital accounts use a customer subdomain that is important to note when accessing both the web application and API. In the following URL, replace the `{mycompany}` variable in the web URL with your own subdomain when accessing your account.
 
 `https://{mycompany}.digital.ringcentral.com`
 
@@ -25,7 +25,7 @@ Use your customer subdomain to create the following API base URL for your compan
 
 ### Creating an Access Token
 
-See the following instructions for how to create an access token in the Engage Digital administration web console.
+See the following instructions for how to create an access token in the RingCX Digital administration web console.
 
 * [Obtain an Access Token](https://developers.ringcentral.com/engage/guide/basics/access-token)
 
@@ -50,7 +50,7 @@ Use the following steps to configure your Postman environment:
 
 ### Importing the Postman collection
 
-Use the following steps to import the Engage Digital Postman collection.
+Use the following steps to import the RingCX Digital Postman collection.
 
 1. In the upper left corner of the Postman application click the "Import" button.
 2. Click the "Import from Link" tab.
