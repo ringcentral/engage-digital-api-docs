@@ -116,7 +116,7 @@ Type | Description
 `task.created` | When a task is created
 `task.destroyed` | When contents are ignored or interventions are deferred or closed in folders view, related tasks are destroyed.
 `task.expired_from_step` | When a task couldn't be delivered to any of the assigned agents for longer than the timeout defined for the topology step. It then continue to the next step.
-`task.expired_from_workbin` | When a task was abandoned by an agent in his workbin automatically taken back by Engage Digital to be routed to other agents.
+`task.expired_from_workbin` | When a task was abandoned by an agent in his workbin automatically taken back by RingCX Digital to be routed to other agents.
 `task.recategorized` | When a content is recategorized, the task associated to this content gets the same categories.
 `task.resume` | When an agent resumes handling of a task from his history or deferred tasks
 `task.supervisor_assigned` | When a task is assigned to an agent by a supervisor and the option “Bypass queue and assign to agent” has been checked
@@ -176,23 +176,23 @@ Type | Description
 -----|------------
 `content.approved` | When a content has been approved for publication. **This does not mean that the content has been published yet. Notifications about exports are done with content.exported.**
 `content.discussion_initiated` | When a discussion has been started. **This does not mean that the content has been published yet. Notifications about exports are done with content.exported.**
-`content.exported` | When a new content has been exported from Engage to the source. **This does not mean that the export succeeded. The synchronization_status field needs to be checked.**
-`content.imported` | When a new content has been imported from the source to Engage.
+`content.exported` | When a new content has been exported from RingCX to the source. **This does not mean that the export succeeded. The synchronization_status field needs to be checked.**
+`content.imported` | When a new content has been imported from the source to RingCX.
 `content.replied` | When someone replied to another content. **This does not mean that the content has been published yet. Notifications about exports are done with content.exported.**
 `content.update_exported` | When a content has been update_exported (and the update has been propagated to the external source).
 
 !!! warning "New content events"
     To be notified of new content from customers you should watch for content.imported but be careful as you will receive more than just customer contents.
 
-    In particular the ​`content.imported` event means imported from an Engage Digital point of view, it notifies all interactions coming directly from the synchronized source. For example you publish a post on a managed facebook page without using Engage Digital, a `content.imported` webhook will be triggered. For the Chat automatic welcome message (initial message) of the conversation will also be imported. So it’s not only customer message, this is a bit more complicated and some filtering may be required. To ignore those messages you will filter based on the status field to segregate actionable contents from customer vs. source itself.
+    In particular the ​`content.imported` event means imported from a RingCX Digital point of view, it notifies all interactions coming directly from the synchronized source. For example you publish a post on a managed facebook page without using RingCX Digital, a `content.imported` webhook will be triggered. For the Chat automatic welcome message (initial message) of the conversation will also be imported. So it’s not only customer message, this is a bit more complicated and some filtering may be required. To ignore those messages you will filter based on the status field to segregate actionable contents from customer vs. source itself.
 
-    Similarly, to be notified when a content has been exported from Engage Digital to the source, you should watch for ​`content.exported` (new content) which will also notify automatic messages like survey or auto response and ​`content.update_exported` for update on existing content.
+    Similarly, to be notified when a content has been exported from RingCX Digital to the source, you should watch for ​`content.exported` (new content) which will also notify automatic messages like survey or auto response and ​`content.update_exported` for update on existing content.
 
     Finally, if you need more granular or earlier notification about contents creation, you can subscribe to ​`content.discussion_initiated` (new discussion), ​content.replied (reply on a message) and `content.approved​` (content has been approved).
 
     It can be useful to understand the basic workflow of contents:
 
-    1. A new content is created from Engage Digital: it can trigger `content.discussion_initiated` if a new thread has been initiated by an agent (outgoing content). Otherwise, regular replies to contents triggers content.replied.​ Those content may not be exported yet depending on approval settings.
+    1. A new content is created from RingCX Digital: it can trigger `content.discussion_initiated` if a new thread has been initiated by an agent (outgoing content). Otherwise, regular replies to contents triggers content.replied.​ Those content may not be exported yet depending on approval settings.
     2. If the content requires to be approved (​`approval_required` attribute is ​`true​`), it has to wait for an approbation. Once the approbation is received, content.approved​ is triggered.
     3. The content can now be exported to the external source. Successful and Unsuccessful export operations trigger the ​`content.exported` event for new contents, and ​`content.update_exported` event for existing events that have been edited.
 
@@ -266,11 +266,11 @@ Property | Value | Description
 `questions` | Array of Hashes | List of questions containing the displayed `text` of the question, its `foreign_id` (from the third party survey supplier) and their `replies` in the form of an Array. Each one of the `replies` entry contains two keys: `text` and `value` of the customer reply.
 `response_foreign_id` | String | Internal Response ID fetched from the provider.
 `answers` | Hash | `[Deprecated]` Please use `questions` instead. Survey question and responses
-`foreign_id` | String | `[Deprecated]` Please use `id` instead. Internal Response ID generated by Engage Digital.
+`foreign_id` | String | `[Deprecated]` Please use `id` instead. Internal Response ID generated by RingCX Digital.
 
 ### Custom Fields
 
 Property | Value | Description
 ---------|-------|------------
-`key` | String | To have more information you need to look in Engage Digital custom field admin, it depends on your setup
-`value` | String | To have more information you need to look in Engage Digital custom field admin, it depends on your setup
+`key` | String | To have more information you need to look in RingCX Digital custom field admin, it depends on your setup
+`value` | String | To have more information you need to look in RingCX Digital custom field admin, it depends on your setup
