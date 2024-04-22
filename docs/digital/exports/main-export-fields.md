@@ -133,19 +133,275 @@ Other custom data can be present in the thread export depending on the source ty
 | entry_id             | Reply Assistant Entry ID                                  | ObjectId | 5a4bbf3713047d6d123061d0                           | [Sensitive](../#sensitive-columns)                                   |
 | version_id           | Reply Assistant Version ID                                | ObjectId | 5a4bbf3713047d6d123061d0                           | [Sensitive](../#sensitive-columns)                                   |
 
-List of events containing a `task_id`:
+### List of events:
 
-- Task assigned
-- Task completed
-- Task moved to queue
-- Task timed out
-- Task expired in an agent's inbox
-- Task priority update from a rule
-- Task priority update (only one that doesn't have the `task_id` in it)
-- Task resumed by an agent
-- Task manually assigned to an agent by a supervisor
-- Task accepted
-- Task transferred
+| Name                                                    | Description                                                                |
+| ------------------------------------------------------- | -------------------------------------------------------------------------- |
+| alert_notification.created                              | An alert notification was created                                          |
+| alert_notification.destroyed                            | An alert notification was deleted                                          |
+| alert_notification.updated                              | An alert notification was modified                                         |
+| api_access_token.created                                | An API access token was created                                            |
+| api_access_token.destroyed                              | An API access token was deleted                                            |
+| api_access_token.updated                                | An API access token was modified                                           |
+| apple_business_chat.form.created                        | An Apple Messages for Business form was created                            |
+| apple_business_chat.form.destroyed                      | An Apple Messages for Business form was deleted                            |
+| apple_business_chat.form.updated                        | An Apple Messages for Business form was modified                           |
+| automatic_exports_task.created                          | An automated export task was created                                       |
+| automatic_exports_task.destroyed                        | An automated export task was deleted                                       |
+| automatic_exports_task.failed                           | An automated export task failed                                            |
+| automatic_exports_task.succeed                          | An automated export task was completed successfully                        |
+| automatic_exports_task.updated                          | An automated export task was modified                                      |
+| capability_scheme.created                               | An agent capacity was created                                              |
+| capability_scheme.destroyed                             | An agent capacity was deleted                                              |
+| capability_scheme.updated                               | An agent capacity was modified                                             |
+| case.created_on_intervention                            | A case was created on a conversation                                       |
+| case.created                                            | A case was created on thread                                               |
+| case.intervention_added                                 | A case was attached to conversation                                        |
+| case.intervention_removed                               | A case was removed from conversation                                       |
+| case.thread_added                                       | A case was attached to thread                                              |
+| case.thread_removed                                     | A case was removed from thread                                             |
+| category.created                                        | A category was created                                                     |
+| category.destroyed                                      | A category was deleted                                                     |
+| category.updated                                        | A category was modified                                                    |
+| channel.created                                         | A channel group was created                                                |
+| channel.destroyed                                       | A channel group was deleted                                                |
+| channel.updated                                         | A channel group was modified                                               |
+| chat.catalog.automatic_message.created                  | An automatic message for Engage Chat was created                           |
+| chat.catalog.automatic_message.destroyed                | An automatic message for Engage Chat was deleted                           |
+| chat.catalog.automatic_message.updated                  | An automatic message for Engage Chat was modified                          |
+| chat.catalog.button.created                             | An Engage Chat button was created                                          |
+| chat.catalog.button.destroyed                           | An Engage Chat button was deleted                                          |
+| chat.catalog.button.updated                             | An Engage Chat button was modified                                         |
+| chat.catalog.invitation.created                         | An Engage Chat invitation was created                                      |
+| chat.catalog.invitation.destroyed                       | An Engage Chat invitation was deleted                                      |
+| chat.catalog.invitation.updated                         | An Engage Chat invitation was modified                                     |
+| chat.custom_variable.created                            | An Engage Chat custom variable was created                                 |
+| chat.custom_variable.destroyed                          | An Engage Chat custom variable was deleted                                 |
+| chat.custom_variable.updated                            | An Engage Chat custom variable was modified                                |
+| chat.trigger.created                                    | An Engage Chat trigger was created                                         |
+| chat.trigger.destroyed                                  | An Engage Chat trigger was deleted                                         |
+| chat.trigger.updated                                    | An Engage Chat trigger was modified                                        |
+| community.created                                       | A community profile was created                                            |
+| community.destroyed                                     | A community profile was deleted                                            |
+| community.failure_acknowledged                          | A community profile's alerts were acknowledged                             |
+| community.updated                                       | A community profile was modified                                           |
+| content.admin_stamped                                   | An Engage Messaging message was certified by an admin                      |
+| content.agent_assist_used                               | Agent Assist was used to reply to a message                                |
+| content.anonymized                                      | A message was anonymized                                                   |
+| content.approval_requested                              | An agent message was sent for approval                                     |
+| content.approved                                        | An agent message was approved by a supervisor                              |
+| content.author_blocked                                  | The author of the message was blocked on the channel                       |
+| content.author_muted_ignored                            | A message was ignored because its author is muted                          |
+| content.author_stamped                                  | An Engage Communities message was chosen as the best response              |
+| content.author_unblocked                                | The author of the message was unblocked on the channel                     |
+| content.auto_categorization_infirmed                    | AI Classification Engine categorization was corrected                      |
+| content.auto_categorization_not_precise                 | AI Classification Engine message categorization failed                     |
+| content.auto_categorized                                | A message was categorized by AI Classification Engine                      |
+| content.auto_ignored                                    | A message was automatically archived                                       |
+| content.categorized                                     | A message was categorized                                                  |
+| content.cobrowsing_control_started                      | The agent started to take control of the customer screen during cobrowsing |
+| content.cobrowsing_control_stoped                       | The agent stopped to take control of the customer screen during cobrowsing |
+| content.cobrowsing_started                              | A cobrowsing session was started                                           |
+| content.cobrowsing_stoped                               | A cobrowsing session was stopped                                           |
+| content.destroyed                                       | A message was deleted                                                      |
+| content.discussion_initiated                            | A discussion was initiated by an agent                                     |
+| content.discussion_planned                              | A discussion was planned by an agent                                       |
+| content.forwarded                                       | An email was forwarded                                                     |
+| content.ice_nth_content_ignored                         | A message was ignored by AI Classification Engine                          |
+| content.ignored                                         | A message was ignored                                                      |
+| content.imported                                        | A message was imported                                                     |
+| content.language_updated                                | A message's language updated                                               |
+| content.liked                                           | A message was liked                                                        |
+| content.marked_as_spam                                  | A message was marked as spam                                               |
+| content.planned_discussion_synchronized                 | A discussion planned by an agent was successfully sent                     |
+| content.published                                       | A message was published                                                    |
+| content.recategorized                                   | A message was recategorized                                                |
+| content.replied                                         | An agent replied to a message                                              |
+| content.reply_assistant_used                            | The reply assistant was used to reply to a message                         |
+| content.retried_synchronization                         | A message reattempted                                                      |
+| content.retweeted                                       | A X post was reposted                                                      |
+| content.source_changed                                  | A X post was moved to the main channel                                     |
+| content.stared                                          | An Engage Communities message was starred                                  |
+| content.thread_auto_closed                              | An Engage Messaging thread was automatically locked                        |
+| content.thread_closed                                   | A thread was locked                                                        |
+| content.thread_muted_ignored                            | A message was ignored because the thread is muted                          |
+| content.thread_opened                                   | A thread was unlocked                                                      |
+| content.unliked                                         | A message was unliked                                                      |
+| content.unpublished                                     | A message was unpublished                                                  |
+| content.unretweeted                                     | A X repost was canceled                                                    |
+| content.unstamped                                       | An Engage Communities message was unmarked as the best response            |
+| content.unstared                                        | An Engage Communities message was unstarred                                |
+| content.updated                                         | A message was modified                                                     |
+| content_source.created                                  | A channel was created                                                      |
+| content_source.destroyed                                | A channel was deleted                                                      |
+| content_source.failure_acknowledged                     | A channel's alerts were acknowledged                                       |
+| content_source.updated                                  | A channel was modified                                                     |
+| content_thread.categorized                              | A thread was categorized                                                   |
+| content_thread.created                                  | A thread was created                                                       |
+| content_thread.destroyed                                | A thread was deleted                                                       |
+| content_thread.muted                                    | A thread was muted                                                         |
+| content_thread.recategorized                            | A thread was recategorized                                                 |
+| content_thread.unmuted                                  | A thread was unmuted                                                       |
+| custom_field.created                                    | A custom field was created                                                 |
+| custom_field.destroyed                                  | A custom field was deleted                                                 |
+| custom_field.updated                                    | A custom field was modified                                                |
+| custom_notification.created                             | A cusom notification was created                                           |
+| custom_notification.destroyed                           | A cusom notification was deleted                                           |
+| custom_notification.updated                             | A cusom notification was modified                                          |
+| emails.template.created                                 | An email template was created                                              |
+| emails.template.destroyed                               | An email template was removed                                              |
+| emails.template.updated                                 | An email template was modified                                             |
+| escalate_to_video.meeting_accepted                      | An agent accepted a video call                                             |
+| escalate_to_video.meeting_created                       | A video call link was created and sent to the user                         |
+| escalate_to_video.meeting_rejected                      | An agent declined a video call                                             |
+| escalate_to_video.meeting_requested                     | A user requested a video call                                              |
+| escalate_to_video.recording_received                    | A video call recording was received                                        |
+| expired_data_purge.deleted                              | Expired data were deleted by the automatic data purge                      |
+| export.created                                          | An export file is ready to be downloaded                                   |
+| export.requested                                        | An export file was requested                                               |
+| extension.created                                       | An extension was added                                                     |
+| extension.destroyed                                     | An extension was removed                                                   |
+| extension.updated                                       | An extension was modified                                                  |
+| folder.created                                          | An inbox was was created                                                   |
+| folder.destroyed                                        | An inbox was was deleted                                                   |
+| folder.updated                                          | An inbox was was modified                                                  |
+| identity.anonymized                                     | An identity was anonymized                                                 |
+| identity.api_blocked                                    | The anti-bot system blocked the ability to send messages to an identity    |
+| identity.api_unblocked                                  | The anti-bot system unblocked the ability to send messages to an identity  |
+| identity.export_created                                 | An identity data export was created                                        |
+| identity.export_requested                               | An identity data export was requested                                      |
+| identity.followed                                       | An identity was followed on X                                              |
+| identity.merged                                         | An identity was merged in an identity group                                |
+| identity.muted                                          | An identity was muted                                                      |
+| identity.unanonymized                                   | An identity was deanonymized                                               |
+| identity.unfollowed                                     | An identity was unfollowed on X                                            |
+| identity.unmerged                                       | An identity was unmerged from an identity group                            |
+| identity.unmuted                                        | An identity was unmuted                                                    |
+| identity.updated                                        | An identity was modified                                                   |
+| identity_group.locked                                   | An identity group data was locked                                          |
+| identity_group.unlocked                                 | An identity group data was unlocked                                        |
+| identity_group.updated                                  | An identity group was updated                                              |
+| intervention.assigned                                   | A conversation was assigned to an agent                                    |
+| intervention.canceled                                   | A conversation was canceled                                                |
+| intervention.closed                                     | A conversation was closed                                                  |
+| intervention.closed_confirmation_missed                 | Smart conversation close missed conversation closure                       |
+| intervention.closed_confirmation_rejected               | Smart conversation close rejected conversation closure                     |
+| intervention.closed_confirmation_success                | Smart conversation close confirmed conversation closure                    |
+| intervention.custom_fields_updated                      | A conversation's custom fields were modified                               |
+| intervention.deferred                                   | A conversation was deferred                                                |
+| intervention.opened                                     | A conversation was created                                                 |
+| intervention.reactivated                                | A deferred conversation was reactivated                                    |
+| intervention.recategorized                              | A conversation was recategorized                                           |
+| intervention.reopened                                   | A conversation was reopened                                                |
+| intervention.user_updated                               | A conversation was reassigned to another agent                             |
+| intervention_comment.created                            | A conversation was commented                                               |
+| intervention_comment.destroyed                          | A conversation's comment was deleted                                       |
+| intervention_segment.summary_generated                  | A conversation summary was generated                                       |
+| intervention_segment.summary_generation_failed          | Conversation summary generation failed                                     |
+| intervention_segment.summary_submitted                  | A conversation summary was submitted                                       |
+| javascript_sdk_application.created                      | A JavaScript application (App SDK) was created                             |
+| javascript_sdk_application.destroyed                    | A JavaScript application (App SDK) was deleted                             |
+| javascript_sdk_application.updated                      | A JavaScript application (App SDK) was modified                            |
+| javascript_sdk_installation.created                     | A JavaScript application (App SDK) was installed                           |
+| javascript_sdk_installation.destroyed                   | A JavaScript application (App SDK) was uninstalled                         |
+| javascript_sdk_installation.updated                     | An installed JavaScript application (App SDK) was modified                 |
+| mobile_messaging.catalog.automatic_message.created      | An Engage Messaging automatic message was created                          |
+| mobile_messaging.catalog.automatic_message.destroyed    | An Engage Messaging automatic message was deleted                          |
+| mobile_messaging.catalog.automatic_message.updated      | An Engage Messaging automatic message was modified                         |
+| mobile_messaging.catalog.button.created                 | An Engage Messaging button was created                                     |
+| mobile_messaging.catalog.button.destroyed               | An Engage Messaging button was deleted                                     |
+| mobile_messaging.catalog.button.updated                 | An Engage Messaging button was modified                                    |
+| mobile_messaging.catalog.invitation.created             | An Engage Messaging invitation was created                                 |
+| mobile_messaging.catalog.invitation.destroyed           | An Engage Messaging invitation was deleted                                 |
+| mobile_messaging.catalog.invitation.updated             | An Engage Messaging invitation was modified                                |
+| mobile_messaging.custom_variable.created                | An Engage Messaging custom variable was created                            |
+| mobile_messaging.custom_variable.destroyed              | An Engage Messaging custom variable was deleted                            |
+| mobile_messaging.custom_variable.updated                | An Engage Messaging custom variable was modified                           |
+| mobile_messaging.email_notifications.template.created   | An Engage Messaging email notification template was created                |
+| mobile_messaging.email_notifications.template.destroyed | An Engage Messaging email notification template was deleted                |
+| mobile_messaging.email_notifications.template.updated   | An Engage Messaging email notification template was modified               |
+| mobile_messaging.trigger.created                        | An Engage Messaging trigger was created                                    |
+| mobile_messaging.trigger.destroyed                      | An Engage Messaging trigger was deleted                                    |
+| mobile_messaging.trigger.updated                        | An Engage Messaging trigger was modified                                   |
+| native_surveys/survey_model.created                     | An Engage Surveys form was created                                         |
+| native_surveys/survey_model.destroyed                   | An Engage Surveys form was deleted                                         |
+| native_surveys/survey_model.updated                     | An Engage Surveys form was modified                                        |
+| password.updated                                        | An agent modified their password                                           |
+| push_agent.availability_change                          | An agent availability status changed on task mode                          |
+| push_agent.connected                                    | An agent connected to the task mode                                        |
+| push_agent.disconnected                                 | An agent disconnected from the task mode                                   |
+| push_agent.missed_task                                  | An agent was marked as unavailable following a missed task                 |
+| reply_assistant_knowledge_base_entry.created            | A reply assitant entry was created                                         |
+| reply_assistant_knowledge_base_entry.destroyed          | A reply assitant entry was deleted                                         |
+| reply_assistant_knowledge_base_entry.updated            | A reply assitant entry was modified                                        |
+| reply_assistant_knowledge_base_version.created          | A reply assitant entry version was created                                 |
+| reply_assistant_knowledge_base_version.destroyed        | A reply assitant entry version was deleted                                 |
+| reply_assistant_knowledge_base_version.updated          | A reply assitant entry version was modified                                |
+| role.created                                            | A role was created                                                         |
+| role.destroyed                                          | A role was deleted                                                         |
+| role.updated                                            | A role was modified                                                        |
+| rules_engine_rule.created                               | A Rules Engine Rule was created                                            |
+| rules_engine_rule.destroyed                             | A Rules Engine Rule was deleted                                            |
+| rules_engine_rule.updated                               | A Rules Engine Rule was modified                                           |
+| security.updated                                        | A domain's security settings were modified                                 |
+| session.created                                         | An agent signed in                                                         |
+| session.destroyed                                       | An agent signed out                                                        |
+| settings.updated                                        | A domain's settings updated                                                |
+| survey.created                                          | A survey campaign was created                                              |
+| survey.destroyed                                        | A survey campaign was deleted                                              |
+| survey.sent                                             | A survey was sent                                                          |
+| survey.updated                                          | A survey campaign was modified                                             |
+| survey_response.imported                                | A survey response was received                                             |
+| tag.created                                             | A tag was created                                                          |
+| tag.destroyed                                           | A tag was deleted                                                          |
+| tag.updated                                             | A tag was modified                                                         |
+| task.assigned                                           | An interaction was assigned                                                |
+| task.completed                                          | An interaction was completed                                               |
+| task.created                                            | An interaction was created                                                 |
+| task.destroyed                                          | An interaction was deleted                                                 |
+| task.enqueued                                           | An interaction was moved to a queue                                        |
+| task.expired_from_step                                  | An interaction has reached its current step timeout                        |
+| task.expired_from_workbin                               | An interaction expired in an agent's inbox                                 |
+| task.ht_result                                          | An intercation segment handling time was calculated                        |
+| task.ocr_failed                                         | One contact resolution was failed on an interaction                        |
+| task.priority_rule_applied                              | An interaction priority was modified by a Rules Engine rule                |
+| task.priority_updated                                   | An interaction priority was modified                                       |
+| task.resume                                             | An interaction was resumed by an agent                                     |
+| task.supervisor_assigned                                | An interaction was assigned to an agent by a supervisor                    |
+| task.taken                                              | An interaction was accepted by an agent                                    |
+| task.transferred                                        | An interaction was transferred                                             |
+| team.created                                            | A team was created                                                         |
+| team.destroyed                                          | A team was deleted                                                         |
+| team.updated                                            | A team was modified                                                        |
+| time_sheet.created                                      | Business hours were created                                                |
+| time_sheet.destroyed                                    | Business hours were removed                                                |
+| time_sheet.updated                                      | Business hours were modified                                               |
+| topology.activated                                      | A routing strategy was activated                                           |
+| topology.created                                        | A routing strategy was created                                             |
+| topology.destroyed                                      | A routing strategy was deleted                                             |
+| topology.updated                                        | A routing strategy was modified                                            |
+| user.categories_added                                   | Categories were added to an agent                                          |
+| user.categories_removed                                 | Categories were removed to an agent                                        |
+| user.created                                            | An agent was created                                                       |
+| user.destroyed                                          | An agent was deleted                                                       |
+| user.disconnected                                       | An agent was disconnected                                                  |
+| user.impersonated                                       | An agent was impersonated                                                  |
+| user.invited                                            | An agent was invited                                                       |
+| user.notifications_auto_disabled                        | An agent's Notifications were automatically disabled                       |
+| user.notifications_updated                              | An agent modified their Notifications                                      |
+| user.password_recovery_instructions_sent                | Password recovery instructions were sent to an agent                       |
+| user.updated                                            | An agent was modified                                                      |
+| virtual_agent.created                                   | A virtual agent was created                                                |
+| virtual_agent.destroyed                                 | A virtual agent was deleted                                                |
+| virtual_agent.handover                                  | A virtual agent was handed over                                            |
+| virtual_agent.updated                                   | A virtual agent was updated                                                |
+| webhook.created                                         | A webhook has been created.                                                |
+| webhook.destroyed                                       | A webhook has been destroyed                                               |
+| webhook.disabled                                        | A webhook has been disabled                                                |
+| webhook.suspended                                       | A webhook has been automatically suspended                                 |
+| webhook.restored                                        | A webhook has been automatically restored                                  |
+| webhook.updated                                         | A webhook has been updated                                                 |
+
 
 ## Sources(`Export::ContentSources`)
 
