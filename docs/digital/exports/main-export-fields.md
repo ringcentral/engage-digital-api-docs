@@ -395,7 +395,7 @@ Other custom data can be present in the thread export depending on the source ty
 | virtual_agent.destroyed                                 | A virtual agent was deleted                                                |
 | virtual_agent.handover                                  | A virtual agent was handed over                                            |
 | virtual_agent.updated                                   | A virtual agent was updated                                                |
-| webhook.created                                         | A webhook has been created.                                                |
+| webhook.created                                         | A webhook has been created                                                 |
 | webhook.destroyed                                       | A webhook has been destroyed                                               |
 | webhook.disabled                                        | A webhook has been disabled                                                |
 | webhook.suspended                                       | A webhook has been automatically suspended                                 |
