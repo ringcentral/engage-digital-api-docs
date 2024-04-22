@@ -126,7 +126,7 @@ Other custom data can be present in the thread export depending on the source ty
 | intervention_id      | Intervention ID                                           | ObjectId | 4f4f3a08a90ffb27ee000583                           |                                             |
 | content_id           | Content ID                                                | ObjectId | 4f4f3a08a90ffb27ee000583                           |                                             |
 | category_ids         | Categories IDs                                            | Array    | 5240b1bca90ffbb6c7000006, 4340b1bca90debb6c7003333 |                                             |
-| task_id              | Task ID                                                   | ObjectId | 4f4f3a08a90ffb27ee000583                           | [Sensitive](../#sensitive-columns) See the full list of events below |
+| task_id              | Task ID                                                   | ObjectId | 4f4f3a08a90ffb27ee000583                           | [Sensitive](../#sensitive-columns) |
 | action               | Optional field describing the action leading to the event | String   | deferred                                           | [Sensitive](../#sensitive-columns)                                   |
 | step                 | Task topology step when it expired                        | String   | realtime_default_target                            |                                             |
 | rules_engine_rule_id | ID of the Rule which triggered the event                  | ObjectId | 5a4bbf3713047d6d123061d0                           | [Sensitive](../#sensitive-columns)                                   |
