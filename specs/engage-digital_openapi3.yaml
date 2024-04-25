@@ -3166,7 +3166,7 @@ paths:
             type: string
         - description: >-
             To filter interventions on given identity_group_id. This will return
-            interventions associated to any identity in the indentity_group.
+            interventions associated to any identity in the identity_group.
           in: query
           name: identity_group_id
           required: false
@@ -3181,6 +3181,23 @@ paths:
           required: false
           schema:
             type: string
+        - description: >-
+            To filter on the intervention status. Possible values are:
+             - active (open but not deferred)
+             - closed
+             - deferred
+             - opened
+             - reopened
+          in: query
+          name: status
+          required: false
+          schema:
+            enum:
+              - active
+              - closed
+              - deferred
+              - opened
+              - reopened
         - description: >-
             To change the criteria chosen to sort the interventions. The value
             can be “created_at” or “updated_at”.
