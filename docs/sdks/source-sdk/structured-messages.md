@@ -5,7 +5,7 @@ Structured Messages provide a richer messaging experience for customers. You can
 ## Prerequisites
 
 * In order to enable structured messages support, '[view.messaging](../options/#viewmessaging)' option must be implemented.
-* An author used for structured message creation must be marked as a "puppet" identity and configured as a controlled identity in Engage Digital. More details can be found in the [Users](../objects/#users) object.
+* An author used for structured message creation must be marked as a "puppet" identity and configured as a controlled identity in RingCX Digital. More details can be found in the [Users](../objects/#users) object.
 
 ## Actions
 
