@@ -234,7 +234,7 @@ If you are limiting the number of contents, you must return the **oldest** ones 
 
 ### reply
 
-The reply action is used internally into Engage Digital by displaying the reply button or not, if the call to `implementation.info` returns a `reply` action for a collection, then we can only reply to contents of that collection that also have `reply` in their own actions. **You will never receive a request with that action.**
+The reply action is used internally into RingCX Digital by displaying the reply button or not, if the call to `implementation.info` returns a `reply` action for a collection, then we can only reply to contents of that collection that also have `reply` in their own actions. **You will never receive a request with that action.**
 
 !!! alert "Please Note"
     You don't need to implement `reply` action to reply to a content. You can create any message with the `message.create` action. `Reply` action is used to respond to a **specific message.**
@@ -242,8 +242,8 @@ The reply action is used internally into Engage Digital by displaying the reply 
 
 ### messaging.queuing_update
 
-The `messaging.queuing_update` action is sent by Engage Digital to notify you about queuing updates, it includes the estimated wait time (in seconds) and the position of the task in the queue.
-In order to receive this action the task mode should be enabled and the corresponding channel (on Engage Digital) should be part of a channel group that is included in the current routing strategy.
+The `messaging.queuing_update` action is sent by RingCX Digital to notify you about queuing updates, it includes the estimated wait time (in seconds) and the position of the task in the queue.
+In order to receive this action the task mode should be enabled and the corresponding channel (on RingCX Digital) should be part of a channel group that is included in the current routing strategy.
 
 #### Request
 
