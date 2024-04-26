@@ -1,8 +1,8 @@
-# Engage Digital SDKs and Sample Apps
+# RingCX Digital SDKs and Sample Apps
 
 ### Client SDKs
 
-Client SDKs provide native language interface to Engage Digital REST APIs.
+Client SDKs provide native language interface to RingCX Digital REST APIs.
 
 * [JavaScript Client SDK](https://github.com/ringcentral/engage-digital-client-js)
 * [Python Client SDK](https://github.com/ringcentral/engage-digital-client-python)
@@ -15,7 +15,7 @@ Chatbots allow organizations to provide automated customer communications with i
 
 ### Messaging SDKs
 
-Engage Digital Messaging SDKs are libraries that allow integration of rich in-app communication directly into into native mobile application to provide for communication between a company and its customer though its mobile application. As a developer you just have to load the Engage Digital Messaging SDK in your app with an API token, plug it to app notification and decide where/how the user will be able to open it and under which identity.
+RingCX Digital Messaging SDKs are libraries that allow integration of rich in-app communication directly into into native mobile application to provide for communication between a company and its customer though its mobile application. As a developer you just have to load the RingCX Digital Messaging SDK in your app with an API token, plug it to app notification and decide where/how the user will be able to open it and under which identity.
 
 * [Mobile Messaging SDK Homepage](http://mobile-messaging.dimelo.com/)
 * [Android Messaging SDK](https://github.com/ringcentral/engage-digital-messaging-android) - [sample app](https://github.com/ringcentral-tutorials/engage-digital-messaging-android-demo)
@@ -23,7 +23,7 @@ Engage Digital Messaging SDKs are libraries that allow integration of rich in-ap
 
 ### Channel SDKs
 
-Channel SDKs and Frameworks allow connection of Engage Digital to other messaging systems easily. Some built-in sources include Apple Messages for Business, Facebook Messenger, WeChat, etc.
+Channel SDKs and Frameworks allow connection of RingCX Digital to other messaging systems easily. Some built-in sources include Apple Messages for Business, Facebook Messenger, WeChat, etc.
 
 * [Channel SDK documentation](https://github.com/ringcentral/engage-digital-source-sdk/wiki)
 * [JavaScript Channel SDK Framework](https://github.com/ringcentral/engage-digital-source-sdk-js)
@@ -35,9 +35,9 @@ Channel SDKs and Frameworks allow connection of Engage Digital to other messagin
 
 ## Community SDKs and Sample Apps
 
-In addition to the official RingCentral SDKs there are a number of unofficial libraries, plugins and sample apps for a range of languages built by amazing communities of active developers. The list below includes libraries and apps for the RingCentral Engage Digital APIs.
+In addition to the official RingCentral SDKs there are a number of unofficial libraries, plugins and sample apps for a range of languages built by amazing communities of active developers. The list below includes libraries and apps for the RingCentral RingCX Digital APIs.
 
-If you’ve built your own RingCentral Engage Digital library, plugin, or open source app, please [file a help ticket with our support team](https://developers.ringcentral.com/support/create-case) and we'll evaluate it for this list.
+If you’ve built your own RingCentral RingCX Digital library, plugin, or open source app, please [file a help ticket with our support team](https://developers.ringcentral.com/support/create-case) and we'll evaluate it for this list.
 
 Some of these integrations may be incomplete. Feedback and bugs should be directed to their representative authors.
 
