@@ -2,9 +2,9 @@
 
 ## Creating a New App SDK Application
 
-By default, App SDK application management is disabled. You’ll have to request your Engage Digital project manager to grant you the permission to manage them.
+By default, App SDK application management is disabled. You’ll have to request your RingCX Digital project manager to grant you the permission to manage them.
 
-In RingCentral's Engage Digital administration section, you’ll get the **« Dev tools »** menu section and **« Developed applications (SDK) »** menu item in the administration and be able to create new ones.
+In RingCentral's RingCX Digital administration section, you’ll get the **« Dev tools »** menu section and **« Developed applications (SDK) »** menu item in the administration and be able to create new ones.
 
 <img class="img-fluid" width="100%" src="../../../img/app-sdk-config.png">
 
@@ -22,15 +22,15 @@ An application is defined by the following attributes:
 | `Developers` |​ The list of agents that are able to develop this application. 25 developers can be added at maximum. |
 | `Callback URL​` | The callback used for OAuth authentication (more details in OAuth authentication section). |
 | `Configuration URL` | If present, this URL is used to configure each SDK installation. See installation section for more information. |
-| `Source code URL(s)` | The URL(s) of the JavaScript code you wrote that you have to host on a public server. The created code will be automatically imported in all Engage Digital application pages. |
+| `Source code URL(s)` | The URL(s) of the JavaScript code you wrote that you have to host on a public server. The created code will be automatically imported in all RingCX Digital application pages. |
 
 Available application modes are:
 
 | Mode | Description|
 |-|-|
-| `Development` |​ In this mode, code is integrated directly, and therefore, updated on each refresh of the RingCentral Engage Digital page. The code is, however, not executed in a sandbox. JavaScript code is included in page only for users that are in the application's developers list. |
+| `Development` |​ In this mode, code is integrated directly, and therefore, updated on each refresh of the RingCentral RingCX Digital page. The code is, however, not executed in a sandbox. JavaScript code is included in page only for users that are in the application's developers list. |
 | `Pre-production​` | In this mode, JavaScript code is integrated in a sandbox (only some methods are available) and updated every hour. JavaScript code is included in the page only for users that are in the application's developers list. |
-| `Production​`| In this mode, JavaScript code is integrated in a sandbox (only some methods are available) and updated every hour. JavaScript code is included for all RingCentral Engage Digital agents. |
+| `Production​`| In this mode, JavaScript code is integrated in a sandbox (only some methods are available) and updated every hour. JavaScript code is included for all RingCentral RingCX Digital agents. |
 
 The best practice is to develop the application in ​*development​* mode. When the application seems to be ready, it should be switched to ​*pre-production​* mode. Then if everything is working correctly, it has to be switched to *production* ​mode. Note that to have live refresh of code, it must be in *development* mode.
 
@@ -75,13 +75,13 @@ Upon clicking the update permissions icon, you will need to confirm you are read
 
 ## IFrame Messaging
 
-The Engage Digital App SDK offers iframe rendering features. The main inconvenience with iframes is the communication with the parent window (Engage Digital).
+The RingCX Digital App SDK offers iframe rendering features. The main inconvenience with iframes is the communication with the parent window (RingCX Digital).
 
-The Engage Digital App SDK offers via ​`window.postMessage​` method the feature to send messages from an iframe to the Engage Digital window. You will get more details on how `window.postMessage` works in this [technical review](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage).
+The RingCX Digital App SDK offers via ​`window.postMessage​` method the feature to send messages from an iframe to the RingCX Digital window. You will get more details on how `window.postMessage` works in this [technical review](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage).
 
-### Sending a Message to the Engage Digital Window
+### Sending a Message to RingCX Digital Window
 
-On the iframe side, here is an example of how to send a message to Engage Digital window:
+On the iframe side, here is an example of how to send a message to the RingCX Digital window:
 
 ``` javascript
     window.parent.postMessage({
@@ -93,10 +93,10 @@ As you see, the `postMessage` method takes two (mandatory) arguments:
 
 | Argument | Description|
 |-|-|
-| `object` | A javascript object that describes the message. This object contains the following properties: <ul><li>`name`:​ The name of the event (mandatory). This is a message identifier that describes the action performed on Engage Digital side. The name has to be prefixed by “smcc:”, like “smcc:baz”</li><li>`data​`: An optional hash of arguments that message can accept.</li></ul> |
-| `url` | The URL of the Engage Digital application. For example: `"​​http://foo.digital.ringcentral.com​"`​, where `f​oo​` is your Engage Digital domain’s name.
+| `object` | A javascript object that describes the message. This object contains the following properties: <ul><li>`name`:​ The name of the event (mandatory). This is a message identifier that describes the action performed on RingCX Digital side. The name has to be prefixed by “smcc:”, like “smcc:baz”</li><li>`data​`: An optional hash of arguments that message can accept.</li></ul> |
+| `url` | The URL of the RingCX Digital application. For example: `"​​http://foo.digital.ringcentral.com​"`​, where `f​oo​` is your RingCX Digital domain’s name.
 
-To receive messages in Engage Digital, first you have to whitelist the iframe sender origin:
+To receive messages in RingCX Digital, first you have to whitelist the iframe sender origin:
 
 ``` javascript
     SMCC.Window.acceptPostMessageOrigin("https://example.com");
@@ -107,7 +107,7 @@ To receive messages in Engage Digital, first you have to whitelist the iframe se
 
 ## OAuth Authentication
 
-Engage Digital App SDK provides many ways to render iframes. But, most of the time those iframes must be authenticated. Engage Digital’s interface offers a standard [​OAuth 2.0](https://oauth.net/2/)​ provider to request access tokens and get Engage Digital's current user information.
+RingCX Digital App SDK provides many ways to render iframes. But, most of the time those iframes must be authenticated. The RingCX Digital’s interface offers a standard [​OAuth 2.0](https://oauth.net/2/)​ provider to request access tokens and get RingCX Digital's current user information.
 
 ### Prerequisites
 
@@ -123,14 +123,14 @@ You must also configure a callback URL for the application to a valid one. This 
 
 If you are not familiar with the OAuth 2.0 protocol, here is how authentication works:
 
-1. User agent is not authenticated on application, a redirection is made on Engage Digital OAuth provider with the application key and a redirect URL.
+1. User agent is not authenticated on application, a redirection is made on the RingCX Digital OAuth provider with the application key and a redirect URL.
 2. If the application key is valid, user agent is redirected to the provided redirect URL with authorization code as a parameter. Otherwise the user agent is redirected to the redirect URL with an error parameter.
 3. Then, the application must make a `POST` request with returned code and application secret to get an OAuth access token.
 4. with this access token, the iframe can get the current user infos via REST `/1.0/users/me​` API method.
 
 ### Request an OAuth Authorization Code
 
-An OAuth authorization code is required before trying to get an access token. User agent **must**​ be redirected to Engage Digital authorization URL to get it.
+An OAuth authorization code is required before trying to get an access token. User agent **must**​ be redirected to the RingCX Digital authorization URL to get it.
 
 #### URL
 
@@ -214,4 +214,4 @@ Otherwise, if one of the provided parameters is invalid or missing, a `400 HTTP`
 
 ### Getting Access Token User Information
 
-When getting an OAuth access token, you’ll be able to get information for this token. An access token is associated to an Engage Digital agent. To get the agent’s ID, a REST API request (`​/1.0/users/me`​) must be made by an application.​ P​lease refer to Engage Digital REST API documentation for more information.
+When getting an OAuth access token, you’ll be able to get information for this token. An access token is associated to a RingCX Digital agent. To get the agent’s ID, a REST API request (`​/1.0/users/me`​) must be made by an application.​ P​lease refer to RingCX Digital REST API documentation for more information.
