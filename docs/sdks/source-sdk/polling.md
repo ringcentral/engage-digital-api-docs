@@ -1,6 +1,6 @@
 # Introduction to Polling
 
-The basic principle of the polling method is to call a defined URL periodically in order to fetch new data from your application and send new data created on RingCentral Engage Digital. This periodic polling ensures that content is synchronized between Engage Digital and your platform, ensuring we offer a coherent and cohesive view of the data to support both agents and clients. Currently, we will crawl at a rate of about:
+The basic principle of the polling method is to call a defined URL periodically in order to fetch the new data from your application and send the new data created on RingCentral RingCX Digital. This periodic polling ensures that content is synchronized between RingCX Digital and your platform, ensuring we offer a coherent and cohesive view of the data to support both agents and clients. Currently, we will crawl at a rate of about:
 
 * *1 minute* intervals.
 * *3 minutes* intervals. If there are no implemented 'list' actions.
