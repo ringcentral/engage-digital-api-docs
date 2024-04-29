@@ -13,7 +13,7 @@ For details about the parameters and response for each action please the [Action
 
 ## Standard vs Custom
 
-There are a few operations which have a predefined meaning, in the sense that we expect a certain behavior to occur. These actions have a standard flow within Engage Digital and a specific interface change will occur (eg. the content will disappear for a `delete` action). The standard actions are:
+There are a few operations which have a predefined meaning, in the sense that we expect a certain behavior to occur. These actions have a standard flow within RingCX Digital and a specific interface change will occur (eg. the content will disappear for a `delete` action). The standard actions are:
 
 * `create`
 * `delete`
