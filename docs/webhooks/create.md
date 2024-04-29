@@ -1,6 +1,6 @@
 # Registering a Webhook
 
-To register an endpoint to begin receiving webhooks, using the Engage Digital admin interface under the "Webhooks" section under "Advanced Settings."
+To register an endpoint to begin receiving webhooks, using the RingCX Digital admin interface under the "Webhooks" section under "Advanced Settings."
 
 <img class="img-fluid" src="../dimelo_webhook_register_800x.png">
 
@@ -15,16 +15,16 @@ In details:
 | **API access token** | You can only use the API access token belonging to your user, unless you have the "Manage API access token" permission. | 
 | **Name** | User-friendly name of the given webhook that can be used to differentiate it among all others. The field is mandatory in the UI and optional when creating a webhook through the API. If it's not provided when the webhook is created in API, this field will be prefilled with the hostname from the URL + associated token name. |
 | **Active** | This checkbox toggles the webhook on and off, allowing you to halt the flow of event notifications temporarily or permanently. 
-| **Staging Environment ** | A toggle that configures which environment, staging or production, from which event notifications will be sent. |
+| **Staging Environment** | A toggle that configures which environment, staging or production, from which event notifications will be sent. |
 | **Ignore SSL validity** | A toggle to turn on and off SSL cert verification. This is often needed in testing environments for which SSL certs may not be created by a certified authority. | 
-| **URL** | The URL to which events will be posted. This URL must be accessible to RingCentral Engage. We strongly advise to use HTTPS for this endpoint. The URL is unique by API access token. |
+| **URL** | The URL to which events will be posted. This URL must be accessible to RingCentral RingCX. We strongly advise to use HTTPS for this endpoint. The URL is unique by API access token. |
 | **Verification Token** | Any arbitrary string used during the validation phase of the webhook setup process. We recommend the use of a randomly generated string. |
 | **Secret** | A secret that will be served as a `X-Dimelo-Secret` HTTP header with every request (including the validation request). This field must only contain ASCII characters and be less than 256 characters. The header won’t be present if there’s no secret configured. Changing this field will trigger a validation request. |
 | **Registered Events** | A list of all **registrable events**, only selected events will be used by your endpoint. At least one event must be selected to create your webHook. |
 | **Sources filtering strategy** |  A simple rule for determining which sources will be subscribed to, e.g. "all sources except" or "no source except." By default, events associated to any source are broadcast. |
 | **Sources** | A list of sources for which events should or should not be broadcasted, depending on the "filtering strategy" used. |
 
-!!! tip "Multiple Webhooks "
+!!! tip "Multiple Webhooks"
     Rather than creating a single endpoint listening to all the events, it is possible to create a number of specialized endpoint, listening to only certain events.
 
 !!! note "Duplicate Events"
@@ -34,11 +34,11 @@ When submitting your settings, if the required fields are not filled out, it wil
 
 ## Webhook Validation
 
-The Webhook API doesn’t use authentication in the conventional sense. Instead, Engage validates each registered URL/endpoint prior to directing events to it, unless the webhook has a status of "inactive." Validating will commence immediately upon registering your webhook, so be sure you have setup your endpoint to respond to the validation request prior to registering it. 
+The Webhook API doesn’t use authentication in the conventional sense. Instead, RingCX validates each registered URL/endpoint prior to directing events to it, unless the webhook has a status of "inactive." Validating will commence immediately upon registering your webhook, so be sure you have setup your endpoint to respond to the validation request prior to registering it. 
 
 ### Validation Request
 
-Webhook validation is an asynchronous process. To validate a webhook, Engage will transmit a GET request on the endpoint URL with the following parameters:
+Webhook validation is an asynchronous process. To validate a webhook, RingCX will transmit a GET request on the endpoint URL with the following parameters:
 
 | Parameter | Description |
 |-|-|
@@ -54,9 +54,9 @@ When the endpoint receives this request, it should do all of the following:
 4. Set the response body to only contain the value of `hub.challenge`.
 5. Respond with an HTTP status code of 200.
 
-## Webhook auto disconnection
+## Webhook Auto Disconnection
 
-To improve webhook management, Engage Digital has a specific mechanism that will prevent a webhook from staying active if it ends with an error too often. If the number of requests made to the remote endpoint that respond with an error (or take too much time to respond) reach a certain threshold (e.g. 75% of the requests to the given endpoint end up with an error) we'll send an email to notify that something is going wrong with this particular webhook and we will prevent the webhook from sending more requests. After a specific amount of time, we'll try sending some requests again and if the requests are successful the webhook will be fully active again, otherwise it'll wait again before sending more requests.
+To improve webhook management, RingCX Digital has a specific mechanism that will prevent a webhook from staying active if it ends with an error too often. If the number of requests made to the remote endpoint that respond with an error (or take too much time to respond) reach a certain threshold (e.g. 75% of the requests to the given endpoint end up with an error) we'll send an email to notify that something is going wrong with this particular webhook and we will prevent the webhook from sending more requests. After a specific amount of time, we'll try sending some requests again and if the requests are successful the webhook will be fully active again, otherwise it'll wait again before sending more requests.
 
 
 

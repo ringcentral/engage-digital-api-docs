@@ -2,7 +2,7 @@
 
 In this Quick Start, we are going to help you start using the Channel SDK by first creating a channel for your source to connect to. Without a channel to connect to, you will not be able to configure the Send API to send to agents. Let's get started.
 
-## Create an Engage Digital Channel SDK
+## Create a RingCX Digital Channel SDK
 
 For this Quick Start, we need to create a channel and then assign an agent to that channel. There are several steps in this process starting with the community.
 
@@ -24,7 +24,7 @@ Give your community profile a name, like `test-source-sdk`. Make sure the commun
 
 The next step is to add a channel to your new Channel SDK community profile. You can learn more about [Channels](https://support.ringcentral.com/engagedigital/admin/configure-entry-points.html) in our support pages.
 
-To create a channel navigate to **Channels->Channels** to see a list of your current channels. Here you will add a new channel for your Channel SDK integration using the Channel SDK community profile. This new channel will be an **Engage Digital channel SDK**.
+To create a channel navigate to **Channels->Channels** to see a list of your current channels. Here you will add a new channel for your Channel SDK integration using the Channel SDK community profile. This new channel will be a **RingCX Digital channel SDK**.
 
 <img class="img-fluid" width="231" src="../../../img/source-sdk-ed-channel-sdk-icon.png">
 
@@ -35,7 +35,7 @@ Enter the follow required fields:
 | **Active** | Make sure this box is checked to indicate your channel is active. |
 | **Name** | Give your channel a name. In our example, we are using `test-source-sdk-channel`. |
 | **Community** | Select the community profile for your channel. In our example, we are using `test-source-sdk`. |
-| **Base URI** | This is the endpoint for the source you are wishing to send messaging data to, that originate from the Engage Digital platform. |
+| **Base URI** | This is the endpoint for the source you are wishing to send messaging data to, that originate from the RingCX Digital platform. |
 | **API access token** | Take note of this field as you'll need this token to verify your send requests to the channel. |
 
 <img class="img-fluid" width="1043" src="../../../img/source-sdk-ed-channel-sdk-fields.png">
@@ -43,7 +43,7 @@ Enter the follow required fields:
 Now click **Save** to save your work and channel.
 
 !!! info "Note"
-    While you are saving your configuration, you may note that a message comes in to your **Base URI**. This message is the implementation.info to initiate the dialog between Engage Digital and your source. Each time you save your channel, this implementation.info message will go to your **Base URI**.
+    While you are saving your configuration, you may note that a message comes in to your **Base URI**. This message is the implementation.info to initiate the dialog between RingCX Digital and your source. Each time you save your channel, this implementation.info message will go to your **Base URI**.
 
 In order for your integration to start working, you'll need to follow the next couple sections including a response to the implementation.info.
 
@@ -70,20 +70,20 @@ Then add our Channel SDK Channel in the Channels field by selecting it from the 
 
 <img class="img-fluid" width="444" src="../../../img/source-sdk-channel-group-realtime.png">
 
-Now we are setup in Engage Digital with a Channel SDK Channel and our Agent assigned to the channel so they can receive messages from your source. The next step is to connect your source, which is initiated from Engage Digital. Once you have your **Base URI** ready, move on to the next section.
+Now we are setup in RingCX Digital with a Channel SDK Channel and our Agent assigned to the channel so they can receive messages from your source. The next step is to connect your source, which is initiated from RingCX Digital. Once you have your **Base URI** ready, move on to the next section.
 
-## Creating a Source for Engage Digital
+## Creating a Source for RingCX Digital
 
 ### Signatures for Requests and Responses
 
-Please note that all requests and responses generated on your side must be signed according to the algorithm described in our [Request and Response](../request-response) guide. Place this signature in the custom HTTP header `X-SMCCSDK-SIGNATURE`. This signature is also included in each request you receive from the Engage Digital platform. It is good practice to verify the signature to ensure the messages are coming from the Engage Digital platform.
+Please note that all requests and responses generated on your side must be signed according to the algorithm described in our [Request and Response](../request-response) guide. Place this signature in the custom HTTP header `X-SMCCSDK-SIGNATURE`. This signature is also included in each request you receive from the RingCX Digital platform. It is good practice to verify the signature to ensure the messages are coming from the RingCX Digital platform.
 
 !!! alert "Note"
     It is also possible to send the signature as a Query parameter to avoid proxy header filtering. For example http://{your-domain}.digital.ringcentral.com/realtime/sdk/{your-source-id}?signature=xxxx
 
 ### Polling to Start Integration - The implementation.info Request
 
-The starting point for any communication between your source and the Engage Digital platform is via [implementation.info](../action-details/#implementationinfo) sent through [polling](../polling). This request, sent from the Engage Digital Platform upon saving your Engage Digital Channel SDK channel, allows you to respond to Engage Digital of the requests that you wish to manage on your side within your integration (message creation, thread creation, etc.) This request is made at the creation of the source (once you click **"Save"**) on the Engage Digital side.
+The starting point for any communication between your source and the RingCX Digital platform is via [implementation.info](../action-details/#implementationinfo) sent through [polling](../polling). This request, sent from the RingCX Digital Platform upon saving your RingCX Digital Channel SDK channel, allows you to respond to RingCX Digital of the requests that you wish to manage on your side within your integration (message creation, thread creation, etc.) This request is made at the creation of the source (once you click **"Save"**) on the RingCX Digital side.
 
 !!! important
     You must submit this request correctly or you will not receive any other request for message synchronisation or message creation.
@@ -107,7 +107,7 @@ In this example the integrator wants to manage messages, private messages, and t
 
 In the case of integrating a third-party chat solution, you have two integration options:
 
-* **Use private messages** In each message sent to Engage Digital you must specify an `in_reply_to_id` parameter to indicate that this message is in response to the one targeted via this id, thus allowing the message to be forwarded to the correct discussion thread on the Engage Digital side. To do this you must be able to send us the id of the message you are replying to.
+* **Use private messages** In each message sent to RingCX Digital you must specify an `in_reply_to_id` parameter to indicate that this message is in response to the one targeted via this id, thus allowing the message to be forwarded to the correct discussion thread on the RingCX Digital side. To do this you must be able to send us the id of the message you are replying to.
 * **Use messages** In this case, there are two solutions:
     * If you support the option `messages.unthreaded`, when you reply to the request `implementation.info` then it is the same system as for private messages. The link between each message is managed via an `in_reply_to_id` parameter.
     * If you don't support this option you can manage the link between the different messages via a `thread_id` parameter which allows you to bring the messages up in the same thread. In this case you must integrate the threads object in your response to the `implementation.info` request.
@@ -170,11 +170,11 @@ In the case where the integration will only be in real time you don't need to fu
 
 * For list type actions you must simply answer with []
 * For show type actions you must simply answer with {}
-* For create type actions, you must simply reply with {"id": id of the content generated on your side}, this allows you to manage the agent replies sent from the Engage Digital console.
+* For create type actions, you must simply reply with {"id": id of the content generated on your side}, this allows you to manage the agent replies sent from the RingCX Digital console.
 
 #### Real Time Query
 
-In the case of real time integration, once polling has been implemented, it is necessary to manage the sending of customer messages in real time from the third party application to Engage Digital. To do this it will be necessary to set up a create type request on an endpoint provided by RingCentral. See the [Send API](../send-api) for more details. Create a request structure as shown below.
+In the case of real time integration, once polling has been implemented, it is necessary to manage the sending of customer messages in real time from the third party application to RingCX Digital. To do this it will be necessary to set up a create type request on an endpoint provided by RingCentral. See the [Send API](../send-api) for more details. Create a request structure as shown below.
 
 To create a message in real time from the third party:
 
@@ -252,21 +252,21 @@ Channel SDK supports the following type of attachments:
 
 ### Content Categorization
 
-It is possible to manage thread categorization from the Channel SDK, a **categories field** is available for Message and Private Message objects. Using this field you can send the external categories applied on the third party side to Engage Digital. On the Engage Digital side it is possible to set up recategorization rules via the rules engine in order to apply a specific categorization according to the information received from the Channel SDK.
+It is possible to manage thread categorization from the Channel SDK, a **categories field** is available for Message and Private Message objects. Using this field you can send the external categories applied on the third party side to RingCX Digital. On the RingCX Digital side it is possible to set up recategorization rules via the rules engine in order to apply a specific categorization according to the information received from the Channel SDK.
 
-You can specify any value in this field. A mapping will be set up on the Engage Digital side to match the values received via the Channel SDK with existing categories in Engage Digital.
+You can specify any value in this field. A mapping will be set up on the RingCX Digital side to match the values received via the Channel SDK with existing categories in RingCX Digital.
 
 !!! important "Remember!"
-    Remember to pass this information to your Engage Digital project manager so that he or she can set up the category mapping.
+    Remember to pass this information to your RingCX Digital project manager so that he or she can set up the category mapping.
 
 !!! alert "Note"
     This field is case sensitive, please don’t use uppercases or special characters.
 
 ### Send Context Data
 
-It is possible to send context data via the Channel SDK. This context data can be transmitted via the Message, Private Message or User objects. The context data linked to Message and Private Message objects will be associated with the thread on the Engage Digital side and will be displayed below the imported messages. The context data linked to the User object will be synchronized with the customer record on Engage Digital side.
+It is possible to send context data via the Channel SDK. This context data can be transmitted via the Message, Private Message or User objects. The context data linked to Message and Private Message objects will be associated with the thread on the RingCX Digital side and will be displayed below the imported messages. The context data linked to the User object will be synchronized with the customer record on RingCX Digital side.
 
-It is recommended to use the Message and Private Message context data for session related information (i.e. page url, shopping cart amount, detected intention, ...). On the contrary, the User context data should be used to enrich the customer record on the Engage Digital side, they should only include information related to the user.
+It is recommended to use the Message and Private Message context data for session related information (i.e. page url, shopping cart amount, detected intention, ...). On the contrary, the User context data should be used to enrich the customer record on the RingCX Digital side, they should only include information related to the user.
 
 You can specify any value for this context data. For the user context data, a mapping can be set up to synchronize this data with existing fields in the customer record or custom fields created specifically for this purpose. Concerning the Message and Private Message context data, automatic rules can be set up according to the received values in order to apply specific behaviors.
 
@@ -278,16 +278,16 @@ For more informations regarding the Message / Private Message and User context d
 
 ### User Management - Agents Replying to Channel SDK Messages
 
-If you need to create agent messages directly via the Channel SDK (import of already existing messages, bot directly connected to the Channel SDK, ...), you can specify that the user linked to the message must be considered as an agent on the Engage Digital side. For this there is a **puppetizable field** that can be set in the User object, you have to set it to `true` for users that should be considered as agents and to `false` (default value) for customers. This will ensure that messages will be correctly recognized in the Engage Digital GUI.
+If you need to create agent messages directly via the Channel SDK (import of already existing messages, bot directly connected to the Channel SDK, ...), you can specify that the user linked to the message must be considered as an agent on the RingCX Digital side. For this there is a **puppetizable field** that can be set in the User object, you have to set it to `true` for users that should be considered as agents and to `false` (default value) for customers. This will ensure that messages will be correctly recognized in the RingCX Digital GUI.
 
 For more informations regarding User **puppetizable field**, you can check the online documentation:
 
 * [User](../objects/#users)
 
 !!! important
-    You need to set the **puppetizable field** one time at the beginning of the project to create an identity used by all the agents to reply on the Channel SDK channel. This is a requirement to enable agents to reply from the Engage Digital console.
+    You need to set the **puppetizable field** one time at the beginning of the project to create an identity used by all the agents to reply on the Channel SDK channel. This is a requirement to enable agents to reply from the RingCX Digital console.
 
-Enabling agents to respond to messages coming from the Channel SDK integration will need a few things setup to operate the way you want it to.  First you need to initialize an agent with an initial request to create a user identity.  As stated above, you will need the **puppetizable field** set so you can create an identity that is controlled by your agents.  Let's start with the first message you send to Engage Digital.
+Enabling agents to respond to messages coming from the Channel SDK integration will need a few things setup to operate the way you want it to.  First you need to initialize an agent with an initial request to create a user identity.  As stated above, you will need the **puppetizable field** set so you can create an identity that is controlled by your agents.  Let's start with the first message you send to RingCX Digital.
 
 ```json
 {
@@ -303,10 +303,10 @@ Enabling agents to respond to messages coming from the Channel SDK integration w
 }
 ```
 
-The initial request you send to Engage Digital is a request to identify the agent in the source. Use the above JSON body in your request to Engage Digital with some key notes:
+The initial request you send to RingCX Digital is a request to identify the agent in the source. Use the above JSON body in your request to RingCX Digital with some key notes:
 
 * The `id` is unique to this agent/bot. Make sure this is the ID you want the agent to pickup.
-* This user needs to be managed by the agent in Engage Digital. This mean you must set `puppetizable:true` for the next step.
+* This user needs to be managed by the agent in RingCX Digital. This mean you must set `puppetizable:true` for the next step.
 
 Once you send this request, a new user identity is created. You'll find user identities under "Digital"->"Identities".
 

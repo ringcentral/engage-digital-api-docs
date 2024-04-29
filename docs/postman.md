@@ -44,8 +44,8 @@ Use the following steps to configure your Postman environment:
 1. In Postman, create an environment by clicking the Gear icon for "Management Environments" in the upper right corner. This will bring up a list of existing environments.
 2. Click "Add" to create a new environment.
 3. Choose a name of your choice.
-4. Enter your server URL with "Variable": `ENGAGE_DIGITAL_SERVER_URL` and "Initial Value" set to your API URL. This would be: `https://{mycompany}.api.digital.ringcentral.com` uising your company's subdomain replacing `{mycompany}`.
-4. Enter your static access token with "Variable" set to `ENGAGE_DIGITAL_ACCESS_TOKEN` and "Initial Value" set to your access token. This will set the proper request header.
+4. Enter your server URL with "Variable": `RINGCX_DIGITAL_SERVER_URL` and "Initial Value" set to your API URL. This would be: `https://{mycompany}.api.digital.ringcentral.com` uising your company's subdomain replacing `{mycompany}`.
+4. Enter your static access token with "Variable" set to `RINGCX_DIGITAL_ACCESS_TOKEN` and "Initial Value" set to your access token. This will set the proper request header.
 5. Click the "Add" button to finish adding this environment.
 
 ### Importing the Postman collection

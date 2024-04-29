@@ -1,8 +1,8 @@
 # Configuration Fetching
 
-When creating a Survey SDK in Engage Digital you need to specify the **base URL of the bridge** field (see [Getting Started](../quick-start)) which will be used to perform an HTTP request to fetch the survey configuration.
+When creating a Survey SDK in RingCX Digital you need to specify the **base URL of the bridge** field (see [Getting Started](../quick-start)) which will be used to perform an HTTP request to fetch the survey configuration.
 
-Upon survey creation, Engage Digital will perform a `GET /configuration` call on your bridge to fetch the survey configuration (e.g. if **base URL of the bridge** is `https://survey.bridge.com` then Engage Digital will perform a `GET https://survey.bridge.com/configuration`).
+Upon survey creation, RingCX Digital will perform a `GET /configuration` call on your bridge to fetch the survey configuration (e.g. if **base URL of the bridge** is `https://survey.bridge.com` then RingCX Digital will perform a `GET https://survey.bridge.com/configuration`).
 
 ## Response example
 

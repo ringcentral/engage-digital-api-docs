@@ -1678,13 +1678,18 @@
                     {
                       "key": "identity_group_id",
                       "value": "\u003cstring\u003e",
-                      "description": "To filter interventions on given identity_group_id. This will return interventions associated to any identity in the indentity_group.",
+                      "description": "To filter interventions on given identity_group_id. This will return interventions associated to any identity in the identity_group.",
                       "disabled": true
                     },
                     {
                       "key": "identity_id",
                       "value": "\u003cstring\u003e",
                       "description": "To filter interventions on given identity_id(s). Can be a single value or an array of string.",
+                      "disabled": true
+                    },
+                    {
+                      "key": "status",
+                      "description": "To filter on the intervention status. Possible values are:\n - active (open but not deferred)\n - closed\n - deferred\n - opened\n - reopened",
                       "disabled": true
                     },
                     {

@@ -80,7 +80,7 @@ This is the **default** format when format is not specified in the options.
 
 ## view.messaging
 
-Enable the messaging view in Engage Digital. Can be used with **only with one resource enabled** (messages or private_messages) and with **text only**. Must be implemented if structured contents support is required.
+Enable the messaging view in RingCX Digital. Can be used with **only with one resource enabled** (messages or private_messages) and with **text only**. Must be implemented if structured contents support is required.
 
 ## messaging.typing_indicator
 
@@ -88,17 +88,17 @@ Adds the ability to send/receive `typing` events (`typing.start`/`typing.stop`).
 
 ## messaging.queuing_update
 
-Adds the ability to receive `messaging.queuing_update` requests (only available if using the Task mode in Engage Digital).
+Adds the ability to receive `messaging.queuing_update` requests (only available if using the Task mode in RingCX Digital).
 
 
 ## messages.attachments
 
-Enable the message composition with attachments in Engage Digital.
+Enable the message composition with attachments in RingCX Digital.
 
 ## private_messages.attachments
 
-Enable the private message composition with attachments in Engage Digital.
+Enable the private message composition with attachments in RingCX Digital.
 
 ## threads.attachments
 
-Enable the thread composition with attachments in Engage Digital.
+Enable the thread composition with attachments in RingCX Digital.

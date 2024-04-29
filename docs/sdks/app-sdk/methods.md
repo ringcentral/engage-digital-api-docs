@@ -1,6 +1,6 @@
-# RingCentral Engage Digital App SDK JavaScript Methods
+# RingCentral RingCX Digital App SDK JavaScript Methods
 
-All RingCentral Engage Digital App SDK methods are prefixed by ​SMCC ​namespace. Sub-namespace(s) may also be present.
+All RingCentral RingCX Digital App SDK methods are prefixed by ​SMCC ​namespace. Sub-namespace(s) may also be present.
 
 Static methods are described using a dot (.), and instance methods are described by a number sign (#​).
 
@@ -861,7 +861,7 @@ SMCC.NICE.MAX.unregisterEvents();
 
 ## SMCC.Promise
 
-`SMCC.Promise` provides a chainable utility object. Here is a good [blog](http://blog.parse.com/2013/01/29/whats-so-great-about-javascript-promises/) that describes how promises are working. Engage Digital SMCC
+`SMCC.Promise` provides a chainable utility object. Here is a good [blog](http://blog.parse.com/2013/01/29/whats-so-great-about-javascript-promises/) that describes how promises are working. RingCX Digital SMCC
 App SDK Implementation has been inspired by [jQuery](https://api.jquery.com/deferred.then/).
 
 Let’s start with a complete example:
@@ -1250,7 +1250,7 @@ The SMCC.Window namespace represents a modal window that can be rendered from an
 
 ### SMCC.Window.acceptPostMessageOrigin(origin)
 
-Allows RingCentral Engage to receive messages from *origin*. Use multiple times to allow many origins.
+Allows RingCentral RingCX to receive messages from *origin*. Use multiple times to allow many origins.
 
 #### Parameters
 
@@ -1291,7 +1291,7 @@ SMCC.Window.onPostMessage(‘foo’, function(data, origin) {
 ```
 
 !!! info "Note"
-    The origin has to be whitelisted with `SMCC.Window.acceptPostMessageOrigin(“origin_hostname”)` to receive messages in RingCentral Engage. More info in the [iframe section](../config/#iframe-messaging).
+    The origin has to be whitelisted with `SMCC.Window.acceptPostMessageOrigin(“origin_hostname”)` to receive messages in RingCentral RingCX. More info in the [iframe section](../config/#iframe-messaging).
 
 ### SMCC.Window.sendPostMessage(iframeId, namespace, message)
 

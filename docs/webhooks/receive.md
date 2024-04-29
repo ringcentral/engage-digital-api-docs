@@ -10,11 +10,11 @@ Once subscribed to events, endpoints will receive updates in the following fashi
 
 This Webhook API implementation tries to deliver the event notification request reasonably fast. We may buffer notification for efficiency reasons.
 
-Engage cannot guarantee the delivery of every event (see [Endpoint Unavailability](#endpoint-unavailability)). However, Engage will retry delivery during the first 24 hours after the event was triggered. Engage will retry until the endpoint received them correctly by responding with an HTTP status code of 200.
+RingCX cannot guarantee the delivery of every event (see [Endpoint Unavailability](#endpoint-unavailability)). However, RingCX will retry delivery during the first 24 hours after the event was triggered. RingCX will retry until the endpoint received them correctly by responding with an HTTP status code of 200.
 
-Engage cannot guarantee the order in which the events arrive. Engage does however provide a timestamp in every event for the implementor to understand the exact point in time the event was triggered.
+RingCX cannot guarantee the order in which the events arrive. RingCX does however provide a timestamp in every event for the implementor to understand the exact point in time the event was triggered.
 
-Engage cannot guarantee that events will be sent only once. A unique identifier for each event is provided so that events can be deduplicated by the implementor if unicity is a constraint.
+RingCX cannot guarantee that events will be sent only once. A unique identifier for each event is provided so that events can be deduplicated by the implementor if unicity is a constraint.
 
 ## Endpoint Unavailability
 
