@@ -20,7 +20,7 @@ curl -X POST "https://[YOUR DOMAIN].api.digital.ringcentral.com/1.0/contents"
       "latitude": 48.874989,
       "longitude": 2.345589,
       "radius": 100,
-      "title": "Engage Office"
+      "title": "Office"
     },
     "timeslots": [
       {
