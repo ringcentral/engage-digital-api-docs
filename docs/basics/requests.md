@@ -1,9 +1,9 @@
-# Engage API Requests
+# RingCX API Requests
 
-Engage Digital provides a REST JSON API to retrieve, create data and manipulate data from third party applications.
+RingCX Digital provides a REST JSON API to retrieve, create data and manipulate data from third party applications.
 
 !!! tip "Test in your browser"
-    The Engage API can easily be tested from any web browser or command line terminal.
+    The RingCX API can easily be tested from any web browser or command line terminal.
 
 !!! tip "Using this Guide"
     Throughout this Developer Guide you will see sample endpoint URLs. These URLs all contain a placeholder string of `[YOUR DOMAIN]`. When developing, be sure to replace this string with your assigned domain.
@@ -12,7 +12,7 @@ Engage Digital provides a REST JSON API to retrieve, create data and manipulate 
 
 ### Scheme and hostname
 
-Request must be done with https scheme. Hostname is determined from your application name. If your application name is "example," then the API hostname will be: example.api.engagement.dimelo.com.
+Request must be done with https scheme. Hostname is determined from your application name. If your application name is "example", then the API hostname will be: example.api.engagement.dimelo.com.
 
 ### HTTP method
 
@@ -20,7 +20,7 @@ As it is specified in API methods list, HTTP method can be GET, POST, PUT or DEL
 
 ### URL path
 
-All API paths is prefixed by `/1.0`. This is the version of Engage Digital Rest API.
+All API paths is prefixed by `/1.0`. This is the version of RingCX Digital Rest API.
 
 #### Multiple parameters
 
@@ -34,4 +34,4 @@ Examples:
 
 ## Authentication
 
-See [Authenticating to the Engage API](../auth/)
+See [Authenticating to the RingCX API](../auth/)
