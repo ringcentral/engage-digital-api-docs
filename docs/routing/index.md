@@ -31,4 +31,4 @@ Tasks allow agents to engage with customer much like they would interface with a
 Tasks are created automatically by the system when interventions are created and assigned to an agent.
 
 !!! info "What is a "task"?"
-    Today tasks refer exclusively to interventions that require a reply from the assigned agent. In the future, may be allowed the tasks associated with other actions (e.g. "open a bug," or "issue a refund," etc.) to be created.
+    Today tasks refer exclusively to interventions that require a reply from the assigned agent. In the future, tasks may be allowed to be associated with other actions (e.g. "open a bug," or "issue a refund," etc.).
