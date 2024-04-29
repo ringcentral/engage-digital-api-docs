@@ -1,6 +1,6 @@
 # RingCX API Requests
 
-RingCX Digital provides a REST JSON API to retrieve, create data and manipulate data from third party applications.
+RingCX Digital provides a REST JSON API to retrieve, create, and manipulate data from third-party applications.
 
 !!! tip "Test in your browser"
     The RingCX API can easily be tested from any web browser or command line terminal.
@@ -12,15 +12,15 @@ RingCX Digital provides a REST JSON API to retrieve, create data and manipulate 
 
 ### Scheme and hostname
 
-Request must be done with https scheme. Hostname is determined from your application name. If your application name is "example", then the API hostname will be: example.api.engagement.dimelo.com.
+Request must be done with HTTPS scheme. Hostname is determined from your application name. If your application name is "example," then the API hostname will be: `example.api.engagement.dimelo.com`.
 
 ### HTTP method
 
-As it is specified in API methods list, HTTP method can be GET, POST, PUT or DELETE.
+As it is specified in the API methods list, HTTP method can be GET, POST, PUT or DELETE.
 
 ### URL path
 
-All API paths is prefixed by `/1.0`. This is the version of RingCX Digital Rest API.
+All API paths are prefixed by `/1.0`. This is the version of RingCX Digital Rest API.
 
 #### Multiple parameters
 
