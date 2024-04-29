@@ -1,6 +1,6 @@
 # Registering a Webhook
 
-To register an endpoint to begin receiving webhooks, using the RingCX Digital admin interface under the "Webhooks" section under "Advanced Settings".
+To register an endpoint to begin receiving webhooks, using the RingCX Digital admin interface under the "Webhooks" section under "Advanced Settings."
 
 <img class="img-fluid" src="../dimelo_webhook_register_800x.png">
 
@@ -49,7 +49,7 @@ Webhook validation is an asynchronous process. To validate a webhook, RingCX wil
 When the endpoint receives this request, it should do all of the following:
 
 1. Verify that the content-type set to application/json in the header.
-2. Check the `hub.mode` is set to "subscribe". This confirms we are registering an endpoint URL.
+2. Check the `hub.mode` is set to "subscribe." This confirms we are registering an endpoint URL.
 3. Check the `hub.verify_token`'s validity, to ensure the request comes from the Webhook API.
 4. Set the response body to only contain the value of `hub.challenge`.
 5. Respond with an HTTP status code of 200.
