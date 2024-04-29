@@ -3,21 +3,21 @@ no_breadcrumb:true
 
 # Interaction Quick Start
 
-Welcome to the Engage Platform. In this Quick Start, we are going to help you generate a list of threads that agents can engage customers via. Obtaining a reference to a thread is the first step in taking action on an interaction with a customer, including creating an intervention. The Quick Start will have you up and running in minutes. Let's get started.
+Welcome to the RingCX Platform. In this Quick Start, we are going to help you generate a list of threads that agents can engage customers via. Obtaining a reference to a thread is the first step in taking action on an interaction with a customer, including creating an intervention. The Quick Start will have you up and running in minutes. Let's get started.
 
 ## Obtain Access Key
 
-The first thing you need to do is obtain an API Access Token if you do not already have one. Access tokens can be created and/or accessed via the "API access token" area in the "Admin" area of your Engage portal.
+The first thing you need to do is obtain an API Access Token if you do not already have one. Access tokens can be created and/or accessed via the "API access token" area in the "Admin" area of your RingCX portal.
 
-??? tip "How to generate an Engage API access token"
+??? tip "How to generate a RingCX API access token"
 
-    1. Login to your Engage portal and click on the "Admin" menu located in the top, horizontal menu.
+    1. Login to your RingCX portal and click on the "Admin" menu located in the top, horizontal menu.
 
     2. Select "API access tokens" towards the bottom of the left hand menu.
 
     3. You should see a list of access tokens if any have been provisioned. Select the token, or click the "+" button to create a new one.
 
-    4. Finally, enter a label/description for your token, and select an Agent on which the token will act on behalf of. Make sure the token is "enabled" and click "Save."
+    4. Finally, enter a label/description for your token, and select an Agent on which the token will act on behalf of. Make sure the token is "enabled" and click "Save".
 
           ![API access token](../img/api-token.png)
 
@@ -25,7 +25,7 @@ Make note of the access token generated as you will need it later.
 
 === "Javascript"
 
-    Create a file called `threads.js`. Be sure to edit the variables in &lt;ALL CAPS&gt; with your app's credentials. You can find information about **&lt;YOUR-DOMAIN&gt;** when you login into Engage Digital Admin portal. Copy the first part before the "." from the url which should look like : `https://xyz.digital.ringcentral.com`. So in this case the your domain is "xyz".
+    Create a file called `threads.js`. Be sure to edit the variables in &lt;ALL CAPS&gt; with your app's credentials. You can find information about **&lt;YOUR-DOMAIN&gt;** when you login into RingCX Digital Admin portal. Copy the first part before the "." from the url which should look like : `https://xyz.digital.ringcentral.com`. So in this case the your domain is "xyz".
 
     ```javascript
     {!> code-samples/interactions/threads.js !}
@@ -41,7 +41,7 @@ Make note of the access token generated as you will need it later.
 
 === "Python"
 
-    Create a file called `threads.py`. Be sure to edit the variables in &lt;ALL CAPS&gt; with your app's credentials. You can find information about **&lt;YOUR-DOMAIN&gt;** when you login into Engage Digital Admin portal. Copy the first part before the "." from the url which should look like : `https://xyz.digital.ringcentral.com`. So in this case the your domain is "xyz".
+    Create a file called `threads.py`. Be sure to edit the variables in &lt;ALL CAPS&gt; with your app's credentials. You can find information about **&lt;YOUR-DOMAIN&gt;** when you login into RingCX Digital Admin portal. Copy the first part before the "." from the url which should look like : `https://xyz.digital.ringcentral.com`. So in this case your domain is "xyz".
 
     ```python
     {!> code-samples/interactions/threads.py !}
@@ -57,7 +57,7 @@ Make note of the access token generated as you will need it later.
 
 === "PHP"
 
-    Create a file called `threads.php`. Be sure to edit the variables in &lt;ALL CAPS&gt; with your app's credentials. You can find information about **&lt;YOUR-DOMAIN&gt;** when you login into Engage Digital Admin portal. Copy the first part before the "." from the url which should look like : `https://xyz.digital.ringcentral.com`. So in this case the your domain is "xyz".
+    Create a file called `threads.php`. Be sure to edit the variables in &lt;ALL CAPS&gt; with your app's credentials. You can find information about **&lt;YOUR-DOMAIN&gt;** when you login into RingCX Digital Admin portal. Copy the first part before the "." from the url which should look like : `https://xyz.digital.ringcentral.com`. So in this case your domain is "xyz".
 
     ```php
     {!> code-samples/interactions/threads.php !}
@@ -73,7 +73,7 @@ Make note of the access token generated as you will need it later.
 
 === "Ruby"
 
-    Create a file called `threads.rb`. Be sure to edit the variables in &lt;ALL CAPS&gt; with your app's credentials. You can find information about **&lt;YOUR-DOMAIN&gt;** when you login into Engage Digital Admin portal. Copy the first part before the "." from the url which should look like : `https://xyz.digital.ringcentral.com`. So in this case the your domain is "xyz".
+    Create a file called `threads.rb`. Be sure to edit the variables in &lt;ALL CAPS&gt; with your app's credentials. You can find information about **&lt;YOUR-DOMAIN&gt;** when you login into RingCX Digital Admin portal. Copy the first part before the "." from the url which should look like : `https://xyz.digital.ringcentral.com`. So in this case your domain is "xyz".
 
     ```ruby
     {!> code-samples/interactions/threads.rb !}
@@ -96,6 +96,6 @@ Having difficulty? Feeling frustrated? Receiving an error you don't understand? 
 
 ## What's Next?
 
-When you have successfully made your first API call, it is time to take your next step towards building a more robust Engage application.
+When you have successfully made your first API call, it is time to take your next step towards building a more robust RingCX application.
 
 <a class="btn btn-success btn-lg" href="https://developers.ringcentral.com/engage/api-reference/">Explore the REST API &raquo;</a>
