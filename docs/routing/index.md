@@ -1,8 +1,8 @@
-# Introduction to Routing in Engage
+# Introduction to Routing
 
 <div class="jumbotron pt-1">
   <h3 class="display-5">Getting Started with Routing</h3>
-  <p class="lead">Within the Engage Platform, work across an agent pool is managed by routing interactions to agents. The Routing API is therefore how work can be distributed across your agent pool.</p>
+  <p class="lead">Within the RingCX Platform, work across an agent pool is managed by routing interactions to agents. The Routing API is therefore how work can be distributed across your agent pool.</p>
   <p>We invite all developers to try out our Routing API by writing a simple app to list a set of tasks representing open threads agents need to resolve in almost no time at all. Get started using a Quick Start in any of the following languages:</p>
   <a href="quick-start/#Javascript" class="btn btn-light qs-link">Node JS &raquo;</a>
   <a href="quick-start/#PHP" class="btn btn-light qs-link">PHP &raquo;</a>
@@ -12,11 +12,11 @@
 
 ## Routing Paradigms
 
-Within Engage there are two primary ways agents can determine what customer interactions to engage with:
+There are two primary ways agents can determine what customer interactions to engage with:
 
 ### Inboxes
 
-Agents can manage their list of outstanding interactions and interventions through the use of folders. Every folder in Engage is a smart folder - one whose contents are determined by a set of rules defined by the user.
+Agents can manage their list of outstanding interactions and interventions through the use of folders. Every folder is a smart folder - one whose contents are determined by a set of rules defined by the user.
 
 Administrators can used these folders to monitor the set of interactions for an entire team, or manage interactions that exceed a certain age, or a set of interactions that meet other criteria.
 
@@ -30,5 +30,5 @@ Tasks allow agents to engage with customer much like they would interface with a
 
 Tasks are created automatically by the system when interventions are created and assigned to an agent.
 
-!!! info "What is a "task" in Engage?"
-    Today tasks refer exclusively to interventions that require a reply from the assigned agent. In the future, Engage may allow for tasks associated with other actions (e.g. "open a bug," or "issue a refund," etc.) to be created.
+!!! info "What is a "task"?"
+    Today tasks refer exclusively to interventions that require a reply from the assigned agent. In the future, tasks may be allowed to be associated with other actions (e.g. "open a bug," or "issue a refund," etc.).
