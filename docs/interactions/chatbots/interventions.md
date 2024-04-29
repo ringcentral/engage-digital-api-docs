@@ -6,7 +6,7 @@ Description of the API request:
 
 ## Create an Intervention
 
-This method creates a new intervention or reopens an existing one. When successful, Engage will render the intervention to the user. Otherwise, Engage returns an error (422 HTTP code).
+This method creates a new intervention or reopens an existing one. When successful, RingCX will render the intervention to the user. Otherwise, RingCX returns an error (422 HTTP code).
 
 ### Query Parameters
 
