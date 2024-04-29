@@ -14,7 +14,7 @@ It should be noted that no default picker or page is provided and this feature i
 
 What is recommended is setting the conversation's `data-id` inside of the url query string in order to provide a custom page taylored to the customer (e.g., displaying a confirmation instead of a choice the second time the customer clicks on it), avoiding him doing several times the procedure.
 
-You can also use this `id` to send a `post` request to Engage Digital API to send a message to the customer after he has taken all actions on the page to confirm or give a summary of his choices. Passing any parameter the client has already given the agent through the query string is possible, such as a ticket number or an email.
+You can also use this `id` to send a `post` request to RingCX Digital API to send a message to the customer after he has taken all actions on the page to confirm or give a summary of his choices. Passing any parameter the client has already given the agent through the query string is possible, such as a ticket number or an email.
 
 ## Integration
 
@@ -23,15 +23,15 @@ The page on the webview should be hosted on your side, and setup to accept displ
 ## Channels supporting this feature
 
 * **<span style="color:green">Yes</span>**: Supported
-* **<span style="color:orange">Not yet</span>**: Supported by channel but not by Engage Digital yet
+* **<span style="color:orange">Not yet</span>**: Supported by channel but not by RingCX Digital yet
 * N/A: Not supported by channel
 
 | | **webview** | **webview_height** |
 |-|-|-|
 | **Apple Messages for Business** | N/A | N/A |
-| **Engage Android Messaging** | **<span style="color:green">Yes, since v2.3.1</span>** | **<span style="color:green">Yes, since v2.3.1</span>** |
-| **Engage iOS Messaging** | **<span style="color:green">Yes, since v2.4.2</span>** | **<span style="color:green">Yes, since v2.4.2</span>** |
-| **Engage Web Messaging** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** |
+| **RingCX Android Messaging** | **<span style="color:green">Yes, since v2.3.1</span>** | **<span style="color:green">Yes, since v2.3.1</span>** |
+| **RingCX iOS Messaging** | **<span style="color:green">Yes, since v2.4.2</span>** | **<span style="color:green">Yes, since v2.4.2</span>** |
+| **RingCX Web Messaging** | **<span style="color:green">Yes</span>** | **<span style="color:green">Yes</span>** |
 | **Facebook Messenger** | **<span style="color:orange">Not yet</span>** | **<span style="color:orange">Not yet</span>** |
 | **Google Business Messages** | N/A | N/A |
 | **Channel SDK** | **<span style="color:orange">Not yet</span>** | **<span style="color:orange">Not yet</span>** |
@@ -39,27 +39,27 @@ The page on the webview should be hosted on your side, and setup to accept displ
 | **Viber** | N/A | N/A |
 | **WhatsApp** | N/A | N/A |
 
-## Engage Messaging Web customization
+## RingCX Messaging Web customization
 
 The webview colors can be changed with the `$webview-header-background-color`, and `$webview-header-text-color`. See the [Customization](../../web-messaging/customization) page for details.
 
-Engage Messaging Web allows you to set a smaller window to open. To do so, set the `webview_height` parameter to fit your need, you can see the design for `full`, `tall` and `compact` webviews in the following visuals.
+RingCX Messaging Web allows you to set a smaller window to open. To do so, set the `webview_height` parameter to fit your need, you can see the design for `full`, `tall` and `compact` webviews in the following visuals.
 
 | **Value** | **`full` (default)** | **`tall`** | **`compact`** |
 |-|-|-|-|
 | **Preview** | <img class="img-fluid" width="419" src="../../../img/web-messaging-webview-portrait.png"> | <img class="img-fluid" width="419" src="../../../img/web-messaging-webview-tall.png"> | <img class="img-fluid" width="419" src="../../../img/web-messaging-webview-compact.png"> |
 
-## Engage Messaging iOS customization
+## RingCX Messaging iOS customization
 
-Engage Messaging iOS allows you to set a smaller window to open. To do so, set the `webview_height` parameter to fit your need, you can see the design for `full`, `tall` and `compact` webviews in the following visuals.
+RingCX Messaging iOS allows you to set a smaller window to open. To do so, set the `webview_height` parameter to fit your need, you can see the design for `full`, `tall` and `compact` webviews in the following visuals.
 
 | **Value** | **`full` (default)** | **`tall`** | **`compact`** |
 |-|-|-|-|
 | **Preview** | <img class="img-fluid" width="419" src="../../../img/ios-messaging-webview-full.jpg"> | <img class="img-fluid" width="419" src="../../../img/ios-messaging-webview-tall.jpg"> | <img class="img-fluid" width="419" src="../../../img/ios-messaging-webview-compact.jpg"> |
 
-## Engage Messaging Android customization
+## RingCX Messaging Android customization
 
-Engage Messaging Android allows you to set a smaller window to open. To do so, set the `webview_height` parameter to fit your need, you can see the design for `full`, `tall` and `compact` webviews in the following visuals.
+RingCX Messaging Android allows you to set a smaller window to open. To do so, set the `webview_height` parameter to fit your need, you can see the design for `full`, `tall` and `compact` webviews in the following visuals.
 
 | **Value** | **`full` (default)** | **`tall`** | **`compact`** |
 |-|-|-|-|
