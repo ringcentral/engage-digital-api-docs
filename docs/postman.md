@@ -15,7 +15,7 @@ Before you can use Postman, it is important to note the URL for your account and
 
 ### Your API URL
 
-Accounts use a customer subdomain that is important to note when accessing both the web application and API. In the following URL, replace the `{mycompany}` variable in the web URL with your own subdomain when accessing your account.
+RingCX Digital accounts use a customer subdomain that is important to note when accessing both the web application and API. In the following URL, replace the `{mycompany}` variable in the web URL with your own subdomain when accessing your account.
 
 `https://{mycompany}.digital.ringcentral.com`
 
