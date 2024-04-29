@@ -1,8 +1,8 @@
 # Surveys
 
-RingCentral Engage Messaging supports the integration with SurveyGizmo, like any other RingCentral Engage source.
+RingCentral RingCX Messaging supports the integration with SurveyGizmo, like any other RingCentral RingCX source.
 
-On **Messaging mode**, the survey is sent asynchronously as a message just like in other RingCentral Engage sources.
+On **Messaging mode**, the survey is sent asynchronously as a message just like in other RingCentral RingCX sources.
 
 On **Live Chat mode**, the survey is directly part of the visitor engagement workflow. This takes advantage of the real time capacity of this mode.
 
@@ -23,11 +23,11 @@ In SurveyGizmo, create a new survey and configure it with these specifics:
 
 In the “Style” main tab:
 
-* In “Themes”, apply the “RingCentral Engage Messaging - Base theme” that will serve as a base.
+* In “Themes”, apply the “RingCentral RingCX Messaging - Base theme” that will serve as a base.
 * In “Interactions”, choose “Standard” for Desktop Interaction and “Not mobile optimized” for Mobile Interaction.
 * In other tabs, customize as wished
 
-When the Survey will be created inside RingCentral Engage, you’ll be able to preview the rendering for the exact sizing of the chat window.
+When the Survey will be created inside RingCentral RingCX, you’ll be able to preview the rendering for the exact sizing of the chat window.
 
 ### Building the questionnaire
 
@@ -37,7 +37,7 @@ On the first page, add a text block to explain that the chat session is ending, 
 
 Then, add a page per question, for a better flow.
 
-On the last page, the “thank you” page, in addition to any “thank you” message, add a “JavaScript action” (in “Add an Action”), with description `RingCentral Engage Messaging - Complete event`, with JavaScript action being:
+On the last page, the “thank you” page, in addition to any “thank you” message, add a “JavaScript action” (in “Add an Action”), with description `RingCentral RingCX Messaging - Complete event`, with JavaScript action being:
 
 ``` javascript
 if (window.parent) {
@@ -49,15 +49,15 @@ The “thank you” page is shown for 3 seconds, then the survey frame is remove
 
 Choose one question to be used as the main satisfaction question (multiple choice options, with custom Reporting Values scaled from `1` to `5`; activate it in “Advanced Option Settings”) with its “Alias” set to `customer_satisfaction`. Refer to the survey documentation for further details.
 
-## Adding the Survey in RingCentral Engage
+## Adding the Survey in RingCentral RingCX
 
-Add the Survey by its SurveyGizmo ID. Edit it right after to configure it by having a “Realtime” sending mode and selecting the Engage Messaging source.
+Add the Survey by its SurveyGizmo ID. Edit it right after to configure it by having a “Realtime” sending mode and selecting the RingCX Messaging source.
 
 In the listing view, you’ll have a magnifier button to preview the Survey rendered with the exact sizing of the chat window. This is useful to adjust the customization and the questionnaire. Survey submitted in this preview mode will be tagged as “Test”.
 
 ## Multilingual survey
 
-Survey, like Engage Messaging, supports multi-language. The language of the survey is the language the chat is displayed in. It means:
+Survey, like RingCX Messaging, supports multi-language. The language of the survey is the language the chat is displayed in. It means:
 
 * Chat **must** support this language (see [Custom Language](../source/#custom-language)), if you want to use a language that is not supported natively you must add it to the chat.
 * Survey **must** be translated in any language the chat is supposed to support
