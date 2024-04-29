@@ -4,7 +4,7 @@ When the source is created, pre-built default items are created for reference an
 
 ## Creating an Item - Common Part
 
-You must provide a meaningful name in "Label" and choose the corresponding Engage Messaging source in "Source".
+You must provide a meaningful name in "Label" and choose the corresponding RingCX Messaging source in "Source".
 
 ## Creating an Item: Invitation or a Button
 
