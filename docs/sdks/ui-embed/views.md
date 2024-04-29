@@ -14,7 +14,7 @@ The task view URL doesn't have variable parameters. The currently connected user
 
 ## Task Permalink View
 
-The task permalink view displays a single task and doesn't allow navigating to other parts of the interface (other tasks, pull view, admin, etc…). Any task related action (transfer, defer, etc...) can be taken from the web console or handled through [RingCentral Engage Digital REST API](https://developers.ringcentral.com/engage/digital/api-reference/routing) since it's not available in this view.
+The task permalink view displays a single task and doesn't allow navigating to other parts of the interface (other tasks, pull view, admin, etc…). Any task related action (transfer, defer, etc...) can be taken from the web console or handled through [RingCentral RingCX Digital REST API](https://developers.ringcentral.com/engage/digital/api-reference/routing) since it's not available in this view.
 
 It has one variable parameter which is the id of the task which will be displayed. Example:
 
