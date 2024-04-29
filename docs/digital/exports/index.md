@@ -1,12 +1,12 @@
 # Overview
 
-RingCentral Engage Digital exports makes it easy to export RingCentral Engage Digital data as a comma-separated values (CSV) file.
+RingCentral RingCX Digital exports makes it easy to export RingCentral RingCX data as a comma-separated values (CSV) file.
 
-The goal of csv export is to help your company integrate Engage Digital Data into your own IT solution like: CRM, Business Intelligence tools or more…. 
+The purpose of a CSV export is to help your company integrate RingCX data into your own IT solution, e.g. CRM, Business Intelligence tools, or more. 
 
-From contents to identities, RingCentral Engage Digital lets you export all your most important data in one interface.
+From contents to identities, RingCentral RingCX Digital lets you export all your most important data in one interface.
 
-There are 2 ways to export data as CSV in RingCentral Engage Digital:
+There are 2 ways to export data as CSV:
 
 - Manual
 - Automated
@@ -42,7 +42,7 @@ Exports will be uploaded periodically to the specified location either :
 
 <img src="../exports/automated-exports-menu.png" class="img-fluid">
 
-To have automatic exports available, you must have a specific extension enabled. Please contact your RingCentral Engage Digital project manager if you don’t have it. You will be able to add as many automatic export tasks as you want. Here is how you can configure an automatic export task:
+To have automatic exports available, you must have a specific extension enabled. Please contact your RingCentral RingCX Digital project manager if you don’t have it. You will be able to add as many automatic export tasks as you want. Here is how you can configure an automatic export task:
 
 - `Name`: the name of the export task, this name will be used to determine export filename.
 - `Host`: the server where the filename will be exported.
@@ -56,7 +56,7 @@ To have automatic exports available, you must have a specific extension enabled.
     - `day`: Current day at export time (e.g 27)
     - `export_name`: Name of the export (agents, messages, roles, etc…) - Only available when not using zip
 - `Export to zip file`: whether or not the exports should be zipped in a single file, or transferred individually.
-- `Public key`: the RingCentral Engage Digital SSH key used for the connection. This key is provided by on demand. It is mandatory to have this key in the ~/.ssh/authorized_keys file on the server in order to have a successful connection.
+- `Public key`: the RingCentral RingCX Digital SSH key used for the connection. This key is provided by on demand. It is mandatory to have this key in the ~/.ssh/authorized_keys file on the server in order to have a successful connection.
 
 <img src="../exports/automated-exports.png" class="img-fluid">
 
@@ -106,11 +106,11 @@ Filtering by creation time allows joining data from different exports. Indeed, w
 
 ## Locale
 
-Depending on the locale (language) configured in your RingCentral Engage Digital user account and the export format, the csv export will display with a different format, separator… The purpose is to be compatible with Microsoft Excel expectation that depends on locale.
+Depending on the locale (language) configured in your RingCentral RingCX Digital user account and the export format, the CSV export will display with a different format, separator… The purpose is to be compatible with Microsoft Excel expectation that depends on locale.
 
 **Note**: BI has a specific format for certain columns to be easier to process by computers, if not it will fallback to English format.
 
-Please find the column types that are locale dependent in the following table :
+Please find the column types that are locale-dependent in the following table :
 
 |  Column type / Format | BI                     | Windows EN       | Windows FR       | Mac EN           | Mac FR           |
 |-----------------------|------------------------|------------------|------------------|------------------|------------------|
@@ -125,7 +125,7 @@ List of all column type available in exports
 
 | Type     | Example                                                                  | Description                                                                                                                                                                                                                                                          |
 |----------|--------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Array    | My Facebook Page, My twitter Page                                        | represents a collection of elements, which can be string, objectId, etc...                                                                                                                                                                                           |
+| Array    | My Facebook Page, My Twitter Page                                        | represents a collection of elements, which can be string, objectId, etc...                                                                                                                                                                                           |
 | Boolean  | true                                                                     | Boolean can be  Excel  : ‘true’ / ‘false’ or ‘vrai’ / ‘faux’ BI : 1 / 0                                                                                                                                                                                              |
 | Date     | 24/09/2013                                                               | Date Format changes depending on your language & format you choose Excel : fr : "%d/%m/%Y" 24/09/2013 en : "%m-%d-%Y" 09-24-2013 BI :  "%Y-%m-%d" 2013-09-24 [ISO8601](https://en.wikipedia.org/wiki/ISO_8601)                                                                                                 |
 | Datetime | 24/09/2013 19:00                                                         | represents an instant in time, typically expressed as a date and time of day. Format changes depending on your language Excel : fr : "%d/%m/%Y %H:%M" 24/09/2013 19:00 en : "%m-%d-%Y %H:%M" 09-24-2013 19:00 BI :  "%Y-%m-%d %H:%M%z" 2013-09-24T19:00+00:02[ISO8601](https://en.wikipedia.org/wiki/ISO_8601) |
@@ -187,7 +187,7 @@ For some exports (as time of writing, only the Identity export) can offer extra 
 
 # Guarantee And Recommendations
 
-This document describes all columns and fields of all exports in RingCentral Engage Digital.
+This document describes all columns and fields of all exports in RingCentral RingCX Digital.
 
 It ensures backward compatibility of automated exports :
 
