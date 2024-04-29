@@ -1,6 +1,6 @@
 # Javascript API
 
-RingCentral Engage Messaging offers an asynchronous JavaScript API for the customer to be able to make any integration on the target website.
+RingCentral RingCX Messaging offers an asynchronous JavaScript API for the customer to be able to make any integration on the target website.
 
 ## Events
 
@@ -153,7 +153,7 @@ Here are the available options to the `addMessage` action:
 | - | - | - | - |
 |body|String|""|The body of the message to add|
 |agent|Boolean|false|Whether the message will appear to be from the agent or from the customer|
-|engage|Boolean|false|For customer messages only, determines whether the chat should be considered "engaged" (and thus creates an interaction in RingCentral Engage) or wait for the next real customer message|
+|engage|Boolean|false|For customer messages only, determines whether the chat should be considered "engaged" (and thus creates an interaction in RingCentral RingCX) or wait for the next real customer message|
 
 ### Page Change
 
@@ -171,7 +171,7 @@ The page change action has the following effects:
 * The triggers are re-initialized. This means that if a trigger has already been executed, it will be able to be re-executed after the page change.
 * The triggers can use the new page information to check if it matches or not.
 * If a trigger matches, there is a new check on the server to see if there is an agent available.
-* The new URL is visible in RingCentral Engage.
+* The new URL is visible in RingCentral RingCX.
 
 !!! warning
     If a trigger is executed and thus shows an element (button, invitation or Chat), this element will stay on the screen after a page change, even if there is no trigger that matches the new page.
