@@ -1,8 +1,8 @@
 # Responses Polling
 
-Engage Digital will poll your survey responses by performing a `GET /responses` on your bridge every 15 minutes along with a `since` parameter corresponding to the the most recent response fetched's `submitted_at` field.
+RingCX Digital will poll your survey responses by performing a `GET /responses` on your bridge every 15 minutes along with a `since` parameter corresponding to the the most recent response fetched's `submitted_at` field.
 
-This parameter will be sent as milliseconds in UTC time (e.g. if **base URL of the bridge** is `https://survey.bridge.com` and your most recent response was submitted on `2022-01-10T10:00:00.000Z` then Engage Digital will perform a `GET https://survey.bridge.com/responses?since=1641808800000`).
+This parameter will be sent as milliseconds in UTC time (e.g. if **base URL of the bridge** is `https://survey.bridge.com` and your most recent response was submitted on `2022-01-10T10:00:00.000Z` then RingCX Digital will perform a `GET https://survey.bridge.com/responses?since=1641808800000`).
 
 ## Response example
 
@@ -87,9 +87,9 @@ Here's an example of a valid response to the responses polling:
 
 ## Response mapping key
 
-When sending the link to take a survey, Engage Digital will add an additional `i` parameter in the URL to bind the response with the conversation:
+When sending the link to take a survey, RingCX Digital will add an additional `i` parameter in the URL to bind the response with the conversation:
 
 <img class="img-fluid" width="363" src="../../../img/survey-sdk-response-mapping-key.png">
 
 !!! warning
-    Please note that the response will be ignored by Engage Digital if the `mapping_key` parameter is not present or if it cannot be matched with an existing conversation.
+    Please note that the response will be ignored by RingCX Digital if the `mapping_key` parameter is not present or if it cannot be matched with an existing conversation.
