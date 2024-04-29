@@ -1,19 +1,19 @@
 # Introduction to Send API
 
-The Send API allows you to send contents instantly to Engage Digital. Its purpose is to build a near realtime API when the third party to be connected can support it. This API is optional and is a way to mitigate the slow import (~2 min) of the [polling approach](../polling).
+The Send API allows you to send contents instantly to RingCX Digital. Its purpose is to build a near realtime API when the third party to be connected can support it. This API is optional and is a way to mitigate the slow import (~2 min) of the [polling approach](../polling).
 
 It also allows you to mark agent contents as read, which is visible by agents when '[view.messaging](../options/#viewmessaging)' option is enabled.
 
 ## Requirements
 
-To use the send API, you must define what actions can be processed by Engage Digital. Use the [polling method](../polling) to define them in response of the `implementation.info` action (more information can be found [here](../polling)).
+To use the send API, you must define what actions can be processed by RingCX Digital. Use the [polling method](../polling) to define them in response of the `implementation.info` action (more information can be found [here](../polling)).
 
 As with the polling method, the send API allows you to implement actions progressively.
 
 ## Workflow
 
 * Each time that we receive a call to the `/realtime/sdk/:source_id` endpoint we will look at the content of your query to determine that it's well prepared.
-* The `source_id` url parameter must be filled with the Engage Digital source id that you target.
+* The `source_id` url parameter must be filled with the RingCX Digital source id that you target.
 * For security reasons, the request body must always be signed as described [here](../request-response).
 * The request body must be JSON encoded.
 
@@ -40,7 +40,7 @@ As with the polling method, the send API allows you to implement actions progres
 * `action` and `params` keys are mandatory.
 * `action` key defines the action that you want to perform on which resource type.
 * `params` key content depends to the action and resource type.
-* If the request runs smoothly, the response should be a HTTP 200 with ok as body. Otherwise consult the [Errors](../action-details/#errors) section.
+* If the request runs smoothly, the response should be an HTTP 200 with ok as body. Otherwise consult the [Errors](../action-details/#errors) section.
 
 ## Actions
 
@@ -140,7 +140,7 @@ ok
 | Bad request | 400 | The body is not JSON formatted or malformed. |
 | Invalid request format | 400 | The request is malformed, a mandatory field is probably missing. |
 | Invalid request size (max: 20971520 bytes) | 413 | The request body exceeds the limit of 20 megabytes, please limit the data submitted. |
-| Source not found | 422 | The `source_id` does not exist in Engage Digital. |
+| Source not found | 422 | The `source_id` does not exist in RingCX Digital. |
 | Invalid signature | 422 | The signature header is invalid, don't forget to sign (cf [Request-Response](../request-response)) your body request. |
 | Invalid action | 422 | The action that you provided is invalid or not implemented in Send API. |
 | Invalid resource format | 422 | A required field is missing in the params object that you provided. |
@@ -153,7 +153,7 @@ ok
 
 ### Rate Limits
 
-`typing.start` requests are limited to 1 request / thread on Engage Digital every 2 seconds (receiving a `typing.stop` request for a thread will reset this 2 seconds timer).
+`typing.start` requests are limited to 1 request / thread on RingCX Digital every 2 seconds (receiving a `typing.stop` request for a thread will reset this 2 seconds timer).
 
 Other than that there is no limit enforced as of right now.
 
