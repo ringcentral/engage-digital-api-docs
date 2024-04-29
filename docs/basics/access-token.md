@@ -20,7 +20,7 @@ To obtain a token, follow these steps:
     
 3. You should see a list of access tokens if any have been provisioned. Select the token, or click the "+" button to create a new one.
     
-4. Finally, enter a label/description for your token, and select an Agent on which the token will act on behalf of. Make sure the token is "enabled" and click "Save".
+4. Finally, enter a label/description for your token, and select an Agent on which the token will act on behalf of. Make sure the token is "enabled" and click "Save."
     
       ![API access token](../img/api-token.png)
 
