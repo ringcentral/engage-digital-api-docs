@@ -1,6 +1,6 @@
 # Replying to Messages
 
-The common action to take after receiving a new message notification from a customer is to post a reply to that message. This document will help you understand how use the Engage REST API to post a reply to an incoming message. 
+The common action to take after receiving a new message notification from a customer is to post a reply to that message. This document will help you understand how use the RingCX REST API to post a reply to an incoming message. 
 
 Replying to a message is as simple as composing an HTTP POST to the `contents` resource, with the following query and request parameters. 
 
@@ -80,4 +80,4 @@ Only users that can reply or initiate a discussion on given source can call this
 ```
 
 !!! note "Text Format Requirements"
-    To this day Engage only supports messages in plain text format, Engage does not support enriched messages or HTML within the integration of a multi-channel bot. Engage is currently studying an extension to support enriched messages.
+    To this day only messages in plain text format are supported, RingCX does not support enriched messages or HTML within the integration of a multi-channel bot. RingCX is currently studying an extension to support enriched messages.
