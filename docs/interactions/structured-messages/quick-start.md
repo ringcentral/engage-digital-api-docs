@@ -7,13 +7,13 @@ Let's build a structured message! A structured message consists of elements that
 
 In this Quick Start, we will walk you through creating a structured message within a matter of minutes. Let's get started.
 
-## Create an Engage Messaging Channel
+## Create a RingCX Messaging Channel
 
 For this Quick Start, we need to create a channel and then assign an agent to that channel. There are several steps in this process starting with the community.
 
 ### Configure a Community
 
-Communities are databases of identities associated with each source. There must be a community in order to create a source. You can create a community per type of source (Facebook, Twitter, Engage Messaging, etc.), which can then be used when creating several sources of the same type. Follow the instructions to [create a community](https://support.ringcentral.com/engagedigital/admin/create-communities.html). In this Quick Start, we'll create an Engage Messaging community profile.
+Communities are databases of identities associated with each source. There must be a community in order to create a source. You can create a community per type of source (Facebook, Twitter, RingCX Messaging, etc.), which can then be used when creating several sources of the same type. Follow the instructions to [create a community](https://support.ringcentral.com/engagedigital/admin/create-communities.html). In this Quick Start, we'll create a RingCX Messaging community profile.
 
 <img class="img-fluid" width="238" src="../../../img/structured-messages-community-add.png">
 
@@ -22,11 +22,11 @@ Simply give this community a name and click **Save**
 <img class="img-fluid" width="467" src="../../../img/structured-messages-community-create.png">
 
 
-### Configure an Engage Messaging Channel
+### Configure a RingCX Messaging Channel
 
-In this quick start, we begin with the Engage Messaging channel. Follow the instructions to navigate to and [create a channel](https://support.ringcentral.com/engagedigital/admin/configure-entry-points.html) for Engage Messaging.
+In this quick start, we begin with the RingCX Messaging channel. Follow the instructions to navigate to and [create a channel](https://support.ringcentral.com/engagedigital/admin/configure-entry-points.html) for RingCX Messaging.
 
-Give this channel a name. For our example here, we'll call it "Engage Messaging Example". Make sure to select the community you just created. While here, let's enable web messaging by checking the "Enable Web Messaging" box.
+Give this channel a name. For our example here, we'll call it "RingCX Messaging Example". Make sure to select the community you just created. While here, let's enable web messaging by checking the "Enable Web Messaging" box.
 
 <img class="img-fluid" width="800" src="../../../img/structured-messages-create-channel.png">
 
@@ -42,20 +42,20 @@ There are three types of channel modes: asynchronus, real time, and triage. For 
 
 <img class="img-fluid" width="540" src="../../../img/structured-messages-channel-mode.png">
 
-Now let's add our Engage Messaging Example to the real time channel. First click the pencil icon to edit the real time channel.
+Now let's add our RingCX Messaging Example to the real time channel. First click the pencil icon to edit the real time channel.
 
 !!! Note
     These channel modes can be renamed to a custom name and may not be the name used for the real time mode. For our Quick Start, we are using the default channel mode name.
 
 <img class="img-fluid" width="800" src="../../../img/structured-messages-channel-modes-edit.png">
 
-Then add our Engage Messaging Example in the Channels field by selecting it from the dropdown.
+Then add our RingCX Messaging Example in the Channels field by selecting it from the dropdown.
 
 <img class="img-fluid" width="800" src="../../../img/structured-messages-channel-modes-realtime.png">
 
-Now let's go back to our Engage Messaging Example channel listed in the channels section. Click the pencil icon to edit this channel and look for the JavaScript code under "Chat connection", in the "Code to include" field. We will use this code in the next section to embed a messaging window on a web page.
+Now let's go back to our RingCX Messaging Example listed in the Channels section. Click the pencil icon to edit this channel and look for the JavaScript code under "Chat connection", in the "Code to include" field. We will use this code in the next section to embed a messaging window on a web page.
 
-## Create an Engage Chat Window on a Web Page
+## Create a Chat Window on a Web Page
 
 Now let's create an HTML web page with the JavaScript code to include. The code should look something like the following.
 
@@ -70,7 +70,7 @@ Now let's create an HTML web page with the JavaScript code to include. The code 
 </script>
 ```
 
-We'll want to embed this code segment into an HTML page so we can start a Engage Messaging chat window. Here's some sample code to create your own web page with.
+We'll want to embed this code segment into an HTML page so we can start a RingCX Messaging chat window. Here's some sample code to create your own web page with.
 
 ### Sample HTML
 ```html
@@ -78,7 +78,7 @@ We'll want to embed this code segment into an HTML page so we can start a Engage
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Engage Messaging</title>
+        <title>RingCX Messaging</title>
 
         <script>
             //script from the source
@@ -109,11 +109,11 @@ Here's the point you've been building up to, sending a structured message using 
 
 ### Obtain Access Token
 
-The first thing you need to do is obtain an API Access Token if you do not already have one. Access tokens can be created and/or accessed via the "API access token" area in the "Dev tools" area of your Engage portal under the "Admin" tab.
+The first thing you need to do is obtain an API Access Token if you do not already have one. Access tokens can be created and/or accessed via the "API access token" area in the "Dev tools" area of your RingCX portal under the "Admin" tab.
 
-??? tip "How to generate an Engage API access token"
+??? tip "How to generate a RingCX API access token"
 
-    1. Login to your Engage portal and click on the "Admin" menu located in the top, horizontal menu.
+    1. Login to your RingCX portal and click on the "Admin" menu located in the top, horizontal menu.
 
     2. Select "Dev tools" towards the bottom of the left hand menu.
 
@@ -210,6 +210,6 @@ Having difficulty? Feeling frustrated? Receiving an error you don't understand? 
 
 ## What's Next?
 
-When you have successfully made your first Structured Message API call, it is time to take your next step towards building a more robust Engage application.
+When you have successfully made your first Structured Message API call, it is time to take your next step towards building a more robust application.
 
 <a class="btn btn-success btn-lg" href="https://developers.ringcentral.com/engage/api-reference/">Explore the REST API &raquo;</a>
