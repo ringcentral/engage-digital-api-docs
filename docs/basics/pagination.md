@@ -2,11 +2,11 @@
 
 ## Pagination
 
-All API methods that returns a collection of records are paginated. Requests parameters and responses type always respect same format.
+All API methods that return a collection of records are paginated. Requests parameters and responses type always respect same format.
 
 ### Request parameters
 
-API methods that supports pagination takes two (optional) parameters:
+API methods that support pagination take two (optional) parameters:
 
 | Parameter | Description |
 |-|-|
@@ -36,14 +36,14 @@ API methods that supports pagination takes two (optional) parameters:
 
 ## Searching & Filtering 
 
-Most API methods that returns a collection of records can be filtered if they accept a `q` parameters. Be informed that using search in API is much more resource intensive and may be subject to rate limiting.
+Most API methods that return a collection of records can be filtered if they accept a `q` parameters. Be informed that using search in API is much more resource intensive and may be subject to rate limiting.
 
 ### Rules & Examples
 
 There are certain search rules:
 
 1. Basic format: `{keyword}:{value}`.
-2. Multiple search parameter paris are to be separated by spaces: `{keyword1}:{value1} {keyword2}:{value2}`.
+2. Multiple search parameter pairs are to be separated by spaces: `{keyword1}:{value1} {keyword2}:{value2}`.
 3. If there's any space in {value}, double quote it: `{keyword}:"a value with spaces"`.
 4. If you want to apply filter for the same keyword for multiple times, simply separate them: `{keyword}:{value1} {keyword}:{value2}`.
 5. `text` is provided as the default keyword, so no need to specify it explicitly: `{keyword1}:{value1} text:{value}` = `{keyword1}:{value1} {value}`.
@@ -52,7 +52,7 @@ There are certain search rules:
 
 ### Try it with UI
 
-Log in to Engage Digital and go to Agent Inbox. Available search parameters are all in search field. After search, they will be in tab url after `q=`.
+Log in to RingCX Digital and go to Agent Inbox. Available search parameters are all in search field. After search, they will be in tab url after `q=`.
 
 <img class="img img-fluid" src="../search-api-ui.png">
 
