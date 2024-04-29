@@ -1,13 +1,13 @@
 # Introduction to Polling
 
-The basic principle of the polling method is to call a defined URL periodically in order to fetch the new data from your application and send the new data created on RingCentral RingCX Digital. This periodic polling ensures that content is synchronized between RingCX Digital and your platform, ensuring we offer a coherent and cohesive view of the data to support both agents and clients. Currently, we will crawl at a rate of about:
+The basic principle of the polling method is to call a defined URL periodically in order to fetch any new data from your application and send any new data created on RingCentral RingCX Digital. This periodic polling ensures that content is synchronized between RingCX Digital and your platform, ensuring we offer a coherent and cohesive view of the data to support both agents and clients. Currently, we will crawl at a rate of about:
 
 * *1 minute* intervals.
 * *3 minutes* intervals. If there are no implemented 'list' actions.
 
 But it can take longer between crawls. We only guarantee the minimum amount of time.
 
-This method is designed to allow for changes and progressive implementation of the features (see [Workflow](../polling/#workflow) below). Thus, you can start by implementing the few basic mandatory actions, which will be enough for us to read the contents (RSS-like functionality). At any time, more functionality can dynamically (without intervention from our side) be added or removed.
+This method is designed to allow for changes and progressive implementation of the features (see [Workflow](../polling/#workflow) below). Thus, you can start by implementing a few basic mandatory actions, which will be enough for us to read the contents (RSS-like functionality). At any time, more functionality can dynamically (without intervention from our side) be added or removed.
 
 ## Workflow
 
