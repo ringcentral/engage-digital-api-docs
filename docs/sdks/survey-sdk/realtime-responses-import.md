@@ -1,8 +1,8 @@
 # Realtime Responses Import
 
-As explained in [Getting Started](../quick-start) you can enable the import of responses in realtime, by doing so the **Realtime endpoint URL** will be displayed in the survey configuration page. Please note that if the option is not enabled, Engage Digital will not accept any incoming HTTP call on this **Realtime endpoint URL**.
+As explained in [Getting Started](../quick-start) you can enable the import of responses in realtime, by doing so the **Realtime endpoint URL** will be displayed in the survey configuration page. Please note that if the option is not enabled, RingCX Digital will not accept any incoming HTTP call on this **Realtime endpoint URL**.
 
-The **Realtime endpoint URL** accepts HTTP `POST` requests in order to import survey responses in realtime (see [Payload example](#payload-example) for more detail on the payload expected by Engage Digital).
+The **Realtime endpoint URL** accepts HTTP `POST` requests in order to import survey responses in realtime (see [Payload example](#payload-example) for more detail on the payload expected by RingCX Digital).
 
 
 ## Payload example
@@ -81,9 +81,9 @@ The **Realtime endpoint URL** accepts HTTP `POST` requests in order to import su
 
 ## Response mapping key
 
-When sending the link to take a survey, Engage Digital will add an additional `i` parameter in the URL to bind the response with the conversation:
+When sending the link to take a survey, RingCX Digital will add an additional `i` parameter in the URL to bind the response with the conversation:
 
 <img class="img-fluid" width="363" src="../../../img/survey-sdk-response-mapping-key.png">
 
 !!! warning
-    Please note that the response will be ignored by Engage Digital if the `mapping_key` parameter is not present or if it cannot be matched with an existing conversation.
+    Please note that the response will be ignored by RingCX Digital if the `mapping_key` parameter is not present or if it cannot be matched with an existing conversation.
