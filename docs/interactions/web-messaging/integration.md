@@ -7,7 +7,7 @@ The codes listed below have to be inserted in the HTML code of the target websit
 
 ## Minimal Integration
 
-In the Engage Messaging source configuration, get the HTML code from the “Code to include” section. Here is an example:
+In the RingCX Messaging source configuration, get the HTML code from the “Code to include” section. Here is an example:
 
 ``` javascript
 <script>
@@ -84,12 +84,12 @@ This code has to be inserted in the HTML source of the target website. It can be
 
 ### JWT Signed Identity
 
-The server in RingCentral Engage currently supports the following JWT signature algorithms:
+The server in RingCentral RingCX currently supports the following JWT signature algorithms:
 
 * "HS256": HMAC with SHA256
 * "RS256": RSA with SHA256
 
-The server in RingCentral Engage currently uses the following JWT extensions:
+The server in RingCentral RingCX currently uses the following JWT extensions:
 
 * “exp” : an expiration timestamp must be provided in the payload (via the “exp” key), and must be set to a future date (for example a date matching “now + 2 hours”). The expected format for this expiration date is a [Unix Timestamp](https://en.wikipedia.org/wiki/Unix_time) (integer). Our configured acceptable leeway is 10s
 
@@ -99,7 +99,7 @@ The server in RingCentral Engage currently uses the following JWT extensions:
 
 #### Generation of the JWT
 
-For the headers, you must have the “typ”, “alg” and “kid” keys. The “kid” contains the `Key ID` of the key configured in the Engage Messaging Community in RingCentral Engage and used for the signature.
+For the headers, you must have the “typ”, “alg” and “kid” keys. The “kid” contains the `Key ID` of the key configured in the RingCX Messaging Community in RingCentral RingCX and used for the signature.
 
 ``` json
 {
@@ -141,7 +141,7 @@ The calculated JWT must be given as a string to the “_setSignedIdentity” asy
 This code has to be inserted in the HTML source of the target website. It can be added anywhere in the HTML source. Note that the `var _chatq = _chatq || [];` is mandatory.
 
 !!! Required
-    Create a JWT key in RingCentral Engage and provide both the Key ID and the Secret/Public Key. Prepare and provide an example with the information wanted for the JWT payload and a copy of this section to be given to the customer tech team.
+    Create a JWT key in RingCentral RingCX and provide both the Key ID and the Secret/Public Key. Prepare and provide an example with the information wanted for the JWT payload and a copy of this section to be given to the customer tech team.
 
 #### Security
 
@@ -181,7 +181,7 @@ Here is an example:
 
 ## Embedded Mode Integration
 
-When the Engage Messaging source is configured in messaging mode (not Live Chat), the embedded mode can be used to integrate the chat in the target website.
+When the RingCX Messaging source is configured in messaging mode (not Live Chat), the embedded mode can be used to integrate the chat in the target website.
 
 Here’s the code allowing to do this:
 
@@ -203,7 +203,7 @@ For example:
 
 ### Iframe Integration
 
-If adding the Engage Messaging JS in the target website is not an option, an iFrame integration is also possible. Just like with the `parentNodeId`, an `iframe` element can be added in the target website to have the embedded Chat.
+If adding the RingCX Messaging JS in the target website is not an option, an iFrame integration is also possible. Just like with the `parentNodeId`, an `iframe` element can be added in the target website to have the embedded Chat.
 
 The url of the iFrame has this pattern:
 
