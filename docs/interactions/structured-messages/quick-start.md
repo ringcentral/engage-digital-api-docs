@@ -212,4 +212,4 @@ Having difficulty? Feeling frustrated? Receiving an error you don't understand? 
 
 When you have successfully made your first Structured Message API call, it is time to take your next step towards building a more robust application.
 
-<a class="btn btn-success btn-lg" href="https://developers.ringcentral.com//api-reference/">Explore the REST API &raquo;</a>
+<a class="btn btn-success btn-lg" href="https://developers.ringcentral.com/engage/api-reference/">Explore the REST API &raquo;</a>
