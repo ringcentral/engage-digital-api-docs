@@ -1,11 +1,11 @@
-# Implementing an Engage Chatbot
+# Implementing a Chatbot
 
 Below is the detail of the different information you will have to provide while initializing the multi-channel bot, as well as the outlines of each part and the condition tests to be done at the moment of launching of the integration.
 
 !!! tip "Testing process"
-    During the testing process, it is recommended to use a source for the test. This allows to test the integration of the multi-channel bot on Engage’s side in the real conditions of production without impacting all agents already using Engage Digital.
+    During the testing process, it is recommended to use a source for the test. This allows to test the integration of the multi-channel bot on RingCX’s side in the real conditions of production without impacting all agents already using RingCX Digital.
 
-After you familiarize yourself with [the various flows for processing customer inquiries via a bot](../overview/), we can distill the process of creating an Engage Bot down even further into the following steps.
+After you familiarize yourself with [the various flows for processing customer inquiries via a bot](../overview/), we can distill the process of creating a Bot down even further into the following steps.
 
 1. Build a service to receive notifications of new messages.
 2. Build an AI to determine how to handle an incoming message.
@@ -15,9 +15,9 @@ Let's explore each of these steps in greater detail.
 
 ## Receive a new message notification
 
-Engage Digital will send an event notifying you of a new message posted by a customer to a URL via a "webhook." The process of creating and validating a webhook endpoint is discussed in greater detail within [Creating Webhooks](../../../webhooks/create/).
+RingCX Digital will send an event notifying you of a new message posted by a customer to a URL via a "webhook". The process of creating and validating a webhook endpoint is discussed in greater detail within [Creating Webhooks](../../../webhooks/create/).
 
-Once the Webhook has been created and validated, Engage will begin transmitting via HTTP POST event messages corresponding to the channels associated with the corresponding webhook and endpoint URL of your choice. 
+Once the Webhook has been created and validated, RingCX will begin transmitting via HTTP POST event messages corresponding to the channels associated with the corresponding webhook and endpoint URL of your choice. 
 
 **Sample New Message Notification**
 
@@ -62,7 +62,7 @@ Once the Webhook has been created and validated, Engage will begin transmitting 
 }
 ```
 
-When your service receives a new message notification, it must respond with an HTTP status code of 200, otherwise Engage will consider the message delivery a failure, and will attempt to resend the webhook again. 
+When your service receives a new message notification, it must respond with an HTTP status code of 200, otherwise RingCX will consider the message delivery a failure, and will attempt to resend the webhook again. 
 
 !!! warning "Webhook Disablement"
     After 10 unsuccessful delivery attempts of a notification via a webhooks (spread out over 24 hours) the Webhook will be automatically disabled.
