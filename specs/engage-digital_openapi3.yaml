@@ -1842,12 +1842,15 @@ paths:
           schema:
             type: string
         - description: >-
-            For a SMS, WhatsApp, or Engage Messaging source.
+            For a SMS, WhatsApp, Channel SDK, or Engage Messaging channel.
             For a WhatsApp message or a SMS,
             the number the message will be sent to.
             It must start with 00 or +, example:
             +33634231224 or 0033634231224. This parameter is mandatory when
             initiating a discussion.
+            For a Channel SDK private content,
+            the foreign_id of the identity to send the message to.
+            The identity must have been imported in ED.
             For an Engage Messaging content,
             the foreign_id of the identity to send the message to.
             The oubound messaging option must be enabled.

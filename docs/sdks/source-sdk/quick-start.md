@@ -380,3 +380,21 @@ We need to confirm the message was received by a response from your Channel SDK.
 ```
 
 Notice the `id` is the `in_reply_to_id` sent to you and you are just mirroring back the message body.
+
+### User Management - Recipients for private messages composition
+
+You can compose private messages from RingCX. For this, you need the recipient to have already been imported. This is the case when you have already received a message from them, but you can also force the import by sending a "users.create" payload like this one:
+
+```json
+{
+    "action": "users.create",
+    "params": {
+      "id": "1235",
+      "firstname": "Darlene",
+      "lastname": "Alderson",
+      "screenname": "Darlene",
+      "puppetizable": false,
+      "created_at": "06/11/2017"
+    }
+}
+```
