@@ -179,6 +179,9 @@ Type | Description
 `content.exported` | When a new content has been exported from RingCX to the source. **This does not mean that the export succeeded. The synchronization_status field needs to be checked.**
 `content.imported` | When a new content has been imported from the source to RingCX.
 `content.replied` | When someone replied to another content. **This does not mean that the content has been published yet. Notifications about exports are done with content.exported.**
+`content.thread_auto_closed` | When an Engage Messaging thread was automatically locked.
+`content.thread_closed` | When a thread is locked.
+`content.thread_opened` | When a thread is unlocked.
 `content.update_exported` | When a content has been update_exported (and the update has been propagated to the external source).
 
 !!! warning "New content events"
