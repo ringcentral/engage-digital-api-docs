@@ -463,8 +463,8 @@
                     "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
-                    "key": "Accept",
-                    "value": "application/json"
+                    "key": "Content-Type",
+                    "value": "multipart/form-data:"
                   },
                   {
                     "key": "Accept",
@@ -1998,6 +1998,12 @@
                       "key": "limit",
                       "value": "\u003cinteger.int32\u003e",
                       "description": "The max number of records to return. Default value is 30, max value is 150.",
+                      "disabled": true
+                    },
+                    {
+                      "key": "type",
+                      "value": "\u003cstring\u003e",
+                      "description": "Filter by type",
                       "disabled": true
                     }
                   ]
@@ -7842,8 +7848,8 @@
                     "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
-                    "key": "Accept",
-                    "value": "application/json"
+                    "key": "Content-Type",
+                    "value": "application/x-www-form-urlencoded"
                   },
                   {
                     "key": "Accept",
@@ -7930,8 +7936,8 @@
                     "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
-                    "key": "Accept",
-                    "value": "application/json"
+                    "key": "Content-Type",
+                    "value": "application/x-www-form-urlencoded"
                   },
                   {
                     "key": "Accept",

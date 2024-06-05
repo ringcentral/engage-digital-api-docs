@@ -938,6 +938,12 @@ paths:
           schema:
             format: int32
             type: integer
+        - description: Filter by type
+          in: query
+          name: type
+          required: false
+          schema:
+            type: string
       responses:
         '200':
           content:
