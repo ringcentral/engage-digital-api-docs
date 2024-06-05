@@ -6413,6 +6413,80 @@
           ]
         },
         {
+          "name": "Users Sources Permissions",
+          "description": {
+            "type": "text/plain"
+          },
+          "item": [
+            {
+              "name": "Getting a user's permissions on sources",
+              "request": {
+                "url": {
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/users/:userId/sources_permissions",
+                  "host": [
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
+                  ],
+                  "path": [
+                    "1.0",
+                    "users",
+                    ":userId",
+                    "sources_permissions"
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "description": "This method renders the permissions the user has on each source.\nAuthorization​: only users that can view users. If the user affiliated to the token has the manage_users_of_my_teams permission, only the signatures of the users belonging to at least one of the teams he’s the leader of will be available."
+              }
+            },
+            {
+              "name": "Updating a user's permissions on sources",
+              "request": {
+                "url": {
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/users/:userId/sources_permissions",
+                  "host": [
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
+                  ],
+                  "path": [
+                    "1.0",
+                    "users",
+                    ":userId",
+                    "sources_permissions"
+                  ],
+                  "query": [
+                    {
+                      "key": "source_x_id",
+                      "value": "\u003cstring\u003e",
+                      "description": "The parameter should be the id of a source, the value should be a string containing the list of permissions you want to give to the user on a specific source (seprated by commas).\nList of available permissions:\n  - read\n  - reply\n  - reply_with_html\n  - initiate_discussion\n  - destroy\n  - approval_required (if approval threshold is not enabled)\n  - approval_threshold_0\n  - approval_threshold_10\n  - approval_threshold_20\n  - approval_threshold_30\n  - approval_threshold_40\n  - approval_threshold_50\n  - approval_threshold_60\n  - approval_threshold_70\n  - approval_threshold_80\n  - approval_threshold_90\n  - approval_threshold_100",
+                      "disabled": true
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "description": "This method updates the permissions the user has on each source.\nAuthorization​: only users that can view users. If the user affiliated to the token has the manage_users_of_my_teams permission, only the signatures of the users belonging to at least one of the teams he’s the leader of will be available."
+              }
+            }
+          ]
+        },
+        {
           "name": "User Capacities",
           "description": {
             "type": "text/plain"
