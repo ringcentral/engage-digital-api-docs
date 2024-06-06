@@ -24,13 +24,19 @@ Use `spectrum` to create the Postman 2.x collection from the OpenAPI 3 API Speci
 
 ### Installation
 
+Be sure to have the version of go specified in the go.mod file. If you have the latest version of go installed, you can install an oldest version with :
+
+```bash
+$ go install golang.org/dl/go1.16@latest
+```
+
+See more here: [https://golang.org/](https://golang.org/).
+
 The following will install the `spectrum` executable in the `~/go/bin` directory.
 
 ```bash
-$ go install github.com/grokify/spectrum@v1.10.3
+$ ~/go/bin/go1.16 install github.com/grokify/spectrum@v1.10.3
 ```
-
-This approach requires `go` 1.16 minimum be installed on your system. See more here: [https://golang.org/](https://golang.org/).
 
 ### Usage
 
