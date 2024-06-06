@@ -463,8 +463,8 @@
                     "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
-                    "key": "Content-Type",
-                    "value": "multipart/form-data:"
+                    "key": "Accept",
+                    "value": "application/json"
                   },
                   {
                     "key": "Accept",
@@ -7848,8 +7848,8 @@
                     "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
-                    "key": "Content-Type",
-                    "value": "application/x-www-form-urlencoded"
+                    "key": "Accept",
+                    "value": "application/json"
                   },
                   {
                     "key": "Accept",
@@ -7936,8 +7936,8 @@
                     "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
                   },
                   {
-                    "key": "Content-Type",
-                    "value": "application/x-www-form-urlencoded"
+                    "key": "Accept",
+                    "value": "application/json"
                   },
                   {
                     "key": "Accept",
