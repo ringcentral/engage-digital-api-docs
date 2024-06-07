@@ -14,7 +14,7 @@ jobs:
       if: success()
       uses: actions/setup-go@v2
       with:
-        go-version: 1.16.x
+        go-version: 1.18.x
     - name: Checkout code
       uses: actions/checkout@v2
     - name: Run tests
@@ -22,7 +22,7 @@ jobs:
     - name: Postman generated
       working-directory: specs
       run: |
-        go install github.com/grokify/spectrum@v1.10.3
+        go install github.com/grokify/spectrum@v1.15.0
         spectrum --config engage-digital_postman2.config.json --basePostmanFile engage-digital_postman2.base.json --openapiFile engage-digital_openapi3.yaml --postmanFile engage-digital_postman2.json.new
         diff engage-digital_postman2.json engage-digital_postman2.json.new
   lint:
