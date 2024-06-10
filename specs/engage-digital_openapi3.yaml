@@ -1707,7 +1707,7 @@ paths:
       parameters:
         - description: >-
             To filter contents on given query. Query works exactly like threads
-            query but only have those keywords: intervention,identity,
+            query but only have those keywords: id, intervention, identity,
             identity_group, source, status_in, thread or text. Order can be
             created_at.desc (default) or created_at.asc. e.g.
             q=intervention:"7f946431b6eebffafae642cc"%20source:"d19c81948c137d86dac77216"
