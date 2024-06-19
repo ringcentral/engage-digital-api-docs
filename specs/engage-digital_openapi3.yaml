@@ -7714,6 +7714,9 @@ components:
           type: string
         creator_id:
           type: string
+        first_in_thread:
+          description: is true if the content is the first in the thread.
+          type: boolean
         foreign_categories:
           description: is present only if the content has foreign_categories.
           items:
