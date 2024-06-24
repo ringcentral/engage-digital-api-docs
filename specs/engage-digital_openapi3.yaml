@@ -436,7 +436,7 @@ paths:
           required: false
           schema:
             type: string
-        - description: The id of the intervention that we want to handover (only for Engage Virtual Agent handover).
+        - description: The id of the intervention that we want to handover (only for Virtual Agent handover).
           in: query
           name: intervention_id
           required: false
@@ -451,6 +451,12 @@ paths:
             items:
               type: string
             type: array
+        - description: The string configured in the handover rules trigger field of the Virtual Agent.
+          in: query
+          name: trigger
+          required: false
+          schema:
+            type: string
       responses:
         '200':
           content:

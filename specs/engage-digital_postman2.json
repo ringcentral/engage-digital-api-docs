@@ -635,13 +635,19 @@
                     {
                       "key": "intervention_id",
                       "value": "\u003cstring\u003e",
-                      "description": "The id of the intervention that we want to handover (only for Engage Virtual Agent handover).",
+                      "description": "The id of the intervention that we want to handover (only for Virtual Agent handover).",
                       "disabled": true
                     },
                     {
                       "key": "thread_category_ids[]",
                       "value": "\u003carray.string.csv\u003e",
                       "description": "An array containing the new categories to set on the thread.",
+                      "disabled": true
+                    },
+                    {
+                      "key": "trigger",
+                      "value": "\u003cstring\u003e",
+                      "description": "The string configured in the handover rules trigger field of the Virtual Agent.",
                       "disabled": true
                     }
                   ]
