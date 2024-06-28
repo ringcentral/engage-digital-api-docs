@@ -7058,7 +7058,8 @@ paths:
               - approval_threshold_90
               - approval_threshold_100
           in: query
-          name: source_x_id
+          name: "{source_x_id}"
+          example: 'read,reply,approval_threshold_50'
           required: false
           schema:
             type: string
