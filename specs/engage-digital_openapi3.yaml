@@ -9182,6 +9182,9 @@ components:
         name:
           description: Source name
           type: string
+        omnichannel_foreign_id:
+          description: Only on RingCX domains. Identifier of the channel in the external system.
+          type: string
         sla_expired_strategy:
           description: 'SLA expired strategy ("max", "half" or "base")'
           enum:
