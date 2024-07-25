@@ -17,10 +17,12 @@ To obtain a token, follow these steps:
 1. Login to your RingCX portal and click on the "Admin" menu located in the top, horizontal menu.
     
 2. Select "API access tokens" towards the bottom of the left hand menu.
+     ![API Access Tokens](../images/api-access-tokens.png)
+
     
-3. You should see a list of access tokens if any have been provisioned. Select the token, or click the "+" button to create a new one.
+4. You should see a list of access tokens if any have been provisioned. Select the token, or click the "+" button to create a new one.
     
-4. Finally, enter a label/description for your token, and select an Agent on which the token will act on behalf of. Make sure the token is "enabled" and click "Save."
+5. Finally, enter a label/description for your token, and select an Agent on which the token will act on behalf of. Make sure the token is "enabled" and click "Save."
     
       ![API access token](../img/api-token.png)
 
