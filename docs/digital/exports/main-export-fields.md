@@ -188,6 +188,7 @@ Other custom data can be present in the thread export depending on the source ty
 | content.admin_stamped                                   | An Engage Messaging message was certified by an admin                      |
 | content.agent_assist_used                               | Agent Assist was used to reply to a message                                |
 | content.anonymized                                      | A message was anonymized                                                   |
+| content.api_submission_failed                           | A message could not be processed by the API                                |
 | content.approval_requested                              | An agent message was sent for approval                                     |
 | content.approved                                        | An agent message was approved by a supervisor                              |
 | content.author_blocked                                  | The author of the message was blocked on the channel                       |
