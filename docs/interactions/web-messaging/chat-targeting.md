@@ -27,11 +27,11 @@ Each condition is defined by selecting what matches what values, and when.
 The Chat Manager tracks the predefined criteria:
 
 | Criterion | Type | Example | Notes |
-|-|-|-|-| 
+|-|-|-|-|
 | Chat opened | Boolean | true | Corresponds to whether the chat window is opened (true) or minimized (false). |
 | Chat shown | Boolean | false | Corresponds to whether or not the chat window is displayed. |
 | Day of week | Special | Monday | |
-| Hour | Number | 17 | |
+| Time | Special | 17:45 | |
 | Identity | Boolean | true | Corresponds to whether an identity has been set. |
 | Page path | String | /shop/product.php?id=58 | Corresponds to the strict path of the page URL i.e. without the scheme, the domain and the anchor, and starting with a slash. |
 | Page URL | String | https://www.myshop.com/shop/product.php?id=58#bottom | The full page URL, scheme and anchor included. You may prefer using the “Page path” as it allows using a nicer “Starts with” (that can match a full website section if URL are well thought, e.g. “Starts with” “/dresses/” will match “/dresses/” and “/dresses/587-pink-dress”). |
@@ -116,11 +116,16 @@ These are predefined: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Su
 
 Matching can be exact, but you may use the “is greater/lesser or equal to” to match a range of days. For example “is greater or equal to Saturday” will match the whole weekend. And “is lesser or equal to Friday” will match days from Monday to Friday.
 
-#### Values for Hour
+#### Values for Time
 
-These are predefined: from 0 to 23. It corresponds to the hour part of universal notation of time. E.g. At half past midnight, noted 00:30, the hour will be 0.
+These are predefined: from 00:00 to 23:45, with 15 minutes interval. It corresponds to the universal notation of time. E.g. half past midnight, noted 00:30.
 
-Matching can be exact, but you may use the “is greater/lesser or equal to” to match a range of hours. For example “is greater or equal to 20” will match the whole evening, from 20:00 to 23:59:59.
+You can use the “is greater or equal to” and/or “is lesser or equal to” to match a range of times.
+
+For example:
+
+* “is greater or equal to 20:00” will match the whole evening, from 20:00 to 23:59:59.
+* combining “is greater or equal to 07:15” and “is lesser or equal to 19:45” will match the whole day from 07:15 to 19:45.
 
 ### Combining Conditions
 
