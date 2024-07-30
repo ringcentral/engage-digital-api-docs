@@ -635,13 +635,19 @@
                     {
                       "key": "intervention_id",
                       "value": "\u003cstring\u003e",
-                      "description": "The id of the intervention that we want to handover (only for Engage Virtual Agent handover).",
+                      "description": "The id of the intervention that we want to handover (only for Virtual Agent handover).",
                       "disabled": true
                     },
                     {
                       "key": "thread_category_ids[]",
                       "value": "\u003carray.string.csv\u003e",
                       "description": "An array containing the new categories to set on the thread.",
+                      "disabled": true
+                    },
+                    {
+                      "key": "trigger",
+                      "value": "\u003cstring\u003e",
+                      "description": "The string configured in the handover rules trigger field of the Virtual Agent.",
                       "disabled": true
                     }
                   ]
@@ -657,7 +663,7 @@
                     "value": "application/json"
                   }
                 ],
-                "description": "This method is used to handover a conversation between a bot and an agent. It handles 2 different cases, specific sources handover (Messenger for example, see Bots API doc) and handover between Engage Virtual Agents and human agents. This method recategorizes the thread if the thread_category_ids parameter is provided."
+                "description": "This method is used to handover a conversation between a bot and an agent. It handles 2 different cases, specific sources handover (Messenger for example, see Bots API doc) and handover between Virtual Agents and human agents. This method recategorizes the thread if the thread_category_ids parameter is provided."
               }
             }
           ]
@@ -6408,6 +6414,80 @@
                   }
                 ],
                 "description": "This method updates users from given attributes and renders it in case of success.\n\nAuthorization​: only users that can update users. If the user affiliated to the token has the `manage_users_of_my_teams` permission, the updated user will need to belong to at least one of the teams he’s the leader of. The teams the user affiliated to the token is the leader of will be the only ones which can be added or removed."
+              }
+            }
+          ]
+        },
+        {
+          "name": "Users Sources Permissions",
+          "description": {
+            "type": "text/plain"
+          },
+          "item": [
+            {
+              "name": "Getting a user's permissions on sources",
+              "request": {
+                "url": {
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/users/:userId/sources_permissions",
+                  "host": [
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
+                  ],
+                  "path": [
+                    "1.0",
+                    "users",
+                    ":userId",
+                    "sources_permissions"
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "description": "This method renders the permissions the user has on each source.\nAuthorization​: only users that can view users. If the user affiliated to the token has the manage_users_of_my_teams permission, only the signatures of the users belonging to at least one of the teams he’s the leader of will be available."
+              }
+            },
+            {
+              "name": "Updating a user's permissions on sources",
+              "request": {
+                "url": {
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/users/:userId/sources_permissions",
+                  "host": [
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
+                  ],
+                  "path": [
+                    "1.0",
+                    "users",
+                    ":userId",
+                    "sources_permissions"
+                  ],
+                  "query": [
+                    {
+                      "key": "{source_x_id}",
+                      "value": "\u003cstring\u003e",
+                      "description": "The parameter should be the id of a source, the value should be a string containing the list of permissions you want to give to the user on a specific source (seprated by commas).\nList of available permissions:\n  - read\n  - reply\n  - reply_with_html\n  - initiate_discussion\n  - destroy\n  - approval_required (if approval threshold is not enabled)\n  - approval_threshold_0\n  - approval_threshold_10\n  - approval_threshold_20\n  - approval_threshold_30\n  - approval_threshold_40\n  - approval_threshold_50\n  - approval_threshold_60\n  - approval_threshold_70\n  - approval_threshold_80\n  - approval_threshold_90\n  - approval_threshold_100",
+                      "disabled": true
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "description": "This method updates the permissions the user has on each source.\nAuthorization​: only users that can view users. If the user affiliated to the token has the manage_users_of_my_teams permission, only the signatures of the users belonging to at least one of the teams he’s the leader of will be available."
               }
             }
           ]

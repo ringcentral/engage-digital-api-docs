@@ -52,6 +52,7 @@ x-tag-groups:
       - Time Sheets
       - Timezones
       - Users
+      - Users Sources Permissions
       - User Capacities
       - User Signatures
   - name: Routing
@@ -90,6 +91,7 @@ tags:
   - name: Timezones
   - name: Topologies
   - name: Users
+  - name: Users Sources Permissions
   - name: User Capacities
   - name: User Signatures
   - name: Agent Status
@@ -403,7 +405,7 @@ paths:
     post:
       description: This method is used to handover a conversation between a bot and an agent.
         It handles 2 different cases, specific sources handover (Messenger for example, see Bots API doc)
-        and handover between Engage Virtual Agents and human agents. This method recategorizes the thread if the thread_category_ids parameter is provided.
+        and handover between Virtual Agents and human agents. This method recategorizes the thread if the thread_category_ids parameter is provided.
       operationId: handoverFromBotToAgent
       parameters:
         - description: Who we are taking the conversation control from (either bot or agent).
@@ -436,7 +438,7 @@ paths:
           required: false
           schema:
             type: string
-        - description: The id of the intervention that we want to handover (only for Engage Virtual Agent handover).
+        - description: The id of the intervention that we want to handover (only for Virtual Agent handover).
           in: query
           name: intervention_id
           required: false
@@ -451,6 +453,12 @@ paths:
             items:
               type: string
             type: array
+        - description: The string configured in the handover rules trigger field of the Virtual Agent.
+          in: query
+          name: trigger
+          required: false
+          schema:
+            type: string
       responses:
         '200':
           content:
@@ -6994,6 +7002,83 @@ paths:
       summary: Updating a user
       tags:
         - Users
+  /users/{userId}/sources_permissions:
+    get:
+      description: >-
+        This method renders the permissions the user has on each source.
+
+        Authorization​: only users that can view users. If the user affiliated
+        to the token has the manage_users_of_my_teams permission, only the signatures
+        of the users belonging to at least one of the teams he’s the leader of will be available.
+      operationId: getUserSourcesPermissions
+      parameters:
+        - in: path
+          name: userId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserSourcesPermissions'
+          description: Success
+      summary: Getting a user's permissions on sources
+      tags:
+        - Users Sources Permissions
+    put:
+      description: >-
+        This method updates the permissions the user has on each source.
+
+        Authorization​: only users that can view users. If the user affiliated
+        to the token has the manage_users_of_my_teams permission, only the signatures
+        of the users belonging to at least one of the teams he’s the leader of will be available.
+      operationId: updateUserSourcesPermissions
+      parameters:
+        - in: path
+          name: userId
+          required: true
+          schema:
+            type: string
+        - description: >-
+            The parameter should be the id of a source, the value should be a string containing
+            the list of permissions you want to give to the user on a specific source (seprated by commas).
+
+            List of available permissions:
+              - read
+              - reply
+              - reply_with_html
+              - initiate_discussion
+              - destroy
+              - approval_required (if approval threshold is not enabled)
+              - approval_threshold_0
+              - approval_threshold_10
+              - approval_threshold_20
+              - approval_threshold_30
+              - approval_threshold_40
+              - approval_threshold_50
+              - approval_threshold_60
+              - approval_threshold_70
+              - approval_threshold_80
+              - approval_threshold_90
+              - approval_threshold_100
+          in: query
+          name: "{source_x_id}"
+          example: 'read,reply,approval_threshold_50'
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserSourcesPermissions'
+          description: Success
+      summary: Updating a user's permissions on sources
+      tags:
+        - Users Sources Permissions
   /users/{userId}/signatures:
     get:
       description: >-
@@ -7714,6 +7799,9 @@ components:
           type: string
         creator_id:
           type: string
+        first_in_thread:
+          description: is true if the content is the first in the thread.
+          type: boolean
         foreign_categories:
           description: is present only if the content has foreign_categories.
           items:
@@ -9670,6 +9758,16 @@ components:
           type: boolean
       required:
         - id
+    UserSourcesPermissions:
+      properties:
+        source_1_id:
+          items:
+            type: string
+          type: array
+        source_2_id:
+          items:
+            type: string
+          type: array
     UserSignature:
       properties:
         id:
