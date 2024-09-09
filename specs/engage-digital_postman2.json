@@ -535,6 +535,12 @@
                       "value": "\u003cboolean\u003e",
                       "description": "Wether if the thread should be closed at the same time.",
                       "disabled": true
+                    },
+                    {
+                      "key": "thread_category_ids[]",
+                      "value": "\u003carray.string.csv\u003e",
+                      "description": "An array containing the new categories to add on the thread.",
+                      "disabled": true
                     }
                   ]
                 },
