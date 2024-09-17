@@ -2957,9 +2957,7 @@ paths:
                 $ref: '#/components/schemas/IdentityGroup'
           description: Success
         '409':
-          description: >-
-            If the Identity Group is already being updated, it will return a 409
-            error.
+          description: If the Identity Group is already being updated, it will return a 409 error.
       summary: Updating an identity group
       tags:
         - Identity Groups
