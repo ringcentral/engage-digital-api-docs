@@ -247,9 +247,6 @@ Channel SDK supports the following type of attachments:
 * **word_processing**: pages, odt, ott, rtf
 * **other**: amr, dms, vcard, tif, tiff, mpeg
 
-!!! alert "Note"
-    Size of attachments is limited to 10Mb
-
 ### Content Categorization
 
 It is possible to manage thread categorization from the Channel SDK, a **categories field** is available for Message and Private Message objects. Using this field you can send the external categories applied on the third party side to RingCX Digital. On the RingCX Digital side it is possible to set up recategorization rules via the rules engine in order to apply a specific categorization according to the information received from the Channel SDK.
