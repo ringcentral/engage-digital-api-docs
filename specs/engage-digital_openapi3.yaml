@@ -1702,6 +1702,68 @@ paths:
       summary: Categorizing a thread
       tags:
         - Threads
+  '/content_threads/{threadId}/disable_text_input':
+    put:
+      description: >-
+        This method disables text input on a messaging thread. If token’s user does not
+        have “read” on thread’s source or if the thread is not a messaging thread,
+        a 404 HTTP response will be returned.
+
+
+        If the thread is already disabling text input or the token’s user does not
+        have “reply” on thread’s source, a 403 HTTP response will be
+        returned.
+
+
+        Authorization​: no.
+      operationId: disableThreadTextInput
+      parameters:
+        - in: path
+          name: threadId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessagingThread'
+          description: Success
+      summary: Disabling text input on a thread
+      tags:
+        - Threads
+  '/content_threads/{threadId}/enable_text_input':
+    put:
+      description: >-
+        This method enables text input on a messaging thread. If token’s user does not
+        have “read” on thread’s source or if the thread is not a messaging thread,
+        a 404 HTTP response will be returned.
+
+
+        If the thread is already enabling text input or the token’s user does not
+        have “reply” on thread’s source, a 403 HTTP response will be
+        returned.
+
+
+        Authorization​: no.
+      operationId: enableThreadTextInput
+      parameters:
+        - in: path
+          name: threadId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessagingThread'
+          description: Success
+      summary: Enabling text input on a thread
+      tags:
+        - Threads
   /contents:
     get:
       description: >-
@@ -1923,6 +1985,18 @@ paths:
           required: false
           schema:
             type: string
+        - description: >-
+            Engage Messaging only.
+            Allows to enable or disable customer's text input on content's thread.
+            To disable text input, send true.
+            To enable text input, send false.
+            To keep as is, omit.
+          explode: true
+          in: query
+          name: 'disable_text_input_on_thread'
+          required: false
+          schema:
+            type: boolean
       responses:
         '200':
           content:
@@ -9621,6 +9695,12 @@ components:
           type: string
       required:
         - id
+    MessagingThread:
+      allOf:
+        - $ref: '#/components/schemas/Thread'
+        - properties:
+            disable_text_input:
+              type: boolean
     TimeSheet:
       properties:
         active:
