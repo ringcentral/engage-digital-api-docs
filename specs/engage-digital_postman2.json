@@ -2750,7 +2750,7 @@
                     "value": "application/json"
                   }
                 ],
-                "description": "This method disables text input on a messaging thread. If token’s user does not have “read” on thread’s source or if the thread is not a messaging thread, a 404 HTTP response will be returned.\n\nIf the thread is already disabling text input or the token’s user does not have “reply” on thread’s source, a 403 HTTP response will be returned.\n\nAuthorization​: no."
+                "description": "This method disables the text input on a messaging thread. If token’s user does not have “read” permission on the thread’s channel or if the thread is not a messaging thread, a 404 HTTP response will be returned.\n\nIf the text input is already disabled on the thread or the token’s user does not have the “reply” permission on the thread’s channel, a 403 HTTP response will be returned.\n\nAuthorization​: no."
               }
             },
             {
@@ -2779,7 +2779,7 @@
                     "value": "application/json"
                   }
                 ],
-                "description": "This method enables text input on a messaging thread. If token’s user does not have “read” on thread’s source or if the thread is not a messaging thread, a 404 HTTP response will be returned.\n\nIf the thread is already enabling text input or the token’s user does not have “reply” on thread’s source, a 403 HTTP response will be returned.\n\nAuthorization​: no."
+                "description": "This method enables the text input on a messaging thread. If the token’s user does not have the “read” permission on the thread’s channel or if the thread is not a messaging thread, a 404 HTTP response will be returned.\n\nIf the text input is already enabled on the thread or the token’s user does not have the “reply” permission on the thread’s channel, a 403 HTTP response will be returned.\n\nAuthorization​: no."
               }
             },
             {
