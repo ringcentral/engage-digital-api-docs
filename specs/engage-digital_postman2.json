@@ -2874,7 +2874,7 @@
                     "value": "application/json"
                   }
                 ],
-                "description": "This method updates the categories of a thread. If token’s user does not have “read” on thread’s source a 404 HTTP response will be returned.\n\nIf the thread is already being categorized, a 409 HTTP response will be returned.\n\nAuthorization​: no."
+                "description": "This method updates the categories of a thread. If token’s user does not have “read” permission on the thread’s channel a 404 HTTP response will be returned.\n\nIf the thread is already being categorized, a 409 HTTP response will be returned.\n\nAuthorization​: no."
               }
             }
           ]
