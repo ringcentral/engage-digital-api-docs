@@ -1667,8 +1667,8 @@ paths:
   '/content_threads/{threadId}/update_categories':
     put:
       description: >-
-        This method updates the categories of a thread. If token’s user does not
-        have “read” on thread’s source a 404 HTTP response will be returned.
+        This method updates the categories of a thread. If token’s user does not have
+        “read” permission on the thread’s channel a 404 HTTP response will be returned.
 
 
         If the thread is already being categorized, a 409 HTTP response will be
