@@ -207,6 +207,7 @@ Other custom data can be present in the thread export depending on the source ty
 | content.discussion_initiated                            | A discussion was initiated by an agent                                     |
 | content.discussion_planned                              | A discussion was planned by an agent                                       |
 | content.draft_created                                   | A draft was created by an agent                                            |
+| content.draft_discarded                                 | A draft was discarded by an agent                                          |
 | content.draft_updated                                   | A draft was updated by an agent                                            |
 | content.forwarded                                       | An email was forwarded                                                     |
 | content.ice_nth_content_ignored                         | A message was ignored by AI Classification Engine                          |
