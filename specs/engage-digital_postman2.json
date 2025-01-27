@@ -894,6 +894,12 @@
                       "value": "\u003cstring\u003e",
                       "description": "Mandatory for a WhatsApp source. A discussion can only be initiated using a specific template created on the business manager and approved by WhatsApp. You can find all available template_languages for a given template_name on /1.0/content_sources/source_id.",
                       "disabled": true
+                    },
+                    {
+                      "key": "disable_text_input_on_thread",
+                      "value": "\u003cboolean\u003e",
+                      "description": "Engage Messaging only. Allows to enable or disable customer's text input on content's thread. To disable text input, send true. To enable text input, send false. To keep as is, omit.",
+                      "disabled": true
                     }
                   ]
                 },
@@ -2719,6 +2725,64 @@
               }
             },
             {
+              "name": "Disabling text input on a thread",
+              "request": {
+                "url": {
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/content_threads/:threadId/disable_text_input",
+                  "host": [
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
+                  ],
+                  "path": [
+                    "1.0",
+                    "content_threads",
+                    ":threadId",
+                    "disable_text_input"
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "description": "This method disables the text input on a messaging thread. If token’s user does not have “read” permission on the thread’s channel or if the thread is not a messaging thread, a 404 HTTP response will be returned.\n\nIf the text input is already disabled on the thread or the token’s user does not have the “reply” permission on the thread’s channel, a 403 HTTP response will be returned.\n\nAuthorization​: no."
+              }
+            },
+            {
+              "name": "Enabling text input on a thread",
+              "request": {
+                "url": {
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/content_threads/:threadId/enable_text_input",
+                  "host": [
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
+                  ],
+                  "path": [
+                    "1.0",
+                    "content_threads",
+                    ":threadId",
+                    "enable_text_input"
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "description": "This method enables the text input on a messaging thread. If the token’s user does not have the “read” permission on the thread’s channel or if the thread is not a messaging thread, a 404 HTTP response will be returned.\n\nIf the text input is already enabled on the thread or the token’s user does not have the “reply” permission on the thread’s channel, a 403 HTTP response will be returned.\n\nAuthorization​: no."
+              }
+            },
+            {
               "name": "Archiving a thread",
               "request": {
                 "url": {
@@ -2810,7 +2874,7 @@
                     "value": "application/json"
                   }
                 ],
-                "description": "This method updates the categories of a thread. If token’s user does not have “read” on thread’s source a 404 HTTP response will be returned.\n\nIf the thread is already being categorized, a 409 HTTP response will be returned.\n\nAuthorization​: no."
+                "description": "This method updates the categories of a thread. If token’s user does not have “read” permission on the thread’s channel a 404 HTTP response will be returned.\n\nIf the thread is already being categorized, a 409 HTTP response will be returned.\n\nAuthorization​: no."
               }
             }
           ]
