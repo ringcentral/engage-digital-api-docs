@@ -111,8 +111,8 @@ Property | Value | Description
 
 Type | Description
 -----|------------
-`intervention_segment.generated` | When an intervention segment is generated
-`intervention_segment.submitted` | When a request for a summary of an intervention segment is submitted
+`intervention_segment.summary_generated` | When an intervention segment summary is generated
+`intervention_segment.summary_submitted` | When a request for a summary of an intervention segment is submitted
 `intervention_segment.summary_generation_failed` | When a request for a summary of an intervention segment failed
 
 #### Metadata
