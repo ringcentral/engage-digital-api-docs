@@ -105,6 +105,28 @@ Property | Value | Description
 `deferred_at` | String | The date when the intervention was deferred
 `custom_field_values` | Custom field Object | It gives the custom fields linked to the object
 
+### Intervention Segments
+
+#### Resource Types
+
+Type | Description
+-----|------------
+`intervention_segment.summary_generated` | When a conversation summary is generated for an intervention segment
+`intervention_segment.summary_submitted` | When a conversation summary is submitted by an agent
+`intervention_segment.summary_generation_failed` | When an error occurred during the conversation summary generation
+
+#### Metadata
+
+Property | Value | Description
+---------|-------|------------
+`intervention_id` | String | Unique identifier for the intervention associated with this event
+`content_source_id` | String | Unique identifier for the content source (e.g., Facebook, Email, etc.)
+`user_id` | String | Unique identifier for the agent/user who triggered this event
+`content_thread_id` | String | Unique identifier for the conversation thread
+`intervention_segment_id` | String | Unique identifier for a specific segment/part of the intervention
+`summary` | String | Summary of the intervention segment
+
+
 ### Tasks
 
 #### Resource Types
