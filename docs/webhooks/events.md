@@ -111,9 +111,9 @@ Property | Value | Description
 
 Type | Description
 -----|------------
-`intervention_segment.summary_generated` | When an intervention segment summary is generated
-`intervention_segment.summary_submitted` | When a request for a summary of an intervention segment is submitted
-`intervention_segment.summary_generation_failed` | When a request for a summary of an intervention segment failed
+`intervention_segment.summary_generated` | When a conversation summary is generated for an intervention segment
+`intervention_segment.summary_submitted` | When a conversation summary is submitted by an agent
+`intervention_segment.summary_generation_failed` | When an error occurred during the conversation summary generation
 
 #### Metadata
 
