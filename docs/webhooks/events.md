@@ -251,8 +251,6 @@ Property | Value | Description
 `thread_title` | String| Title of the thread that owns the content.
 `capabilities_supported` | Array of Strings | List the types of structured messages that can be used to reply to this type of message.
 
-#### Metadata
-
 ### Identities
 
 #### Resource Types

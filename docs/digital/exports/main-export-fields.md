@@ -53,7 +53,6 @@ Other custom data can be present in the thread export depending on the source ty
 | visit _started_at      | Website visit start time | Timestamp                                | 1470399681                   | [Sensitive](../#sensitive-columns)                                                                                                                          |
 | {custom_variable_name} | Chat custom variable     | Depends on the chat custom variable type | 12                           | [Sensitive](../#sensitive-columns) Columns corresponding to the chat custom variables will also be available                                                |
 | intervention_user_names | Agent user names       | Array                                    | John Doe, Leo Major          | [Sensitive](../#sensitive-columns) |
-
 | opened_intervention_user_names | Active agent user names | Array                            | John Doe, Leo Major          | [Sensitive](../#sensitive-columns) |
 
 
@@ -77,7 +76,7 @@ Other custom data can be present in the thread export depending on the source ty
 | private_message          | Private message ?                                             | Boolean  | true / false (or 1 / 0 for BI)                                  |                                                                                                                      |
 | created_from             | Created from                                                  | String   | Synchronizer                                                    |                                                                                                                      |
 | auto_submitted           | Auto submitted                                                | Boolean  | true / false (or 1 / 0 for BI)                                  | If true, it means the message is an automatic reply: ask a user to follow (twitter), send a survey to a customer,... |
-| status                   | Status                                                        | String   | New                                                             | Possible values : <ul><li>Assigned</li> <li>Ignored</li> <li>New</li> <li>Replied</li> <li>Agent message</li> <li>Agent reply</li></ul>                                 |
+| status                   | Status                                                        | String   | New                                                             | Possible values : <ul><li>Assigned</li> <li>Ignored</li> <li>New</li> <li>Replied</li> <li>Agent message</li> <li>Agent reply</li><li>Pending approval</li><li>Draft</li></ul>                                 |
 | ignored_from             | Archived by                                                   | String   | Ice                                                             | Possible values :            <ul><li>Ignored</li> <li>automatically</li> <li>Archived by ICE</li> <li>Manually ignored</li> <li>Mass ignored</li></ul>             |
 | categories               | Categories                                                    | Array    | Mobile, Adsl, TV                                                |                                                                                                                      |
 | intervention_id          | Intervention id                                               | ObjectId | 512631f8a90ffbd442000037                                        |                                                                                                                      |
@@ -207,6 +206,9 @@ Other custom data can be present in the thread export depending on the source ty
 | content.destroyed                                       | A message was deleted                                                      |
 | content.discussion_initiated                            | A discussion was initiated by an agent                                     |
 | content.discussion_planned                              | A discussion was planned by an agent                                       |
+| content.draft_created                                   | A draft was created by an agent                                            |
+| content.draft_discarded                                 | A draft was discarded by an agent                                          |
+| content.draft_updated                                   | A draft was updated by an agent                                            |
 | content.forwarded                                       | An email was forwarded                                                     |
 | content.ice_nth_content_ignored                         | A message was ignored by AI Classification Engine                          |
 | content.ignored                                         | A message was ignored                                                      |
@@ -827,7 +829,7 @@ This export displays user permissions by source.
 | user_reply_in_average_bh    | Average agent reply time in business hours (minutes or seconds according to configuration) | Integer  | 2                                                                               |         |
 | user_reply_in_average_count | Number of exchanges between Identity -> User (used to weight user_reply)                   | Integer  | 3                                                                               |         |
 | identity_id                 | Identity ID                                                                                | ObjectId | 55cda9e6776562a644000001                                                        |         |
-| identity_name               | Identity Name                                                                              | String   | Pierre Dupont                                                                   |         | 
+| identity_name               | Identity Name                                                                              | String   | Pierre Dupont                                                                   |         |
 | identity_foreign_id         | Identity's Foreign ID                                                                      | ObjectId | 55dc83d677656254ca000a2e                                                        |         |
 | source_id                   | Source ID                                                                                  | ObjectId | 55cda687776562377900083d                                                        |         |
 | source_name                 | Source Name                                                                                | String   | My Facebook Page                                                                |         |
