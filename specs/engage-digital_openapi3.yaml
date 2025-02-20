@@ -2500,6 +2500,16 @@ paths:
             items:
               type: string
             type: array
+        - description: >-
+            list of users allowed to see this folder. Same thing as
+            two previous restriction parameters, it has to be a hash with the key "only".
+          in: query
+          name: 'user_restriction[only][]'
+          required: false
+          schema:
+            items:
+              type: string
+            type: array
       responses:
         '200':
           content:
@@ -2611,6 +2621,16 @@ paths:
             the key "only".
           in: query
           name: 'team_restriction[only][]'
+          required: false
+          schema:
+            items:
+              type: string
+            type: array
+        - description: >-
+            list of users allowed to see this folder. Same thing as
+            two previous restriction parameters, it has to be a hash with the key "only".
+          in: query
+          name: 'user_restriction[only][]'
           required: false
           schema:
             items:
@@ -8083,6 +8103,8 @@ components:
         role_restriction:
           $ref: '#/components/schemas/Restriction'
         team_restriction:
+          $ref: '#/components/schemas/Restriction'
+        user_restriction:
           $ref: '#/components/schemas/Restriction'
         user_id:
           type: string
