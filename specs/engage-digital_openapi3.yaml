@@ -2502,7 +2502,7 @@ paths:
             type: array
         - description: >-
             list of users allowed to see this folder. Same thing as
-            two previous restriction parameters, it has to be a hash with the key "only".
+            role restriction: user_restriction parameter has to be a hash with the key "only".
           in: query
           name: 'user_restriction[only][]'
           required: false
@@ -2628,7 +2628,7 @@ paths:
             type: array
         - description: >-
             list of users allowed to see this folder. Same thing as
-            two previous restriction parameters, it has to be a hash with the key "only".
+            role restriction: user_restriction parameter has to be a hash with the key "only".
           in: query
           name: 'user_restriction[only][]'
           required: false
