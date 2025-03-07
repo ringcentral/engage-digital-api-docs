@@ -389,6 +389,15 @@ paths:
           required: false
           schema:
             type: boolean
+        - description: An array containing the new categories to add on the thread.
+          explode: true
+          in: query
+          name: 'thread_category_ids[]'
+          required: false
+          schema:
+            items:
+              type: string
+            type: array
       responses:
         '200':
           content:
