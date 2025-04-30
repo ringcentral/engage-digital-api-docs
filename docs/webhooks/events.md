@@ -58,7 +58,7 @@ Property | Value | Description
 `id` | String | Unique event identifier. Events MUST define this property. This can be used to detect duplicate events in case of multiple send.
 `resource` | Resource Object | It gives the resource of the event. Events MUST define this property.
 `issued_at` | RFC-3339 date-time | The date and time at which the event happened. Events MUST define this property. This can be used to order the events client-side.
-`user_id` | String | Unique user identifier. Will only appear for event triggered by an agent, except for task.recategorized.
+`user_id` | String | Unique user identifier. Will only appear for event triggered by an agent, except for the `task.recategorized` event.
 `action` | String | task.completed only, specifies the action leading to task completion, can be “deferred” or “closed”
 
 ### Resource object
