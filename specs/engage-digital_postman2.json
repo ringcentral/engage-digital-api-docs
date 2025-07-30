@@ -7380,6 +7380,12 @@
                       "value": "\u003carray.string.csv\u003e",
                       "description": "list of teams allowed to see this folder. Same thing as role_restriction: team_restriction parameter has to be a hash with the key \"only\".",
                       "disabled": true
+                    },
+                    {
+                      "key": "user_restriction[only][]",
+                      "value": "\u003carray.string.csv\u003e",
+                      "description": "list of users allowed to see this folder. Same thing as role restriction: user_restriction parameter has to be a hash with the key \"only\".",
+                      "disabled": true
                     }
                   ]
                 },
@@ -7507,6 +7513,12 @@
                       "key": "team_restriction[only][]",
                       "value": "\u003carray.string.csv\u003e",
                       "description": "list of teams allowed to see this folder. Same thing as role_restriction: team_restriction parameter has to be a hash with the key \"only\".",
+                      "disabled": true
+                    },
+                    {
+                      "key": "user_restriction[only][]",
+                      "value": "\u003carray.string.csv\u003e",
+                      "description": "list of users allowed to see this folder. Same thing as role restriction: user_restriction parameter has to be a hash with the key \"only\".",
                       "disabled": true
                     }
                   ]
