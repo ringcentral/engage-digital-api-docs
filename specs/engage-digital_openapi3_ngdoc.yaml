@@ -1114,6 +1114,44 @@ paths:
       summary: Categorizing a thread
       tags:
         - Threads
+  '/contents/{contentId}/update_custom_score':
+    put:
+      summary: Updating a content's custom score
+      description: >-
+        This method updates the custom score of a content. It is only available for contents from channels specified in the Sentiment Analysis configuration, and only if the extension has custom sentiment analysis enabled.
+      operationId: updateCustomScore
+      parameters:
+        - in: path
+          name: contentId
+          required: true
+          schema:
+            type: string
+        - in: query
+          name: custom_score
+          required: true
+          schema:
+            type: number
+          example: 55.5
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Content'
+          description: Success
+        '400':
+          description: Missing parameters / Invalid parameters
+        '403':
+          description: |-
+            Sentiment analysis not enabled
+
+            Custom sentiment analysis not enabled
+
+            Content not from a channel with custom sentiment analysis enabled
+
+            Agent/User custom sentiment analysis not enabled
+      tags:
+        - Contents
   /contents:
     get:
       description: >-
@@ -6862,7 +6900,6 @@ components:
           description: is present only on Engage Messaging contents, and if it has been rated.
           type: string
           example: "I'm satisfied with the response"
-
         remotely_deleted:
           type: boolean
         source_id:
