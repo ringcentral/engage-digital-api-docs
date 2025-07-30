@@ -6851,6 +6851,18 @@ components:
         rating:
           description: is present only if the content supports rating and rating is filled.
           type: integer
+        rated_with:
+          description: is present only on Engage Messaging contents, and if it has been rated.
+          type: string
+          example: "THUMBS_UP"
+          enum:
+            - THUMBS_UP
+            - THUMBS_DOWN
+        rating_reason:
+          description: is present only on Engage Messaging contents, and if it has been rated.
+          type: string
+          example: "I'm satisfied with the response"
+
         remotely_deleted:
           type: boolean
         source_id:
