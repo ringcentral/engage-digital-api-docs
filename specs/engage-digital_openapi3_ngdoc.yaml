@@ -1141,15 +1141,8 @@ paths:
           description: Success
         '400':
           description: Missing parameters / Invalid parameters
-        '403':
-          description: |-
-            Sentiment analysis not enabled
-
-            Custom sentiment analysis not enabled
-
-            Content not from a channel with custom sentiment analysis enabled
-
-            Agent/User custom sentiment analysis not enabled
+        '404':
+          description: Not Found
       tags:
         - Contents
   /contents:
