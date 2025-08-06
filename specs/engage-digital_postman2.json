@@ -1016,6 +1016,42 @@
                 ],
                 "description": "This method updates the categories of a content. If token’s user does not have “read” on this content’s source a 404 HTTP response will be returned.\n\nAuthorization​: no."
               }
+            },
+            {
+              "name": "Updating a content's custom score",
+              "request": {
+                "url": {
+                  "raw": "{{ENGAGE_DIGITAL_SERVER_URL}}/1.0/contents/:contentId/update_custom_score",
+                  "host": [
+                    "{{ENGAGE_DIGITAL_SERVER_URL}}"
+                  ],
+                  "path": [
+                    "1.0",
+                    "contents",
+                    ":contentId",
+                    "update_custom_score"
+                  ],
+                  "query": [
+                    {
+                      "key": "custom_score",
+                      "value": "\u003cnumber\u003e",
+                      "disabled": true
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{ENGAGE_DIGITAL_ACCESS_TOKEN}}"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "description": "This method updates the custom score of a content. It is only available for contents from channels specified in the Sentiment Analysis configuration, and only if the extension has custom sentiment analysis enabled."
+              }
             }
           ]
         },
