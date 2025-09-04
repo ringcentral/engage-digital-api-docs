@@ -284,6 +284,9 @@ Other custom data can be present in the thread export depending on the source ty
 | identity_group.locked                                   | An identity group data was locked                                          |
 | identity_group.unlocked                                 | An identity group data was unlocked                                        |
 | identity_group.updated                                  | An identity group was updated                                              |
+| identity_list.created                                   | An identity list was created                                               |
+| identity_list.updated                                   | An identity list was updated                                               |
+| identity_list.destroyed                                 | An identity list was deleted                                               |
 | intervention.assigned                                   | A conversation was assigned to an agent                                    |
 | intervention.canceled                                   | A conversation was canceled                                                |
 | intervention.closed                                     | A conversation was closed                                                  |
