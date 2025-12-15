@@ -107,7 +107,7 @@ Other custom data can be present in the thread export depending on the source ty
 | translated_body          | Translated body of the message                                | String   | my_body                                                         |                                                                                                                      |
 | source_language          | Language of the original message                              | String   | fr                                                              |                                                                                                                      |
 | target_language          | Language of the translated message                            | String   | en                                                              |                                                                                                                      |
-| translation_status       | Translation status of the message                             | String   | success                                                         | Possible values : <ul><li>success</li> <li>failed</li> <li>pending</li></ul> |
+| translation_status       | Translation status of the message                             | String   | success                                                         | Possible values : <ul><li>success</li> <li>error</li> <li>pending</li></ul> |
 | translation_error        | Error message if the translation failed                         | String   | Invalid request, error: parse source language: language: tag is not well-formed. |                                                                                                                       |
 
 
