@@ -103,6 +103,14 @@ Other custom data can be present in the thread export depending on the source ty
 | structured_reply_payload | Payload of the structured reply                               | String   | my_payload                                                      | [Sensitive](../#sensitive-columns)                                                                                                            |
 | synchronization_status   | Synchronization status of the message                         | String   | success                                                      | Possible values : <ul><li>success</li> <li>export_pending</li><li>export_failure</li><li>export_aborted</li> <li>like_aborted</li> <li>author_block_aborted</li> <li>delete_aborted</li><li>unpublish_aborted</li></ul> |
 | synchronization_error    | Error message if the synchronization failed or has been aborted | String | hard_bounce - The server was unable to deliver your message (ex: unknown user, mailbox not found). | This field is the concatenation of content.synchronization_error and content.synchronization_error_custom fields |
+|
+| original_body            | Original body of the message                                  | String   | my_body                                                         |                                                                                                                      |
+| translated_body          | Translated body of the message                                | String   | my_body                                                         |                                                                                                                      |
+| source_language          | Language of the original message                              | String   | fr                                                              |                                                                                                                      |
+| target_language          | Language of the translated message                            | String   | en                                                              |                                                                                                                      |
+| translation_status       | Translation status of the message                             | String   | success                                                         | Possible values : <ul><li>success</li> <li>failed</li> <li>pending</li></ul> |
+| translation_error        | Error message if the translation failed                         | String   | Invalid request, error: parse source language: language: tag is not well-formed. |                                                                                                                       |
+
 
 ## Journal(`Exports::Events`)
 
@@ -586,6 +594,8 @@ Other custom data can be present in the thread export depending on the source ty
 | user_reply_in_average           | Average agent reply time (minutes or seconds according to configuration)                   | Integer  | 3                        |                                                                                                                       |
 | user_reply_in_average_bh        | Average agent reply time in business hours (minutes or seconds according to configuration) | Integer  | 2                        |                                                                                                                       |
 | user_reply_in_average_count     | Number of exchanges between Identity -> User (used to weight user_reply)                   | Integer  | 3                        |                                                                                                                       |
+| translation_enabled             | Is true if the translation was enabled at the creation                                     | Boolean  | true                     |                                                                                                                       |
+| detected_language               | Language automatically detected by the system for the first content                        | String   | en                       |                                                                                                                       |
 
 ## TaskSelectionActivity(`Export::TaskSelectionActivities`)
 
