@@ -7967,6 +7967,9 @@ components:
           type: string
         language:
           type: string
+        original_body:
+          description: body before translation. Is present only if auto-translation is enabled.
+          type: string
         private_message:
           type: boolean
         published:
@@ -7989,6 +7992,9 @@ components:
           type: boolean
         source_id:
           type: string
+        source_language:
+          description: language of the original body. Is present only if auto-translation is enabled.
+          type: string
         source_type:
           type: string
         source_url:
@@ -7999,9 +8005,25 @@ components:
           type: string
         synchronization_error:
           type: string
+        target_language:
+          description: language of the translated body. Is present only if auto-translation is enabled.
+          type: string
         thread_id:
           type: string
         title:
+          type: string
+        translated_body:
+          description: is present only if auto-translation is enabled.
+          type: string
+        translation_error:
+          description: error message if the translation failed. Is present only if auto-translation is enabled.
+          type: string
+        translation_status:
+          description: is present only if auto-translation is enabled.
+          enum:
+            - pending
+            - success
+            - error
           type: string
         type:
           type: string
@@ -8731,6 +8753,9 @@ components:
         deferred_at:
           format: date-time
           type: string
+        detected_language:
+          type: string
+          description: language automatically detected by the system for the first content. Only present when auto-translation is enabled.
         first_user_reply_id:
           type: string
         first_user_reply_in:
@@ -8793,6 +8818,9 @@ components:
           description: |-
             ED internal ID for satisfaction survey.
             Only present when customer satisfaction extension is enabled.
+        translation_enabled:
+          type: boolean
+          description: is true if the translation was enabled at the creation. Only present when auto-translation is enabled.
       required:
         - id
     InterventionComment:
