@@ -242,6 +242,7 @@ Other custom data can be present in the thread export depending on the source ty
 | content.unstamped                                       | An Engage Communities message was unmarked as the best response            |
 | content.unstared                                        | An Engage Communities message was unstarred                                |
 | content.updated                                         | A message was modified                                                     |
+| content_source.auto_disabled                            | A channel was automatically disabled                                       |
 | content_source.created                                  | A channel was created                                                      |
 | content_source.destroyed                                | A channel was deleted                                                      |
 | content_source.failure_acknowledged                     | A channel's alerts were acknowledged                                       |
