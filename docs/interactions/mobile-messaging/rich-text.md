@@ -40,13 +40,13 @@ Any tag not in this list is rejected with a `422` status and an explicit validat
 
 ### Attributes
 
-| Attribute | Allowed on | Notes |
-|-----------|-----------|-------|
-| `href` | `<a>` | Link target URL |
-| `target` | `<a>` | e.g. `_blank` |
-| `style` | Any | Only `color` and `text-align` are accepted (see below) |
+| Attribute | Purpose |
+|-----------|---------|
+| `href` | Link target URL |
+| `target` | Link opening behavior, e.g. `_blank` to open in new tab |
+| `style` | To enrich an element with some style. Only `color` and `text-align` are accepted (see below) |
 
-All other attributes are stripped and produce a validation error.
+All other attributes are either stripped or produce a validation error.
 
 ### CSS properties
 
