@@ -2199,13 +2199,13 @@
                     {
                       "key": "default_category_ids[]",
                       "value": "\u003carray.string.csv\u003e",
-                      "description": "Default categories",
+                      "description": "Inbound default categories",
                       "disabled": true
                     },
                     {
                       "key": "user_thread_default_category_ids[]",
                       "value": "\u003carray.string.csv\u003e",
-                      "description": "Default categories (agent messages)",
+                      "description": "Outbound default categories",
                       "disabled": true
                     },
                     {

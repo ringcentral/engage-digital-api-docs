@@ -764,7 +764,7 @@ paths:
           required: false
           schema:
             type: boolean
-        - description: Default categories
+        - description: Inbound default categories
           in: query
           name: 'default_category_ids[]'
           required: false
@@ -772,7 +772,7 @@ paths:
             items:
               type: string
             type: array
-        - description: Default categories (agent messages)
+        - description: Outbound default categories
           in: query
           name: 'user_thread_default_category_ids[]'
           required: false
@@ -8087,7 +8087,7 @@ components:
           format: date-time
           type: string
         default_category_ids:
-          description: Default categories
+          description: Inbound default categories
           items:
             type: string
           type: array
@@ -8147,7 +8147,7 @@ components:
           format: date-time
           type: string
         user_thread_default_category_ids:
-          description: Default categories (agent messages)
+          description: Outbound default categories
           items:
             type: string
           type: array
