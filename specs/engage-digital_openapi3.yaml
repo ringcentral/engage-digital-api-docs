@@ -1419,6 +1419,12 @@ paths:
           required: false
           schema:
             type: boolean
+        - description: Enable Microsoft Graph API for email receiving. Only on Email sources and only available when Microsoft Graph API support for email is enabled on the domain. When enabled, IMAP authentication must use Microsoft Identity Platform OAuth 2.0 and Disable Slow Mode is automatically turned on for the email source.
+          in: query
+          name: use_ms_graph_api
+          required: false
+          schema:
+            type: boolean
       responses:
         '200':
           content:
@@ -9531,6 +9537,9 @@ components:
           type: array
         postmark_enabled:
           description: Enable Postmark. Only on Email sources
+          type: boolean
+        use_ms_graph_api:
+          description: Enable Microsoft Graph API for email receiving. Only on Email sources and only returned when Microsoft Graph API support for email is enabled on the domain. When enabled, Disable Slow Mode is automatically turned on for the email source.
           type: boolean
     Survey:
       properties:
