@@ -1861,10 +1861,13 @@ paths:
           required: false
           schema:
             type: string
-        - description: The content’s body. This parameter is mandatory.
+        - description: >-
+            The content body. Required for content types that accept free-form
+            text. Omit this parameter when initiating a WhatsApp outbound
+            notification from an approved template.
           in: query
           name: body
-          required: true
+          required: false
           schema:
             type: string
         - description: >-
@@ -1921,18 +1924,16 @@ paths:
           schema:
             type: string
         - description: >-
-            For a SMS, WhatsApp, Channel SDK, or Engage Messaging channel.
-            For a WhatsApp message or a SMS,
-            the number the message will be sent to.
-            It must start with 00 or +, example:
-            +33634231224 or 0033634231224. This parameter is mandatory when
-            initiating a discussion.
+            For an SMS or WhatsApp channel, the recipient's phone number in
+            international format. It must start with `00` or `+`, for example
+            `+33634231224` or `0033634231224`. This parameter is mandatory when
+            initiating an SMS or WhatsApp discussion.
             For a Channel SDK private content,
             the foreign_id of the identity to send the message to.
             The identity must have been imported in ED.
             For an Engage Messaging content,
             the foreign_id of the identity to send the message to.
-            The oubound messaging option must be enabled.
+            The outbound messaging option must be enabled.
             This parameter is mandatory when initiating a discussion and
             forbidden when replying to an existing message.
           in: query
@@ -1975,9 +1976,9 @@ paths:
               type: string
             type: array
         - description: >-
-            Mandatory for a WhatsApp source. A discussion can only be initiated using a specific template
-            created on the business manager and approved by WhatsApp. You can find all available
-            template_names on /1.0/content_sources/source_id.
+            Required when initiating a WhatsApp outbound notification. Use the
+            `name` of an approved template returned by
+            `GET /1.0/content_sources/{sourceId}` in `template_messages`.
           explode: true
           in: query
           name: 'template_name'
@@ -1985,15 +1986,75 @@ paths:
           schema:
             type: string
         - description: >-
-            Mandatory for a WhatsApp source. A discussion can only be initiated using a specific template
-            created on the business manager and approved by WhatsApp. You can find all available
-            template_languages for a given template_name on /1.0/content_sources/source_id.
+            Required when initiating a WhatsApp outbound notification. Use the
+            `language` associated with the selected template in the
+            `template_messages` returned by
+            `GET /1.0/content_sources/{sourceId}`.
           explode: true
           in: query
           name: 'template_language'
           required: false
           schema:
             type: string
+        - description: >-
+            Values for variables or media defined by a WhatsApp outbound
+            notification template. Component types, indexes, subtypes, and
+            parameters must match the selected template. Omit this parameter
+            when the template requires no values.
+          explode: true
+          in: query
+          name: components
+          required: false
+          schema:
+            type: array
+            items:
+              type: object
+              required:
+                - type
+              properties:
+                type:
+                  description: Template component type.
+                  enum:
+                    - body
+                    - header
+                    - button
+                  type: string
+                index:
+                  description: Zero-based button index, provided as a string.
+                  type: string
+                sub_type:
+                  description: Button subtype.
+                  enum:
+                    - quick_reply
+                    - url
+                  type: string
+                parameters:
+                  type: array
+                  items:
+                    type: object
+                    required:
+                      - type
+                    properties:
+                      type:
+                        enum:
+                          - image
+                          - payload
+                          - text
+                        type: string
+                      text:
+                        description: Text substitution or dynamic URL suffix.
+                        type: string
+                      payload:
+                        description: Payload returned for a quick-reply button.
+                        type: string
+                      image:
+                        type: object
+                        required:
+                          - attachment_id
+                        properties:
+                          attachment_id:
+                            description: ID of an uploaded JPG, JPEG, or PNG image.
+                            type: string
         - description: >-
             Engage Messaging only.
             Allows to enable or disable customer's text input on content's thread.
