@@ -1,8 +1,8 @@
 package engageapidocs
 
 import (
-	"testing"
 	"io/ioutil"
+	"testing"
 
 	"github.com/grokify/spectrum/openapi3"
 	"gopkg.in/yaml.v3"
@@ -50,6 +50,69 @@ type TagData struct {
 	XTagGroups []TagGroup `yaml:"x-tag-groups"`
 }
 
+type ServerVariable struct {
+	Default string
+}
+
+type Server struct {
+	URL       string
+	Variables map[string]ServerVariable
+}
+
+type SecurityScheme struct {
+	Scheme string
+	Type   string
+}
+
+type SpecFoundation struct {
+	Servers    []Server
+	Security   []map[string][]string
+	Components struct {
+		SecuritySchemes map[string]SecurityScheme `yaml:"securitySchemes"`
+	}
+}
+
+func TestFoundation(t *testing.T) {
+	for _, tt := range specTests {
+		buf, err := ioutil.ReadFile(tt.filepath)
+		if err != nil {
+			t.Fatal(err)
+		}
+
+		foundation := &SpecFoundation{}
+		if err := yaml.Unmarshal(buf, foundation); err != nil {
+			t.Fatal(err)
+		}
+
+		if len(foundation.Servers) != 1 {
+			t.Fatalf("[%s] expected one API server, got %d", tt.filepath, len(foundation.Servers))
+		}
+
+		server := foundation.Servers[0]
+		if server.URL != "https://{account_name}.api.{platform_hostname}/1.0" {
+			t.Errorf("[%s] unexpected API server template: %s", tt.filepath, server.URL)
+		}
+		if got := server.Variables["platform_hostname"].Default; got != "digital.ringcentral.com" {
+			t.Errorf("[%s] unexpected default platform hostname: %s", tt.filepath, got)
+		}
+
+		if len(foundation.Security) != 1 {
+			t.Fatalf("[%s] expected one global security requirement, got %d", tt.filepath, len(foundation.Security))
+		}
+		if _, ok := foundation.Security[0]["bearerAuth"]; !ok {
+			t.Errorf("[%s] global bearerAuth security requirement is missing", tt.filepath)
+		}
+
+		bearer, ok := foundation.Components.SecuritySchemes["bearerAuth"]
+		if !ok {
+			t.Fatalf("[%s] bearerAuth security scheme is missing", tt.filepath)
+		}
+		if bearer.Type != "http" || bearer.Scheme != "bearer" {
+			t.Errorf("[%s] bearerAuth must use HTTP Bearer authentication", tt.filepath)
+		}
+	}
+}
+
 func TestTags(t *testing.T) {
 	for _, tt := range specTests {
 		buf, err := ioutil.ReadFile(tt.filepath)
@@ -63,7 +126,7 @@ func TestTags(t *testing.T) {
 			panic(err)
 		}
 
-		var anyMissing = false;
+		var anyMissing = false
 		for _, tag := range tagData.Tags {
 			var missing = true
 			for _, xTagGroup := range tagData.XTagGroups {
