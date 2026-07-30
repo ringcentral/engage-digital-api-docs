@@ -1,8 +1,8 @@
 openapi: 3.0.0
 info:
-  description: 'REST API for RingCentral Engage Digital'
+  description: 'REST API for RingCX Digital'
   termsOfService: 'https://developer.ringcentral.com'
-  title: RingCentral Engage Digital API
+  title: RingCX Digital API
   version: '1.0.1'
   contact:
     name: RingCentral
@@ -13,7 +13,7 @@ servers:
     variables:
       account_name:
         default: domain-name
-        description: Your own account name used as subdomain, it's the same as in the url of the engage digital service.
+        description: Your account name, used as the service URL subdomain.
       platform_hostname:
         default: engagement.dimelo.com
         description: Depending on environment the base hostname is changing. In production, it's digital.ringcentral.com for NA customers and engagement.dimelo.com for historical customers. It's the same base hostname as in the url of engage digital service.
@@ -1827,7 +1827,7 @@ paths:
         This method allows you to create new content for use in discussions.
         It can be a reply to another piece of content or be used to initiate
         discussion. If authorized, the token’s user will be used as the
-        content author. Content will be created in Engage Digital and pushed
+        content author. Content will be created in RingCX Digital and pushed
         asynchronously to the source.
 
         Replying to a customer content is usually possible (unless the
@@ -3893,15 +3893,16 @@ paths:
           schema:
             type: string
         - description: >-
-            The internal/company id of the entry. This is used to match Engage
-            Digital entry’s id with the company one. Example: KB042.
+            The internal or company ID of the entry. This is used to match the
+            RingCX Digital entry ID with the corresponding company ID. Example:
+            KB042.
           in: query
           name: foreign_id
           required: false
           schema:
             type: string
         - description: >-
-            To restrict the entry to a set of Engage Digital categories. Then,
+            To restrict the entry to a set of RingCX Digital categories. Then,
             KB entries that do not match message’s categories to which you are
             replying will not be suggested.
           explode: true
@@ -5275,7 +5276,7 @@ paths:
           required: false
           schema:
             type: boolean
-        - description: Name of the Dimelo Digital (String)
+        - description: Name of the survey.
           in: query
           name: name
           required: false

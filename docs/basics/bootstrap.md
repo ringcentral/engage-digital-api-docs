@@ -1,12 +1,12 @@
 # Bootstrapping a Developer System
 
-To do development for Engage Digital, it is useful to set up an agent which can receive and send messages and a source channel to receive messages from and post messages to.
+To develop with RingCX Digital, set up an agent that can receive and send messages and a source that can receive and publish messages.
 
-This tutorial covers setting up a basic email source and and using Engage Digital to receive and send email, which you can develop against.
+This tutorial covers setting up a basic email source and using RingCX Digital to receive and send email.
 
 **Configuration**
 
-Setting up the agent and source channel allows Engage Digital to receive and respond to messages.
+Setting up the agent and source allows RingCX Digital to receive and respond to messages.
 
 1. Enable the "Create a source" Permission
 1. Create a Community
@@ -40,17 +40,17 @@ Before you can create a source, a Community is needed to attach the Source chann
 
 ### Create an Email Source
 
-To use Engage Digital, a message needs to b configured to send and receive messages. Engage Digital Supports many different Source messaging channels, including custom ones.
+RingCX Digital supports many messaging channels, including custom channels.
 
-To bootstrap your system we will describe how to set up a simple Email Source as it is one of the simplest to set up. This will enable you to send and receive messages. See thee Engage Digital documentation for setting up other message sources.
+The following steps describe how to configure an email source so that you can send and receive messages. See the RingCX Digital documentation for information about configuring other source types.
 
-In your Engage Digital console, perform the following steps:
+In your RingCX Digital console, perform the following steps:
 
 1. Navigate to: "Admin" > "MESSAGES MANAGEMENT" > "Sources"
 1. Click the "+" in the upper right corner and then select "Email" to bring up the "Create a source" page.
 1. Under "GENERAL SETTINGS" > "Name", enter a name for this source. A common approach is to use the email address you select in "POSTMARK SETTINGS" > "Email Address" mentioned below.
 1. Under "GENERAL SETTINGS" > "Community", select the desired community, which will be the one you created in thee previous section.
-1. Under "POSTMARK SETTINGS" > "Email Address". You can use the default email address. For quick setup, either use the default email address or just use the SMTP username and use the existing SMTP hostname. For example, you can use an email like the following: `mycompany@email.us1.digital.ringcentral.com`. It is possible to use a custom email domain but that is outside the scope of this tutorial. See the Engage Digital documentation for more.
+1. Under "POSTMARK SETTINGS" > "Email Address," use the default email address or the SMTP username and existing SMTP hostname. For example: `mycompany@email.us1.digital.ringcentral.com`. You can also configure a custom email domain.
 1. Click "Save" at the bottom of the page.
 
 To verify the settings, click on the source name in the esource list and verify that the "GENERAL SETTINGS" > "Active" checkbox is clicked, and that the "POSTMARK SETTINGS" > "Enable" checkbox is clicked.

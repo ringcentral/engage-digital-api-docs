@@ -12,7 +12,7 @@ var specTests = []struct {
 	filepath string
 	title    string
 }{
-	{"engage-digital_openapi3.yaml", "RingCentral Engage Digital API"},
+	{"engage-digital_openapi3.yaml", "RingCX Digital API"},
 }
 
 // TestSpecs test reading specs.

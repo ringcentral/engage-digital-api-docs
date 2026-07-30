@@ -1,6 +1,6 @@
-# Engage Digital API Specifications
+# RingCX Digital API Specifications
 
-This folder contains API specifications for Engage Digital.
+This folder contains API specifications for RingCX Digital.
 
 Use the following files:
 
