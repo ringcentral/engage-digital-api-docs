@@ -1,6 +1,6 @@
-# RingCX API Responses
+# RingCX Digital API Responses
 
-All responses are formatted in JSON, with the exception of a few errors. Here is an example:
+API responses use JSON. For example:
 
 ```json
 {
@@ -11,39 +11,49 @@ All responses are formatted in JSON, with the exception of a few errors. Here is
 }
 ```
 
-### Encoding
+## Response format
 
-All responses are formatted using UTF-8 encoding.
+Responses use UTF-8 encoding and the following content type:
 
-### Content type
-
-The returned content-type is : `application/json; charset=utf-8`.
+```http
+Content-Type: application/json; charset=utf-8
+```
 
 ## Errors
 
-In case of a fatal error, a response is sent in JSON (application/json; charset=utf-8 content type) with an HTTP status code different than 200.
-
-All errors rendered respects following format:
+API errors use a non-2xx HTTP status and the following JSON structure:
 
 ```json
 {
-  "error": "Error identifier",
-  "message": "A text message that describes the error",
+  "error": "error_identifier",
+  "message": "A description of the error",
   "status": 400
 }
 ```
 
-## Throttling
+Common error statuses include:
 
-The number of queries is limited, the maximum is set to 500 queries per minute, otherwise you will hit the limit.
+| Status | Meaning |
+|--------|---------|
+| `400` | The request is malformed or contains an invalid parameter. |
+| `403` | Authentication is required, or the token's user is not authorized to perform the operation. |
+| `404` | The requested resource does not exist or is not accessible to the token's user. |
+| `409` | The request conflicts with the current resource state. |
+| `422` | The request is valid JSON but cannot be processed with the supplied values. |
+| `429` | The applicable request limit has been exceeded. |
 
-In case you reach the limit the server responds with 429 and the following JSON will be returned:
+## Rate limits
+
+The default account-level limit is 500 API requests per minute. An account can be configured with a different limit, and selected operations can have a token-specific limit. When a token-specific limit applies, requests using that token are counted separately for those operations.
+
+When the applicable limit is exceeded, the API returns `429 Too Many Requests`. The error message states the limit that was applied:
 
 ```json
 {
   "error": "rate_limit_exceeded",
-  "message": "Rate limit exceeded",
+  "message": "Rate limit exceeded (500 requests per minute max)",
   "status": 429
 }
 ```
 
+Applications should limit request concurrency, avoid unnecessary polling, and wait before retrying a rate-limited request.
