@@ -4,7 +4,7 @@ Before calling the RingCX Digital REST API, create an API access token for your 
 
 ## How API access tokens work
 
-An API access token authenticates requests to the RingCX Digital REST API. The token is associated with a RingCX Digital user, and API requests made with the token act with that user's permissions.
+An API access token authenticates requests to the RingCX Digital REST API. RingCX Digital automatically associates each new token with the account's default administrator user, which has all API permissions.
 
 An API access token remains valid while it is enabled. Disable or delete a token when the integration no longer requires access.
 
@@ -18,11 +18,8 @@ You must have the **Manage API access tokens** permission to create or manage AP
 1. Sign in to RingCX Digital and open **Admin**.
 2. Select **API access tokens**.
 3. Click **+** to create a token.
-4. Enter a descriptive name and select the user the integration will act on behalf of.
-5. Make sure the token is enabled, and then save it.
+4. Enter a descriptive name, make sure the token is enabled, and then save it.
 
-![API access token](../img/api-token.png)
-
-Use a dedicated user with only the permissions required by the integration. If that user's permissions change, the token's effective permissions change as well.
+Create a separate token for each integration so that you can disable or delete its access independently.
 
 To send the token with an API request, see [Authenticating to the RingCX Digital API](auth.md).

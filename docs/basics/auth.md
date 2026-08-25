@@ -25,7 +25,7 @@ curl --request GET \
 Replace `{account-name}` with your RingCX Digital account name. Set `RINGCX_DIGITAL_ACCESS_TOKEN` in your local environment; do not place the token directly in source code.
 
 !!! note "Permissions"
-    The token uses the permissions of its associated user. An authenticated request returns `403 Forbidden` when that user does not have the permission required by the endpoint or resource.
+    RingCX Digital automatically associates each API access token with the account's default administrator user, which has all API permissions.
 
 The API also accepts an `access_token` request parameter for compatibility with existing integrations. Use the Bearer header for new integrations because URLs can be stored in browser history, proxy logs, and server access logs.
 

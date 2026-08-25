@@ -113,17 +113,7 @@ The first thing you need to do is obtain an API Access Token if you do not alrea
 
 ??? tip "How to generate a RingCX API access token"
 
-    1. Login to your RingCX portal and click on the "Admin" menu located in the top, horizontal menu.
-
-    2. Select "Dev tools" towards the bottom of the left hand menu.
-
-    3. Select "API access tokens" from the drawer that pops out.
-
-    3. You should see a list of access tokens if any have been provisioned. Select the token, or click the "Add" button to create a new one.
-
-    4. Finally, enter a label/description for your token, and select an Agent on which the token will act on behalf of. Make sure the token is "enabled" and click "Save."
-
-          ![API access token](../../img/api-token-engage.png)
+    Follow [Obtain an API Access Token](../../basics/access-token.md) to create and secure a token for your integration.
 
 Make note of the access token generated as you will need it later.
 
