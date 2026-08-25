@@ -1,7 +1,7 @@
 {
   "info": {
-    "name": "RingCentral Engage Digital API",
-    "description": "This is a collection of APIs for RingCentral Engage Digital.\n\nPlease use a Postman environment with the following variables: ENGAGE_DIGITAL_SERVER_URL and ENGAGE_DIGITAL_ACCESS_TOKEN. ENGAGE_DIGITAL_SERVER_URL should use the following format: https://{account}.api.engagement.dimelo.com where '{account}' is replaced with your literal URL value. Your access token should resemble the following: bxtetcyuf8twydx2pubk77dh.",
+    "name": "RingCX Digital API",
+    "description": "This is a collection of APIs for RingCX Digital.\n\nPlease use a Postman environment with the following variables: ENGAGE_DIGITAL_SERVER_URL and ENGAGE_DIGITAL_ACCESS_TOKEN. ENGAGE_DIGITAL_SERVER_URL should use the following format: https://{account}.api.engagement.dimelo.com where '{account}' is replaced with your literal URL value. Your access token should resemble the following: bxtetcyuf8twydx2pubk77dh.",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "item": [
@@ -920,7 +920,7 @@
                     "value": "application/json"
                   }
                 ],
-                "description": "This method allows you to create new content for use in discussions. It can be a reply to another piece of content or be used to initiate discussion. If authorized, the token’s user will be used as the content author. Content will be created in Engage Digital and pushed asynchronously to the source.\nReplying to a customer content is usually possible (unless the source/conversation is read only).\nComposing a content on the contrary depend on the source itself:\n* The source may not support it (and be purely reactive like Instagram, Messenger ...)\n* Some sources (usually public account) like Twitter or Facebook page allows to publish content without targeting specific individuals.\n* Some sources (usually non public media) require specific targeting (phone number for SMS, email address for email, customer_id ...) to be able to create a content. This is source specific and detailed under the generic parameters.\n\nAuthorization​: only users that can reply or initiate discussion (= compose) on given source. it renders also an error if in_reply_to isn’t synchronized or if in_reply_to content is not under an ​open intervention."
+                "description": "This method allows you to create new content for use in discussions. It can be a reply to another piece of content or be used to initiate discussion. If authorized, the token’s user will be used as the content author. Content will be created in RingCX Digital and pushed asynchronously to the source.\nReplying to a customer content is usually possible (unless the source/conversation is read only).\nComposing a content on the contrary depend on the source itself:\n* The source may not support it (and be purely reactive like Instagram, Messenger ...)\n* Some sources (usually public account) like Twitter or Facebook page allows to publish content without targeting specific individuals.\n* Some sources (usually non public media) require specific targeting (phone number for SMS, email address for email, customer_id ...) to be able to create a content. This is source specific and detailed under the generic parameters.\n\nAuthorization​: only users that can reply or initiate discussion (= compose) on given source. it renders also an error if in_reply_to isn’t synchronized or if in_reply_to content is not under an ​open intervention."
               }
             },
             {
@@ -3669,13 +3669,13 @@
                     {
                       "key": "foreign_id",
                       "value": "\u003cstring\u003e",
-                      "description": "The internal/company id of the entry. This is used to match Engage Digital entry’s id with the company one. Example: KB042.",
+                      "description": "The internal or company ID of the entry. This is used to match the RingCX Digital entry ID with the corresponding company ID. Example: KB042.",
                       "disabled": true
                     },
                     {
                       "key": "category_ids[]",
                       "value": "\u003carray.string.csv\u003e",
-                      "description": "To restrict the entry to a set of Engage Digital categories. Then, KB entries that do not match message’s categories to which you are replying will not be suggested.",
+                      "description": "To restrict the entry to a set of RingCX Digital categories. Then, KB entries that do not match message’s categories to which you are replying will not be suggested.",
                       "disabled": true
                     },
                     {
@@ -5156,7 +5156,7 @@
                     {
                       "key": "name",
                       "value": "\u003cstring\u003e",
-                      "description": "Name of the Dimelo Digital (String)",
+                      "description": "Name of the survey.",
                       "disabled": true
                     },
                     {

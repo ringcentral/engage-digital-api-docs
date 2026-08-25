@@ -40,7 +40,7 @@ A channel (or source) is referred to as a digital medium for customers to connec
 
 To get messages from these channels you would need to have an account which can be connected, authorized and set up to start getting messages.
 
-To configure a channel, one has to be provided with an Engage Digital account where they can use specific channel flows for setup and configuration.  Please use the signup button above to request an Engage Digital account for channel setup and configuration.
+To configure a channel, you need a RingCX Digital account with access to the corresponding channel setup and configuration flow.
 
 ### Content
 
@@ -87,7 +87,7 @@ There are several IDs in the GET `/content` API. Each has a different meaning. A
 |||
 
 !!! note "Intervention IDs"
-    Intervention IDs are only used on the Engage Digital platform. You will notice that if a user responds to a post/message, the intervention ID will be populated, but any post/reply from the API will not have an intervention ID.
+    Intervention IDs are used within RingCX Digital. When a user responds to a post or message, the intervention ID is populated. A post or reply created through the API does not initially have an intervention ID.
 
 ### Get Content from a Specific Channel
 

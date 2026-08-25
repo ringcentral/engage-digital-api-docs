@@ -1,4 +1,4 @@
-site_name: RingCentral Engage Developer Guide
+site_name: RingCX Digital Developer Guide
 site_url: https://engage-digital-api-docs.rtfd.org
 site_favicon: favicon.ico
 repo_url: https://github.com/ringcentral/engage-digital-api-docs
@@ -95,7 +95,7 @@ nav:
     - 'Receiving Events': webhooks/receive.md
     - 'Event Types': webhooks/events.md
   - 'SDKs':
-    - 'Engage Digital SDKs and Sample Apps': sdks/index.md
+    - 'RingCX Digital SDKs and Sample Apps': sdks/index.md
     - 'App SDK':
       - 'Overview': sdks/app-sdk/index.md
       - 'Configuration and Development': sdks/app-sdk/config.md
