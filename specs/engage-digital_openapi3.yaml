@@ -1852,6 +1852,9 @@ paths:
         synchronized or if in_reply_to content is not under an ​open
         intervention.
       operationId: createContent
+      externalDocs:
+        description: Sending Rich Text Messages in RingCX Messaging
+        url: https://developers.ringcentral.com/engage/digital/guide/interactions/mobile-messaging/rich-text/
       parameters:
         - description: >-
             The identity id of content. This parameter is not mandatory, by
@@ -2006,6 +2009,18 @@ paths:
           required: false
           schema:
             type: boolean
+        - description: >-
+            RingCX Messaging only. The format of the body. When set to "html", the body
+            is interpreted as HTML and rendered natively in the client. Rich text must be
+            enabled on the channel by an administrator. Defaults to "text".
+          in: query
+          name: 'body_format'
+          required: false
+          schema:
+            type: string
+            enum:
+              - text
+              - html
       responses:
         '200':
           content:

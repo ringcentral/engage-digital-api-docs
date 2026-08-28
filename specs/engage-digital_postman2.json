@@ -906,6 +906,12 @@
                       "value": "\u003cboolean\u003e",
                       "description": "Engage Messaging only. Allows to enable or disable customer's text input on content's thread. To disable text input, send true. To enable text input, send false. To keep as is, omit.",
                       "disabled": true
+                    },
+                    {
+                      "key": "body_format",
+                      "value": "\u003cstring\u003e",
+                      "description": "RingCX Messaging only. The format of the body. Accepted values: \"text\" (default) or \"html\". When set to \"html\", the body is interpreted as HTML and rendered natively in the client. Rich text must be enabled on the channel by an administrator. See https://engage-digital-api-docs.rtfd.org/interactions/mobile-messaging/rich-text/ for supported tags and attributes.",
+                      "disabled": true
                     }
                   ]
                 },
