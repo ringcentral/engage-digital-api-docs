@@ -2483,6 +2483,12 @@
                       "value": "\u003cboolean\u003e",
                       "description": "Enable time for thread inclusion. Only on Email sources",
                       "disabled": true
+                    },
+                    {
+                      "key": "use_ms_graph_api",
+                      "value": "\u003cboolean\u003e",
+                      "description": "Enable Microsoft Graph API for email receiving. Only on Email sources and only available when Microsoft Graph API support for email is enabled on the domain. When enabled, IMAP authentication must use Microsoft Identity Platform OAuth 2.0 and Disable Slow Mode is automatically turned on for the email source.",
+                      "disabled": true
                     }
                   ]
                 },
