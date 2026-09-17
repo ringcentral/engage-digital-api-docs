@@ -1927,12 +1927,12 @@ paths:
           schema:
             type: string
         - description: >-
-            For a SMS, WhatsApp, Channel SDK, or Engage Messaging channel.
-            For a WhatsApp message or a SMS,
-            the number the message will be sent to.
+            For an SMS, WhatsApp, Channel SDK, or Engage Messaging channel.
+            For an SMS, the number the message will be sent to.
             It must start with 00 or +, example:
-            +33634231224 or 0033634231224. This parameter is mandatory when
-            initiating a discussion.
+            +33634231224 or 0033634231224.
+            For a WhatsApp message, it can be a phone number (same rules as SMS),
+            or an identity id.
             For a Channel SDK private content,
             the foreign_id of the identity to send the message to.
             The identity must have been imported in ED.
