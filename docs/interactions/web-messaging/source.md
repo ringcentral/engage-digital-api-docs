@@ -20,7 +20,7 @@ When no avatar is configured in the source, in the chat window, there is no avat
 
 The displayed name of the agent in the chat window, next to each of its messages, is configurable via the `Sender name` field.
 
-Here is an example that specify the rendering of the sender name for some among the most common cases, for an agent whose name is Alicia Johnson:
+Here is an example that specifies the rendering of the sender name for some among the most common cases, for an agent whose name is Alicia Johnson:
 
 | Sender name configured | Rendering | Strategy |
 |-|-|-|
@@ -31,7 +31,7 @@ Here is an example that specify the rendering of the sender name for some among 
 | PurpleShop Team | PurpleShop Team | Impersonal |
 
 !!! information
-    The chat is a one-to-one channel that emphasizes the fact that the visitor speaks to a particular agent. Depending on the communication strategy, the customer can place their agents on the spotlight by displaying their first name, or opt for a unified persona that represents the customer care service.
+    The chat is a one-to-one channel that emphasizes the fact that the visitor speaks to a particular agent. Depending on the communication strategy, the customer can place their agents in the spotlight by displaying their first name, or opt for a unified persona that represents the customer care service.
 
 ## Integrations
 
@@ -42,11 +42,11 @@ Available integrations:
 * Google Analytics Classic (asynchronous mode - ga.js - the old way)
 * Google Universal Analytics (analytics.js)
 
-The integrations reports the following events (based on [JS events](../javascript-api/#events)) directly to the Google Analytics available on the page:
+The integrations report the following events (based on [JS events](../javascript-api/#events)) directly to the Google Analytics available on the page:
 
 | Event name | Data | Details |
 |-|-|-|
-| chat_proposed | trigger | Fired when a trigger was activated and able to execute its actions (e.g. the item to be shown is found on thepage) |
+| chat_proposed | trigger | Fired when a trigger was activated and able to execute its actions (e.g. the item to be shown is found on the page) |
 | chat_engaged | trigger | Fired when the visitor engages the conversation, i.e. sends a first message |
 | chat_shown | trigger | Fired when a chat client is created and shown |
 | message_received | trigger | Fired each time the visitor receives a message |
@@ -56,13 +56,13 @@ The integrations reports the following events (based on [JS events](../javascrip
 
 ### Queuing
 
-The `Queuing factor` field, defaulting to "0", controls the extra slots that are allowed in the waiting queue. With "0", no extra slots are allowed. With a positive decimal number, such as "0.25" for example, and 4 busy agents with soft limit at 2, the chat would allow 2 more discussions to be queued even if no agents are available (4 * 2 * 0.25), the total number of slotswould be 10.
+The `Queuing factor` field, defaulting to "0", controls the extra slots that are allowed in the waiting queue. With "0", no extra slots are allowed. With a positive decimal number, such as "0.25" for example, and 4 busy agents with soft limit at 2, the chat would allow 2 more discussions to be queued even if no agents are available (4 * 2 * 0.25), the total number of slots would be 10.
 
 ### Timed Messages (Live chat mode only)
 
 The `Impossibility message delay` field, defaulting to "8m" (i.e. 8 minutes), controls the delay before a message is automatically shown to the visitor to state that it was impossible to reach an agent to handle the engaged conversation. One of the effects of this message is to end the conversation too.
 
-These fields accept "chronic durations" (i.e. a series of value plus suffix corresponding to an unit: "2m 25s" for 2 minutes and 25 seconds). Set to 0 to disable.
+These fields accept "chronic durations" (i.e. a series of value plus suffix corresponding to a unit: "2m 25s" for 2 minutes and 25 seconds). Set to 0 to disable.
 
 ### Enable Navigation Contents
 
@@ -139,4 +139,4 @@ You must ensure that the role of the agents contains the `View tasks` permission
 
 You can add custom translations or modify the existing ones by using this field. To add new languages, use the ISO country code as the main key. See [Customizing the Languages](../customization/#customizing-the-languages) for the JSON format that needs to be used.
 
-View a list of all [translations on many languages](https://docs.google.com/document/d/1ly9bR9q7VSBOx4PdeUpp9HSt5PyxFW3r_T_lPdJOmgc/edit).
+View a list of all [translations in many languages](https://docs.google.com/document/d/1ly9bR9q7VSBOx4PdeUpp9HSt5PyxFW3r_T_lPdJOmgc/edit).

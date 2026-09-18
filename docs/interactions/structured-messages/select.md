@@ -120,8 +120,8 @@ Primary parameters are used by default, however, some parameters are unique or o
 | API Property | Type | Description |
 |-|-|-|
 | **`structured_content.items.title`** | String | The title of the item. *Truncated to 20 characters.* |
-| **`structured_content.items.attachment_id`** | String | **Optional**. Existing attachment id used to decorate the item in the list. Supports private attachments. [Upload attachments](../../../basics/uploads) for you own custom images. |
-| **`structured_content.items.attachment_fallback_id`** | String | **Optional**. Fallback in case the attachment related to the attachment_id doesn’t meet the source requirements. Must be public. Only jpg, jpeg, png formats. Maximum size of 5 MB. [Upload attachments](../../../basics/uploads) for you own custom images. |
+| **`structured_content.items.attachment_id`** | String | **Optional**. Existing attachment id used to decorate the item in the list. Supports private attachments. [Upload attachments](../../../basics/uploads) for your own custom images. |
+| **`structured_content.items.attachment_fallback_id`** | String | **Optional**. Fallback in case the attachment related to the attachment_id doesn’t meet the source requirements. Must be public. Only jpg, jpeg, png formats. Maximum size of 5 MB. [Upload attachments](../../../basics/uploads) for your own custom images. |
 | **`structured_content.items.payload`** | String | Automatically gets populated as a random hex if blank. |
 
 ## Example: RingCX Messaging (Quick Replies)
@@ -163,8 +163,8 @@ Primary parameters are used by default, however, some parameters are unique or o
 
 | API Property | Type | Description |
 |-|-|-|
-| **`structured_content.center_items`** | Booelan | **Optional**. Allows to center the items. False by default. Centers the items when at “true”. Aligns the items on the right when at “false”. |
-| **`structured_content.disable_text_input`** | Booelan | **Optional**. Allows to disable the text input when the items are displayed. False by default. Disables the text input when at “true”. Also disables the ability to reply via the push notification on mobile. |
+| **`structured_content.center_items`** | Boolean | **Optional**. Allows to center the items. False by default. Centers the items when at “true”. Aligns the items on the right when at “false”. |
+| **`structured_content.disable_text_input`** | Boolean | **Optional**. Allows to disable the text input when the items are displayed. False by default. Disables the text input when at “true”. Also disables the ability to reply via the push notification on mobile. |
 
 ## Example: Google Business Messages
 
