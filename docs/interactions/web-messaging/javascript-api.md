@@ -47,7 +47,7 @@ Example of data for “trigger”:
 }
 ```
 
-The “trigger_continuation” key is true if the event is the result of a continuation, false otherwise (for example, a chat client that reopens himself after a page change would fire a “chat_shown” event with “trigger_continuation” being true).
+The “trigger_continuation” key is true if the event is the result of a continuation, false otherwise (for example, a chat client that reopens itself after a page change would fire a “chat_shown” event with “trigger_continuation” being true).
 
 The “trigger_id” key may be null for the chat internal continuation triggers. 
 

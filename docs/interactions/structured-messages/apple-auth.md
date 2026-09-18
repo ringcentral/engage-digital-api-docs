@@ -99,7 +99,7 @@ The `authenticate` entry includes the decrypted `access_token`, the encrypted ve
 ```
 
 #### Webhook Payload Format for new Authentication message
-The `authenticate` field is juste the replication of `structured_reply`, result may vary depending on the OAuth provider. It generally contains the code needed to request an access_token to the OAuth provider.
+The `authenticate` field is just the replication of `structured_reply`, result may vary depending on the OAuth provider. It generally contains the code needed to request an access_token to the OAuth provider.
 ```json
 {
   "id":"0b44eb19f120e3230942572f",

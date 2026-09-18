@@ -39,7 +39,7 @@ As with the polling method, the send API allows you to implement actions progres
 
 * `action` and `params` keys are mandatory.
 * `action` key defines the action that you want to perform on which resource type.
-* `params` key content depends to the action and resource type.
+* `params` key content depends on the action and resource type.
 * If the request runs smoothly, the response should be an HTTP 200 with ok as body. Otherwise consult the [Errors](../action-details/#errors) section.
 
 ## Actions
@@ -147,7 +147,7 @@ ok
 | Source doesn't support structured contents | 422 | The `view.messaging` option is not implemented. [Structured contents](../structured-messages) |
 | Type is required for structured contents | 422 | A structured contents type is missing. [Structured contents](../structured-messages) |
 | Source doesn't support this type of structured content | 422 | A structured contents type is not supported by source. [Structured contents](../structured-messages) |
-| `structured_content`: "attribute_name" must not be empty | 422 | A mandatort contents attribute is missing. [Structured contents](../structured-messages) |
+| `structured_content`: "attribute_name" must not be empty | 422 | A mandatory contents attribute is missing. [Structured contents](../structured-messages) |
 | The author must be puppetizable | 422 | The author is used for structured contents creation must be puppetizable. [Structured contents](../structured-messages) |
 | too many typing requests, please try again in a few seconds | 429 | Too many typing requests were sent, retry later |
 
