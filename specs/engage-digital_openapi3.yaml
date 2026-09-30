@@ -7945,7 +7945,7 @@ components:
         delivery_status_events:
           description: >-
             delivery events of the content, grouped by recipient. Is present
-            only if the content is an email sent through Amazon SES and at least
+            only if the content is an email and at least
             one delivery event has been received. Recipients are listed in the
             order To, Cc, Bcc, followed by any other recipient having events.
             For each recipient, events are sorted from the oldest to the most
