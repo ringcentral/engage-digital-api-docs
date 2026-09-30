@@ -7942,6 +7942,61 @@ components:
           type: string
         creator_id:
           type: string
+        delivery_status_events:
+          description: >-
+            delivery events of the content, grouped by recipient. Is present
+            only if the content is an email sent through Amazon SES and at least
+            one delivery event has been received. Recipients are listed in the
+            order To, Cc, Bcc, followed by any other recipient having events.
+            For each recipient, events are sorted from the oldest to the most
+            recent one, events without a date come first.
+          type: array
+          items:
+            type: object
+            properties:
+              recipient:
+                description: email address of the recipient.
+                type: string
+              events:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    event_type:
+                      description: 'values can be: delivered, delayed, bounced, complained, rejected or opened.'
+                      enum:
+                        - delivered
+                        - delayed
+                        - bounced
+                        - complained
+                        - rejected
+                        - opened
+                      type: string
+                    event_at:
+                      description: date of the event, in UTC. Is absent if the date is unknown.
+                      format: date-time
+                      type: string
+                    status_code:
+                      description: SMTP status code of the event. Is absent if not provided.
+                      type: string
+                    smtp_log:
+                      description: SMTP log of the event. Is absent if not provided.
+                      type: string
+          example:
+            - recipient: recipient@example.com
+              events:
+                - event_type: delivered
+                  event_at: '2026-09-25T10:00:00+00:00'
+                  status_code: '250'
+                  smtp_log: Message accepted
+                - event_type: opened
+                  event_at: '2026-09-25T10:05:00+00:00'
+            - recipient: other@example.com
+              events:
+                - event_type: bounced
+                  event_at: '2026-09-25T10:02:00+00:00'
+                  status_code: '550'
+                  smtp_log: Mailbox unavailable
         first_in_thread:
           description: is true if the content is the first in the thread.
           type: boolean
