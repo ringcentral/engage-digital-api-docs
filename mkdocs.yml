@@ -47,8 +47,10 @@ nav:
       - 'JavaScript API': 'interactions/web-messaging/javascript-api.md'
       - 'Attachments': 'interactions/web-messaging/attachments.md'
       - 'Surveys': 'interactions/web-messaging/surveys.md'
+      - 'Sending Rich Text Messages': 'interactions/mobile-messaging/rich-text.md'
     - 'Mobile Messaging':
       - 'Huawei Push Notifications': 'interactions/mobile-messaging/huawei-push-notifications.md'
+      - 'Sending Rich Text Messages': 'interactions/mobile-messaging/rich-text.md'
     - 'Chatbots':
       - 'Overview': interactions/chatbots/overview.md
       - 'Implementation': interactions/chatbots/implementation.md
