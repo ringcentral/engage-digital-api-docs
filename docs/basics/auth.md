@@ -1,44 +1,32 @@
-# Authenticating to the RingCX API
+# Authenticate to the RingCX Digital API
 
-## Access Tokens
+Every API request must include an API access token. Send the token in the HTTP `Authorization` header using the Bearer authentication scheme:
 
-Every request must provide an access token to authenticate properly.
+```http
+Authorization: Bearer <access-token>
+```
 
-<a class="btn btn-primary" href="../access-token/">Obtain an Access Token</a>
-
-!!! note "Access Token Permissions"
-    Different API endpoints require different permissions. The permissions assocated with an access token are inherited from the associated user. Read about [creating an access token](../access-token/) to learn how to associate an access token with a user. 
-
-## Transmitting an Access Token
-
-### Via Form Parameter
-
-An access token can be specified in a request parameter named `access_token`.
-
-#### Example
-
-To get all interventions on the source accessible by the token’s users, URL will looks like:
-
-`https://[YOUR DOMAIN].api.digital.ringcentral.com/1.0/interventions?access_token=abc42`
-
-### Via HTTP Header
-
-In order to be compliant with OAuth 2.0 standards an access token can also be specified via the `Authorization` request header where value respects following format:
-
-`Authorization: Bearer <access_token_value>`
-
-#### Example
-
-To get all interventions on the source accessible by the token’s users, you’ll need to build your request with Authorization request header with proper value. HTTP request will looks like:
+For example:
 
 ```http
 GET /1.0/interventions HTTP/1.1
-Host: test.api.digital.ringcentral.com
-Authorization: Bearer abc42
+Host: {account-name}.api.digital.ringcentral.com
+Authorization: Bearer <access-token>
+Accept: application/json
 ```
 
-!!! warning "Keep access token secure"
-    Do not publish your access token publicly. The access token is **unencrypted**, and possession of it by a third-party will give them access to your account. 
+```bash
+curl --request GET \
+  --url "https://{account-name}.api.digital.ringcentral.com/1.0/interventions" \
+  --header "Accept: application/json" \
+  --header "Authorization: Bearer ${RINGCX_DIGITAL_ACCESS_TOKEN}"
+```
 
+Replace `{account-name}` with your RingCX Digital account name. Set `RINGCX_DIGITAL_ACCESS_TOKEN` in your local environment; do not place the token directly in source code.
 
+!!! note "Permissions"
+    RingCX Digital automatically associates each API access token with the account's default administrator user, which has all API permissions.
 
+The API also accepts an `access_token` request parameter for compatibility with existing integrations. Use the Bearer header for new integrations because URLs can be stored in browser history, proxy logs, and server access logs.
+
+To create a token, see [Obtain an API Access Token](access-token.md).
