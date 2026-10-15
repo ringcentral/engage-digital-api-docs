@@ -154,6 +154,16 @@ Here are the available options to the `addMessage` action:
 |body|String|""|The body of the message to add|
 |agent|Boolean|false|Whether the message will appear to be from the agent or from the customer|
 |engage|Boolean|false|For customer messages only, determines whether the chat should be considered "engaged" (and thus creates an interaction in RingCentral RingCX) or wait for the next real customer message|
+|body_format|String|"text"|For agent messages only, set it to `"html"` to render the body as HTML. It requires the `Allow agents to send messages with rich-text formatting` option to be enabled on the channel, otherwise the body is displayed as plain text|
+
+Example of an agent message with HTML formatting:
+
+``` javascript
+<script>
+    var _chatq = _chatq || [];
+    _chatq.push(["_addMessage", { body: "<p>Hello, <strong>how can I help?</strong></p>", agent: true, body_format: "html" }])
+</script>
+```
 
 ### Page Change
 
