@@ -7533,6 +7533,7 @@ paths:
                 - content.approved
                 - content.discussion_initiated
                 - content.exported
+                - content.exported_delivery_status
                 - content.imported
                 - content.replied
                 - content.update_exported
