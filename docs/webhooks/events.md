@@ -199,6 +199,7 @@ Type | Description
 `content.approved` | When a content has been approved for publication. **This does not mean that the content has been published yet. Notifications about exports are done with content.exported.**
 `content.discussion_initiated` | When a discussion has been started. **This does not mean that the content has been published yet. Notifications about exports are done with content.exported.**
 `content.exported` | When a new content has been exported from RingCX to the source. **This does not mean that the export succeeded. The synchronization_status field needs to be checked.**
+`content.exported_delivery_status` | When a delivery event (delivered, delayed, bounced, complained, rejected or opened) has been received for an email. The content, including its `delivery_status_events`, is sent in the payload.
 `content.imported` | When a new content has been imported from the source to RingCX.
 `content.replied` | When someone replied to another content. **This does not mean that the content has been published yet. Notifications about exports are done with content.exported.**
 `content.thread_auto_closed` | When an Engage Messaging thread was automatically locked.
